@@ -52,11 +52,19 @@ const router = Backbone.Router.extend({
   },
 
   memberArea () {
-    this.parent.setState({
-      activePage: [
-        <CResources parent={this.parent} key="home" />
-      ]
-    });
+    if (!this.parent.state.user) {
+      this.parent.setState({
+        activePage: [
+          <Home parent={this.parent} key="home" />
+        ]
+      });
+    } else {
+      this.parent.setState({
+        activePage: [
+          <CMemberArea parent={this.parent} key="home" />
+        ]
+      });
+    }
   },
 
   join () {

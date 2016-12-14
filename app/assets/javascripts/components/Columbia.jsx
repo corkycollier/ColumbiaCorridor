@@ -120,11 +120,7 @@ const CMenu = React.createClass({
   },
 
   gotoMemberArea () {
-    this.props.parent.setState({
-      activePage: <CMemberArea parent={ this.props.parent }/>
-    });
-
-    Backbone.history.navigate('member-area');
+    Backbone.history.navigate('member-area', { trigger : true } )
   },
 
 gotoJoin () {
