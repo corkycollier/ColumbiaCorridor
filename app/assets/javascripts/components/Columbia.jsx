@@ -45,10 +45,19 @@ const Columbia = React.createClass({
 const CHeader = React.createClass({
   getInitialState(){
     var style = {
+      "color" : "#262262"
+    }
+    var buttons;
+
+    if (this.props.parent.state.user) {
+      buttons = <LoggedInButtons parent={ this } />
+    } else {
+      buttons = <LoggedOutButtons parent={ this } />
     }
 
     return({
       style: style,
+      buttons: buttons,
     })
   },
 
@@ -61,13 +70,9 @@ const CHeader = React.createClass({
           </div>
 
           <div className="four wide column right floated">
-            <div className="ui button small green"  style={{"marginTop":"8px"}}>
-              Sign In
-            </div>
-
-            <div className="ui button small red"  style={{"marginTop":"8px"}}>
-              Logout
-            </div>
+            {
+              this.state.buttons
+            }
           </div>
         </div>
 
@@ -234,6 +239,62 @@ const CFoot = React.createClass({
             © 2016 Columbia Corridor Association
           </div>
 
+        </div>
+      </div>
+    )
+  }
+});
+
+const LoggedInButtons = React.createClass({
+  getInitialState () {
+    var style = {
+
+    }
+
+    return({
+      style: style,
+    })
+  },
+
+  componentDidMount () {
+
+  },
+
+  render () {
+    return (
+      <div className="" style={this.state.style}>
+        <div className="ui button small green" style={{ "float" : "right" , "margin" : "12px" }}>
+          Sign In
+        </div>
+
+        <div className="ui button small red" style={{ "float" : "right" , "margin" : "12px" }}>
+          Logout
+        </div>
+      </div>
+    )
+  }
+});
+
+const LoggedOutButtons = React.createClass({
+  getInitialState () {
+    var style = {
+
+    }
+
+    return({
+      style: style,
+    })
+  },
+
+  componentDidMount () {
+
+  },
+
+  render () {
+    return (
+      <div className="" style={this.state.style}>
+        <div className="ui button blue inverted" style={{ "float" : "right" , "margin" : "12px" }}>
+          Sign In
         </div>
       </div>
     )
