@@ -11,14 +11,11 @@ const Home = React.createClass({
 
   componentDidMount () {
     $('.ui.shape').shape()
-    this.flip();
+    this.initiateFlips();
   },
 
-  flip () {
-    setTimeout(function() {
-      this.flip();
-      $('.ui.shape').shape('flip over');
-    }.bind(this), 5000);
+  initiateFlips () {
+    $('.ui.shape').shape('flip over');
   },
 
   render () {
@@ -28,18 +25,19 @@ const Home = React.createClass({
           <div className="sides">
             <div className="side active">
               <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748013/Home_2_UPDATED_yt1wgm.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
-            </div>
 
-            <div className="side">
-              <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748066/Home_3_g2nbm4.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
-            </div>
 
-            <div className="side">
-              <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748099/Home_4_UPDATED_ljc6nr.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
-            </div>
+              <div className="side">
+                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748066/Home_3_g2nbm4.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
+              </div>
 
-            <div className="side">
-              <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748119/Home_5_pqm5rz.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
+              <div className="side">
+                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748099/Home_4_UPDATED_ljc6nr.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
+              </div>
+
+              <div className="side">
+                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748119/Home_5_pqm5rz.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
+              </div>
             </div>
           </div>
         </div>
