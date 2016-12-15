@@ -8,18 +8,18 @@ const Home = React.createClass({
       "0" : {
         id : 0 ,
         img : "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748013/Home_2_UPDATED_yt1wgm.jpg" ,
-        link : undefined ,
+        link : "http://www.columbiacorridor.com/#events" ,
       } ,
       "1" : {
         id : 1 ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748066/Home_3_g2nbm4.jpg" ,
-        link: undefined ,
+        link: "http://columbiacorridor.com/#cca-news/" ,
       } ,
 
       "2" : {
         id : 2 ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748099/Home_4_UPDATED_ljc6nr.jpg" ,
-        link: undefined ,
+        link: "http://columbiacorridor.com/#resourcefull-use/" ,
       } ,
 
       "3" : {
@@ -33,6 +33,7 @@ const Home = React.createClass({
       style : style ,
       pages : pages ,
       currentPage : pages["0"] ,
+
     })
   },
 
@@ -43,24 +44,33 @@ const Home = React.createClass({
   initiateFlip() {
     setInterval(function () {
       this.flip();
-    }.bind(this), 4000)
+    }.bind(this), 7400)
   },
 
   flip () {
-    $('.ui.image').transition('fade');
+    $('.ui.image').transition('pulse');
 
-    var pageNumber = this.state.currentPage.id ++
-    this.setState({
-      currentPage : this.state.pages[ pageNumber % 4 ] ,
-    });
+    setTimeout( function () {
+      var pageNumber = this.state.currentPage.id + 1
+      if ( pageNumber > 3 ) pageNumber = 0;
+      this.setState({
+        currentPage : this.state.pages[ pageNumber ] ,
+      });
+    }.bind(this) , 285)
+  },
+
+  navigate () {
+    var win = window.open( this.state.currentPage.link , '_blank' );
   },
 
   render () {
     return (
-      <div className="" style={this.state.style}>
-        <a src={ this.state.currentPage.link } target="_blank">
-          <img className="ui image" src={ this.state.currentPage.img } style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
-        </a>
+      <div className="" style={ this.state.style }>
+        <img className="ui image"
+             src={ this.state.currentPage.img }
+             style={{ "width" : "100%" , "minHeight" : "325px" , "height" : "auto" }}
+             onClick = { this.navigate }
+           />
       </div>
     )
   }
