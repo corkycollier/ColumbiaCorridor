@@ -98,11 +98,11 @@ const LoggedOutButtons = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui button blue inverted" >
+        <div className="ui button violet" style={{"background" : "#262262" }} >
           Sign In
         </div>
 
-        <div className="ui button green inverted" >
+        <div className="ui button violet" style={{"background" : "#262262" }}>
           Sign Up
         </div>
       </div>
