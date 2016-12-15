@@ -33,7 +33,6 @@ const Columbia = React.createClass({
     if ( width < 993 ) {
 
     }
-    debugger
   },
 
   render () {
@@ -83,7 +82,7 @@ const CFoot = React.createClass({
   },
 
   componentDidMount () {
-    
+
   },
 
   render () {

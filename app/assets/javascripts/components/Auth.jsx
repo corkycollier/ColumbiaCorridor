@@ -1,7 +1,7 @@
 const SignIn = React.createClass({
   getInitialState () {
     var style = {
-
+      "color" : "#262262" ,
     }
 
     return({
@@ -16,12 +16,21 @@ const SignIn = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
+        <h1>Sign In</h1>
         <div className="ui form">
           <div className="field">
-            <input type="text" />
+            <label>Email</label>
+            <input type="text" required />
           </div>
 
-          sign in
+          <div className="field">
+            <label>Password</label>
+            <input type="password" required />
+          </div>
+        </div>
+
+        <div className="ui button" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signIn } >
+          Sign In
         </div>
       </div>
     )
@@ -32,7 +41,7 @@ const SignIn = React.createClass({
 const SignUp = React.createClass({
   getInitialState () {
     var style = {
-
+      "color" : "#262262" ,
     }
 
     return({
@@ -47,12 +56,22 @@ const SignUp = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
+        <h1>Sign Up</h1>
+
         <div className="ui form">
           <div className="field">
-            <input type="text" />
+            <label>Email</label>
+            <input type="text" required />
           </div>
 
-          sign up
+          <div className="field">
+            <label>Password</label>
+            <input type="password" required />
+          </div>
+        </div>
+
+        <div className="ui button" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signIn } >
+          Sign Up
         </div>
       </div>
     )
