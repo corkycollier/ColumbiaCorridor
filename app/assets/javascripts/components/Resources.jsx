@@ -25,11 +25,9 @@ const CResources = React.createClass({
           <h2>CCA News</h2>
           <div className="ui grid doubling stackable">
             <div className="eight wide column">
-              hi
             </div>
 
             <div className="eight wide column">
-              hi
             </div>
           </div>
 

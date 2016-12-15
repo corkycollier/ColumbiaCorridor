@@ -22,11 +22,9 @@ const CEvents = React.createClass({
 
         <div className="ui grid doubling stackable">
           <div className="eight wide column">
-            hi
           </div>
 
           <div className="eight wide column">
-            hi
           </div>
         </div>
       </div>

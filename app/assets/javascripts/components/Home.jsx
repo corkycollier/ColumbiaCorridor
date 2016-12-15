@@ -4,43 +4,63 @@ const Home = React.createClass({
       "color" : "#262262"
     }
 
+    var pages = {
+      "0" : {
+        id : 0 ,
+        img : "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748013/Home_2_UPDATED_yt1wgm.jpg" ,
+        link : undefined ,
+      } ,
+      "1" : {
+        id : 1 ,
+        img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748066/Home_3_g2nbm4.jpg" ,
+        link: undefined ,
+      } ,
+
+      "2" : {
+        id : 2 ,
+        img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748099/Home_4_UPDATED_ljc6nr.jpg" ,
+        link: undefined ,
+      } ,
+
+      "3" : {
+        id : 3 ,
+        img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748119/Home_5_pqm5rz.jpg" ,
+        link: undefined ,
+      } ,
+    }
+
     return({
-      style: style,
+      style : style ,
+      pages : pages ,
+      currentPage : pages["0"] ,
     })
   },
 
   componentDidMount () {
-    $('.ui.shape').shape()
-    this.initiateFlips();
+    this.initiateFlip();
   },
 
-  initiateFlips () {
-    $('.ui.shape').shape('flip over');
+  initiateFlip() {
+    setInterval(function () {
+      this.flip();
+    }.bind(this), 4000)
+  },
+
+  flip () {
+    $('.ui.image').transition('fade');
+
+    var pageNumber = this.state.currentPage.id ++
+    this.setState({
+      currentPage : this.state.pages[ pageNumber % 4 ] ,
+    });
   },
 
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui people shape">
-          <div className="sides">
-            <div className="side active">
-              <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748013/Home_2_UPDATED_yt1wgm.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
-
-
-              <div className="side">
-                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748066/Home_3_g2nbm4.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
-              </div>
-
-              <div className="side">
-                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748099/Home_4_UPDATED_ljc6nr.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
-              </div>
-
-              <div className="side">
-                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481748119/Home_5_pqm5rz.jpg" style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a src={ this.state.currentPage.link } target="_blank">
+          <img className="ui image" src={ this.state.currentPage.img } style={{ "width" : "100%" , "maxWidth" : "76vw" }}/>
+        </a>
       </div>
     )
   }
