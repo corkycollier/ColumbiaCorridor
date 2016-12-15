@@ -15,17 +15,41 @@ const Columbia = React.createClass({
       router: new router(this),
     })
 
+    this.checkWidth();
+
     setTimeout(function(){
+      this.checkForUser();
+    }.bind(this))
+  },
+
+  checkForUser () {
       if (!this.state.user) {
         $('.member-area').addClass('disabled');
       }
-    }.bind(this))
+  },
+
+  checkWidth () {
+    var width = $(window).width();
+    if ( width < 993 ) {
+
+    }
+    debugger
   },
 
   render () {
     return (
-      <div className="" style={this.state.style}>
-        <CSidebar parent = { this } />
+      <div className="" style={this.state.style} >
+        <div className="ui sidebar vertical menu">
+          <a className="item">
+            1
+          </a>
+          <a className="item">
+            2
+          </a>
+          <a className="item">
+            3
+          </a>
+        </div>
 
         <div className="pusher">
           <CHeader parent = { this } />
@@ -45,37 +69,6 @@ const Columbia = React.createClass({
   }
 });
 
-const CSidebar = React.createClass({
-  getInitialState(){
-    var style = {
-      "color" : "#262262"
-    }
-
-    return({
-      style: style,
-    })
-  },
-
-  render () {
-    return (
-      <div className="" style={this.state.style}>
-        <div className="ui sidebar vertical menu">
-          <a className="item">
-            1
-          </a>
-          <a className="item">
-            2
-          </a>
-          <a className="item">
-            3
-          </a>
-        </div>
-      </div>
-    )
-  }
-});
-
-
 const CFoot = React.createClass({
   getInitialState () {
     var style = {
@@ -90,7 +83,7 @@ const CFoot = React.createClass({
   },
 
   componentDidMount () {
-
+    
   },
 
   render () {

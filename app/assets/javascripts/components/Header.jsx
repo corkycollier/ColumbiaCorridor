@@ -91,6 +91,15 @@ const LoggedOutButtons = React.createClass({
     })
   },
 
+  signIn () {
+    Backbone.history.navigate( 'sign-in' , { trigger : true })
+  },
+
+  signUp () {
+    Backbone.history.navigate( 'sign-up' , { trigger : true })
+  },
+
+
   componentDidMount () {
 
   },
@@ -98,11 +107,11 @@ const LoggedOutButtons = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui button violet" style={{"background" : "#262262" }} >
+        <div className="ui button violet" style={{"background" : "#262262" }} onClick={ this.signIn } >
           Sign In
         </div>
 
-        <div className="ui button violet" style={{"background" : "#262262" }}>
+        <div className="ui button violet" style={{"background" : "#262262" }} onClick={ this.signUp } >
           Sign Up
         </div>
       </div>

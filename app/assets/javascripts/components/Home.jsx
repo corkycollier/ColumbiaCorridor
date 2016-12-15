@@ -33,7 +33,7 @@ const Home = React.createClass({
       style : style ,
       pages : pages ,
       currentPage : pages["0"] ,
-
+      active : true ,
     })
   },
 
@@ -41,22 +41,25 @@ const Home = React.createClass({
     this.initiateFlip();
   },
 
+  componentWillUnmount() {
+    this.setState({
+      active: false
+    })
+  },
+
   initiateFlip() {
-    setInterval(function () {
+    var interval = setInterval(function () {
       this.flip();
     }.bind(this), 7400)
   },
 
   flip () {
-    $('.ui.image').transition('pulse');
-
-    setTimeout( function () {
-      var pageNumber = this.state.currentPage.id + 1
-      if ( pageNumber > 3 ) pageNumber = 0;
-      this.setState({
-        currentPage : this.state.pages[ pageNumber ] ,
-      });
-    }.bind(this) , 285)
+    if (!this.state.active) { return; }
+    var pageNumber = this.state.currentPage.id + 1
+    if ( pageNumber > 3 ) pageNumber = 0;
+    this.setState({
+      currentPage : this.state.pages[ pageNumber ] ,
+    });
   },
 
   navigate () {
@@ -65,8 +68,8 @@ const Home = React.createClass({
 
   render () {
     return (
-      <div className="" style={ this.state.style }>
-        <img className="ui image"
+      <div className="" style={ this.state.style } onBlur = { this.removeInterval }>
+        <img className="ui image home"
              src={ this.state.currentPage.img }
              style={{ "width" : "100%" , "minHeight" : "325px" , "height" : "auto" }}
              onClick = { this.navigate }

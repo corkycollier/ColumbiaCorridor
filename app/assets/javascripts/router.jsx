@@ -17,6 +17,8 @@ const router = Backbone.Router.extend({
     "join":"join",
     "sponsor":"sponsor",
     "contact":"contact",
+    "sign-up":"signUp",
+    "sign-in":"signIn",
   },
 
   home () {
@@ -87,6 +89,22 @@ const router = Backbone.Router.extend({
     this.parent.setState({
       activePage: [
         <CContact parent={this.parent} key="home" />
+      ]
+    });
+  },
+
+  signIn () {
+    this.parent.setState({
+      activePage: [
+        <SignIn parent={this.parent} key="home" />
+      ]
+    });
+  },
+
+  signUp () {
+    this.parent.setState({
+      activePage: [
+        <SignUp parent={this.parent} key="home" />
       ]
     });
   },

@@ -55,7 +55,7 @@ const CResources = React.createClass({
             </div>
             <div className="eight wide column" style={{"paddingTop":"24px"}}>
               <a href="http://www.portlandoregon.gov/water/29890" target="_blank" style={{"color":"white"}}>
-                <div className="ui button blue icon right labeled">
+                <div className="ui button blue icon right labeled" style={{"background" : "#262262" }} >
                   <i className="right arrow icon" />
                   GPP
                 </div>
