@@ -71,6 +71,7 @@ const SignUp = React.createClass({
     return({
       style : style ,
       businessCodes : businessCodes ,
+      email : "",
     })
   },
 

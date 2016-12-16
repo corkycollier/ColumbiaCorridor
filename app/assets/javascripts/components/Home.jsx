@@ -41,12 +41,6 @@ const Home = React.createClass({
     this.initiateFlip();
   },
 
-  componentWillUnmount() {
-    this.setState({
-      active: false
-    })
-  },
-
   initiateFlip() {
     var interval = setInterval(function () {
       this.flip();
@@ -68,7 +62,7 @@ const Home = React.createClass({
 
   render () {
     return (
-      <div className="" style={ this.state.style } onBlur = { this.removeInterval }>
+      <div className="" style={ this.state.style } >
         <img className="ui image home"
              src={ this.state.currentPage.img }
              style={{ "width" : "100%" , "minHeight" : "325px" , "height" : "auto" }}

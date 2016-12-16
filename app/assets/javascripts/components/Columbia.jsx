@@ -17,15 +17,16 @@ const Columbia = React.createClass({
 
     this.checkWidth();
 
+
     setTimeout(function(){
       this.checkForUser();
     }.bind(this))
   },
 
   checkForUser () {
-      if (!this.state.user) {
-        $('.member-area').addClass('disabled');
-      }
+    if (!this.state.user) {
+      $('.member-area').addClass('disabled');
+    }
   },
 
   checkWidth () {
@@ -33,6 +34,11 @@ const Columbia = React.createClass({
     if ( width < 993 ) {
 
     }
+
+
+    $('.ui.sidebar')
+    .sidebar('attach events', '.toc.item')
+    ;
   },
 
   render () {
@@ -50,7 +56,7 @@ const Columbia = React.createClass({
           </a>
         </div>
 
-        <div className="pusher">
+        <div className="pusher" style={{ "paddingTop" : "1px" }}>
           <CHeader parent = { this } />
           <CMenu parent = { this } />
           <div className="ui container" style={{ "padding":"50px"}}>
@@ -62,47 +68,6 @@ const Columbia = React.createClass({
           </div>
 
           <CFoot parent={ this } />
-        </div>
-      </div>
-    )
-  }
-});
-
-const CFoot = React.createClass({
-  getInitialState () {
-    var style = {
-      "background" : "#262261",
-      "color" : "#fff",
-      "marginTop" : "24px",
-    }
-
-    return({
-      style: style,
-    })
-  },
-
-  componentDidMount () {
-
-  },
-
-  render () {
-    return (
-      <div className="" style={this.state.style}>
-        <div className="ui grid centered stackable">
-          <div className="one wide column" />
-
-          <div className="five wide column">
-            Website Design by LAUNCHPAD
-          </div>
-
-          <div className="four wide column">
-            www.ColumbiaCorridor.org
-          </div>
-
-          <div className="four wide column">
-            © 2016 Columbia Corridor Association
-          </div>
-
         </div>
       </div>
     )
