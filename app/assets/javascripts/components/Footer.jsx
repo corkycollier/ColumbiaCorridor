@@ -29,9 +29,9 @@ const CFoot = React.createClass({
         <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#fff" , "height" : "166px" , "marginBottom" : "25px" , "textAlign" : "center" }}>
           <div className="five wide column" style = {{ "textAlign" : "center" }} >
             <h2>Upcoming Events</h2>
-            1
+              CCA’s 30th Annual Meeting: the roads look good and the luncheon is on!
             <div className="ui divider"></div>
-            2
+              What is holding the Columbia River Back?
           </div>
 
           <div className="five wide column">
@@ -40,9 +40,9 @@ const CFoot = React.createClass({
 
           <div className="five wide column" style = {{ "textAlign" : "center" }} >
             <h2>News Flash</h2>
-            1
+            Updated wellfield regulations in the works
             <div className="ui divider"></div>
-            2
+            SVP
           </div>
         </div>
 

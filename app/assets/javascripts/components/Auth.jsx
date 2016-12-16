@@ -27,6 +27,7 @@ const SignIn = React.createClass({
   },
 
   signIn () {
+
     $.ajax({
       url: 'session' ,
       type: 'POST' ,
@@ -36,9 +37,7 @@ const SignIn = React.createClass({
           password : this.state.password ,
         }
       }, success (a, b, c) {
-        debugger
       }, error (a, b, c) {
-        debugger
       }
 
     })
@@ -60,7 +59,7 @@ const SignIn = React.createClass({
           </div>
         </div>
 
-        <div className="ui button" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signIn } >
+        <div className="ui button disabled" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signIn } >
           Sign In
         </div>
       </div>
@@ -96,7 +95,6 @@ const SignUp = React.createClass({
       "72: Accommodation and Food Services" ,
       "81: Other Services (except Public Administration)" ,
       "92: Public Administration" ,
-
     ]
 
     return({
@@ -107,7 +105,15 @@ const SignUp = React.createClass({
   },
 
   componentDidMount () {
+  },
 
+  updateState (e) {
+    var newData = {};
+    newData[ e.currentTarget.dataset.field ] = e.currentTarget.value;
+    this.setState( newData )
+  },
+
+  signUp () {
   },
 
   render () {
@@ -118,93 +124,93 @@ const SignUp = React.createClass({
         <div className="ui form">
           <div className="field">
             <label>Email</label>
-            <input type="text" required />
+            <input type="text" required data-field="email" onChange={ this.updateState }/>
           </div>
 
           <div className="field">
             <label>Password</label>
-            <input type="password" required />
+            <input type="password" required data-field="password" onChange={ this.updateState }/>
           </div>
 
           <div className="field">
             <label>Confirm Password</label>
-            <input type="password" required />
+            <input type="password" required data-field="password2" onChange={ this.updateState } />
           </div>
 
           <div className="two fields">
             <div className="field">
               <label>First Name</label>
-              <input type="text" required />
+              <input type="text" required data-field="fname" onChange={ this.updateState } />
             </div>
 
             <div className="field">
               <label>Last Name</label>
-              <input type="text" required />
+              <input type="text" required data-field="lname" onChange={ this.updateState } />
             </div>
           </div>
 
           <div className="field">
             <label>Company Name</label>
-            <input type="text" />
+            <input type="text" data-field="company_name" onChange={ this.updateState } />
           </div>
 
           <div className="field">
             <label>Mailing Address</label>
-            <input type="text" />
+            <input type="text" data-field="company_mailing_address" onChange={ this.updateState } />
           </div>
 
           <div className="three fields">
             <div className="field">
               <label>City</label>
-              <input type="text" />
+              <input type="text" data-field="company_city" onChange={ this.updateState }  />
             </div>
 
             <div className="field">
               <label>State</label>
-              <input type="text" />
+              <input type="text" data-field="company_state" onChange={ this.updateState } />
             </div>
 
             <div className="field">
               <label>Zip</label>
-              <input type="text" />
+              <input type="text" data-field="company_zip" onChange={ this.updateState } />
             </div>
           </div>
 
           <div className="field">
             <label>Country</label>
-            <input type="text" />
+            <input type="text" data-field="company_county" onChange={ this.updateState } />
           </div>
 
           <div className="field">
             <label>Physical Address</label>
-            <input type="text" />
+            <input type="text" data-field="user_address" onChange={ this.updateState } />
           </div>
 
           <div className="three fields">
             <div className="field">
               <label>City</label>
-              <input type="text" />
+              <input type="text" data-field="user_city" onChange={ this.updateState }  />
             </div>
 
             <div className="field">
               <label>State</label>
-              <input type="text" />
+              <input type="text" data-field="user_state" onChange={ this.updateState }   />
             </div>
 
             <div className="field">
               <label>Zip</label>
-              <input type="text" />
+              <input type="text" data-field="user_zip" onChange={ this.updateState }   />
             </div>
           </div>
 
           <div className="field">
             <label>Country</label>
-            <input type="text" />
+            <input type="text" data-field="user_country" onChange={ this.updateState }  />
           </div>
 
           <div className="field">
             <label>Business Type (NAICS Code)</label>
-            <select className="ui dropdown">
+            <select className="ui dropdown" data-field="business_type" onChange={ this.updateState }  >
               <option></option>
               {
                 this.state.businessCodes.map( function (el) {
@@ -221,7 +227,7 @@ const SignUp = React.createClass({
 
         </div>
 
-        <div className="ui button" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signIn } >
+        <div className="ui button disabled" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signUp } >
           Sign Up
         </div>
       </div>
