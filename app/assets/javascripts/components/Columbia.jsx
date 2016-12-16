@@ -29,22 +29,20 @@ const Columbia = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style} >
-        <div className="sidebar-segment">
-          <SidebarMenu />
+        <SidebarMenu />
 
-          <div className="pusher" style={{ "paddingTop" : "1px" }}>
-            <CHeader parent = { this } />
-            <CMenu parent = { this } />
-            <div className="ui container" style={{ "padding":"50px"}}>
+        <div className="pusher" style={{ "paddingTop" : "1px" }}>
+          <CHeader parent = { this } />
+          <CMenu parent = { this } />
+          <div className="ui container" style={{ "padding":"50px"}}>
 
-              {
-                this.state.activePage
-              }
+            {
+              this.state.activePage
+            }
 
-            </div>
-
-            <CFoot parent={ this } />
           </div>
+
+          <CFoot parent={ this } />
         </div>
       </div>
     )
