@@ -22,7 +22,7 @@ const CAboutUs = React.createClass({
           </h1>
 
           <div className="ui grid doubling stackable" style={{ "margin" : "20px" }}>
-            <div className="eight wide column" style={{ "fontSize" : "19px" , "height" : "50vh"  , "overflowY" : "scroll" }}>
+            <div className="eight wide column" style={{ "fontSize" : "18px" , "height" : "50vh"  , "overflowY" : "scroll" }}>
               <p>
                 The Columbia Corridor is the single largest economic corridor in Oregon, stretching from the Willamette River in the west to the Sandy River in the east. It’s the largest industrial area in the state, with 2,500 businesses employing 65,000 people with more middle wage jobs than anywhere else in the state. 40% of those employees live within five miles of work.
               </p>
@@ -43,7 +43,7 @@ const CAboutUs = React.createClass({
           </div>
         </div>
 
-        <div className="ui divider" />
+        <div className="ui divider" style={{ "marginTop" : "68px" }}/>
 
         <div className="columbia-coridor-facts" style={{ "marginTop" : "60px"}} >
           <h1 >
@@ -80,7 +80,7 @@ const CAboutUs = React.createClass({
 
         </div>
 
-        <div className="ui divider" />
+        <div className="ui divider" style={{ "marginTop" : "68px" }}/>
 
         <div className="staff">
           <h1 style={{ "marginTop" : "60px"}} >
@@ -99,7 +99,7 @@ const CAboutUs = React.createClass({
 
             </div>
 
-            <div className="eight wide column" style={{ "overflowY" : "scroll" , "height" : "50vh"  }}>
+            <div className="eight wide column" >
               <div style={{"width":"60%","padding":"12px"}}>
                 <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
                 <p style={{ "textAlign" : "center" }}>

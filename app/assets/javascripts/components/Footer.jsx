@@ -26,7 +26,7 @@ const CFoot = React.createClass({
     return (
       <div className="" style={this.state.style}>
 
-        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#fff" , "height" : "166px" , "marginBottom" : "25px" , "textAlign" : "center" }}>
+        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#fff" , "minHeight" : "166px" , "marginBottom" : "25px" , "textAlign" : "center" }}>
           <div className="five wide column" style = {{ "textAlign" : "center" }} >
             <h2>Upcoming Events</h2>
               CCA’s 30th Annual Meeting: the roads look good and the luncheon is on!
