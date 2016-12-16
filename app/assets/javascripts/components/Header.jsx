@@ -26,6 +26,10 @@ const CHeader = React.createClass({
           </div>
 
           <div className="four wide column right floated">
+            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "19px" , "right" : "219px", "background" : "#262262" , "width" : "95px" }} >
+              mailing list
+            </div>
+
             <a href="https://www.facebook.com/ColumbiaCorridor/" target="_blank">
               <div className="ui button mini facebook labeled icon" style={{ "position" : "absolute" , "top" : "19px" , "right" : "0px"}} >
                 <i className="facebook icon" />
