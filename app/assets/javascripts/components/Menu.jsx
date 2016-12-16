@@ -5,84 +5,51 @@ const CMenu = React.createClass({
     }
 
     return({
-      style: style,
-      currentMenu: [] ,
+      style : style ,
+      currentMenu : [] ,
     })
   },
 
-  componentDidMount () {
-    var $window = $( window );
 
-    $window.resize(function () {
-      this.triggerMenus();
+  componentDidMount () {
+    this.triggerMenu();
+
+    var $window = $( window )
+    $window.resize(function(){
+      this.triggerMenu();
     }.bind(this))
 
-    this.triggerMenus();
   },
 
-  triggerMenus () {
-    var $window = $( window );
-    if ($window.width() > 920 ) {
+  triggerMenu() {
+    var $window = $( window )
+    if ( $window.width() > 920 ) {
       this.setState({
-        currentMenu : <RegularMenu /> ,
-    });
-  } else {
-    this.setState({
-      currentMenu : <SidebarMenuButton /> ,
-  });
-}
-},
-
-
-render () {
-  return (
-    <div className="" style={this.state.style}>
-
-      {
-        this.state.currentMenu
-      }
-
-    </div>
-  )
-}
-});
-
-const SidebarMenuButton = React.createClass({
-  getInitialState () {
-    var style = {
-
+        currentMenu: <RegularMenu />
+      })
+    } else {
+      this.setState({
+        currentMenu: <SidebarMenu />
+      })
     }
-
-    return({
-      style: style,
-    })
-  },
-
-  componentDidMount () {
-
-  },
-
-  openSidebar () {
-    $('.ui.sidebar').sidebar('toggle', {
-      context: $('.context.example .bottom.segment') ,
-    })
   },
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
-        <a className="ui icon button" onClick={ this.openSidebar } style={{ "width" : "100px" , "marginTop" : "4px" }} >
-          <i className="sidebar icon"></i>
-        </a>
+      <div className="" style={this.state.style}>
+        {
+          this.state.currentMenu
+        }
       </div>
     )
   }
 });
 
+
 const SidebarMenu = React.createClass({
   getInitialState () {
     var style = {
-      "width" : "0px"
+
     }
 
     return({
@@ -94,74 +61,11 @@ const SidebarMenu = React.createClass({
 
   },
 
-  gotoHome () {
-    Backbone.history.navigate('', { trigger : true });
-  },
-
-  gotoAbout () {
-    Backbone.history.navigate('about-us', { trigger : true });
-  },
-
-  gotoEvents () {
-    Backbone.history.navigate('events', { trigger : true });
-  },
-
-  gotoResources () {
-    Backbone.history.navigate('resources', { trigger : true });
-  },
-
-  gotoMemberArea () {
-    Backbone.history.navigate('member-area', { trigger : true } )
-  },
-
-  gotoJoin () {
-    Backbone.history.navigate('join', { trigger : true });
-  },
-
-  gotoSponsor () {
-    Backbone.history.navigate('sponsor', { trigger : true });
-  },
-
-  gotoContact () {
-    Backbone.history.navigate('contact', { trigger : true });
-  },
-
   render () {
     return (
-        <div className="ui sidebar vertical menu">
-          <a className="item header" onClick={ this.gotoHome } >
-            Home
-          </a>
+      <div className="" style={this.state.style}>
 
-          <a className="item header" onClick={ this.gotoAbout } style={{ "display" : this.state.regularMenu }} >
-            About Us
-          </a>
-
-          <a className="item header" onClick={ this.gotoEvents } style={{ "display" : this.state.regularMenu }} >
-            Events
-          </a>
-
-          <a className="item header" onClick={ this.gotoResources } style={{ "display" : this.state.regularMenu }} >
-            Resources
-          </a>
-
-          <a className="item header" onClick={ this.gotoJoin } style={{ "display" : this.state.regularMenu }} >
-            Join
-          </a>
-
-          <a className="item header member-area" onClick={ this.gotoMemberArea } style={{ "display" : this.state.regularMenu }} >
-            Member Area
-          </a>
-
-          <a className="header item" onClick={ this.gotoSponsor } style={{ "display" : this.state.regularMenu }} >
-            Sponsor
-          </a>
-
-          <a className="header item" onClick={ this.gotoContact } style={{ "display" : this.state.regularMenu }} >
-            Contact
-          </a>
-
-        </div>
+      </div>
     )
   }
 });
@@ -182,77 +86,49 @@ const RegularMenu = React.createClass({
 
   },
 
-  gotoHome () {
-    Backbone.history.navigate('', { trigger : true });
-  },
-
-  gotoAbout () {
-    Backbone.history.navigate('about-us', { trigger : true });
-  },
-
-  gotoEvents () {
-    Backbone.history.navigate('events', { trigger : true });
-  },
-
-  gotoResources () {
-    Backbone.history.navigate('resources', { trigger : true });
-  },
-
-  gotoMemberArea () {
-    Backbone.history.navigate('member-area', { trigger : true } )
-  },
-
-  gotoJoin () {
-    Backbone.history.navigate('join', { trigger : true });
-  },
-
-  gotoSponsor () {
-    Backbone.history.navigate('sponsor', { trigger : true });
-  },
-
-  gotoContact () {
-    Backbone.history.navigate('contact', { trigger : true });
+  go (e) {
+    Backbone.history.navigate( e.currentTarget.dataset.path , { trigger : true })
   },
 
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui ten item menu" style={{ "borderLeft" : "none" , "borderRight" : "none", "display" : this.state.regularMenu  }}>
-          <div className="item" />
+        <div className="ui ten item menu" style={{ "borderLeft" : "none" , "borderRight" : "none" }}>
+          <div className="item" style={{"width":"60%"}} />
 
-          <a className="item header" onClick={ this.gotoHome } >
+          <div className="item header" data-path="" onClick={ this.go } >
             Home
-          </a>
+          </div>
 
-          <a className="item header" onClick={ this.gotoAbout } style={{ "display" : this.state.regularMenu }} >
+          <div className="item header" data-path="about-us" onClick={ this.go } >
             About Us
-          </a>
+          </div>
 
-          <a className="item header" onClick={ this.gotoEvents } style={{ "display" : this.state.regularMenu }} >
+          <div className="item header" data-path="events" onClick={ this.go } >
             Events
-          </a>
+          </div>
 
-          <a className="item header" onClick={ this.gotoResources } style={{ "display" : this.state.regularMenu }} >
+          <div className="item header" data-path="resources" onClick={ this.go } >
             Resources
-          </a>
+          </div>
 
-          <a className="item header" onClick={ this.gotoJoin } style={{ "display" : this.state.regularMenu }} >
+          <div className="item header" data-path="join" onClick={ this.go } >
             Join
-          </a>
+          </div>
 
-          <a className="item header member-area" onClick={ this.gotoMemberArea } style={{ "display" : this.state.regularMenu }} >
+          <div className="item header member-area" data-path="member-area" onClick={ this.go } >
             Member Area
-          </a>
+          </div>
 
-          <a className="header item" onClick={ this.gotoSponsor } style={{ "display" : this.state.regularMenu }} >
+          <div className="header item" data-path="sponsor" onClick={ this.go } >
             Sponsor
-          </a>
+          </div>
 
-          <a className="header item" onClick={ this.gotoContact } style={{ "display" : this.state.regularMenu }} >
+          <div className="header item" data-path="contact" onClick={ this.go } >
             Contact
-          </a>
+          </div>
 
-          <div className="item" style={{"width":"60%"}} style={{ "display" : this.state.regularMenu }}  />
+          <div className="item" style={{"width":"60%"}} />
         </div>
       </div>
     )

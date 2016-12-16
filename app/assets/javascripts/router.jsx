@@ -73,7 +73,7 @@ const router = Backbone.Router.extend({
   join () {
     this.parent.setState({
       activePage: [
-        <CResources parent={this.parent} key="home" />
+        <CJoin parent={this.parent} key="join" />
       ]
     });
   },
