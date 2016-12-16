@@ -17,7 +17,6 @@ const MailingList = React.createClass({
     return (
       <div className="" style={this.state.style}>
         <h1>Sign Up for our Mailing List</h1>
-
         <div className="ui grid centered">
           <div className="eight wide column ui form">
             <div clasName="field">
@@ -26,13 +25,9 @@ const MailingList = React.createClass({
 
             <div className="ui button purple" style = {{ "marginTop" : "12px" , "background" : "#262262" }}>
               Sign Up
-
             </div>
           </div>
-
-
         </div>
-
       </div>
     )
   }
