@@ -17,6 +17,10 @@ const CHeader = React.createClass({
     })
   },
 
+  goToMailingList () {
+    Backbone.history.navigate('mailing-list', { trigger : true })
+  },
+
   render () {
     return (
       <div className="ui container" style={this.state.style}>
@@ -26,7 +30,7 @@ const CHeader = React.createClass({
           </div>
 
           <div className="four wide column right floated">
-            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "19px" , "right" : "219px", "background" : "#262262" , "width" : "95px" }} >
+            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "19px" , "right" : "219px", "background" : "#262262" , "width" : "95px" }} onClick={this.goToMailingList}>
               mailing list
             </div>
 
