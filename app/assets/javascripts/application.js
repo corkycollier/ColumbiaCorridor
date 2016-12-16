@@ -20,23 +20,3 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require_tree .
-
-
-var $window = $( window );
-
-$window.resize(function() {
-  if ( $window.width() < 993 ) {
-    goSmall();
-  } else {
-    goBig();
-  }
-
-});
-
-
-function goSmall () {
-}
-
-
-function goBig () {
-}

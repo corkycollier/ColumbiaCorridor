@@ -5,8 +5,8 @@ const Columbia = React.createClass({
     }
 
     return({
-      style: style,
-      user: JSON.parse(this.props.user)
+      style : style ,
+      user : JSON.parse(this.props.user) ,
     })
   },
 
@@ -14,9 +14,6 @@ const Columbia = React.createClass({
     this.setState({
       router: new router(this),
     })
-
-    this.checkWidth();
-
 
     setTimeout(function(){
       this.checkForUser();
@@ -29,41 +26,25 @@ const Columbia = React.createClass({
     }
   },
 
-  checkWidth () {
-    var width = $(window).width();
-    if ( width < 993 ) {
-
-    }
-
-  },
-
   render () {
     return (
       <div className="" style={this.state.style} >
-        <div className="ui sidebar vertical menu">
-          <a className="item">
-            1
-          </a>
-          <a className="item">
-            2
-          </a>
-          <a className="item">
-            3
-          </a>
-        </div>
+        <div className="sidebar-segment">
+          <SidebarMenu />
 
-        <div className="pusher" style={{ "paddingTop" : "1px" }}>
-          <CHeader parent = { this } />
-          <CMenu parent = { this } />
-          <div className="ui container" style={{ "padding":"50px"}}>
+          <div className="pusher" style={{ "paddingTop" : "1px" }}>
+            <CHeader parent = { this } />
+            <CMenu parent = { this } />
+            <div className="ui container" style={{ "padding":"50px"}}>
 
-            {
-              this.state.activePage
-            }
+              {
+                this.state.activePage
+              }
 
+            </div>
+
+            <CFoot parent={ this } />
           </div>
-
-          <CFoot parent={ this } />
         </div>
       </div>
     )

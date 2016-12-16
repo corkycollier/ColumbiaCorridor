@@ -24,7 +24,7 @@ const CHeader = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <div className="ui grid doubling stackable">
+        <div className="ui grid doubling ">
           <div className="four wide column">
             <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"120px"}}/>
           </div>
@@ -115,11 +115,11 @@ const LoggedOutButtons = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui button violet" style={{"background" : "#262262" }} onClick={ this.signIn } >
+        <div className="ui button violet" style={{"background" : "#262262" , "marginBottom" : "9px" }} onClick={ this.signIn } >
           Sign In
         </div>
 
-        <div className="ui button violet" style={{"background" : "#262262" }} onClick={ this.signUp } >
+        <div className="ui button violet" style={{"background" : "#262262" , "height" : "36px" , "width" : "84px" , "fontSize" : "13px" , "position" : "relative" , "bottom" : "2px"}} onClick={ this.signUp } >
           Sign Up
         </div>
       </div>
