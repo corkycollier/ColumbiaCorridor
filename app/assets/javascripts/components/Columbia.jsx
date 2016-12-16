@@ -35,10 +35,6 @@ const Columbia = React.createClass({
 
     }
 
-
-    $('.ui.sidebar')
-    .sidebar('attach events', '.toc.item')
-    ;
   },
 
   render () {

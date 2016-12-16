@@ -13,6 +13,37 @@ const SignIn = React.createClass({
 
   },
 
+  updateEmail(e) {
+    this.setState({
+      password: e.currentTarget.value
+    })
+  },
+
+
+  updatePassword(e) {
+    this.setState({
+      password: e.currentTarget.value
+    })
+  },
+
+  signIn () {
+    $.ajax({
+      url: 'session' ,
+      type: 'POST' ,
+      data: {
+        user: {
+          email : this.state.email ,
+          password : this.state.password ,
+        }
+      }, success (a, b, c) {
+        debugger
+      }, error (a, b, c) {
+        debugger
+      }
+
+    })
+  },
+
   render () {
     return (
       <div className="" style={this.state.style}>
@@ -20,12 +51,12 @@ const SignIn = React.createClass({
         <div className="ui form">
           <div className="field">
             <label>Email</label>
-            <input type="text" required />
+            <input type="text" required onChange={ this.updateEmail } />
           </div>
 
           <div className="field">
             <label>Password</label>
-            <input type="password" required />
+            <input type="password" required onChange={ this.updatePassword } />
           </div>
         </div>
 
@@ -178,7 +209,7 @@ const SignUp = React.createClass({
               {
                 this.state.businessCodes.map( function (el) {
                   return (
-                    <option value = { el } >
+                    <option key = { el } value = { el } >
                       { el }
                     </option>
                   )
