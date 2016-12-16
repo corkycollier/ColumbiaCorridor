@@ -90,7 +90,7 @@ const LoggedOutButtons = React.createClass({
   getInitialState () {
     var style = {
       "position" : "absolute" ,
-      "top" : "57px" ,
+      "top" : "53px" ,
       "right" : "0px" ,
     }
 

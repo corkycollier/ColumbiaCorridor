@@ -25,23 +25,23 @@ const CMenu = React.createClass({
     if ( $window.width() > 920 ) {
       this.setState({
         currentMenu: <RegularMenu />
-      })
-    } else {
-      this.setState({
-        currentMenu: <SidebarMenuButton />
-      })
-    }
-  },
+    })
+  } else {
+    this.setState({
+      currentMenu: <SidebarMenuButton />
+  })
+}
+},
 
-  render () {
-    return (
-      <div className="" style={this.state.style}>
-        {
-          this.state.currentMenu
-        }
-      </div>
-    )
-  }
+render () {
+  return (
+    <div className="" style={this.state.style}>
+      {
+        this.state.currentMenu
+      }
+    </div>
+  )
+}
 });
 
 const SidebarMenuButton = React.createClass({
@@ -60,14 +60,14 @@ const SidebarMenuButton = React.createClass({
   },
 
   openSidebar () {
-    $('.ui.sidebar').sidebar('toggle');
+    $('.sidebar').transition();
   },
 
   render () {
     return (
       <div className="ui container" style={this.state.style}>
         <div className="ui icon button" style={{"width" : "100px"}} onClick={ this.openSidebar }>
-          <i className="menu icon" />
+          <i className="sidebar icon" />
         </div>
       </div>
     )
@@ -77,7 +77,6 @@ const SidebarMenuButton = React.createClass({
 const SidebarMenu = React.createClass({
   getInitialState () {
     var style = {
-
     }
 
     return({
@@ -90,12 +89,15 @@ const SidebarMenu = React.createClass({
   },
 
   go (e) {
-    Backbone.history.navigate( e.currentTarget.dataset.path , { trigger : true })
+    Backbone.history.navigate( e.currentTarget.dataset.path , { trigger : true });
+    $('.sidebar').transition();
+
   },
+
 
   render () {
     return (
-      <div className="ui vertical menu sidebar" style={this.state.style}>
+      <div className="ui vertical menu sidebar" style={this.state.style} >
         <a className="item header" data-path="" onClick={ this.go } >
           Home
         </a>
@@ -127,7 +129,6 @@ const SidebarMenu = React.createClass({
         <a className="header item" data-path="contact" onClick={ this.go } >
           Contact
         </a>
-
       </div>
     )
   }
