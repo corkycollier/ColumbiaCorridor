@@ -3,10 +3,10 @@ const Columbia = React.createClass({
     var style = {
 
     }
-
+  debugger
     return({
       style : style ,
-      user : JSON.parse(this.props.user) ,
+      user : this.props.user ,
     })
   },
 

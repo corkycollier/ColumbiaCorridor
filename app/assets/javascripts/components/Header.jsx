@@ -78,7 +78,7 @@ const LoggedInButtons = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui button small red" style={{ "float" : "right" , "margin" : "12px" }}>
+        <div className="ui button small red" style={{ "position" : "absolute" , "right" : "-1px" , "top" : "55px"}}>
           Logout
         </div>
       </div>
