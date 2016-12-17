@@ -114,6 +114,10 @@ const SignUp = React.createClass({
   },
 
   signUp () {
+    debugger
+    $('form').submit(function () {
+      debugger
+    })
   },
 
   render () {
@@ -121,31 +125,37 @@ const SignUp = React.createClass({
       <div className="" style={this.state.style}>
         <h1>Sign Up</h1>
 
-        <div className="ui form">
+        <form className="ui form">
+
+          <div className="field">
+            <label>Username</label>
+            <input type="text" required data-field="username" onChange={ this.updateState } required />
+          </div>
+
           <div className="field">
             <label>Email</label>
-            <input type="text" required data-field="email" onChange={ this.updateState }/>
+            <input type="text" required data-field="email" onChange={ this.updateState } required />
           </div>
 
           <div className="field">
             <label>Password</label>
-            <input type="password" required data-field="password" onChange={ this.updateState }/>
+            <input type="password" required data-field="password" onChange={ this.updateState } required />
           </div>
 
           <div className="field">
             <label>Confirm Password</label>
-            <input type="password" required data-field="password2" onChange={ this.updateState } />
+            <input type="password" required data-field="password2" onChange={ this.updateState } required />
           </div>
 
           <div className="two fields">
             <div className="field">
               <label>First Name</label>
-              <input type="text" required data-field="fname" onChange={ this.updateState } />
+              <input type="text" required data-field="fname" onChange={ this.updateState } required />
             </div>
 
             <div className="field">
               <label>Last Name</label>
-              <input type="text" required data-field="lname" onChange={ this.updateState } />
+              <input type="text" required data-field="lname" onChange={ this.updateState } required />
             </div>
           </div>
 
@@ -224,12 +234,12 @@ const SignUp = React.createClass({
             </select>
           </div>
 
+          <button className="ui button" type="submit" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signUp } >
+            Sign Up
+          </button>
+        </form>
 
-        </div>
 
-        <div className="ui button disabled" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signUp } >
-          Sign Up
-        </div>
       </div>
     )
   }
