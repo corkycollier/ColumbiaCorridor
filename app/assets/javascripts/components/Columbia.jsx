@@ -33,13 +33,11 @@ const Columbia = React.createClass({
         <div className="pusher" style={{ "paddingTop" : "1px" }}>
           <CHeader parent = { this } />
           <CMenu parent = { this } />
-          <div className="ui container" style={{ "padding":"50px"}}>
 
             {
               this.state.activePage
             }
 
-          </div>
 
           <CFoot parent={ this } />
         </div>

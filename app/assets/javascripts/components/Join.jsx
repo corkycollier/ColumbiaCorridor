@@ -2,7 +2,8 @@
 const CJoin = React.createClass({
   getInitialState () {
     var style = {
-      "color" : "#262262"
+      "color" : "#262262" ,
+      "padding" : "60px" ,
     }
 
     return({
@@ -16,7 +17,7 @@ const CJoin = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
+      <div className="ui container" style={this.state.style}>
         <h1>
           Membership
         </h1>

@@ -1,7 +1,8 @@
 const CEvents = React.createClass({
   getInitialState () {
     var style = {
-      "color" : "#262262"
+      "color" : "#262262" ,
+      "padding" : "60px" ,
     }
 
     return({
@@ -15,7 +16,7 @@ const CEvents = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
+      <div className="ui container" style={this.state.style}>
         <h1>
           Events
         </h1>

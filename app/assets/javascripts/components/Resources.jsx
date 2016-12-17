@@ -1,8 +1,9 @@
 const CResources = React.createClass({
   getInitialState () {
     var style = {
-      "color" : "#262262",
-      "fontSize" : "18px"
+      "color" : "#262262" ,
+      "fontSize" : "18px" ,
+      "padding" : "60px" ,
     }
 
     return({
@@ -16,7 +17,7 @@ const CResources = React.createClass({
 
   render () {
     return (
-      <div className="resources" style={this.state.style}>
+      <div className="ui container resources" style={this.state.style}>
         <h1>
           Resources
         </h1>

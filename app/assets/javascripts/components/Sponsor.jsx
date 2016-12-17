@@ -1,7 +1,8 @@
 const CSponsor = React.createClass({
   getInitialState () {
     var style = {
-      "color" : "#262262"
+      "color" : "#262262" ,
+      "padding" : "60px 100px" ,
     }
 
     return({
@@ -15,7 +16,7 @@ const CSponsor = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
+      <div className="ui container" style={this.state.style}>
 
 
         <div className="ui grid doubling stackable">

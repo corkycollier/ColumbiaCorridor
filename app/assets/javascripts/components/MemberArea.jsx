@@ -1,6 +1,8 @@
 const CMemberArea = React.createClass({
   getInitialState () {
     var style = {
+      "color" : "#262262" ,
+      "padding" : "60px 100px" ,
     }
 
     return({
@@ -14,7 +16,7 @@ const CMemberArea = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
+      <div className="ui container" style={this.state.style}>
         <h1>
           Member Area
         </h1>
