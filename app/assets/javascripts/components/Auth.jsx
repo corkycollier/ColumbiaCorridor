@@ -134,9 +134,9 @@ const SignUp = React.createClass({
       type: 'POST',
       data: {user: this.state},
       success: function (a, b, c) {
-        debugger
+        location.href = '';
       }, error: function (a, b, c) {
-        debugger
+        alert('There was an error');
       }
     })
   },

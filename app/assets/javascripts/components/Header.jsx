@@ -75,10 +75,22 @@ const LoggedInButtons = React.createClass({
 
   },
 
+  logout () {
+    $.ajax({
+      url: 'session',
+      type: 'delete',
+      success: function (a, b, c) {
+        location.href = '';
+      }, error: function (a, b, c) {
+        location.href = '';
+      }
+    })
+  },
+
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui button small red" style={{ "position" : "absolute" , "right" : "-1px" , "top" : "55px"}}>
+        <div className="ui button small red" style={{ "position" : "absolute" , "right" : "-1px" , "top" : "55px"}} onClick={ this.logout }>
           Logout
         </div>
       </div>
