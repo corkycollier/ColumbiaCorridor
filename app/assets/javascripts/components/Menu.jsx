@@ -66,7 +66,7 @@ const SidebarMenuButton = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <div className="ui icon button" style={{"width" : "100px"}} onClick={ this.openSidebar }>
+        <div className="ui icon button" style={{"width" : "100px" , "marginBottom" : "16px"}} onClick={ this.openSidebar }>
           <i className="sidebar icon" />
         </div>
       </div>

@@ -2,6 +2,7 @@ const SignIn = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
+      "padding" : "60px"
     }
 
     return({
@@ -14,47 +15,43 @@ const SignIn = React.createClass({
   },
 
   signIn () {
-
     $.ajax({
       url: 'session' ,
       type: 'POST' ,
-      data: {
-        user: {
-          email : this.state.email ,
-          password : this.state.password ,
-        }
-      }, success (a, b, c) {
-      }, error (a, b, c) {
+      data: { user: this.state } ,
+      success (a, b, c) {
+        location.href = ""
+      } , error (a, b, c) {
+        location.href = ""
       }
-
     })
   },
 
   updateState (e) {
     var newData = {};
     newData[ e.currentTarget.dataset.field ] = e.currentTarget.value;
-    this.setState( newData )
+    this.setState( newData );
   },
 
   render () {
     return (
-      <div className="" style={this.state.style}>
+      <div className="ui container" style={this.state.style}>
         <h1>Sign In</h1>
-        <div className="ui form">
+        <form className="ui form" onSubmit={ this.signIn }>
           <div className="field">
             <label>Email</label>
-            <input type="text" required onChange={ this.updateState } />
+            <input type="email" required data-field="email" onChange={ this.updateState } />
           </div>
 
           <div className="field">
             <label>Password</label>
-            <input type="password" required onChange={ this.updateState } />
+            <input type="password" required data-field="password" onChange={ this.updateState } />
           </div>
-        </div>
 
-        <div className="ui button disabled" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} onClick={ this.signIn } >
-          Sign In
-        </div>
+          <button className="ui button" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} type="submit" >
+            Sign In
+          </button>
+        </form>
       </div>
     )
   }
@@ -65,6 +62,7 @@ const SignUp = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
+      "padding" : "60px" ,
     }
 
     var businessCodes = [
@@ -143,7 +141,7 @@ const SignUp = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
+      <div className="ui container" style={this.state.style}>
         <h1>Sign Up</h1>
 
         <form className="ui form" onSubmit={ this.signUp }>

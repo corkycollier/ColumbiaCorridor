@@ -1,7 +1,9 @@
 const MailingList = React.createClass({
   getInitialState () {
     var style = {
-      "textAlign" : "center"
+      "color" : "#262262" ,
+      "textAlign" : "center" ,
+      "padding" : "60px" ,
     }
 
     return({
@@ -15,8 +17,8 @@ const MailingList = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
-        <h1>Sign Up for our Mailing List</h1>
+      <div className="ui container" style={this.state.style}>
+        <h1>Sign Up for our Mailing List!</h1>
         <div className="ui grid centered">
           <div className="eight wide column ui form">
             <div clasName="field">

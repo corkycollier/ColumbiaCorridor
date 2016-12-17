@@ -30,19 +30,19 @@ const CHeader = React.createClass({
           </div>
 
           <div className="four wide column right floated">
-            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "19px" , "right" : "219px", "background" : "#262262" , "width" : "95px" }} onClick={this.goToMailingList}>
+            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "19px" , "right" : "311px", "background" : "#262262" , "width" : "95px" }} onClick={this.goToMailingList}>
               mailing list
             </div>
 
             <a href="https://www.facebook.com/ColumbiaCorridor/" target="_blank">
-              <div className="ui button mini facebook labeled icon" style={{ "position" : "absolute" , "top" : "19px" , "right" : "0px"}} >
+              <div className="ui button mini facebook labeled icon" style={{ "position" : "absolute" , "top" : "19px" , "right" : "91px"}} >
                 <i className="facebook icon" />
                 facebook
               </div>
             </a>
 
             <a href="https://www.linkedin.com/company/columbia-corridor-association" target="_blank">
-              <div className="ui button mini linkedin labeled icon" style={{ "position" : "absolute" , "top" : "19px" , "right" : "112px"}} >
+              <div className="ui button mini linkedin labeled icon" style={{ "position" : "absolute" , "top" : "19px" , "right" : "203px"}} >
                 <i className="linkedin icon" />
                 linkedin
               </div>
@@ -90,7 +90,7 @@ const LoggedInButtons = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui button small red" style={{ "position" : "absolute" , "right" : "-1px" , "top" : "55px"}} onClick={ this.logout }>
+        <div className="ui button small red" style={{ "position" : "absolute" , "right" : "-1px" , "top" : "19px" , "width" : "84px"}} onClick={ this.logout }>
           Logout
         </div>
       </div>
@@ -100,15 +100,7 @@ const LoggedInButtons = React.createClass({
 
 const LoggedOutButtons = React.createClass({
   getInitialState () {
-    var style = {
-      "position" : "absolute" ,
-      "top" : "53px" ,
-      "right" : "0px" ,
-    }
-
-    return({
-      style: style,
-    })
+    return({})
   },
 
   signIn () {
@@ -126,12 +118,12 @@ const LoggedOutButtons = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
-        <div className="ui button violet" style={{"background" : "#262262" , "marginBottom" : "9px" }} onClick={ this.signIn } >
+      <div>
+        <div className="ui button violet" style={{"background" : "#262262" , "position" : "absolute" , "top " : "19px" , "right" : "0px" }} onClick={ this.signIn } >
           Sign In
         </div>
 
-        <div className="ui button violet" style={{"background" : "#262262" , "height" : "36px" , "width" : "84px" , "fontSize" : "13px" , "position" : "relative" , "bottom" : "2px"}} onClick={ this.signUp } >
+        <div className="ui button violet" style={{"background" : "#262262" , "position" : "absolute" , "height" : "36px" , "width" : "84px" , "fontSize" : "13px" , "right" : "0px" , "top" : "60px" }} onClick={ this.signUp } >
           Sign Up
         </div>
       </div>
