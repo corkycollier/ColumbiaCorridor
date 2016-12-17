@@ -21,14 +21,28 @@ const CMemberArea = React.createClass({
           Member Area
         </h1>
 
+        <h3>
+          My Profile
+        </h3>
+        <div className="ui divider">
+        </div>
+
         <div className="ui grid doubling stackable">
           <div className="eight wide column">
-            hi
+            <i>profile</i>
           </div>
 
           <div className="eight wide column">
-            hi
+            <i>profile</i>
           </div>
+        </div>
+
+
+
+        <h3>
+          Member Directory
+        </h3>
+        <div className="ui divider">
         </div>
       </div>
     )
