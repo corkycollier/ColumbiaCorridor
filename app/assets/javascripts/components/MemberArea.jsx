@@ -2,7 +2,7 @@ const CMemberArea = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px 100px" ,
+      "padding" : "60px" ,
     }
 
     return({

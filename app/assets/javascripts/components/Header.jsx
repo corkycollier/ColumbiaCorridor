@@ -30,7 +30,7 @@ const CHeader = React.createClass({
           </div>
 
           <div className="four wide column right floated">
-            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "19px" , "right" : "311px", "background" : "#262262" , "width" : "95px" }} onClick={this.goToMailingList}>
+            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "19px" , "right" : "309px", "background" : "#262262" , "width" : "95px" }} onClick={this.goToMailingList}>
               mailing list
             </div>
 
@@ -90,7 +90,7 @@ const LoggedInButtons = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui button small red" style={{ "position" : "absolute" , "right" : "-1px" , "top" : "19px" , "width" : "84px"}} onClick={ this.logout }>
+        <div className="ui button small red" style={{ "position" : "absolute" , "right" : "0px" , "top" : "19px" , "width" : "84px"}} onClick={ this.logout }>
           Logout
         </div>
       </div>
