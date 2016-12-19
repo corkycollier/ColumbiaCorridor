@@ -21,25 +21,9 @@ const CMemberArea = React.createClass({
           Member Area
         </h1>
 
-        <h3>
-          My Profile
-        </h3>
-
-        <div className="ui grid doubling stackable">
-          <div className="eight wide column">
-            <i>profile</i>
-          </div>
-
-          <div className="eight wide column">
-            <i>profile</i>
-          </div>
-        </div>
-
-        <div className="ui divider">
-        </div>
-
-
         <MemberDirectory parent={ this.props.parent } />
+        <MemberProfile parent={ this.props.parent } />
+        <MemberNews parent={ this.props.parent } />
       </div>
     )
   }
@@ -103,7 +87,7 @@ const MemberDirectory = React.createClass({
                     <tr key={ el.id }>
 
                       <td className="collapsing">
-                        level 
+                        level
                       </td>
 
                       <td className="collapsing">
@@ -135,6 +119,129 @@ const MemberDirectory = React.createClass({
 
           <div className="ui divider">
           </div>
+        </div>
+      )
+    }
+  });
+
+
+  const MemberProfile = React.createClass({
+    getInitialState () {
+
+      var style = {
+        "color" : "#262262" ,
+      }
+
+      return({
+        style: style,
+      })
+    },
+
+    componentDidMount () {
+      $('table').tablesort();
+    },
+
+    render () {
+      return (
+        <div className="" style={this.state.style}>
+          <h3>
+            My Profile
+          </h3>
+
+          <div className="ui grid doubling stackable">
+            <div className="eight wide column">
+              <i>profile</i>
+            </div>
+
+            <div className="eight wide column">
+              <i>profile</i>
+            </div>
+          </div>
+
+          <div className="ui divider">
+          </div>
+
+        </div>
+      )
+    }
+  });
+
+
+
+  const MemberNews = React.createClass({
+    getInitialState () {
+
+      var style = {
+        "color" : "#262262" ,
+      }
+
+      return({
+        style: style,
+      })
+    },
+
+    componentDidMount () {
+      $('table').tablesort();
+    },
+
+    submitNews () {
+      var confirmation = conform("Are you sure?")
+      if ( confirmation ) {
+        $.ajax({
+          url: '/api/news',
+          type: 'POST',
+          data: this.state,
+          success: function (a, b, c) {
+            debugger
+          }, error: function (a, b, c) {
+            debugger
+          }
+        })
+      }
+    },
+
+    updateState (e) {
+      var newData = {};
+      newData[ e.currentTarget.dataset.field ] = e.currentTarget.value;
+      this.setState( newData );
+    },
+
+    render () {
+      return (
+        <div className="" style={this.state.style}>
+          <h3>
+            New News
+          </h3>
+
+          <div className="ui grid doubling stackable">
+            <div className="sixteen wide column">
+
+              <form className="ui form">
+                <div className="two fields">
+                <div className="field">
+                  <label>Title</label>
+                  <input type="text" data-field="title" onChange={ this.updateState }/>
+                  </div>
+                </div>
+
+                <div className="field">
+                  <label>Body</label>
+                  <textarea id="froala-target" data-field="body" type="text" />
+                </div>
+
+
+                <div className="ui button small" onClick={this.submitNews} style={{ "background" : "#262262" , "color" : "white" }}>
+                  Submit News
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+
+          <div className="ui divider">
+          </div>
+
         </div>
       )
     }
