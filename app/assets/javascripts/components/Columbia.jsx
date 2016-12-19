@@ -5,7 +5,10 @@ const Columbia = React.createClass({
     }
     return({
       style : style ,
-      user : this.props.user ,
+      user : this.props.app.current_user ,
+      members : this.props.app.members ,
+      news : this.props.app.news ,
+      events : this.props.app.events ,
     })
   },
 

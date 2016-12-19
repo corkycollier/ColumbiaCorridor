@@ -187,13 +187,18 @@ const MemberDirectory = React.createClass({
     submitNews () {
       var confirmation = confirm("Are you sure?")
       if ( confirmation ) {
+        debugger
         $.ajax({
           url: '/api/news',
           type: 'POST',
-          data: this.state,
-          success: function (a, b, c) {
-            debugger
-          }, error: function (a, b, c) {
+          data: { news: this.state },
+          success: function (news, resp, obj) {
+            alert('News #' + news.id + " was created. ")
+            this.setState({
+              title : "" ,
+              body : "" ,
+            })
+          }.bind(this), error: function (a, b, c) {
             debugger
           }
         })
@@ -220,20 +225,18 @@ const MemberDirectory = React.createClass({
                 <div className="two fields">
                 <div className="field">
                   <label>Title</label>
-                  <input type="text" data-field="title" onChange={ this.updateState }/>
+                  <input type="text" data-field="title" onChange={ this.updateState } value={ this.state.title }/>
                   </div>
                 </div>
 
                 <div className="field">
                   <label>Body</label>
-                  <textarea id="froala-target" data-field="body" type="text" />
+                  <textarea id="froala-target" type="text" data-field="body" onChange={ this.updateState } value={ this.state.body } />
                 </div>
-
 
                 <div className="ui button small" onClick={this.submitNews} style={{ "background" : "#262262" , "color" : "white" }}>
                   Submit News
                 </div>
-
               </form>
             </div>
 

@@ -19,6 +19,7 @@ const router = Backbone.Router.extend({
     "contact":"contact",
     "sign-up":"signUp",
     "sign-in":"signIn",
+    "news/:id":"news",
     "mailing-list":"mailingList",
   },
 
@@ -26,6 +27,14 @@ const router = Backbone.Router.extend({
     this.parent.setState({
       activePage: [
         <Home parent={this.parent} key="home" />
+      ]
+    });
+  },
+
+  news (id) {
+    this.parent.setState({
+      activePage: [
+        <News parent={this.parent} id={ id } key="news" />
       ]
     });
   },

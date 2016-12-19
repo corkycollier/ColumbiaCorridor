@@ -2,7 +2,7 @@ const CResources = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "fontSize" : "18px" ,
+      "fontSize" : "16px" ,
       "padding" : "60px" ,
     }
 
@@ -15,6 +15,10 @@ const CResources = React.createClass({
 
   },
 
+  goToNews(e) {
+    Backbone.history.navigate("#/news/" + e.currentTarget.dataset.id , {trigger: true})
+  },
+
   render () {
     return (
       <div className="ui container resources" style={this.state.style}>
@@ -25,8 +29,32 @@ const CResources = React.createClass({
         <div className="cca-news">
           <h2>CCA News</h2>
           <div className="ui grid doubling stackable">
-            <div className="eight wide column">
-              <i>Coming soon...</i>
+            <div className="eight wide column" style={{"height" : "50vh" , "overflowY" : "scroll" }}>
+              {
+                this.props.parent.state.news.map( (el) => {
+                  return (
+                    <div key={ el.id } data-id={ el.id } onClick={ this.goToNews }>
+                      <div style={{"marginBottom" : "8px"}}>
+                        <b>
+                          { el.title }
+                        </b>
+                      </div>
+
+                      <div>
+                        { el.body.slice(0, 128) }
+                      </div>
+
+                      <div style={{"marginTop" : "13px"}}>
+                        <a data-id={ el.id } onClick={ this.goToNews } >
+                          read more
+                        </a>
+                      </div>
+
+                      <div className="ui divider"></div>
+                    </div>
+                  )
+                }.bind(this))
+              }
             </div>
 
             <div className="eight wide column">

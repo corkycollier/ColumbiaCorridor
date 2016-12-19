@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, uniqueness: true
   after_initialize :ensure_session_token
+  has_many :news
 
   def safe_show
     {
