@@ -9,8 +9,18 @@ class User < ActiveRecord::Base
 
   def safe_show
     {
-      id: self.id,
-      email: self.email
+      id: self.id ,
+      email: self.email ,
+      members: User.all.collect{|user| user.safe_show2 } ,
+      # events : Event.all ,
+      # news : New.all ,
+    }
+  end
+
+  def safe_show2
+    {
+      id: self.id ,
+      email: self.email ,
     }
   end
 

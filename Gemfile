@@ -17,6 +17,8 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'thin'
 gem 'figaro'
 gem 'faker'
+gem 'constantcontact', '~> 2.2.0'
+
 
 group :development, :test do
   gem 'byebug'

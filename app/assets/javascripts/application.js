@@ -15,6 +15,7 @@
 //= require react
 //= require react_ujs
 //= require semantic-ui
+//= require tablesort
 //= require underscore
 //= require backbone
 //= require backbone_rails_sync
