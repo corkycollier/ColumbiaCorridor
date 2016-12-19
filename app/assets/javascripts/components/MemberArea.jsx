@@ -185,7 +185,7 @@ const MemberDirectory = React.createClass({
     },
 
     submitNews () {
-      var confirmation = conform("Are you sure?")
+      var confirmation = confirm("Are you sure?")
       if ( confirmation ) {
         $.ajax({
           url: '/api/news',
