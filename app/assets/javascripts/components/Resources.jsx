@@ -58,6 +58,7 @@ const Resources = React.createClass({
             </div>
 
             <div className="eight wide column">
+              <img className="ui large image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1482225183/RESOURCES_NEWS_1_03_k64ssu.jpg" />
             </div>
           </div>
 
