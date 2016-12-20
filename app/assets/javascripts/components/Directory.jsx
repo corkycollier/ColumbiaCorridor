@@ -18,15 +18,15 @@ const Directory = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h3>
+        <h2>
           Directory
-        </h3>
+        </h2>
 
 
         <table className="ui single striped line table" style={{"color":"#262262"}}>
           <thead>
             <tr>
-              <th>Level</th>
+              <th></th>
 
               <th>Name</th>
 
@@ -47,7 +47,7 @@ const Directory = React.createClass({
                   <tr key={ el.id }>
 
                     <td className="collapsing">
-                      level
+                      { el.level }  
                     </td>
 
                     <td className="collapsing">

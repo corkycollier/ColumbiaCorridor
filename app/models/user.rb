@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
       company_business_type: self.company_business_type ,
       members: User.all.collect{ |user| user.safe_show2 } ,
       events: Event.all.collect{ |event| event.safe_show } ,
-      news: New.all.collect{ |thing| thing.safe_show} ,
+      news: New.all.collect{ |thing| thing.safe_show}.reverse ,
     }
   end
 

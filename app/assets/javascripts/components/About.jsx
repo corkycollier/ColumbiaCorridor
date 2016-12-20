@@ -22,7 +22,7 @@ const AboutUs = React.createClass({
             About Us
           </h1>
 
-          <div className="ui grid doubling stackable" style={{ "margin" : "20px" }}>
+          <div className="ui grid doubling stackable" style={{ "margin" : "20px 0px" }}>
             <div className="eight wide column" style={{ "fontSize" : "16px" , "height" : "50vh"  , "overflowY" : "scroll" }}>
               <p>
                 The Columbia Corridor is the single largest economic corridor in Oregon, stretching from the Willamette River in the west to the Sandy River in the east. It’s the largest industrial area in the state, with 2,500 businesses employing 65,000 people with more middle wage jobs than anywhere else in the state. 40% of those employees live within five miles of work.

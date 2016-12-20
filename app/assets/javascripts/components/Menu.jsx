@@ -85,13 +85,11 @@ const SidebarMenu = React.createClass({
   },
 
   componentDidMount () {
-
   },
 
   go (e) {
     Backbone.history.navigate( e.currentTarget.dataset.path , { trigger : true });
     $('.sidebar').transition();
-
   },
 
 
@@ -118,7 +116,7 @@ const SidebarMenu = React.createClass({
           Join
         </a>
 
-        <a className="item header member-area" data-path="member-area" onClick={ this.go } >
+        <a className="item header" data-path="member-area" onClick={ this.go } >
           Member Area
         </a>
 
@@ -147,7 +145,10 @@ const RegularMenu = React.createClass({
   },
 
   componentDidMount () {
-
+    $('.dropdown').dropdown({
+      on: 'hover' ,
+      detachable: true ,
+    });
   },
 
   go (e) {
@@ -180,8 +181,23 @@ const RegularMenu = React.createClass({
             Join
           </a>
 
-          <a className="item header member-area" data-path="member-area" onClick={ this.go } >
+          <a className="item member-area ui dropdown header" style={{"fontSize" : "14px"}}>
             Member Area
+            <div data-path="member-area" onClick={this.go} style={{ "position" : "absolute" , "height" : "100%" , "width" : "100%" , "top" : "0px" , "left" : "0px" }}/>
+
+            <div className="menu">
+              <div className="item" data-path="directory" onClick={ this.go } >
+                Directory
+              </div>
+
+              <div className="item" data-path="profile" onClick={ this.go } >
+                Profile
+              </div>
+
+              <div className="item" data-path="make-news" onClick={ this.go } >
+                Make News
+              </div>
+            </div>
           </a>
 
           <a className="header item" data-path="sponsor" onClick={ this.go } >

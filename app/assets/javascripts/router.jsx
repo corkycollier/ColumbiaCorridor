@@ -97,7 +97,7 @@ const router = Backbone.Router.extend({
 
 
   contact () {
-    var page = <Sponsor parent={this.parent} key="contact" /> ;
+    var page = <Contact parent={this.parent} key="contact" /> ;
     this.go( page )
   },
 

@@ -33,14 +33,13 @@ const MemberArea = React.createClass({
           </div>
 
           <div>
-            <a href="#/new-news">
+            <a href="#/make-news">
               Create News
             </a>
           </div>
         </div>
 
         <div className="ui clearing divider"></div>
-        <MemberNews parent={ this.props.parent } />
       </div>
     )
   }
@@ -51,6 +50,7 @@ const MemberNews = React.createClass({
 
     var style = {
       "color" : "#262262" ,
+      "padding" : "60px" ,
     }
 
     return({
@@ -90,7 +90,7 @@ const MemberNews = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
+      <div className="ui container" style={this.state.style}>
         <h3>
           New News
         </h3>
