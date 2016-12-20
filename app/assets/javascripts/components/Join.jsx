@@ -1,5 +1,5 @@
 
-const CJoin = React.createClass({
+const Join = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,

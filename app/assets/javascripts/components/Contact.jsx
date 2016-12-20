@@ -1,5 +1,5 @@
 
-const CContact = React.createClass({
+const Contact = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       flash[:errors] = ["Invalid email and/or password"]
-      render json: {"403": "User not found"}
+      render json: @user.errors.full_mesages
     end
   end
 

@@ -17,6 +17,9 @@ const router = Backbone.Router.extend({
     "join":"join",
     "sponsor":"sponsor",
     "contact":"contact",
+    "directory":"directory",
+    "make-news":"makeNews",
+    "edit-profile":"editProfile",
     "sign-up":"signUp",
     "sign-in":"signIn",
     "news/:id":"news",
@@ -24,106 +27,98 @@ const router = Backbone.Router.extend({
   },
 
   home () {
-    this.parent.setState({
-      activePage: [
-        <Home parent={this.parent} key="home" />
-      ]
-    });
+    var page = <Home parent={this.parent} key="home" />;
+    this.go( page );
   },
 
   news (id) {
-    this.parent.setState({
-      activePage: [
-        <News parent={this.parent} id={ id } key="news" />
-      ]
-    });
-  },
+    var page;
 
-  aboutUs () {
-    this.parent.setState({
-      activePage: [
-        <CAboutUs parent={this.parent} key="home" />
-      ]
-    });
-  },
+    if (!this.parent.state.user) {
+      page = <Home parent={this.parent} key="home" /> ;
+    } else {
+      page = <News parent={this.parent} id={ id } key="news" /> ;
+    }
 
-  events () {
-    this.parent.setState({
-      activePage: [
-        <CEvents parent={this.parent} key="home" />
-      ]
-    });
-  },
-
-  resources () {
-    this.parent.setState({
-      activePage: [
-        <CResources parent={this.parent} key="home" />
-      ]
-    });
+    this.go( page );
   },
 
   memberArea () {
+    var page;
+
     if (!this.parent.state.user) {
-      this.parent.setState({
-        activePage: [
-          <Home parent={this.parent} key="home" />
-        ]
-      });
+      page = <Home parent={this.parent} key="home" /> ;
     } else {
-      this.parent.setState({
-        activePage: [
-          <CMemberArea parent={this.parent} key="home" />
-        ]
-      });
+      page = <MemberArea parent={this.parent} key="member-area" /> ;
     }
+
+    this.go( page );
+  },
+
+  directory () {
+    var page = <Directory parent={this.parent} key="directory" />
+    this.go( page );
+  },
+
+  editProfile () {
+    var page = <Profile parent={this.parent} key="edit-profile" />;
+    this.go( page );
+  },
+
+  makeNews () {
+    var page = <MemberNews parent={this.parent} key="make-news" />;
+    this.go( page )
+  },
+
+  aboutUs () {
+    var page = <AboutUs parent={this.parent} key="about-us" />;
+    this.go( page )
+  },
+
+  events () {
+    var page = <Events parent={this.parent} key="events" /> ;
+    this.go( page )
+  },
+
+  resources () {
+    var page = <Resources parent={this.parent} key="resources" /> ;
+    this.go( page )
   },
 
   join () {
-    this.parent.setState({
-      activePage: [
-        <CJoin parent={this.parent} key="join" />
-      ]
-    });
+    var page = <Join parent={this.parent} key="join" /> ;
+    this.go( page )
   },
 
   sponsor () {
-    this.parent.setState({
-      activePage: [
-        <CSponsor parent={this.parent} key="home" />
-      ]
-    });
+    var page = <Sponsor parent={this.parent} key="sponsor" /> ;
+    this.go( page )
   },
 
+
   contact () {
-    this.parent.setState({
-      activePage: [
-        <CContact parent={this.parent} key="home" />
-      ]
-    });
+    var page = <Sponsor parent={this.parent} key="contact" /> ;
+    this.go( page )
   },
 
   signIn () {
-    this.parent.setState({
-      activePage: [
-        <SignIn parent={this.parent} key="home" />
-      ]
-    });
+    var page = <SignIn parent={this.parent} key="sign-in" /> ;
+    this.go( page )
   },
 
   signUp () {
-    this.parent.setState({
-      activePage: [
-        <SignUp parent={this.parent} key="home" />
-      ]
-    });
+    var page = <SignIn parent={this.parent} key="sign-up" /> ;
+    this.go( page )
   },
 
   mailingList () {
-    this.parent.setState({
-      activePage: [
-        <MailingList parent={this.parent} key="mailing-list" />
-      ]
-    });
+    var page = <MailingList parent={this.parent} key="mailing-list" /> ;
+    this.go( page )
   },
+
+  go ( page ) {
+    this.parent.setState({
+      activePage: [ page ]
+    });
+  }
 })

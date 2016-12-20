@@ -22,7 +22,7 @@ const SignIn = React.createClass({
       success (a, b, c) {
         location.href = ""
       } , error (a, b, c) {
-        location.href = ""
+        alert("Email/password combination not found.")
       }
     })
   },
@@ -38,10 +38,10 @@ const SignIn = React.createClass({
       <div className="ui container" style={this.state.style}>
         <h1>Sign In</h1>
         <form className="ui form" onSubmit={ this.signIn }>
-          <div className="field">
-            <label>Email</label>
-            <input type="email" required data-field="email" onChange={ this.updateState } />
-          </div>
+            <div className="field">
+              <label>Email</label>
+              <input type="email" required data-field="email" onChange={ this.updateState } />
+            </div>
 
           <div className="field">
             <label>Password</label>
@@ -91,7 +91,7 @@ const SignUp = React.createClass({
     return({
       style : style ,
       businessCodes : businessCodes ,
-      email : "",
+      user : {},
     })
   },
 
@@ -100,6 +100,7 @@ const SignUp = React.createClass({
       fields: {
         username  : 'empty',
         email     : 'empty',
+        phone     : 'empty',
         password  : 'empty',
         password2 : 'empty',
         fname     : ['minLength[6]', 'empty'],
@@ -121,16 +122,18 @@ const SignUp = React.createClass({
   },
 
   updateState (e) {
-    var newData = {};
-    newData[ e.currentTarget.dataset.field ] = e.currentTarget.value;
-    this.setState( newData );
+    var newUser = this.state.user;
+    newUser[ e.currentTarget.dataset.field ] = e.currentTarget.value;
+    this.setState({
+      user : newUser
+    });
   },
 
   signUp () {
     $.ajax({
       url: '/users',
       type: 'POST',
-      data: {user: this.state},
+      data: {user: this.state.user},
       success: function (a, b, c) {
         location.href = '';
       }, error: function (a, b, c) {
@@ -171,13 +174,18 @@ const SignUp = React.createClass({
           <div className="two fields">
             <div className="field">
               <label>First Name <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/></label>
-              <input type="text" required data-field="fname" onChange={ this.updateState } required />
+              <input type="text" required data-field="first_name" onChange={ this.updateState } required />
             </div>
 
             <div className="field">
               <label>Last Name <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/></label>
-              <input type="text" required data-field="lname" onChange={ this.updateState } required />
+              <input type="text" required data-field="last_name" onChange={ this.updateState } required />
             </div>
+          </div>
+
+          <div className="field">
+            <label>Phone</label>
+            <input type="text" data-field="phone" onChange={ this.updateState } />
           </div>
 
           <div className="field">
@@ -216,7 +224,7 @@ const SignUp = React.createClass({
 
           <div className="field">
             <label>Mailing Address</label>
-            <input type="text" data-field="company_mailing_address" onChange={ this.updateState } />
+            <input type="text" data-field="company_address" onChange={ this.updateState } />
           </div>
 
           <div className="three fields">

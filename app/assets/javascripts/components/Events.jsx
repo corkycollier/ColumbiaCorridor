@@ -1,4 +1,4 @@
-const CEvents = React.createClass({
+const Events = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,

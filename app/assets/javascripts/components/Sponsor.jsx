@@ -1,4 +1,4 @@
-const CSponsor = React.createClass({
+const Sponsor = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,

@@ -1,4 +1,4 @@
-const CAboutUs = React.createClass({
+const AboutUs = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,

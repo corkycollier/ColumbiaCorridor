@@ -27,9 +27,11 @@ const News = React.createClass({
 
 
             <div className="ui padded segment" style={{"margin" : "60px 0px"}}>
-              <h2 className="ui header">
+              <h2 className="ui header left floated">
                 { this.state.title }
               </h2>
+
+              <div className="ui clearing divider"></div>
 
               <div>
                 { this.state.body }

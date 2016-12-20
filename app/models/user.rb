@@ -8,20 +8,56 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   has_many :news
 
+  def schema
+
+  end
+
   def safe_show
     {
       id: self.id ,
+      username: self.username ,
       email: self.email ,
-      members: User.all.collect{|user| user.safe_show2 } ,
-      # events : Event.all ,
-      # news : New.all ,
+      phone: self.phone ,
+      password: self.password ,
+      first_name: self.first_name ,
+      last_name: self.last_name ,
+      user_address: self.user_address ,
+      user_city: self.user_city ,
+      user_state: self.user_state ,
+      user_zip: self.user_zip ,
+      company_name: self.company_name ,
+      company_address: self.company_address ,
+      company_city: self.company_city ,
+      company_state: self.company_state ,
+      company_zip: self.company_zip ,
+      company_country: self.company_country ,
+      company_business_type: self.company_business_type ,
+      members: User.all.collect{ |user| user.safe_show2 } ,
+      events: Event.all.collect{ |event| event.safe_show } ,
+      news: New.all.collect{ |thing| thing.safe_show} ,
     }
   end
 
   def safe_show2
     {
       id: self.id ,
+      username: self.username ,
       email: self.email ,
+      phone: self.phone ,
+      password: self.password ,
+      first_name: self.first_name ,
+      last_name: self.last_name ,
+      user_address: self.user_address ,
+      user_city: self.user_city ,
+      user_state: self.user_state ,
+      user_zip: self.user_zip ,
+      company_name: self.company_name ,
+      company_address: self.company_address ,
+      company_city: self.company_city ,
+      company_state: self.company_state ,
+      company_zip: self.company_zip ,
+      company_country: self.company_country ,
+      company_business_type: self.company_business_type ,
     }
   end
 

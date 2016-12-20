@@ -1,4 +1,4 @@
-const CResources = React.createClass({
+const Resources = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
@@ -26,7 +26,7 @@ const CResources = React.createClass({
           Resources
         </h1>
 
-        <div className="cca-news">
+        <div className="cca-news" style={{ "marginBottom" : "56px" }}>
           <h2>CCA News</h2>
           <div className="ui grid doubling stackable">
             <div className="eight wide column" style={{"height" : "50vh" , "overflowY" : "scroll" }}>
@@ -61,11 +61,13 @@ const CResources = React.createClass({
             </div>
           </div>
 
-          <div className="ui divider" />
         </div>
 
+        <div className="ui divider" style={{ "marginTop" : "24px" }}/>
+
+
         <div className="cca-news">
-          <h2>Groundwater Protection Program</h2>
+          <h2 style={{"marginTop" : "60px" }}>Groundwater Protection Program</h2>
           <div className="ui grid doubling stackable">
             <div className="sixteen wide column">
               <h3>Why it exists:</h3>
@@ -96,10 +98,12 @@ const CResources = React.createClass({
           <div className="ui divider" />
         </div>
 
-        <div className="resource-full">
-          <h2>ResourceFULL Use</h2>
+        <div className="resource-full"   style={{"margin":"60px 0px"}}>
+          <h2 style={{ "marginBottom" : "34px" }}>
+            ResourceFULL Use
+          </h2>
 
-          <div className="ui grid doubling stackable" style={{"marginTop":"24px"}}>
+          <div className="ui grid doubling stackable">
             <div className="eight wide column" style={{"height":"50vh","overflowY":"scroll"}}>
               <p>
                 At a 2006 CCA breakfast forum, ResourceFULL Use was born.
@@ -128,55 +132,56 @@ const CResources = React.createClass({
             <div className="eight wide column" style={{"height":"50vh","overflowY":"scroll"}}>
               <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg"/>
               <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg"/>
-
             </div>
           </div>
+        </div>
 
 
-          <div className="ui grid" style={{"marginTop":"42px"}}>
-            <div className="sixteen wide column">
-              The ResourceFull Use program is different from traditional passive web-based exchanges in these important ways:
-              <ul style={{"marginBottom":"24px"}}>
-                <li>It is actively facilitated. Whereas passive exchange databases
-                  rely on the user to identify exchanges, ResourceFull Use does
-                  not rely only on a passive database. Facilitated workshops
-                  and convened business association events provide venues for
-                  organization to actively explore potential exchanges.
-                </li>
-                <li>
-                  It looks holistically at all resource flows.
-                  Participating organizations map their resource inputs and outputs
-                  through the whole organization rather than just focusing on
-                  individual waste streams or input needs.
-                </li>
-                <li>
-                  It leverages local business associations and government programs. The exchange uses existing programs and relationships to
-                  build awareness and expand the use. It is local. It reduces
-                  transportation costs and promotes community.
-                </li>
-                <li>
-                  It is flexible. The program encompasses more than material
-                  resources. The process allows for exchanges involving space,
-                  equipment, energy, and transportation.
-                </li>
-              </ul>
+        <div className="ui divider"></div>
 
-              <p>
-                The ResourceFull Use Project started in 2006 as the result of collaboration between Zero WasteAlliance, a Portland nonprofit organization and Columbia Corridor Association. In its first phase the ResourceFull Use program found a home for 250 gallons of paint and reduced 3 tons of greenhouse gasses.
-              </p>
+        <div className="ui grid" style={{"margin":"40px 0px"}}>
+          <div className="sixteen wide column">
+            The ResourceFull Use program is different from traditional passive web-based exchanges in these important ways:
+            <ul style={{"marginBottom":"24px"}}>
+              <li>It is actively facilitated. Whereas passive exchange databases
+                rely on the user to identify exchanges, ResourceFull Use does
+                not rely only on a passive database. Facilitated workshops
+                and convened business association events provide venues for
+                organization to actively explore potential exchanges.
+              </li>
+              <li>
+                It looks holistically at all resource flows.
+                Participating organizations map their resource inputs and outputs
+                through the whole organization rather than just focusing on
+                individual waste streams or input needs.
+              </li>
+              <li>
+                It leverages local business associations and government programs. The exchange uses existing programs and relationships to
+                build awareness and expand the use. It is local. It reduces
+                transportation costs and promotes community.
+              </li>
+              <li>
+                It is flexible. The program encompasses more than material
+                resources. The process allows for exchanges involving space,
+                equipment, energy, and transportation.
+              </li>
+            </ul>
 
-              <p>
-                The program has benefited from advisory, funding, and in-kind support from a wide cross- section of organizations including Pacific Northwest Pollution Prevention Resource Center, The Boeing Foundation, Cadmus Group (formely Quantec, LLC). Oregon Department of Environmental Quality (DEQ), Portland Development Commission (PDC), City of Portland’s Recycle at Work Program, Portland General Electric (PGE), City of Gresham, Portland Water Bureau, Columbia Corridor Association (CCA), Zero Waste Alliance (ZWA), Portland Metro, Venture Portland and Portland Office of Sustainable Development.
-              </p>
+            <p>
+              The ResourceFull Use Project started in 2006 as the result of collaboration between Zero WasteAlliance, a Portland nonprofit organization and Columbia Corridor Association. In its first phase the ResourceFull Use program found a home for 250 gallons of paint and reduced 3 tons of greenhouse gasses.
+            </p>
 
-              <p>
-                The program is designed to benefit the manufacturing and industrial sector in the greater Portland, Oregon metro area. This program fills the needs of under-served manufacturing and industrial sectors.
-              </p>
+            <p>
+              The program has benefited from advisory, funding, and in-kind support from a wide cross- section of organizations including Pacific Northwest Pollution Prevention Resource Center, The Boeing Foundation, Cadmus Group (formely Quantec, LLC). Oregon Department of Environmental Quality (DEQ), Portland Development Commission (PDC), City of Portland’s Recycle at Work Program, Portland General Electric (PGE), City of Gresham, Portland Water Bureau, Columbia Corridor Association (CCA), Zero Waste Alliance (ZWA), Portland Metro, Venture Portland and Portland Office of Sustainable Development.
+            </p>
 
-              <p>
-                Thank you: <b>The Boeing Company</b>, <b>Metro</b>.
-              </p>
-            </div>
+            <p>
+              The program is designed to benefit the manufacturing and industrial sector in the greater Portland, Oregon metro area. This program fills the needs of under-served manufacturing and industrial sectors.
+            </p>
+
+            <p>
+              Thank you: <b>The Boeing Company</b>, <b>Metro</b>.
+            </p>
           </div>
         </div>
       </div>
