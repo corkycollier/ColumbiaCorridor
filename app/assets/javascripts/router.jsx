@@ -107,7 +107,7 @@ const router = Backbone.Router.extend({
   },
 
   signUp () {
-    var page = <SignIn parent={this.parent} key="sign-up" /> ;
+    var page = <SignUp parent={this.parent} key="sign-up" /> ;
     this.go( page )
   },
 

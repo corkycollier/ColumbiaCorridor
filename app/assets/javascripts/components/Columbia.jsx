@@ -34,7 +34,7 @@ const Columbia = React.createClass({
         <SidebarMenu />
 
         <div className="pusher" style={{ "paddingTop" : "1px" }}>
-          <CHeader parent = { this } />
+          <Header parent = { this } />
           <CMenu parent = { this } />
 
             {
@@ -42,7 +42,7 @@ const Columbia = React.createClass({
             }
 
 
-          <CFoot parent={ this } />
+          <Footer parent={ this } />
         </div>
       </div>
     )

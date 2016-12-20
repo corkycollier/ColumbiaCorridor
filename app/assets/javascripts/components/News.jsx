@@ -24,8 +24,6 @@ const News = React.createClass({
       <div className="ui container" style={ this.state.style } >
         <div className="ui grid centered">
           <div className="twelve wide column">
-
-
             <div className="ui padded segment" style={{"margin" : "60px 0px"}}>
               <h2 className="ui header left floated">
                 { this.state.title }

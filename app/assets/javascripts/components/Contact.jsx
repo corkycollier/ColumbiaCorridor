@@ -3,7 +3,9 @@ const Contact = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px 100px" ,
+      "padding" : "25px" ,
+      "paddingBottom" : "45px" ,
+
     }
 
     return({

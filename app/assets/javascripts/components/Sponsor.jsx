@@ -2,7 +2,8 @@ const Sponsor = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px 100px" ,
+      "padding" : "25px" ,
+      "paddingBottom" : "45px" ,
     }
 
     return({
@@ -22,7 +23,7 @@ const Sponsor = React.createClass({
         <div className="ui grid doubling stackable">
           <div className="eight wide column">
             <h1>
-              FORUM SPONSORSHIPS
+              Forum Sponsorships
             </h1>
 
             <h4>
@@ -79,7 +80,7 @@ const Sponsor = React.createClass({
 
           <div className="eight wide column">
             <h1>
-              GOLF TOURNAMENT SPONSORSHIPS
+              Golf Tournament Sponsorships
             </h1>
 
             <p>

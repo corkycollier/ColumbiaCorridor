@@ -1,5 +1,5 @@
 
-const CFoot = React.createClass({
+const Footer = React.createClass({
   getInitialState () {
     var style = {
       "marginTop" : "24px",
@@ -26,7 +26,7 @@ const CFoot = React.createClass({
     return (
       <div className="" style={this.state.style}>
 
-        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#fff" , "minHeight" : "166px" , "marginBottom" : "25px" , "textAlign" : "center" }}>
+        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#fff" , "minHeight" : "166px" , "marginBottom" : "14px" , "textAlign" : "center" , "marginTop" : "-24px" }}>
           <div className="five wide column" style = {{ "textAlign" : "center" }} >
             <h2>Upcoming Events</h2>
               CCA’s 30th Annual Meeting: the roads look good and the luncheon is on!
@@ -47,7 +47,7 @@ const CFoot = React.createClass({
         </div>
 
         <div className="footer">
-          <div className="ui grid centered stackable" style={{ "background" : "#262261" , "color" : "#fff" , "paddingBottom" : "25px" }}>
+          <div className="ui grid centered stackable" style={{ "background" : "#262261" , "color" : "#fff" , "paddingBottom" : "15px" }}>
             <div className="one wide column"></div>
 
             <div className="five wide column">

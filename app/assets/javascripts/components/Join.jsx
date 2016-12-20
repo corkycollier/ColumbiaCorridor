@@ -3,7 +3,8 @@ const Join = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px" ,
+      "padding" : "25px" ,
+      "paddingBottom" : "88px" ,
     }
 
     return({
