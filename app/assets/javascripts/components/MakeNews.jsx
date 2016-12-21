@@ -31,6 +31,7 @@ const MakeNews = React.createClass({
             title : "" ,
             body : "" ,
           });
+          location.href = "/#member-area"
         }.bind(this), error: function (a, b, c) {
           alert("There was an error. News was not created.")
         }

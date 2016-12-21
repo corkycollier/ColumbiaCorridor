@@ -26,7 +26,7 @@ const MemberArea = React.createClass({
           Member Area
         </h1>
 
-        <div style={{ "fontSize" : "21px" , "lineHeight" : "29px" }}>
+        <div style={{ "fontSize" : "19px" , "lineHeight" : "29px" }}>
           <div>
             <a href="#/directory">Directory</a>
           </div>
@@ -46,34 +46,40 @@ const MemberArea = React.createClass({
 
         <div className="ui clearing divider"></div>
 
-        <h2>Member News</h2>
+        <div style={{ "height" : "40vh" , "overflowY" : "scroll" }}>
+          <h3>Member News</h3>
 
-        {
-          this.props.parent.state.news.map(function(el) {
-            if (el.cca_only) {
-              return(
-                <div key={ el.id } data-id={ el.id } >
-                  <div style={{"marginBottom" : "2px"}}>
-                    <b>
-                      { el.title }
-                    </b>
+          {
+            this.props.parent.state.news.map(function(el) {
+              if (el.cca_only) {
+                return(
+                  <div key={ el.id } data-id={ el.id } >
+                    <div style={{"marginBottom" : "2px"}}>
+                      <b>
+                        { el.title }
+                      </b>
+
+                      <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
+                        by { el.author } | { el.created_at.toString().slice(0, 10) }
+                      </span>
+                    </div>
+                    <div>
+                      { el.body.slice(0, 328) }
+                    </div>
+
+                    <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
+                      <a data-id={ el.id } onClick={ this.goToNews } >
+                        read more
+                      </a>
+                    </div>
+
                   </div>
+                )
+              }
+            }.bind(this))
+          }
 
-                  <div>
-                    { el.body.slice(0, 328) }
-                  </div>
-
-                  <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
-                    <a data-id={ el.id } onClick={ this.goToNews } >
-                      read more
-                    </a>
-                  </div>
-
-                </div>
-              )
-            }
-          }.bind(this))
-        }
+        </div>
 
         <div className="ui clearing divider"></div>
 
