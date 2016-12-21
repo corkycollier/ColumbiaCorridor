@@ -25,7 +25,7 @@ const MailingList = React.createClass({
               <input type="text" placeholder="Email:" />
             </div>
 
-            <div className="ui button purple" style = {{ "marginTop" : "12px" , "background" : "#262262" }}>
+            <div className="ui button purple floated center" style = {{ "marginTop" : "12px" , "background" : "#262262" }}>
               Sign Up
             </div>
           </div>

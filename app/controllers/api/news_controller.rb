@@ -23,7 +23,7 @@ module Api
     private
 
     def news_params
-      params.require(:news).permit(:title, :body)
+      params.require(:news).permit(:title, :body, :cca_only)
     end
   end
 end

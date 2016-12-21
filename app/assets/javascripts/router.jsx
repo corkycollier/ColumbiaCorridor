@@ -66,7 +66,7 @@ const router = Backbone.Router.extend({
   },
 
   makeNews () {
-    var page = <MemberNews parent={this.parent} key="make-news" />;
+    var page = <MakeNews parent={this.parent} key="make-news" />;
     this.go( page )
   },
 

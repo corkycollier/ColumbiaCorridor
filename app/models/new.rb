@@ -7,6 +7,7 @@ class New < ActiveRecord::Base
       user_id: self.user_id ,
       title: self.title ,
       body: self.body ,
+      cca_only: self.cca_only ,
     }
   end
 end

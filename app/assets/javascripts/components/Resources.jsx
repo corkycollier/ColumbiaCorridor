@@ -27,11 +27,12 @@ const Resources = React.createClass({
         </h1>
 
         <div className="cca-news" style={{ "marginBottom" : "56px" }}>
-          <h2>CCA News</h2>
+          <h2 style={{ "marginBottom" : "12px" }}>News</h2>
           <div className="ui grid doubling stackable">
             <div className="eight wide column" style={{"height" : "50vh" , "overflowY" : "scroll" }}>
               {
                 this.props.parent.state.news.map( (el) => {
+                  if (el.cca_only) { return; }
                   return (
                     <div key={ el.id } data-id={ el.id } onClick={ this.goToNews }>
                       <div style={{"marginBottom" : "8px"}}>

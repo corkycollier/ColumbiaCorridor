@@ -3,7 +3,7 @@ const Directory = React.createClass({
 
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px" ,
+      "padding" : "25px" ,
     }
 
     return({
@@ -18,9 +18,9 @@ const Directory = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h2>
+        <h1>
           Directory
-        </h2>
+        </h1>
 
 
         <table className="ui single striped line table" style={{"color":"#262262"}}>
@@ -47,7 +47,7 @@ const Directory = React.createClass({
                   <tr key={ el.id }>
 
                     <td className="collapsing">
-                      { el.level }  
+                      { el.level }
                     </td>
 
                     <td className="collapsing">
