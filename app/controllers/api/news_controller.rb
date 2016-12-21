@@ -3,7 +3,7 @@ module Api
 
     def create
       @news = New.new( news_params )
-      @news.user_id = current_user[:id]
+      @news.user_id = current_user["id"]
       @news.save
       render json: @news.safe_show
     end

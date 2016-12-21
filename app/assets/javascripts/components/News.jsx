@@ -1,19 +1,14 @@
 const News = React.createClass({
   getInitialState () {
-    var title;
-    var body;
+    var news;
 
     this.props.parent.state.news.forEach((el) => {
       if ( el.id == this.props.id ) {
-        title = el.title;
-        body = el.body;
+        news = el;
       }
     })
 
-    return({
-      title : title ,
-      body : body ,
-    })
+    return( news );
   },
 
   componentDidMount () {
@@ -35,6 +30,10 @@ const News = React.createClass({
                 { this.state.body }
               </div>
 
+
+              <div style={{ "marginTop" : "12px" , "fontSize" : "12px"}}>
+                by { this.state.author } | { this.state.created_at.toString().slice(0, 10) }
+              </div>
 
             </div>
           </div>

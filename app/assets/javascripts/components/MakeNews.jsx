@@ -4,7 +4,7 @@ const MakeNews = React.createClass({
 
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px" ,
+      "padding" : "25px" ,
     }
 
     return({

@@ -19,9 +19,9 @@ const Join = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1>
+        <h2>
           Membership
-        </h1>
+        </h2>
 
         <div className="ui grid doubling stackable">
           <div className="eight wide column" style={{"height":"50vh","overflowY":"scroll"}}>

@@ -42,7 +42,7 @@ const Directory = React.createClass({
 
           <tbody>
             {
-              this.props.parent.state.user.members.map((el) => {
+              this.props.parent.state.members.map((el) => {
                 return (
                   <tr key={ el.id }>
 

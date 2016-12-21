@@ -22,12 +22,12 @@ const Resources = React.createClass({
   render () {
     return (
       <div className="ui container resources" style={this.state.style}>
-        <h1>
+        <h2>
           Resources
-        </h1>
+        </h2>
 
         <div className="cca-news" style={{ "marginBottom" : "56px" }}>
-          <h2 style={{ "marginBottom" : "12px" }}>News</h2>
+          <h3 style={{ "marginBottom" : "12px" }}>News</h3>
           <div className="ui grid doubling stackable">
             <div className="eight wide column" style={{"height" : "50vh" , "overflowY" : "scroll" }}>
               {
@@ -39,6 +39,10 @@ const Resources = React.createClass({
                         <b>
                           { el.title }
                         </b>
+
+                        <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
+                          by { el.author } | { el.created_at.toString().slice(0, 10) }
+                        </span>
                       </div>
 
                       <div>
