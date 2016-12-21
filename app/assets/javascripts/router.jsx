@@ -61,7 +61,7 @@ const router = Backbone.Router.extend({
   },
 
   editProfile () {
-    var page = <Profile parent={this.parent} key="edit-profile" />;
+    var page = <EditProfile parent={this.parent} key="edit-profile" />;
     this.go( page );
   },
 

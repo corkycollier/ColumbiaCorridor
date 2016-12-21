@@ -52,8 +52,8 @@ const MemberArea = React.createClass({
           this.props.parent.state.news.map(function(el) {
             if (el.cca_only) {
               return(
-                <div key={ el.id } data-id={ el.id } onClick={ this.goToNews }>
-                  <div style={{"marginBottom" : "8px"}}>
+                <div key={ el.id } data-id={ el.id } >
+                  <div style={{"marginBottom" : "2px"}}>
                     <b>
                       { el.title }
                     </b>
@@ -63,7 +63,7 @@ const MemberArea = React.createClass({
                     { el.body.slice(0, 328) }
                   </div>
 
-                  <div style={{"marginTop" : "13px"}}>
+                  <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
                     <a data-id={ el.id } onClick={ this.goToNews } >
                       read more
                     </a>

@@ -18,9 +18,9 @@ const Directory = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1>
-          Directory
-        </h1>
+        <h2>
+          Member Directory
+        </h2>
 
 
         <table className="ui single striped line table" style={{"color":"#262262"}}>
