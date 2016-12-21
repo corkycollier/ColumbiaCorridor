@@ -22,9 +22,9 @@ const MemberArea = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1>
+        <h2>
           Member Area
-        </h1>
+        </h2>
 
         <div style={{ "fontSize" : "19px" , "lineHeight" : "29px" }}>
           <div>

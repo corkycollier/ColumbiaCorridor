@@ -4,6 +4,7 @@ const Directory = React.createClass({
     var style = {
       "color" : "#262262" ,
       "padding" : "25px" ,
+      "marginBottom" : "60px" ,
     }
 
     return({
@@ -19,7 +20,7 @@ const Directory = React.createClass({
     return (
       <div className="ui container" style={this.state.style}>
         <h2>
-          Member Directory
+          Directory
         </h2>
 
 
