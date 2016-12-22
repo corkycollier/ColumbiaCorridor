@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     :user_city ,
     :user_state ,
     :user_zip ,
+    :user_country ,
     :company_name ,
     :company_address ,
     :company_city ,
