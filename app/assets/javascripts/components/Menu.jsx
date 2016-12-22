@@ -66,7 +66,7 @@ const SidebarMenuButton = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <div className="ui icon button" style={{"width" : "100px" , "marginBottom" : "16px"}} onClick={ this.openSidebar }>
+        <div className="ui icon button" style={{"position" : "absolute" , "left" : "51px" , "top" : "151px" }} onClick={ this.openSidebar }>
           <i className="sidebar icon" />
         </div>
       </div>
@@ -190,8 +190,8 @@ const RegularMenu = React.createClass({
                 Directory
               </div>
 
-              <div className="item" data-path="profile" onClick={ this.go } >
-                Profile
+              <div className="item" data-path="edit-profile" onClick={ this.go } >
+                Edit Profile
               </div>
 
               <div className="item" data-path="make-news" onClick={ this.go } >

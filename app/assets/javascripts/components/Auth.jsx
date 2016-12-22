@@ -20,7 +20,7 @@ const SignIn = React.createClass({
       type: 'POST' ,
       data: { user: this.state } ,
       success (a, b, c) {
-        location.href = ""
+        location.href = "" ;
       } , error (a, b, c) {
         alert("Email/password combination not found.")
       }
@@ -135,7 +135,7 @@ const SignUp = React.createClass({
       type: 'POST',
       data: {user: this.state.user},
       success: function (a, b, c) {
-        location.href = '';
+        location.href = "";
       }, error: function (a, b, c) {
         alert('There was an error');
       }

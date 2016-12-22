@@ -51,7 +51,7 @@ const MemberArea = React.createClass({
 
           {
             this.props.parent.state.news.map(function(el) {
-              if (el.cca_only) {
+              if (true) {
                 return(
                   <div key={ el.id } data-id={ el.id } >
                     <div style={{"marginBottom" : "2px"}}>

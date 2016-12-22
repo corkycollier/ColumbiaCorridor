@@ -29,7 +29,7 @@ const MailingList = React.createClass({
       }
     })
   },
-
+  
   render () {
     return (
       <div className="ui container" style={this.state.style}>

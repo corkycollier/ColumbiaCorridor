@@ -85,9 +85,7 @@ const EditProfile = React.createClass({
 
               <div className="field">
                 <label>Password</label>
-                <div className="ui mini basic button">
-                  Reset password
-                </div>
+                <input type="password" data-field="password" onChange={ this.updateState } defaultValue={this.state.password}  />
               </div>
 
               <div className="two fields">

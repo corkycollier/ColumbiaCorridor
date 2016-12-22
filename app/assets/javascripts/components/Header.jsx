@@ -32,7 +32,7 @@ const Header = React.createClass({
           </div>
 
           <div className="four wide column right floated">
-            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "10px" , "right" : "76px", "background" : "#262262" , "width" : "95px" }} onClick={this.goToMailingList}>
+            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "10px" , "right" : "79px", "background" : "#262262" , "width" : "95px" }} onClick={this.goToMailingList}>
               mailing list
             </div>
 
@@ -123,7 +123,7 @@ const LoggedOutButtons = React.createClass({
           Sign In
         </div>
 
-        <div className="ui button violet" style={{"background" : "#262262" , "position" : "absolute" , "height" : "36px" , "width" : "84px" , "fontSize" : "13px" , "right" : "1px" , "top" : "92px" }} onClick={ this.signUp } >
+        <div className="ui button violet" style={{"background" : "#262262" , "position" : "absolute" , "height" : "36px" , "width" : "84px" , "fontSize" : "13px" , "right" : "80px" , "top" : "48px" }} onClick={ this.signUp } >
           Sign Up
         </div>
       </div>
