@@ -13,6 +13,12 @@ const Admin = React.createClass({
 
   componentDidMount () {
     $('.dropdown.event-choice').dropdown()
+    $('#edit').froalaEditor({
+      theme: 'royal',
+      toolbarButtons: [
+        'bold', 'underline', 'italic', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'color', 'fontFamily', 'fontSize', 'insertLink', 'insertTable', 'undo', 'redo', 'html'
+      ],
+    })
   },
 
   goToNews(e) {
@@ -79,7 +85,7 @@ const Admin = React.createClass({
 
           <div className="field">
             <label>Body</label>
-            <textarea type="text" data-field="location" onChange={ this.updateState } rows="12"/>
+            <textarea type="text" id="edit" data-field="location" onChange={ this.updateState } rows="12"/>
           </div>
 
           <div className="field">

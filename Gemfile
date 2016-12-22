@@ -18,7 +18,7 @@ gem 'thin'
 gem 'figaro'
 gem 'faker'
 gem 'constantcontact', '~> 2.2.0'
-
+gem "wysiwyg-rails"
 
 group :development, :test do
   gem 'byebug'

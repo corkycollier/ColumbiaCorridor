@@ -8,24 +8,24 @@ const Home = React.createClass({
       "0" : {
         id : 0 ,
         img : "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748013/Home_2_UPDATED_yt1wgm.jpg" ,
-        link : "http://www.columbiacorridor.com/#events" ,
+        link : "events" ,
       } ,
       "1" : {
         id : 1 ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748066/Home_3_g2nbm4.jpg" ,
-        link: "http://columbiacorridor.com/#cca-news/" ,
+        link: "resources" ,
       } ,
 
       "2" : {
         id : 2 ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748099/Home_4_UPDATED_ljc6nr.jpg" ,
-        link: "http://columbiacorridor.com/#resourcefull-use/" ,
+        link: "resources" ,
       } ,
 
       "3" : {
         id : 3 ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748119/Home_5_pqm5rz.jpg" ,
-        link: undefined ,
+        link: "contact" ,
       } ,
     }
 
@@ -57,7 +57,7 @@ const Home = React.createClass({
   },
 
   navigate () {
-    var win = window.open( this.state.currentPage.link , '_blank' );
+    Backbone.history.navigate(this.state.currentPage.link, { trigger: true })
   },
 
   render () {
