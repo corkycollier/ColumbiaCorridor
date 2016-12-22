@@ -2,15 +2,35 @@ module Api
   class EventsController < ApplicationController
     before_action :require_signed_in!, only: []
 
-    def mailing_list
-      ConstantContact::Util::Config.configure do |config|
-        config[:auth][:api_key] = 'your-access-key'
-        config[:auth][:api_secret] = 'your-access-secret'
-        config[:auth][:redirect_uri] = 'https://example.com/auth/constantcontact'
-      end
+    def create
+      @event = Event.new( event_params )
+      @event.save
+      render json: @event.safe_show
+    end
 
+    def update
+      @event = Event.find_by_id( params[:id] )
+      @event.update_attributes( params[:event] )
+      render json: current_user.safe_show
+    end
 
+    def destroy
+      @event = Event.find_by_id( params[:id] )
+      @event.try(:destroy)
+      render json: current_user.safe_show
+    end
 
+    private
+
+    def event_params
+      params.require(:event).permit(
+      :title ,
+      :date ,
+      :time ,
+      :location ,
+      :body ,
+      :event_type ,
+      )
     end
   end
 end

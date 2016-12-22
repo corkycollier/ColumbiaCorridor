@@ -6,8 +6,14 @@ const MemberArea = React.createClass({
       "paddingBottom" : "65px" ,
     }
 
+    var admin;
+    if (this.props.parent.state.user.id == 2) {
+      admin = <Admin parent={this.props.parent} />
+    }
+
     return({
       style: style,
+      admin: admin
     })
   },
 
@@ -82,6 +88,10 @@ const MemberArea = React.createClass({
         </div>
 
         <div className="ui clearing divider"></div>
+
+        {
+          this.state.admin
+        }
 
       </div>
     )
