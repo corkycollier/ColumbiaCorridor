@@ -15,19 +15,37 @@ const MailingList = React.createClass({
 
   },
 
+  signUpUser () {
+    debugger
+    $.ajax({
+      url: '/email_list/',
+      type: 'POST' ,
+      data: { user: this.state } ,
+      success (a, b, c) {
+        debugger
+        alert('You were signed up successfully!')
+      } , error (a, b, c) {
+        debugger
+        alert("Oops there was an error!")
+      }
+    })
+  }
+
   render () {
     return (
       <div className="ui container" style={this.state.style}>
         <h1>Sign Up for our Mailing List!</h1>
         <div className="ui grid centered">
-          <div className="eight wide column ui form">
-            <div clasName="field">
-              <input type="text" placeholder="Email:" />
-            </div>
+          <div className="eight wide column">
+            <form className="ui form" onSubmit={ this.signUpUser }>
+              <div clasName="field">
+                <input type="email" placeholder="@" required />
+              </div>
 
-            <div className="ui button purple floated center" style = {{ "marginTop" : "12px" , "background" : "#262262" }}>
-              Sign Up
-            </div>
+              <div className="ui button purple floated center" style = {{ "marginTop" : "12px" , "background" : "#262262" }} type="submit">
+                Sign Up
+              </div>
+            </form>
           </div>
         </div>
       </div>
