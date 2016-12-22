@@ -88,15 +88,85 @@ const MemberArea = React.createClass({
         </div>
 
         <div className="ui clearing divider"></div>
-        <h2>
-          Archives
-        </h2>
+        <Archives />
 
         {
           this.state.admin
         }
 
 
+      </div>
+    )
+  }
+});
+
+
+
+
+const Archives = React.createClass({
+  getInitialState () {
+    var style = {
+      "color" : "#262262" ,
+      "paddingBottom" : "65px" ,
+    }
+
+    var archives = [
+      {
+        title: "2015 Real Estate Trends" ,
+        href: "2015 Real Estate Trends.pdf" ,
+        desc: "Lorem impsum." ,
+        icon: "pdf file outline " ,
+      } ,
+
+      {
+        title: "2016 Real Estate Trends" ,
+        href: "2016 Real Estate Trends.pdf" ,
+        desc: "Lorem impsum." ,
+        icon: "pdf file outline " ,
+      } ,
+
+    ]
+
+    return({
+      style: style,
+      archives: archives,
+    })
+  },
+
+  componentDidMount () {
+
+  },
+
+
+  render () {
+    return (
+      <div className="ui container" style={this.state.style}>
+        <h2>
+          Archives
+        </h2>
+
+        <div className="ui cards">
+
+          {
+            this.state.archives.map(function(el) {
+              return (
+                <div className="card" key={ el.title }>
+                  <i className={el.icon + "icon"} style={{ "position" : "absolute" , "fontSize" : "33px" , "left" : "12px" , "top" : "33px" , "color" : "grey" }}></i>
+                  <div className="content" style={{"paddingLeft" : "66px"}}>
+                    <div className="header">
+                      <a href={ el.href } target="_blank">
+                        { el.title }
+                      </a>
+                    </div>
+                    <div className="description">
+                      { el.desc }
+                    </div>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     )
   }
