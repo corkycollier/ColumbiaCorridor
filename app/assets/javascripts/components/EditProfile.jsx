@@ -168,7 +168,7 @@ const EditProfile = React.createClass({
 
               <div className="field">
                 <label>Business Type (NAICS Code)</label>
-                <select className="ui dropdown" data-field="company_business_type" onChange={ this.updateState } defaultValue={this.state.company_business_type}  >
+                <select className="ui dropdown" data-field="company_business_type" onChange={ this.updateState }  >
                   <option></option>
 
                   {

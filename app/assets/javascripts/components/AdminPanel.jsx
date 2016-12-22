@@ -12,7 +12,7 @@ const Admin = React.createClass({
   },
 
   componentDidMount () {
-
+    $('.dropdown.event-choice').dropdown()
   },
 
   goToNews(e) {
@@ -41,6 +41,8 @@ const Admin = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
+        <div className="ui clearing divider"></div>
+
         <h2>
           Admin Panel
         </h2>
@@ -81,8 +83,8 @@ const Admin = React.createClass({
           </div>
 
           <div className="field">
-            <select className="ui dropdown" data-field="event_type" onChange={ this.updateState }  >
-              <option value></option>
+            <select className="ui dropdown event-choice" data-field="event_type" onChange={ this.updateState }  >
+              <option value="">Event type</option>
               <option value="Breakfast Forum" style={{ "color" : "#ed6449" }}>Breakfast Forum</option>
               <option value="Lunch w/ Leaders" style={{ "color" : "#8e1986" }}>Lunch w/ Leaders</option>
               <option value="ResourceFULL Use Workshop" style={{ "color" : "#ce0404" }}>ResourceFULL Use Workshop</option>

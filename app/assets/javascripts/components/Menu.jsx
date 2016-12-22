@@ -145,9 +145,8 @@ const RegularMenu = React.createClass({
   },
 
   componentDidMount () {
-    $('.dropdown').dropdown({
+    $('.dropdown.member-area').dropdown({
       on: 'hover' ,
-      detachable: true ,
     });
   },
 

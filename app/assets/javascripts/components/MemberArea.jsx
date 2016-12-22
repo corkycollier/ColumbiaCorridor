@@ -52,8 +52,8 @@ const MemberArea = React.createClass({
 
         <div className="ui clearing divider"></div>
 
+        <h2>Member News</h2>
         <div style={{ "height" : "40vh" , "overflowY" : "scroll" }}>
-          <h3>Member News</h3>
 
           {
             this.props.parent.state.news.map(function(el) {
@@ -88,10 +88,14 @@ const MemberArea = React.createClass({
         </div>
 
         <div className="ui clearing divider"></div>
+        <h2>
+          Archives
+        </h2>
 
         {
           this.state.admin
         }
+
 
       </div>
     )
