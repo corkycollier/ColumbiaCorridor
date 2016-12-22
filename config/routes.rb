@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :destroy]
 
   namespace :api, defaults: { format: :json } do
-    get "mailing_list", to: 'api#add_to_mailing_list'
+    post "mailing_list", to: 'api#mailing_list'
     resources :news
     resources :events
     resources :users
