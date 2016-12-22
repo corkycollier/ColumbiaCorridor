@@ -52,43 +52,50 @@ const MemberArea = React.createClass({
 
         <div className="ui clearing divider"></div>
 
-        <h2>Member News</h2>
-        <div style={{ "height" : "40vh" , "overflowY" : "scroll" }}>
+        <div className="ui grid doubling stackable" style={{"paddingTop" : "11px" , "paddingBottom" : "21px" }}>
+          <div className="eight wide column">
+            <h2>Member News</h2>
+            <div  style={{ "height" : "50vh" , "overflowY" : "scroll" , "padding" : "2px" }} >
 
-          {
-            this.props.parent.state.news.map(function(el) {
-              if (true) {
-                return(
-                  <div key={ el.id } data-id={ el.id } >
-                    <div style={{"marginBottom" : "2px"}}>
-                      <b>
-                        { el.title }
-                      </b>
+              {
+                this.props.parent.state.news.map(function(el) {
+                  if (true) {
+                    return(
+                      <div key={ el.id } data-id={ el.id } >
+                        <div style={{"marginBottom" : "2px"}}>
+                          <b>
+                            { el.title }
+                          </b>
 
-                      <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
-                        by { el.author } | { el.created_at.toString().slice(0, 10) }
-                      </span>
-                    </div>
-                    <div>
-                      { el.body.slice(0, 328) }
-                    </div>
+                          <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
+                            by { el.author } | { el.created_at.toString().slice(0, 10) }
+                          </span>
+                        </div>
+                        <div>
+                          { el.body.slice(0, 328) }
+                        </div>
 
-                    <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
-                      <a data-id={ el.id } onClick={ this.goToNews } >
-                        read more
-                      </a>
-                    </div>
+                        <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
+                          <a data-id={ el.id } onClick={ this.goToNews } >
+                            read more
+                          </a>
+                        </div>
 
-                  </div>
-                )
+                      </div>
+                    )
+                  }
+                }.bind(this))
               }
-            }.bind(this))
-          }
+            </div>
+
+          </div>
+          <div className="eight wide column" >
+            <Archives />
+          </div>
 
         </div>
 
         <div className="ui clearing divider"></div>
-        <Archives />
 
         {
           this.state.admin
@@ -107,7 +114,6 @@ const Archives = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "paddingBottom" : "65px" ,
     }
 
     var archives = [
@@ -140,32 +146,34 @@ const Archives = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="" style={this.state.style}>
+
         <h2>
           Archives
         </h2>
+        <div  style={{ "height" : "50vh" , "overflowY" : "scroll" }}>
+          <div className="ui cards" style={{ "padding" : "2px" }}>
 
-        <div className="ui cards">
-
-          {
-            this.state.archives.map(function(el) {
-              return (
-                <div className="card" key={ el.title }>
-                  <i className={el.icon + "icon"} style={{ "position" : "absolute" , "fontSize" : "33px" , "left" : "12px" , "top" : "23px" , "color" : "grey" }}></i>
-                  <div className="content" style={{"paddingLeft" : "66px"}}>
-                    <div className="header">
-                      <a href={ el.href } target="_blank">
-                        { el.title }
-                      </a>
-                    </div>
-                    <div className="description">
-                      { el.desc }
+            {
+              this.state.archives.map(function(el) {
+                return (
+                  <div className="card" key={ el.title }>
+                    <i className={el.icon + "icon"} style={{ "position" : "absolute" , "fontSize" : "33px" , "left" : "12px" , "top" : "23px" , "color" : "grey" }}></i>
+                    <div className="content" style={{"paddingLeft" : "66px"}}>
+                      <div className="header">
+                        <a href={ el.href } target="_blank">
+                          { el.title }
+                        </a>
+                      </div>
+                      <div className="description">
+                        { el.desc }
+                      </div>
                     </div>
                   </div>
-                </div>
-              )
-            })
-          }
+                )
+              })
+            }
+          </div>
         </div>
       </div>
     )

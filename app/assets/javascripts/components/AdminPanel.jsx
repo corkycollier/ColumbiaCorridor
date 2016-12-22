@@ -13,7 +13,7 @@ const Admin = React.createClass({
 
   componentDidMount () {
     $('.dropdown.event-choice').dropdown()
-    $('#edit').froalaEditor({
+    $('#edit2').froalaEditor({
       theme: 'royal',
       toolbarButtons: [
         'bold', 'underline', 'italic', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'color', 'fontFamily', 'fontSize', 'insertLink', 'insertTable', 'undo', 'redo', 'html'
@@ -46,9 +46,7 @@ const Admin = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
-        <div className="ui clearing divider"></div>
-
+      <div className="" style={this.state.style}>
         <h2>
           Admin Panel
         </h2>
@@ -67,7 +65,7 @@ const Admin = React.createClass({
 
             <div className="field">
               <label>Date</label>
-              <input type="text" data-field="date" onChange={ this.updateState } />
+              <input type="date" data-field="date" onChange={ this.updateState } />
             </div>
           </div>
           <div className="two fields">
@@ -104,7 +102,6 @@ const Admin = React.createClass({
           </button>
 
         </form>
-
       </div>
     )
   }
