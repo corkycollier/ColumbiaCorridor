@@ -39,36 +39,57 @@ const Events = React.createClass({
 
             <div className="ui segment red">
               <b>ResourceFULL Use Workshops</b>
-                <p>
-                  <i>Something here</i>
-                </p>
+              <p>
+                <i>Something here</i>
+              </p>
             </div>
           </div>
 
           <div className="eight wide column">
             <div className="ui segment yellow">
               <b>Special Events</b>
-                <p>
-                  <i>Something here</i>
-                </p>
+              <p>
+                <i>Something here</i>
+              </p>
             </div>
 
             <div className="ui segment brown">
               <b>Tours & Member Exchanges</b>
-                <p>
-                  <i>Something here</i>
-                </p>
+              <p>
+                <i>Something here</i>
+              </p>
             </div>
           </div>
         </div>
 
         <div className="ui clearing divider"></div>
-          <h2>
-            Upcoming
-          </h2>
+        <h2>
+          Upcoming
+        </h2>
+        {
+          this.props.parent.state.events.map((el) => {
+            return (
+              <div key={ el.id + "e" } style={{ "marginBottom" : "12px" ,}}>
+                <h4>
+                  {el.title}
+                </h4>
+                <div>
+                  { el.date } - <b> { el.time } </b>
+                </div>
 
-          <div className="ui clearing divider"></div>
-          
+                <div>
+                  <a href="#">{ el.location }</a>
+                </div>
+
+                <p>
+                  { el.body }
+                </p>
+              </div>
+            )
+          }.bind(this))
+        }
+        <div className="ui clearing divider"></div>
+
       </div>
     )
   }

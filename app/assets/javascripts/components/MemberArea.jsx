@@ -151,7 +151,7 @@ const Archives = React.createClass({
             this.state.archives.map(function(el) {
               return (
                 <div className="card" key={ el.title }>
-                  <i className={el.icon + "icon"} style={{ "position" : "absolute" , "fontSize" : "33px" , "left" : "12px" , "top" : "33px" , "color" : "grey" }}></i>
+                  <i className={el.icon + "icon"} style={{ "position" : "absolute" , "fontSize" : "33px" , "left" : "12px" , "top" : "23px" , "color" : "grey" }}></i>
                   <div className="content" style={{"paddingLeft" : "66px"}}>
                     <div className="header">
                       <a href={ el.href } target="_blank">
