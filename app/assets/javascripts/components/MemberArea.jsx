@@ -89,19 +89,11 @@ const MemberArea = React.createClass({
             </div>
 
           </div>
+
           <div className="eight wide column" >
             <Archives />
           </div>
-
         </div>
-
-        <div className="ui clearing divider"></div>
-
-        {
-          this.state.admin
-        }
-
-
       </div>
     )
   }

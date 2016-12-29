@@ -38,10 +38,10 @@ const SignIn = React.createClass({
       <div className="ui container" style={this.state.style}>
         <h1>Sign In</h1>
         <form className="ui form" onSubmit={ this.signIn }>
-            <div className="field">
-              <label>Email</label>
-              <input type="email" required data-field="email" onChange={ this.updateState } />
-            </div>
+          <div className="field">
+            <label>Email</label>
+            <input type="email" required data-field="email" onChange={ this.updateState } />
+          </div>
 
           <div className="field">
             <label>Password</label>
@@ -130,6 +130,10 @@ const SignUp = React.createClass({
   },
 
   signUp () {
+
+    // this.newSignUp();
+    // return;
+
     $.ajax({
       url: '/users',
       type: 'POST',
@@ -140,6 +144,12 @@ const SignUp = React.createClass({
         alert('There was an error');
       }
     })
+  },
+
+  newSignUp () {
+    firebase.database().ref('/users/' + 2).once('value').then(function(snapshot) {
+      debugger
+    });
   },
 
   render () {

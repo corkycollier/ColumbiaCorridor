@@ -2,8 +2,7 @@ const Admin = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "paddingBottom" : "65px" ,
-      "paddingTop" : "15px" ,
+      "padding" : "25px" ,
     }
 
     return({
@@ -46,7 +45,7 @@ const Admin = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
+      <div className="ui container" style={this.state.style}>
         <h2>
           Admin Panel
         </h2>
@@ -56,7 +55,7 @@ const Admin = React.createClass({
         </h4>
 
 
-        <form className="ui form" onSubmit={ this.createEvent } style={{"maxWidth" : "700px"}}>
+        <form className="ui form" onSubmit={ this.createEvent } >
           <div className="two fields">
             <div className="field">
               <label>Title</label>
