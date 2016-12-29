@@ -4,6 +4,7 @@ const Resources = React.createClass({
       "color" : "#262262" ,
       "fontSize" : "16px" ,
       "padding" : "25px" ,
+      "paddingBottom" : "48px" ,
     }
 
     return({
@@ -22,14 +23,14 @@ const Resources = React.createClass({
   render () {
     return (
       <div className="ui container resources" style={this.state.style}>
-        <h2>
+        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           Resources
-        </h2>
+        </h1>
 
         <div className="cca-news" style={{ "marginBottom" : "56px" }}>
-          <h3 style={{ "marginBottom" : "12px" }}>News</h3>
+          <h3 style={{ "marginBottom" : "28px" }}>News</h3>
           <div className="ui grid doubling stackable">
-            <div className="eight wide column" style={{"height" : "50vh" , "overflowY" : "scroll" }}>
+            <div className="eight wide column" style={{"height" : "62vh" , "overflowY" : "scroll" }}>
               {
                 this.props.parent.state.news.map( (el) => {
                   if (el.cca_only) { return; }
@@ -69,12 +70,15 @@ const Resources = React.createClass({
 
         </div>
 
-        <div className="ui divider" style={{ "marginTop" : "24px" }}/>
+        <div className="ui divider" style={{ "margin" : "48px" , "marginTop" : "100px" }} />
 
 
-        <div className="cca-news">
-          <h2 style={{"marginTop" : "60px" }}>Groundwater Protection Program</h2>
-          <div className="ui grid doubling stackable">
+        <div className="cca-news" style={{ "margin" : "48px 0px" ,}}>
+          <h1 className="ui header centered" style={{"marginBottom" : "48px" , "color" : "#262262"}}>
+            Groundwater Protection Program
+          </h1>
+
+          <div className="ui grid doubling stackable centered">
             <div className="sixteen wide column">
               <h3>Why it exists:</h3>
               <p>
@@ -88,29 +92,31 @@ const Resources = React.createClass({
               </p>
 
             </div>
+
             <div className="eight wide column">
               <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481691723/wellfieldmap_e1bglj.gif"/>
-            </div>
-            <div className="eight wide column" style={{"paddingTop":"24px"}}>
-              <a href="http://www.portlandoregon.gov/water/29890" target="_blank" style={{"color":"white"}}>
+
+
+              <a href="http://www.portlandoregon.gov/water/29890" target="_blank" style={{"color":"white" , "margin" : "16px" , "marginBottom" : "60px" }}>
                 <div className="ui button blue icon right labeled" style={{"background" : "#262262" }} >
                   <i className="right arrow icon" />
                   GPP
                 </div>
               </a>
             </div>
-          </div>
 
-          <div className="ui divider" />
+          </div>
         </div>
 
-        <div className="resource-full"   style={{"margin":"60px 0px"}}>
-          <h2 style={{ "marginBottom" : "34px" }}>
+        <div className="ui divider" style={{ "margin" : "48px" }} />
+
+        <div className="resource-full" style={{"margin":"100px 0px"}}>
+          <h1 className="ui header centered" style={{ "marginBottom" : "48px" , "color" : "#262262"}}>
             ResourceFULL Use
-          </h2>
+          </h1>
 
           <div className="ui grid doubling stackable">
-            <div className="eight wide column" style={{"height":"50vh","overflowY":"scroll"}}>
+            <div className="eight wide column" >
               <p>
                 At a 2006 CCA breakfast forum, ResourceFULL Use was born.
                 We never imagined it would be going strong a decade later. Each exchange is money saved, resources utilized, and greenhouse gasses reduced. Our quarterly workshops are a great place to brainstorm and Dzspeed datedz with potential partners.
@@ -135,7 +141,7 @@ const Resources = React.createClass({
               </p>
 
             </div>
-            <div className="eight wide column" style={{"height":"50vh","overflowY":"scroll"}}>
+            <div className="eight wide column" >
               <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg"/>
               <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg"/>
             </div>
@@ -143,9 +149,9 @@ const Resources = React.createClass({
         </div>
 
 
-        <div className="ui divider"></div>
+        <div className="ui divider" style={{ "margin" : "48px" }}  />
 
-        <div className="ui grid" style={{"margin":"40px 0px"}}>
+        <div className="ui grid" style={{"margin":"60px 0px"}}>
           <div className="sixteen wide column">
             The ResourceFull Use program is different from traditional passive web-based exchanges in these important ways:
             <ul style={{"marginBottom":"24px"}}>
