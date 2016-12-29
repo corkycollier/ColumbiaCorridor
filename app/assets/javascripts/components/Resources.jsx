@@ -74,7 +74,7 @@ const Resources = React.createClass({
 
 
         <div className="cca-news" style={{ "margin" : "48px 0px" ,}}>
-          <h1 className="ui header centered" style={{"marginBottom" : "48px" , "color" : "#262262"}}>
+          <h1 className="ui header" style={{"marginBottom" : "48px" , "color" : "#262262"}}>
             Groundwater Protection Program
           </h1>
 
@@ -98,9 +98,8 @@ const Resources = React.createClass({
 
 
               <a href="http://www.portlandoregon.gov/water/29890" target="_blank" style={{"color":"white" , "margin" : "16px" , "marginBottom" : "60px" }}>
-                <div className="ui button blue icon right labeled" style={{"background" : "#262262" }} >
-                  <i className="right arrow icon" />
-                  GPP
+                <div className="ui button fluid" style={{"background" : "#262262" , "color" : "white" }} >
+                  GPP Website
                 </div>
               </a>
             </div>
@@ -111,7 +110,7 @@ const Resources = React.createClass({
         <div className="ui divider" style={{ "margin" : "48px" }} />
 
         <div className="resource-full" style={{"margin":"100px 0px"}}>
-          <h1 className="ui header centered" style={{ "marginBottom" : "48px" , "color" : "#262262"}}>
+          <h1 className="ui header" style={{ "marginBottom" : "48px" , "color" : "#262262"}}>
             ResourceFULL Use
           </h1>
 
