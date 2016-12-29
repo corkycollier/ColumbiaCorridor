@@ -19,6 +19,7 @@
 //= require isotope
 //= require underscore
 //= require backbone
+//= require moment
 //= require fullcalendar
 //= require backbone_rails_sync
 //= require backbone_datalink

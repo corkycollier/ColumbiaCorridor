@@ -11,11 +11,18 @@ const Events = React.createClass({
   },
 
   componentDidMount () {
-    return;
     $(".events").isotope({
       itemSelector: ".event-item" ,
       layoutMode: "fitRows" ,
     })
+
+
+    $('#calendar').fullCalendar({
+      eventClick: function ( calEvent , jsEvent , view ) {
+        debugger
+      }.bind(this)
+    }) ;
+    $('#calendar').fullCalendar('renderEvents' , this.props.parent.state.events ) ;
   },
 
   render () {
@@ -72,7 +79,11 @@ const Events = React.createClass({
 
         <div className="ui clearing divider"></div>
 
-        <Calendar parent={ this.props.parent }/>
+        <div id="calendar">
+        </div>
+
+        <div className="ui clearing divider"></div>
+
       </div>
     )
   }
@@ -165,7 +176,7 @@ const Calendar = React.createClass({
         if (idx == dayNum + start - 1) {
           color = "red" ;
         }
-        debugger
+
         var label = <a className={"ui mini circular label " + color } style={ tagStyle }> { idx - start + 1 } </a> ;
           ReactDOM.render( label , el )
         }
