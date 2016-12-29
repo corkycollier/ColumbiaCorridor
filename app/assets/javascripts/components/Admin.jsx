@@ -30,30 +30,74 @@ const Admin = React.createClass({
 
 
 const AdminUsers = React.createClass({
+  getInitialState() {
+
+    return ({
+      users :  this.props.parent.state.members
+    })
+  },
+
+  componentDidMount() {
+    $('table').tablesort();
+  },
+
   render() {
+    debugger
     return (
       <div className="">
         <table className="ui table">
           <thead>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th>Username</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>Company</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+              {
+                this.state.users.map( (el) => {
+                  return(
+                    <tr key={ "adminUsers" + el.id }>
+                      <td>
+                        { el.username }
+                      </td>
+
+                      <td>
+                        { el.first_name + " " + el.last_name }
+                      </td>
+
+                      <td>
+                        { el.email }
+                      </td>
+
+                      <td>
+                        { el.phone }
+                      </td>
+
+                      <td>
+                        {
+                          el.user_address + ", " + el.user_city + ", " + el.user_state + " " + el.user_zip
+                        }
+                      </td>
+
+                      <td>
+                        <h5>
+                          <a href="#">
+                            { el.company_name }
+                          </a>
+                        </h5>
+                        {
+                          el.company_address + ", " + el.company_city + ", " + el.company_state + " " + el.company_zip
+                        }
+                      </td>
+                    </tr>
+                  )
+                })
+              }
           </tbody>
         </table>
       </div>
