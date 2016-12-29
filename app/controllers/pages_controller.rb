@@ -7,4 +7,9 @@ class PagesController < ApplicationController
       events: Event.all.collect{ |event| event.safe_show } ,
     }
   end
+
+
+  def page
+    @page = params[:page]
+  end
 end

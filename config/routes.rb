@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   root to: 'pages#home'
+
+  get '/:page' , to: "pages#page"
+
   resources :users, only: [:create]
   resource :session, only: [:create, :destroy]
 
