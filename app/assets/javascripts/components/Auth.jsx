@@ -130,10 +130,6 @@ const SignUp = React.createClass({
   },
 
   signUp () {
-
-    // this.newSignUp();
-    // return;
-
     $.ajax({
       url: '/users',
       type: 'POST',
@@ -141,16 +137,12 @@ const SignUp = React.createClass({
       success: function (a, b, c) {
         location.href = "";
       }, error: function (a, b, c) {
+        
         alert('There was an error');
       }
     })
   },
 
-  newSignUp () {
-    firebase.database().ref('/users/' + 2).once('value').then(function(snapshot) {
-      debugger
-    });
-  },
 
   render () {
     return (
@@ -174,11 +166,6 @@ const SignUp = React.createClass({
           <div className="field">
             <label>Password <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/></label>
             <input type="password" required data-field="password" onChange={ this.updateState } required />
-          </div>
-
-          <div className="field">
-            <label>Confirm Password <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/></label>
-            <input type="password" required data-field="password2" onChange={ this.updateState } required />
           </div>
 
           <div className="two fields">

@@ -54,6 +54,8 @@ const AdminUsers = React.createClass({
               <th>Phone</th>
               <th>Address</th>
               <th>Company</th>
+              <th>Level</th>
+              <th></th>
             </tr>
           </thead>
 
@@ -62,7 +64,7 @@ const AdminUsers = React.createClass({
                 this.state.users.map( (el) => {
                   return(
                     <tr key={ "adminUsers" + el.id }>
-                      <td>
+                      <td className="collapsing">
                         { el.username }
                       </td>
 
@@ -93,6 +95,43 @@ const AdminUsers = React.createClass({
                         {
                           el.company_address + ", " + el.company_city + ", " + el.company_state + " " + el.company_zip
                         }
+                      </td>
+
+                      <td>
+                        <select>
+
+                          <option value="">
+
+                          </option>
+
+                          <option value="admin">
+                            admin
+                          </option>
+
+                          <option value="discount">
+                            discount
+                          </option>
+
+                          <option value="standard">
+                            standard
+                          </option>
+
+                          <option value="foundational">
+                            foundational
+                          </option>
+
+
+                        </select>
+                      </td>
+
+                      <td>
+                        <div className="ui tiny icon compact button blue" onClick={ this.setEdit }>
+                          <i className="edit icon"></i>
+                        </div>
+
+                        <div className="ui tiny icon compact button red" onClick={ this.setEdit }>
+                          <i className="trash icon"></i>
+                        </div>
                       </td>
                     </tr>
                   )

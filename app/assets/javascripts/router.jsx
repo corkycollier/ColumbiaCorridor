@@ -12,6 +12,7 @@ const router = Backbone.Router.extend({
     "":"home",
     "about-us":"aboutUs",
     "events":"events",
+    "admin/:resource":"adminResource",
     "admin":"admin",
     "resources":"resources",
     "member-area":"memberArea",
@@ -121,6 +122,18 @@ const router = Backbone.Router.extend({
     var page;
 
     if (!this.parent.state.user == 2) {
+      page = <Home parent={this.parent} key="home" /> ;
+    } else {
+      page = <Admin parent={this.parent} key="admin" /> ;
+    }
+
+    this.go( page );
+  },
+
+  adminResource () {
+    var page;
+
+    if (!this.parent.state.user.level != "Admin" ) {
       page = <Home parent={this.parent} key="home" /> ;
     } else {
       page = <Admin parent={this.parent} key="admin" /> ;
