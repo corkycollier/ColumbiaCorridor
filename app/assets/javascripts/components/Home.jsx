@@ -91,10 +91,10 @@ const Home = React.createClass({
         </div>
 
         <img className="ui image home"
-             src={ this.state.currentPage.img }
-             style={{ "width" : "100%" , "height" : "100%" }}
-             onClick = { this.navigate }
-           />
+            src={ this.state.currentPage.img }
+            style={{ "width" : "100%" , "height" : "100%" }}
+            onClick = { this.navigate }
+          />
       </div>
     )
   }
