@@ -27,7 +27,6 @@ const Directory = React.createClass({
         <table className="ui single striped line table" style={{"color":"#262262"}}>
           <thead>
             <tr>
-              <th></th>
 
               <th>Name</th>
 
@@ -48,35 +47,31 @@ const Directory = React.createClass({
                   <tr key={ el.id }>
 
                     <td className="collapsing">
-                      { el.level }
+                      { el.first_name + " " + el.last_name }
                     </td>
 
                     <td className="collapsing">
-                      { el.first_name + " " + el.last_name } - <b><sm>{ el.username }</sm></b>
-                  </td>
+                      { el.email }
+                    </td>
 
-                  <td className="collapsing">
-                    { el.email }
-                  </td>
+                    <td className="collapsing">
+                      { el.phone }
+                    </td>
 
-                  <td className="collapsing">
-                    { el.phone }
-                  </td>
+                    <td className="collapsing">
+                      { el.user_state }
+                    </td>
 
-                  <td className="collapsing">
-                    { el.user_state }
-                  </td>
-
-                  <td className="collapsing">
-                    { el.company_name }
-                  </td>
-                </tr>
-              )
-            })
-          }
-        </tbody>
-      </table>
-    </div>
-  )
-}
+                    <td className="collapsing">
+                      { el.company_name }
+                    </td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+    )
+  }
 });
