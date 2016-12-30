@@ -8,6 +8,12 @@ module Api
       render json: current_user
     end
 
+    def destroy
+      @user = User.find_by_id( params[:id] )
+      @user.try( :delete )
+      render json: app_data
+    end
+
     private
 
     def user_params

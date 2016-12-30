@@ -30,10 +30,9 @@ const Admin = React.createClass({
 
 
 const AdminUsers = React.createClass({
-  getInitialState() {
-
-    return ({
-      users :  this.props.parent.state.members
+  getInitialState () {
+    return({
+      members: this.props.parent.state.members
     })
   },
 
@@ -41,8 +40,28 @@ const AdminUsers = React.createClass({
     $('table').tablesort();
   },
 
-  setDelete() {
+  setDelete (e) {
+    if ( e.currentTarget.dataset.id < 3 ) {
+      alert('You cannot remove that user.')
+      return;
+    } else {
+      var sure = confirm('Are you sure?')
+      if (sure) {
+        $.ajax({
+          url: '/api/users/' + e.currentTarget.dataset.id ,
+          type: 'DELETE' ,
+          success: function(model, resp, obj) {
+            this.setState({
+              members: model.members
+            })
 
+          }.bind(this), error: function (a, b, c) {
+            alert('There was an error') ;
+          }
+        })
+
+      }
+    }
   },
 
   setEdit() {
@@ -61,87 +80,83 @@ const AdminUsers = React.createClass({
               <th>Phone</th>
               <th>Address</th>
               <th>Company</th>
-              <th>Level</th>
               <th></th>
             </tr>
           </thead>
 
           <tbody>
-              {
-                this.state.users.map( (el) => {
-                  return(
-                    <tr key={ "adminUsers" + el.id }>
-                      <td className="collapsing">
-                        { el.username }
-                      </td>
+            {
+              this.state.members.map( (el) => {
+                return(
+                  <tr key={ "adminUsers" + el.id }>
 
-                      <td>
-                        { el.first_name + " " + el.last_name }
-                      </td>
+                    <td className="collapsing">
+                      { el.username }
+                    </td>
 
-                      <td>
-                        { el.email }
-                      </td>
+                    <td>
+                      { el.first_name + " " + el.last_name }
+                    </td>
 
-                      <td>
-                        { el.phone }
-                      </td>
+                    <td>
+                      { el.email }
+                    </td>
 
-                      <td>
-                        {
-                          el.user_address + ", " + el.user_city + ", " + el.user_state + " " + el.user_zip
-                        }
-                      </td>
+                    <td>
+                      { el.phone }
+                    </td>
 
-                      <td>
+                    <td>
+                      <a href={"http://maps.google.com/?q=" + el.user_address + ", " + el.user_city + ", " + el.user_state + " " + el.user_zip } target="_blank" >
+                        <div className="ui basic icon button">
+                          <i className="home icon"></i>
+                        </div>
+                      </a>
+
+                    </td>
+
+                    <td>
+                      <a href={"http://maps.google.com/?q=" + el.company_address + " " + el.company_city + " " + el.company_state + " " + el.company_zip } target="_blank" >
                         <h5>
-                          <a href="#">
-                            { el.company_name }
-                          </a>
+                          { el.company_name }
                         </h5>
-                        {
-                          el.company_address + ", " + el.company_city + ", " + el.company_state + " " + el.company_zip
-                        }
-                      </td>
+                      </a>
+                    </td>
 
-                      <td>
-                        <select>
+                    <td>
+                      <select value={ el.level || ""} onChange={ this.setDelete }>
+                        <option value="">
+                        </option>
 
-                          <option value="">
+                        <option value="Admin">
+                          admin
+                        </option>
 
-                          </option>
+                        <option value="Discount">
+                          discount
+                        </option>
 
-                          <option value="admin">
-                            admin
-                          </option>
+                        <option value="Standard">
+                          standard
+                        </option>
 
-                          <option value="discount">
-                            discount
-                          </option>
+                        <option value="Foundational">
+                          foundational
+                        </option>
+                      </select>
 
-                          <option value="standard">
-                            standard
-                          </option>
+                      <a data-id={el.id} onClick={ this.setEdit } style={{ "margin" : "0px 4px" ,}}>
+                        edit
+                      </a>
 
-                          <option value="foundational">
-                            foundational
-                          </option>
-                        </select>
-                      </td>
-
-                      <td>
-                        <a data-id={el.id} onClick={ this.setEdit }>
-                          edit
-                        </a>
-
-                        <a data-id={el.id} onClick={ this.setDelete }>
-                          delete
-                        </a>
-                      </td>
-                    </tr>
-                  )
-                })
-              }
+                      <a data-id={el.id} onClick={ this.setDelete }>
+                        delete
+                      </a>
+                    </td>
+                  </tr>
+                )
+              })
+            }
           </tbody>
         </table>
       </div>

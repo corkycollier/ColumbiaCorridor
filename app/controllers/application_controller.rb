@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 
   protect_from_forgery with: :exception
-  helper_method :current_user, :sign_in!, :sign_out!, :require_signed_in!
+  helper_method :current_user, :sign_in!, :sign_out!, :require_signed_in!, :app_data
 
   private
 
@@ -29,5 +29,14 @@ class ApplicationController < ActionController::Base
 
   def require_signed_in!
     redirect_to root_url unless signed_in?
+  end
+
+  def app_data
+    {
+      user: current_user ,
+      members: User.all.collect{ |user| user.safe_show } ,
+      news: New.all.collect{ |thing| thing.safe_show } ,
+      events: Event.all.collect{ |event| event.safe_show } ,
+    }
   end
 end
