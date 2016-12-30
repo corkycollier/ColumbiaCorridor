@@ -7,7 +7,8 @@ const MemberArea = React.createClass({
     }
 
     var admin;
-    if (this.props.parent.state.user.id == 2) {
+
+    if (this.props.parent.state.user.id == 2 || this.props.parent.state.user.level == "Admin") {
       admin = <Admin parent={this.props.parent} />
     }
 
@@ -28,9 +29,9 @@ const MemberArea = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h2>
+        <h1>
           Member Area
-        </h2>
+        </h1>
 
         <div style={{ "fontSize" : "19px" , "lineHeight" : "29px" }}>
           <div>
@@ -52,13 +53,12 @@ const MemberArea = React.createClass({
 
         <div className="ui clearing divider"></div>
 
-        <div className="ui grid doubling stackable" style={{"paddingTop" : "11px" , "paddingBottom" : "21px" }}>
-          <div className="eight wide column">
+        <div style={{"paddingTop" : "11px" , "paddingBottom" : "21px" }}>
             <h2>Member News</h2>
             <div  style={{ "height" : "50vh" , "overflowY" : "scroll" , "padding" : "2px" }} >
-
               {
                 this.props.parent.state.news.map(function(el) {
+
                   if (true) {
                     return(
                       <div key={ el.id } data-id={ el.id } >
@@ -70,9 +70,6 @@ const MemberArea = React.createClass({
                           <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
                             by { el.author } | { el.created_at.toString().slice(0, 10) }
                           </span>
-                        </div>
-                        <div>
-                          { el.body.slice(0, 328) }
                         </div>
 
                         <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
@@ -88,11 +85,10 @@ const MemberArea = React.createClass({
               }
             </div>
 
-          </div>
 
-          <div className="eight wide column" >
-            <Archives />
-          </div>
+          <div className="ui clearing divider"></div>
+
+          <Archives />
         </div>
       </div>
     )

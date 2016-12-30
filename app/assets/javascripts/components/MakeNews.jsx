@@ -67,11 +67,11 @@ const MakeNews = React.createClass({
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
 
-            <form className="ui form">
+            <form className="ui form" onSubmit={this.submitNews }>
               <div className="two fields">
                 <div className="field">
                   <label>Title</label>
-                  <input type="text" data-field="title" onChange={ this.updateState } />
+                  <input type="text" data-field="title" onChange={ this.updateState } required/>
                 </div>
 
                 <div className="field">
@@ -84,12 +84,12 @@ const MakeNews = React.createClass({
 
               <div className="field">
                 <label>Body</label>
-                <textarea id="froala-target" type="text" data-field="body" onChange={ this.updateState } />
+                <textarea id="froala-target" type="text" data-field="body" onChange={ this.updateState } required />
               </div>
 
-              <div className="ui button small" onClick={this.submitNews} style={{ "background" : "#262262" , "color" : "white" }}>
+              <button className="ui button small" type="submit" style={{ "background" : "#262262" , "color" : "white" }}>
                 Submit
-              </div>
+              </button>
             </form>
           </div>
 
