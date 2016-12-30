@@ -195,6 +195,8 @@ const Resources = React.createClass({
             </p>
           </div>
         </div>
+
+        <div className="ui clearing divider" style={{ "margin" : "48px" , "marginBottom" : "20px" }} ></div>
       </div>
     )
   }
