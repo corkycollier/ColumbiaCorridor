@@ -3,6 +3,7 @@ const Home = React.createClass({
     var style = {
       "color" : "#262262" ,
       "position" : "relative" ,
+      "height" : "471px" ,
     }
 
     var pages = {
@@ -91,7 +92,7 @@ const Home = React.createClass({
 
         <img className="ui image home"
              src={ this.state.currentPage.img }
-             style={{ "width" : "100%" , "minHeight" : "325px" , "height" : "auto" }}
+             style={{ "width" : "100%" , "height" : "100%" }}
              onClick = { this.navigate }
            />
       </div>

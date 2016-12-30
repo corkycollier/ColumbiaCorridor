@@ -3,7 +3,6 @@
 const Advertisements = React.createClass({
   getInitialState () {
     var style = {
-
     }
 
     var slides = [
@@ -63,7 +62,7 @@ const Advertisements = React.createClass({
   render () {
     return (
       <div className="" style = { this.state.style } >
-        <img className="ui image add"
+        <img className="ui image add centered"
           src = { this.state.currentSlide.img }
           style = {{ "width" : "100%" , "height" : "140px" }}
           onClick = { this.navigate }
