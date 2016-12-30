@@ -23,12 +23,16 @@ const Header = React.createClass({
     Backbone.history.navigate('mailing-list', { trigger : true })
   },
 
+  goHome () {
+    Backbone.history.navigate('' , { trigger : true })
+  },
+
   render () {
     return (
       <div className="" style={this.state.style}>
         <div className="ui grid doubling ">
           <div className="four wide column">
-            <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"120px"}}/>
+            <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"120px"}} onClick={ this.goHome }/>
           </div>
 
           <div className="four wide column right floated">

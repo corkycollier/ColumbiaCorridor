@@ -71,6 +71,9 @@ const AdminUsers = React.createClass({
 
     return (
       <div className="">
+        <h2 className="ui header">
+          Users
+        </h2>
         <table className="ui table">
           <thead>
             <tr>

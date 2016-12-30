@@ -1,7 +1,8 @@
 const Home = React.createClass({
   getInitialState () {
     var style = {
-      "color" : "#262262"
+      "color" : "#262262" ,
+      "position" : "relative" ,
     }
 
     var pages = {
@@ -60,9 +61,34 @@ const Home = React.createClass({
     Backbone.history.navigate(this.state.currentPage.link, { trigger: true })
   },
 
+  flipLeft () {
+    var pageNumber = this.state.currentPage.id - 1
+    if ( pageNumber < 0 ) pageNumber = 3;
+    this.setState({
+      currentPage : this.state.pages[ pageNumber ] ,
+    });
+  },
+
+  flipRight () {
+    var pageNumber = this.state.currentPage.id + 1
+    if ( pageNumber > 3 ) pageNumber = 0;
+    this.setState({
+      currentPage : this.state.pages[ pageNumber ] ,
+    });
+  },
+
+
   render () {
     return (
       <div className="" style={ this.state.style } >
+        <div className="ui button icon" style={{ "position" : "absolute" , "bottom" : "16px" , "left" : "16px" , "zIndex" : "200" }} onClick={ this.flipLeft }>
+          <i className="left caret icon"></i>
+        </div>
+
+        <div className="ui button icon" style={{ "position" : "absolute" , "bottom" : "16px" , "right" : "16px" , "zIndex" : "200" }} onClick={ this.flipRight }>
+          <i className="right caret icon"></i>
+        </div>
+
         <img className="ui image home"
              src={ this.state.currentPage.img }
              style={{ "width" : "100%" , "minHeight" : "325px" , "height" : "auto" }}
