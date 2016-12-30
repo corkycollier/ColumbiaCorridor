@@ -41,8 +41,15 @@ const AdminUsers = React.createClass({
     $('table').tablesort();
   },
 
+  setDelete() {
+
+  },
+
+  setEdit() {
+  },
+
   render() {
-    debugger
+
     return (
       <div className="">
         <table className="ui table">
@@ -119,19 +126,17 @@ const AdminUsers = React.createClass({
                           <option value="foundational">
                             foundational
                           </option>
-
-
                         </select>
                       </td>
 
                       <td>
-                        <div className="ui tiny icon compact button blue" onClick={ this.setEdit }>
-                          <i className="edit icon"></i>
-                        </div>
+                        <a data-id={el.id} onClick={ this.setEdit }>
+                          edit
+                        </a>
 
-                        <div className="ui tiny icon compact button red" onClick={ this.setEdit }>
-                          <i className="trash icon"></i>
-                        </div>
+                        <a data-id={el.id} onClick={ this.setDelete }>
+                          delete
+                        </a>
                       </td>
                     </tr>
                   )

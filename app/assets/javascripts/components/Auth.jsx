@@ -137,8 +137,7 @@ const SignUp = React.createClass({
       success: function (a, b, c) {
         location.href = "";
       }, error: function (a, b, c) {
-        
-        alert('There was an error');
+        alert("Sorry. The server is currently down.")
       }
     })
   },

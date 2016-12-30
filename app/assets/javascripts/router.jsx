@@ -121,10 +121,10 @@ const router = Backbone.Router.extend({
   admin () {
     var page;
 
-    if (!this.parent.state.user == 2) {
-      page = <Home parent={this.parent} key="home" /> ;
-    } else {
+    if (this.parent.state.user.level == "Admin" || this.parent.state.user.id == 2 ) {
       page = <Admin parent={this.parent} key="admin" /> ;
+    } else {
+      page = <Home parent={this.parent} key="home" /> ;
     }
 
     this.go( page );

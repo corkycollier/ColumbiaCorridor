@@ -5,8 +5,9 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in!(@user)
-      render json: @user.safe_show
+      redirect_to root_url
     else
+      fail
       render json: @user.errors.full_messages
     end
   end
