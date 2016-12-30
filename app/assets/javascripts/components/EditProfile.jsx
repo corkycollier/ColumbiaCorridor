@@ -168,18 +168,13 @@ const EditProfile = React.createClass({
 
               <div className="field">
                 <label>Business Type (NAICS Code)</label>
-                <select className="ui dropdown" data-field="company_business_type" onChange={ this.updateState }  >
+                <select className="ui dropdown" data-field="company_business_type" onChange={ this.updateState } value={this.state.company_business_type} >
                   <option></option>
 
                   {
                     this.state.businessCodes.map( function (el) {
-                      var selected ;
-                      if (this.state.company_business_type) {
-                        selected = "selected" ;
-                      }
-
                       return (
-                        <option key = { el } value = { el } selected={ selected }>
+                        <option key = { el } value = { el } >
                           { el }
                         </option>
                       )
