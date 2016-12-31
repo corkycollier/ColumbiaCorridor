@@ -28,9 +28,15 @@ const Events = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h2>
+        <h1>
           Events
-        </h2>
+        </h1>
+
+        <div id="calendar">
+        </div>
+
+        <div className="ui clearing divider" style={{ "margin" : "48px" , "marginBottom" : "20px" }} ></div>
+
 
         <div className="ui grid doubling stackable">
           <div className="eight wide column">
@@ -76,14 +82,6 @@ const Events = React.createClass({
             </div>
           </div>
         </div>
-
-        <div className="ui clearing divider" style={{ "margin" : "48px" , "marginBottom" : "24px" }} ></div>
-
-        <div id="calendar">
-        </div>
-
-        <div className="ui clearing divider" style={{ "margin" : "48px" , "marginBottom" : "20px" }} ></div>
-
       </div>
     )
   }
