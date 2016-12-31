@@ -51,7 +51,7 @@ const MemberArea = React.createClass({
           </div>
         </div>
 
-        <div className="ui clearing divider"></div>
+        <div className="ui clearing divider" style={{ "margin" : "48px" ,}}></div>
 
         <div style={{"paddingTop" : "11px" , "paddingBottom" : "21px" }}>
             <h2>Member News</h2>
@@ -86,7 +86,7 @@ const MemberArea = React.createClass({
             </div>
 
 
-          <div className="ui clearing divider"></div>
+          <div className="ui clearing divider" style={{ "margin" : "48px" ,}}></div>
 
           <Archives />
         </div>
