@@ -60,9 +60,9 @@ const MakeNews = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h2>
+        <h1>
           News
-        </h2>
+        </h1>
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
@@ -95,8 +95,6 @@ const MakeNews = React.createClass({
 
         </div>
 
-        <div className="ui divider">
-        </div>
 
       </div>
     )

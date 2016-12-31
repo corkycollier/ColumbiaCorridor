@@ -47,7 +47,7 @@ const Footer = React.createClass({
         </div>
 
         <div className="footer">
-          <div className="ui grid centered stackable" style={{ "background" : "#262261" , "color" : "#fff" , "paddingBottom" : "15px" }}>
+          <div className="ui grid centered stackable" style={{ "background" : "#262261" , "color" : "#fff" , "paddingBottom" : "15px" , "padding" : "24px" }}>
             <div className="one wide column"></div>
 
             <div className="five wide column">
