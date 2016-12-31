@@ -22,7 +22,7 @@ const Sponsor = React.createClass({
 
         <div className="ui grid doubling stackable">
           <div className="eight wide column">
-            <h1>
+            <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
               Forum Sponsorships
             </h1>
 
@@ -79,7 +79,7 @@ const Sponsor = React.createClass({
           </div>
 
           <div className="eight wide column">
-            <h1>
+            <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
               Golf Tournament Sponsorships
             </h1>
 

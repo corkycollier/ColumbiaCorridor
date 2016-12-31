@@ -35,7 +35,7 @@ const Events = React.createClass({
         <div id="calendar">
         </div>
 
-        <div className="ui clearing divider" style={{ "margin" : "48px" , "marginBottom" : "20px" }} ></div>
+        <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
 
 
         <div className="ui grid doubling stackable">

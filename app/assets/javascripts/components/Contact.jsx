@@ -22,7 +22,7 @@ const Contact = React.createClass({
       <div className="ui container" style={this.state.style}>
         <div className="ui grid doubling stackable">
           <div className="eight wide column" style={{ "fontSize" : "16px" }}>
-            <h1>
+            <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
               CONTACT
             </h1>
 
@@ -99,7 +99,7 @@ const Contact = React.createClass({
             </div>
           </div>
 
-          <div className="eight wide column">
+          <div className="eight wide column" style={{ "paddingTop" : "30px" ,}}>
             <iframe style={{ "border" : "0" , "width" : "100%" }} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5586.383147810138!2d-122.581017!3d45.566586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee00ba2afc23b49c!2sColumbia+Corridor+Association!5e0!3m2!1sen!2sph!4v1470938661219" height="532" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
           </div>
         </div>
