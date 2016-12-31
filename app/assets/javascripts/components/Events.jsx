@@ -28,7 +28,7 @@ const Events = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1>
+        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           Events
         </h1>
 
@@ -38,7 +38,7 @@ const Events = React.createClass({
         <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
 
 
-        <div className="ui grid doubling stackable">
+        <div className="ui grid doubling stackable" style={{ "marginBottom" : "20px" ,}}>
           <div className="eight wide column">
             <div className="ui segment orange">
               <b>Breakfast Forums</b>

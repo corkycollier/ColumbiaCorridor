@@ -18,9 +18,9 @@ const AboutUs = React.createClass({
     return (
       <div className="ui container" style={this.state.style}>
         <div className="about-us">
-          <h2 style={{ "marginBottom" : "24px" }}>
+          <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
             About Us
-          </h2>
+          </h1>
 
           <div className="ui grid doubling stackable" style={{ "margin" : "20px 0px" }}>
             <div className="eight wide column" style={{ "fontSize" : "16px" , "height" : "50vh"  , "overflowY" : "scroll" }}>
