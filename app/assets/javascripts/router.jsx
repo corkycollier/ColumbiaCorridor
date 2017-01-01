@@ -11,6 +11,7 @@ const router = Backbone.Router.extend({
   routes: {
     "":"home",
     "about-us":"aboutUs",
+    "events/:id":"event",
     "events":"events",
     "admin/:resource":"adminResource",
     "admin":"admin",
@@ -81,6 +82,11 @@ const router = Backbone.Router.extend({
 
   events () {
     var page = <Events parent={this.parent} key="events" /> ;
+    this.go( page )
+  },
+
+  event ( id ) {
+    var page = <Event parent={this.parent} id={ id } key="event" /> ;
     this.go( page )
   },
 
