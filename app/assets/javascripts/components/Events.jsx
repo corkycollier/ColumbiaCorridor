@@ -16,15 +16,58 @@ const Events = React.createClass({
       layoutMode: "fitRows" ,
     })
 
-
     $('#calendar').fullCalendar({
       eventClick: function ( calEvent , jsEvent , view ) {
-        debugger
+        jsEvent.preventDefault();
+        Backbone.history.navigate('/events/' + calEvent.id , { trigger : true } )
       }.bind(this)
     }) ;
-    
-    $('#calendar').fullCalendar('renderEvents' , this.props.parent.state.events ) ;
+
+    this.renderEvents();
   },
+
+  renderEvents() {
+    this.props.parent.state.events.forEach( (el) => {
+      var start = new moment(el.date + " " + el.start );
+      el['start'] = start.format() ;
+      var end = new moment(el.date + " " + el.end );
+      el['end'] = end.format() ;
+      switch( el.event_type ) {
+        case "Breakfast forums":
+        el['backgroundColor'] = "#F2711C" ;
+        el['borderColor'] = "#F2711C" ;
+
+        break;
+
+        case "Special Events":
+        el['backgroundColor'] = "#FBBD08" ;
+        el['borderColor'] = "#FBBD08" ;
+
+        break;
+
+        case "Lunch w/ leaders":
+        el['backgroundColor'] = "#6435C9" ;
+        el['borderColor'] = "#6435C9" ;
+
+        break;
+
+        case "ResourceFULL Use Workshops":
+        el['backgroundColor'] = "#db2b2b" ;
+        el['borderColor'] = "#db2b2b" ;
+
+        break;
+
+        case "Tours & Member Exchanges":
+        el['backgroundColor'] = "#a66941" ;
+        el['borderColor'] = "#a66941" ;
+        break;
+        default:
+        return;
+      }
+      $('#calendar').fullCalendar('renderEvent' , el ) ;
+    })
+  },
+
 
   render () {
     return (
