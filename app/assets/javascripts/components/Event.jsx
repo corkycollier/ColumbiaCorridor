@@ -21,11 +21,8 @@ const Event = React.createClass({
   },
 
   componentDidMount () {
-
     $('#body').html(this.state.event.body)
   },
-
-
 
   render () {
     return (

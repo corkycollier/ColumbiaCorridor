@@ -6,6 +6,7 @@ const router = Backbone.Router.extend({
   initialize (parent) {
     this.parent = parent;
     Backbone.history.start();
+    this.allViews();
   },
 
   routes: {
@@ -27,62 +28,62 @@ const router = Backbone.Router.extend({
     "make-event":"makeEvent",
     "sign-in":"signIn",
     "news/:id":"news",
-
     "mailing-list":"mailingList",
   },
 
-  home () {
-    var page = <Home parent={this.parent} key="home" />;
-    this.go( page );
+  allViews() {
+    this.home = <Home parent={this.parent} key="home" /> ;
+    this.resources  = <Resources parent={this.parent} key="resources" /> ;
+    this.memberArea = <MemberArea parent={this.parent} key="member-area" /> ;
+    this.directory = <Directory parent={this.parent} key="directory" />
+    this.editProfile = <EditProfile parent={this.parent} key="edit-profile" />;
+    this.makeNews = <MakeNews parent={this.parent} key="make-news" />;
+    this.aboutUs = <AboutUs parent={this.parent} key="about-us" />;
+    this.events = <Events parent={this.parent} key="events" /> ;
+    this.makeEvent = <MakeEvent parent={this.parent} key="make-event" /> ;
+    this.join= <Join parent={this.parent} key="join" /> ;
+    this.sponsor = <Sponsor parent={this.parent} key="sponsor" /> ;
+    this.contact = <Contact parent={this.parent} key="contact" /> ;
+    this.signIn = <SignIn parent={this.parent} key="sign-in" /> ;
+    this.mailingList = <MailingList parent={this.parent} key="mailing-list" /> ;
+    this.admin = <Admin parent={this.parent} key="admin" /> ;
+
   },
 
-  news (id) {
-    var page;
-
-    if (!this.parent.state.user) {
-      page = <Home parent={this.parent} key="home" /> ;
-    } else {
-      page = <News parent={this.parent} id={ id } key="news" /> ;
-    }
-
-    this.go( page );
+  home () {
+    this.go( this.home );
   },
 
   memberArea () {
-    var page;
-
     if (!this.parent.state.user) {
-      page = <Home parent={this.parent} key="home" /> ;
+      this.go( this.home );
     } else {
-      page = <MemberArea parent={this.parent} key="member-area" /> ;
+      this.go( this.memberArea )
     }
-
-    this.go( page );
   },
 
   directory () {
-    var page = <Directory parent={this.parent} key="directory" />
-    this.go( page );
+    this.go( this.directory );
   },
 
   editProfile () {
-    var page = <EditProfile parent={this.parent} key="edit-profile" />;
-    this.go( page );
+    this.go( this.editProfile );
   },
 
   makeNews () {
-    var page = <MakeNews parent={this.parent} key="make-news" />;
-    this.go( page )
+    this.go( this.makeNews )
+  },
+
+  makeEvent () {
+    this.go( this.makeEvent )
   },
 
   aboutUs () {
-    var page = <AboutUs parent={this.parent} key="about-us" />;
-    this.go( page )
+    this.go( this.aboutUs )
   },
 
   events () {
-    var page = <Events parent={this.parent} key="events" /> ;
-    this.go( page )
+    this.go( this.events )
   },
 
   event ( id ) {
@@ -90,65 +91,43 @@ const router = Backbone.Router.extend({
     this.go( page )
   },
 
-  makeEvent () {
-    var page = <MakeEvent parent={this.parent} key="make-event" /> ;
-    this.go( page )
+  news (id) {
+    var page = <News parent={this.parent} id={ id } key="news" /> ;
+    this.go( page );
   },
 
   resources () {
-    var page = <Resources parent={this.parent} key="resources" /> ;
-    this.go( page )
+    this.go( this.resources )
   },
 
   join () {
-    var page = <Join parent={this.parent} key="join" /> ;
-    this.go( page )
+    this.go( this.join )
   },
 
   sponsor () {
-    var page = <Sponsor parent={this.parent} key="sponsor" /> ;
-    this.go( page )
+    this.go( this.sponsor )
   },
 
 
   contact () {
-    var page = <Contact parent={this.parent} key="contact" /> ;
-    this.go( page )
+    this.go( this.contact )
   },
 
   signIn () {
-    var page = <SignIn parent={this.parent} key="sign-in" /> ;
-    this.go( page )
+    this.go( this.signIn )
   },
 
 
   mailingList () {
-    var page = <MailingList parent={this.parent} key="mailing-list" /> ;
-    this.go( page )
+    this.go( this.mailingList )
   },
 
   admin () {
-    var page;
-
     if (this.parent.state.user.level == "Admin" || this.parent.state.user.id == 2 ) {
-      page = <Admin parent={this.parent} key="admin" /> ;
+      this.go( this.admin );
     } else {
-      page = <Home parent={this.parent} key="home" /> ;
+      this.go( this.home );
     }
-
-    this.go( page );
-  },
-
-  adminResource () {
-    var page;
-
-    if (!this.parent.state.user.level != "Admin" ) {
-      page = <Home parent={this.parent} key="home" /> ;
-    } else {
-      page = <Admin parent={this.parent} key="admin" /> ;
-    }
-
-    this.go( page );
   },
 
   go ( page ) {
