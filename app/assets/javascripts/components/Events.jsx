@@ -22,6 +22,7 @@ const Events = React.createClass({
         debugger
       }.bind(this)
     }) ;
+    
     $('#calendar').fullCalendar('renderEvents' , this.props.parent.state.events ) ;
   },
 

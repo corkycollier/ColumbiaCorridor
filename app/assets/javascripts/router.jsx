@@ -23,8 +23,10 @@ const router = Backbone.Router.extend({
     "make-news":"makeNews",
     "edit-profile":"editProfile",
     "sign-up":"signUp",
+    "make-event":"makeEvent",
     "sign-in":"signIn",
     "news/:id":"news",
+
     "mailing-list":"mailingList",
   },
 
@@ -82,6 +84,11 @@ const router = Backbone.Router.extend({
     this.go( page )
   },
 
+  makeEvent () {
+    var page = <MakeEvent parent={this.parent} key="make-event" /> ;
+    this.go( page )
+  },
+
   resources () {
     var page = <Resources parent={this.parent} key="resources" /> ;
     this.go( page )
@@ -108,10 +115,6 @@ const router = Backbone.Router.extend({
     this.go( page )
   },
 
-  signUp () {
-    var page = <SignUp parent={this.parent} key="sign-up" /> ;
-    this.go( page )
-  },
 
   mailingList () {
     var page = <MailingList parent={this.parent} key="mailing-list" /> ;

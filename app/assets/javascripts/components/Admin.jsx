@@ -19,10 +19,18 @@ const Admin = React.createClass({
     this.setState( state );
   },
 
+  goToMakeEvent () {
+    Backbone.history.navigate('make-event', { trigger : true } )
+  },
+
   render () {
     return (
       <div className="ui container" style={this.state.style}>
         <AdminUsers parent={ this.props.parent } />
+
+      <div className="ui button blue" onClick={ this.goToMakeEvent }>
+        Make event
+      </div>
       </div>
     )
   }
@@ -165,4 +173,4 @@ const AdminUsers = React.createClass({
       </div>
     );
   }
-})
+});

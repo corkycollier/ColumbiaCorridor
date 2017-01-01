@@ -23,14 +23,7 @@ module Api
     private
 
     def event_params
-      params.require(:event).permit(
-      :title ,
-      :date ,
-      :time ,
-      :location ,
-      :body ,
-      :event_type ,
-      )
+      params.require(:event).permit(Event.new.attributes.map {|key, value| key.to_sym})
     end
   end
 end
