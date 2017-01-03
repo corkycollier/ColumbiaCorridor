@@ -13,19 +13,49 @@ const Columbia = React.createClass({
   },
 
   componentDidMount () {
+
+    this.initRouter();
+    this.disableMemberArea();
+    this.initAllViews();
+  },
+
+  initRouter () {
     this.setState({
       router: new router(this),
     })
+  },
 
+  disableMemberArea () {
     setTimeout(function(){
-      this.checkForUser();
+      if (!this.state.user) {
+        $('.member-area').addClass('disabled');
+      }
     }.bind(this))
   },
 
-  checkForUser () {
-    if (!this.state.user) {
-      $('.member-area').addClass('disabled');
+  initAllViews() {
+    // copy of all views stored in main componentn
+    var views = {
+      "home" : <Home parent={ this } key="home" /> ,
+      "resources"  : <Resources parent={ this } key="resources" /> ,
+      "member-area" : <MemberArea parent={ this } key="member-area" /> ,
+      "directory" : <Directory parent={ this } key="directory" /> ,
+      "edit-profile" : <EditProfile parent={ this } key="edit-profile" />,
+      "make-news" : <MakeNews parent={ this } key="make-news" />,
+      "about-us" : <AboutUs parent={ this } key="about-us" />,
+      "events" : <Events parent={ this } key="events" /> ,
+      "make-event" : <MakeEvent parent={ this } key="make-event" /> ,
+      "join" : <Join parent={ this } key="join" /> ,
+      "sponsor"  : <Sponsor parent={ this } key="sponsor" /> ,
+      "contact"  : <Contact parent={ this } key="contact" /> ,
+      "signIn"  : <SignIn parent={ this } key="sign-in" /> ,
+      "mailing-list"  : <MailingList parent={ this } key="mailing-list" /> ,
+      "admin"  : <Admin parent={ this } key="admin" /> ,
     }
+
+    this.setState({
+      views: views
+    });
   },
 
   render () {

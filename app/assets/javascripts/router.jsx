@@ -6,7 +6,6 @@ const router = Backbone.Router.extend({
   initialize (parent) {
     this.parent = parent;
     Backbone.history.start();
-    this.allViews();
   },
 
   routes: {
@@ -14,7 +13,6 @@ const router = Backbone.Router.extend({
     "about-us":"page",
     "events":"page",
     "resources":"page",
-    "member-area":"page",
     "join":"page",
     "sponsor":"page",
     "contact":"page",
@@ -28,6 +26,7 @@ const router = Backbone.Router.extend({
     "events/:id":"event",
     "news/:id":"news",
     "admin":"admin",
+    "member-area":"checkUser",
     "make-event":"makeEvent",
   },
 
@@ -35,39 +34,13 @@ const router = Backbone.Router.extend({
     debugger
   },
 
-
-  allViews() {
-    var views = {
-      "about-us" : <AboutUs parent={this.parent} key="about-us" />,
-      "events" : <Events parent={this.parent} key="events" /> ,
-      "home" : <Home parent={this.parent} key="home" /> ,
-      "admin"  : <Admin parent={this.parent} key="admin" /> ,
-      "resources"  : <Resources parent={this.parent} key="resources" /> ,
-      "member-area" : <MemberArea parent={this.parent} key="member-area" /> ,
-      "directory" : <Directory parent={this.parent} key="directory" /> ,
-      "edit-profile" : <EditProfile parent={this.parent} key="edit-profile" />,
-      "make-news" : <MakeNews parent={this.parent} key="make-news" />,
-      "makeEvent" : <MakeEvent parent={this.parent} key="make-event" /> ,
-      "join" : <Join parent={this.parent} key="join" /> ,
-      "sponsor"  : <Sponsor parent={this.parent} key="sponsor" /> ,
-      "contact"  : <Contact parent={this.parent} key="contact" /> ,
-      "signIn"  : <SignIn parent={this.parent} key="sign-in" /> ,
-      "mailingList"  : <MailingList parent={this.parent} key="mailing-list" /> ,
-    }
-
-    this.parent.setState({
-      views: views
-    })
-  },
-
-  memberArea () {
+  checkUser() {
     if (!this.parent.state.user) {
-      this.page( "home" );
+      Backbone.history.navigate('' , { trigger : true } );
     } else {
-      this.page( "memberArea" )
+      this.page();
     }
   },
-
 
   event ( id ) {
     var page = <Event parent={this.parent} id={ id } key="event" /> ;
@@ -103,6 +76,7 @@ const router = Backbone.Router.extend({
       this.page( "home" );
     }
   },
+
   page ( page ) {
     var page = Backbone.history.getFragment() || "home" ;
 

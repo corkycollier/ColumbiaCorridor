@@ -6,15 +6,8 @@ const MemberArea = React.createClass({
       "paddingBottom" : "65px" ,
     }
 
-    var admin;
-
-    if (this.props.parent.state.user.id == 2 || this.props.parent.state.user.level == "Admin") {
-      admin = <Admin parent={this.props.parent} />
-    }
-
     return({
       style: style,
-      admin: admin
     })
   },
 
