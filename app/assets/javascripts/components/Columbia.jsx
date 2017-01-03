@@ -13,10 +13,9 @@ const Columbia = React.createClass({
   },
 
   componentDidMount () {
-
     this.initRouter();
-    this.disableMemberArea();
     this.initAllViews();
+    setTimeout(this.customMethods, 0);
   },
 
   initRouter () {
@@ -25,16 +24,9 @@ const Columbia = React.createClass({
     })
   },
 
-  disableMemberArea () {
-    setTimeout(function(){
-      if (!this.state.user) {
-        $('.member-area').addClass('disabled');
-      }
-    }.bind(this))
-  },
-
   initAllViews() {
-    // copy of all views stored in main componentn
+    // insert all views into state of main component
+
     var views = {
       "home" : <Home parent={ this } key="home" /> ,
       "resources"  : <Resources parent={ this } key="resources" /> ,
@@ -56,6 +48,15 @@ const Columbia = React.createClass({
     this.setState({
       views: views
     });
+  },
+
+  customMethods() {
+    // functionality specific to your application
+
+    // disable member area on menu
+    if (!this.state.user) {
+      $('.member-area').addClass('disabled');
+    }
   },
 
   render () {
