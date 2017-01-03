@@ -32,7 +32,7 @@ const Events = React.createClass({
       el['start'] = start.format() ;
       var end = new moment(el.date + " " + el.end );
       el['end'] = end.format() ;
-      
+
       switch( el.event_type ) {
         case "Breakfast forums":
         el['backgroundColor'] = "#F2711C" ;
@@ -65,6 +65,7 @@ const Events = React.createClass({
         default:
         return;
       }
+
       $('#calendar').fullCalendar('renderEvent' , el ) ;
     })
   },

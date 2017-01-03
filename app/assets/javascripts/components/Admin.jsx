@@ -28,9 +28,9 @@ const Admin = React.createClass({
       <div className="ui container" style={this.state.style}>
         <AdminUsers parent={ this.props.parent } />
 
-      <div className="ui button blue" onClick={ this.goToMakeEvent }>
-        Make event
-      </div>
+        <div className="ui button blue" onClick={ this.goToMakeEvent }>
+          Make event
+        </div>
       </div>
     )
   }
@@ -46,6 +46,10 @@ const AdminUsers = React.createClass({
 
   componentDidMount() {
     $('table').tablesort();
+  },
+
+  goToAdminNewUser () {
+    Backbone.history.navigate( 'new-user-admin' , { trigger : true } )
   },
 
   setDelete (e) {
@@ -89,8 +93,7 @@ const AdminUsers = React.createClass({
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Address</th>
-              <th>Company</th>
+              <th>Level</th>
               <th></th>
             </tr>
           </thead>
@@ -101,7 +104,7 @@ const AdminUsers = React.createClass({
                 return(
                   <tr key={ "adminUsers" + el.id }>
 
-                    <td className="collapsing">
+                    <td >
                       { el.username }
                     </td>
 
@@ -109,32 +112,16 @@ const AdminUsers = React.createClass({
                       { el.first_name + " " + el.last_name }
                     </td>
 
-                    <td>
+                    <td >
                       { el.email }
                     </td>
 
-                    <td>
+                    <td  className="collapsing">
                       { el.phone }
                     </td>
 
-                    <td>
-                      <a href={"http://maps.google.com/?q=" + el.user_address + ", " + el.user_city + ", " + el.user_state + " " + el.user_zip } target="_blank" >
-                        <div className="ui basic icon button">
-                          <i className="home icon"></i>
-                        </div>
-                      </a>
 
-                    </td>
-
-                    <td>
-                      <a href={"http://maps.google.com/?q=" + el.company_address + " " + el.company_city + " " + el.company_state + " " + el.company_zip } target="_blank" >
-                        <h5>
-                          { el.company_name }
-                        </h5>
-                      </a>
-                    </td>
-
-                    <td>
+                    <td  className="collapsing">
                       <select value={ el.level || ""} onChange={ this.setDelete }>
                         <option value="">
                         </option>
@@ -156,6 +143,9 @@ const AdminUsers = React.createClass({
                         </option>
                       </select>
 
+
+                    </td>
+                    <td className="collapsing">
                       <a data-id={el.id} onClick={ this.setEdit } style={{ "margin" : "0px 4px" ,}}>
                         edit
                       </a>
@@ -169,6 +159,16 @@ const AdminUsers = React.createClass({
               })
             }
           </tbody>
+
+          <tfoot>
+            <tr>
+              <th colSpan="6" onClick={ this.goToAdminNewUser }>
+                <div className="ui button blue">
+                  New
+                </div>
+              </th>
+            </tr>
+          </tfoot>
         </table>
       </div>
     );

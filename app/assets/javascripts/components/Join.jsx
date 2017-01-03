@@ -24,7 +24,7 @@ const Join = React.createClass({
         </h1>
 
         <div className="ui grid doubling stackable">
-          <div className="eight wide column" style={{"height":"50vh","overflowY":"scroll"}}>
+          <div className="eight wide column" >
             <h4>Discount Members – $475</h4>
             <ul style={{ "color" : "#767373" }}>
               <li>

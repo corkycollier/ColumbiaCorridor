@@ -23,7 +23,7 @@ const AboutUs = React.createClass({
           </h1>
 
           <div className="ui grid doubling stackable" style={{ "margin" : "20px 0px" }}>
-            <div className="eight wide column" style={{ "fontSize" : "16px" , "height" : "50vh"  , "overflowY" : "scroll" }}>
+            <div className="eight wide column" style={{ "fontSize" : "16px" }}>
               <p>
                 The Columbia Corridor is the single largest economic corridor in Oregon, stretching from the Willamette River in the west to the Sandy River in the east. It’s the largest industrial area in the state, with 2,500 businesses employing 65,000 people with more middle wage jobs than anywhere else in the state. 40% of those employees live within five miles of work.
               </p>
@@ -56,7 +56,7 @@ const AboutUs = React.createClass({
               <img className="ui large image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481672346/Fact-1_zotnph.jpg" />
             </div>
 
-            <div className="eight wide column" style={{ "fontSize" : "16px" , "height" : "50vh" , "overflowY" : "scroll" }}>
+            <div className="eight wide column" style={{ "fontSize" : "16px" }}>
               <p>
                 In 1989, the Portland City Council recognized the uniqueness of the Columbia Corridor as a location for new industry and jobs and designated it an <b>industrial sanctuary</b>.
               </p>
@@ -100,21 +100,20 @@ const AboutUs = React.createClass({
 
             </div>
 
-            <div className="eight wide column" style={{ "height" : "30vh" , "overflowY" : "scroll" }}>
-              <div style={{ "width" : "60%" , "padding" : "12px" }}>
-                <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
-                <p style={{ "textAlign" : "center" }}>
-                  <b>Executive Director</b> - Corky Collier
+            <div className="four wide column" >
+              <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
+              <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
+                <b>Executive Director</b> - Corky Collier
+                </p>
+              </div>
+              <div className="four wide column" >
+                <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
+                <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
+                  <b>Office Manger</b> - Marissa King
                   </p>
                 </div>
 
-                <div style={{"width":"60%","padding":"12px"}}>
-                  <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
-                  <p style={{ "textAlign" : "center" }}>
-                    <b>Office Manger</b> - Marissa King
-                    </p>
-                  </div>
-                </div>
+
               </div>
             </div>
 

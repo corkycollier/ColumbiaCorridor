@@ -34,6 +34,7 @@ const Columbia = React.createClass({
         <SidebarMenu />
 
         <div className="pusher" style={{ "paddingTop" : "1px" }}>
+
           <Header parent = { this } />
           <CMenu parent = { this } />
 
