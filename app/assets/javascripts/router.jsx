@@ -39,21 +39,17 @@ const router = Backbone.Router.extend({
 
   event ( id ) {
     var page = <Event parent={this.parent} id={ id } key="event" /> ;
-    setTimeout(function(){
-      this.parent.setState({
-        activePage: [ page ]
-      });
-    }.bind(this), 0)
+    this.parent.setState({
+      activePage: [ page ]
+    });
   },
 
   news (id) {
     var page = <News parent={this.parent} id={ id } key="news" /> ;
 
-  setTimeout(function(){
-      this.parent.setState({
-        activePage: [ page ]
-      });
-    }.bind(this), 0)
+    this.parent.setState({
+      activePage: [ page ]
+    });
   },
 
   admin () {
@@ -64,13 +60,6 @@ const router = Backbone.Router.extend({
     }
   },
 
-  admin () {
-    if (this.parent.state.user.level == "Admin" || this.parent.state.user.id == 2 ) {
-      this.page( "admin" );
-    } else {
-      this.page( "home" );
-    }
-  },
 
   page () {
     var page = Backbone.history.getFragment() || "home" ;

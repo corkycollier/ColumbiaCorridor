@@ -48,10 +48,6 @@ const AdminUsers = React.createClass({
     $('table').tablesort();
   },
 
-  goToAdminNewUser () {
-    Backbone.history.navigate( 'new-user-admin' , { trigger : true } )
-  },
-
   setDelete (e) {
     if ( e.currentTarget.dataset.id < 3 ) {
       alert('You cannot remove that user.')
@@ -146,9 +142,6 @@ const AdminUsers = React.createClass({
 
                     </td>
                     <td className="collapsing">
-                      <a data-id={el.id} onClick={ this.setEdit } style={{ "margin" : "0px 4px" ,}}>
-                        edit
-                      </a>
 
                       <a data-id={el.id} onClick={ this.setDelete }>
                         delete
@@ -163,9 +156,6 @@ const AdminUsers = React.createClass({
           <tfoot>
             <tr>
               <th colSpan="6" onClick={ this.goToAdminNewUser }>
-                <div className="ui button blue">
-                  New
-                </div>
               </th>
             </tr>
           </tfoot>
