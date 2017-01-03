@@ -22,16 +22,11 @@ const router = Backbone.Router.extend({
     "make-news":"page",
     "edit-profile":"page",
     "mailing-list":"page",
-
     "events/:id":"event",
     "news/:id":"news",
     "admin":"admin",
     "member-area":"checkUser",
     "make-event":"makeEvent",
-  },
-
-  page(){
-    debugger
   },
 
   checkUser() {
@@ -77,13 +72,10 @@ const router = Backbone.Router.extend({
     }
   },
 
-  page ( page ) {
+  page () {
     var page = Backbone.history.getFragment() || "home" ;
-
-    setTimeout(function(){
-      this.parent.setState({
-        activePage: [ this.parent.state.views[ page ] ]
-      });
-    }.bind(this), 0)
+    this.parent.setState({
+      activePage: [ this.parent.state.views[ page ] ]
+    });
   }
 })

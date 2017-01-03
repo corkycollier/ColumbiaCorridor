@@ -1,4 +1,4 @@
-const CMenu = React.createClass({
+const Menu = React.createClass({
   getInitialState(){
     var style = {
       "color" : "#262262"
@@ -61,11 +61,12 @@ const SidebarMenuButton = React.createClass({
 
   openSidebar () {
     $('.sidebar').transition();
+    $('#backdrop').addClass( 'active' )
   },
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container" style={{ "zIndex" : "40000"}}>
         <div className="ui icon button" style={{"position" : "absolute" , "left" : "51px" , "top" : "151px" }} onClick={ this.openSidebar }>
           <i className="sidebar icon" />
         </div>
@@ -90,44 +91,56 @@ const SidebarMenu = React.createClass({
   go (e) {
     Backbone.history.navigate( e.currentTarget.dataset.path , { trigger : true });
     $('.sidebar').transition();
+    $('#backdrop').removeClass('active') ;
+  },
+
+  closeSidebar () {
+    $('.sidebar').transition() ;
+    $('#backdrop').removeClass('active') ;
   },
 
 
   render () {
     return (
-      <div className="ui vertical menu sidebar" style={this.state.style} >
-        <a className="item header" data-path="" onClick={ this.go } >
-          Home
-        </a>
+      <div style={this.state.style}>
+        <div id="backdrop" style={{  "position" : "absolute" , "top" : "0", "left" : "0", "right" : "0", "bottom" : "0" }} onClick={ this.closeSidebar }>
+        </div>
 
-        <a className="item header" data-path="about-us" onClick={ this.go } >
-          About Us
-        </a>
+        <div className="ui vertical menu sidebar" style={{ "zIndex" : "4000000"}}>
+          <a className="item header" data-path="" onClick={ this.go } >
+            Home
+          </a>
 
-        <a className="item header" data-path="events" onClick={ this.go } >
-          Events
-        </a>
+          <a className="item header" data-path="about-us" onClick={ this.go } >
+            About Us
+          </a>
 
-        <a className="item header" data-path="resources" onClick={ this.go } >
-          Resources
-        </a>
+          <a className="item header" data-path="events" onClick={ this.go } >
+            Events
+          </a>
 
-        <a className="item header" data-path="join" onClick={ this.go } >
-          Join
-        </a>
+          <a className="item header" data-path="resources" onClick={ this.go } >
+            Resources
+          </a>
 
-        <a className="item header" data-path="member-area" onClick={ this.go } >
-          Member Area
-        </a>
+          <a className="item header" data-path="join" onClick={ this.go } >
+            Join
+          </a>
 
-        <a className="header item" data-path="sponsor" onClick={ this.go } >
-          Sponsor
-        </a>
+          <a className="item header" data-path="member-area" onClick={ this.go } >
+            Member Area
+          </a>
 
-        <a className="header item" data-path="contact" onClick={ this.go } >
-          Contact
-        </a>
+          <a className="header item" data-path="sponsor" onClick={ this.go } >
+            Sponsor
+          </a>
+
+          <a className="header item" data-path="contact" onClick={ this.go } >
+            Contact
+          </a>
+        </div>
       </div>
+
     )
   }
 });

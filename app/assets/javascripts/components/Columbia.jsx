@@ -1,33 +1,11 @@
 const Columbia = React.createClass({
+
   getInitialState () {
-    var style = {
-
-    }
-    return({
-      style : style ,
-      user : this.props.app_data.user ,
-      members : this.props.app_data.members ,
-      news : this.props.app_data.news ,
-      events : this.props.app_data.events ,
-    })
-  },
-
-  componentDidMount () {
-    this.initRouter();
-    this.initAllViews();
-    setTimeout(this.customMethods, 0);
-  },
-
-  initRouter () {
-    this.setState({
-      router: new router(this),
-    })
-  },
-
-  initAllViews() {
-    // insert all views into state of main component
+    // all application views are set into main component
+    // whenever adding a new view give it a name and add here
 
     var views = {
+      // name : view ,
       "home" : <Home parent={ this } key="home" /> ,
       "resources"  : <Resources parent={ this } key="resources" /> ,
       "member-area" : <MemberArea parent={ this } key="member-area" /> ,
@@ -40,18 +18,32 @@ const Columbia = React.createClass({
       "join" : <Join parent={ this } key="join" /> ,
       "sponsor"  : <Sponsor parent={ this } key="sponsor" /> ,
       "contact"  : <Contact parent={ this } key="contact" /> ,
-      "signIn"  : <SignIn parent={ this } key="sign-in" /> ,
+      "sign-in"  : <SignIn parent={ this } key="sign-in" /> ,
+      "sign-up"  : <SignUp parent={ this } key="sign-up" /> ,
       "mailing-list"  : <MailingList parent={ this } key="mailing-list" /> ,
       "admin"  : <Admin parent={ this } key="admin" /> ,
     }
 
+    // log app data and set it
+
+    console.log( this.props.data )
+    this.props.data['views'] = views ;
+    return( this.props.data )
+  },
+
+  componentDidMount () {
+    this.initRouter();
+    setTimeout(this.customMethods, 0);
+  },
+
+  initRouter () {
     this.setState({
-      views: views
-    });
+      router: new router(this),
+    })
   },
 
   customMethods() {
-    // functionality specific to your application
+    // specific functionality for your application
 
     // disable member area on menu
     if (!this.state.user) {
@@ -61,21 +53,18 @@ const Columbia = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style} >
-        <SidebarMenu />
+      <div>
+        <SidebarMenu parent = { this } />
+        <Header parent = { this } />
+        <Menu parent = { this } />
 
-        <div className="pusher" style={{ "paddingTop" : "1px" }}>
-
-          <Header parent = { this } />
-          <CMenu parent = { this } />
-
-            {
-              this.state.activePage
-            }
-
-
-          <Footer parent={ this } />
+        <div>
+          {
+            this.state.activePage
+          }
         </div>
+
+        <Footer parent={ this } />
       </div>
     )
   }

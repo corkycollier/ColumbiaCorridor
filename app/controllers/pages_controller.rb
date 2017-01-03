@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @app_data = app_data
+    @data = app_data
   end
 
 
