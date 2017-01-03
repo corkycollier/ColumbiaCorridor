@@ -3,7 +3,7 @@ const Home = React.createClass({
     var style = {
       "color" : "#262262" ,
       "position" : "relative" ,
-      "height" : "471px" ,
+      "height" : "41vw" ,
     }
 
     var pages = {
