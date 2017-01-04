@@ -37,10 +37,6 @@ const Header = React.createClass({
         </div>
 
         <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "12px" , "right" : "12px" }}>
-          <a className="item" onClick={ this.goToMailingList } >
-            Mailing List
-          </a>
-
           <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank" >
             <i className="facebook icon"></i>
           </a>
