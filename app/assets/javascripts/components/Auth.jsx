@@ -2,7 +2,8 @@ const SignIn = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px"
+      "padding" : "60px" ,
+      "paddingBottom" : "120px" , 
     }
 
     return({
@@ -36,7 +37,10 @@ const SignIn = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1>Sign In</h1>
+        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+          Sign In
+        </h1>
+
         <form className="ui form" onSubmit={ this.signIn }>
           <div className="field">
             <label>Email</label>
@@ -146,7 +150,9 @@ const SignUp = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1>Sign Up</h1>
+        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+          Sign Up
+        </h1>
 
         <form className="ui form" onSubmit={ this.signUp }>
 

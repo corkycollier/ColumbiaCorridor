@@ -26,6 +26,7 @@ const Admin = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
+        <UsersTable parent={ this.props.parent } />
         <AdminUsers parent={ this.props.parent } />
 
         <div className="ui button blue" onClick={ this.goToMakeEvent }>

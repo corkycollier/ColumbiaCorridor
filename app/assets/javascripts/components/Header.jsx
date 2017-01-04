@@ -34,31 +34,25 @@ const Header = React.createClass({
           <div className="four wide column">
             <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"120px"}} onClick={ this.goHome }/>
           </div>
-
-          <div className="four wide column right floated">
-            <div className="ui button mini facebook" style={{ "position" : "absolute" , "top" : "10px" , "right" : "79px", "background" : "#262262" , "width" : "95px" }} onClick={this.goToMailingList}>
-              mailing list
-            </div>
-
-            <a href="https://www.facebook.com/ColumbiaCorridor/" target="_blank">
-              <div className="ui button mini facebook icon" style={{ "position" : "absolute" , "top" : "10px" , "right" : "2px"}} >
-                <i className="facebook icon" />
-              </div>
-            </a>
-
-            <a href="https://www.linkedin.com/company/columbia-corridor-association" target="_blank">
-              <div className="ui button mini linkedin icon" style={{ "position" : "absolute" , "top" : "10px" , "right" : "42px"}} >
-                <i className="linkedin icon" />
-              </div>
-            </a>
-
-            {
-              this.state.buttons
-            }
-
-          </div>
         </div>
 
+        <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "12px" , "right" : "12px" }}>
+          <a className="item" onClick={ this.goToMailingList } >
+            Mailing List
+          </a>
+
+          <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank" >
+            <i className="facebook icon"></i>
+          </a>
+
+          <a className="icon item" href="https://www.linkedin.com/company/columbia-corridor-association" target="_blank">
+            <i className="linkedin icon"></i>
+          </a>
+
+          {
+            this.state.buttons
+          }
+        </div>
       </div>
     )
   }
@@ -93,11 +87,9 @@ const LoggedInButtons = React.createClass({
 
   render () {
     return (
-      <div className="" style={this.state.style}>
-        <div className="ui button small red" style={{ "position" : "absolute" , "right" : "1px" , "top" : "48px" , "width" : "84px"}} onClick={ this.logout }>
-          Logout
-        </div>
-      </div>
+      <a className="item" onClick={ this.logout }>
+        Logout
+      </a>
     )
   }
 });
@@ -123,13 +115,14 @@ const LoggedOutButtons = React.createClass({
   render () {
     return (
       <div>
-        <div className="ui button violet" style={{"background" : "#262262" , "position" : "absolute" , "right" : "1px" , "top" : "48px" }} onClick={ this.signIn } >
+        <a className="item" onClick={ this.signIn } style={{ "float" : "left" ,}} >
           Sign In
-        </div>
+        </a>
 
-        <div className="ui button violet" style={{"background" : "#262262" , "position" : "absolute" , "height" : "36px" , "width" : "84px" , "fontSize" : "13px" , "right" : "80px" , "top" : "48px" }} onClick={ this.signUp } >
+        <a className="item" onClick={ this.signUp } >
           Sign Up
-        </div>
+
+        </a>
       </div>
     )
   }
