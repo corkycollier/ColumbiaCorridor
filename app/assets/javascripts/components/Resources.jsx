@@ -35,9 +35,9 @@ const Resources = React.createClass({
                 this.props.parent.state.news.map( (el) => {
                   if (el.cca_only) { return; }
                   return (
-                    <div key={ el.id } data-id={ el.id } onClick={ this.goToNews }>
+                    <div key={ el.id }>
                       <div style={{"marginBottom" : "8px"}}>
-                        <b>
+                        <b >
                           { el.title }
                         </b>
 
@@ -46,12 +46,9 @@ const Resources = React.createClass({
                         </span>
                       </div>
 
-                      <div>
-                        { el.body.slice(0, 128) }
-                      </div>
 
                       <div style={{"marginTop" : "13px"}}>
-                        <a data-id={ el.id } onClick={ this.goToNews } >
+                        <a href={"#news/" + el.id } >
                           read more
                         </a>
                       </div>

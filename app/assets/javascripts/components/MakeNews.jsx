@@ -14,8 +14,8 @@ const MakeNews = React.createClass({
   },
 
   componentDidMount () {
-    $('table').tablesort();
     $('.checkbox').checkbox();
+    $('#text-area').froalaEditor();
   },
 
   submitNews () {
@@ -38,6 +38,13 @@ const MakeNews = React.createClass({
       })
     }
   },
+
+  updateBody(e) {
+    var state = this.state;
+    state['body'] = $('.fr-view').html() ;
+    this.setState( state );
+  },
+
 
   updateState (e) {
     var newData = {};
@@ -82,9 +89,9 @@ const MakeNews = React.createClass({
                 </div>
               </div>
 
-              <div className="field">
+              <div className="field" onBlur={ this.updateBody }>
                 <label>Body</label>
-                <textarea id="froala-target" type="text" data-field="body" onChange={ this.updateState } required />
+                <textarea id="text-area" type="text" data-field="body" required />
               </div>
 
               <button className="ui button small" type="submit" style={{ "background" : "#262262" , "color" : "white" }}>

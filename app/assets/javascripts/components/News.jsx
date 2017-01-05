@@ -12,6 +12,7 @@ const News = React.createClass({
   },
 
   componentDidMount () {
+    $('#body').html(this.state.body)
   },
 
   render () {
@@ -26,8 +27,8 @@ const News = React.createClass({
 
               <div className="ui clearing divider"></div>
 
-              <div>
-                { this.state.body }
+              <div id="body">
+
               </div>
 
 

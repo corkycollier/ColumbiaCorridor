@@ -26,7 +26,7 @@ const router = Backbone.Router.extend({
     "news/:id":"news",
     "admin":"admin",
     "member-area":"checkUser",
-    "make-event":"makeEvent",
+    "make-event":"page",
   },
 
   checkUser() {
@@ -43,6 +43,8 @@ const router = Backbone.Router.extend({
       activePage: [ page ]
     });
   },
+
+
 
   news (id) {
     var page = <News parent={this.parent} id={ id } key="news" /> ;

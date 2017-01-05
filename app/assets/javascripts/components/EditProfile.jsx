@@ -69,7 +69,7 @@ const EditProfile = React.createClass({
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
 
-            <form className="ui small form" onSubmit={ this.signUp }>
+            <form className="ui small form" onSubmit={ this.updateUser }>
 
               <h3>Personal</h3>
 
@@ -183,7 +183,7 @@ const EditProfile = React.createClass({
                 </select>
               </div>
 
-              <button className="ui button" type="submit" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "18px" }} onClick={ this.updateUser }>
+              <button className="ui button" type="submit" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "18px" }} >
                 Update
               </button>
             </form>
