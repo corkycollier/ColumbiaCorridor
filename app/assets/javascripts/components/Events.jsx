@@ -23,7 +23,9 @@ const Events = React.createClass({
       }.bind(this)
     }) ;
 
-    this.renderEvents();
+    setTimeout(function(){
+      this.renderEvents();
+    }.bind(this), 0)
   },
 
   renderEvents() {

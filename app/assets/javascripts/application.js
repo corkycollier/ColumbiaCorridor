@@ -21,6 +21,7 @@
 //= require backbone
 //= require moment
 //= require fullcalendar
+//= require cloudinary
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require froala_editor.min.js

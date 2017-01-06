@@ -85,7 +85,7 @@ const EditProfile = React.createClass({
 
               <div className="field">
                 <label>Password</label>
-                <input type="password" data-field="password" onChange={ this.updateState } defaultValue={this.state.password}  />
+                <input type="password" data-field="password" onChange={ this.updateState } defaultValue={this.state.password} minLength="6"  />
               </div>
 
               <div className="two fields">

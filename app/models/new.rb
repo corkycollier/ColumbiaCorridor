@@ -3,7 +3,7 @@ class New < ActiveRecord::Base
 
   def safe_show
     attributes = self.attributes
-    attributes['author'] = (self.user.first_name + " " + self.user.last_name) || self.user.username
+    attributes['author'] = (self.user.first_name + " " + self.user.last_name) || self.user.username if self.user
     attributes
   end
 end

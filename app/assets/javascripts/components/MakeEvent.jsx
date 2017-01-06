@@ -35,7 +35,6 @@ const MakeEvent = React.createClass({
         type: 'POST',
         data: { event: this.state },
         success: function (event, resp, obj) {
-          alert('Event #' + event.id + " was created. ")
           Backbone.history.navigate('admin', { trigger: true })
         }.bind(this), error: function (a, b, c) {
           alert("There was an error. Event was not created.")

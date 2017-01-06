@@ -26,7 +26,7 @@ const Admin = React.createClass({
         <AdminUsers parent={ this.props.parent } />
         <AdminEvents parent={ this.props.parent } />
         <AdminNews parent={ this.props.parent } />
-
+        <AdminAds parent={ this.props.parent } />
       </div>
     )
   }
@@ -89,11 +89,11 @@ const AdminUsers = React.createClass({
         <table className="ui table">
           <thead>
             <tr>
+              <th>ID</th>
               <th>Username</th>
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Level</th>
               <th></th>
             </tr>
           </thead>
@@ -103,6 +103,10 @@ const AdminUsers = React.createClass({
               this.state.members.map( (el) => {
                 return(
                   <tr key={ "adminUsers" + el.id }>
+
+                    <td className="collapsing" style={{ "textAlign" : "center" ,}}>
+                      { el.id }
+                    </td>
 
                     <td >
                       { el.username }
@@ -120,33 +124,7 @@ const AdminUsers = React.createClass({
                       { el.phone }
                     </td>
 
-
-                    <td  className="collapsing">
-                      <select value={ el.level || ""} onChange={ this.setDelete }>
-                        <option value="">
-                        </option>
-
-                        <option value="Admin">
-                          admin
-                        </option>
-
-                        <option value="Discount">
-                          discount
-                        </option>
-
-                        <option value="Standard">
-                          standard
-                        </option>
-
-                        <option value="Foundational">
-                          foundational
-                        </option>
-                      </select>
-
-
-                    </td>
                     <td className="collapsing">
-
                       <a data-id={el.id} onClick={ this.setDelete }>
                         delete
                       </a>
@@ -176,14 +154,6 @@ const AdminEvents = React.createClass({
     })
   },
 
-  deleteEvent() {
-    var confirmDelete = confirm('Are you sure?');
-    if ( confirmDelete ) {
-      $.ajax({
-        url: 'api/events/'
-      })
-    }
-  },
 
   goToMakeEvent () {
     Backbone.history.navigate('make-event', { trigger : true } )
@@ -210,9 +180,9 @@ const AdminEvents = React.createClass({
             {
               this.props.parent.state.events.map( (el) => {
                 return(
-                  <AdminEventsRow event={ el } key={ el.id } />
+                  <AdminEventsRow event={ el } key={ el.id } parent={ this.props.parent } />
                 )
-              })
+              }.bind(this))
             }
           </tbody>
 
@@ -232,12 +202,17 @@ const AdminEvents = React.createClass({
 });
 
 const AdminEventsRow = React.createClass({
-
   deleteEvent() {
     var confirmDelete = confirm('Are you sure?');
     if ( confirmDelete ) {
       $.ajax({
-        url: 'api/events/'
+        url: 'api/events/' + this.props.event.id ,
+        type: "DELETE",
+        success: function (app_data, resp, obj) {
+          this.props.parent.setState(app_data)
+        }.bind(this), error: function (a, b, c) {
+          alert('There was an error.')
+        }
       })
     }
   },

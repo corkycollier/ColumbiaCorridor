@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def page
     @page = params[:page]
+    @data = app_data
   end
 end

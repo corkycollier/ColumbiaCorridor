@@ -5,19 +5,19 @@ module Api
     def create
       @event = Event.new( event_params )
       @event.save
-      render json: @event.safe_show
+      render json: app_data
     end
 
     def update
       @event = Event.find_by_id( params[:id] )
       @event.update_attributes( params[:event] )
-      render json: current_user.safe_show
+      render json: app_data
     end
 
     def destroy
       @event = Event.find_by_id( params[:id] )
       @event.try(:destroy)
-      render json: current_user.safe_show
+      render json: app_data
     end
 
     private
