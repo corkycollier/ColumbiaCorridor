@@ -14,6 +14,7 @@ const router = Backbone.Router.extend({
     "events":"page",
     "resources":"page",
     "join":"page",
+    "ad":"page",
     "sponsor":"page",
     "contact":"page",
     "sign-up":"page",

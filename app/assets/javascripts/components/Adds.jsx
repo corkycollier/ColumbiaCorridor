@@ -54,7 +54,7 @@ const Advertisements = React.createClass({
       currentSlide : this.state.slides[ slideNumber ] ,
     });
   },
-
+  
   navigate () {
     var win = window.open( this.state.currentSlide.link , '_blank' );
   },
@@ -62,6 +62,7 @@ const Advertisements = React.createClass({
   render () {
     return (
       <div className="" style = { this.state.style } >
+
         <img className="ui image add centered"
           src = { this.state.currentSlide.img }
           style = {{ "width" : "100%" , "height" : "140px" }}

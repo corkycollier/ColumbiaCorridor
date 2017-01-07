@@ -22,6 +22,7 @@ const Columbia = React.createClass({
       "sign-up"  : <SignUp parent={ this } key="sign-up" /> ,
       "mailing-list"  : <MailingList parent={ this } key="mailing-list" /> ,
       "admin"  : <Admin parent={ this } key="admin" /> ,
+      "ad"  : <Ad parent={ this } key="ad" /> ,
     }
 
     // log app data and set it

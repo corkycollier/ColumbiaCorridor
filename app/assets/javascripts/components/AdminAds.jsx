@@ -9,7 +9,6 @@ const AdminAds = React.createClass({
     return({
       style: style,
       members: this.props.parent.state.members
-
     })
   },
 
@@ -18,7 +17,7 @@ const AdminAds = React.createClass({
     $('table').tablesort();
   },
 
-  setDelete (e) {
+  delete (e) {
     if ( e.currentTarget.dataset.id < 3 ) {
       alert('You cannot remove that user.')
       return;
@@ -91,7 +90,7 @@ const AdminAds = React.createClass({
                     </td>
 
                     <td className="collapsing">
-                      <a data-id={el.id} onClick={ this.setDelete }>
+                      <a data-id={el.id} onClick={ this.delete }>
                         delete
                       </a>
                     </td>

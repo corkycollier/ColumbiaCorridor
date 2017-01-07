@@ -20,6 +20,7 @@
 //= require underscore
 //= require backbone
 //= require moment
+//= require faker.min.js
 //= require fullcalendar
 //= require cloudinary
 //= require backbone_rails_sync
