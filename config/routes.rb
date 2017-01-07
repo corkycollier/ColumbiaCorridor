@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :news
     resources :events
     resources :users
+    resources :sponsors
   end
 end

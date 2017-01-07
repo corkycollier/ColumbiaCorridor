@@ -35,9 +35,9 @@ const Advertisements = React.createClass({
 
     return({
       style: style,
-      slides: slides,
-      currentSlide : slides[0] ,
-    })
+      slides: this.props.parent.state.ads ,
+      currentSlide : this.props.parent.state.ads[0] || { img : ""} ,
+    });
   },
 
   componentDidMount () {
@@ -54,7 +54,7 @@ const Advertisements = React.createClass({
       currentSlide : this.state.slides[ slideNumber ] ,
     });
   },
-  
+
   navigate () {
     var win = window.open( this.state.currentSlide.link , '_blank' );
   },

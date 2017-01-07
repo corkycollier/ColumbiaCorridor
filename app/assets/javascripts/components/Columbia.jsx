@@ -1,4 +1,4 @@
-const Columbia = React.createClass({
+const Main = React.createClass({
 
   getInitialState () {
     // all application views are set into main component
@@ -22,11 +22,10 @@ const Columbia = React.createClass({
       "sign-up"  : <SignUp parent={ this } key="sign-up" /> ,
       "mailing-list"  : <MailingList parent={ this } key="mailing-list" /> ,
       "admin"  : <Admin parent={ this } key="admin" /> ,
-      "ad"  : <Ad parent={ this } key="ad" /> ,
+      "make-ad"  : <MakeAd parent={ this } key="ad" /> ,
     }
 
     // log app data and set it
-
     console.log( this.props.data )
     this.props.data['views'] = views ;
     return( this.props.data )

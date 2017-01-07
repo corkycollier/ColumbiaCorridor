@@ -7,8 +7,7 @@ const AdminAds = React.createClass({
     }
 
     return({
-      style: style,
-      members: this.props.parent.state.members
+      style: style ,
     })
   },
 
@@ -18,30 +17,29 @@ const AdminAds = React.createClass({
   },
 
   delete (e) {
-    if ( e.currentTarget.dataset.id < 3 ) {
-      alert('You cannot remove that user.')
-      return;
-    } else {
-      var sure = confirm('Are you sure?')
-      if (sure) {
-        $.ajax({
-          url: '/api/users/' + e.currentTarget.dataset.id ,
-          type: 'DELETE' ,
-          success: function(model, resp, obj) {
-            this.setState({
-              members: model.members
-            })
+    var sure = confirm('Are you sure?');
 
-          }.bind(this), error: function (a, b, c) {
-            alert('There was an error') ;
-          }
-        })
+    if (sure) {
+      $.ajax({
+        url: '/api/sponsors/' + e.currentTarget.dataset.id ,
+        type: 'DELETE' ,
+        success: function( app_data , resp , obj ) {
+          location.href = "/#admin"
+        }.bind(this), error: function ( app_data , resp , obj ) {
+          this.props.parent.setState( app_data )
+          Backbone.history.navigate( 'admin' , { trigger : true } );
+        }.bind(this)
+      })
 
-      }
     }
   },
 
   setEdit() {
+  },
+
+
+  makeAd () {
+    Backbone.history.navigate( 'make-ad' , { trigger : true } )
   },
 
   render() {
@@ -55,17 +53,17 @@ const AdminAds = React.createClass({
           <thead>
             <tr>
               <th>ID</th>
-              <th>Username</th>
               <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
+              <th>Image url</th>
+              <th>Link</th>
               <th></th>
             </tr>
           </thead>
 
           <tbody>
             {
-              this.state.members.map( (el) => {
+
+              this.props.parent.state.ads.map( (el) => {
                 return(
                   <tr key={ "adminUsers" + el.id }>
 
@@ -74,19 +72,15 @@ const AdminAds = React.createClass({
                     </td>
 
                     <td >
-                      { el.username }
+                      { el.name }
                     </td>
 
                     <td>
-                      { el.first_name + " " + el.last_name }
+                      { el.image_url }
                     </td>
 
                     <td >
-                      { el.email }
-                    </td>
-
-                    <td  className="collapsing">
-                      { el.phone }
+                      { el.link }
                     </td>
 
                     <td className="collapsing">
@@ -100,6 +94,15 @@ const AdminAds = React.createClass({
             }
           </tbody>
 
+          <tfoot>
+            <tr>
+              <th colSpan="6">
+                <div className="ui button blue" onClick={ this.makeAd }>
+                  New Ad
+                </div>
+              </th>
+            </tr>
+          </tfoot>
         </table>
       </div>
     );

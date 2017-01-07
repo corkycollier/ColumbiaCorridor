@@ -37,6 +37,7 @@ class ApplicationController < ActionController::Base
       members: User.all.collect{ |user| user.safe_show } ,
       news: New.all.collect{ |thing| thing.safe_show } ,
       events: Event.all.collect{ |event| event.safe_show } ,
+      ads: Ad.all.collect{ |ad| ad.safe_show } ,
     }
   end
 end

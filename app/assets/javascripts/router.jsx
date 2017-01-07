@@ -28,6 +28,24 @@ const router = Backbone.Router.extend({
     "admin":"admin",
     "member-area":"checkUser",
     "make-event":"page",
+    "make-ad":"page",
+    "edit/user/:id":"editUserId",
+  },
+
+  editUserId ( id ) {
+    var user;
+    this.parent.state.members.forEach(function(el) {
+      if (el.id == id ) {
+        user = el
+      }
+    });
+
+    var page = <AdminEditProfile
+      parent={ this.parent }
+      user={ user }
+      key="edit-profile-user"
+      /> ;
+    this.go( page )
   },
 
   checkUser() {
@@ -56,10 +74,10 @@ const router = Backbone.Router.extend({
   },
 
   admin () {
-    if (this.parent.state.user.level == "Admin" || this.parent.state.user.id == 2 ) {
-      this.page( "admin" );
+    if ( this.parent.state.user.id < 3 ) {
+      this.go( <Admin parent={ this.parent } key="admin" />);
     } else {
-      this.page( "home" );
+      this.go( <Home parent={ this.parent } key="home" /> );
     }
   },
 
@@ -69,5 +87,13 @@ const router = Backbone.Router.extend({
     this.parent.setState({
       activePage: [ this.parent.state.views[ page ] ]
     });
-  }
+  },
+
+  go ( page ) {
+    var page = page || Backbone.history.getFragment() || "home" ;
+
+    this.parent.setState({
+      activePage: [ page ]
+    });
+  },
 })

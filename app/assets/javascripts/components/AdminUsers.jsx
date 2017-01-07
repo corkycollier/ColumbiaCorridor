@@ -23,7 +23,7 @@ const AdminUsers = React.createClass({
       alert('You cannot remove that user.')
       return;
     } else {
-      var sure = confirm('Are you sure?')
+      var sure = confirm('Are you sure?');
       if (sure) {
         $.ajax({
           url: '/api/users/' + e.currentTarget.dataset.id ,
@@ -36,13 +36,16 @@ const AdminUsers = React.createClass({
           }.bind(this), error: function (a, b, c) {
             alert('There was an error') ;
           }
-        })
-
-      }
+        });
+      } // if (sure)
     }
   },
 
-  setEdit() {
+  edit (e) {
+    Backbone.history.navigate(
+      '/edit/user/' + e.currentTarget.dataset.id
+      , { trigger : true }
+    )
   },
 
   render() {
@@ -60,6 +63,8 @@ const AdminUsers = React.createClass({
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
+              <th>State</th>
+              <th>Company</th>
               <th></th>
             </tr>
           </thead>
@@ -69,12 +74,14 @@ const AdminUsers = React.createClass({
               this.state.members.map( (el) => {
                 return(
                   <tr key={ "adminUsers" + el.id }>
-
-                    <td className="collapsing" style={{ "textAlign" : "center" ,}}>
+                    <td
+                      className="collapsing"
+                      style={{ "textAlign" : "center" }}
+                      >
                       { el.id }
                     </td>
 
-                    <td >
+                    <td>
                       { el.username }
                     </td>
 
@@ -82,16 +89,35 @@ const AdminUsers = React.createClass({
                       { el.first_name + " " + el.last_name }
                     </td>
 
-                    <td >
+                    <td>
                       { el.email }
                     </td>
 
-                    <td  className="collapsing">
+                    <td>
                       { el.phone }
                     </td>
 
+                    <td>
+                      { el.state }
+                    </td>
+
                     <td className="collapsing">
-                      <a data-id={el.id} onClick={ this.setDelete }>
+                      { el.company_name }
+                    </td>
+
+                    <td className="collapsing">
+                      <a
+                        data-id={el.id}
+                        style={{ "marginRight" : "8px" }}
+                        onClick={ this.edit }
+                        >
+                        edit
+                      </a>
+
+                      <a
+                        data-id={el.id}
+                        onClick={ this.delete }
+                        >
                         delete
                       </a>
                     </td>

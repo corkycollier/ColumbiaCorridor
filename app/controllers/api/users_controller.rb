@@ -3,7 +3,7 @@ module Api
     before_action :require_signed_in!
 
     def update
-      @user = User.find_by_id( current_user["id"] )
+      @user = User.find_by_id( params[:id] )
       @user.update_attributes( user_params )
       render json: current_user
     end
@@ -17,27 +17,7 @@ module Api
     private
 
     def user_params
-      params.require(:user).permit(
-      :username ,
-      :email ,
-      :phone ,
-      :password ,
-      :first_name ,
-      :last_name ,
-      :user_address ,
-      :user_city ,
-      :user_state ,
-      :user_zip ,
-      :user_country ,
-      :company_name ,
-      :company_address ,
-      :company_city ,
-      :company_state ,
-      :company_zip ,
-      :company_country ,
-      :company_business_type ,
-      :level ,
-      )
+      params.require(:user).permit(User.new.attributes.map {|key, value| key.to_sym})
     end
   end
 end

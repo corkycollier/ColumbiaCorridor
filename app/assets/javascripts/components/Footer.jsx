@@ -35,7 +35,7 @@ const Footer = React.createClass({
           </div>
 
           <div className="five wide column">
-            <Advertisements />
+            <Advertisements parent={ this.props.parent } />
           </div>
 
           <div className="five wide column" style = {{ "textAlign" : "center" }} >
