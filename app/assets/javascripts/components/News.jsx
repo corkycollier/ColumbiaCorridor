@@ -1,5 +1,6 @@
 const News = React.createClass({
   getInitialState () {
+
     var news;
 
     this.props.parent.state.news.forEach((el) => {
@@ -7,6 +8,7 @@ const News = React.createClass({
         news = el;
       }
     })
+
 
     return( news );
   },
@@ -17,10 +19,14 @@ const News = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={ this.state.style } >
+      <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "60px 0px" }} >
+        <h1 className="ui header centered" style={{ "color" : "#262262" ,}}>
+          News
+        </h1>
+
         <div className="ui grid centered">
           <div className="twelve wide column">
-            <div className="ui padded segment" style={{"margin" : "60px 0px"}}>
+            <div className="ui padded segment">
               <h2 className="ui header left floated">
                 { this.state.title }
               </h2>
