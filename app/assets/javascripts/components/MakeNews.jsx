@@ -4,8 +4,8 @@ const MakeNews = React.createClass({
 
     var style = {
       "color" : "#262262" ,
-      "marginTop" : "60px" ,
       "marginBottom" : "100px" ,
+      "padding" : "25px" ,
     }
 
     return({
@@ -65,7 +65,7 @@ const MakeNews = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1>
+        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           News
         </h1>
 

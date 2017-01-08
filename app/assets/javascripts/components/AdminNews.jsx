@@ -48,7 +48,7 @@ const AdminNews = React.createClass({
             <tr>
               <th colSpan="6" onClick={ this.goToAdminNewUser }>
                 <div className="ui button blue" onClick={ this.goToMakeNew }>
-                  New news
+                  New sponsor
                 </div>
               </th>
             </tr>

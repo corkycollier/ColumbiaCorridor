@@ -4,6 +4,7 @@ const Directory = React.createClass({
     var style = {
       "color" : "#262262" ,
       "padding" : "25px" ,
+      "minHeight" : "50vh" ,
       "marginBottom" : "60px" ,
     }
 
@@ -19,15 +20,16 @@ const Directory = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h2>
+        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           Directory
-        </h2>
+        </h1>
 
 
         <table className="ui single striped line table" style={{"color":"#262262"}}>
           <thead>
             <tr>
 
+              <th>Username</th>
               <th>Name</th>
 
               <th>Email</th>
@@ -46,19 +48,23 @@ const Directory = React.createClass({
                 return (
                   <tr key={ el.id }>
 
-                    <td className="collapsing">
+                    <td>
+                      { el.username }
+                    </td>
+
+                    <td>
                       { el.first_name + " " + el.last_name }
                     </td>
 
-                    <td className="collapsing">
+                    <td>
                       { el.email }
                     </td>
 
-                    <td className="collapsing">
+                    <td>
                       { el.phone }
                     </td>
 
-                    <td className="collapsing">
+                    <td>
                       { el.user_state }
                     </td>
 

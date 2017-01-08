@@ -23,7 +23,7 @@ const Contact = React.createClass({
         <div className="ui grid doubling stackable">
           <div className="eight wide column" style={{ "fontSize" : "16px" }}>
             <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
-              CONTACT
+              Contact
             </h1>
 
             <div>

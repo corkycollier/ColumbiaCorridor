@@ -62,9 +62,9 @@ const EditProfile = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h2>
+        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           Edit Profile
-        </h2>
+        </h1>
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
