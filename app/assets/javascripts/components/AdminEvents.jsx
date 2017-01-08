@@ -3,7 +3,6 @@ const AdminEvents = React.createClass({
     var style = {
       "color" : "#262262" ,
       "marginBottom" : "40px" ,
-
     }
 
     return({

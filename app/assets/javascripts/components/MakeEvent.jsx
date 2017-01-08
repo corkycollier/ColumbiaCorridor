@@ -12,7 +12,6 @@ const MakeEvent = React.createClass({
 
   componentDidMount () {
     $('#text-area').froalaEditor();
-    
     $('.checkbox').checkbox();
   },
 
@@ -35,9 +34,11 @@ const MakeEvent = React.createClass({
         url: '/api/events',
         type: 'POST',
         data: { event: this.state },
-        success: function (event, resp, obj) {
+        success: function (app_data, resp, obj) {
+          this.props.parent.setState( app_data )
           alert("An event was created.")
           Backbone.history.navigate( "admin" , { trigger : true } );
+
         }.bind(this), error: function (a, b, c) {
           alert("There was an error. Event was not created.")
         }
