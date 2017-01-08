@@ -27,7 +27,7 @@ const AdminEvents = React.createClass({
             <tr>
               <th className="collapsing">ID</th>
               <th>Title</th>
-                <th></th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
@@ -58,7 +58,7 @@ const AdminEvents = React.createClass({
 });
 
 const AdminEventsRow = React.createClass({
-  deleteEvent() {
+  delete () {
     var confirmDelete = confirm('Are you sure?');
     if ( confirmDelete ) {
       $.ajax({
@@ -76,6 +76,7 @@ const AdminEventsRow = React.createClass({
     }
   },
 
+
   render() {
     return (
       <tr>
@@ -90,8 +91,12 @@ const AdminEventsRow = React.createClass({
         <td>
         </td>
 
+
         <td className="collapsing">
-          <a onClick={ this.deleteEvent }>
+          <a
+            data-id={this.props.event.id}
+            onClick={ this.delete }
+            >
             delete
           </a>
         </td>

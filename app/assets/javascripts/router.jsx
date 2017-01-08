@@ -30,6 +30,8 @@ const router = Backbone.Router.extend({
     "make-event":"makeEvent",
     "make-ad":"page",
     "edit/user/:id":"editUserId",
+    "edit/sponsor/:id":"editSponsorId",
+    "edit/news/:id":"editNewsId",
   },
 
   home () {
