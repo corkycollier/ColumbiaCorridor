@@ -4,7 +4,7 @@ const Contact = React.createClass({
     var style = {
       "color" : "#262262" ,
       "padding" : "25px" ,
-      "paddingBottom" : "45px" ,
+      "paddingBottom" : "95px" ,
 
     }
 

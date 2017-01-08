@@ -4,7 +4,8 @@ const MakeNews = React.createClass({
 
     var style = {
       "color" : "#262262" ,
-      "padding" : "25px" ,
+      "marginTop" : "60px" ,
+      "marginBottom" : "100px" ,
     }
 
     return({
@@ -25,15 +26,12 @@ const MakeNews = React.createClass({
         url: '/api/news',
         type: 'POST',
         data: { news: this.state },
-        success: function (news, resp, obj) {
-          alert('News #' + news.id + " was created. ")
-          this.setState({
-            title : "" ,
-            body : "" ,
-          });
-          location.href = "/#member-area"
+        success: function (app_data, resp, obj) {
+          this.props.parent.setState(app_data)
+          alert('The news was created.')
+          Backbone.history.navigate('member-area' , { trigger : true })
         }.bind(this), error: function (a, b, c) {
-          alert("There was an error. News was not created.")
+          alert('There was an error. News was not created.')
         }
       })
     }

@@ -50,7 +50,7 @@ const AdminAds = React.createClass({
     return (
       <div className="" style={ this.state.style }>
         <h2 className="ui header">
-          Ads
+          Sponsors
         </h2>
         <table className="ui table">
           <thead>
