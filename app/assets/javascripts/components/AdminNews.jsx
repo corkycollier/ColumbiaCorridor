@@ -83,6 +83,10 @@ const AdminNewsRow = React.createClass({
     Backbone.history.navigate('edit/news/' + this.props.news.id , { trigger : true } )
   },
 
+  goToNews () {
+    Backbone.history.navigate('news/' + this.props.news.id , { trigger : true } )
+  },
+
   render() {
     return (
       <tr>
@@ -90,7 +94,7 @@ const AdminNewsRow = React.createClass({
           { this.props.news.id }
         </td>
 
-        <td>
+        <td onClick={ this.goToNews }>
           { this.props.news.title }
         </td>
 

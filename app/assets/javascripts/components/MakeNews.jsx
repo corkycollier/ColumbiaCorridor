@@ -1,16 +1,7 @@
 
 const MakeNews = React.createClass({
   getInitialState () {
-
-    var style = {
-      "color" : "#262262" ,
-      "marginBottom" : "100px" ,
-      "padding" : "25px" ,
-    }
-
-    var news = this.props.news
-    news['style'] = style ;
-    return( news )
+    return( this.props.news || {} )
   },
 
   componentDidMount () {
@@ -63,7 +54,9 @@ const MakeNews = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container"
+        style={{"color" : "#262262" ,"marginBottom" : "100px" ,"padding" : "25px" ,}}
+        >
         <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           News
         </h1>
@@ -108,22 +101,12 @@ const MakeNews = React.createClass({
 
 const EditNewsAdmin = React.createClass({
   getInitialState () {
-
-    var style = {
-      "color" : "#262262" ,
-      "marginBottom" : "100px" ,
-      "padding" : "25px" ,
-    }
-
-    return({
-      style: style,
-    })
+    return(this.props.news || {})
   },
 
   componentDidMount () {
     $('.checkbox').checkbox();
     $('#text-area').froalaEditor();
-
     if (this.props.news.cca_only) {
       $('.ui.checkbox').checkbox('check');
     }
@@ -131,6 +114,7 @@ const EditNewsAdmin = React.createClass({
 
   submitNews () {
     var sure = confirm("Are you sure?");
+
     if ( sure ) {
       $.ajax({
         url: '/api/news/' + this.props.news.id ,
@@ -139,10 +123,10 @@ const EditNewsAdmin = React.createClass({
         success: function (app_data, resp, obj) {
           this.props.parent.setState(app_data)
           alert('The news was successfully edited.')
-          Backbone.history.navigate('admin' , { trigger : true })
+          Backbone.history.navigate('news/' + this.state.id  , { trigger : true })
         }.bind(this), error: function (app_data, resp, obj) {
           alert('There was an error. News was not editted properly.')
-          Backbone.history.navigate('admin' , { trigger : true })
+          Backbone.history.navigate('news/' + this.state.id  , { trigger : true })
         }
       })
     }
@@ -174,7 +158,7 @@ const EditNewsAdmin = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container" style={{ "color" : "#262262" ,"marginBottom" : "100px" ,"padding" : "25px" ,}}>
         <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           News
         </h1>
