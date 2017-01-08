@@ -35,7 +35,7 @@ const Resources = React.createClass({
                 this.props.parent.state.news.map( (el) => {
                   if (el.cca_only) { return; }
                   return (
-                    <div key={ el.id }>
+                    <div key={ el.id } >
                       <div style={{"marginBottom" : "8px"}}>
                         <b >
                           { el.title }
@@ -53,7 +53,7 @@ const Resources = React.createClass({
                         </a>
                       </div>
 
-                      <div className="ui divider"></div>
+                      <div className="ui divider" style={{ "marginTop" : "40px" ,}}/>
                     </div>
                   )
                 }.bind(this))
@@ -91,7 +91,7 @@ const Resources = React.createClass({
             </div>
 
             <div className="eight wide column">
-              <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481691723/wellfieldmap_e1bglj.gif"/>
+              <img className="ui image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481691723/wellfieldmap_e1bglj.gif"/>
 
 
               <a href="http://www.portlandoregon.gov/water/29890" target="_blank" style={{"color":"white" , "margin" : "16px" , "marginBottom" : "60px" }}>
@@ -137,8 +137,8 @@ const Resources = React.createClass({
               </p>
 
             </div>
-            <div className="eight wide column" >
-              <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg"/>
+            <div className="eight wide column" style={{ "position" : "relative" , "bottom" : "42px"}}>
+              <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg" style={{ "marginBottom" : "12px" ,}}/ >
               <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg"/>
             </div>
           </div>

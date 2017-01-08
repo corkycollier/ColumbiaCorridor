@@ -98,7 +98,7 @@ const AdminUsers = React.createClass({
                     </td>
 
                     <td>
-                      { el.state }
+                      { el.user_state }
                     </td>
 
                     <td className="collapsing">

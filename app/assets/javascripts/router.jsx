@@ -27,7 +27,7 @@ const router = Backbone.Router.extend({
     "news/:id" : "news" ,
     "admin" : "admin" ,
     "member-area" : "memberArea" ,
-    "make-event":"page",
+    "make-event":"makeEvent",
     "make-ad":"page",
     "edit/user/:id":"editUserId",
   },
