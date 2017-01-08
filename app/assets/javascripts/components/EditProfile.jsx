@@ -198,6 +198,36 @@ const EditProfile = React.createClass({
 
 const AdminEditProfile = React.createClass({
   getInitialState () {
+    return( this.props.user || {} );
+  },
+
+  componentDidMount () {
+    $('table').tablesort();
+  },
+
+  updateUser () {
+    $.ajax({
+      url: '/api/users/' + this.state.id ,
+      type: 'PATCH' ,
+      data: { user: this.state }
+      , success: function ( app_data , resp , obj ) {
+        this.props.parent.setState( app_data )
+        alert('Profile was updated.');
+        Backbone.history.navigate('admin' , { trigger : true })
+      }.bind(this)
+      , error : function ( app_data , resp , obj ) {
+        alert("There was an error. The profile was not udpated.")
+      }.bind(this)
+    })
+  },
+
+  updateState (e) {
+    var state = this.state;
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
+    this.setState( state );
+  },
+
+  render () {
     var businessCodes = [
       "11: Agriculture, Forestry, Fishing and Hunting" ,
       "21: Mining, Quarrying, and Oil and Gas Extraction" ,
@@ -221,44 +251,8 @@ const AdminEditProfile = React.createClass({
       "92: Public Administration" ,
     ]
 
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "25px" ,
-      "marginBottom" : "60px" ,
-    }
-
-    var state = this.props.user ;
-    state['businessCodes'] = businessCodes ;
-    state['style'] = style ;
-    return( state );
-  },
-
-  componentDidMount () {
-    $('table').tablesort();
-  },
-
-  updateUser () {
-    $.ajax({
-      url: '/api/users/' + this.state.id ,
-      type: 'PATCH' ,
-      data: { user: this.state } ,
-      success (a, b, c) {
-        alert('Profile was updated.')
-      } , error (a, b, c) {
-        alert("There was an error. Your profile was not udpated.")
-      }
-    })
-  },
-
-  updateState (e) {
-    var state = this.state;
-    state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
-    this.setState( state );
-  },
-
-  render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container" style={{"color" : "#262262" ,"padding" : "25px" ,"marginBottom" : "60px" ,}}>
         <h2>
           Edit Profile
         </h2>
@@ -369,7 +363,7 @@ const AdminEditProfile = React.createClass({
                   <option></option>
 
                   {
-                    this.state.businessCodes.map( function (el) {
+                    businessCodes.map( function (el) {
                       return (
                         <option key = { el } value = { el } >
                           { el }
