@@ -82,8 +82,6 @@ const router = Backbone.Router.extend({
     this.go( editProfile )
   },
 
-
-
   makeNews () {
     var makeNews = <MakeNews parent={ this.parent } key="makeNews" /> ;
     this.go( makeNews )
