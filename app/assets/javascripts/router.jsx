@@ -34,6 +34,7 @@ const router = Backbone.Router.extend({
     "edit/sponsor/:id":"editSponsorId",
     "edit/news/:id":"editNewsId",
     "new-sponsor":"newSponsor",
+    "edit/sponsor/:id":"editSponsor",
 
   },
 
@@ -180,6 +181,21 @@ const router = Backbone.Router.extend({
     var makeAd = <MakeAd parent={ this.parent } key="makeAd" /> ;
     this.go( makeAd )
   },
+
+  editSponsor ( id ) {
+    var ad;
+
+    this.parent.state.ads.forEach(function(el) {
+      if (el.id == id) {
+        ad = el ;
+      }
+    });
+
+
+    var editAd = <EditAd parent={ this.parent } ad={ ad } key="editAd" /> ;
+    this.go( editAd )
+  },
+
 
   go ( page ) {
     var page = page || Backbone.history.getFragment() || "home" ;
