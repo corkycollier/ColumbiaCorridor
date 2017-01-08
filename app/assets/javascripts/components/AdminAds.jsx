@@ -136,7 +136,8 @@ const AdminAdsRow = React.createClass({
         </td>
 
         <td>
-          { this.props.ad.image_url }
+          <img className="ui image small" src={ this.props.ad.image_url } alt={ this.props.ad.name }/>
+
         </td>
 
         <td >
