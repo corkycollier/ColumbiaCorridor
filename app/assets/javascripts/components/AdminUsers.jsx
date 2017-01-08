@@ -18,7 +18,7 @@ const AdminUsers = React.createClass({
     $('table').tablesort();
   },
 
-  setDelete (e) {
+  delete (e) {
     if ( e.currentTarget.dataset.id < 3 ) {
       alert('You cannot remove that user.')
       return;

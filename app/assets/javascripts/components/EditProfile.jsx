@@ -238,7 +238,6 @@ const AdminEditProfile = React.createClass({
   },
 
   updateUser () {
-    debugger
     $.ajax({
       url: '/api/users/' + this.state.id ,
       type: 'PATCH' ,
