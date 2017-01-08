@@ -41,6 +41,7 @@ const Advertisements = React.createClass({
   },
 
   componentDidMount () {
+    return;
     var interval = setInterval(function () {
       this.flip();
     }.bind(this), 4400)

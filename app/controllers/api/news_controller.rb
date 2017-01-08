@@ -10,7 +10,7 @@ module Api
 
     def update
       @news = New.find_by_id( params[:id] )
-      @news.update_attributes( params[:news] )
+      @news.update_attributes( news_params )
       render json: app_data
     end
 

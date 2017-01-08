@@ -42,7 +42,7 @@ const AdminAds = React.createClass({
 
 
   makeAd () {
-    Backbone.history.navigate( 'make-ad' , { trigger : true } )
+    Backbone.history.navigate( 'new-sponsor' , { trigger : true } )
   },
 
   render() {
@@ -84,7 +84,7 @@ const AdminAds = React.createClass({
             <tr>
               <th colSpan="6">
                 <div className="ui button blue" onClick={ this.makeAd }>
-                  New Ad
+                  New Sponsor
                 </div>
               </th>
             </tr>

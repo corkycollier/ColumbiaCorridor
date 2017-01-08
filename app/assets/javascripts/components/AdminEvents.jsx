@@ -46,7 +46,7 @@ const AdminEvents = React.createClass({
             <tr>
               <th colSpan="6">
                 <div className="ui button blue" onClick={ this.goToMakeEvent }>
-                  New event
+                  New Event
                 </div>
               </th>
             </tr>

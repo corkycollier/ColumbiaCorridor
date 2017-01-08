@@ -8,6 +8,7 @@ const router = Backbone.Router.extend({
     Backbone.history.start();
   },
 
+
   routes: {
     "" : "home" ,
     "about-us" : "aboutUs" ,
@@ -32,6 +33,8 @@ const router = Backbone.Router.extend({
     "edit/user/:id":"editUserId",
     "edit/sponsor/:id":"editSponsorId",
     "edit/news/:id":"editNewsId",
+    "new-sponsor":"newSponsor",
+
   },
 
   home () {
@@ -113,6 +116,8 @@ const router = Backbone.Router.extend({
     }
   },
 
+
+
   admin () {
     if ( this.parent.state.user.id < 3 ) {
       var admin = <Admin parent={ this.parent } key="admin" /> ;
@@ -121,6 +126,23 @@ const router = Backbone.Router.extend({
       this.home();
     }
   },
+
+
+  event ( id ) {
+    var page = <Event parent={this.parent} id={ id } key="event" /> ;
+    this.parent.setState({
+      activePage: [ page ]
+    });
+  },
+
+  news (id) {
+    var page = <News parent={this.parent} id={ id } key="news" /> ;
+
+    this.parent.setState({
+      activePage: [ page ]
+    });
+  },
+
 
   editUserId ( id ) {
     var user;
@@ -138,19 +160,25 @@ const router = Backbone.Router.extend({
     this.go( page )
   },
 
-  event ( id ) {
-    var page = <Event parent={this.parent} id={ id } key="event" /> ;
-    this.parent.setState({
-      activePage: [ page ]
+  editNewsId ( id ) {
+    var news;
+    this.parent.state.news.forEach(function(el) {
+      if (el.id == id ) {
+        news = el
+      }
     });
+
+    var page = <EditNewsAdmin
+      parent={ this.parent }
+      news={ news }
+      key="edit-profile-news"
+      /> ;
+    this.go( page )
   },
 
-  news (id) {
-    var page = <News parent={this.parent} id={ id } key="news" /> ;
-
-    this.parent.setState({
-      activePage: [ page ]
-    });
+  newSponsor () {
+    var makeAd = <MakeAd parent={ this.parent } key="makeAd" /> ;
+    this.go( makeAd )
   },
 
   go ( page ) {

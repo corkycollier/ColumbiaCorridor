@@ -50,17 +50,28 @@ const MakeAd = React.createClass({
     this.setState({ ad : ad });
   },
 
+  uploadWidget () {
+    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    function(error, result) {
+      if (result) {
+        var ad = this.state.ad
+        ad['image_url'] = result[0].secure_url
+        this.setState({
+          ad : ad
+        })
+      }
+    }.bind(this));
+  },
+
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h2>
-          Profiles
-        </h2>
+        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+          New Sponsor
+        </h1>
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
-            <h3>Ad</h3>
-
             <form className="ui small form" onSubmit={ this.createAd }>
 
               <div className="field">
@@ -69,7 +80,7 @@ const MakeAd = React.createClass({
                   type="text"
                   data-field="name"
                   onChange={ this.updateState }
-                  value={ this.state.name }
+                  value={ this.state.ad.name }
                   />
               </div>
 
@@ -79,8 +90,15 @@ const MakeAd = React.createClass({
                   type="text"
                   data-field="image_url"
                   onChange={ this.updateState }
-                  value={ this.state.image_url }
+                  value={ this.state.ad.image_url }
                   />
+                <div className="ui button blue mini"
+                  style={{ "position" : "absolute" , "right" : "0px" , "bottom" : "148px" }}
+                  onClick={ this.uploadWidget }
+                  id="upload_widget_opener"
+                  >
+                  Upload
+                </div>
               </div>
 
               <div className="field">
@@ -89,7 +107,7 @@ const MakeAd = React.createClass({
                   type="text"
                   data-field="link"
                   onChange={ this.updateState }
-                  value={ this.state.link }
+                  value={ this.state.ad.link }
                   />
               </div>
 
