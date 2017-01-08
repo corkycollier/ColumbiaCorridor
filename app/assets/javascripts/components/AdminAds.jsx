@@ -24,7 +24,10 @@ const AdminAds = React.createClass({
         url: '/api/sponsors/' + e.currentTarget.dataset.id ,
         type: 'DELETE' ,
         success: function( app_data , resp , obj ) {
-          location.href = "/#admin"
+          this.props.parent.setState(app_data)
+          this.props.mom.setState({
+            news: app_data.news
+          })
         }.bind(this), error: function ( app_data , resp , obj ) {
           this.props.parent.setState( app_data )
           Backbone.history.navigate( 'admin' , { trigger : true } );
@@ -65,30 +68,13 @@ const AdminAds = React.createClass({
 
               this.props.parent.state.ads.map( (el) => {
                 return(
-                  <tr key={ "adminUsers" + el.id }>
+                  <AdminAdsRow
+                    key={'aar' + el.id}
+                    parent={ this.props.parent }
+                    ad={ el }
+                    mom={ this }
+                    />
 
-                    <td className="collapsing" style={{ "textAlign" : "center" ,}}>
-                      { el.id }
-                    </td>
-
-                    <td >
-                      { el.name }
-                    </td>
-
-                    <td>
-                      { el.image_url }
-                    </td>
-
-                    <td >
-                      { el.link }
-                    </td>
-
-                    <td className="collapsing">
-                      <a data-id={el.id} onClick={ this.delete }>
-                        delete
-                      </a>
-                    </td>
-                  </tr>
                 )
               })
             }
@@ -105,6 +91,69 @@ const AdminAds = React.createClass({
           </tfoot>
         </table>
       </div>
+    );
+  }
+});
+
+
+const AdminAdsRow = React.createClass({
+
+  delete (e) {
+    var sure = confirm('Are you sure?');
+
+    if (sure) {
+      $.ajax({
+        url: '/api/sponsors/' + e.currentTarget.dataset.id ,
+        type: 'DELETE' ,
+        success: function( app_data , resp , obj ) {
+          this.props.parent.setState(app_data)
+          this.props.mom.setState({
+            ads: app_data.ads
+          })
+        }.bind(this), error: function ( app_data , resp , obj ) {
+          alert('There was an erorr.')
+        }.bind(this)
+      })
+
+    }
+  },
+
+  edit () {
+    Backbone.history.navigate( 'edit/sponsor/' + this.props.ad.id , { trigger : true } )
+  },
+
+  render() {
+
+    return (
+      <tr>
+
+        <td className="collapsing" style={{ "textAlign" : "center" ,}}>
+          { this.props.ad.id }
+        </td>
+
+        <td >
+          { this.props.ad.name }
+        </td>
+
+        <td>
+          { this.props.ad.image_url }
+        </td>
+
+        <td >
+          { this.props.ad.link }
+        </td>
+
+        <td className="collapsing">
+
+          <a data-id={this.props.ad.id} onClick={ this.edit } style={{ "marginRight" : "8px" ,}}>
+            edit
+          </a>
+
+          <a data-id={this.props.ad.id} onClick={ this.delete }>
+            delete
+          </a>
+        </td>
+      </tr>
     );
   }
 });
