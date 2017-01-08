@@ -12,6 +12,7 @@ const MakeEvent = React.createClass({
 
   componentDidMount () {
     $('#text-area').froalaEditor();
+    
     $('.checkbox').checkbox();
   },
 

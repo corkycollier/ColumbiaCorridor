@@ -20,6 +20,7 @@
 //= require underscore
 //= require backbone
 //= require moment
+//= require trumbowyg/trumbowyg
 //= require faker.min.js
 //= require fullcalendar
 //= require cloudinary

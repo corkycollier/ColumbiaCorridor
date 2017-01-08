@@ -8,9 +8,9 @@ const AdminEvents = React.createClass({
 
     return({
       style: style,
+      events : this.props.parent.state.events ,
     })
   },
-
 
   goToMakeEvent () {
     Backbone.history.navigate('make-event', { trigger : true } )
@@ -35,9 +35,9 @@ const AdminEvents = React.createClass({
 
           <tbody>
             {
-              this.props.parent.state.events.map( (el) => {
+              this.state.events.map( (el) => {
                 return(
-                  <AdminEventsRow event={ el } key={ el.id } parent={ this.props.parent } />
+                  <AdminEventsRow event={ el } key={ el.id } parent={ this.props.parent } mom={this} />
                 )
               }.bind(this))
             }
@@ -45,7 +45,7 @@ const AdminEvents = React.createClass({
 
           <tfoot>
             <tr>
-              <th colSpan="6" onClick={ this.goToAdminNewUser }>
+              <th colSpan="6">
                 <div className="ui button blue" onClick={ this.goToMakeEvent }>
                   New event
                 </div>
@@ -67,15 +67,14 @@ const AdminEventsRow = React.createClass({
         type: "DELETE",
         success: function (app_data, resp, obj) {
           this.props.parent.setState(app_data)
+          this.props.mom.setState({
+            events: app_data.events
+          })
         }.bind(this), error: function (a, b, c) {
           alert('There was an error.')
         }
       })
     }
-  },
-
-  goToMakeEvent () {
-    Backbone.history.navigate('make-event', { trigger : true } )
   },
 
   render() {

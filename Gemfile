@@ -19,6 +19,7 @@ gem 'figaro'
 gem 'faker'
 gem 'constantcontact', '~> 2.2.0'
 gem "wysiwyg-rails"
+gem 'trumbowyg_rails'
 gem "cloudinary"
 
 group :development, :test do
