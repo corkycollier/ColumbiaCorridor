@@ -8,21 +8,13 @@ const AdminNews = React.createClass({
     }
 
     return({
-      style: style,
+      style : style,
+      news  : this.props.parent.state.news
     })
   },
 
-  deleteNew() {
-    var confirmDelete = confirm('Are you sure?');
-    if ( confirmDelete ) {
-      $.ajax({
-        url: 'api/events/'
-      })
-    }
-  },
-
   goToMakeNew () {
-    Backbone.history.navigate('make-event', { trigger : true } )
+    Backbone.history.navigate('make-news', { trigger : true } )
   },
 
   render() {
@@ -37,18 +29,18 @@ const AdminNews = React.createClass({
             <tr>
               <th className="collapsing">ID</th>
               <th>Title</th>
-                <th></th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
 
           <tbody>
             {
-              this.props.parent.state.events.map( (el) => {
+              this.state.news.map( (el) => {
                 return(
-                  <AdminNewsRow event={ el } key={ el.id } />
+                  <AdminNewsRow news={ el } key={ el.id } parent={this.props.parent} mom={this}/>
                 )
-              })
+              }.bind(this))
             }
           </tbody>
 
@@ -69,35 +61,55 @@ const AdminNews = React.createClass({
 
 const AdminNewsRow = React.createClass({
 
-  deleteNew() {
+  delete () {
     var confirmDelete = confirm('Are you sure?');
     if ( confirmDelete ) {
       $.ajax({
-        url: 'api/events/'
+        url: 'api/news/' + this.props.news.id ,
+        type: "DELETE",
+        success: function (app_data, resp, obj) {
+          this.props.parent.setState(app_data)
+          this.props.mom.setState({
+            news: app_data.news
+          })
+        }.bind(this), error: function (a, b, c) {
+          alert('There was an error.')
+        }
       })
     }
   },
 
-  goToMakeNew () {
-    Backbone.history.navigate('make-event', { trigger : true } )
+  edit () {
+    Backbone.history.navigate('edit/news/' + this.props.news.id , { trigger : true } )
   },
 
   render() {
     return (
       <tr>
         <td style={{ "textAlign" : "center" ,}}>
-          { this.props.event.id }
+          { this.props.news.id }
         </td>
 
         <td>
-          { this.props.event.title }
+          { this.props.news.title }
         </td>
 
         <td>
         </td>
 
         <td className="collapsing">
-          <a onClick={ this.deleteNew }>
+          <a
+            data-id={this.props.news.id}
+            style={{ "marginRight" : "8px" }}
+            onClick={ this.edit }
+            >
+            edit
+          </a>
+
+          <a
+            data-id={this.props.news.id}
+            onClick={ this.delete }
+            >
             delete
           </a>
         </td>
