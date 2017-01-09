@@ -3,7 +3,7 @@ const SignIn = React.createClass({
     var style = {
       "color" : "#262262" ,
       "padding" : "60px" ,
-      "paddingBottom" : "120px" , 
+      "paddingBottom" : "120px" ,
     }
 
     return({
@@ -141,7 +141,7 @@ const SignUp = React.createClass({
       success: function (a, b, c) {
         location.href = "";
       }, error: function (a, b, c) {
-        alert("Sorry. The server is currently down.")
+        alert("Please try again later.")
       }
     })
   },

@@ -45,10 +45,12 @@ const EditProfile = React.createClass({
       url: '/api/users/' + this.state.id ,
       type: 'PATCH' ,
       data: { user: this.state } ,
-      success (a, b, c) {
+      success (app_data, resp, obj) {
+        this.props.parent.setState( app_data )
+        Backbone.history.navigate( "member-area" , { trigger : true } );
         alert('Profile was updated.')
-      } , error (a, b, c) {
-        alert("There was an error. Your profile was not udpated.")
+      } , error (app_data, resp, obj) {
+        alert("Oops.")
       }
     })
   },
