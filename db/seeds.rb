@@ -9,7 +9,7 @@
 
 User.create({
   username: "webmaster" ,
-  email: "abc@gmail.com" ,
+  email: "samullman@gmail.com" ,
   level: "Admin" ,
   phone: "503503053" ,
   password: ENV["password"] ,
