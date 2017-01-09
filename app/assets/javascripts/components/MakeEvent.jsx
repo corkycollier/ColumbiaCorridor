@@ -38,7 +38,6 @@ const MakeEvent = React.createClass({
           this.props.parent.setState( app_data )
           alert("An event was created.")
           Backbone.history.navigate( "admin" , { trigger : true } );
-
         }.bind(this), error: function (a, b, c) {
           alert("There was an error. Event was not created.")
         }

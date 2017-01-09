@@ -68,7 +68,7 @@ const MakeAd = React.createClass({
                   type="text"
                   data-field="image_url"
                   onChange={ this.updateState }
-                  defaultValue={ this.state.image_url }
+                  value={ this.state.image_url }
                   />
                 <div className="ui button blue mini"
                   style={{ "position" : "absolute" , "right" : "0px" , "bottom" : "148px" }}

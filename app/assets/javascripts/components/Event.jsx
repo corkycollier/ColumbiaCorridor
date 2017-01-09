@@ -1,10 +1,5 @@
 const Event = React.createClass({
   getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "25px" ,
-    }
-
     var e;
 
     this.props.parent.state.events.forEach((el) => {
@@ -13,9 +8,7 @@ const Event = React.createClass({
       }
     })
 
-
     return({
-      style: style,
       event: e,
     })
   },
@@ -26,7 +19,7 @@ const Event = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "60px 0px" }} >
         <h1 className="ui header centered" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           Event
         </h1>
