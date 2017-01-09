@@ -9,8 +9,7 @@ const Advertisements = React.createClass({
   },
 
   componentDidMount () {
-    this.setState({
-    })
+    this.flip();
   },
 
   flip () {
