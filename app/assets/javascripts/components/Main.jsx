@@ -9,6 +9,20 @@ const Main = React.createClass({
     this.customMethods();
   },
 
+  save () {
+    $.ajax({
+      url : 'api/save' ,
+      type : 'PATCH' ,
+      data : this.state ,
+      success : function (app_data, resp, obj) {
+        debugger
+      }.bind(this) ,
+      error : function (app_data, resp, obj) {
+        debugger
+      }.bind(this)
+    })
+  },
+
   initRouter () {
     this.setState({
       router: new router(this),

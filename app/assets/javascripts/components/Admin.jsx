@@ -23,7 +23,7 @@ const Admin = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1 style={{ "marginTop" : "18px" , "marginBottom" : "36px" }}>Admin Panel</h1>
+        
 
         <AdminUsers parent={ this.props.parent } />
         <AdminEvents parent={ this.props.parent } />

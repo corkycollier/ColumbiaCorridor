@@ -4,6 +4,7 @@ const Sponsor = React.createClass({
       "color" : "#262262" ,
       "padding" : "25px" ,
       "paddingBottom" : "45px" ,
+      "minHeight" : "80vh" ,
     }
 
     return({
@@ -18,8 +19,6 @@ const Sponsor = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-
-
         <div className="ui grid doubling stackable">
           <div className="eight wide column">
             <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >

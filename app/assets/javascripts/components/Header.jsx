@@ -8,9 +8,9 @@ const Header = React.createClass({
     var buttons;
 
     if (this.props.parent.state.user) {
-      buttons = <LoggedInButtons parent={ this } />
+      buttons = <LoggedInButtons parent={ this.props.parent } />
     } else {
-      buttons = <LoggedOutButtons parent={ this } />
+      buttons = <LoggedOutButtons parent={ this.props.parent } />
     }
 
     return({
@@ -80,12 +80,30 @@ const LoggedInButtons = React.createClass({
       }
     })
   },
+  goAdmin() {
+    Backbone.history.navigate('admin' , { trigger : true });
+  },
+  checkForAdmin () {
+    if (this.props.parent.state.user.id < 3) {
+      return (
+        <a className="item" onClick={ this.goAdmin } style={{ "float" : "left" ,}}>
+          Admin
+        </a>
+      )
+    }
+  },
 
   render () {
     return (
-      <a className="item" onClick={ this.logout }>
-        Logout
-      </a>
+
+      <div>
+        {
+          this.checkForAdmin()
+        }
+        <a className="item" onClick={ this.logout }>
+          Logout
+        </a>
+      </div>
     )
   }
 });

@@ -11,5 +11,9 @@ module Api
         config[:auth][:redirect_uri] = 'https://example.com/auth/constantcontact'
       end
     end
+
+    def save
+      
+    end
   end
 end
