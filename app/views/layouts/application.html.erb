@@ -11,22 +11,10 @@
 
 <%= yield %>
 
+
 <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-
-<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
-<script>
+<script type="text/javascript">
   $.FroalaEditor.DEFAULTS.key = "<%= ENV['froala'] %>";
-
-  return;
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAnYe272_CVJB-i1pbWpXuNliKyC71f630",
-    authDomain: "columbia-corridor.firebaseapp.com",
-    databaseURL: "https://columbia-corridor.firebaseio.com",
-    storageBucket: "columbia-corridor.appspot.com",
-    messagingSenderId: "1082141111045"
-  };
-  firebase.initializeApp(config);
 </script>
 
 </body>
