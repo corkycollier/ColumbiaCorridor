@@ -4,7 +4,7 @@ const Advertisements = React.createClass({
   getInitialState () {
     return({
       slides: this.props.parent.state.ads || {} ,
-      currentSlide: this.props.parent.state.ads[0]
+      currentSlide: this.props.parent.state.ads[0] || {}
     });
   },
 
@@ -31,7 +31,7 @@ const Advertisements = React.createClass({
     return (
       <div className="" style = {{ "background" : "green" , "background" : "url(" + this.state.currentSlide.image_url + ")" , "backgroundSize" : "cover"}} >
         <img className="ui image add centered"
-          src = { this.state.currentSlide.img }
+          src = { this.state.currentSlide.image_url }
           style = {{ "width" : "100%" , "height" : "10vw" }}
           onClick = { this.navigate }
           />
