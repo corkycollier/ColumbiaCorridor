@@ -14,6 +14,14 @@ const Footer = React.createClass({
 
   },
 
+  goToEvent (e) {
+    Backbone.history.navigate('event/' + e.currentTarget.dataset.id , { trigger : true });
+  },
+
+  goToNews (e) {
+    Backbone.history.navigate('news/' + e.currentTarget.dataset.id , { trigger : true });
+  },
+
   render () {
 
     var addStyler = {
@@ -29,24 +37,50 @@ const Footer = React.createClass({
         <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#fff" , "minHeight" : "166px" , "marginBottom" : "14px" , "textAlign" : "center" , "marginTop" : "-24px" , "padding" : "55px 80px" }}>
           <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
             <h2>Upcoming Events</h2>
-              CCA’s 30th Annual Meeting: the roads look good and the luncheon is on!
-            <div className="ui divider" style={{ "borderBottom" : "2px solid #262262" , "borderTop" : "1px solid #262262" ,}} />
-              What is holding the Columbia River Back?
+            <div style={{ "height" : "150px" , "overflowY" : "scroll" }}>
+              {
+                this.props.parent.state.events.map(function(el) {
+                  return(
+                    <div key={"fni" + el.id} data-id={ el.id } onClick={ this.goToEvent } style={{ "marginTop" : "12px" ,}}>
+                      {
+                        el.title
+                      }
+
+                      <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
+                      </div>
+                    </div>
+                  )
+                }.bind(this))
+              }
+            </div>
           </div>
 
           <div className="five wide column"
-               style={{
-                      "borderLeft" : "3px solid #262262" ,
-                      "borderRight" : "3px solid #262262" ,
-                     }}>
+            style={{
+              "borderLeft" : "3px solid #262262" ,
+              "borderRight" : "3px solid #262262" ,
+            }}>
             <Advertisements parent={ this.props.parent } />
           </div>
 
           <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
             <h2>News Flash</h2>
-            Updated wellfield regulations in the works
-            <div className="ui divider" style={{ "borderBottom" : "2px solid #262262" , "borderTop" : "1px solid #262262" ,}} />
-            SVP
+            <div style={{ "height" : "150px" , "overflowY" : "scroll" }}>
+              {
+                this.props.parent.state.news.map(function(el) {
+                  return(
+                    <div key={"fni" + el.id} data-id={ el.id } onClick={ this.goToNews } style={{ "marginTop" : "12px" ,}}>
+                      {
+                        el.title
+                      }
+
+                      <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
+                      </div>
+                    </div>
+                  )
+                }.bind(this))
+              }
+            </div>
           </div>
         </div>
 

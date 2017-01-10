@@ -9,7 +9,7 @@ const News = React.createClass({
       }
     })
 
-
+    debugger
     return( news );
   },
 

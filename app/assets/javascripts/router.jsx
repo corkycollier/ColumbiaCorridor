@@ -24,7 +24,7 @@ const router = Backbone.Router.extend({
     "make-news" : "makeNews" ,
     "make-ad" : "makeAd" ,
     "make-event" : "makeEvent" ,
-    "events/:id" : "event" ,
+    "event/:id" : "event" ,
     "news/:id" : "news" ,
     "admin" : "admin" ,
     "member-area" : "memberArea" ,
@@ -130,14 +130,15 @@ const router = Backbone.Router.extend({
 
 
   event ( id ) {
-    var page = <Event parent={this.parent} id={ id } key="event" /> ;
+    var page = <Event parent={this.parent} id={ id } key={ "event" + id } /> ;
     this.parent.setState({
       activePage: [ page ]
     });
   },
 
   news (id) {
-    var page = <News parent={this.parent} id={ id } key="news" /> ;
+
+    var page = <News parent={this.parent} id={ id } key={ "news" + id } /> ;
 
     this.parent.setState({
       activePage: [ page ]
