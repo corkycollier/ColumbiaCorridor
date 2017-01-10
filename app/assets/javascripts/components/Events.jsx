@@ -19,7 +19,7 @@ const Events = React.createClass({
     $('#calendar').fullCalendar({
       eventClick: function ( calEvent , jsEvent , view ) {
         jsEvent.preventDefault();
-        Backbone.history.navigate('/events/' + calEvent.id , { trigger : true } )
+        Backbone.history.navigate('/event/' + calEvent.id , { trigger : true } )
       }.bind(this)
     }) ;
 

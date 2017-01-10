@@ -3,6 +3,7 @@ const MakeEvent = React.createClass({
     var style = {
       "color" : "#262262" ,
       "padding" : "25px" ,
+      "paddingBottom" : "125px" ,
     }
 
     return({
@@ -68,7 +69,7 @@ const MakeEvent = React.createClass({
             <input type="date" data-field="date" onChange={ this.updateState } />
           </div>
 
-          <div className="field">
+          <div className="field" style={{ "display" : "none" ,}}>
             <div className="ui checkbox" data-field="allDay" onChange={ this.updateState }>
               <input type="checkbox" tabIndex="0" className="hidden" />
               <label>All day</label>
