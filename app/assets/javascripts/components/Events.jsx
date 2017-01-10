@@ -2,7 +2,7 @@ const Events = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "25px" ,
+      "padding" : "60px 20px" ,
     }
 
     return({

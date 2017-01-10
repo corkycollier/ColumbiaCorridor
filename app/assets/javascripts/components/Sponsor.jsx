@@ -2,8 +2,7 @@ const Sponsor = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "25px" ,
-      "paddingBottom" : "45px" ,
+      "padding" : "60px 20px" ,
       "minHeight" : "80vh" ,
     }
 

@@ -15,8 +15,6 @@ const AdminEvents = React.createClass({
     Backbone.history.navigate('make-event', { trigger : true } )
   },
 
-
-
   render() {
     return (
       <div style={ this.state.style }>
@@ -79,7 +77,7 @@ const AdminEventsRow = React.createClass({
   },
 
   goToEvent () {
-    Backbone.history.navigate('events/' + this.props.event.id , {trigger : true })
+    Backbone.history.navigate('event/' + this.props.event.id , {trigger : true })
   },
 
   render() {

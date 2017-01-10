@@ -3,8 +3,8 @@ const Resources = React.createClass({
     var style = {
       "color" : "#262262" ,
       "fontSize" : "16px" ,
-      "padding" : "25px" ,
-      "paddingBottom" : "48px" ,
+      "padding" : "60px 20px" ,
+
     }
 
     return({
