@@ -1,33 +1,3 @@
-const AboutUs = React.createClass({
-  getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "60px 20px" ,
-    }
-
-    return({
-      style: style,
-    })
-  },
-
-  componentDidMount () {
-
-  },
-
-  render () {
-    return (
-      <div className="ui container" style={this.state.style}>
-        <AboutCCA />
-
-
-
-
-
-      </div>
-    )
-  }
-});
-
 const AboutCCA = React.createClass({
   render() {
     return (

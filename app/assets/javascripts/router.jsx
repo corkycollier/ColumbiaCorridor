@@ -11,15 +11,17 @@ const router = Backbone.Router.extend({
 
   routes: {
     "" : "home" ,
-    "about-us" : "aboutUs" ,
     "about-cca" : "aboutCCA" ,
     "columbia-corridor" : "columbiaCorridor" ,
     "board" : "board" ,
     "staff" : "staff" ,
     "events" : "events" ,
+    "resourcesfull-use" : "resourceFullUse" ,
+    "groundwater" : "groundwater" ,
     "resources" : "resources" ,
     "join" : "join" ,
     "sponsor" : "sponsor" ,
+    "cca-news" : "ccaNews" ,
     "contact" : "contact" ,
     "sign-up" : "signUp" ,
     "sign-in" : "signIn" ,
@@ -44,6 +46,21 @@ const router = Backbone.Router.extend({
 
   home () {
     var home = <Home parent={ this.parent } key="home" /> ;
+    this.go( home )
+  },
+
+  resourceFullUse () {
+    var home = <ResourceFullUse parent={ this.parent } key="resourceFullUse" /> ;
+    this.go( home )
+  },
+
+  groundwater () {
+    var home = <Groundwater parent={ this.parent } key="groundwater" /> ;
+    this.go( home )
+  },
+
+  ccaNews () {
+    var home = <CCANews parent={ this.parent } key="ccaNews" /> ;
     this.go( home )
   },
 
