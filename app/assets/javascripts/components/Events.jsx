@@ -11,8 +11,8 @@ const Events = React.createClass({
   },
 
   componentDidMount () {
-    $(".events").isotope({
-      itemSelector: ".event-item" ,
+    $(".event-cards").isotope({
+      itemSelector: ".event-card" ,
       layoutMode: "fitRows" ,
     })
 
@@ -72,6 +72,12 @@ const Events = React.createClass({
     })
   },
 
+  filter (e) {
+    $(".event-cards").isotope({
+      filter: ".event-card." + e.currentTarget.dataset.color ,
+    })
+  },
+
 
   render () {
     return (
@@ -83,29 +89,29 @@ const Events = React.createClass({
 
         <div className="ui grid doubling stackable" style={{ "marginBottom" : "20px" ,}}>
           <div className="eight wide column">
-            <div className="ui segment orange">
+            <div className="ui segment orange" data-color="orange" onClick={this.filter}>
               <b>Breakfast Forums</b>
             </div>
 
-            <div className="ui segment violet">
+            <div className="ui segment violet" data-color="violet" onClick={this.filter}>
               <b>Lunch w/ Leaders</b>
             </div>
 
-            <div className="ui segment red">
+            <div className="ui segment red" data-color="red" onClick={this.filter}>
               <b>ResourceFULL Use Workshops</b>
             </div>
           </div>
 
           <div className="eight wide column">
-            <div className="ui segment yellow">
+            <div className="ui segment yellow" data-color="yellow" onClick={this.filter}>
               <b>Special Events</b>
             </div>
 
-            <div className="ui segment brown">
+            <div className="ui segment brown" data-color="brown" onClick={this.filter}>
               <b>Tours & Member Exchanges</b>
             </div>
 
-            <div className="ui segment green">
+            <div className="ui segment green" data-color="*" onClick={this.filter}>
               <b>All</b>
             </div>
           </div>
@@ -115,7 +121,39 @@ const Events = React.createClass({
         <div id="calendar">
         </div>
 
+        <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
 
+      <div className="event-cards">
+          {
+            this.props.parent.state.events.map(function(el) {
+              var color;
+              switch( el.event_type ) {
+                case "Breakfast forums":
+                color = "orange";
+                break;
+                case "Special Events":
+                color = "yellow";
+                break;
+                case "Lunch w/ leaders":
+                color = "violet";
+                break;
+                case "ResourceFULL Use Workshops":
+                color = "red";
+                break;
+                case "Tours & Member Exchanges":
+                color = "brown";
+                break;
+                default:
+                return;
+              }
+              return (
+                <div className={"event-card ui segment " + color } key={"e-card" + el.id} style={{"margin" : "10px"}}>
+                  <h3>{el.title}</h3>
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     )
   }

@@ -21,7 +21,7 @@ const Contact = React.createClass({
       <div className="ui container" style={this.state.style}>
         <div className="ui grid doubling stackable">
           <div className="eight wide column" style={{ "fontSize" : "16px" }}>
-            <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+            <h1 style={{ "marginBottom" : "36px" , "marginTop" : "30px"}} >
               Contact
             </h1>
 
@@ -37,9 +37,9 @@ const Contact = React.createClass({
               <i className="mail icon" style={{"fontSize" : "16px", "marginRight" : "12px" }}/> info@ColumbiaCorridor.org
             </div>
 
-            <h4 style={{ "marginTop" : "20px" }}>
+            <h3 style={{ "marginTop" : "30px" }}>
               Mailing Address:
-            </h4>
+            </h3>
 
             <div>
               6015 NE 80th Ave., Suite 125
@@ -49,9 +49,9 @@ const Contact = React.createClass({
               Portland, OR 97218
             </div>
 
-            <h4 style={{ "marginTop" : "20px" }}>
+            <h3 style={{ "marginTop" : "30px" }}>
               Office Address:
-            </h4>
+            </h3>
 
             <div>
               <i>(Please call ahead as our staff is often out of the office working hard for CCA members)</i>
@@ -65,9 +65,9 @@ const Contact = React.createClass({
               Portland, OR 97218
             </div>
 
-            <h4 style={{ "marginTop" : "20px" }}>
+            <h3 style={{ "marginTop" : "30px" }}>
               Staff:
-            </h4>
+            </h3>
 
             <div>
               Marissa King
@@ -81,7 +81,7 @@ const Contact = React.createClass({
               mking@columbiacorridor.org
             </div>
 
-            <div style={{ "marginTop" : "20px" }}>
+            <div style={{ "marginTop" : "30px" }}>
               Corky Collier
             </div>
 
@@ -98,7 +98,7 @@ const Contact = React.createClass({
             </div>
           </div>
 
-          <div className="eight wide column" style={{ "paddingTop" : "30px" ,}}>
+          <div className="eight wide column" style={{ "paddingTop" : "112px" ,}}>
             <iframe style={{ "border" : "0" , "width" : "100%" }} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5586.383147810138!2d-122.581017!3d45.566586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee00ba2afc23b49c!2sColumbia+Corridor+Association!5e0!3m2!1sen!2sph!4v1470938661219" height="532" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
           </div>
         </div>
