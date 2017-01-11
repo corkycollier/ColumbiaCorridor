@@ -158,7 +158,7 @@ const RegularMenu = React.createClass({
   },
 
   componentDidMount () {
-    $('.dropdown.member-area').dropdown({
+    $('.dropdown').dropdown({
       on: 'hover' ,
     });
   },
@@ -173,27 +173,55 @@ const RegularMenu = React.createClass({
         <div className="ui ten item menu" style={{ "borderLeft" : "none" , "borderRight" : "none" }}>
           <div className="item" style={{"width":"60%"}} />
 
-          <a className="item header" data-path="" onClick={ this.go } >
+          <a className="ui dropdown item header" data-path="" onClick={ this.go } >
             Home
           </a>
 
-          <a className="item header" data-path="about-us" onClick={ this.go } >
+          <a className="ui dropdown item header" data-path="about-us" >
             About Us
+
+            <div className="menu">
+              <div className="item" data-path="about-cca" onClick={ this.go } >
+                About CCA
+              </div>
+
+              <div className="item" data-path="columbia-corridor" onClick={ this.go } >
+                Columbia Corridor
+              </div>
+
+              <div className="item" data-path="staff" onClick={ this.go } >
+                Staff
+              </div>
+
+              <div className="item" data-path="board" onClick={ this.go } >
+                Board
+              </div>
+            </div>
           </a>
 
-          <a className="item header" data-path="events" onClick={ this.go } >
+          <a className="ui dropdown item header" data-path="events" onClick={ this.go } >
             Events
+
+            <div className="menu">
+              <div className="item" data-path="directory" onClick={ this.go } >
+                Calendar
+              </div>
+
+              <div className="item" data-path="edit-profile" onClick={ this.go } >
+                Our Events
+              </div>
+            </div>
           </a>
 
-          <a className="item header" data-path="resources" onClick={ this.go } >
+          <a className="ui dropdown item header" data-path="resources" onClick={ this.go } >
             Resources
           </a>
 
-          <a className="item header" data-path="join" onClick={ this.go } >
+          <a className="ui dropdown item header" data-path="join" onClick={ this.go } >
             Join
           </a>
 
-          <a className="item member-area ui dropdown header" style={{"fontSize" : "14px"}}>
+          <a className="ui dropdown item header" >
             Member Area
             <div data-path="member-area" onClick={this.go} style={{ "position" : "absolute" , "height" : "100%" , "width" : "100%" , "top" : "0px" , "left" : "0px" }}/>
 

@@ -12,6 +12,10 @@ const router = Backbone.Router.extend({
   routes: {
     "" : "home" ,
     "about-us" : "aboutUs" ,
+    "about-cca" : "aboutCCA" ,
+    "columbia-corridor" : "columbiaCorridor" ,
+    "board" : "board" ,
+    "staff" : "staff" ,
     "events" : "events" ,
     "resources" : "resources" ,
     "join" : "join" ,
@@ -40,6 +44,26 @@ const router = Backbone.Router.extend({
 
   home () {
     var home = <Home parent={ this.parent } key="home" /> ;
+    this.go( home )
+  },
+
+  aboutCCA () {
+    var home = <AboutCCA parent={ this.parent } key="aboutCCA" /> ;
+    this.go( home )
+  },
+
+  columbiaCorridor () {
+    var home = <ColumbiaCorridor parent={ this.parent } key="columbiaCorridor" /> ;
+    this.go( home )
+  },
+
+  staff () {
+    var home = <Staff parent={ this.parent } key="staff" /> ;
+    this.go( home )
+  },
+
+  board () {
+    var home = <Board parent={ this.parent } key="board" /> ;
     this.go( home )
   },
 
