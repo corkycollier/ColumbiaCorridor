@@ -80,49 +80,29 @@ const Events = React.createClass({
           Events
         </h1>
 
-        <div id="calendar">
-        </div>
-
-        <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
-
 
         <div className="ui grid doubling stackable" style={{ "marginBottom" : "20px" ,}}>
           <div className="eight wide column">
             <div className="ui segment orange">
               <b>Breakfast Forums</b>
-              <p>
-                <i>Something here</i>
-              </p>
             </div>
 
             <div className="ui segment violet">
               <b>Lunch w/ Leaders</b>
-              <p>
-                <i>Something here</i>
-              </p>
             </div>
 
             <div className="ui segment red">
               <b>ResourceFULL Use Workshops</b>
-              <p>
-                <i>Something here</i>
-              </p>
             </div>
           </div>
 
           <div className="eight wide column">
             <div className="ui segment yellow">
               <b>Special Events</b>
-              <p>
-                <i>Something here</i>
-              </p>
             </div>
 
             <div className="ui segment brown">
               <b>Tours & Member Exchanges</b>
-              <p>
-                <i>Something here</i>
-              </p>
             </div>
 
             <div className="ui segment green">
@@ -130,6 +110,12 @@ const Events = React.createClass({
             </div>
           </div>
         </div>
+        <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
+
+        <div id="calendar">
+        </div>
+
+
       </div>
     )
   }
