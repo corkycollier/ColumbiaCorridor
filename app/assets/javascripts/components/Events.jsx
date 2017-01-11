@@ -78,6 +78,10 @@ const Events = React.createClass({
     })
   },
 
+  navigateEvent (e) {
+    debugger
+    Backbone.history.navigate('event/' + e.currentTarget.dataset.id , { trigger : true });
+  },
 
   render () {
     return (
@@ -85,7 +89,6 @@ const Events = React.createClass({
         <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           Events
         </h1>
-
 
         <div className="ui grid doubling stackable" style={{ "marginBottom" : "20px" ,}}>
           <div className="eight wide column">
@@ -123,7 +126,7 @@ const Events = React.createClass({
 
         <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
 
-      <div className="event-cards">
+        <div className="event-cards">
           {
             this.props.parent.state.events.map(function(el) {
               var color;
@@ -146,12 +149,15 @@ const Events = React.createClass({
                 default:
                 return;
               }
+
               return (
-                <div className={"event-card ui segment " + color } key={"e-card" + el.id} style={{"margin" : "10px"}}>
-                  <h3>{el.title}</h3>
+                <div className={"event-card ui segment " + color } key={"e-card" + el.id} data-id={ el.id } style={{ "margin" : "10px" }} onClick={this.navigateEvent}>
+                  <h3>
+                    {el.title}
+                  </h3>
                 </div>
               )
-            })
+            }.bind(this))
           }
         </div>
       </div>
