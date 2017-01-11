@@ -199,15 +199,15 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown item header" data-path="events" onClick={ this.go } >
+          <a className="ui dropdown item header" >
             Events
 
             <div className="menu">
-              <div className="item" data-path="directory" onClick={ this.go } >
+              <div className="item" data-path="events" onClick={ this.go } >
                 Calendar
               </div>
 
-              <div className="item" data-path="edit-profile" onClick={ this.go } >
+              <div className="item" data-path="events" onClick={ this.go } >
                 Our Events
               </div>
             </div>
@@ -254,11 +254,11 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="header item" data-path="sponsor" onClick={ this.go } >
+          <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } >
             Sponsor
           </a>
 
-          <a className="header item" data-path="contact" onClick={ this.go } >
+          <a className="ui dropdown header item" data-path="contact" onClick={ this.go } >
             Contact
           </a>
 

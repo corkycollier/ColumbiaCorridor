@@ -90,7 +90,7 @@ const Join = React.createClass({
             </h5>
           </div>
 
-          <div className="eight wide column" style={{"height":"50vh","overflowY":"scroll"}}>
+          <div className="eight wide column">
             <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481693642/JOIN-Membership_03_hfenov.jpg"/>
           </div>
         </div>
