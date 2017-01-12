@@ -79,7 +79,6 @@ const Events = React.createClass({
   },
 
   navigateEvent (e) {
-    debugger
     Backbone.history.navigate('event/' + e.currentTarget.dataset.id , { trigger : true });
   },
 
@@ -130,21 +129,27 @@ const Events = React.createClass({
           {
             this.props.parent.state.events.map(function(el) {
               var color;
+              var text;
               switch( el.event_type ) {
                 case "Breakfast forums":
                 color = "orange";
+                text = "Breakfast forum";
                 break;
                 case "Special Events":
                 color = "yellow";
+                text = "Special Event";
                 break;
                 case "Lunch w/ leaders":
                 color = "violet";
+                text = "Lunch w/ leaders";
                 break;
                 case "ResourceFULL Use Workshops":
                 color = "red";
+                text = "ResourceFULL Use Workshop";
                 break;
                 case "Tours & Member Exchanges":
                 color = "brown";
+                text = "Tours & Member Exchange";
                 break;
                 default:
                 return;
@@ -153,8 +158,16 @@ const Events = React.createClass({
               return (
                 <div className={"event-card ui segment " + color } key={"e-card" + el.id} data-id={ el.id } style={{ "margin" : "10px" }} onClick={this.navigateEvent}>
                   <h3>
-                    {el.title}
+                    { text }
                   </h3>
+
+                  <div className="ui clearing divider"></div>
+                  <div>
+                    <b>
+                      {el.title}
+                    </b>
+                  </div>
+                  {el.date}
                 </div>
               )
             }.bind(this))
