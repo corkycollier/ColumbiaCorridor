@@ -21,6 +21,7 @@ const router = Backbone.Router.extend({
     "resources" : "resources" ,
     "join" : "join" ,
     "sponsor" : "sponsor" ,
+    "membership" : "membership" ,
     "cca-news" : "ccaNews" ,
     "contact" : "contact" ,
     "sign-up" : "signUp" ,
@@ -28,6 +29,7 @@ const router = Backbone.Router.extend({
     "directory" : "directory" ,
     "edit-profile" : "editProfile",
     "make-news" : "makeNews" ,
+    "year-in-review" : "yearInReview" ,
     "make-ad" : "makeAd" ,
     "make-event" : "makeEvent" ,
     "event/:id" : "event" ,
@@ -50,13 +52,23 @@ const router = Backbone.Router.extend({
   },
 
   resourceFullUse () {
-    var home = <ResourceFullUse parent={ this.parent } key="resourceFullUse" /> ;
-    this.go( home )
+    var resourceFullUse = <ResourceFullUse parent={ this.parent } key="resourceFullUse" /> ;
+    this.go( resourceFullUse )
   },
 
+  yearInReview () {
+    var yearInReview = <YearInReview parent={ this.parent } key="yearInReview" /> ;
+    this.go( yearInReview )
+  },
+  
   groundwater () {
-    var home = <Groundwater parent={ this.parent } key="groundwater" /> ;
-    this.go( home )
+    var groundwater = <Groundwater parent={ this.parent } key="groundwater" /> ;
+    this.go( groundwater )
+  },
+
+  membership () {
+    var membership = <Membership parent={ this.parent } key="membership" /> ;
+    this.go( membership )
   },
 
   ccaNews () {
