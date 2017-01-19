@@ -11,19 +11,19 @@ const Home = React.createClass({
       "1" : {
         id : 1 ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748066/Home_3_g2nbm4.jpg" ,
-        link: "resources" ,
+        link: "year-in-review" ,
       } ,
 
       "2" : {
         id : 2 ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748099/Home_4_UPDATED_ljc6nr.jpg" ,
-        link: "resources" ,
+        link: "resourcesfull-use" ,
       } ,
 
       "3" : {
         id : 3 ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481748119/Home_5_pqm5rz.jpg" ,
-        link: "contact" ,
+        link: "membership" ,
       } ,
     }
 

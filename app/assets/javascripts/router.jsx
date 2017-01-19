@@ -13,6 +13,7 @@ const router = Backbone.Router.extend({
     "" : "home" ,
     "about-cca" : "aboutCCA" ,
     "columbia-corridor" : "columbiaCorridor" ,
+    "board/:id" : "boardId" ,
     "board" : "board" ,
     "staff" : "staff" ,
     "events" : "events" ,
@@ -47,126 +48,131 @@ const router = Backbone.Router.extend({
   },
 
   home () {
-    var home = <Home parent={ this.parent } key="home" /> ;
-    this.go( home )
+    var page = <Home parent={ this.parent } key="home" /> ;
+    this.go( page )
   },
 
   resourceFullUse () {
-    var resourceFullUse = <ResourceFullUse parent={ this.parent } key="resourceFullUse" /> ;
-    this.go( resourceFullUse )
+    var page = <ResourceFullUse parent={ this.parent } key="resourceFullUse" /> ;
+    this.go( page )
   },
 
   yearInReview () {
-    var yearInReview = <YearInReview parent={ this.parent } key="yearInReview" /> ;
-    this.go( yearInReview )
+    var page = <YearInReview parent={ this.parent } key="yearInReview" /> ;
+    this.go( page )
   },
-  
+
   groundwater () {
-    var groundwater = <Groundwater parent={ this.parent } key="groundwater" /> ;
-    this.go( groundwater )
+    var page = <Groundwater parent={ this.parent } key="groundwater" /> ;
+    this.go( page )
   },
 
   membership () {
-    var membership = <Membership parent={ this.parent } key="membership" /> ;
-    this.go( membership )
+    var page = <Membership parent={ this.parent } key="membership" /> ;
+    this.go( page )
   },
 
   ccaNews () {
-    var home = <CCANews parent={ this.parent } key="ccaNews" /> ;
-    this.go( home )
+    var page = <CCANews parent={ this.parent } key="ccaNews" /> ;
+    this.go( page )
   },
 
   aboutCCA () {
-    var home = <AboutCCA parent={ this.parent } key="aboutCCA" /> ;
-    this.go( home )
+    var page = <AboutCCA parent={ this.parent } key="aboutCCA" /> ;
+    this.go( page )
   },
 
   columbiaCorridor () {
-    var home = <ColumbiaCorridor parent={ this.parent } key="columbiaCorridor" /> ;
-    this.go( home )
+    var page = <ColumbiaCorridor parent={ this.parent } key="columbiaCorridor" /> ;
+    this.go( page )
   },
 
   staff () {
-    var home = <Staff parent={ this.parent } key="staff" /> ;
-    this.go( home )
+    var page = <Staff parent={ this.parent } key="staff" /> ;
+    this.go( page )
   },
 
   board () {
-    var home = <Board parent={ this.parent } key="board" /> ;
-    this.go( home )
+    var page = <Board parent={ this.parent } key="board" /> ;
+    this.go( page )
+  },
+
+  boardId ( id ) {
+    var page = <Bios parent={ this.parent } id={ id } key="board" /> ;
+    this.go( page )
   },
 
   aboutUs () {
-    var aboutUs = <AboutUs parent={ this.parent } key="aboutUs" /> ;
-    this.go( aboutUs )
+    var page = <AboutUs parent={ this.parent } key="aboutUs" /> ;
+    this.go( page )
   },
 
   events () {
-    var events = <Events parent={ this.parent } key="events" /> ;
-    this.go( events )
+    var page = <Events parent={ this.parent } key="events" /> ;
+    this.go( page )
   },
 
   resources () {
-    var resources = <Resources parent={ this.parent } key="resources" /> ;
-    this.go( resources )
+    var page = <Resources parent={ this.parent } key="resources" /> ;
+    this.go( page )
   },
 
   join () {
-    var join = <Join parent={ this.parent } key="join" /> ;
-    this.go( join )
+    var page = <Join parent={ this.parent } key="join" /> ;
+    this.go( page )
   },
 
   sponsor () {
-    var sponsor = <Sponsor parent={ this.parent } key="sponsor" /> ;
-    this.go( sponsor )
+    var page = <Sponsor parent={ this.parent } key="sponsor" /> ;
+    this.go( page )
   },
 
   contact () {
-    var contact = <Contact parent={ this.parent } key="contact" /> ;
-    this.go( contact )
+    var page = <Contact parent={ this.parent } key="contact" /> ;
+    this.go( page )
   },
 
   signIn () {
-    var signIn = <SignIn parent={ this.parent } key="signIn" /> ;
-    this.go( signIn )
+    var page = <SignIn parent={ this.parent } key="signIn" /> ;
+    this.go( page )
   },
 
   signUp () {
-    var signUp = <SignUp parent={ this.parent } key="signUp" /> ;
-    this.go( signUp )
+    var page = <SignUp parent={ this.parent } key="signUp" /> ;
+    this.go( page )
   },
 
   editProfile () {
-    var editProfile = <EditProfile parent={ this.parent } key="editProfile" /> ;
-    this.go( editProfile )
+    var page = <EditProfile parent={ this.parent } key="editProfile" /> ;
+    this.go( page )
   },
 
   makeNews () {
-    var makeNews = <MakeNews parent={ this.parent } key="makeNews" /> ;
-    this.go( makeNews )
+    var pagepage = <MakeNews parent={ this.parent } key="makeNews" /> ;
+    this.go( pagepage )
   },
 
   makeEvent () {
-    var makeEvent = <MakeEvent parent={ this.parent } key="makeEvent" /> ;
-    this.go( makeEvent )
+    var page = <MakeEvent parent={ this.parent } key="makeEvent" /> ;
+    this.go( page )
   },
 
   makeAd () {
-    var makeAd = <MakeAd parent={ this.parent } key="makeAd" /> ;
-    this.go( makeAd )
+    var page = <MakeAd parent={ this.parent } key="makeAd" /> ;
+    this.go( page )
   },
 
   directory () {
-    var directory = <Directory parent={ this.parent } key="directory" /> ;
-    this.go( directory )
+    var page = <Directory parent={ this.parent } key="directory" /> ;
+    this.go( page )
   },
 
   memberArea () {
     if (!this.parent.state.user) {
       this.home();
     } else {
-      var memberArea = <MemberArea parent={ this.parent } key="member-area" /> ;
-      this.go( memberArea );
+      var page = <MemberArea parent={ this.parent } key="member-area" /> ;
+      this.go( page );
     }
   },
 
@@ -174,8 +180,8 @@ const router = Backbone.Router.extend({
 
   admin () {
     if ( this.parent.state.user.id < 3 ) {
-      var admin = <Admin parent={ this.parent } key="admin" /> ;
-      this.go( admin );
+      var page = <Admin parent={ this.parent } key="admin" /> ;
+      this.go( page );
     } else {
       this.home();
     }
@@ -184,18 +190,13 @@ const router = Backbone.Router.extend({
 
   event ( id ) {
     var page = <Event parent={this.parent} id={ id } key={ "event" + id } /> ;
-    this.parent.setState({
-      activePage: [ page ]
-    });
+    this.go( page )
   },
 
   news (id) {
 
     var page = <News parent={this.parent} id={ id } key={ "news" + id } /> ;
-
-    this.parent.setState({
-      activePage: [ page ]
-    });
+    this.go( page )
   },
 
 
@@ -232,8 +233,8 @@ const router = Backbone.Router.extend({
   },
 
   newSponsor () {
-    var makeAd = <MakeAd parent={ this.parent } key="makeAd" /> ;
-    this.go( makeAd )
+    var page = <MakeAd parent={ this.parent } key="makeAd" /> ;
+    this.go( page )
   },
 
   editSponsor ( id ) {
@@ -246,8 +247,8 @@ const router = Backbone.Router.extend({
     });
 
 
-    var editAd = <EditAd parent={ this.parent } ad={ ad } key="editAd" /> ;
-    this.go( editAd )
+    var page = <EditAd parent={ this.parent } ad={ ad } key="editAd" /> ;
+    this.go( page )
   },
 
 
