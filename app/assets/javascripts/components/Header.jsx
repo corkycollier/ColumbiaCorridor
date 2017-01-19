@@ -23,8 +23,9 @@ const Header = React.createClass({
     Backbone.history.navigate('mailing-list', { trigger : true })
   },
 
-  goHome () {
-    Backbone.history.navigate('' , { trigger : true })
+  go (e) {
+    var fragment = e.currentTarget.dataset.url
+    Backbone.history.navigate(fragment , { trigger : true })
   },
 
   render () {
@@ -32,11 +33,11 @@ const Header = React.createClass({
       <div className="" style={this.state.style}>
         <div className="ui grid doubling ">
           <div className="four wide column">
-            <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"120px"}} onClick={ this.goHome }/>
+            <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"80px"}} onClick={ this.go }/>
           </div>
         </div>
 
-        <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "12px" , "right" : "12px" }}>
+        <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "24px" , "right" : "24px" }}>
           <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank" >
             <i className="facebook icon"></i>
           </a>
@@ -80,9 +81,11 @@ const LoggedInButtons = React.createClass({
       }
     })
   },
+
   goAdmin() {
     Backbone.history.navigate('admin' , { trigger : true });
   },
+
   checkForAdmin () {
     if (this.props.parent.state.user.id < 3) {
       return (
@@ -100,6 +103,7 @@ const LoggedInButtons = React.createClass({
         {
           this.checkForAdmin()
         }
+
         <a className="item" onClick={ this.logout }>
           Logout
         </a>
@@ -135,7 +139,6 @@ const LoggedOutButtons = React.createClass({
 
         <a className="item" onClick={ this.signUp } >
           Sign Up
-
         </a>
       </div>
     )

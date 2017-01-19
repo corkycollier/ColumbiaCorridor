@@ -110,7 +110,7 @@ const Home = React.createClass({
         </div>
 
 
-        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#fff" , "minHeight" : "166px" , "textAlign" : "center" , "padding" : "55px 80px" , "position" : "relative" , "top" : "14px"}}>
+        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "166px" , "textAlign" : "center" , "padding" : "55px 80px" , "position" : "relative" , "top" : "14px"}}>
           <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
             <h2>Upcoming Events</h2>
             <div style={{ "height" : "150px" , "overflowY" : "scroll" }}>

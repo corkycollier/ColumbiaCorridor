@@ -28,7 +28,8 @@ const Advertisements = React.createClass({
 
   render () {
     return (
-      <div className="" style = {{ "background" : "green" , "background" : "url(" + this.state.currentSlide.image_url + ")" , "backgroundSize" : "cover"}} >
+
+      <div className="" style = {{ "background" : "green" , "background" : "url(" + this.state.currentSlide.image_url + ")" , "backgroundSize" : "cover" }} >
         <img className="ui image add centered"
           src = { this.state.currentSlide.image_url }
           style = {{ "width" : "100%" , "height" : "10vw" }}

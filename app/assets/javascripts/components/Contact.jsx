@@ -30,10 +30,6 @@ const Contact = React.createClass({
             </div>
 
             <div>
-              <i className="fax icon" style={{"fontSize" : "16px", "marginRight" : "12px" }}/> 503.287.0223
-            </div>
-
-            <div>
               <i className="mail icon" style={{"fontSize" : "16px", "marginRight" : "12px" }}/> info@ColumbiaCorridor.org
             </div>
 
