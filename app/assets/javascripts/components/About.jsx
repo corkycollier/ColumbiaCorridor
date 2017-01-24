@@ -1,8 +1,8 @@
 const AboutCCA = React.createClass({
   render() {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "60px 20px" ,}}>
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+        <h1>
           About CCA
         </h1>
 
@@ -34,7 +34,7 @@ const AboutCCA = React.createClass({
 const ColumbiaCorridor = React.createClass({
   render() {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "60px 20px" ,}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1>
           Columbia Corridor Facts
         </h1>
@@ -74,7 +74,7 @@ const ColumbiaCorridor = React.createClass({
 const Staff = React.createClass({
   render() {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "60px 20px" ,}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1>
           Staff
         </h1>
