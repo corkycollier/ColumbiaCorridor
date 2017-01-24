@@ -18,11 +18,13 @@ const Bios = React.createClass({
         <h1>
           Board
         </h1>
-
+        <h2>
+          { this.state.member.title }
+        </h2>
         <div className="ui grid stackable">
           <div className="twelve wide column">
             <h3>
-              { this.state.member.name } - { this.state.member.title }
+              { this.state.member.name } - { this.state.member.company }
             </h3>
             <i>{ this.state.member.email }</i>
             <h4>
