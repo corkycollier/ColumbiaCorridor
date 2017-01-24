@@ -2,7 +2,7 @@ const Events = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px 20px" ,
+      "padding" : "30px 20px" ,
     }
 
     return({
@@ -85,47 +85,37 @@ const Events = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+        <h1 >
           Events
         </h1>
 
-        <div className="ui grid doubling stackable" style={{ "marginBottom" : "20px" ,}}>
-          <div className="eight wide column">
-            <div className="ui segment orange" data-color="orange" onClick={this.filter}>
-              <b>Breakfast Forums</b>
-            </div>
-
-            <div className="ui segment violet" data-color="violet" onClick={this.filter}>
-              <b>Lunch w/ Leaders</b>
-            </div>
-
-            <div className="ui segment red" data-color="red" onClick={this.filter}>
-              <b>ResourceFULL Use Workshops</b>
-            </div>
+        <div className="ui buttons" >
+          <div className="ui button orange" data-color="orange" onClick={this.filter}>
+            <b>Breakfast Forums</b>
           </div>
 
-          <div className="eight wide column">
-            <div className="ui segment yellow" data-color="yellow" onClick={this.filter}>
-              <b>Special Events</b>
-            </div>
+          <div className="ui button violet" data-color="violet" onClick={this.filter}>
+            <b>Lunch w/ Leaders</b>
+          </div>
 
-            <div className="ui segment brown" data-color="brown" onClick={this.filter}>
-              <b>Tours & Member Exchanges</b>
-            </div>
+          <div className="ui button red" data-color="red" onClick={this.filter}>
+            <b>ResourceFULL Use Workshops</b>
+          </div>
 
-            <div className="ui segment green" data-color="*" onClick={this.filter}>
-              <b>All</b>
-            </div>
+          <div className="ui button yellow" data-color="yellow" onClick={this.filter}>
+            <b>Special Events</b>
+          </div>
+
+          <div className="ui button brown" data-color="brown" onClick={this.filter}>
+            <b>Tours & Member Exchanges</b>
+          </div>
+
+          <div className="ui button green" data-color="*" onClick={this.filter}>
+            <b>All</b>
           </div>
         </div>
-        <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
 
-        <div id="calendar">
-        </div>
-
-        <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
-
-        <div className="event-cards">
+        <div className="event-cards" style={{ "marginTop" : "36px" , }}>
           {
             this.props.parent.state.events.map(function(el) {
               var color;
@@ -173,6 +163,13 @@ const Events = React.createClass({
             }.bind(this))
           }
         </div>
+        <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
+
+        <div id="calendar">
+        </div>
+
+
+
       </div>
     )
   }

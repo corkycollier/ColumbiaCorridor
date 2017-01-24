@@ -7,7 +7,7 @@ const Event = React.createClass({
         e = el;
       }
     })
-    
+
     return({
       event: e,
     })
@@ -19,7 +19,7 @@ const Event = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "60px 0px" }} >
+      <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
         <h1 className="ui header centered" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           Event
         </h1>

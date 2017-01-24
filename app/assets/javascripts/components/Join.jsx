@@ -25,13 +25,6 @@ const Join = React.createClass({
 
 
 const Membership = React.createClass({
-  getInitialState () {
-    return({})
-  },
-
-  componentDidMount () {
-
-  },
 
   updateState(e) {
     var state = this.state;
@@ -41,9 +34,8 @@ const Membership = React.createClass({
 
   render () {
     return (
-
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "60px 20px" ,}}>
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+        <h1 >
           Membership
         </h1>
 
@@ -125,13 +117,6 @@ const Membership = React.createClass({
   }
 });
 const YearInReview = React.createClass({
-  getInitialState () {
-    return({})
-  },
-
-  componentDidMount () {
-
-  },
 
   updateState(e) {
     var state = this.state;
@@ -141,7 +126,7 @@ const YearInReview = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "60px 20px" ,}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1>
           2015 Year in Review
         </h1>

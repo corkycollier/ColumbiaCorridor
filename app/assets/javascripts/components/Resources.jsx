@@ -1,11 +1,4 @@
 const CCANews = React.createClass({
-  getInitialState () {
-    return({})
-  },
-
-  componentDidMount () {
-
-  },
 
   updateState(e) {
     var state = this.state;
@@ -15,8 +8,8 @@ const CCANews = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "60px 20px" ,}}>
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+        <h1>
           CCA News
         </h1>
 
@@ -66,13 +59,6 @@ const CCANews = React.createClass({
 });
 
 const Groundwater = React.createClass({
-  getInitialState () {
-    return({})
-  },
-
-  componentDidMount () {
-
-  },
 
   updateState(e) {
     var state = this.state;
@@ -82,9 +68,8 @@ const Groundwater = React.createClass({
 
   render () {
     return (
-
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "60px 20px" ,}}>
-        <h1 className="ui header" style={{"marginBottom" : "48px" , "color" : "#262262"}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+        <h1 className="ui header" style={{ "color" : "#262262" }}>
           Groundwater Protection Program
         </h1>
 
@@ -119,13 +104,6 @@ const Groundwater = React.createClass({
 });
 
 const ResourceFullUse = React.createClass({
-  getInitialState () {
-    return({})
-  },
-
-  componentDidMount () {
-
-  },
 
   updateState(e) {
     var state = this.state;
@@ -136,8 +114,8 @@ const ResourceFullUse = React.createClass({
   render () {
     return (
 
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "60px 20px" ,}}>
-        <h1 className="ui header" style={{ "marginBottom" : "48px" , "color" : "#262262"}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+        <h1 className="ui header" style={{ "color" : "#262262"}}>
           ResourceFULL Use
         </h1>
 

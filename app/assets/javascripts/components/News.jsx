@@ -19,8 +19,8 @@ const News = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "60px 0px" }} >
-        <h1 className="ui header centered" style={{ "color" : "#262262" ,}}>
+      <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
+        <h1>
           News
         </h1>
 

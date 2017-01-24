@@ -3,7 +3,7 @@ const Contact = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px 20px" ,
+      "padding" : "30px 20px" ,
 
     }
 
@@ -21,7 +21,7 @@ const Contact = React.createClass({
       <div className="ui container" style={this.state.style}>
         <div className="ui grid doubling stackable">
           <div className="eight wide column" style={{ "fontSize" : "16px" }}>
-            <h1 style={{ "marginBottom" : "36px" , "marginTop" : "30px"}} >
+            <h1>
               Contact
             </h1>
 
