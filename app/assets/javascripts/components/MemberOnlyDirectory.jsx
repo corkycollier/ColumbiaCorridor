@@ -26,13 +26,17 @@ const MemberOnlyDirectory = React.createClass({
                   }}>
 
                   <div style={{ "marginBottom" : "8px" , }}>
-                    <b>
-                      { el.first_name + " " + el.last_name }
-                    </b>
+                    <a href={ el.company_website } target="blank">
+                      <b>
+                        <i>
+                          { el.company_name }
+                        </i>
+                      </b>
+                    </a>
                   </div>
 
 
-                  <i> {el.company_name } </i>
+
                 </div>
               )
             })

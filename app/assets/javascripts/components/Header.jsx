@@ -31,22 +31,24 @@ const Header = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui grid doubling stackable">
+        <div className="ui grid stackable">
           <div className="four wide column">
             <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"80px"}} onClick={ this.go }/>
           </div>
           <div className="eight wide column"
-               style={{
-                 "color" : "white" ,
-                 "textAlign" : "center" ,
-                 "fontSize" : "26px" ,
-                 "paddingTop" : "16px" ,
-               }}>
+            style={{
+              "color" : "white" ,
+              "textAlign" : "center" ,
+              "fontSize" : "26px" ,
+              "paddingTop" : "16px" ,
+            }}>
             +1 (503) 287-8686
           </div>
+
         </div>
 
-        <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "24px" , "right" : "24px" }}>
+
+        <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "16px" , "right" : "24px" }}>
           <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank" >
             <i className="facebook icon"></i>
           </a>
@@ -59,6 +61,7 @@ const Header = React.createClass({
             this.state.buttons
           }
         </div>
+
       </div>
     )
   }
@@ -147,18 +150,18 @@ const LoggedOutButtons = React.createClass({
         </a>
 
         <a className="item"
-           data-url="sign-in"
-           onClick={ this.go }
-           style={{ "float" : "left" ,}}
-           >
+          data-url="sign-in"
+          onClick={ this.go }
+          style={{ "float" : "left" ,}}
+          >
           Sign In
         </a>
 
         <a className="item"
-           data-url="sign-up"
-           onClick={ this.go }
-           style={{ "float" : "left" ,}}
-           >
+          data-url="sign-up"
+          onClick={ this.go }
+          style={{ "float" : "left" ,}}
+          >
           Sign Up
         </a>
       </div>
