@@ -159,11 +159,6 @@ const SignUp = React.createClass({
           <h3>Personal</h3>
 
           <div className="field">
-            <label>Username <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/></label>
-            <input type="text" required data-field="username" onChange={ this.updateState } required />
-          </div>
-
-          <div className="field">
             <label>Email <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/> </label>
             <input type="email" required data-field="email" onChange={ this.updateState } required />
           </div>

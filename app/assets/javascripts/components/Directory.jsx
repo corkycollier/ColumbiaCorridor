@@ -28,9 +28,7 @@ const Directory = React.createClass({
         <table className="ui single striped line table" style={{"color":"#262262"}}>
           <thead>
             <tr>
-
-              <th>Username</th>
-              <th>Name</th>
+              <th>Contact</th>
 
               <th>Email</th>
 
@@ -39,6 +37,8 @@ const Directory = React.createClass({
               <th>State</th>
 
               <th>Company</th>
+              <th>NAICS</th>
+
             </tr>
           </thead>
 
@@ -47,10 +47,6 @@ const Directory = React.createClass({
               this.props.parent.state.members.map((el) => {
                 return (
                   <tr key={ el.id }>
-
-                    <td>
-                      { el.username }
-                    </td>
 
                     <td>
                       { el.first_name + " " + el.last_name }
@@ -69,7 +65,14 @@ const Directory = React.createClass({
                     </td>
 
                     <td className="collapsing">
-                      { el.company_name }
+                      <a href={el.company_website} target="_blank">
+                        { el.company_name }
+                      </a>
+
+                    </td>
+
+                    <td className="collapsing">
+                      { el.company_business_type.split(': ')[1] }
                     </td>
                   </tr>
                 )
