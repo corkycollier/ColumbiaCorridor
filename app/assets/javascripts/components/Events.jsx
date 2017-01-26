@@ -113,7 +113,10 @@ const Events = React.createClass({
           </div>
         </div>
 
-        <div className="event-cards" style={{ "marginTop" : "36px" , }}>
+        <div className="ui clearing divider" style={{ "margin" : "24px" }} ></div>
+
+
+        <div className="event-cards">
           {
             this.props.parent.state.events.map(function(el) {
               var color;
@@ -161,7 +164,7 @@ const Events = React.createClass({
             }.bind(this))
           }
         </div>
-        <div className="ui clearing divider" style={{ "margin" : "48px" }} ></div>
+        <div className="ui clearing divider" style={{ "margin" : "24px" }} ></div>
 
         <div id="calendar">
         </div>
