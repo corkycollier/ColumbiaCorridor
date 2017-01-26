@@ -144,6 +144,7 @@ const Home = React.createClass({
             <div style={{ "height" : "150px" , "overflowY" : "scroll" }}>
               {
                 this.props.parent.state.news.map(function(el) {
+                  if (el.cca_only) { return ;}
                   return(
                     <div key={"fni" + el.id} data-id={ el.id } onClick={ this.goToNews } style={{ "marginTop" : "12px" ,}}>
                       {

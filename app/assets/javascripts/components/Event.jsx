@@ -8,6 +8,8 @@ const Event = React.createClass({
       }
     })
 
+    debugger
+    
     return({
       event: e,
     })

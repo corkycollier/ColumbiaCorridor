@@ -9,7 +9,6 @@ const News = React.createClass({
       }
     })
 
-    debugger
     return( news );
   },
 
@@ -20,7 +19,7 @@ const News = React.createClass({
   render () {
     return (
       <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
-        <h1>
+        <h1 className="ui header centered">
           News
         </h1>
 
