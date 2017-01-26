@@ -73,11 +73,6 @@ const EditProfile = React.createClass({
               <h3>Personal</h3>
 
               <div className="field">
-                <label>Username</label>
-                <input type="text" required data-field="username" onChange={ this.updateState } defaultValue={this.state.username} />
-              </div>
-
-              <div className="field">
                 <label>Email </label>
                 <input type="email" data-field="email" onChange={ this.updateState } defaultValue={this.state.email}  />
               </div>
@@ -165,7 +160,7 @@ const EditProfile = React.createClass({
                 </div>
               </div>
 
-            
+
 
               <div className="field">
                 <label>Business Type (NAICS Code)</label>
