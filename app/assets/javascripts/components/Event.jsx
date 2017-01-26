@@ -34,25 +34,34 @@ const Event = React.createClass({
                 { this.state.event.title }
               </h2>
 
-              <div className="ui clearing divider"></div>
+              <div className="ui clearing divider">
+              </div>
 
               <div id="body">
-
               </div>
 
-              <div className="ui clearing divider"></div>
-
-              <div>
-                <b>Location:</b> { this.state.event.location }
+              <div className="ui clearing divider">
               </div>
 
-              <div>
-                <b>Date:</b> { this.state.event.date }
-              </div>
+              <div className="ui grid stackable ">
+                <div className="eight wide column">
+                  <div>
+                    <b>Location:</b> { this.state.event.location }
+                    </div>
+
+                    <div>
+                      <b>Date:</b> { this.state.event.date }
+                      </div>
+                    </div>
+                    <div className="eight wide column">
+                      Map here
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )
-    }
-  });
+        )
+      }
+    });
