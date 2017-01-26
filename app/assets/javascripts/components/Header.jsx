@@ -31,9 +31,18 @@ const Header = React.createClass({
   render () {
     return (
       <div className="" style={this.state.style}>
-        <div className="ui grid doubling ">
+        <div className="ui grid doubling stackable">
           <div className="four wide column">
             <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"80px"}} onClick={ this.go }/>
+          </div>
+          <div className="eight wide column"
+               style={{
+                 "color" : "white" ,
+                 "textAlign" : "center" ,
+                 "fontSize" : "1.4vw" ,
+                 "paddingTop" : "2.2vw" ,
+               }}>
+            +1 (503) 287-8686
           </div>
         </div>
 

@@ -1,14 +1,4 @@
 const Events = React.createClass({
-  getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "30px 20px" ,
-    }
-
-    return({
-      style: style,
-    })
-  },
 
   componentDidMount () {
     $(".event-cards").isotope({
@@ -73,8 +63,12 @@ const Events = React.createClass({
   },
 
   filter (e) {
+    var color = e.currentTarget.dataset.color || "" ;
+    if (color) {
+      color = "." + color
+    }
     $(".event-cards").isotope({
-      filter: ".event-card." + e.currentTarget.dataset.color ,
+      filter: ".event-card" + color ,
     })
   },
 
@@ -84,12 +78,16 @@ const Events = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container" style={{
+          "color" : "#262262" ,
+          "padding" : "30px 20px" ,
+          }}
+          >
         <h1 >
           Events
         </h1>
 
-        <div className="ui buttons" >
+        <div className="ui buttons fluid" >
           <div className="ui button orange" data-color="orange" onClick={this.filter}>
             <b>Breakfast Forums</b>
           </div>
@@ -110,7 +108,7 @@ const Events = React.createClass({
             <b>Tours & Member Exchanges</b>
           </div>
 
-          <div className="ui button green" data-color="*" onClick={this.filter}>
+          <div className="ui button green" data-color="" onClick={this.filter}>
             <b>All</b>
           </div>
         </div>

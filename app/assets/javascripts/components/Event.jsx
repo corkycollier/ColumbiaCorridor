@@ -58,6 +58,13 @@ const Event = React.createClass({
                     </div>
                   </div>
 
+                  <div className="ui clearing divider">
+                  </div>
+
+                  <div>
+                    Pay pal button here
+                  </div>
+
                 </div>
               </div>
             </div>

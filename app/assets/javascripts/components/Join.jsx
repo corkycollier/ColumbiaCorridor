@@ -251,7 +251,6 @@ const YearInReview = React.createClass({
           </div>
         </div>
 
-        <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
       </div>
     )
   }
