@@ -27,6 +27,7 @@ const Admin = React.createClass({
         <AdminEvents parent={ this.props.parent } />
         <AdminNews parent={ this.props.parent } />
         <AdminAds parent={ this.props.parent } />
+        <AdminMailings parent={ this.props.parent } />
       </div>
     )
   }

@@ -7,8 +7,7 @@ const MailingList = React.createClass({
       data: this.state ,
       success (a, b, c) {
         alert('Thanks!')
-      } , error (a, b, c) {
-        alert("Oops!")
+        location.href = ""
       }
     })
   },

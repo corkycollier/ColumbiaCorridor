@@ -24,7 +24,6 @@ const EditProfile = React.createClass({
       "92: Public Administration" ,
     ]
 
-
     var state = this.props.parent.state.user ;
     state['businessCodes'] = businessCodes ;
     return( state );
@@ -42,9 +41,9 @@ const EditProfile = React.createClass({
       success (app_data, resp, obj) {
         this.props.parent.setState( app_data )
         Backbone.history.navigate( "member-area" , { trigger : true } );
-        alert('Profile was updated.')
+        alert('Profile was updated.');
       } , error (app_data, resp, obj) {
-        alert('Please refresh page and try again.')
+        alert('Please refresh page and try again.');
       }
     })
   },

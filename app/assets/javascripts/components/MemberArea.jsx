@@ -14,7 +14,8 @@ const MemberArea = React.createClass({
           "color" : "#262262" ,
           "padding" : "30px 20px" ,
         }}>
-        <h1 >
+
+        <h1>
           Member Area
         </h1>
 
