@@ -3,7 +3,7 @@ const Header = React.createClass({
     var style = {
       "color" : "#262262" ,
       "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png)" ,
-      "padding" : "20px"
+      "padding" : "20px" ,
     }
     var buttons;
 
@@ -39,8 +39,8 @@ const Header = React.createClass({
                style={{
                  "color" : "white" ,
                  "textAlign" : "center" ,
-                 "fontSize" : "1.4vw" ,
-                 "paddingTop" : "2.2vw" ,
+                 "fontSize" : "26px" ,
+                 "paddingTop" : "16px" ,
                }}>
             +1 (503) 287-8686
           </div>

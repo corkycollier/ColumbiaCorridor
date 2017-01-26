@@ -17,6 +17,7 @@ const router = Backbone.Router.extend({
     "board" : "board" ,
     "staff" : "staff" ,
     "events" : "events" ,
+    "members" : "members" ,
     "resourcesfull-use" : "resourceFullUse" ,
     "groundwater" : "groundwater" ,
     "resources" : "resources" ,
@@ -168,6 +169,11 @@ const router = Backbone.Router.extend({
     this.go( page )
   },
 
+  members () {
+    var page = <MemberOnlyDirectory parent={ this.parent } key="members" /> ;
+    this.go( page )
+  },
+
   directory () {
     var page = <Directory parent={ this.parent } key="directory" /> ;
     this.go( page )
@@ -200,7 +206,6 @@ const router = Backbone.Router.extend({
   },
 
   news (id) {
-
     var page = <News parent={this.parent} id={ id } key={ "news" + id } /> ;
     this.go( page )
   },

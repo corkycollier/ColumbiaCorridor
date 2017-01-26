@@ -95,8 +95,7 @@ const RegularMenu = React.createClass({
   render () {
     return (
       <div className="">
-        <div className="ui eight item menu" style={{ "borderLeft" : "none" , "borderRight" : "none" }}>
-
+        <div className="ui eight item menu" style={{ "borderLeft" : "none" , "borderRight" : "none" , "height" : "46px" }}>
           <a className="ui dropdown item header" data-path="" onClick={ this.go } >
             Home
           </a>
@@ -135,6 +134,10 @@ const RegularMenu = React.createClass({
                 CCA News
               </div>
 
+              <div className="item" data-path="members" onClick={ this.go } >
+                Member Directory
+              </div>
+
               <div className="item" data-path="groundwater" onClick={ this.go } >
                 Groundwater
               </div>
@@ -142,6 +145,8 @@ const RegularMenu = React.createClass({
               <div className="item" data-path="resourcesfull-use" onClick={ this.go } >
                 ResourceFULL Use
               </div>
+
+
             </div>
           </a>
 
