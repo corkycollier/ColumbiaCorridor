@@ -246,10 +246,6 @@ const SignUp = React.createClass({
             </div>
           </div>
 
-          <div className="field">
-            <label>Country</label>
-            <input type="text" data-field="company_country" onChange={ this.updateState } />
-          </div>
 
           <div className="field">
             <label>Business Type (NAICS Code)</label>
