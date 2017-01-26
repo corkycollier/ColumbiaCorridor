@@ -8,8 +8,6 @@ const Event = React.createClass({
       }
     })
 
-    debugger
-
     return({
       event: e,
     })
@@ -20,7 +18,36 @@ const Event = React.createClass({
   },
 
   render () {
-    debugger
+    var color;
+    switch( this.state.event.event_type ) {
+      case "Breakfast forums":
+      color = "orange" ;
+
+      break;
+
+      case "Special Events":
+      color = "yellow" ;
+
+      break;
+
+      case "Lunch w/ leaders":
+      color = "violet" ;
+
+      break;
+
+      case "ResourceFULL Use Workshops":
+      color = "red" ;
+
+      break;
+
+      case "Tours & Member Exchanges":
+      color = "brown" ;
+
+      break;
+      default:
+      return;
+    }
+
     return (
       <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
         <h1 className="ui header centered" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
@@ -29,7 +56,7 @@ const Event = React.createClass({
 
         <div className="ui grid centered">
           <div className="twelve wide column">
-            <div className={"ui padded segment "}>
+            <div className={"ui padded segment " + color}>
               <h2 className="ui header left floated">
                 { this.state.event.title }
               </h2>
@@ -54,7 +81,6 @@ const Event = React.createClass({
                       </div>
                     </div>
                     <div className="eight wide column">
-                      Map here
                     </div>
                   </div>
 
@@ -62,7 +88,7 @@ const Event = React.createClass({
                   </div>
 
                   <div>
-                    Pay pal button here
+                    <i>Pay here</i>
                   </div>
 
                 </div>
