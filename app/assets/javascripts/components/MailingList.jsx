@@ -1,52 +1,43 @@
 const MailingList = React.createClass({
-  getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "textAlign" : "center" ,
-      "padding" : "60px" ,
-    }
 
-    return({
-      style: style,
-    })
-  },
-
-  componentDidMount () {
-
-  },
-
-  signUpUser () {
+  save () {
     $.ajax({
-      url: '/api/mailing_list/',
+      url: '/mail/',
       type: 'POST' ,
-      data: { user: this.state } ,
+      data: this.state ,
       success (a, b, c) {
-        debugger
-        alert('You were signed up successfully!')
+        alert('Thanks!')
       } , error (a, b, c) {
-        debugger
-        alert("Oops there was an error!")
+        alert("Oops!")
       }
     })
   },
-  
+
+  updateState(e) {
+    var state = this.state || {};
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+    this.setState( state );
+  },
+
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
-        <h1>Sign Up for our Mailing List!</h1>
-        <div className="ui grid centered">
-          <div className="eight wide column">
-            <form className="ui form" onSubmit={ this.signUpUser }>
-              <div className="field">
-                <input type="email" placeholder="@" required />
-              </div>
+      <div className="ui container" style={{
+          "color" : "#262262" ,
+          "padding" : "60px" ,
+        }}>
 
-              <button className="ui button purple floated center" style = {{ "marginTop" : "12px" , "background" : "#262262" }} type="submit">
-                Sign Up
-              </button>
-            </form>
+        <h1>Mailing List</h1>
+        <form className="ui form" onSubmit={ this.save }>
+          <div className="field">
+            <label>Email</label>
+            <input type="email" data-field="email" onChange={ this.updateState } required/>
           </div>
-        </div>
+
+          <button className="ui button" type="submit" >
+            Submit
+          </button>
+        </form>
+
       </div>
     )
   }

@@ -75,9 +75,6 @@ const LoggedInButtons = React.createClass({
     })
   },
 
-  componentDidMount () {
-
-  },
 
   logout () {
     $.ajax({
@@ -113,6 +110,10 @@ const LoggedInButtons = React.createClass({
           this.checkForAdmin()
         }
 
+        <a className="item" data-url="mailing-list" onClick={ this.go } style={{ "float" : "left" ,}}>
+          Mailing list
+        </a>
+
         <a className="item" onClick={ this.logout }>
           Logout
         </a>
@@ -126,27 +127,31 @@ const LoggedOutButtons = React.createClass({
     return({})
   },
 
-  signIn () {
-    Backbone.history.navigate( 'sign-in' , { trigger : true })
-  },
-
-  signUp () {
-    Backbone.history.navigate( 'sign-up' , { trigger : true })
-  },
-
-
-  componentDidMount () {
-
+  go (e) {
+    var fragment = e.currentTarget.dataset.url;
+    Backbone.history.navigate( fragment , { trigger : true });
   },
 
   render () {
     return (
       <div>
-        <a className="item" onClick={ this.signIn } style={{ "float" : "left" ,}} >
+        <a className="item" data-url="mailing-list" onClick={ this.go } style={{ "float" : "left" ,}}>
+          Mailing list
+        </a>
+
+        <a className="item"
+           data-url="sign-in"
+           onClick={ this.go }
+           style={{ "float" : "left" ,}}
+           >
           Sign In
         </a>
 
-        <a className="item" onClick={ this.signUp } >
+        <a className="item"
+           data-url="sign-up"
+           onClick={ this.go }
+           style={{ "float" : "left" ,}}
+           >
           Sign Up
         </a>
       </div>

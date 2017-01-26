@@ -55,9 +55,13 @@ const MakeNews = React.createClass({
   render () {
     return (
       <div className="ui container"
-        style={{"color" : "#262262" ,"marginBottom" : "100px" ,"padding" : "25px" ,}}
-        >
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+           style={{
+             "color" : "#262262" ,
+             "marginBottom" : "100px" ,
+             "padding" : "30px 20px" ,
+           }}
+           >
+        <h1 >
           News
         </h1>
 

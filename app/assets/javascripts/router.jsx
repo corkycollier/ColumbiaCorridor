@@ -25,6 +25,7 @@ const router = Backbone.Router.extend({
     "membership" : "membership" ,
     "cca-news" : "ccaNews" ,
     "contact" : "contact" ,
+    "mailing-list" : "mailingList" ,
     "sign-up" : "signUp" ,
     "sign-in" : "signIn" ,
     "directory" : "directory" ,
@@ -69,6 +70,11 @@ const router = Backbone.Router.extend({
 
   membership () {
     var page = <Membership parent={ this.parent } key="membership" /> ;
+    this.go( page )
+  },
+
+  mailingList () {
+    var page = <MailingList parent={ this.parent } key="mailingList" /> ;
     this.go( page )
   },
 

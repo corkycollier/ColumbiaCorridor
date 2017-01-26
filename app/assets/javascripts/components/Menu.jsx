@@ -159,7 +159,7 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown item header" >
+          <a className="ui dropdown item header member-area" >
             Member Area
             <div data-path="member-area" onClick={this.go} style={{ "position" : "absolute" , "height" : "100%" , "width" : "100%" , "top" : "0px" , "left" : "0px" }}/>
 

@@ -2,8 +2,8 @@ const SignIn = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px" ,
-      "paddingBottom" : "120px" ,
+      "padding" : "30px 20px" ,
+      "paddingBottom" : "40px" ,
     }
 
     return({
@@ -37,7 +37,7 @@ const SignIn = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+        <h1  >
           Sign In
         </h1>
 
@@ -66,7 +66,7 @@ const SignUp = React.createClass({
   getInitialState () {
     var style = {
       "color" : "#262262" ,
-      "padding" : "60px" ,
+      "padding" : "30px 20px" ,
     }
 
     var businessCodes = [
@@ -150,7 +150,7 @@ const SignUp = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+        <h1>
           Sign Up
         </h1>
 

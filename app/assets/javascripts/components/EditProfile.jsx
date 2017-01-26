@@ -24,15 +24,9 @@ const EditProfile = React.createClass({
       "92: Public Administration" ,
     ]
 
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "25px" ,
-      "marginBottom" : "60px" ,
-    }
 
     var state = this.props.parent.state.user ;
     state['businessCodes'] = businessCodes ;
-    state['style'] = style ;
     return( state );
   },
 
@@ -63,8 +57,11 @@ const EditProfile = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+      <div className="ui container" style={{
+        "color" : "#262262" ,
+        "padding" : "30px 20px" ,
+      }}>
+        <h1 >
           Edit Profile
         </h1>
 
