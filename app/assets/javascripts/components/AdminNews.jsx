@@ -90,12 +90,12 @@ const AdminNewsRow = React.createClass({
     if (this.props.news.cca_only ) {
       return(
         <div>
-        <i className="check icon">
-        </i>
+          <i className="check icon">
+          </i>
 
-        <div style={{ "display" : "none" , }}>
-          { this.props.news.cca_only.toString() }
-        </div>
+          <div style={{ "display" : "none" , }}>
+            { this.props.news.cca_only.toString() }
+          </div>
         </div>
       )
     } else {
@@ -106,7 +106,6 @@ const AdminNewsRow = React.createClass({
   },
 
   render() {
-    debugger
     return (
       <tr>
 

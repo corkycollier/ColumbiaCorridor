@@ -58,14 +58,13 @@ const AdminUsers = React.createClass({
         <table className="ui table">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Username</th>
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
               <th>State</th>
               <th>Company</th>
-              <th></th>
+              <th>Action</th>
             </tr>
           </thead>
 
@@ -74,12 +73,6 @@ const AdminUsers = React.createClass({
               this.state.members.map( (el) => {
                 return(
                   <tr key={ "adminUsers" + el.id }>
-                    <td
-                      className="collapsing"
-                      style={{ "textAlign" : "center" }}
-                      >
-                      { el.id }
-                    </td>
 
                     <td>
                       { el.username }

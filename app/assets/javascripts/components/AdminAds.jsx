@@ -1,16 +1,5 @@
 
 const AdminAds = React.createClass({
-  getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "marginBottom" : "40px" ,
-    }
-
-    return({
-      style: style ,
-    })
-  },
-
 
   componentDidMount() {
     $('table').tablesort();
@@ -48,18 +37,20 @@ const AdminAds = React.createClass({
   render() {
 
     return (
-      <div className="" style={ this.state.style }>
+      <div className="" style={{
+        "color" : "#262262" ,
+        "marginBottom" : "40px" ,
+      }}>
         <h2 className="ui header">
           Sponsors
         </h2>
         <table className="ui table">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Name</th>
               <th>Image url</th>
               <th>Link</th>
-              <th></th>
+              <th className="collapsing">Action</th>
             </tr>
           </thead>
 
@@ -126,10 +117,6 @@ const AdminAdsRow = React.createClass({
 
     return (
       <tr>
-
-        <td className="collapsing" style={{ "textAlign" : "center" ,}}>
-          { this.props.ad.id }
-        </td>
 
         <td >
           { this.props.ad.name }
