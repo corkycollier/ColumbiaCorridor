@@ -76,18 +76,18 @@ const Sponsor = React.createClass({
           </div>
 
           <div className="eight wide column">
-            <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+            <h1>
               Golf Tournament Sponsorships
             </h1>
 
             <p>
-              <b>Every September, CCA hosts an annual golf tournament at the Riverside Golf & Country Club to support CCA activities and facilitate corridor business networking. Consider joining us for a beautiful day on the course or sponsoring the tournament at levels from $400 to $1,500.</b>
+              Every September, CCA hosts an annual golf tournament at the Riverside Golf & Country Club to support CCA activities and facilitate corridor business networking. Consider joining us for a beautiful day on the course or sponsoring the tournament at levels from $400 to $1,500.
             </p>
 
             <img className="ui large image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481700569/JOIN-Sponsors_03_sodj8w.png" />
 
             <p style={{ "marginTop" : "24px" }}>
-              <b>Sign up for golf sponsorships by contacting Marissa King at 503.287.8686 or mking@columbiacorridor.org.</b>
+              Sign up for golf sponsorships by contacting Marissa King at +1 (503) 287-8686 or <b><a href="mailto:mking@columbiacorridor.org">mking@columbiacorridor.org</a></b>.
             </p>
           </div>
         </div>

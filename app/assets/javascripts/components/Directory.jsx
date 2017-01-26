@@ -72,7 +72,7 @@ const Directory = React.createClass({
                     </td>
 
                     <td className="collapsing">
-                      { el.company_business_type.split(': ')[1] }
+                      { el.company_business_type.split(': ')[1] || "Unknown" }
                     </td>
                   </tr>
                 )
