@@ -26,6 +26,7 @@ const MemberOnlyDirectory = React.createClass({
                     "paddingTop" : "2vw" ,
                   }}>
 
+
                   <div style={{ "marginBottom" : "8px" , }}>
                     <a href={ el.company_website } target="blank" style={{ "color" : "#262262" , }}>
                       <b>

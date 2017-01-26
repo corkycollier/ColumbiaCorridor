@@ -44,7 +44,7 @@ const EditProfile = React.createClass({
         Backbone.history.navigate( "member-area" , { trigger : true } );
         alert('Profile was updated.')
       } , error (app_data, resp, obj) {
-        alert("Oops.")
+        alert('Please refresh page and try again.')
       }
     })
   },
