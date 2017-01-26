@@ -86,17 +86,12 @@ const Groundwater = React.createClass({
               CCA is very proud of our work on the Groundwater Protection Program. It’s a great example of how business interests can collaborate with the government agencies to protect our environment with reasonable, effective regulations.
             </p>
 
-          </div>
-
-          <div className="eight wide column">
-            <img className="ui image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481691723/wellfieldmap_e1bglj.gif"/>
-
-            <a href="http://www.portlandoregon.gov/water/29890" target="_blank" style={{"color":"white" , "margin" : "16px" , "marginBottom" : "60px" }}>
-              <div className="ui button fluid" style={{"background" : "#262262" , "color" : "white" }} >
-                GPP Website
-              </div>
+            <a href="http://www.portlandoregon.gov/water/29890" target="_blank" >
+              <img className="ui image fluid" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481691723/wellfieldmap_e1bglj.gif" />
             </a>
           </div>
+
+
         </div>
       </div>
     )

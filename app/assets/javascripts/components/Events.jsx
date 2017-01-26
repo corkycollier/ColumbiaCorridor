@@ -147,18 +147,20 @@ const Events = React.createClass({
               }
 
               return (
-                <div className={"event-card ui segment " + color } key={"e-card" + el.id} data-id={ el.id } style={{ "margin" : "10px" }} onClick={this.navigateEvent}>
+                <div className={"event-card ui segment " + color } key={"e-card" + el.id} data-id={ el.id } style={{ "margin" : "10px 0px" , "marginRight" : "10px" , "marginLeft" : "0px"}} onClick={this.navigateEvent}>
                   <h3>
-                    { text }
+                    {el.title}
                   </h3>
 
                   <div className="ui clearing divider"></div>
+
                   <div>
                     <b>
-                      {el.title}
+                      { text }
                     </b>
                   </div>
-                  {el.date}
+
+                  { el.date }
                 </div>
               )
             }.bind(this))
