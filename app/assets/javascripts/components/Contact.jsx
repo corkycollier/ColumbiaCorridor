@@ -26,7 +26,7 @@ const Contact = React.createClass({
             </h1>
 
             <div>
-              <i className="phone icon" style={{"fontSize" : "16px", "marginRight" : "12px" }}/> +1 (503) 287-8686
+              <i className="phone icon" style={{"fontSize" : "16px", "marginRight" : "12px" }}/> <a href="tel:503-287-8686">+1 (503) 287-8686</a>
             </div>
 
             <div>
@@ -42,7 +42,7 @@ const Contact = React.createClass({
             </div>
 
             <div>
-               Portland, OR 97238
+              Portland, OR 97238
             </div>
 
             <h3 style={{ "marginTop" : "30px" }}>
@@ -74,7 +74,9 @@ const Contact = React.createClass({
             </div>
 
             <div>
-              mking@columbiacorridor.org
+              <a href="mailto:mking@columbiacorridor.org">
+                mking@columbiacorridor.org
+              </a>
             </div>
 
             <div style={{ "marginTop" : "30px" }}>
@@ -86,11 +88,17 @@ const Contact = React.createClass({
             </div>
 
             <div>
-              corky@columbiacorridor.org
+              <a href="mailto:corky@columbiacorridor.org">
+                corky@columbiacorridor.org
+              </a>
+
             </div>
 
             <div>
-              cell: 503.241.1888
+              cell: <a href="tel:503-241-1888">
+                +1 (503) 241-1888
+              </a>
+
             </div>
           </div>
 

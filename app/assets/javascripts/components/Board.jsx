@@ -32,9 +32,11 @@ const Board = React.createClass({
                       <img className="ui image" src={ el.img } />
                     </div>
 
-                    <p style={{ "textAlign" : "center" , "fontWeight" : "bold" , "marginTop" : "4px" }}>
+                    <b style={{ "textAlign" : "center" , "marginTop" : "4px" }}> 
                       { el.name }
-                    </p>
+                    </b>
+
+                    <i>{ el.company}</i>
 
                     <p style={{ "textAlign" : "center" }}>
                       <i>{ el.title }</i>

@@ -9,27 +9,38 @@ const Bios = React.createClass({
     }.bind(this))
 
     return ({
-       member : member
+      member : member
     })
   },
   render () {
     return (
       <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
-        <h1>
-          Board
-        </h1>
-        <h2>
-          { this.state.member.title }
-        </h2>
+
+
         <div className="ui grid stackable">
           <div className="twelve wide column">
+            <h1>
+              { this.state.member.name }
+            </h1>
+
             <h3>
-              { this.state.member.name } - { this.state.member.company }
+              CCA { this.state.member.title }
             </h3>
-            <i>{ this.state.member.email }</i>
-            <h4>
+
+            <div>
+              <a href={"mailto:" + this.state.member.email }>
+              { this.state.member.email }
+              </a>
+            </div>
+
+            <div style={{ "margin" : "12px 0px" , }}>
               { this.state.member.bio }
-            </h4>
+            </div>
+
+            <div>
+              <b>{ this.state.member.company }</b>
+            </div>
+
           </div>
 
           <div className="four wide column">
