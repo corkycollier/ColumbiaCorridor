@@ -15,6 +15,7 @@ const MemberOnlyDirectory = React.createClass({
         <h1>
           Members
         </h1>
+
         <div className="member-mods">
           {
             this.props.parent.state.members.map(function(el) {
@@ -26,7 +27,7 @@ const MemberOnlyDirectory = React.createClass({
                   }}>
 
                   <div style={{ "marginBottom" : "8px" , }}>
-                    <a href={ el.company_website } target="blank">
+                    <a href={ el.company_website } target="blank" style={{ "color" : "#262262" , }}>
                       <b>
                         <i>
                           { el.company_name }

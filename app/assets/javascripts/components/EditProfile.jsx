@@ -139,6 +139,11 @@ const EditProfile = React.createClass({
               </div>
 
               <div className="field">
+                <label>Company Website</label>
+                <input type="text" data-field="company_website" onChange={ this.updateState } defaultValue={this.state.company_website} />
+              </div>
+
+              <div className="field">
                 <label>Mailing Address</label>
                 <input type="text" data-field="company_address" onChange={ this.updateState } defaultValue={this.state.company_address}  />
               </div>

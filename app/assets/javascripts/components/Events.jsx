@@ -64,12 +64,14 @@ const Events = React.createClass({
 
   filter (e) {
     var color = e.currentTarget.dataset.color || "" ;
+
     if (color) {
       color = "." + color
     }
+
     $(".event-cards").isotope({
       filter: ".event-card" + color ,
-    })
+    });
   },
 
   navigateEvent (e) {
@@ -83,7 +85,7 @@ const Events = React.createClass({
           "padding" : "30px 20px" ,
           }}
           >
-        <h1 >
+        <h1>
           Events
         </h1>
 
