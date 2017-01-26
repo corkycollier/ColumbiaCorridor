@@ -19,28 +19,29 @@ const MemberOnlyDirectory = React.createClass({
         <div className="member-mods">
           {
             this.props.parent.state.members.map(function(el) {
-              return(
-                <div className="member-mod" key={ "mod" + el.id } style={{
-                    "textAlign" : "center" ,
-                    "padding" : "4vw" ,
-                    "paddingTop" : "2vw" ,
-                  }}>
+              if (el.private) {
+                return
+              } else {
+                return(
+                  <div className="member-mod" key={ "mod" + el.id } style={{
+                      "textAlign" : "center" ,
+                      "padding" : "4vw" ,
+                      "paddingTop" : "2vw" ,
+                    }}>
 
-
-                  <div style={{ "marginBottom" : "8px" , }}>
-                    <a href={ el.company_website } target="blank" style={{ "color" : "#262262" , }}>
-                      <b>
-                        <i>
-                          { el.company_name }
-                        </i>
-                      </b>
-                    </a>
+                    <div style={{ "marginBottom" : "8px" , }}>
+                      <a href={ el.company_website } target="blank" style={{ "color" : "#262262" , }}>
+                        <b>
+                          <i>
+                            { el.company_name }
+                          </i>
+                        </b>
+                      </a>
+                    </div>
                   </div>
+                )
+              }
 
-
-
-                </div>
-              )
             })
           }
         </div>

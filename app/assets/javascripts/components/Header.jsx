@@ -116,7 +116,7 @@ const LoggedInButtons = React.createClass({
       <div>
 
         <a className="item" data-url="mailing-list" onClick={ this.go } style={{ "float" : "left" ,}}>
-          Mailing list
+          Mailing List
         </a>
 
 
@@ -146,7 +146,7 @@ const LoggedOutButtons = React.createClass({
     return (
       <div>
         <a className="item" data-url="mailing-list" onClick={ this.go } style={{ "float" : "left" ,}}>
-          Mailing list
+          Mailing List
         </a>
 
         <a className="item"

@@ -42,7 +42,7 @@ const MemberArea = React.createClass({
 
                 if (el.cca_only) {
                   return(
-                    <div key={ el.id } data-id={ el.id } >
+                    <div key={"manews" + el.id } data-id={ el.id } >
                       <div style={{"marginBottom" : "2px"}}>
                         <b>
                           { el.title }
@@ -237,9 +237,9 @@ const Archives = React.createClass({
           <div className="ui cards" style={{ "padding" : "2px" }}>
 
             {
-              this.state.archives.map(function(el) {
+              this.state.archives.map(function(el, idx) {
                 return (
-                  <div className="card" key={ el.title }>
+                  <div className="card" key={ "go" + idx }>
                     <i className={el.icon + "icon"} style={{ "position" : "absolute" , "fontSize" : "33px" , "left" : "12px" , "top" : "23px" , "color" : "grey" }}></i>
                     <div className="content" style={{"paddingLeft" : "66px"}}>
                       <div className="header" style={{ "height" : "47px" , "overflowY" : "scroll"}}>

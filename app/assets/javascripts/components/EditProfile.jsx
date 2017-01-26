@@ -31,6 +31,10 @@ const EditProfile = React.createClass({
 
   componentDidMount () {
     $('table').tablesort();
+    $('.checkbox').checkbox();
+    if (this.state.private) {
+      $('.ui.checkbox').checkbox('check');
+    }
   },
 
   updateUser () {
@@ -38,11 +42,10 @@ const EditProfile = React.createClass({
       url: '/api/users/' + this.state.id ,
       type: 'PATCH' ,
       data: { user: this.state } ,
-      success (app_data, resp, obj) {
+      success: function (app_data, resp, obj) {
         this.props.parent.setState( app_data )
-        Backbone.history.navigate( "member-area" , { trigger : true } );
         alert('Profile was updated.');
-      } , error (app_data, resp, obj) {
+      }.bind(this) , error (app_data, resp, obj) {
         alert('Please refresh page and try again.');
       }
     })
@@ -52,6 +55,18 @@ const EditProfile = React.createClass({
     var state = this.state;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
+  },
+
+  setCheckbox () {
+    if ( this.state.private ) {
+      this.setState({
+        private: false
+      })
+    } else {
+      this.setState({
+        private: true
+      })
+    }
   },
 
   render () {
@@ -79,6 +94,13 @@ const EditProfile = React.createClass({
               <div className="field">
                 <label>Password</label>
                 <input type="password" data-field="password" onChange={ this.updateState } defaultValue={this.state.password} minLength="6"  />
+              </div>
+
+              <div className="field">
+                <div className="ui checkbox"  onClick={ this.setCheckbox }>
+                  <input type="checkbox" tabIndex="0" className="hidden" />
+                  <label>Private <small>Information will not be shared on website directory.</small></label>
+                </div>
               </div>
 
               <div className="two fields">
@@ -133,7 +155,7 @@ const EditProfile = React.createClass({
               </div>
 
               <div className="field">
-                <label>Company Website</label>
+                <label>Company Website <small>include http:// </small></label>
                 <input type="text" data-field="company_website" onChange={ this.updateState } defaultValue={this.state.company_website} />
               </div>
 
@@ -159,8 +181,6 @@ const EditProfile = React.createClass({
                 </div>
               </div>
 
-
-
               <div className="field">
                 <label>Business Type (NAICS Code)</label>
                 <select className="ui dropdown" data-field="company_business_type" onChange={ this.updateState } value={this.state.company_business_type} >
@@ -177,6 +197,8 @@ const EditProfile = React.createClass({
                   }
                 </select>
               </div>
+
+
 
               <button className="ui button" type="submit" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "18px" }} >
                 Update
