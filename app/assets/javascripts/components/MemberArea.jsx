@@ -24,7 +24,7 @@ const MemberArea = React.createClass({
           </div>
 
           <div className="ui button" data-url="make-news" onClick={ this.go }>
-            Create News
+            Make News
           </div>
 
           <div className="ui button" data-url="edit-profile" onClick={ this.go }>
@@ -34,12 +34,12 @@ const MemberArea = React.createClass({
 
 
         <div style={{"paddingTop" : "11px" , "paddingBottom" : "21px" }}>
-          <h2>Member News</h2>
+          <h2>CCA Only News</h2>
           <div style={{ "height" : "50vh" , "overflowY" : "scroll" , "padding" : "2px" }} >
             {
               this.props.parent.state.news.map(function(el) {
 
-                if (true) {
+                if (el.cca_only) {
                   return(
                     <div key={ el.id } data-id={ el.id } >
                       <div style={{"marginBottom" : "2px"}}>
@@ -66,7 +66,6 @@ const MemberArea = React.createClass({
           </div>
         </div>
 
-        <div className="ui clearing divider" style={{ "margin" : "48px" ,}}></div>
 
         <Archives />
       </div>

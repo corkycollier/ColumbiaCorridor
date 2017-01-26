@@ -27,10 +27,9 @@ const AdminNews = React.createClass({
         <table className="ui table">
           <thead>
             <tr>
-              <th className="collapsing">ID</th>
               <th>Title</th>
-              <th></th>
-              <th></th>
+              <th style={{ "maxWidth" : "150px" , }}>CCA Only</th>
+              <th className="collapsing">Action</th>
             </tr>
           </thead>
 
@@ -87,21 +86,41 @@ const AdminNewsRow = React.createClass({
     Backbone.history.navigate('news/' + this.props.news.id , { trigger : true } )
   },
 
+  cca_only () {
+    if (this.props.news.cca_only ) {
+      return(
+        <div>
+        <i className="check icon">
+        </i>
+
+        <div style={{ "display" : "none" , }}>
+          { this.props.news.cca_only.toString() }
+        </div>
+        </div>
+      )
+    } else {
+      <div style={{ "display" : "none" , }}>
+        { this.props.news.cca_only.toString() }
+      </div>
+    }
+  },
+
   render() {
+    debugger
     return (
       <tr>
-        <td style={{ "textAlign" : "center" ,}}>
-          { this.props.news.id }
-        </td>
 
         <td onClick={ this.goToNews }>
           { this.props.news.title }
         </td>
 
         <td>
+          {
+            this.cca_only()
+          }
         </td>
 
-        <td className="collapsing">
+        <td >
           <a
             data-id={this.props.news.id}
             style={{ "marginRight" : "8px" }}

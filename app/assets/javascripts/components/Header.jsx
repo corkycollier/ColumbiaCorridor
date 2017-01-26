@@ -88,6 +88,11 @@ const LoggedInButtons = React.createClass({
     })
   },
 
+  go (e) {
+    var fragment = e.currentTarget.dataset.url;
+    Backbone.history.navigate( fragment , { trigger : true });
+  },
+
   goAdmin() {
     Backbone.history.navigate('admin' , { trigger : true });
   },
@@ -106,13 +111,15 @@ const LoggedInButtons = React.createClass({
     return (
 
       <div>
-        {
-          this.checkForAdmin()
-        }
 
         <a className="item" data-url="mailing-list" onClick={ this.go } style={{ "float" : "left" ,}}>
           Mailing list
         </a>
+
+
+        {
+          this.checkForAdmin()
+        }
 
         <a className="item" onClick={ this.logout }>
           Logout

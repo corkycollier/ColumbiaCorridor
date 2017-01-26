@@ -25,10 +25,11 @@ const AdminEvents = React.createClass({
         <table className="ui table">
           <thead>
             <tr>
-              <th className="collapsing">ID</th>
               <th>Title</th>
-              <th></th>
-              <th></th>
+              <th>Date</th>
+              <th className="collapsing">Start</th>
+              <th>End</th>
+              <th className="collapsing">Action</th>
             </tr>
           </thead>
 
@@ -83,19 +84,22 @@ const AdminEventsRow = React.createClass({
   render() {
     return (
       <tr>
-        <td style={{ "textAlign" : "center" ,}}>
-          { this.props.event.id }
-        </td>
-
         <td onClick={ this.goToEvent }>
           { this.props.event.title }
         </td>
 
         <td>
+          { this.props.event.date }
         </td>
 
+        <td>
+          { this.props.event.start }
+        </td>
 
-        <td className="collapsing">
+        <td>
+          { this.props.event.end }
+        </td>
+        <td>
           <a
             data-id={this.props.event.id}
             onClick={ this.delete }

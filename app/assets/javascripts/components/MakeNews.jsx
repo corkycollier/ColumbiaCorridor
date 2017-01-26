@@ -55,12 +55,12 @@ const MakeNews = React.createClass({
   render () {
     return (
       <div className="ui container"
-           style={{
-             "color" : "#262262" ,
-             "marginBottom" : "100px" ,
-             "padding" : "30px 20px" ,
-           }}
-           >
+        style={{
+          "color" : "#262262" ,
+          "marginBottom" : "100px" ,
+          "padding" : "30px 20px" ,
+        }}
+        >
         <h1 >
           News
         </h1>
@@ -69,17 +69,15 @@ const MakeNews = React.createClass({
           <div className="sixteen wide column">
 
             <form className="ui form" onSubmit={this.submitNews }>
-              <div className="two fields">
-                <div className="field">
-                  <label>Title</label>
-                  <input type="text" data-field="title" onChange={ this.updateState } required/>
-                </div>
+              <div className="field">
+                <label>Title</label>
+                <input type="text" data-field="title" onChange={ this.updateState } required/>
+              </div>
 
-                <div className="field">
-                  <div className="ui checkbox" style={{"position" : "relative" , "top" : "31px" , "left" : "22px"}} onClick={ this.setCheckbox }>
-                    <input type="checkbox" tabIndex="0" className="hidden" />
-                    <label>CCA only</label>
-                  </div>
+              <div className="field">
+                <div className="ui checkbox"  onClick={ this.setCheckbox }>
+                  <input type="checkbox" tabIndex="0" className="hidden" />
+                  <label>CCA only</label>
                 </div>
               </div>
 
@@ -88,7 +86,7 @@ const MakeNews = React.createClass({
                 <textarea id="text-area" type="text" data-field="body" required />
               </div>
 
-              <button className="ui button small" type="submit" style={{ "background" : "#262262" , "color" : "white" }}>
+              <button className="ui button" type="submit">
                 Submit
               </button>
             </form>

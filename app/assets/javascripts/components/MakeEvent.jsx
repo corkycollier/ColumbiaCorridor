@@ -1,15 +1,4 @@
 const MakeEvent = React.createClass({
-  getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "25px" ,
-      "paddingBottom" : "125px" ,
-    }
-
-    return({
-      style: style,
-    })
-  },
 
   componentDidMount () {
     $('#text-area').froalaEditor();
@@ -48,7 +37,11 @@ const MakeEvent = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container" style={{
+        "color" : "#262262" ,
+        "padding" : "25px" ,
+        "paddingBottom" : "125px" ,
+      }}>
         <h1 className="ui header" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           New Event
         </h1>
@@ -109,7 +102,6 @@ const MakeEvent = React.createClass({
               <option value="Tours & Member Exchanges">Tours & Member Exchanges</option>
             </select>
           </div>
-
 
           <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>
             Create Event
