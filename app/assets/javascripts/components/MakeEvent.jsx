@@ -1,21 +1,12 @@
 const MakeEvent = React.createClass({
 
-
-
-  getInitialState () {
-    debugger
-
-    return ({
-
-    })
-  },
   componentDidMount () {
     $('#text-area').froalaEditor();
     $('.checkbox').checkbox();
   },
 
   updateState(e) {
-    var state = this.state;
+    var state = this.state || {};
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
     this.setState( state );
   },

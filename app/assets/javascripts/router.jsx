@@ -160,8 +160,18 @@ const router = Backbone.Router.extend({
   },
 
   makeEvent () {
-    var page = <MakeEvent parent={ this.parent } key="makeEvent" /> ;
-    this.go( page )
+    var id;
+    if (this.parent.state.user) {
+      id = this.parent.state.user.id
+    }
+
+    if ( id < 4 ) {
+      var page = <MakeEvent parent={ this.parent } key="makeEvent" /> ;
+      this.go( page )
+    } else {
+      this.home();
+    }
+
   },
 
   makeAd () {
@@ -188,17 +198,20 @@ const router = Backbone.Router.extend({
     }
   },
 
-
-
   admin () {
-    if ( this.parent.state.user.id < 3 ) {
+    var id;
+    if (this.parent.state.user) {
+      id = this.parent.state.user.id
+    }
+
+    if ( id < 4 ) {
       var page = <Admin parent={ this.parent } key="admin" /> ;
       this.go( page );
     } else {
       this.home();
     }
-  },
 
+  },
 
   event ( id ) {
     var page = <Event parent={this.parent} id={ id } key={ "event" + id } /> ;

@@ -39,7 +39,7 @@ const Header = React.createClass({
             style={{
               "color" : "white" ,
               "textAlign" : "center" ,
-              "fontSize" : "26px" ,
+              "fontSize" : "24px" ,
               "paddingTop" : "16px" ,
             }}>
             +1 (503) 287-8686
@@ -101,7 +101,7 @@ const LoggedInButtons = React.createClass({
   },
 
   checkForAdmin () {
-    if (this.props.parent.state.user.id < 3) {
+    if (this.props.parent.state.user.id < 4) {
       return (
         <a className="item" onClick={ this.goAdmin } style={{ "float" : "left" ,}}>
           Admin

@@ -229,35 +229,98 @@ const SidebarMenu = React.createClass({
         </div>
 
         <div className="ui vertical menu sidebar" style={{ "zIndex" : "4000000"}}>
-          <a className="item header" data-path="" onClick={ this.go } >
+          <a className="ui dropdown item" data-path="" onClick={ this.go } >
             Home
           </a>
 
-          <a className="item header" data-path="about-us" onClick={ this.go } >
+          <a className="ui dropdown item" data-path="about-us" >
             About Us
+
+            <div className="menu">
+              <div className="item" data-path="about-cca" onClick={ this.go } >
+                About CCA
+              </div>
+
+              <div className="item" data-path="columbia-corridor" onClick={ this.go } >
+                Columbia Corridor
+              </div>
+
+              <div className="item" data-path="staff" onClick={ this.go } >
+                Staff
+              </div>
+
+              <div className="item" data-path="board" onClick={ this.go } >
+                Board
+              </div>
+            </div>
           </a>
 
-          <a className="item header" data-path="events" onClick={ this.go } >
+          <a className="ui item" data-path="events" onClick={ this.go } >
             Events
           </a>
 
-          <a className="item header" data-path="resources" onClick={ this.go } >
+          <a className="ui dropdown item">
             Resources
+
+            <div className="menu">
+              <div className="item" data-path="cca-news" onClick={ this.go } >
+                CCA News
+              </div>
+
+              <div className="item" data-path="members" onClick={ this.go } >
+                Member Directory
+              </div>
+
+              <div className="item" data-path="groundwater" onClick={ this.go } >
+                Groundwater
+              </div>
+
+              <div className="item" data-path="resourcesfull-use" onClick={ this.go } >
+                ResourceFULL Use
+              </div>
+
+
+            </div>
           </a>
 
-          <a className="item header" data-path="join" onClick={ this.go } >
+          <a className="ui dropdown item" >
             Join
+
+            <div className="menu">
+              <div className="item" data-path="membership" onClick={ this.go } >
+                Membership
+              </div>
+
+              <div className="item" data-path="year-in-review" onClick={ this.go } >
+                Year In Review
+              </div>
+            </div>
           </a>
 
-          <a className="item header" data-path="member-area" onClick={ this.go } >
+          <a className="ui dropdown item member-area" >
             Member Area
+            <div data-path="member-area" onClick={this.go} style={{ "position" : "absolute" , "height" : "100%" , "width" : "100%" , "top" : "0px" , "left" : "0px" }}/>
+
+            <div className="menu">
+              <div className="item" data-path="directory" onClick={ this.go } >
+                Directory
+              </div>
+
+              <div className="item" data-path="edit-profile" onClick={ this.go } >
+                Edit Profile
+              </div>
+
+              <div className="item" data-path="make-news" onClick={ this.go } >
+                Make News
+              </div>
+            </div>
           </a>
 
-          <a className="header item" data-path="sponsor" onClick={ this.go } >
+          <a className="ui dropdown item" data-path="sponsor" onClick={ this.go } >
             Sponsor
           </a>
 
-          <a className="header item" data-path="contact" onClick={ this.go } >
+          <a className="ui dropdown item" data-path="contact" onClick={ this.go } >
             Contact
           </a>
         </div>
