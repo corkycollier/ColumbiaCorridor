@@ -24,7 +24,7 @@ const EditProfile = React.createClass({
       "92: Public Administration" ,
     ]
 
-    var state = this.props.parent.state.user ;
+    var state = this.props.parent.state.user || {} ;
     state['businessCodes'] = businessCodes ;
     return( state );
   },
@@ -52,7 +52,7 @@ const EditProfile = React.createClass({
   },
 
   updateState (e) {
-    var state = this.state;
+    var state = this.state ;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
   },
@@ -81,7 +81,6 @@ const EditProfile = React.createClass({
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
-
             <form className="ui small form" onSubmit={ this.updateUser }>
 
               <h3>Personal</h3>
@@ -281,10 +280,6 @@ const AdminEditProfile = React.createClass({
 
               <h3>Personal</h3>
 
-              <div className="field">
-                <label>Username</label>
-                <input type="text" required data-field="username" onChange={ this.updateState } defaultValue={this.state.username} />
-              </div>
 
               <div className="field">
                 <label>Email </label>
@@ -345,6 +340,11 @@ const AdminEditProfile = React.createClass({
               <div className="field">
                 <label>Company Name</label>
                 <input type="text" data-field="company_name" onChange={ this.updateState } defaultValue={this.state.company_name} />
+              </div>
+
+              <div className="field">
+                <label>Company Website <small>include http:// </small></label>
+                <input type="text" data-field="company_website" onChange={ this.updateState } defaultValue={this.state.company_website} />
               </div>
 
               <div className="field">
