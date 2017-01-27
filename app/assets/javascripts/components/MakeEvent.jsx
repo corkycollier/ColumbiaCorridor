@@ -1,5 +1,14 @@
 const MakeEvent = React.createClass({
 
+
+
+  getInitialState () {
+    debugger
+
+    return ({
+
+    })
+  },
   componentDidMount () {
     $('#text-area').froalaEditor();
     $('.checkbox').checkbox();
@@ -42,6 +51,7 @@ const MakeEvent = React.createClass({
         "padding" : "25px" ,
         "paddingBottom" : "125px" ,
       }}>
+
         <h1 className="ui header" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           New Event
         </h1>
@@ -49,7 +59,7 @@ const MakeEvent = React.createClass({
         <form className="ui form" onSubmit={ this.handleSave }>
           <div className="field">
             <label>Title</label>
-            <input type="text" data-field="title" onChange={ this.updateState } value={ this.state.title }/>
+            <input type="text" data-field="title" onChange={ this.updateState } />
           </div>
 
           <div className="field" onBlur={ this.updateBody } >
@@ -101,6 +111,11 @@ const MakeEvent = React.createClass({
               <option value="ResourceFULL Use Workshops">ResourceFULL Use Workshops</option>
               <option value="Tours & Member Exchanges">Tours & Member Exchanges</option>
             </select>
+          </div>
+
+          <div className="field">
+            <label>Paypal Unique Value</label>
+            <input type="text" data-field="paypal" onChange={ this.updateState } />
           </div>
 
           <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>

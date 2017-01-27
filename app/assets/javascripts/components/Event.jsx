@@ -17,6 +17,26 @@ const Event = React.createClass({
     $('#body').html(this.state.event.body)
   },
 
+  paypal () {
+    if ( this.state.event.paypal ) {
+      return (
+        <div>
+          <div className="ui clearing divider">
+          </div>
+
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <button name="submit" className="ui button small compact" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "12px"}}>
+              Purchase
+            </button>
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value={ this.state.event.paypal } />
+            <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+          </form>
+        </div>
+      )
+    }
+  },
+
   render () {
     var color;
     switch( this.state.event.event_type ) {
@@ -45,7 +65,6 @@ const Event = React.createClass({
 
       break;
       default:
-      return;
     }
 
     return (
@@ -84,9 +103,11 @@ const Event = React.createClass({
                     </div>
                   </div>
 
-                  <div className="ui clearing divider">
-                  </div>
 
+
+                  {
+                    this.paypal()
+                  }
 
                 </div>
               </div>

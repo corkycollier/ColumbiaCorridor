@@ -58,7 +58,6 @@ const AdminUsers = React.createClass({
         <table className="ui table">
           <thead>
             <tr>
-              <th>Username</th>
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
@@ -73,10 +72,6 @@ const AdminUsers = React.createClass({
               this.state.members.map( (el) => {
                 return(
                   <tr key={ "adminUsers" + el.id }>
-
-                    <td>
-                      { el.username }
-                    </td>
 
                     <td>
                       { el.first_name + " " + el.last_name }
@@ -95,7 +90,10 @@ const AdminUsers = React.createClass({
                     </td>
 
                     <td className="collapsing">
-                      { el.company_name }
+                      <a href={ el.company_website } target="_blank">
+                        { el.company_name }
+                      </a>
+
                     </td>
 
                     <td className="collapsing">

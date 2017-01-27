@@ -44,7 +44,6 @@ const Membership = React.createClass({
             <h4>Discount Members – $475</h4>
 
 
-
             <ul style={{ "color" : "#767373" }}>
               <li>
                 Membership prices at CCA events
@@ -65,7 +64,6 @@ const Membership = React.createClass({
               <li>
                 Participation in all committees
               </li>
-
 
 
               <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
