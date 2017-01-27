@@ -42,6 +42,9 @@ const Membership = React.createClass({
         <div className="ui grid doubling stackable">
           <div className="eight wide column" >
             <h4>Discount Members – $475</h4>
+
+
+
             <ul style={{ "color" : "#767373" }}>
               <li>
                 Membership prices at CCA events
@@ -62,6 +65,18 @@ const Membership = React.createClass({
               <li>
                 Participation in all committees
               </li>
+
+
+
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <button name="submit" className="ui button small compact" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "12px"}}>
+                  Join
+                </button>
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="CT5S65Z5EDB4L" />
+                <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+
             </ul>
 
             <h4>Standard Members – $875</h4>
@@ -85,6 +100,16 @@ const Membership = React.createClass({
               <li>
                 Access to board minutes
               </li>
+
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <button name="submit" className="ui button small compact" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "12px"}}>
+                  Join
+                </button>
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="7RF646JFWHPLW" />
+                <img alt=""  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+
             </ul>
 
             <h4>Foundation Members – $2,500+</h4>
@@ -100,11 +125,21 @@ const Membership = React.createClass({
               <li>
                 Leadership position on the CCA board
               </li>
+
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <button name="submit" className="ui button small compact" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "12px"}}>
+                  Join
+                </button>
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="CEGRP2A8KM2ZJ" />
+                <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+
             </ul>
 
-            <h5>
+            <div>
               Please contact <a href="mailto:mking@columbiacorridor.org">Marissa King</a> for related inqueries.
-            </h5>
+            </div>
           </div>
 
           <div className="eight wide column">
@@ -246,7 +281,7 @@ const YearInReview = React.createClass({
             </h3>
 
             <p>
-            Every year CCA hosts an annual Golf Tournamentat the Riverside Golf Club to support CCA activities and facilitate Corridor business networking. Plan on attending next year’s golf tournament in September.
+              Every year CCA hosts an annual Golf Tournamentat the Riverside Golf Club to support CCA activities and facilitate Corridor business networking. Plan on attending next year’s golf tournament in September.
             </p>
           </div>
         </div>

@@ -133,8 +133,6 @@ const SignUp = React.createClass({
     });
   },
 
-
-
   signUp () {
     $.ajax({
       url: '/users',
