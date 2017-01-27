@@ -123,6 +123,7 @@ const SignUp = React.createClass({
         company_business_type : 'empty' ,
       }
     });
+
   },
 
   updateState (e) {
@@ -132,6 +133,8 @@ const SignUp = React.createClass({
       user : newUser
     });
   },
+
+
 
   signUp () {
     $.ajax({
