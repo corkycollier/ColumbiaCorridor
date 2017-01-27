@@ -59,6 +59,11 @@ const AdminEvents = React.createClass({
 });
 
 const AdminEventsRow = React.createClass({
+
+  edit () {
+    Backbone.history.navigate('edit/event/' + this.props.event.id , { trigger : true } )
+  },
+
   delete () {
     var confirmDelete = confirm('Are you sure?');
     if ( confirmDelete ) {
@@ -100,6 +105,13 @@ const AdminEventsRow = React.createClass({
           { this.props.event.end }
         </td>
         <td>
+          <a
+            data-id={this.props.event.id}
+            style={{ "marginRight" : "8px" }}
+            onClick={ this.edit }
+            >
+            edit
+          </a>
           <a
             data-id={this.props.event.id}
             onClick={ this.delete }

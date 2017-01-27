@@ -44,6 +44,7 @@ const router = Backbone.Router.extend({
     "edit/user/:id":"editUserId",
     "edit/sponsor/:id":"editSponsorId",
     "edit/news/:id":"editNewsId",
+    "edit/event/:id":"editEventId",
     "new-sponsor":"newSponsor",
     "edit/sponsor/:id":"editSponsor",
 
@@ -252,6 +253,22 @@ const router = Backbone.Router.extend({
       parent={ this.parent }
       news={ news }
       key="edit-profile-news"
+      /> ;
+    this.go( page )
+  },
+
+  editEventId ( id ) {
+    var event;
+    this.parent.state.events.forEach(function(el) {
+      if (el.id == id ) {
+        event = el
+      }
+    });
+
+    var page = <EditEventAdmin
+      parent={ this.parent }
+      event={ event }
+      key="edit-event"
       /> ;
     this.go( page )
   },

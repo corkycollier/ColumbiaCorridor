@@ -10,7 +10,7 @@ module Api
 
     def update
       @event = Event.find_by_id( params[:id] )
-      @event.update_attributes( params[:event] )
+      @event.update_attributes( event_params )
       render json: app_data
     end
 
