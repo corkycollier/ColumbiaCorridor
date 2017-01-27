@@ -123,7 +123,6 @@ const SignUp = React.createClass({
         company_business_type : 'empty' ,
       }
     });
-
   },
 
   updateState (e) {

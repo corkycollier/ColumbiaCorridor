@@ -2,12 +2,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    @user.username = "CCA Member"
     if @user.save
       sign_in!(@user)
       redirect_to root_url
     else
-      fail
       render json: @user.errors.full_messages
     end
   end
