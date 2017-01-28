@@ -20,6 +20,7 @@ const Events = React.createClass({
 
   renderEvents() {
     this.props.parent.state.events.forEach( (el) => {
+
       var start = new moment(el.date + " " + el.start );
       el['start'] = start.format() ;
       var end = new moment(el.date + " " + el.end );
@@ -83,8 +84,8 @@ const Events = React.createClass({
       <div className="ui container" style={{
           "color" : "#262262" ,
           "padding" : "30px 20px" ,
-          }}
-          >
+        }}
+        >
         <h1>
           Events
         </h1>
@@ -121,6 +122,12 @@ const Events = React.createClass({
         <div className="event-cards">
           {
             this.props.parent.state.events.map(function(el) {
+              var elDate = new Date(el.date);
+              var today = new Date();
+              if (el.title == "ttttt") {
+                debugger
+              }
+              if (elDate < today) { return; }
               var color;
               var text;
               switch( el.event_type ) {
@@ -173,7 +180,70 @@ const Events = React.createClass({
         <div id="calendar">
         </div>
 
+        <div className="ui clearing divider" style={{ "margin" : "24px" }} ></div>
 
+        <h2>Past events</h2>
+        <div className="event-cards">
+
+          {
+            this.props.parent.state.events.map(function(el) {
+
+              var elDate = new Date(el.date);
+              var today = new Date();
+
+              if (elDate > today) {
+                return;
+              }
+
+              var color;
+              var text;
+
+              switch( el.event_type ) {
+                case "Breakfast forums":
+                color = "orange";
+                text = "Breakfast forum";
+                break;
+                case "Special Events":
+                color = "yellow";
+                text = "Special Event";
+                break;
+                case "Lunch w/ leaders":
+                color = "violet";
+                text = "Lunch w/ leaders";
+                break;
+                case "ResourceFULL Use Workshops":
+                color = "red";
+                text = "ResourceFULL Use Workshop";
+                break;
+                case "Tours & Member Exchanges":
+                color = "brown";
+                text = "Tours & Member Exchange";
+                break;
+                default:
+                return;
+              }
+
+
+              return (
+                <div className={"event-card ui segment " + color } key={"e-card" + el.id} data-id={ el.id } style={{ "margin" : "10px 0px" , "marginRight" : "10px" , "marginLeft" : "0px"}} onClick={this.navigateEvent}>
+                  <h3>
+                    {el.title}
+                  </h3>
+
+                  <div className="ui clearing divider"></div>
+
+                  <div>
+                    <b>
+                      { text }
+                    </b>
+                  </div>
+
+                  { el.date }
+                </div>
+              )
+            }.bind(this))
+          }
+        </div>
 
       </div>
     )
