@@ -24,66 +24,21 @@ const Directory = React.createClass({
           Directory
         </h1>
 
-        <table className="ui single striped line table" style={{"color":"#262262"}}>
-          <thead>
-            <tr>
-              <th>Contact</th>
 
-              <th>Email</th>
-
-              <th>Phone</th>
-
-              <th>State</th>
-
-              <th>Company</th>
-              <th>NAICS</th>
-
-            </tr>
-          </thead>
-
-          <tbody>
-            {
-              this.props.parent.state.members.map((el) => {
-                if (el.private) {
-                  return;
-                } else {
-                  return (
-                    <tr key={ el.id }>
-
-                      <td>
-                        { el.first_name + " " + el.last_name }
-                      </td>
-
-                      <td>
-                        { el.email }
-                      </td>
-
-                      <td>
-                        { el.phone }
-                      </td>
-
-                      <td>
-                        { el.user_state }
-                      </td>
-
-                      <td className="collapsing">
-                        <a href={el.company_website} target="_blank">
-                          { el.company_name }
-                        </a>
-
-                      </td>
-
-                      <td className="collapsing">
-                        { el.company_business_type.split(': ')[1] || "Unknown" }
-                      </td>
-                    </tr>
-                  )
-                }
-
-              })
+        {
+          this.props.parent.state.members.map((el) => {
+            if (el.private) {
+              return;
+            } else {
+              return (
+                <div style={{ "fontSize" : "20px" , "margin" : "10px 0px"}}>
+                  { el.first_name + " " + el.last_name }
+                </div>
+              )
             }
-          </tbody>
-        </table>
+
+          })
+        }
       </div>
     )
   }
