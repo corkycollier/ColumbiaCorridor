@@ -26,7 +26,7 @@ const Contact = React.createClass({
             </h1>
 
             <div>
-              <i className="phone icon" style={{"fontSize" : "16px", "marginRight" : "12px" }}/> <a href="tel:503-287-8686">+1 (503) 287-8686</a>
+              <i className="phone icon" style={{"fontSize" : "16px", "marginRight" : "12px" }}/> <a href="tel:503-287-8686">(503) 287-8686</a>
             </div>
 
             <div>
@@ -96,7 +96,7 @@ const Contact = React.createClass({
 
             <div>
               cell: <a href="tel:503-241-1888">
-                +1 (503) 241-1888
+                (503) 241-1888
               </a>
 
             </div>
