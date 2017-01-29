@@ -39,10 +39,11 @@ const Header = React.createClass({
             style={{
               "color" : "white" ,
               "textAlign" : "center" ,
-              "fontSize" : "24px" ,
-              "paddingTop" : "16px" ,
+              "fontSize" : "17px" ,
+              "paddingTop" : "9px" ,
+              "letterSpacing" : "1.2px" ,
             }}>
-            +1 (503) 287-8686
+            (503) 287-8686
           </div>
 
         </div>
