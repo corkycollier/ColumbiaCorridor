@@ -43,7 +43,7 @@ const Header = React.createClass({
               "paddingTop" : "9px" ,
               "letterSpacing" : "1.2px" ,
             }}>
-            (503) 287-8686
+            <i className="phone icon"></i>(503) 287-8686
           </div>
 
         </div>
