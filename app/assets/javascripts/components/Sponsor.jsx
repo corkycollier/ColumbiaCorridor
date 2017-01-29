@@ -87,10 +87,15 @@ const Sponsor = React.createClass({
 
             <img className="ui large image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481700569/JOIN-Sponsors_03_sodj8w.png" />
 
-            <p style={{ "marginTop" : "24px" }}>
-              Sign up for golf sponsorships by contacting Marissa King at +1 (503) 287-8686 or <b><a href="mailto:mking@columbiacorridor.org">mking@columbiacorridor.org</a></b>.
-            </p>
+
           </div>
+
+        </div>
+
+        <div>
+          <p style={{ "marginTop" : "24px" , "textAlign" : "center"}}>
+            Interested in becoming a sponsor? Contact <b>Marissa King</b> at <a href="tel:503.287.8686">(503) 287-8686</a> or <a href="mailto:mking@columbiacorridor.org">mking@columbiacorridor.org</a>.
+          </p>
         </div>
       </div>
     )
