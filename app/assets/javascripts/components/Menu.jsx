@@ -180,6 +180,10 @@ const RegularMenu = React.createClass({
               <div className="item" data-path="make-news" onClick={ this.go } >
                 Make News
               </div>
+
+              <div className="item" data-path="archives" onClick={ this.go } >
+                Archives
+              </div>
             </div>
           </a>
 

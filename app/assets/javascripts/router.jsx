@@ -18,6 +18,7 @@ const router = Backbone.Router.extend({
     "staff" : "staff" ,
     "events" : "events" ,
     "members" : "members" ,
+    "archives" : "archives" ,
     "resourcesfull-use" : "resourceFullUse" ,
     "groundwater" : "groundwater" ,
     "resources" : "resources" ,
@@ -72,6 +73,11 @@ const router = Backbone.Router.extend({
 
   membership () {
     var page = <Membership parent={ this.parent } key="membership" /> ;
+    this.go( page )
+  },
+
+  archives () {
+    var page = <Archives parent={ this.parent } key="archives" /> ;
     this.go( page )
   },
 
