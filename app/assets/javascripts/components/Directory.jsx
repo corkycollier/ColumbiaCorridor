@@ -33,7 +33,6 @@ const Directory = React.createClass({
 
               <th>Phone</th>
 
-              <th>State</th>
 
               <th>Company</th>
               <th>NAICS</th>
@@ -62,12 +61,10 @@ const Directory = React.createClass({
                         { el.phone }
                       </td>
 
-                      <td>
-                        { el.user_state }
-                      </td>
+
 
                       <td className="collapsing">
-                        <a href={el.company_website} target="_blank">
+                        <a href={el.company_website} target="_blank" style={{ "color" : "#262262" , }}>
                           { el.company_name }
                         </a>
 
