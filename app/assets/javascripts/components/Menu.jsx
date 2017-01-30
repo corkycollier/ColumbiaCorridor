@@ -96,103 +96,119 @@ const RegularMenu = React.createClass({
     return (
       <div className="">
         <div className="ui eight item menu" style={{ "borderLeft" : "none" , "borderRight" : "none" , "height" : "46px" }}>
-          <a className="ui dropdown item header" data-path="" onClick={ this.go } >
-            Home
+          <a className="ui dropdown item header" data-path="" onClick={ this.go } style={{
+              "color" : "#262262"
+            }}>
+            HOME
           </a>
 
-          <a className="ui dropdown item header" data-path="about-us" >
-            About Us
+          <a className="ui dropdown item header" data-path="about-us" style={{
+              "color" : "#262262"
+            }}>
+            ABOUT US
 
             <div className="menu">
               <div className="item" data-path="about-cca" onClick={ this.go } >
-                About CCA
+                ABOUT CCA
               </div>
 
               <div className="item" data-path="columbia-corridor" onClick={ this.go } >
-                Columbia Corridor
+                COLUMBIA CORRIDOR
               </div>
 
               <div className="item" data-path="staff" onClick={ this.go } >
-                Staff
+                STAFF
               </div>
 
               <div className="item" data-path="board" onClick={ this.go } >
-                Board
+                BOARD
               </div>
             </div>
           </a>
 
-          <a className="ui item header" data-path="events" onClick={ this.go } >
-            Events
+          <a className="ui item header" data-path="events" onClick={ this.go } stylle={{
+              "color" : "#262262"
+            }}>
+            EVENTS
           </a>
 
-          <a className="ui dropdown item header">
-            Resources
+          <a className="ui dropdown item header"style={{
+              "color" : "#262262"
+            }}>
+            RESOURCES
 
             <div className="menu">
               <div className="item" data-path="cca-news" onClick={ this.go } >
-                CCA News
+                CCA NEWS
               </div>
 
               <div className="item" data-path="members" onClick={ this.go } >
-                Member Directory
+                MEMBER DIRECTORY
               </div>
 
               <div className="item" data-path="groundwater" onClick={ this.go } >
-                Groundwater
+                GROUNDWATER
               </div>
 
               <div className="item" data-path="resourcesfull-use" onClick={ this.go } >
-                ResourceFULL Use
+                RESOURCEFULL USE
               </div>
 
 
             </div>
           </a>
 
-          <a className="ui dropdown item header" >
-            Join
+          <a className="ui dropdown item header" stylle={{
+              "color" : "#262262"
+            }}>
+            JOIN
 
             <div className="menu">
               <div className="item" data-path="membership" onClick={ this.go } >
-                Membership
+                MEMBERSHIP
               </div>
 
               <div className="item" data-path="year-in-review" onClick={ this.go } >
-                Year In Review
+                YEAR IN REVIEW
               </div>
             </div>
           </a>
 
-          <a className="ui dropdown item header member-area" >
-            Member Area
+          <a className="ui dropdown item header member-area" stylle={{
+              "color" : "#262262"
+            }}>
+            MEMBER AREA
             <div data-path="member-area" onClick={this.go} style={{ "position" : "absolute" , "height" : "100%" , "width" : "100%" , "top" : "0px" , "left" : "0px" }}/>
 
             <div className="menu">
               <div className="item" data-path="directory" onClick={ this.go } >
-                Directory
+                DIRECTORY
               </div>
 
               <div className="item" data-path="edit-profile" onClick={ this.go } >
-                Edit Profile
+                EDIT PROFILE
               </div>
 
               <div className="item" data-path="make-news" onClick={ this.go } >
-                Make News
+                MAKE NEWS
               </div>
 
               <div className="item" data-path="archives" onClick={ this.go } >
-                Archives
+                ARCHIVES
               </div>
             </div>
           </a>
 
-          <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } >
-            Sponsor
+          <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } stylle={{
+              "color" : "#262262"
+            }}>
+            SPONSOR
           </a>
 
-          <a className="ui dropdown header item" data-path="contact" onClick={ this.go } >
-            Contact
+          <a className="ui dropdown header item" data-path="contact" onClick={ this.go } stylle={{
+              "color" : "#262262"
+            }}>
+            CONTACT
           </a>
 
         </div>
