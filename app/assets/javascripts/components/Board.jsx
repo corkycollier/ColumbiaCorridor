@@ -29,7 +29,17 @@ const Board = React.createClass({
                        key={ "boardId" + el.id }
                        >
                     <div style={{ "width" : "100%" }} >
-                      <img className="ui image" src={ el.img } />
+                      <img className="ui image board-image" src={ el.img } />
+                    </div>
+
+                    <div>
+                      <i className="linkify icon" style={{
+                          "position" : "absolute" ,
+                          "top" : "8%" ,
+                          "left" : "7%" ,
+                          "fontSize": "41px" ,
+
+                        }}></i>
                     </div>
 
                     <div style={{ "textAlign" : "center" , "marginTop" : "4px" , "fontWeight" : "bold" }}>

@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.board-image {
+  z-index: 12;
+  opacity: 1;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    opacity: 0.6;
+  }
+}
 
 .header-title {
   color: white;
