@@ -126,7 +126,7 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui item header" data-path="events" onClick={ this.go } stylle={{
+          <a className="ui item header" data-path="events" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
             EVENTS
@@ -158,7 +158,7 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown item header" stylle={{
+          <a className="ui dropdown item header" style={{
               "color" : "#262262"
             }}>
             JOIN
@@ -174,7 +174,7 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown item header member-area" stylle={{
+          <a className="ui dropdown item header member-area" style={{
               "color" : "#262262"
             }}>
             MEMBER AREA
@@ -199,13 +199,13 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } stylle={{
+          <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
             SPONSOR
           </a>
 
-          <a className="ui dropdown header item" data-path="contact" onClick={ this.go } stylle={{
+          <a className="ui dropdown header item" data-path="contact" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
             CONTACT

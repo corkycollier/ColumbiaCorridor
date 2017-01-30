@@ -1,6 +1,5 @@
 const Main = React.createClass({
   getInitialState () {
-    console.log( this.props.data )
     return( this.props.data )
   },
 

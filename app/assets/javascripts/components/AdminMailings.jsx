@@ -54,7 +54,7 @@ const AdminMailings = React.createClass({
           Mailing List
         </h2>
 
-        <table className="ui table">
+        <table className="ui table" style={{ "color" : "#262262" , }}>
           <thead>
             <tr>
               <th>Email</th>
@@ -68,7 +68,9 @@ const AdminMailings = React.createClass({
                 return(
                   <tr key={'mailing-list' + el.id}>
                     <td>
-                      {el.email}
+                      <a href={"mailto:" + el.email} style={{ "color" : "#262262" , }}>
+                        { el.email }
+                      </a>
                     </td>
                   </tr>
 
@@ -77,7 +79,7 @@ const AdminMailings = React.createClass({
             }
           </tbody>
 
-    
+
         </table>
       </div>
     );

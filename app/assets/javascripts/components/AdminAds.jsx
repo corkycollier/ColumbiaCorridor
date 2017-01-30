@@ -44,7 +44,7 @@ const AdminAds = React.createClass({
         <h2 className="ui header">
           Sponsors
         </h2>
-        <table className="ui table">
+        <table className="ui table" style={{ "color" : "#262262" , }}>
           <thead>
             <tr>
               <th>Name</th>

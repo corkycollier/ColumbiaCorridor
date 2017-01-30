@@ -22,7 +22,7 @@ const AdminEvents = React.createClass({
           Events
         </h2>
 
-        <table className="ui table">
+        <table className="ui table" style={{ "color" : "#262262" , }}>
           <thead>
             <tr>
               <th>Title</th>
