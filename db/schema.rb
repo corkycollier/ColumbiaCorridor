@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170127080736) do
     t.string   "start"
     t.string   "end"
     t.string   "url"
-    t.string   "paypal"
+    t.text     "paypal"
   end
 
   create_table "mailings", force: :cascade do |t|

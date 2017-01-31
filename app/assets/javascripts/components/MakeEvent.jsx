@@ -105,8 +105,8 @@ const MakeEvent = React.createClass({
           </div>
 
           <div className="field">
-            <label>Paypal Unique Value</label>
-            <input type="text" data-field="paypal" onChange={ this.updateState } />
+            <label>Paypal Form</label>
+            <textarea type="text" data-field="paypal" onChange={ this.updateState }></textarea>
           </div>
 
           <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>
