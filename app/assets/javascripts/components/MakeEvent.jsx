@@ -96,7 +96,7 @@ const MakeEvent = React.createClass({
             <label>Event type</label>
             <select className="ui select dropdown" data-field="event_type" onChange={ this.updateState } >
               <option value=""></option>
-              <option value="Breakfast Forums">Breakfast forums</option>
+              <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>
               <option value="Lunch w/ leaders">Lunch w/ leaders</option>
               <option value="ResourceFULL Use Workshops">ResourceFULL Use Workshops</option>
@@ -221,7 +221,7 @@ const EditEventAdmin = React.createClass({
             <label>Event type</label>
             <select className="ui select dropdown" data-field="event_type" onChange={ this.updateState } defaultValue={this.props.event.event_type}>
               <option value=""></option>
-              <option value="Breakfast Forums">Breakfast forums</option>
+              <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>
               <option value="Lunch w/ leaders">Lunch w/ leaders</option>
               <option value="ResourceFULL Use Workshops">ResourceFULL Use Workshops</option>

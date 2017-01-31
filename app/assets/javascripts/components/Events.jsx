@@ -41,15 +41,13 @@ const Events = React.createClass({
         el['start'] = start.format() ;
       }
 
-
-
       if (el['end'].length < 8) {
         var end = new moment(el.date + " " + el.end );
         el['end'] = end.format() ;
       }
 
       switch( el.event_type ) {
-        case "Breakfast forums":
+        case "Breakfast Forums":
         el['backgroundColor'] = "#F2711C" ;
         el['borderColor'] = "#F2711C" ;
         break;
@@ -80,7 +78,6 @@ const Events = React.createClass({
         default:
       }
 
-      debugger
       if (this.state.filter == "" || el.event_type == this.state.filter) {
         events.push(el)
       }
