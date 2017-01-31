@@ -37,12 +37,14 @@ const Events = React.createClass({
 
     this.state.events.forEach(function(el) {
       if (el['start'].length < 8) {
-        var start = new moment(el.date + "T" + el.start + "Z");
+        var start = new moment(el.date + " " + el.start );
         el['start'] = start.format() ;
       }
 
+
+
       if (el['end'].length < 8) {
-        var end = new moment(el.date + "T" + el.end + "Z");
+        var end = new moment(el.date + " " + el.end );
         el['end'] = end.format() ;
       }
 
