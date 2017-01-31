@@ -29,7 +29,6 @@ const Event = React.createClass({
           </div>
 
           <div id="paypal-target">
-
           </div>
         </div>
       )
@@ -89,7 +88,7 @@ const Event = React.createClass({
               </div>
 
               <div className="ui grid stackable ">
-                <div className="eight wide column">
+                <div className="sixteen wide column">
                   <div>
                     <b>Location:</b> { this.state.event.location }
                     </div>
@@ -97,21 +96,22 @@ const Event = React.createClass({
                     <div>
                       <b>Date:</b> { this.state.event.date }
                       </div>
+
+                      <div>
+                        <b>Time:</b> { this.state.event.start } - { this.state.event.end }
+                        </div>
+                      </div>
                     </div>
-                    <div className="eight wide column">
-                    </div>
+                    
+
+                    {
+                      this.paypal()
+                    }
+
                   </div>
-
-
-
-                  {
-                    this.paypal()
-                  }
-
                 </div>
               </div>
             </div>
-          </div>
-        )
-      }
-    });
+          )
+        }
+      });
