@@ -80,6 +80,7 @@ const Events = React.createClass({
         default:
       }
 
+      debugger
       if (this.state.filter == "" || el.event_type == this.state.filter) {
         events.push(el)
       }

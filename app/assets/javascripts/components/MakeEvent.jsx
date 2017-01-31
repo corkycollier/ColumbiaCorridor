@@ -38,10 +38,10 @@ const MakeEvent = React.createClass({
   render () {
     return (
       <div className="ui container" style={{
-        "color" : "#262262" ,
-        "padding" : "25px" ,
-        "paddingBottom" : "125px" ,
-      }}>
+          "color" : "#262262" ,
+          "padding" : "25px" ,
+          "paddingBottom" : "125px" ,
+        }}>
 
         <h1 className="ui header" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           New Event
@@ -96,7 +96,7 @@ const MakeEvent = React.createClass({
             <label>Event type</label>
             <select className="ui select dropdown" data-field="event_type" onChange={ this.updateState } >
               <option value=""></option>
-              <option value="Breakfast forums">Breakfast forums</option>
+              <option value="Breakfast Forums">Breakfast forums</option>
               <option value="Special Events">Special Events</option>
               <option value="Lunch w/ leaders">Lunch w/ leaders</option>
               <option value="ResourceFULL Use Workshops">ResourceFULL Use Workshops</option>
@@ -163,10 +163,10 @@ const EditEventAdmin = React.createClass({
   render () {
     return (
       <div className="ui container" style={{
-        "color" : "#262262" ,
-        "padding" : "25px" ,
-        "paddingBottom" : "125px" ,
-      }}>
+          "color" : "#262262" ,
+          "padding" : "25px" ,
+          "paddingBottom" : "125px" ,
+        }}>
 
         <h1 className="ui header" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
           Edit Event
@@ -221,7 +221,7 @@ const EditEventAdmin = React.createClass({
             <label>Event type</label>
             <select className="ui select dropdown" data-field="event_type" onChange={ this.updateState } defaultValue={this.props.event.event_type}>
               <option value=""></option>
-              <option value="Breakfast forums">Breakfast forums</option>
+              <option value="Breakfast Forums">Breakfast forums</option>
               <option value="Special Events">Special Events</option>
               <option value="Lunch w/ leaders">Lunch w/ leaders</option>
               <option value="ResourceFULL Use Workshops">ResourceFULL Use Workshops</option>
@@ -230,8 +230,8 @@ const EditEventAdmin = React.createClass({
           </div>
 
           <div className="field">
-            <label>Paypal Unique Value</label>
-            <input type="text" data-field="paypal" onChange={ this.updateState } defaultValue={this.props.event.paypal} />
+            <label>Paypal Form</label>
+            <textarea type="text" data-field="paypal" onChange={ this.updateState } defaultValue={this.props.event.paypal}></textarea>
           </div>
 
           <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>

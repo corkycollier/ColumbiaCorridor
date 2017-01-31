@@ -102,7 +102,7 @@ const Event = React.createClass({
                         </div>
                       </div>
                     </div>
-                    
+
 
                     {
                       this.paypal()
