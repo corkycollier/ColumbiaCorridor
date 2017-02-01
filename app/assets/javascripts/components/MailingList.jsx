@@ -25,7 +25,7 @@ const MailingList = React.createClass({
           "padding" : "60px" ,
         }}>
 
-        <h1>Mailing List</h1>
+        <h1>Join our Mailing List!</h1>
         <form className="ui form" onSubmit={ this.save }>
           <div className="field">
             <label>Email</label>
