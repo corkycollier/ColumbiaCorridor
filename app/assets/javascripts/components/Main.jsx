@@ -185,6 +185,27 @@ const Main = React.createClass({
         img: "http://columbiacorridor.com/wp-content/uploads/2016/08/Board_BStacey.jpg" ,
         bio : "Bob Stacey has been Councilor for Metro District 6 since 2012 and a CCA board member since 2015. As Metro Councilor, Bob works with community leaders and constituents on long-range plans that cross local boundaries to create a vibrant region, which includes 1.5 million people in 25 cities and three counties.   Prior to serving on the Metro Council, Bob was the executive director and staff attorney for 1000 Friends of Oregon and an attorney in private practice. Bob has over 12 year’s service in appointed positions in local, regional, state and federal government and previous service on several nonprofit boards.  Bob has a Bachelor of Arts from Reed College and a law degree from the University of Oregon Law School.  He is married and has two daughters and two grandsons.  All live in Southeast Portland, and family is a big part of Bob’s life. \“The businesses in the Columbia Corridor provide a lot of family-wage jobs close to racially diverse working-class neighborhoods.  They work with the opportunities and constraints of the natural resources at the confluence of the Willamette and Columbia rivers.  These businesses’ continued success strengthens the city and region.  That makes CCA, as their advocate, pretty darn important.\”"
       } ,
+
+      {
+        id: 15 ,
+        title: "Director" ,
+        name: "Patrick Rowe" ,
+        company: "Sussman Shank, LLP" ,
+        email: "prowe@sussmanshank.com" ,
+        img: "http://res.cloudinary.com/djjldnjz7/image/upload/w_233,h_351,c_crop,c_fill/v1485909006/pat_row_anj38q.jpg" ,
+        bio : "Patrick is an attorney with the Portland-based law firm Sussman Shank, LLP.  Practicing law since 1997, Patrick focuses on transactions and litigation involving real estate, environmental, and natural resources issues.  He has extensive experience providing counsel regarding the purchase, sale and development of real property in which environmental issues are in play, such as legacy contamination, including groundwater and hazardous waste contamination.   He has significant litigation experience in both environmental and real property matters.  Patrick has advised several businesses in the Columbia Corridor, from large national companies involved in sizable brownfield property purchases to local clients wrestling with Clean Water Act compliance requirements and actions needed to obtain No Further Action Determinations from the Oregon DEQ. Patrick loves the Northwest and enjoys many of the things that make this region so great, from snowboarding down the slopes of Mt. Hood and backpacking in the wilderness to enjoying a craft beer at the Oregon coast." ,
+      } ,
+
+      {
+        id: 16 ,
+        title: "Director" ,
+        name: "Greg Jurna" ,
+        company: "none" ,
+        email: "emample" ,
+        img: "http://res.cloudinary.com/djjldnjz7/image/upload/w_233,h_351,c_crop,c_fill/v1485909010/greg_jurma_otex5f.jpg" ,
+        bio : "Greg Jurna has been a Board member of CCA since 2015.  He began his career in commercial banking more than 16 years ago and currently holds the position of Commercial Relationship Manager and Vice President with Albina Community Bank.  Greg’s work focus includes relationship management and business development for small to middle market business clients throughout greater Portland and Clark County.  His services include the origination of operating lines of credit, real estate term loans for purchase and refinancing, and he has a sub-specialty in new construction lending.  Greg is a graduate of Portland State University with a Bachelor’s Degree in Finance and he has formal training in the field of investment securities.  Greg loves to spend time with his wife of 23 years Adina, and their two children Michael and Sydney.  For recreation he enjoys golf, tennis, and landscape photography. \“I always love attending our monthly CCA meetings as we have the most interesting speakers from business, government, and local organizations.  The topics are always compelling and thoroughly informative\”." ,
+      } ,
+
     ]
 
     this.setState({
