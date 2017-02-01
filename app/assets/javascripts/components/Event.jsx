@@ -8,6 +8,10 @@ const Event = React.createClass({
       }
     })
 
+    if (e.start.length > 8) {
+      e['start'] = e.start.split("T")[1].slice(0,5)
+      e['end'] = e.end.split("T")[1].slice(0,5)
+    }
     return({
       event: e,
     })

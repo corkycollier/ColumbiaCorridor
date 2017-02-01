@@ -36,6 +36,7 @@ const Events = React.createClass({
     var events = []
 
     this.state.events.forEach(function(el) {
+
       if (el['start'].length < 8) {
         var start = new moment(el.date + " " + el.start );
         el['start'] = start.format() ;
