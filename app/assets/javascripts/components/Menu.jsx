@@ -99,13 +99,13 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown item header" data-path="" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
-            HOME
+            Home
           </a>
 
           <a className="ui dropdown item header" data-path="about-us" style={{
               "color" : "#262262"
             }}>
-            ABOUT US
+            About Us
 
             <div className="menu">
               <div className="item" data-path="about-cca" onClick={ this.go } >
@@ -129,13 +129,13 @@ const RegularMenu = React.createClass({
           <a className="ui item header" data-path="events" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
-            EVENTS
+            Events
           </a>
 
           <a className="ui dropdown item header"style={{
               "color" : "#262262"
             }}>
-            RESOURCES
+            Resources
 
             <div className="menu">
               <div className="item" data-path="cca-news" onClick={ this.go } >
@@ -161,7 +161,7 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown item header" style={{
               "color" : "#262262"
             }}>
-            JOIN
+            Join
 
             <div className="menu">
               <div className="item" data-path="membership" onClick={ this.go } >
@@ -177,7 +177,7 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown item header member-area" style={{
               "color" : "#262262"
             }}>
-            MEMBER AREA
+            Member Area
             <div data-path="member-area" onClick={this.go} style={{ "position" : "absolute" , "height" : "100%" , "width" : "100%" , "top" : "0px" , "left" : "0px" }}/>
 
             <div className="menu">
@@ -202,13 +202,13 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
-            SPONSOR
+            Sponsor
           </a>
 
           <a className="ui dropdown header item" data-path="contact" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
-            CONTACT
+            Contact
           </a>
 
         </div>
