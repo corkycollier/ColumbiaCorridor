@@ -55,13 +55,6 @@ const Board = React.createClass({
             }
 
           </div>
-
-          <div className="ui grid stackable centered" style={{ "margin" : "20px" }}>
-
-
-
-
-          </div>
         </div>
       </div>
     )

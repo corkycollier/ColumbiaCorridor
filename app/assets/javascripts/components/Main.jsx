@@ -96,15 +96,6 @@ const Main = React.createClass({
         bio: "Melissa Hunting is a Business Development Specialist with Portland General Electric (PGE), a fully integrated electric utility that serves approximately 856,000 residential, commercial and industrial customers in Oregon.  Melissa has over a decade of experience in the utility industry working with local, regional and state economic development organizations to help support economic growth. Melissa serves as the Columbia Corridor Association’s secretary and also serves on the Oregon Economic Development Association’s Board of Directors. Melissa earned a Bachelor of Arts degree in Business Management from Oregon State University. She enjoys the outdoors, running, travel, and Oregon State football. \“CCA helps to keep me and my customers informed of important issues impacting the business community and connects members to valuable resources.\”"
       } ,
       {
-        id: 5 ,
-        title: "Director" ,
-        name: "Stark Ackerman" ,
-        email: "sa@bhlaw.com" ,
-        company: "Black Helterline" ,
-        img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481681410/ackerman_ctasoa.jpg" ,
-        bio: "Stark Ackerman is a Partner with Black Helterline, LLP, and a long time CCA Board member.  He has been with the firm for over 25 years, and leads the Real Estate, Land Use, Environmental and Construction Practice Group. His practice focuses on helping clients acquire, sell, lease, develop and manage property for a wide range of clients and goals. Stark led a City of Portland task force which streamlined the City’s environmental zoning. Stark was an adjunct professor at Lewis and Clark Law School for over 15 years, teaching a course on Forest Law and Policy. Stark holds a Bachelor of Arts degree from Amherst College, a Masters from Yale School of Forestry and Environmental Studies, and a law degree from George Washington University."
-      } ,
-      {
         id: 6 ,
         title: "Director" ,
         name: "Cheryl Carter" ,
@@ -200,8 +191,9 @@ const Main = React.createClass({
         id: 16 ,
         title: "Director" ,
         name: "Greg Jurna" ,
-        company: "none" ,
-        email: "emample" ,
+        company: "Albina Community Bank" ,
+        website: "http://albinabank.com/" ,
+        email: "gjurna@albinabank.com" ,
         img: "http://res.cloudinary.com/djjldnjz7/image/upload/w_233,h_351,c_crop,c_fill/v1485909010/greg_jurma_otex5f.jpg" ,
         bio : "Greg Jurna has been a Board member of CCA since 2015.  He began his career in commercial banking more than 16 years ago and currently holds the position of Commercial Relationship Manager and Vice President with Albina Community Bank.  Greg’s work focus includes relationship management and business development for small to middle market business clients throughout greater Portland and Clark County.  His services include the origination of operating lines of credit, real estate term loans for purchase and refinancing, and he has a sub-specialty in new construction lending.  Greg is a graduate of Portland State University with a Bachelor’s Degree in Finance and he has formal training in the field of investment securities.  Greg loves to spend time with his wife of 23 years Adina, and their two children Michael and Sydney.  For recreation he enjoys golf, tennis, and landscape photography. \“I always love attending our monthly CCA meetings as we have the most interesting speakers from business, government, and local organizations.  The topics are always compelling and thoroughly informative\”." ,
       } ,

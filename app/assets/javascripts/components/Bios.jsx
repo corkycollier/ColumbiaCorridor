@@ -12,6 +12,12 @@ const Bios = React.createClass({
       member : member
     })
   },
+
+  go (e) {
+    var fragment = e.currentTarget.dataset.url;
+    Backbone.history.navigate( fragment , { trigger : true });
+  },
+
   render () {
     return (
       <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
@@ -38,7 +44,9 @@ const Bios = React.createClass({
             </div>
 
             <div>
-              <b>{ this.state.member.company }</b>
+              <a href={ this.state.member.website} target="_blank">
+                <b>{ this.state.member.company }</b>
+              </a>
             </div>
 
           </div>
@@ -46,6 +54,11 @@ const Bios = React.createClass({
           <div className="four wide column">
             <img className="ui image fluid" src={ this.state.member.img }></img>
           </div>
+        </div>
+
+        <div className="ui button mini left icon labeled" data-url="board" onClick={this.go}>
+          <i className="left caret icon"></i>
+          Back to board
         </div>
       </div>
     )
