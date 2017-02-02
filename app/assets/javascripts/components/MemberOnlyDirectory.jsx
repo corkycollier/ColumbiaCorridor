@@ -24,7 +24,9 @@ const MemberOnlyDirectory = React.createClass({
                       "letterSpacing" : "1.1px" ,
                     }} key={ "mod" + el.id }>
                     <a href={ el.company_website } target="blank" style={{ "color" : "#262262" , }}>
+                      <i>
                       { el.company_name }
+                      </i>
                     </a>
                   </div>
                 )

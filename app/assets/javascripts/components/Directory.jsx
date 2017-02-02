@@ -18,6 +18,7 @@ const Directory = React.createClass({
   },
 
   render () {
+
     return (
       <div className="ui container" style={this.state.style}>
         <h1>
@@ -43,6 +44,11 @@ const Directory = React.createClass({
           <tbody>
             {
               this.props.parent.state.members.map((el) => {
+                var businessType;
+                if ( el.company_business_type ) {
+                  businessType = el.company_business_type.split(': ')[1] || "Unknown"
+                }
+                
                 if (el.private) {
                   return;
                 } else {
@@ -71,7 +77,7 @@ const Directory = React.createClass({
                       </td>
 
                       <td className="collapsing">
-                        { el.company_business_type.split(': ')[1] || "Unknown" }
+                        { businessType }
                       </td>
                     </tr>
                   )
