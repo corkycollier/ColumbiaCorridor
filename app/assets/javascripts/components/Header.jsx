@@ -151,16 +151,14 @@ const LoggedOutButtons = React.createClass({
         </a>
 
         <a className="item"
-          data-url="sign-in"
-          onClick={ this.go }
+          href="#sign-in"
           style={{ "float" : "left" ,}}
           >
           Sign In
         </a>
 
         <a className="item"
-          data-url="sign-up"
-          onClick={ this.go }
+          href="#sign-up"
           style={{ "float" : "left" ,}}
           >
           Sign Up

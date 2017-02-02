@@ -72,9 +72,9 @@ const EditProfile = React.createClass({
   render () {
     return (
       <div className="ui container" style={{
-        "color" : "#262262" ,
-        "padding" : "30px 20px" ,
-      }}>
+          "color" : "#262262" ,
+          "padding" : "30px 20px" ,
+        }}>
         <h1 >
           Edit Profile
         </h1>
@@ -197,8 +197,6 @@ const EditProfile = React.createClass({
                 </select>
               </div>
 
-
-
               <button className="ui button" type="submit" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "18px" }} >
                 Update
               </button>
@@ -241,6 +239,19 @@ const AdminEditProfile = React.createClass({
     var state = this.state;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
+  },
+
+
+  setCheckbox () {
+    if ( this.state.private ) {
+      this.setState({
+        private: false
+      })
+    } else {
+      this.setState({
+        private: true
+      })
+    }
   },
 
   render () {
@@ -289,6 +300,13 @@ const AdminEditProfile = React.createClass({
               <div className="field">
                 <label>Password</label>
                 <input type="password" data-field="password" onChange={ this.updateState } defaultValue={this.state.password} minLength="6"  />
+              </div>
+
+              <div className="field">
+                <div className="ui checkbox"  onClick={ this.setCheckbox }>
+                  <input type="checkbox" tabIndex="0" className="hidden" />
+                  <label>Private <small>Information will not be shared on website directory.</small></label>
+                </div>
               </div>
 
               <div className="two fields">

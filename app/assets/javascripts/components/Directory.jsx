@@ -48,7 +48,7 @@ const Directory = React.createClass({
                 if ( el.company_business_type ) {
                   businessType = el.company_business_type.split(': ')[1] || "Unknown"
                 }
-                
+
                 if (el.private) {
                   return;
                 } else {
