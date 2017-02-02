@@ -1,9 +1,4 @@
 const MemberOnlyDirectory = React.createClass({
-  componentDidMount() {
-    $('.member-mods').isotope({
-      itemSelector: '.member-mod'
-    })
-  },
 
   render () {
     return (
@@ -16,7 +11,7 @@ const MemberOnlyDirectory = React.createClass({
           Member Directory
         </h1>
 
-        <div className="member-mods" style={{ "minHeight" : "200px" , }}>
+        <div className="member-mods" >
           {
             this.props.parent.state.members.map(function(el) {
               if (el.private) {

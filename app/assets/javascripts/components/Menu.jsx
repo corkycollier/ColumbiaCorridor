@@ -1,7 +1,9 @@
 const Menu = React.createClass({
   getInitialState(){
     var style = {
-      "color" : "#262262"
+      "color" : "#262262" ,
+      "zIndex" : "2000" ,
+
     }
 
     return({
@@ -95,7 +97,7 @@ const RegularMenu = React.createClass({
   render () {
     return (
       <div className="">
-        <div className="ui eight item menu" style={{ "borderLeft" : "none" , "borderRight" : "none" , "height" : "46px" }}>
+        <div className="ui eight item menu" style={{ "borderLeft" : "none" , "borderRight" : "none" , "height" : "46px", "zIndex" : "2000" }}>
           <a className="ui dropdown item header" data-path="" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
