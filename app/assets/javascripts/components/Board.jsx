@@ -13,7 +13,7 @@ const Board = React.createClass({
   render () {
     return (
       <div>
-        <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" , "zIndex" : "10"}}>
+        <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" }}>
           <h1>
             Board
           </h1>
@@ -27,6 +27,7 @@ const Board = React.createClass({
                        data-url={ "/board/" + el.id }
                        onClick={ this.go }
                        key={ "boardId" + el.id }
+                       style={{ "zIndex" : "10" }}
                        >
                     <div style={{ "width" : "100%" }} >
                       <img className="ui image board-image" src={ el.img } />
