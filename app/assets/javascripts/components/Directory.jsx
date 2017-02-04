@@ -29,25 +29,16 @@ const Directory = React.createClass({
           <thead>
             <tr>
               <th>Contact</th>
-
               <th>Email</th>
-
               <th>Phone</th>
-
-
               <th>Company</th>
               <th>NAICS</th>
-
             </tr>
           </thead>
 
           <tbody>
             {
               this.props.parent.state.members.map((el) => {
-                var businessType;
-                if ( el.company_business_type ) {
-                  businessType = el.company_business_type.split(': ')[1] || "Unknown"
-                }
 
                 if (el.private) {
                   return;
@@ -77,7 +68,7 @@ const Directory = React.createClass({
                       </td>
 
                       <td className="collapsing">
-                        { businessType }
+                        { el.company_business_type }
                       </td>
                     </tr>
                   )
