@@ -85,11 +85,11 @@ const AdminUsers = React.createClass({
 
                     <td>
                       <div>
-                        { el.user_address }
+                        { el.user_address || ""}
                       </div>
 
                       <div>
-                        { el.user_city + ", " + el.user_state + " " + el.user_zip }
+                        { el.user_city || "" + ", " + el.user_state + " " + el.user_zip }
                       </div>
                     </td>
 

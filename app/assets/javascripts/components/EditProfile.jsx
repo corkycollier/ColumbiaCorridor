@@ -215,10 +215,6 @@ const AdminEditProfile = React.createClass({
     return( this.props.user || {} );
   },
 
-  componentDidMount () {
-    $('table').tablesort();
-  },
-
   updateUser () {
     $.ajax({
       url: '/api/users/' + this.state.id ,
@@ -230,8 +226,7 @@ const AdminEditProfile = React.createClass({
         Backbone.history.navigate('admin' , { trigger : true })
       }.bind(this)
       , error : function ( app_data , resp , obj ) {
-        alert("There was an error. The profile was not udpated.")
-        debugger
+        alert("There was an error. Please try again later.")
       }.bind(this)
     })
   },
