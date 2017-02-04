@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.username = "CCA Member"
+
     if @user.save
       sign_in!(@user)
       redirect_to root_url
@@ -14,27 +14,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(
-    :username ,
-    :email ,
-    :phone ,
-    :password ,
-    :first_name ,
-    :last_name ,
-    :user_address ,
-    :user_city ,
-    :user_state ,
-    :user_zip ,
-    :user_country ,
-    :company_name ,
-    :company_address ,
-    :company_city ,
-    :company_state ,
-    :company_zip ,
-    :company_country ,
-    :company_business_type ,
-    :level ,
-    )
+    params.require(:user).permit(User.new.attributes.collect{|key, value| key.to_sym}.concat([:password]))
   end
-
 end

@@ -13,7 +13,6 @@ module Api
     end
 
     def save
-      
     end
   end
 end

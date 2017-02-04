@@ -69,16 +69,6 @@ const Header = React.createClass({
 });
 
 const LoggedInButtons = React.createClass({
-  getInitialState () {
-    var style = {
-
-    }
-
-    return({
-      style: style,
-    })
-  },
-
 
   logout () {
     $.ajax({
@@ -97,14 +87,10 @@ const LoggedInButtons = React.createClass({
     Backbone.history.navigate( fragment , { trigger : true });
   },
 
-  goAdmin() {
-    Backbone.history.navigate('admin' , { trigger : true });
-  },
-
   checkForAdmin () {
     if (this.props.parent.state.user.id < 4) {
       return (
-        <a className="item" onClick={ this.goAdmin } style={{ "float" : "left" ,}}>
+        <a className="item"  data-url="admin" onClick={ this.go } style={{ "float" : "left" ,}}>
           Admin
         </a>
       )
@@ -143,6 +129,14 @@ const LoggedOutButtons = React.createClass({
     Backbone.history.navigate( fragment , { trigger : true });
   },
 
+  signUp () {
+      window.location = "?#sign-up"
+  },
+
+  signIn () {
+      window.location = "?#sign-in"
+  },
+
   render () {
     return (
       <div>
@@ -151,14 +145,14 @@ const LoggedOutButtons = React.createClass({
         </a>
 
         <a className="item"
-          href="#sign-in"
+          onClick={this.signIn}
           style={{ "float" : "left" ,}}
           >
           Sign In
         </a>
 
         <a className="item"
-          href="#sign-up"
+          onClick={this.signUp}
           style={{ "float" : "left" ,}}
           >
           Sign Up

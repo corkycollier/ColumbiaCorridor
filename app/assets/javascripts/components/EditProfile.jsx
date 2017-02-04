@@ -231,6 +231,7 @@ const AdminEditProfile = React.createClass({
       }.bind(this)
       , error : function ( app_data , resp , obj ) {
         alert("There was an error. The profile was not udpated.")
+        debugger
       }.bind(this)
     })
   },
@@ -240,7 +241,6 @@ const AdminEditProfile = React.createClass({
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
   },
-
 
   setCheckbox () {
     if ( this.state.private ) {
