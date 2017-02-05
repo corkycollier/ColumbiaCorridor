@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     resources :events
     resources :users
     resources :sponsors
+    resources :boards
+    resources :staffs
   end
 end

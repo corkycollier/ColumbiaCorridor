@@ -13,8 +13,7 @@ const CCANews = React.createClass({
           CCA News
         </h1>
 
-        <div className="cca-news" style={{ "marginBottom" : "56px" }}>
-          <h3 style={{ "marginBottom" : "28px" }}>News</h3>
+        <div className="cca-news" style={{ "marginBottom" : "56px" , "marginTop" : "24px" }}>
           <div className="ui grid doubling stackable">
             <div className="eight wide column" style={{"height" : "62vh" , "overflowY" : "scroll" }}>
               {
