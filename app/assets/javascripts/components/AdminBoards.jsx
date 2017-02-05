@@ -1,5 +1,5 @@
 
-const AdminBoards = React.createClass({
+const AdminBoard = React.createClass({
 
   componentDidMount() {
     $('table').tablesort();
@@ -26,57 +26,67 @@ const AdminBoards = React.createClass({
     }
   },
 
-  makeAd () {
-    Backbone.history.navigate( 'new-board' , { trigger : true } )
+  go (e) {
+    var fragment = e.currentTarget.dataset.url;
+    Backbone.history.navigate( fragment , { trigger : true });
   },
 
   render() {
 
     return (
       <div className="" style={{
-        "color" : "#262262" ,
-        "marginBottom" : "40px" ,
-      }}>
+          "color" : "#262262" ,
+          "marginBottom" : "40px" ,
+          "position" : "relative" ,
+        }}>
         <h2 className="ui header">
           Board
         </h2>
-        <table className="ui table" style={{ "color" : "#262262" , }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Image url</th>
-              <th>Link</th>
-              <th className="collapsing">Action</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            {
+        <div className="ui button small blue" data-url="new-board" onClick={ this.go } style={{
+            "position" : "absolute" ,
+            "top" : "0px" ,
+            "left" : "75px" ,
+          }}>
+          New
+        </div>
 
-              this.props.parent.state.ads.map( (el) => {
-                return(
-                  <AdminBoardsRow
-                    key={'abr' + el.id}
-                    parent={ this.props.parent }
-                    board={ el }
-                    mom={ this }
-                    />
+        <div style={{
+            "height" : "40vh" ,
+            "overflowY" : "scroll" ,
+          }}>
 
-                )
-              })
-            }
-          </tbody>
+          <table className="ui table" style={{ "color" : "#262262" , }}>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Img</th>
+                <th style={{ "width" : "100px" , }}>Bio</th>
+                <th className="collapsing">Action</th>
+              </tr>
+            </thead>
 
-          <tfoot>
-            <tr>
-              <th colSpan="6">
-                <div className="ui button blue" onClick={ this.makeAd }>
-                  New Sponsor
-                </div>
-              </th>
-            </tr>
-          </tfoot>
-        </table>
+            <tbody>
+              {
+
+                this.props.parent.state.board.map( (el) => {
+                  return(
+                    <AdminBoardsRow
+                      key={'abr' + el.id}
+                      parent={ this.props.parent }
+                      board={ el }
+                      mom={ this }
+                      />
+
+                  )
+                })
+              }
+            </tbody>
+
+          </table>
+        </div>
       </div>
     );
   }
@@ -90,12 +100,12 @@ const AdminBoardsRow = React.createClass({
 
     if (sure) {
       $.ajax({
-        url: '/api/sponsors/' + e.currentTarget.dataset.id ,
+        url: '/api/boards/' + e.currentTarget.dataset.id ,
         type: 'DELETE' ,
         success: function( app_data , resp , obj ) {
           this.props.parent.setState(app_data)
           this.props.mom.setState({
-            ads: app_data.ads
+            board: app_data.board
           })
         }.bind(this), error: function ( app_data , resp , obj ) {
           alert('There was an erorr.')
@@ -105,8 +115,9 @@ const AdminBoardsRow = React.createClass({
     }
   },
 
-  edit () {
-    Backbone.history.navigate( 'edit/sponsor/' + this.props.ad.id , { trigger : true } )
+  go (e) {
+    var fragment = e.currentTarget.dataset.url;
+    Backbone.history.navigate( fragment , { trigger : true });
   },
 
   render() {
@@ -114,22 +125,26 @@ const AdminBoardsRow = React.createClass({
     return (
       <tr>
 
-        <td >
-          { this.props.board.name }
-        </td>
-
         <td>
-          <img className="ui image small" src={ this.props.board.image_url } alt={ this.props.board.name }/>
-
+          {this.props.board.title}
         </td>
-
-        <td >
-          { this.props.board.link }
+        <td>{this.props.board.name}</td>
+        <td>
+          <a href={this.props.board.website} target="_blank">
+            {this.props.board.company}
+          </a>
+        </td>
+        <td>
+          <img className="ui image small" src={this.props.board.img}></img>
+        </td>
+        <td>
+          { this.props.board.bio.slice(0,80) + "..." }
         </td>
 
         <td className="collapsing">
-
-          <a data-id={this.props.board.id} onClick={ this.edit } style={{ "marginRight" : "8px" ,}}>
+          <a data-url={"edit/board/" + this.props.board.id}
+             onClick={ this.go }
+             style={{ "marginRight" : "8px" ,}}>
             edit
           </a>
 
