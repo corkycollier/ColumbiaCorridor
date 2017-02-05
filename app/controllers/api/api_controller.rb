@@ -3,7 +3,6 @@ module Api
     before_action :require_signed_in!, only: []
 
     def mailing_list
-      fail
       return;
 
       ConstantContact::Util::Config.configure do |config|
