@@ -26,11 +26,8 @@ const AdminBoards = React.createClass({
     }
   },
 
-  setEdit() {
-  },
-
   makeAd () {
-    Backbone.history.navigate( 'new-sponsor' , { trigger : true } )
+    Backbone.history.navigate( 'new-board' , { trigger : true } )
   },
 
   render() {
@@ -58,10 +55,10 @@ const AdminBoards = React.createClass({
 
               this.props.parent.state.ads.map( (el) => {
                 return(
-                  <AdminAdsRow
-                    key={'aar' + el.id}
+                  <AdminBoardsRow
+                    key={'abr' + el.id}
                     parent={ this.props.parent }
-                    ad={ el }
+                    board={ el }
                     mom={ this }
                     />
 
@@ -86,7 +83,7 @@ const AdminBoards = React.createClass({
 });
 
 
-const AdminAdsRow = React.createClass({
+const AdminBoardsRow = React.createClass({
 
   delete (e) {
     var sure = confirm('Are you sure?');
@@ -118,25 +115,25 @@ const AdminAdsRow = React.createClass({
       <tr>
 
         <td >
-          { this.props.ad.name }
+          { this.props.board.name }
         </td>
 
         <td>
-          <img className="ui image small" src={ this.props.ad.image_url } alt={ this.props.ad.name }/>
+          <img className="ui image small" src={ this.props.board.image_url } alt={ this.props.board.name }/>
 
         </td>
 
         <td >
-          { this.props.ad.link }
+          { this.props.board.link }
         </td>
 
         <td className="collapsing">
 
-          <a data-id={this.props.ad.id} onClick={ this.edit } style={{ "marginRight" : "8px" ,}}>
+          <a data-id={this.props.board.id} onClick={ this.edit } style={{ "marginRight" : "8px" ,}}>
             edit
           </a>
 
-          <a data-id={this.props.ad.id} onClick={ this.delete }>
+          <a data-id={this.props.board.id} onClick={ this.delete }>
             delete
           </a>
         </td>

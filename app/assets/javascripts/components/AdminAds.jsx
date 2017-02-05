@@ -26,61 +26,66 @@ const AdminAds = React.createClass({
     }
   },
 
-  setEdit() {
-  },
-
-
-  makeAd () {
-    Backbone.history.navigate( 'new-sponsor' , { trigger : true } )
+  go (e) {
+    var fragment = e.currentTarget.dataset.url;
+    Backbone.history.navigate( fragment , { trigger : true });
   },
 
   render() {
 
     return (
       <div className="" style={{
-        "color" : "#262262" ,
-        "marginBottom" : "40px" ,
-      }}>
+          "color" : "#262262" ,
+          "marginBottom" : "40px" ,
+          "position" : "relative" ,
+        }}>
         <h2 className="ui header">
           Sponsors
         </h2>
-        <table className="ui table" style={{ "color" : "#262262" , }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Image url</th>
-              <th>Link</th>
-              <th className="collapsing">Action</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            {
+        <div className="ui button small blue" data-url="new-sponsor" onClick={ this.go } style={{
+            "position" : "absolute" ,
+            "top" : "0px" ,
+            "left" : "110px" ,
+          }}>
+          New
+        </div>
 
-              this.props.parent.state.ads.map( (el) => {
-                return(
-                  <AdminAdsRow
-                    key={'aar' + el.id}
-                    parent={ this.props.parent }
-                    ad={ el }
-                    mom={ this }
-                    />
+        <div style={{
+            "maxHeight" : "40vh" ,
+            "overflowY" : "scroll" ,
+          }}>
 
-                )
-              })
-            }
-          </tbody>
+          <table className="ui table" style={{ "color" : "#262262" , }}>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Image url</th>
+                <th>Link</th>
+                <th className="collapsing">Action</th>
+              </tr>
+            </thead>
 
-          <tfoot>
-            <tr>
-              <th colSpan="6">
-                <div className="ui button blue" onClick={ this.makeAd }>
-                  New Sponsor
-                </div>
-              </th>
-            </tr>
-          </tfoot>
-        </table>
+            <tbody>
+              {
+
+                this.props.parent.state.ads.map( (el) => {
+                  return(
+                    <AdminAdsRow
+                      key={'aar' + el.id}
+                      parent={ this.props.parent }
+                      ad={ el }
+                      mom={ this }
+                      />
+
+                  )
+                })
+              }
+            </tbody>
+
+          </table>
+        </div>
+
       </div>
     );
   }

@@ -1,12 +1,7 @@
 const AdminEvents = React.createClass({
   getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "marginBottom" : "40px" ,
-    }
 
     return({
-      style: style,
       events : this.props.parent.state.events ,
     })
   },
@@ -17,42 +12,53 @@ const AdminEvents = React.createClass({
 
   render() {
     return (
-      <div style={ this.state.style }>
+      <div style={{
+          "color" : "#262262" ,
+          "marginBottom" : "40px" ,
+          "position" : "relative" ,
+        }}>
         <h2 className="ui header">
           Events
         </h2>
 
-        <table className="ui table" style={{ "color" : "#262262" , }}>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Date</th>
-              <th className="collapsing">Start</th>
-              <th>End</th>
-              <th className="collapsing">Action</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            {
-              this.state.events.map( (el) => {
-                return(
-                  <AdminEventsRow event={ el } key={ el.id } parent={ this.props.parent } mom={this} />
-                )
-              }.bind(this))
-            }
-          </tbody>
+        <div className="ui button small blue" onClick={ this.goToMakeEvent } style={{
+            "position" : "absolute" ,
+            "top" : "0px" ,
+            "left" : "80px" ,
+          }}>
+          New
+        </div>
 
-          <tfoot>
-            <tr>
-              <th colSpan="6">
-                <div className="ui button blue" onClick={ this.goToMakeEvent }>
-                  New Event
-                </div>
-              </th>
-            </tr>
-          </tfoot>
-        </table>
+        <div style={{
+            "maxHeight" : "40vh" ,
+            "overflowY" : "scroll" ,
+          }}>
+
+
+          <table className="ui table" style={{ "color" : "#262262" , }}>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th className="collapsing">Start</th>
+                <th>End</th>
+                <th className="collapsing">Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {
+                this.state.events.map( (el) => {
+                  return(
+                    <AdminEventsRow event={ el } key={ el.id } parent={ this.props.parent } mom={this} />
+                  )
+                }.bind(this))
+              }
+            </tbody>
+
+          </table>
+        </div>
       </div>
     );
   }

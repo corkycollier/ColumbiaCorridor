@@ -45,84 +45,92 @@ const AdminUsers = React.createClass({
 
     return (
       <div className="" style={{
-        "color" : "#262262" ,
-        "marginBottom" : "40px" ,
-      }}>
+          "color" : "#262262" ,
+          "marginBottom" : "40px" ,
+
+        }}>
         <h2 className="ui header">
           Users
         </h2>
-        <table className="ui table" style={{ "color" : "#262262" , }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>Company</th>
-              <th>Action</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            {
-              this.state.members.map( (el) => {
+        <div style={{
+            "maxHeight" : "40vh" ,
+            "overflowY" : "scroll" ,
+          }}>
 
-                return(
-                  <tr key={ "adminUsers" + el.id }>
-                    <td>
-                      { el.first_name + " " + el.last_name }
-                    </td>
+          <table className="ui table" style={{ "color" : "#262262" , }}>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Company</th>
+                <th>Action</th>
+              </tr>
+            </thead>
 
-                    <td>
-                      <a href={"mailto:" + el.email} style={{ "color" : "#262262" , }}>
-                        { el.email }
-                      </a>
-                    </td>
+            <tbody>
+              {
+                this.state.members.map( (el) => {
 
-                    <td>
-                      { el.phone }
-                    </td>
+                  return(
+                    <tr key={ "adminUsers" + el.id }>
+                      <td>
+                        { el.first_name + " " + el.last_name }
+                      </td>
 
-                    <td>
-                      <div>
-                        { el.user_address || ""}
-                      </div>
+                      <td>
+                        <a href={"mailto:" + el.email} style={{ "color" : "#262262" , }}>
+                          { el.email }
+                        </a>
+                      </td>
 
-                      <div>
-                        { el.user_city || "" + ", " + el.user_state || ""  + " " + el.user_zip || "" }
-                      </div>
-                    </td>
+                      <td>
+                        { el.phone }
+                      </td>
 
-                    <td className="collapsing">
-                      <a href={ el.company_website } target="_blank" style={{ "color" : "#262262" , }}>
-                        { el.company_name }
-                      </a>
+                      <td>
+                        <div>
+                          { el.user_address || ""}
+                        </div>
 
-                    </td>
+                        <div>
+                          { el.user_city || "" + ", " + el.user_state || ""  + " " + el.user_zip || "" }
+                        </div>
+                      </td>
 
-                    <td className="collapsing">
-                      <a
-                        data-id={el.id}
-                        style={{ "marginRight" : "8px" }}
-                        onClick={ this.edit }
-                        >
-                        edit
-                      </a>
+                      <td className="collapsing">
+                        <a href={ el.company_website } target="_blank" style={{ "color" : "#262262" , }}>
+                          { el.company_name }
+                        </a>
 
-                      <a
-                        data-id={el.id}
-                        onClick={ this.delete }
-                        >
-                        delete
-                      </a>
-                    </td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
+                      </td>
 
-        </table>
+                      <td className="collapsing">
+                        <a
+                          data-id={el.id}
+                          style={{ "marginRight" : "8px" }}
+                          onClick={ this.edit }
+                          >
+                          edit
+                        </a>
+
+                        <a
+                          data-id={el.id}
+                          onClick={ this.delete }
+                          >
+                          delete
+                        </a>
+                      </td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
+
+          </table>
+        </div>
       </div>
     );
   }
