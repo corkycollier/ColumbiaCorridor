@@ -72,6 +72,12 @@ const ColumbiaCorridor = React.createClass({
 });
 
 const Staff = React.createClass({
+
+  go (e) {
+    var fragment = e.currentTarget.dataset.url;
+    Backbone.history.navigate( fragment , { trigger : true });
+  },
+
   render() {
     return (
       <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
@@ -79,7 +85,7 @@ const Staff = React.createClass({
           Staff
         </h1>
 
-        <div className="ui grid doubling stackable" style={{ "margin" : "20px" }}>
+        <div className="ui grid stackable" style={{ "margin" : "20px" }}>
           <div className="eight wide column" style={{ "fontSize" : "18px", "position" : "relative" , "left" : "-32px"  }}>
             <p>
               Even our longtime members are surprised at how small the CCA office is. There’s not a lot of staff, but we manage to get a lot done. It’s another way you get value for your membership.
@@ -88,16 +94,15 @@ const Staff = React.createClass({
             <p>
               In addition to Corky and Marissa, there’s often an intern working on one of our current projects. Feel free to drop by our office in the Corridor. But it’s smart to call first…we’re often out of the office assisting our members.
             </p>
-
           </div>
 
-          <div className="four wide column" >
+          <div className="four wide column" data-url="staff/1" onClick={ this.go }>
             <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
             <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
               <b>Executive Director</b> - Corky Collier
               </p>
             </div>
-            <div className="four wide column" >
+            <div className="four wide column" data-url="staff/2" onClick={ this.go }>
               <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
               <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
                 <b>Office Manger</b> - Marissa King

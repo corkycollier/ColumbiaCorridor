@@ -72,7 +72,9 @@ const Event = React.createClass({
     return (
       <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
         <h1 className="ui header centered" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
-          Event
+          <a href="#events">
+            Event
+          </a>
         </h1>
 
         <div className="ui grid centered">
@@ -96,7 +98,6 @@ const Event = React.createClass({
                   <div>
                     <b>Location: </b>
                       <a href={"http://maps.google.com/?q=1200 " + this.state.event.location } target="_blank">
-
                         { this.state.event.location }
                       </a>
                     </div>

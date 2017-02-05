@@ -15,6 +15,7 @@ const router = Backbone.Router.extend({
     "columbia-corridor" : "columbiaCorridor" ,
     "board/:id" : "boardId" ,
     "board" : "board" ,
+    "staff/:id" : "staffId" ,
     "staff" : "staff" ,
     "events" : "events" ,
     "members" : "members" ,
@@ -103,6 +104,11 @@ const router = Backbone.Router.extend({
 
   staff () {
     var page = <Staff parent={ this.parent } key="staff" /> ;
+    this.go( page )
+  },
+
+  staffId ( id ) {
+    var page = <StaffBio parent={ this.parent } id={ id } key="staffId" /> ;
     this.go( page )
   },
 

@@ -38,8 +38,8 @@ class ApplicationController < ActionController::Base
       news: New.all.order(created_at: :desc).collect{ |thing| thing.safe_show } ,
       events: Event.all.order(date: :asc).collect{ |event| event.safe_show } ,
       ads: Ad.all.collect{ |ad| ad.safe_show } ,
-      staffs: Staff.all.collect{ |staff| staff.safe_show } ,
-      boards: Board.all.collect{ |board| board.safe_show } ,
+      staff: Staff.all.collect{ |staff| staff.safe_show } ,
+      board: Board.all.collect{ |board| board.safe_show } ,
     }
   end
 end
