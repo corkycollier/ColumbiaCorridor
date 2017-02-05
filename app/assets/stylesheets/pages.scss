@@ -6,7 +6,18 @@
   z-index: 12;
   opacity: 1;
   transition: all 0.2s ease;
-  
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+
+.staff-image {
+  z-index: 12;
+  opacity: 1;
+  transition: all 0.2s ease;
+
   &:hover {
     opacity: 0.6;
   }

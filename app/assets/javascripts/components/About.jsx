@@ -97,19 +97,37 @@ const Staff = React.createClass({
           </div>
 
           <div className="four wide column" data-url="staff/1" onClick={ this.go }>
-            <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
+            <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
             <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
               <b>Executive Director</b> - Corky Collier
               </p>
-            </div>
-            <div className="four wide column" data-url="staff/2" onClick={ this.go }>
-              <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
-              <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
-                <b>Office Manger</b> - Marissa King
-                </p>
+
+              <div>
+                <i className="linkify icon" style={{
+                    "position" : "absolute" ,
+                    "top" : "10%" ,
+                    "left" : "7%" ,
+                    "fontSize": "41px" ,
+                  }}></i>
+                </div>
               </div>
-            </div>
-          </div>
-        );
-      }
-    });
+              <div className="four wide column" data-url="staff/2" onClick={ this.go }>
+                <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
+                <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
+                  <b>Office Manger</b> - Marissa King
+                  </p>
+
+                  <div>
+                    <i className="linkify icon" style={{
+                        "position" : "absolute" ,
+                        "top" : "10%" ,
+                        "left" : "7%" ,
+                        "fontSize": "41px" ,
+                      }}></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+        });
