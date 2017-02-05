@@ -20,7 +20,7 @@ const News = React.createClass({
     return (
       <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
         <h1 className="ui header centered">
-          News
+            <a href="#cca-news">News</a>
         </h1>
 
         <div className="ui grid centered">

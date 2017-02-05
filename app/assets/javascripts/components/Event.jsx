@@ -91,10 +91,14 @@ const Event = React.createClass({
               <div className="ui clearing divider">
               </div>
 
-              <div className="ui grid stackable ">
-                <div className="sixteen wide column">
+              <div className="ui grid stackable">
+                <div className="six wide column">
                   <div>
-                    <b>Location:</b> { this.state.event.location }
+                    <b>Location: </b>
+                      <a href={"http://maps.google.com/?q=1200 " + this.state.event.location } target="_blank">
+
+                        { this.state.event.location }
+                      </a>
                     </div>
 
                     <div>
