@@ -23,7 +23,6 @@ const Event = React.createClass({
 
   paypal () {
     if ( this.state.event.paypal ) {
-
       setTimeout(function() {
         $('#paypal-target').html( this.state.event.paypal );
       }.bind(this), 0)
@@ -69,6 +68,38 @@ const Event = React.createClass({
       default:
     }
 
+    var dateString = this.state.event.date.slice(5, 7) + "/" + this.state.event.date.slice(8) + "/" + this.state.event.date.slice(0, 4);
+    if (dateString[0] == "0") {
+      dateString = dateString.slice(1);
+    }
+
+    var startString = this.state.event.start;
+
+    if (startString[0] == "0") {
+      startString = startString.slice(1);
+    }
+    if ( parseInt(startString[0]) < 12 ) {
+      startString += " AM"
+    } else {
+      startString += " PM"
+    }
+
+    startString[0] = parseInt(startString[0]) % 12
+
+
+    var endString = this.state.event.end;
+
+    if (endString[0] == "0") {
+      endString = endString.slice(1);
+    }
+    if ( parseInt(endString[0]) < 12 ) {
+      endString += " AM"
+    } else {
+      endString += " PM"
+    }
+
+    endString[0] = parseInt(endString[0]) % 12
+
     return (
       <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
         <h1 className="ui header centered" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
@@ -94,7 +125,7 @@ const Event = React.createClass({
               </div>
 
               <div className="ui grid stackable">
-                <div className="six wide column">
+                <div className="eight wide column">
                   <div>
                     <b>Location: </b>
                       <a href={"http://maps.google.com/?q=1200 " + this.state.event.location } target="_blank">
@@ -103,11 +134,11 @@ const Event = React.createClass({
                     </div>
 
                     <div>
-                      <b>Date:</b> { this.state.event.date }
+                      <b>Date:</b> { dateString }
                       </div>
 
                       <div>
-                        <b>Time:</b> { this.state.event.start } - { this.state.event.end }
+                        <b>Time:</b> { startString } to { endString }
                         </div>
                       </div>
                     </div>
