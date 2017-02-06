@@ -30,7 +30,7 @@ const Directory = React.createClass({
             <tr>
               <th>Contact</th>
               <th>Email</th>
-              <th>Phone</th>
+              <th style={{ "minWidth" : "168px" , }}>Phone</th>
               <th>Company</th>
               <th>NAICS</th>
             </tr>
