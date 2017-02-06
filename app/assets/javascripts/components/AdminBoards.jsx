@@ -43,13 +43,9 @@ const AdminBoard = React.createClass({
           Board
         </h2>
 
-        <div className="ui button small blue" data-url="new-board" onClick={ this.go } style={{
-            "position" : "absolute" ,
-            "top" : "0px" ,
-            "left" : "75px" ,
-          }}>
+        <a href="new-board" className="ui button small blue" >
           New
-        </div>
+        </a>
 
           <table className="ui table" style={{ "color" : "#262262" , }}>
             <thead>
