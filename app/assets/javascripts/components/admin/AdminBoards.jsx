@@ -210,7 +210,6 @@ const NewBoard = React.createClass({
   },
 
   save () {
-    debugger
     $.ajax({
       url  : '/api/boards' ,
       type : "POST" ,
