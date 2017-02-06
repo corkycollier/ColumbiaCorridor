@@ -43,7 +43,7 @@ const AdminBoard = React.createClass({
           Board
         </h2>
 
-        <a href="new-board" className="ui button small blue" >
+        <a href="#new-board" className="ui button small blue" >
           New
         </a>
 

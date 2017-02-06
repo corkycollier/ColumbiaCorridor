@@ -214,10 +214,6 @@ const Main = React.createClass({
       } ,
 
     ]
-
-    this.setState({
-      board: board
-    })
   },
 
   setStaff () {
