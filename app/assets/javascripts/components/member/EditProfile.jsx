@@ -31,13 +31,9 @@ const EditProfile = React.createClass({
 
   componentDidMount () {
     $('table').tablesort();
-    $('.checkbox').checkbox();
-    if (this.state.private) {
-      $('.ui.checkbox').checkbox('check');
-    }
   },
 
-  updateUser () {
+  save () {
     $.ajax({
       url: '/api/users/' + this.state.id ,
       type: 'PATCH' ,
@@ -69,7 +65,7 @@ const EditProfile = React.createClass({
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
-            <form className="ui small form" onSubmit={ this.updateUser }>
+            <form className="ui small form" onSubmit={ this.save }>
 
               <h3>Personal</h3>
 
@@ -80,7 +76,7 @@ const EditProfile = React.createClass({
 
               <div className="field">
                 <label>Password</label>
-                <input type="password" data-field="password" onChange={ this.updateState } defaultValue={this.state.password} minLength="6"  />
+                <input type="password" data-field="password" onChange={ this.updateState } minLength="6"  />
               </div>
 
               <div className="two fields">
@@ -204,10 +200,10 @@ const AdminEditProfile = React.createClass({
       , success: function ( app_data , resp , obj ) {
         this.props.parent.setState( app_data )
         alert('Profile was updated.');
-        Backbone.history.navigate('admin' , { trigger : true })
+        Backbone.history.navigate('admin/users' , { trigger : true })
       }.bind(this)
       , error : function ( app_data , resp , obj ) {
-        alert("There was an error. Please try again later.")
+        alert("There was an error.")
       }.bind(this)
     })
   },

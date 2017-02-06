@@ -17,7 +17,7 @@ module Api
     private
 
     def user_params
-      params.require(:user).permit(User.new.attributes.map {|key, value| key.to_sym})
+      params.require(:user).permit(User.new.attributes.map {|key, value| key.to_sym}.concat([:password]))
     end
   end
 end

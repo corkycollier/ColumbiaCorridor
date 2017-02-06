@@ -37,7 +37,7 @@ const SignIn = React.createClass({
   render () {
     return (
       <div className="ui container" style={this.state.style}>
-        <h1  >
+        <h1>
           Sign In
         </h1>
 
@@ -52,7 +52,19 @@ const SignIn = React.createClass({
             <input type="password" required data-field="password" onChange={ this.updateState } />
           </div>
 
-          <button className="ui button" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "24px" }} type="submit" >
+          <div>
+            <a href="#forgot-password">
+              <small>
+                Forgot password?
+              </small>
+            </a> / <a href="#register">
+              <small>
+                Register
+              </small>
+            </a>
+          </div>
+
+          <button className="ui button" style={{ "background" : "#262262" , "color" : "white" , "marginTop" : "12px" }} type="submit" >
             Sign In
           </button>
         </form>

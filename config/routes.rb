@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'mail', to: "pages#mailing_list"
   get 'mailings', to: "pages#mailings"
   get '/:page' , to: "pages#page"
+  post "forgot_password" , to: "application#forgot_password"
 
   namespace :api, defaults: { format: :json } do
     post "mailing_list", to: 'api#mailing_list'

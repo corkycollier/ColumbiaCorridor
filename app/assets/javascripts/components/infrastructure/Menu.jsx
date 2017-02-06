@@ -176,25 +176,25 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown item header member-area" style={{
+          <a className="ui dropdown item header " style={{
               "color" : "#262262"
             }}>
             Member Area
 
             <div className="menu">
-              <div className="item" data-path="directory" onClick={ this.go } >
+              <div className="item member-area" data-path="directory" onClick={ this.go } >
                 DIRECTORY
               </div>
 
-              <div className="item" data-path="edit-profile" onClick={ this.go } >
+              <div className="item member-area" data-path="edit-profile" onClick={ this.go } >
                 EDIT PROFILE
               </div>
 
-              <div className="item" data-path="make-news" onClick={ this.go } >
+              <div className="item member-area" data-path="make-news" onClick={ this.go } >
                 MAKE NEWS
               </div>
 
-              <div className="item" data-path="archives" onClick={ this.go } >
+              <div className="item member-area" data-path="archives" onClick={ this.go } >
                 ARCHIVES
               </div>
             </div>

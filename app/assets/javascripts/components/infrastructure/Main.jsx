@@ -36,8 +36,6 @@ const Main = React.createClass({
         $('.member-area').addClass('disabled');
       }
     }.bind(this), 0)
-
-
   },
 
   render () {

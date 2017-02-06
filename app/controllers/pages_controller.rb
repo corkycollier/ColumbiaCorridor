@@ -21,4 +21,6 @@ class PagesController < ApplicationController
       render json: @mail.errors.full_messages
     end
   end
+
+  
 end

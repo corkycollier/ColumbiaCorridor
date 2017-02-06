@@ -30,6 +30,7 @@ const router = Backbone.Router.extend({
     "cca-news" : "ccaNews" ,
     "contact" : "contact" ,
     "mailing-list" : "mailingList" ,
+    "forgot-password" : "forgotPassword" ,
     "register" : "register" ,
     "sign-in" : "signIn" ,
     "directory" : "directory" ,
@@ -168,6 +169,11 @@ const router = Backbone.Router.extend({
 
   register () {
     var page = <SignUp parent={ this.parent } key="register" /> ;
+    this.go( page )
+  },
+
+  forgotPassword () {
+    var page = <ForgotPassword parent={ this.parent } key="forgotPassword" /> ;
     this.go( page )
   },
 

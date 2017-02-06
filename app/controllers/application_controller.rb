@@ -5,6 +5,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :sign_in!, :sign_out!, :require_signed_in!, :app_data
 
+  def forgot_password
+    @user = User.find_by_email(params[:email])
+    if @user
+      new_password = "CCA-" + rand(100...999).to_s
+      @user.password = new_password
+      if @user.save
+        message = ColumbiaMailer.forgotten_email @user
+        message.deliver_now!
+      end
+    end
+  end
+
   private
 
   def current_user
