@@ -217,11 +217,11 @@ const NewBoard = React.createClass({
       data : { board: this.state } ,
       success : function ( app_data , resp , obj ) {
         this.props.parent.setState( app_data )
-        Backbone.history.navigate( 'admin' , { trigger : true } );
+        Backbone.history.navigate( 'admin/board' , { trigger : true } );
       }.bind(this),
       error : function ( app_data , resp , obj ) {
         this.props.parent.setState( app_data )
-        Backbone.history.navigate( 'admin' , { trigger : true } );
+        Backbone.history.navigate( 'admin/board' , { trigger : true } );
       }.bind(this)
     });
   },
