@@ -23,7 +23,7 @@ const AdminNews = React.createClass({
           News
         </h2>
 
-        <a href="make-news" className="ui button small blue" >
+        <a href="#make-news" className="ui button small blue" >
           New
         </a>
 
@@ -33,7 +33,6 @@ const AdminNews = React.createClass({
           <thead>
             <tr>
               <th>Title</th>
-              <th style={{ "maxWidth" : "150px" , }}>CCA Only</th>
               <th className="collapsing">Action</th>
             </tr>
           </thead>
@@ -111,12 +110,6 @@ const AdminNewsRow = React.createClass({
 
         <td onClick={ this.goToNews }>
           { this.props.news.title }
-        </td>
-
-        <td>
-          {
-            this.cca_only()
-          }
         </td>
 
         <td >

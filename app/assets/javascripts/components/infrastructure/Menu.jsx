@@ -180,7 +180,6 @@ const RegularMenu = React.createClass({
               "color" : "#262262"
             }}>
             Member Area
-            <div data-path="member-area" onClick={this.go} style={{ "position" : "absolute" , "height" : "100%" , "width" : "100%" , "top" : "0px" , "left" : "0px" }}/>
 
             <div className="menu">
               <div className="item" data-path="directory" onClick={ this.go } >

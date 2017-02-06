@@ -100,11 +100,7 @@ const EditNewsAdmin = React.createClass({
   },
 
   componentDidMount () {
-    $('.checkbox').checkbox();
     $('#text-area').froalaEditor();
-    if (this.props.news.cca_only) {
-      $('.ui.checkbox').checkbox('check');
-    }
   },
 
   submitNews () {
@@ -139,42 +135,22 @@ const EditNewsAdmin = React.createClass({
     this.setState( state );
   },
 
-  setCheckbox () {
-    if ( this.state.cca_only ) {
-      this.setState({
-        cca_only: false
-      })
-    } else {
-      this.setState({
-        cca_only: true
-      })
-    }
-  },
-
   render () {
     return (
       <div className="ui container" style={{ "color" : "#262262" ,"marginBottom" : "100px" ,"padding" : "25px" ,}}>
-        <h1 style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
-          News
+        <h1>
+          Edit News
         </h1>
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
 
             <form className="ui form" onSubmit={this.submitNews }>
-              <div className="two fields">
-                <div className="field">
-                  <label>Title</label>
-                  <input type="text" data-field="title" onChange={ this.updateState } defaultValue={ this.props.news.title } required/>
-                </div>
-
-                <div className="field">
-                  <div className="ui checkbox" style={{"position" : "relative" , "top" : "31px" , "left" : "22px"}} onClick={ this.setCheckbox }>
-                    <input type="checkbox" tabIndex="0" className="hidden" />
-                    <label>CCA only</label>
-                  </div>
-                </div>
+              <div className="field">
+                <label>Title</label>
+                <input type="text" data-field="title" onChange={ this.updateState } defaultValue={ this.props.news.title } required/>
               </div>
+
 
               <div className="field" onBlur={ this.updateBody }>
                 <label>Body</label>
