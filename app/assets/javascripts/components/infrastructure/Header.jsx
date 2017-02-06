@@ -50,11 +50,11 @@ const Header = React.createClass({
 
 
         <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "16px" , "right" : "24px" }}>
-          <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank" >
+          <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank"  style={{ "fontSize" : "18px" , "padding" : "0px"}} >
             <i className="facebook icon"></i>
           </a>
 
-          <a className="icon item" href="https://www.linkedin.com/company/columbia-corridor-association" target="_blank">
+          <a className="icon item" href="https://www.linkedin.com/company/columbia-corridor-association" target="_blank" style={{ "fontSize" : "18px" , "padding" : "0px"}}>
             <i className="linkedin icon"></i>
           </a>
 
