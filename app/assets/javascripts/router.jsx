@@ -27,6 +27,7 @@ const router = Backbone.Router.extend({
     "join" : "join" ,
     "sponsor" : "sponsor" ,
     "membership" : "membership" ,
+    "member-news" : "memberNews" ,
     "cca-news" : "ccaNews" ,
     "contact" : "contact" ,
     "mailing-list" : "mailingList" ,
@@ -228,11 +229,11 @@ const router = Backbone.Router.extend({
     }
   },
 
-  memberArea () {
+  memberNews () {
     if (!this.parent.state.user) {
       this.home();
     } else {
-      var page = <MemberArea parent={ this.parent } key="member-area" /> ;
+      var page = <MemberNews parent={ this.parent } key="member-news" /> ;
       this.go( page );
     }
   },

@@ -186,6 +186,10 @@ const RegularMenu = React.createClass({
                 DIRECTORY
               </div>
 
+              <div className="item member-area" data-path="member-news" onClick={ this.go } >
+                MEMBER NEWS
+              </div>
+
               <div className="item member-area" data-path="edit-profile" onClick={ this.go } >
                 EDIT PROFILE
               </div>

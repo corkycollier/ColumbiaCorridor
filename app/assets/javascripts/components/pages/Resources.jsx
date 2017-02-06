@@ -18,7 +18,7 @@ const CCANews = React.createClass({
             <div className="eight wide column" style={{"height" : "62vh" , "overflowY" : "scroll" }}>
               {
                 this.props.parent.state.news.map( (el) => {
-                  if (el.cca_only) { return; }
+                  if (el.author != "Corky Collier") { return; }
                   return (
                     <div key={ el.id } >
                       <div style={{"marginBottom" : "8px"}}>
