@@ -5,7 +5,6 @@ const MakeNews = React.createClass({
   },
 
   componentDidMount () {
-    $('.checkbox').checkbox();
     $('#text-area').froalaEditor();
   },
 
@@ -74,12 +73,6 @@ const MakeNews = React.createClass({
                 <input type="text" data-field="title" onChange={ this.updateState } required/>
               </div>
 
-              <div className="field">
-                <div className="ui checkbox"  onClick={ this.setCheckbox }>
-                  <input type="checkbox" tabIndex="0" className="hidden" />
-                  <label>CCA only</label>
-                </div>
-              </div>
 
               <div className="field" onBlur={ this.updateBody }>
                 <label>Body</label>

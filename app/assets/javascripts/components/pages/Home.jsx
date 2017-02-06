@@ -144,7 +144,9 @@ const Home = React.createClass({
             <div >
               {
                 this.props.parent.state.news.slice(0, 3).map(function(el) {
-                  if (el.cca_only) { return ;}
+
+                  if (el.author != "Corky Collier") { return ;}
+                  
                   return(
                     <div key={"fni" + el.id} data-id={ el.id } onClick={ this.goToNews } style={{ "marginTop" : "12px" ,}}>
                       {
