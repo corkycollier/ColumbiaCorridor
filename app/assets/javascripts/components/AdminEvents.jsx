@@ -6,35 +6,23 @@ const AdminEvents = React.createClass({
     })
   },
 
-  goToMakeEvent () {
-    Backbone.history.navigate('make-event', { trigger : true } )
-  },
-
   render() {
     return (
-      <div style={{
+      <div className="ui container" style={{
           "color" : "#262262" ,
           "marginBottom" : "40px" ,
+          "padding" : "25px 0px" ,
           "position" : "relative" ,
         }}>
-        <h2 className="ui header">
-          Events
+
+        <h2>
+          Admin: Events
         </h2>
 
 
-        <div className="ui button small blue" onClick={ this.goToMakeEvent } style={{
-            "position" : "absolute" ,
-            "top" : "0px" ,
-            "left" : "80px" ,
-          }}>
+        <a href="#make-event" className="ui button small blue">
           New
-        </div>
-
-        <div style={{
-            "maxHeight" : "40vh" ,
-            "overflowY" : "scroll" ,
-          }}>
-
+        </a>
 
           <table className="ui table" style={{ "color" : "#262262" , }}>
             <thead>
@@ -58,7 +46,11 @@ const AdminEvents = React.createClass({
             </tbody>
 
           </table>
-        </div>
+
+        <a href="#admin" className="ui button left labeled icon" >
+          <i className="left caret icon"></i>
+          Back
+        </a>
       </div>
     );
   }

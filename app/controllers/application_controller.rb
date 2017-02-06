@@ -31,6 +31,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url unless signed_in?
   end
 
+  def require_admin!
+    redirect_to root_url unless current_user["role"] == "Admin"
+  end
+
   def app_data
     {
       user: current_user ,

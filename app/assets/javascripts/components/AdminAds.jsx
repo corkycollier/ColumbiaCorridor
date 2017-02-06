@@ -34,27 +34,20 @@ const AdminAds = React.createClass({
   render() {
 
     return (
-      <div className="" style={{
+      <div className="ui container" style={{
           "color" : "#262262" ,
           "marginBottom" : "40px" ,
-          "position" : "relative" ,
+          "padding" : "25px 0px" ,
         }}>
+
         <h2 className="ui header">
           Sponsors
         </h2>
 
-        <div className="ui button small blue" data-url="new-sponsor" onClick={ this.go } style={{
-            "position" : "absolute" ,
-            "top" : "0px" ,
-            "left" : "110px" ,
-          }}>
+        <a href="#new-sponsor" className="ui button small blue">
           New
-        </div>
+        </a>
 
-        <div style={{
-            "maxHeight" : "40vh" ,
-            "overflowY" : "scroll" ,
-          }}>
 
           <table className="ui table" style={{ "color" : "#262262" , }}>
             <thead>
@@ -84,8 +77,11 @@ const AdminAds = React.createClass({
             </tbody>
 
           </table>
-        </div>
 
+        <a href="#admin" className="ui button left labeled icon" >
+          <i className="left caret icon"></i>
+          Back
+        </a>
       </div>
     );
   }

@@ -44,93 +44,95 @@ const AdminUsers = React.createClass({
   render() {
 
     return (
-      <div className="" style={{
+      <div className="ui container" style={{
           "color" : "#262262" ,
           "marginBottom" : "40px" ,
-
+          "padding" : "30px 0px" ,
         }}>
-        <h2 className="ui header">
-          Users
+
+        <h2 >
+          Admin: Users
         </h2>
 
-        <div style={{
-            "maxHeight" : "40vh" ,
-            "overflowY" : "scroll" ,
-          }}>
 
-          <table className="ui table" style={{ "color" : "#262262" , }}>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th>Company</th>
-                <th>Action</th>
-              </tr>
-            </thead>
+        <table className="ui table" style={{ "color" : "#262262" , }}>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>Company</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
-            <tbody>
-              {
-                this.state.members.map( (el) => {
+          <tbody>
+            {
+              this.state.members.map( (el) => {
 
-                  return(
-                    <tr key={ "adminUsers" + el.id }>
-                      <td>
-                        { el.first_name + " " + el.last_name }
-                      </td>
+                return(
+                  <tr key={ "adminUsers" + el.id }>
+                    <td>
+                      { el.first_name + " " + el.last_name }
+                    </td>
 
-                      <td>
-                        <a href={"mailto:" + el.email} style={{ "color" : "#262262" , }}>
-                          { el.email }
-                        </a>
-                      </td>
+                    <td>
+                      <a href={"mailto:" + el.email} style={{ "color" : "#262262" , }}>
+                        { el.email }
+                      </a>
+                    </td>
 
-                      <td>
-                        { el.phone }
-                      </td>
+                    <td>
+                      { el.phone }
+                    </td>
 
-                      <td>
-                        <div>
-                          { el.user_address || ""}
-                        </div>
+                    <td>
+                      <div>
+                        { el.user_address || ""}
+                      </div>
 
-                        <div>
-                          { el.user_city || "" + ", " + el.user_state || ""  + " " + el.user_zip || "" }
-                        </div>
-                      </td>
+                      <div>
+                        { el.user_city || "" + ", " + el.user_state || ""  + " " + el.user_zip || "" }
+                      </div>
+                    </td>
 
-                      <td className="collapsing">
-                        <a href={ el.company_website } target="_blank" style={{ "color" : "#262262" , }}>
-                          { el.company_name }
-                        </a>
+                    <td className="collapsing">
+                      <a href={ el.company_website } target="_blank" style={{ "color" : "#262262" , }}>
+                        { el.company_name }
+                      </a>
 
-                      </td>
+                    </td>
 
-                      <td className="collapsing">
-                        <a
-                          data-id={el.id}
-                          style={{ "marginRight" : "8px" }}
-                          onClick={ this.edit }
-                          >
-                          edit
-                        </a>
+                    <td className="collapsing">
+                      <a
+                        data-id={el.id}
+                        style={{ "marginRight" : "8px" }}
+                        onClick={ this.edit }
+                        >
+                        edit
+                      </a>
 
-                        <a
-                          data-id={el.id}
-                          onClick={ this.delete }
-                          >
-                          delete
-                        </a>
-                      </td>
-                    </tr>
-                  )
-                })
-              }
-            </tbody>
+                      <a
+                        data-id={el.id}
+                        onClick={ this.delete }
+                        >
+                        delete
+                      </a>
+                    </td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
 
-          </table>
-        </div>
+        </table>
+
+
+        <a href="#admin" className="ui button left labeled icon" >
+          <i className="left caret icon"></i>
+          Back
+        </a>
       </div>
     );
   }

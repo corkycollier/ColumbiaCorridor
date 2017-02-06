@@ -15,6 +15,7 @@ const router = Backbone.Router.extend({
     "columbia-corridor" : "columbiaCorridor" ,
     "board/:id" : "boardId" ,
     "board" : "board" ,
+    "new-board" : "newBoard" ,
     "staff/:id" : "staffId" ,
     "staff" : "staff" ,
     "events" : "events" ,
@@ -39,14 +40,19 @@ const router = Backbone.Router.extend({
     "make-event" : "makeEvent" ,
     "event/:id" : "event" ,
     "news/:id" : "news" ,
+    "admin/users" : "adminUsers" ,
+    "admin/events" : "adminEvents" ,
+    "admin/news" : "adminNews" ,
+    "admin/board" : "adminBoard" ,
+    "admin/sponsors" : "adminSponsors" ,
     "admin" : "admin" ,
     "member-area" : "memberArea" ,
     "make-event":"makeEvent",
     "make-ad":"page",
     "edit/user/:id":"editUserId",
-    "edit/sponsor/:id":"editSponsorId",
     "edit/news/:id":"editNewsId",
     "edit/event/:id":"editEventId",
+    "edit/board/:id":"editBoard",
     "new-sponsor":"newSponsor",
     "edit/sponsor/:id":"editSponsor",
 
@@ -237,6 +243,53 @@ const router = Backbone.Router.extend({
 
   },
 
+  adminUsers () {
+
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <AdminUsers parent={ this.parent } key="adminUsers" /> ;
+      this.go( page );
+    }
+
+  },
+
+  adminEvents () {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <AdminEvents parent={ this.parent } key="adminEvents" /> ;
+      this.go( page );
+    }
+  },
+
+  adminNews () {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <AdminNews parent={ this.parent } key="adminNews" /> ;
+      this.go( page );
+    }
+  },
+
+  adminBoard () {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <AdminBoard parent={ this.parent } key="adminBoard" /> ;
+      this.go( page );
+    }
+  },
+
+  adminSponsors () {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <AdminAds parent={ this.parent } key="adminSponsors" /> ;
+      this.go( page );
+    }
+  },
+
   event ( id ) {
     var page = <Event parent={this.parent} id={ id } key={ "event" + id } /> ;
     this.go( page )
@@ -256,12 +309,18 @@ const router = Backbone.Router.extend({
       }
     });
 
-    var page = <AdminEditProfile
-      parent={ this.parent }
-      user={ user }
-      key="edit-profile-user"
-      /> ;
-    this.go( page )
+
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <AdminEditProfile
+        parent={ this.parent }
+        user={ user }
+        key="edit-profile-user"
+        /> ;
+      this.go( page )
+    }
+
   },
 
   editNewsId ( id ) {
@@ -272,12 +331,17 @@ const router = Backbone.Router.extend({
       }
     });
 
-    var page = <EditNewsAdmin
-      parent={ this.parent }
-      news={ news }
-      key="edit-profile-news"
-      /> ;
-    this.go( page )
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <EditNewsAdmin
+        parent={ this.parent }
+        news={ news }
+        key="edit-profile-news"
+        /> ;
+      this.go( page )
+    }
+
   },
 
   editEventId ( id ) {
@@ -288,17 +352,27 @@ const router = Backbone.Router.extend({
       }
     });
 
-    var page = <EditEventAdmin
-      parent={ this.parent }
-      event={ event }
-      key="edit-event"
-      /> ;
-    this.go( page )
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <EditEventAdmin
+        parent={ this.parent }
+        event={ event }
+        key="edit-event"
+        /> ;
+      this.go( page )
+    }
+
   },
 
   newSponsor () {
-    var page = <MakeAd parent={ this.parent } key="makeAd" /> ;
-    this.go( page )
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <MakeAd parent={ this.parent } key="makeAd" /> ;
+      this.go( page )
+    }
+
   },
 
   editSponsor ( id ) {
@@ -310,9 +384,38 @@ const router = Backbone.Router.extend({
       }
     });
 
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <EditAd parent={ this.parent } ad={ ad } key="editAd" /> ;
+      this.go( page )
+    }
+  },
 
-    var page = <EditAd parent={ this.parent } ad={ ad } key="editAd" /> ;
-    this.go( page )
+  editBoard ( id ) {
+    var boardMember;
+
+    this.parent.state.board.forEach(function(el) {
+      if (el.id == id) {
+        boardMember = el ;
+      }
+    });
+
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <EditBoard parent={ this.parent } member={ boardMember } key="editBoard" /> ;
+      this.go( page )
+    }
+  },
+
+  newBoard ( ) {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <NewBoard parent={ this.parent } key="newBoard" /> ;
+      this.go( page )
+    }
   },
 
 

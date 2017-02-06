@@ -34,12 +34,12 @@ const AdminBoard = React.createClass({
   render() {
 
     return (
-      <div className="" style={{
+      <div className="ui container" style={{
           "color" : "#262262" ,
           "marginBottom" : "40px" ,
-          "position" : "relative" ,
+          "padding" : "25px 0px" ,
         }}>
-        <h2 className="ui header">
+        <h2>
           Board
         </h2>
 
@@ -50,11 +50,6 @@ const AdminBoard = React.createClass({
           }}>
           New
         </div>
-
-        <div style={{
-            "height" : "40vh" ,
-            "overflowY" : "scroll" ,
-          }}>
 
           <table className="ui table" style={{ "color" : "#262262" , }}>
             <thead>
@@ -68,7 +63,10 @@ const AdminBoard = React.createClass({
               </tr>
             </thead>
 
-            <tbody>
+            <tbody style={{
+                "height" : "40vh" ,
+                "overflowY" : "scroll" ,
+              }}>
               {
 
                 this.props.parent.state.board.map( (el) => {
@@ -86,7 +84,12 @@ const AdminBoard = React.createClass({
             </tbody>
 
           </table>
-        </div>
+
+
+        <a href="#admin" className="ui button left labeled icon" >
+          <i className="left caret icon"></i>
+          Back
+        </a>
       </div>
     );
   }
@@ -108,7 +111,7 @@ const AdminBoardsRow = React.createClass({
             board: app_data.board
           })
         }.bind(this), error: function ( app_data , resp , obj ) {
-          alert('There was an erorr.')
+          alert('Error.')
         }.bind(this)
       })
 
@@ -135,16 +138,16 @@ const AdminBoardsRow = React.createClass({
           </a>
         </td>
         <td>
-          <img className="ui image small" src={this.props.board.img}></img>
+          <img className="ui image small" src={this.props.board.img} style={{ "height" : "144px" ,  "width" :"auto"}}></img>
         </td>
         <td>
-          { this.props.board.bio.slice(0,80) + "..." }
+          { this.props.board.bio.slice(0,40) + "..." }
         </td>
 
         <td className="collapsing">
           <a data-url={"edit/board/" + this.props.board.id}
-             onClick={ this.go }
-             style={{ "marginRight" : "8px" ,}}>
+            onClick={ this.go }
+            style={{ "marginRight" : "8px" ,}}>
             edit
           </a>
 
@@ -154,5 +157,144 @@ const AdminBoardsRow = React.createClass({
         </td>
       </tr>
     );
+  }
+});
+
+const EditBoard = React.createClass({
+  getInitialState () {
+    return({})
+  },
+
+  componentDidMount () {
+
+  },
+
+  updateState(e) {
+    var state = this.state;
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+    this.setState( state );
+  },
+
+  render () {
+    return (
+      <div className="ui container" style={{}}>
+        <h2>
+          Edit Board Member: { this.props.member.name }
+        </h2>
+        title: "Director" ,
+        name: "Don Ossey" ,
+        email: "don@capacitycommercial.com" ,
+        website: "http://capacitycommercial.com/" ,
+        company: "Capacity Commercial Group" ,
+        img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481681649/Board_DOssey_txxs3j.jpg" ,
+        bio : "Don "
+      </div>
+    )
+  }
+});
+
+const NewBoard = React.createClass({
+  getInitialState () {
+    return({})
+  },
+
+  componentDidMount () {
+
+  },
+
+  uploadWidget () {
+    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    function(error, result) {
+      if (result) {
+        this.setState({
+          img : result[0].secure_url
+        })
+      }
+    }.bind(this));
+  },
+
+  save () {
+    debugger
+    $.ajax({
+      url  : '/api/boards' ,
+      type : "POST" ,
+      data : { board: this.state } ,
+      success : function ( app_data , resp , obj ) {
+        this.props.parent.setState( app_data )
+        Backbone.history.navigate( 'admin' , { trigger : true } );
+      }.bind(this),
+      error : function ( app_data , resp , obj ) {
+        this.props.parent.setState( app_data )
+        Backbone.history.navigate( 'admin' , { trigger : true } );
+      }.bind(this)
+    });
+  },
+
+  update (e) {
+    var state = this.state;
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+    this.setState( state );
+  },
+
+  render () {
+    return (
+      <div className="ui container" style={{"padding" : "30px 20px" , "color" : "#262262"}}>
+        <h2>
+          New Board Member
+        </h2>
+
+        <form className="ui form" onSubmit={ this.save }>
+          <div className="field">
+            <label>Title</label>
+            <input type="text" data-field="title" onChange={ this.update } />
+          </div>
+
+          <div className="field">
+            <label>Name</label>
+            <input type="text" data-field="name" onChange={ this.update } />
+          </div>
+
+          <div className="field">
+            <label>Email</label>
+            <input type="email" data-field="email" onChange={ this.update } />
+          </div>
+
+          <div className="field">
+            <label>Company</label>
+            <input type="text" data-field="company" onChange={ this.update } />
+          </div>
+
+          <div className="field">
+            <label>Website</label>
+            <input type="text" data-field="website" onChange={ this.update } />
+          </div>
+
+          <div className="field">
+            <label>Bio</label>
+            <textarea data-field="bio" onChange={ this.update }></textarea>
+          </div>
+
+          <div className="field">
+            <label>Image Url</label>
+            <input
+              type="text"
+              data-field="img"
+              onChange={ this.update }
+              />
+            <div className="ui button blue mini"
+              style={{ "position" : "absolute" , "right" : "0px" , "bottom" : "148px" }}
+              onClick={ this.uploadWidget }
+              id="upload_widget_opener"
+              >
+              Upload
+            </div>
+          </div>
+
+          <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>
+            Submit
+          </button>
+        </form>
+      </div>
+    )
   }
 });

@@ -1,6 +1,6 @@
 module Api
   class BoardsController < ApplicationController
-    before_action :require_signed_in!, only: []
+    before_action :require_admin!
 
     def create
       @board = Board.new( board_params )
