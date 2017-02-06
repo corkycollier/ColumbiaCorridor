@@ -57,18 +57,6 @@ const EditProfile = React.createClass({
     this.setState( state );
   },
 
-  setCheckbox () {
-    if ( this.state.private ) {
-      this.setState({
-        private: false
-      })
-    } else {
-      this.setState({
-        private: true
-      })
-    }
-  },
-
   render () {
     return (
       <div className="ui container" style={{
@@ -93,13 +81,6 @@ const EditProfile = React.createClass({
               <div className="field">
                 <label>Password</label>
                 <input type="password" data-field="password" onChange={ this.updateState } defaultValue={this.state.password} minLength="6"  />
-              </div>
-
-              <div className="field">
-                <div className="ui checkbox"  onClick={ this.setCheckbox }>
-                  <input type="checkbox" tabIndex="0" className="hidden" />
-                  <label>Private <small>Information will not be shared on website directory.</small></label>
-                </div>
               </div>
 
               <div className="two fields">
@@ -237,18 +218,6 @@ const AdminEditProfile = React.createClass({
     this.setState( state );
   },
 
-  setCheckbox () {
-    if ( this.state.private ) {
-      this.setState({
-        private: false
-      })
-    } else {
-      this.setState({
-        private: true
-      })
-    }
-  },
-
   render () {
     var businessCodes = [
       "11: Agriculture, Forestry, Fishing and Hunting" ,
@@ -295,13 +264,6 @@ const AdminEditProfile = React.createClass({
               <div className="field">
                 <label>Password</label>
                 <input type="password" data-field="password" onChange={ this.updateState } defaultValue={this.state.password} minLength="6"  />
-              </div>
-
-              <div className="field">
-                <div className="ui checkbox"  onClick={ this.setCheckbox }>
-                  <input type="checkbox" tabIndex="0" className="hidden" />
-                  <label>Private <small>Information will not be shared on website directory.</small></label>
-                </div>
               </div>
 
               <div className="two fields">

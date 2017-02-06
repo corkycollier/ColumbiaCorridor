@@ -78,8 +78,12 @@ const router = Backbone.Router.extend({
   },
 
   archives () {
-    var page = <Archives parent={ this.parent } key="archives" /> ;
-    this.go( page )
+    if ( !this.parent.state.user ) {
+      this.home();
+    } else {
+      var page = <Archives parent={ this.parent } key="archives" /> ;
+      this.go( page )
+    }
   },
 
   mailingList () {
@@ -163,43 +167,54 @@ const router = Backbone.Router.extend({
   },
 
   editProfile () {
-    var page = <EditProfile parent={ this.parent } key="editProfile" /> ;
-    this.go( page )
+    if ( !this.parent.state.user ) {
+      this.home();
+    } else {
+      var page = <EditProfile parent={ this.parent } key="editProfile" /> ;
+      this.go( page )
+    }
   },
 
   makeNews () {
-    var pagepage = <MakeNews parent={ this.parent } key="makeNews" /> ;
-    this.go( pagepage )
+    var page = <MakeNews parent={ this.parent } key="makeNews" /> ;
+    this.go( page )
   },
 
   makeEvent () {
-    var id;
-    if (this.parent.state.user) {
-      id = this.parent.state.user.id
-    }
-
-    if ( id < 4 ) {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
       var page = <MakeEvent parent={ this.parent } key="makeEvent" /> ;
       this.go( page )
-    } else {
-      this.home();
     }
-
   },
 
   makeAd () {
-    var page = <MakeAd parent={ this.parent } key="makeAd" /> ;
-    this.go( page )
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <MakeAd parent={ this.parent } key="makeAd" /> ;
+      this.go( page )
+    }
   },
 
   members () {
-    var page = <MemberOnlyDirectory parent={ this.parent } key="members" /> ;
-    this.go( page )
+
+    if ( !this.parent.state.user ) {
+      this.home();
+    } else {
+      var page = <MemberOnlyDirectory parent={ this.parent } key="members" /> ;
+      this.go( page )
+    }
   },
 
   directory () {
-    var page = <Directory parent={ this.parent } key="directory" /> ;
-    this.go( page )
+    if (!this.parent.state.user) {
+      this.home();
+    } else {
+      var page = <Directory parent={ this.parent } key="directory" /> ;
+      this.go( page )
+    }
   },
 
   memberArea () {
@@ -212,16 +227,12 @@ const router = Backbone.Router.extend({
   },
 
   admin () {
-    var id;
-    if (this.parent.state.user) {
-      id = this.parent.state.user.id
-    }
 
-    if ( id < 4 ) {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
       var page = <Admin parent={ this.parent } key="admin" /> ;
       this.go( page );
-    } else {
-      this.home();
     }
 
   },
