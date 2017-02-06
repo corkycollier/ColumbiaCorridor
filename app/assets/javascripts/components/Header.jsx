@@ -130,7 +130,7 @@ const LoggedOutButtons = React.createClass({
   },
 
   signUp () {
-      window.location = "?#sign-up"
+      window.location = "?#register"
   },
 
   signIn () {
@@ -155,7 +155,7 @@ const LoggedOutButtons = React.createClass({
           onClick={this.signUp}
           style={{ "float" : "left" ,}}
           >
-          Sign Up
+          Register
         </a>
       </div>
     )

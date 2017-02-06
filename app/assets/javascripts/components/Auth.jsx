@@ -133,7 +133,7 @@ const SignUp = React.createClass({
     return (
       <div className="ui container" style={this.state.style}>
         <h1>
-          Sign Up
+          Register
         </h1>
 
         <form className="ui form" onSubmit={ this.signUp }>
