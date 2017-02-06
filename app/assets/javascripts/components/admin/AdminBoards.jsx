@@ -158,32 +158,105 @@ const AdminBoardsRow = React.createClass({
 
 const EditBoard = React.createClass({
   getInitialState () {
-    return({})
+    return( this.props.member || {} )
   },
 
   componentDidMount () {
-
   },
 
-  updateState(e) {
+  update (e) {
     var state = this.state;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
     this.setState( state );
   },
 
+  uploadWidget () {
+    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    function(error, result) {
+      if (result) {
+        var pic = result[0].secure_url;
+        this.setState({
+          img : pic
+        })
+      }
+    }.bind(this));
+  },
+
+  save () {
+    $.ajax({
+      url  : '/api/boards/' + this.state.id ,
+      type : "PATCH" ,
+      data : { board: this.state } ,
+      success : function ( app_data , resp , obj ) {
+        this.props.parent.setState( app_data )
+        Backbone.history.navigate( 'admin/board' , { trigger : true } );
+      }.bind(this),
+      error : function ( app_data , resp , obj ) {
+        this.props.parent.setState( app_data )
+        Backbone.history.navigate( 'admin/board' , { trigger : true } );
+      }.bind(this)
+    });
+  },
+
   render () {
     return (
-      <div className="ui container" style={{}}>
+      <div className="ui container" style={{"padding" : "30px 20px" , "color" : "#262262"}}>
         <h2>
-          Edit Board Member: { this.props.member.name }
+          Edit Board Member
         </h2>
-        title: "Director" ,
-        name: "Don Ossey" ,
-        email: "don@capacitycommercial.com" ,
-        website: "http://capacitycommercial.com/" ,
-        company: "Capacity Commercial Group" ,
-        img: "http://res.cloudinary.com/djjldnjz7/image/upload/v1481681649/Board_DOssey_txxs3j.jpg" ,
-        bio : "Don "
+
+        <form className="ui form" onSubmit={ this.save }>
+          <div className="field">
+            <label>Title</label>
+            <input type="text" data-field="title" onChange={ this.update } value={ this.state.title} />
+          </div>
+
+          <div className="field">
+            <label>Name</label>
+            <input type="text" data-field="name" onChange={ this.update } value={ this.state.name} />
+          </div>
+
+          <div className="field">
+            <label>Email</label>
+            <input type="email" data-field="email" onChange={ this.update } value={ this.state.email} />
+          </div>
+
+          <div className="field">
+            <label>Company</label>
+            <input type="text" data-field="company" onChange={ this.update } value={ this.state.company} />
+          </div>
+
+          <div className="field">
+            <label>Website</label>
+            <input type="text" data-field="website" onChange={ this.update } value={ this.state.website} />
+          </div>
+
+          <div className="field">
+            <label>Bio</label>
+            <textarea data-field="bio" onChange={ this.update } value={ this.state.website} ></textarea>
+          </div>
+
+          <div className="field">
+            <label>Image Url</label>
+            <input
+              type="text"
+              data-field="img"
+              onChange={ this.update }
+              value={ this.state.img}
+              />
+            <div className="ui button blue mini"
+              style={{ "position" : "absolute" , "right" : "0px" , "bottom" : "55px" }}
+              onClick={ this.uploadWidget }
+              id="upload_widget_opener"
+              >
+              Upload
+            </div>
+          </div>
+
+          <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>
+            Submit
+          </button>
+        </form>
       </div>
     )
   }
@@ -202,8 +275,9 @@ const NewBoard = React.createClass({
     cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
     function(error, result) {
       if (result) {
+        var pic = result[0].secure_url
         this.setState({
-          img : result[0].secure_url
+          img : pic
         })
       }
     }.bind(this));
@@ -277,7 +351,7 @@ const NewBoard = React.createClass({
               onChange={ this.update }
               />
             <div className="ui button blue mini"
-              style={{ "position" : "absolute" , "right" : "0px" , "bottom" : "148px" }}
+              style={{ "position" : "absolute" , "right" : "0px" , "bottom" : "55px" }}
               onClick={ this.uploadWidget }
               id="upload_widget_opener"
               >
