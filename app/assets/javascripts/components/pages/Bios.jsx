@@ -113,7 +113,7 @@ const StaffBio = React.createClass({
           </div>
         </div>
 
-        <div className="ui button mini left icon labeled" data-url="staff" onClick={this.go}>
+        <div className="ui button mini left icon labeled" data-url="staff" onClick={this.go} style={{ "margin" : "12px" , }}>
           <i className="left caret icon"></i>
           Back
         </div>
