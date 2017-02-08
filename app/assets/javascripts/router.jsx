@@ -20,13 +20,13 @@ const router = Backbone.Router.extend({
     "staff" : "staff" ,
     "events" : "events" ,
     "members" : "members" ,
-    "archives" : "archives" ,
     "resourcesfull-use" : "resourceFullUse" ,
     "groundwater" : "groundwater" ,
     "resources" : "resources" ,
     "join" : "join" ,
     "sponsor" : "sponsor" ,
     "membership" : "membership" ,
+    "archives" : "archives" ,
     "member-news" : "memberNews" ,
     "cca-news" : "ccaNews" ,
     "contact" : "contact" ,
@@ -47,6 +47,7 @@ const router = Backbone.Router.extend({
     "admin/news" : "adminNews" ,
     "admin/board" : "adminBoard" ,
     "admin/sponsors" : "adminSponsors" ,
+    "admin/archives" : "adminArchives" ,
     "admin" : "admin" ,
     "make-event":"makeEvent",
     "make-ad":"page",
@@ -292,6 +293,16 @@ const router = Backbone.Router.extend({
       this.home();
     } else {
       var page = <AdminAds parent={ this.parent } key="adminSponsors" /> ;
+      this.go( page );
+    }
+  },
+
+
+  adminArchives () {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <AdminArchives parent={ this.parent } key="adminArchives" /> ;
       this.go( page );
     }
   },

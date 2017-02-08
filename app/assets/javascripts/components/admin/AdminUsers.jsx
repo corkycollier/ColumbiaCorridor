@@ -70,10 +70,6 @@ const AdminUsers = React.createClass({
           <tbody>
             {
               this.state.members.map( (el) => {
-                var green;
-                if (el.role == "Admin" ) {
-                  green = "green"
-                }
                 return(
                   <tr key={ "adminUsers" + el.id }>
                     <td>
@@ -123,16 +119,12 @@ const AdminUsers = React.createClass({
                         delete
                       </a>
 
-                      <div className={"ui circular label button mini compact " + green } style={{ "position" : "relative" , "bottom" : "2px" , "left" : "4px"}} onClick={this.toggleAdmin}>
-                        a
-                      </div>
                     </td>
                   </tr>
                 )
               })
             }
           </tbody>
-
         </table>
 
 

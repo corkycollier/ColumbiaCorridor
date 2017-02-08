@@ -1,5 +1,5 @@
 
-const AdminStaffs = React.createClass({
+const AdminArchives = React.createClass({
 
   componentDidMount() {
     $('table').tablesort();
@@ -35,113 +35,57 @@ const AdminStaffs = React.createClass({
   },
 
   render() {
-
     return (
-      <div className="" style={{
-        "color" : "#262262" ,
-        "marginBottom" : "40px" ,
-      }}>
-        <h2 className="ui header">
-          Staff
+      <div className="ui container" style={{
+          "color" : "#262262" ,
+          "padding" : "30px 20px" ,
+        }}>
+
+        <h2>
+          Archives
         </h2>
-        <table className="ui table" style={{ "color" : "#262262" , }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Website</th>
-              <th className="collapsing">Action</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            {
+        <div >
+          <table className="ui table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Title</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                this.state.archives.map(function(el, idx) {
+                  return (
+                    <tr className="card" key={ "go" + idx }>
+                      <td>
+                        <i className={el.icon + " icon"}></i>
+                      </td>
 
-              this.props.parent.state.ads.map( (el) => {
-                return(
-                  <AdminAdsRow
-                    key={'aar' + el.id}
-                    parent={ this.props.parent }
-                    ad={ el }
-                    mom={ this }
-                    />
+                      <td>
+                        <a href={ el.href } target="_blank">
+                          { el.title }
+                        </a>
+                      </td>
 
-                )
-              })
-            }
-          </tbody>
+                      <td className="collapsing">
+                        <a data-id={el.id} style={{ "marginRight" : "8px" }} onClick={ this.edit } >
+                          edit
+                        </a>
 
-          <tfoot>
-            <tr>
-              <th colSpan="6">
-                <div className="ui button blue" onClick={ this.makeAd }>
-                  New Sponsor
-                </div>
-              </th>
-            </tr>
-          </tfoot>
-        </table>
+                        <a data-id={el.id} onClick={ this.delete }>
+                          delete
+                        </a>
+                      </td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
+          </table>
+        </div>
       </div>
-    );
-  }
-});
-
-
-const AdminAdsRow = React.createClass({
-
-  delete (e) {
-    var sure = confirm('Are you sure?');
-
-    if (sure) {
-      $.ajax({
-        url: '/api/sponsors/' + e.currentTarget.dataset.id ,
-        type: 'DELETE' ,
-        success: function( app_data , resp , obj ) {
-          this.props.parent.setState(app_data)
-          this.props.mom.setState({
-            ads: app_data.ads
-          })
-        }.bind(this), error: function ( app_data , resp , obj ) {
-          alert('There was an erorr.')
-        }.bind(this)
-      })
-
-    }
-  },
-
-  edit () {
-    Backbone.history.navigate( 'edit/sponsor/' + this.props.ad.id , { trigger : true } )
-  },
-
-  render() {
-
-    return (
-      <tr>
-
-        <td >
-          { this.props.ad.name }
-        </td>
-
-        <td>
-          <img className="ui image small" src={ this.props.ad.image_url } alt={ this.props.ad.name }/>
-
-        </td>
-
-        <td >
-          { this.props.ad.link }
-        </td>
-
-        <td className="collapsing">
-
-          <a data-id={this.props.ad.id} onClick={ this.edit } style={{ "marginRight" : "8px" ,}}>
-            edit
-          </a>
-
-          <a data-id={this.props.ad.id} onClick={ this.delete }>
-            delete
-          </a>
-        </td>
-      </tr>
-    );
+    )
   }
 });

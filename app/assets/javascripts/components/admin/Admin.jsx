@@ -25,6 +25,10 @@ const Admin = React.createClass({
         <a href="#admin/board" className="ui button orange large" style={{ "margin" : "8px" , }}>
           Board
         </a>
+
+        <a href="#admin/archives" className="ui button yellow large" style={{ "margin" : "8px" , }}>
+          Archives
+        </a>
       </div>
     )
   }

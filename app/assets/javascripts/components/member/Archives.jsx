@@ -36,8 +36,6 @@ const Archives = React.createClass({
         desc: "Mackenzie" ,
         icon: "pdf file outline " ,
       } ,
-
-
       {
         title: "Freight Master Plan" ,
         href: "http://res.cloudinary.com/djjldnjz7/image/upload/v1485426601/Portland_Freight_Master_Plan_xwjulx.pdf" ,
@@ -128,8 +126,6 @@ const Archives = React.createClass({
         desc: "Center For Public Service" ,
         icon: "pdf file outline " ,
       } ,
-
-
     ]
 
     return({
@@ -145,37 +141,53 @@ const Archives = React.createClass({
   render () {
     return (
       <div className="ui container" style={{
-        "color" : "#262262" ,
-        "padding" : "30px 20px" ,
-      }}>
+          "color" : "#262262" ,
+          "padding" : "30px 20px" ,
+        }}>
 
         <h2>
           Archives
         </h2>
 
         <div >
-          <div className="ui cards centered" style={{ "padding" : "2px" }}>
+          <table className="ui table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Title</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                this.state.archives.map(function(el, idx) {
+                  return (
+                    <tr className="card" key={ "go" + idx }>
+                      <td>
+                        <i className={el.icon + " icon"}></i>
+                      </td>
 
-            {
-              this.state.archives.map(function(el, idx) {
-                return (
-                  <div className="card" key={ "go" + idx }>
-                    <i className={el.icon + "icon"} style={{ "position" : "absolute" , "fontSize" : "33px" , "left" : "12px" , "top" : "23px" , "color" : "grey" }}></i>
-                    <div className="content" style={{"paddingLeft" : "66px"}}>
-                      <div className="header" style={{ "height" : "47px" , "overflowY" : "scroll"}}>
+                      <td>
                         <a href={ el.href } target="_blank">
                           { el.title }
                         </a>
-                      </div>
-                      <div className="description">
-                        { el.desc }
-                      </div>
-                    </div>
-                  </div>
-                )
-              })
-            }
-          </div>
+                      </td>
+
+                      <td className="collapsing">
+                        <a data-id={el.id} style={{ "marginRight" : "8px" }} onClick={ this.edit } >
+                          edit
+                        </a>
+
+                        <a data-id={el.id} onClick={ this.delete }>
+                          delete
+                        </a>
+                      </td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     )
