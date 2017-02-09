@@ -17,6 +17,7 @@ const Archives = React.createClass({
                 <th className="collapsing">Type</th>
                 <th>Title</th>
                 <th>Category</th>
+                <th>Year</th>
               </tr>
             </thead>
 
@@ -38,6 +39,11 @@ const Archives = React.createClass({
                       <td>
                         { el.category }
                       </td>
+
+                      <td className="collapsing">
+                        { el.year }
+                      </td>
+
                     </tr>
                   )
                 })

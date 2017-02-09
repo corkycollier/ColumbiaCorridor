@@ -7,10 +7,6 @@ const NewArchive = React.createClass({
   },
   componentDidMount() {
     $('.ui.dropdown').dropdown();
-
-    $('.ui.checkbox')
-    .checkbox()
-    ;
   },
 
   save () {
@@ -75,9 +71,14 @@ const NewArchive = React.createClass({
                 </option>
               </select>
             </div>
-            <div className="fourteen wide field">
+            <div className="twelve wide field">
               <label>Title</label>
               <input type="text" data-field="title" onChange={ this.update } />
+            </div>
+
+            <div className="two wide field">
+              <label>Year</label>
+              <input type="text" data-field="year" onChange={ this.update } />
             </div>
           </div>
 
@@ -88,7 +89,7 @@ const NewArchive = React.createClass({
 
           <div className="field" style={{ "position" : "relative" , }}>
             <label>Url</label>
-            <input type="text" data-field="url" onChange={ this.update } value={this.state.url}/>
+            <input type="text" data-field="url" onChange={ this.update } value={this.state.url} />
             <div className="ui button blue mini"
               style={{ "position" : "absolute" , "right" : "1px" , "bottom" : "5px" }}
               onClick={ this.uploadWidget }
@@ -179,9 +180,14 @@ const EditArchive = React.createClass({
               </select>
             </div>
 
-            <div className="fourteen wide field">
+            <div className="twelve wide field">
               <label>Title</label>
               <input type="text" data-field="title" onChange={ this.update } defaultValue={this.state.title} />
+            </div>
+
+            <div className="two wide field">
+              <label>Year</label>
+              <input type="text" data-field="year" onChange={ this.update } defaultValue={this.state.year} />
             </div>
           </div>
 
@@ -206,6 +212,8 @@ const EditArchive = React.createClass({
             Submit
           </button>
         </form>
+
+
       </div>
     );
   }

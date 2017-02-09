@@ -51,6 +51,7 @@ const AdminArchives = React.createClass({
                 <th className="collapsing">Type</th>
                 <th>Title</th>
                 <th>Category</th>
+                <th>Year</th>
                 <th></th>
               </tr>
             </thead>
@@ -71,6 +72,10 @@ const AdminArchives = React.createClass({
 
                       <td className="collapsing">
                         { el.category }
+                      </td>
+
+                      <td className="collapsing">
+                        { el.year }
                       </td>
 
 
