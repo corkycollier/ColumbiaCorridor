@@ -48,7 +48,6 @@ class ApplicationController < ActionController::Base
   end
 
   def app_data
-    boards = sort_board
 
     {
       user: current_user ,
@@ -57,7 +56,7 @@ class ApplicationController < ActionController::Base
       events: Event.all.order(date: :asc).collect{ |event| event.safe_show } ,
       ads: Ad.all.collect{ |ad| ad.safe_show } ,
       staff: Staff.all.collect{ |staff| staff.safe_show } ,
-      board:  boards,
+      board:  Board.all.collect{ |board| board.safe_show } ,
       archives: Archive.all.collect{ |archive| archive.safe_show } ,
     }
   end
