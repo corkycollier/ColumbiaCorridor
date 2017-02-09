@@ -114,7 +114,7 @@ const Staff = React.createClass({
               <div className="four wide column" data-url="staff/2" onClick={ this.go }>
                 <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
                 <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
-                  <b>Office Manger</b> - Marissa King
+                  <b>Office Manager</b> - Marissa King
                   </p>
 
                   <div>

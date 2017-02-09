@@ -48,6 +48,7 @@ class ApplicationController < ActionController::Base
   end
 
   def app_data
+    boards = sort_board
 
     {
       user: current_user ,
@@ -56,19 +57,69 @@ class ApplicationController < ActionController::Base
       events: Event.all.order(date: :asc).collect{ |event| event.safe_show } ,
       ads: Ad.all.collect{ |ad| ad.safe_show } ,
       staff: Staff.all.collect{ |staff| staff.safe_show } ,
-      board: Board.all.collect{ |board| board.safe_show } ,
+      board:  boards,
       archives: Archive.all.collect{ |archive| archive.safe_show } ,
     }
   end
 
-  def order_board
+  def sort_board
     boards = []
 
-    Board.all.each do |board|
-      boards << board
+    Board.all.each do |member|
+      boards << member
     end
 
-    merge_sort boards
+    boards.sort! do |m1, m2|
+      m1name = m1.name.split(" ")[1] || ""
+      m2name = m2.name.split(" ")[1] || ""
+
+      if m1name < m2name
+        1
+      elsif m1name > m2name
+        -1
+      else
+        0
+      end
+    end
+
+    execs = []
+    boards.each_with_index do |board, idx|
+      title = board['title']
+      execs << board if title == "President" || title == "Vice-President" || title == "Treasurer" || title == "Secretary"
+      boards.delete_at(idx)
+    end
+
+    new_exec = []
+
+    execs.each do |member|
+      title = member['title']
+      if title == "President"
+        new_exec << member
+      end
+    end
+
+    execs.each do |member|
+      title = member['title']
+      if title == "Vice-President"
+        new_exec << member
+      end
+    end
+
+    execs.each do |member|
+      title = member['title']
+      if title == "Treasurer"
+        new_exec << member
+      end
+    end
+
+    execs.each do |member|
+      title = member['title']
+      if title == "Secretary"
+        new_exec << member
+      end
+    end
+
+    new_exec.concat(boards)
   end
 
   def merge_sort arr
