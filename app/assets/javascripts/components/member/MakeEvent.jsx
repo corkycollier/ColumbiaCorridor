@@ -63,13 +63,6 @@ const MakeEvent = React.createClass({
             <input type="date" data-field="date" onChange={ this.updateState } />
           </div>
 
-          <div className="field" style={{ "display" : "none" ,}}>
-            <div className="ui checkbox" data-field="allDay" onChange={ this.updateState }>
-              <input type="checkbox" tabIndex="0" className="hidden" />
-              <label>All day</label>
-            </div>
-          </div>
-
           <div className="two fields">
             <div className="field">
               <label>Start</label>
@@ -119,7 +112,7 @@ const MakeEvent = React.createClass({
 });
 
 
-const EditEventAdmin = React.createClass({
+const EditEvent = React.createClass({
   getInitialState () {
 
     return(this.props.event || {})

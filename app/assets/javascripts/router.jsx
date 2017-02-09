@@ -381,7 +381,7 @@ const router = Backbone.Router.extend({
     if ( this.parent.state.user.role != "Admin" ) {
       this.home();
     } else {
-      var page = <EditEventAdmin
+      var page = <EditEvent
         parent={ this.parent }
         event={ event }
         key="edit-event"
