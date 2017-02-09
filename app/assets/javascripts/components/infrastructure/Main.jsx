@@ -6,7 +6,6 @@ const Main = React.createClass({
   componentDidMount () {
     this.initRouter();
     this.customMethods();
-    this.orderBoard();
     this.setStaff();
   },
 
@@ -54,44 +53,6 @@ const Main = React.createClass({
         <Footer parent={ this } />
       </div>
     )
-  },
-
-  orderBoard () {
-    var board = this.state.board.sort(function(a, b) {
-
-      if (a.title == "President") {
-        return 1;
-      }
-
-      if (a.title == "Vice-President") {
-        return 1;
-      }
-
-      if (a.title == "Treasurer") {
-        return 1;
-      }
-
-      if (a.title == "Secretary") {
-        return 1;
-      }
-
-      var nameA = a.name.split(" ")[1]; // ignore upper and lowercase
-      var nameB = b.name.split(" ")[1]; // ignore upper and lowercase
-
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-
-      // names must be equal
-      return 0;
-    });
-
-    this.setState({
-      board: board
-    })
   },
 
   setStaff () {

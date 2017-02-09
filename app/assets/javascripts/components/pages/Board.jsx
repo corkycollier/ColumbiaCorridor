@@ -11,6 +11,7 @@ const Board = React.createClass({
   },
 
   render () {
+
     return (
       <div>
         <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" }}>

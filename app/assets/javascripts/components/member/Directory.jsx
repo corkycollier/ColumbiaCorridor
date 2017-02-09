@@ -51,17 +51,20 @@ const Directory = React.createClass({
                       </td>
 
                       <td>
-                        { el.email }
+                        <a href={ "mailto:" + el.email }>
+                          { el.email }
+                        </a>
                       </td>
 
                       <td>
-                        { el.phone }
+                        <a href={ "tel:" + el.phone }>
+                          { el.phone }
+                        </a>
                       </td>
 
 
-
                       <td className="collapsing">
-                        <a href={el.company_website} target="_blank" style={{ "color" : "#262262" , }}>
+                        <a href={el.company_website} target="_blank" >
                           { el.company_name }
                         </a>
 
@@ -76,9 +79,9 @@ const Directory = React.createClass({
 
               })
             }
-            </tbody>
-          </table>
-        </div>
-      )
-    }
-  });
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+});

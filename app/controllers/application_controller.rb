@@ -48,6 +48,7 @@ class ApplicationController < ActionController::Base
   end
 
   def app_data
+
     {
       user: current_user ,
       members: User.all.collect{ |user| user.safe_show } ,
@@ -58,5 +59,45 @@ class ApplicationController < ActionController::Base
       board: Board.all.collect{ |board| board.safe_show } ,
       archives: Archive.all.collect{ |archive| archive.safe_show } ,
     }
+  end
+
+  def order_board
+    boards = []
+
+    Board.all.each do |board|
+      boards << board
+    end
+
+    merge_sort boards
+  end
+
+  def merge_sort arr
+    return arr if arr.length <= 1 # base case
+    half = (arr.length / 2) # idx @ middle of array
+    left = arr[0...half]
+    right = arr[half..(arr.length - 1)]
+    merge(merge_sort(left), merge_sort(right))
+  end
+
+  def merge left, right
+    sorted = []
+
+    while !left.empty? && !right.empty?
+      if left[0]["title"] == "President"
+        sorted.push left.shift
+      elsif left[0]["title"] == "Vice-President"
+        sorted.push left.shift
+      elsif left[0]["title"] == "Treasurer"
+        sorted.push left.shift
+      elsif left[0]["title"] == "Secretary"
+        sorted.push left.shift
+      elsif left[0]["name"].split(" ")[1] || "" <= right[0]["name"].split(" ")[1] || ""
+        sorted.push left.shift
+      else
+        sorted.push right.shift
+      end
+    end
+
+    sorted.concat(left).concat(right)
   end
 end
