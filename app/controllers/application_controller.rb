@@ -56,6 +56,7 @@ class ApplicationController < ActionController::Base
       ads: Ad.all.collect{ |ad| ad.safe_show } ,
       staff: Staff.all.collect{ |staff| staff.safe_show } ,
       board: Board.all.collect{ |board| board.safe_show } ,
+      archives: Archive.all.collect{ |archive| archive.safe_show } ,
     }
   end
 end

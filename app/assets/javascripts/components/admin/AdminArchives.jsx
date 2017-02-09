@@ -49,14 +49,14 @@ const AdminArchives = React.createClass({
           <table className="ui table">
             <thead>
               <tr>
-                <th>Type</th>
+                <th className="collapsing">Type</th>
                 <th>Title</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               {
-                this.state.archives.map(function(el, idx) {
+                this.props.parent.state.archives.map(function(el, idx) {
                   return (
                     <tr className="card" key={ "go" + idx }>
                       <td>
