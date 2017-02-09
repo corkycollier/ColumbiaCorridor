@@ -1,4 +1,7 @@
 const Archives = React.createClass({
+  componentDidMount() {
+    $('table').tablesort();
+  },
   render () {
     return (
       <div className="ui container" style={{
