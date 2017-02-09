@@ -19,5 +19,7 @@ Rails.application.routes.draw do
     resources :sponsors
     resources :boards
     resources :staffs
+    resources :archives
+
   end
 end

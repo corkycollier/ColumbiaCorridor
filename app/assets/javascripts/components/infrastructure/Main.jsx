@@ -8,7 +8,6 @@ const Main = React.createClass({
     this.customMethods();
     this.orderBoard();
     this.setStaff();
-    this.setArchives();
   },
 
   save () {

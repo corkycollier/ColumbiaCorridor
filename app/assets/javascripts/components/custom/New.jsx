@@ -1,5 +1,5 @@
 
-const AdminArchives = React.createClass({
+const NewComponent = React.createClass({
 
   componentDidMount() {
     $('table').tablesort();
@@ -10,14 +10,19 @@ const AdminArchives = React.createClass({
 
     if (sure) {
       $.ajax({
-        url: '/api/archives/' + e.currentTarget.dataset.id ,
+        url: '/api/sponsors/' + e.currentTarget.dataset.id ,
         type: 'DELETE' ,
         success: function( app_data , resp , obj ) {
-          this.props.parent.setState( app_data );
+          this.props.parent.setState(app_data)
+          this.props.mom.setState({
+            news: app_data.news
+          })
         }.bind(this), error: function ( app_data , resp , obj ) {
-          this.props.parent.setState( app_data );
+          this.props.parent.setState( app_data )
+          Backbone.history.navigate( 'admin' , { trigger : true } );
         }.bind(this)
       })
+
     }
   },
 
@@ -40,17 +45,12 @@ const AdminArchives = React.createClass({
           Archives
         </h2>
 
-        <a href="#make-archive" className="ui button small blue" style={{ "marginBottom" : "12px" , }}>
-          New
-        </a>
-
-        <div>
+        <div >
           <table className="ui table">
             <thead>
               <tr>
                 <th className="collapsing">Type</th>
                 <th>Title</th>
-                <th>Category</th>
                 <th></th>
               </tr>
             </thead>
@@ -60,22 +60,17 @@ const AdminArchives = React.createClass({
                   return (
                     <tr className="card" key={ "go" + idx }>
                       <td>
-                        <i className={el.doc_type + " icon"}></i>
+                        <i className={el.icon + " icon"}></i>
                       </td>
 
                       <td>
-                        <a href={ el.url } target="_blank">
+                        <a href={ el.href } target="_blank">
                           { el.title }
                         </a>
                       </td>
 
                       <td className="collapsing">
-                        { el.category }
-                      </td>
-
-
-                      <td className="collapsing">
-                        <a href={"#edit/archive/" + el.id} style={{ "marginRight" : "8px" }} >
+                        <a data-id={el.id} style={{ "marginRight" : "8px" }} onClick={ this.edit } >
                           edit
                         </a>
 
@@ -85,7 +80,7 @@ const AdminArchives = React.createClass({
                       </td>
                     </tr>
                   )
-                }.bind(this))
+                })
               }
             </tbody>
           </table>

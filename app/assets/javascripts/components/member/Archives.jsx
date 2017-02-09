@@ -16,7 +16,7 @@ const Archives = React.createClass({
               <tr>
                 <th className="collapsing">Type</th>
                 <th>Title</th>
-                <th></th>
+                <th>Category</th>
               </tr>
             </thead>
 
@@ -26,13 +26,17 @@ const Archives = React.createClass({
                   return (
                     <tr className="card" key={ "go" + idx }>
                       <td>
-                        <i className={el.icon + " icon"}></i>
+                        <i className={el.doc_type + " icon"}></i>
                       </td>
 
                       <td>
-                        <a href={ el.href } target="_blank">
+                        <a href={ el.url } target="_blank">
                           { el.title }
                         </a>
+                      </td>
+
+                      <td>
+                        { el.category }
                       </td>
                     </tr>
                   )

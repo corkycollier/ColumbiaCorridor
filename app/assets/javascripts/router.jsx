@@ -50,14 +50,15 @@ const router = Backbone.Router.extend({
     "admin/archives" : "adminArchives" ,
     "admin" : "admin" ,
     "make-event":"makeEvent",
+    "make-archive":"makeArchive",
     "make-ad":"page",
-    "edit/user/:id":"editUserId",
-    "edit/news/:id":"editNewsId",
-    "edit/event/:id":"editEventId",
+    "edit/user/:id":"editUser",
+    "edit/news/:id":"editNews",
+    "edit/event/:id":"editEvent",
     "edit/board/:id":"editBoard",
+    "edit/archive/:id":"editArchive",
     "new-sponsor":"newSponsor",
     "edit/sponsor/:id":"editSponsor",
-
   },
 
   home () {
@@ -202,6 +203,15 @@ const router = Backbone.Router.extend({
     }
   },
 
+  makeArchive () {
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <NewArchive parent={ this.parent } key="makeArchive" /> ;
+      this.go( page )
+    }
+  },
+
   makeAd () {
     if ( this.parent.state.user.role != "Admin" ) {
       this.home();
@@ -297,7 +307,6 @@ const router = Backbone.Router.extend({
     }
   },
 
-
   adminArchives () {
     if ( this.parent.state.user.role != "Admin" ) {
       this.home();
@@ -318,7 +327,7 @@ const router = Backbone.Router.extend({
   },
 
 
-  editUserId ( id ) {
+  editUser ( id ) {
     var user;
     this.parent.state.members.forEach(function(el) {
       if (el.id == id ) {
@@ -340,7 +349,7 @@ const router = Backbone.Router.extend({
 
   },
 
-  editNewsId ( id ) {
+  editNews ( id ) {
     var news;
     this.parent.state.news.forEach(function(el) {
       if (el.id == id ) {
@@ -361,7 +370,7 @@ const router = Backbone.Router.extend({
 
   },
 
-  editEventId ( id ) {
+  editEvent ( id ) {
     var event;
     this.parent.state.events.forEach(function(el) {
       if (el.id == id ) {
@@ -376,6 +385,27 @@ const router = Backbone.Router.extend({
         parent={ this.parent }
         event={ event }
         key="edit-event"
+        /> ;
+      this.go( page )
+    }
+
+  },
+
+  editArchive ( id ) {
+    var archive;
+    this.parent.state.archives.forEach(function(el) {
+      if (el.id == id ) {
+        archive = el
+      }
+    });
+
+    if ( this.parent.state.user.role != "Admin" ) {
+      this.home();
+    } else {
+      var page = <EditArchive
+        parent={ this.parent }
+        archive={ archive }
+        key="edit-archive"
         /> ;
       this.go( page )
     }
