@@ -21,6 +21,9 @@ gem 'constantcontact', '~> 2.2.0'
 gem "wysiwyg-rails"
 gem 'trumbowyg_rails'
 gem "cloudinary"
+gem 'jquery-ui-rails'
+gem 'sendgrid-ruby'
+gem 'mail'
 
 group :development, :test do
   gem 'byebug'

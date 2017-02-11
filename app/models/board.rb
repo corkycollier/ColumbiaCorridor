@@ -15,4 +15,20 @@ class Board < ActiveRecord::Base
     self.attributes
   end
 
+  def self.safe_order
+    board = Board.all.collect {|board| board}
+    board.sort_by! do |board|
+      if board.title == "President"
+        "zzzzzzzzz"
+      elsif board.title == "Vice-President"
+        "zzzzzzzzy"
+      elsif board.title == "Treasurer"
+        "zzzzzzzzw"
+      elsif board.title == "Secretary"
+        "zzzzzzzzv"
+      else
+        board.name.split(" ")[1] || ""
+      end
+    end.reverse
+  end
 end

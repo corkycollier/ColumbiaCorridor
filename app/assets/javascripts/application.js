@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require react
+//= require jquery-ui
 //= require react_ujs
 //= require semantic-ui
 //= require tablesort

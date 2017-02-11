@@ -122,8 +122,7 @@ const AdminBoardsRow = React.createClass({
   render() {
 
     return (
-      <tr>
-
+      <tr id={ this.props.board.id }>
         <td>
           {this.props.board.title}
         </td>
