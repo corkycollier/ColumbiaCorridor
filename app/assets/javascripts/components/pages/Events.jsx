@@ -1,28 +1,34 @@
 const Events = React.createClass({
   getInitialState () {
     return ({
+      first : true,
       filter : "",
       events : [].concat(this.props.parent.state.events),
+      helper_events: []
     })
+
   },
 
   componentDidMount () {
     setTimeout(this.fullCalendar , 0);
     setTimeout(this.filter , 0);
-
   },
 
   fullCalendar () {
-
     $('#calendar').fullCalendar({
       eventClick: this.clickEvent
     });
 
     $('.fc-button').click(function(){
       this.setState({
-        filter: ""
+        filter: "" ,
+        first : true,
       })
-      this.filter()
+
+      setTimeout(function() {
+        this.filter()
+      }.bind(this), 0)
+
     }.bind(this))
   },
 
@@ -32,9 +38,7 @@ const Events = React.createClass({
   },
 
   filter () {
-
     var events = []
-
     this.state.events.forEach(function(el) {
 
       if (el['start'].length < 8) {
@@ -51,29 +55,34 @@ const Events = React.createClass({
         case "Breakfast Forums":
         el['backgroundColor'] = "#F2711C" ;
         el['borderColor'] = "#F2711C" ;
+        el['color'] = "orange" ;
         break;
 
         case "Special Events":
         el['backgroundColor'] = "#FBBD08" ;
         el['borderColor'] = "#FBBD08" ;
+        el['color'] = "yellow" ;
 
         break;
 
-        case "Lunch w/ leaders":
+        case "Lunch w/ Leaders":
         el['backgroundColor'] = "#6435C9" ;
         el['borderColor'] = "#6435C9" ;
+        el['color'] = "violet" ;
 
         break;
 
         case "ResourceFULL Use Workshops":
         el['backgroundColor'] = "#db2b2b" ;
         el['borderColor'] = "#db2b2b" ;
+        el['color'] = "red" ;
 
         break;
 
         case "Tours & Member Exchanges":
         el['backgroundColor'] = "#a66941" ;
         el['borderColor'] = "#a66941" ;
+        el['color'] = "brown" ;
 
         break;
         default:
@@ -85,9 +94,19 @@ const Events = React.createClass({
 
     }.bind(this))
 
-    if (events.length > 0) {
-      $('#calendar').fullCalendar('renderEvents' , events ) ;
+    $('#calendar').fullCalendar('renderEvents' , events ) ;
+
+    if ( !this.state.first ) {
+      this.setState({
+        helper_events: events
+      })
     }
+
+    setTimeout(function() {
+      this.setState({
+        first: false
+      })
+    }.bind(this), 0)
   },
 
   updateFilter (e) {
@@ -98,6 +117,88 @@ const Events = React.createClass({
     })
 
     setTimeout(this.filter, 0)
+  },
+
+  helper_events () {
+    if (this.state.helper_events.length < 1 ) {
+      return
+    } else {
+      return (
+        <div>
+          <div className="ui clearing divider">
+          </div>
+
+          {
+            this.state.helper_events.map(function(el) {
+
+              var dateString = el.date.slice(5, 7) + "/" + el.date.slice(8) + "/" + el.date.slice(0, 4);
+              if (dateString[0] == "0") {
+                dateString = dateString.slice(1);
+              }
+
+              var startString = el.start;
+
+              if (startString[0] == "0") {
+                startString = startString.slice(1);
+              }
+              if ( parseInt(startString[0]) < 12 ) {
+                startString += " AM"
+              } else {
+                startString += " PM"
+              }
+
+              startString[0] = parseInt(startString[0]) % 12
+
+
+              var endString = el.end;
+
+              if (endString[0] == "0") {
+                endString = endString.slice(1);
+              }
+              if ( parseInt(endString[0]) < 12 ) {
+                endString += " AM"
+              } else {
+                endString += " PM"
+              }
+
+              endString[0] = parseInt(endString[0]) % 12
+
+              return(
+                <div className={"ui segment ui grid " + el.color } key={"event" + el.id}>
+                  <div className="eight wide column">
+                    <h3><a href={"#event/" + el.id} style={{ "color" : "#262262" , "letterSpacing" : "1px" }}>
+                      { el.title }
+                    </a></h3>
+                  </div>
+
+                  <div className="eight wide column" style={{ "textAlign" : "right" , }}>
+                    <b>
+                      {dateString}
+                    </b> - {el.location}
+                  </div>
+
+
+                  <div className="ui clearing divider" style={{
+                      "display" : "none" ,
+                      "width" : "98%" ,
+                      "left" : "1%" ,
+                      "position" : "relative" ,
+                      "margin": "-11px 0px" ,
+                    }}>
+                  </div>
+
+
+                </div>
+              )
+            })
+          }
+
+          <div className="ui clearing divider">
+          </div>
+        </div>
+      )
+    }
+
   },
 
   render () {
@@ -135,7 +236,14 @@ const Events = React.createClass({
           <b>All</b>
         </div>
 
-        <div style={{ "width" : "100%" , "height" : "4px"}}></div>
+        <div style={{ "width" : "100%" , "height" : "4px"}}>
+
+        </div>
+
+        {
+          this.helper_events()
+        }
+
         <div id="calendar" >
         </div>
       </div>

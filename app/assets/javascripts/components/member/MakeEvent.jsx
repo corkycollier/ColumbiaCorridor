@@ -92,7 +92,7 @@ const MakeEvent = React.createClass({
               <option value=""></option>
               <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>
-              <option value="Lunch w/ leaders">Lunch w/ leaders</option>
+              <option value="Lunch w/ Leaders">Lunch w/ Leaders</option>
               <option value="ResourceFULL Use Workshops">ResourceFULL Use Workshops</option>
               <option value="Tours & Member Exchanges">Tours & Member Exchanges</option>
             </select>
@@ -217,7 +217,7 @@ const EditEvent = React.createClass({
               <option value=""></option>
               <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>
-              <option value="Lunch w/ leaders">Lunch w/ leaders</option>
+              <option value="Lunch w/ Leaders">Lunch w/ Leaders</option>
               <option value="ResourceFULL Use Workshops">ResourceFULL Use Workshops</option>
               <option value="Tours & Member Exchanges">Tours & Member Exchanges</option>
             </select>
