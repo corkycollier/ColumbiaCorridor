@@ -7,6 +7,10 @@ const AdminNews = React.createClass({
     })
   },
 
+  componentDidMount() {
+    $('table').tablesort();
+  },
+
   goToMakeNew () {
     Backbone.history.navigate('make-news', { trigger : true } )
   },
@@ -33,6 +37,7 @@ const AdminNews = React.createClass({
           <thead>
             <tr>
               <th>Title</th>
+              <th className="collapsing">Author</th>
               <th className="collapsing">Action</th>
             </tr>
           </thead>
@@ -108,11 +113,17 @@ const AdminNewsRow = React.createClass({
     return (
       <tr>
 
-        <td onClick={ this.goToNews }>
+        <td>
+          <a href={"#news/" + this.props.news.id} >
           { this.props.news.title }
+          </a>
         </td>
 
-        <td >
+        <td className="collapsing">
+          { this.props.news.author }
+        </td>
+
+        <td className="collapsing">
           <a
             data-id={this.props.news.id}
             style={{ "marginRight" : "8px" }}

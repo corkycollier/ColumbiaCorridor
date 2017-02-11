@@ -6,6 +6,10 @@ const AdminEvents = React.createClass({
     })
   },
 
+  componentDidMount() {
+    $('table').tablesort();
+  },
+
   render() {
     return (
       <div className="ui container" style={{
@@ -29,8 +33,10 @@ const AdminEvents = React.createClass({
               <tr>
                 <th>Title</th>
                 <th>Date</th>
-                <th className="collapsing">Start</th>
+                <th>Start</th>
                 <th>End</th>
+                <th>Location</th>
+                <th>Event type</th>
                 <th className="collapsing">Action</th>
               </tr>
             </thead>
@@ -80,27 +86,67 @@ const AdminEventsRow = React.createClass({
     }
   },
 
-  goToEvent () {
-    Backbone.history.navigate('event/' + this.props.event.id , {trigger : true })
-  },
 
   render() {
+    var dateString = this.props.event.date.slice(5, 7) + "/" + this.props.event.date.slice(8) + "/" + this.props.event.date.slice(0, 4);
+    if (dateString[0] == "0") {
+      dateString = dateString.slice(1);
+    }
+
+    var startString = this.props.event.start;
+
+    if (startString[0] == "0") {
+      startString = startString.slice(1);
+    }
+    if ( parseInt(startString[0]) < 12 ) {
+      startString += " AM"
+    } else {
+      startString += " PM"
+    }
+
+    startString[0] = parseInt(startString[0]) % 12
+
+
+    var endString = this.props.event.end;
+
+    if (endString[0] == "0") {
+      endString = endString.slice(1);
+    }
+    if ( parseInt(endString[0]) < 12 ) {
+      endString += " AM"
+    } else {
+      endString += " PM"
+    }
+
+    endString[0] = parseInt(endString[0]) % 12
+
+
     return (
       <tr>
-        <td onClick={ this.goToEvent }>
+        <td >
+          <a href={"#event/" +  this.props.event.id}>
           { this.props.event.title }
+          </a>
+        </td>
+
+        <td className="collapsing">
+          { dateString }
+        </td>
+
+        <td className="collapsing">
+          { startString }
+        </td>
+
+        <td className="collapsing">
+          { endString }
         </td>
 
         <td>
-          { this.props.event.date }
+          { this.props.event.location }
         </td>
 
-        <td>
-          { this.props.event.start }
-        </td>
-
-        <td>
-          { this.props.event.end }
+        <td className="collapsing">
+          { this.props.event.event_type }
         </td>
         <td>
           <a

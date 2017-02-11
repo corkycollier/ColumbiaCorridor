@@ -100,9 +100,7 @@ const MakeAd = React.createClass({
           </div>
         </div>
 
-        <div className="ui divider">
-        </div>
-
+      
       </div>
     )
   }
