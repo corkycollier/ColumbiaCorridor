@@ -13,11 +13,11 @@ const MakeAd = React.createClass({
       data : { ad: this.state },
       success : function ( app_data , resp , obj ) {
         this.props.parent.setState( app_data )
-        Backbone.history.navigate( 'admin' , { trigger : true } );
+        Backbone.history.navigate( 'admin/sponsors' , { trigger : true } );
       }.bind(this),
       error   : function ( app_data , resp , obj ) {
-        this.props.parent.setState( app_data )
-        Backbone.history.navigate( 'admin' , { trigger : true } );
+        alert('There was an error.')
+        Backbone.history.navigate( 'admin/sponsors' , { trigger : true } );
       }.bind(this)
     });
   },
@@ -124,11 +124,11 @@ const EditAd = React.createClass({
       data : { ad: this.state },
       success : function ( app_data , resp , obj ) {
         this.props.parent.setState( app_data )
-        Backbone.history.navigate( 'admin' , { trigger : true } );
+        Backbone.history.navigate( 'admin/sponsors' , { trigger : true } );
       }.bind(this),
       error   : function ( app_data , resp , obj ) {
-        this.props.parent.setState( app_data )
-        Backbone.history.navigate( 'admin' , { trigger : true } );
+        alert('There was an error.')
+        Backbone.history.navigate( 'admin/sponsors' , { trigger : true } );
       }.bind(this)
     });
   },

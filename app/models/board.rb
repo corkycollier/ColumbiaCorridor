@@ -19,16 +19,19 @@ class Board < ActiveRecord::Base
     board = Board.all.collect {|board| board}
     board.sort_by! do |board|
       if board.title == "President"
-        "aaaaaaad"
+        "zzzzzzzzzzzzzzz"
 
       elsif board.title == "Vice-President"
-        "aaaaaaac"
-        
+        "zzzzzzzzzzzzzzx"
+
+
       elsif board.title == "Treasurer"
-        "aaaaaaab"
+        "zzzzzzzzzzzzzzw"
+        
 
       elsif board.title == "Secretary"
-        "aaaaaaaa"
+        "zzzzzzzzzzzzzzv"
+
 
       else
         board.name.split(" ")[1] || "zzzzzzzzzzzzzzz"

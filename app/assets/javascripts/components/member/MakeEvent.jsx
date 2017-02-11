@@ -27,9 +27,10 @@ const MakeEvent = React.createClass({
         success: function (app_data, resp, obj) {
           this.props.parent.setState( app_data )
           alert("An event was created.")
-          Backbone.history.navigate( "admin" , { trigger : true } );
+          Backbone.history.navigate( "admin/events" , { trigger : true } );
         }.bind(this), error: function (a, b, c) {
-          alert("There was an error. Event was not created.")
+          alert("There was an error.")
+          Backbone.history.navigate( "admin/events" , { trigger : true } );
         }
       })
     }
@@ -144,10 +145,10 @@ const EditEvent = React.createClass({
         data: { event: this.state },
         success: function (app_data, resp, obj) {
           this.props.parent.setState( app_data )
-          alert("The event was updated.")
-          Backbone.history.navigate( "admin" , { trigger : true } );
+          Backbone.history.navigate( 'admin/events' , { trigger : true } );
         }.bind(this), error: function (a, b, c) {
           alert("There was an error. Try again later.")
+          Backbone.history.navigate( 'admin/events' , { trigger : true } );
         }
       })
     }

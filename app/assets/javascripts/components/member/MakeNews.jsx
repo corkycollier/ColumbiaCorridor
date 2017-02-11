@@ -17,10 +17,11 @@ const MakeNews = React.createClass({
         data: { news: this.state },
         success: function (app_data, resp, obj) {
           this.props.parent.setState(app_data)
-          alert('The news was created.')
-          Backbone.history.navigate('member-area' , { trigger : true })
+          Backbone.history.navigate('member-news' , { trigger : true })
         }.bind(this), error: function (a, b, c) {
           alert('There was an error. News was not created.')
+          Backbone.history.navigate('member-news' , { trigger : true })
+
         }
       })
     }
@@ -113,11 +114,10 @@ const EditNewsAdmin = React.createClass({
         data: { news: this.state },
         success: function (app_data, resp, obj) {
           this.props.parent.setState(app_data)
-          alert('The news was successfully edited.')
-          Backbone.history.navigate('news/' + this.state.id  , { trigger : true })
+          Backbone.history.navigate('admin/news' , { trigger : true })
         }.bind(this), error: function (app_data, resp, obj) {
           alert('There was an error. News was not editted properly.')
-          Backbone.history.navigate('news/' + this.state.id  , { trigger : true })
+          Backbone.history.navigate('admin/news' , { trigger : true })
         }
       })
     }
