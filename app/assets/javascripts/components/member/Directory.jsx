@@ -46,7 +46,7 @@ const Directory = React.createClass({
                   return (
                     <tr key={ el.id }>
 
-                      <td>
+                      <td className="collapsing">
                         { el.first_name + " " + el.last_name }
                       </td>
 
