@@ -83,9 +83,11 @@ const SidebarMenuButton = React.createClass({
 const RegularMenu = React.createClass({
 
   componentDidMount () {
-    $('.dropdown').dropdown({
-      on: 'hover'
-    });
+    setTimeout(function() {
+      $('.dropdown').dropdown({
+        on: 'hover'
+      });
+    }.bind(this), 0)
   },
 
   go (e) {
