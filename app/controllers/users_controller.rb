@@ -1,6 +1,5 @@
 require 'sendgrid-ruby'
 include SendGrid
-
 require 'mail'
 
 
@@ -8,8 +7,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
-
     if @user.save
       message_gary @user
       sign_in!(@user)

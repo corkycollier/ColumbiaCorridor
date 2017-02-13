@@ -84,7 +84,7 @@ const RegularMenu = React.createClass({
 
   componentDidMount () {
     $('.dropdown').dropdown({
-      on: 'hover' ,
+      on: 'hover'
     });
   },
 

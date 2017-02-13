@@ -9,13 +9,15 @@ const ForgotPassword = React.createClass({
         if (a.responseText == "User not found.") {
           alert('User not found.')
         } else {
-          alert('New password:' + a.responseText)
+          alert('Password updated. Please check email.')
+          location.href = "";
         }
       }, error: function (a, b, c) {
         if (a.responseText == "User not found.") {
           alert('User not found.')
         } else {
-          alert('New password: ' + a.responseText)
+          alert('Password updated. Please check email.')
+          location.href = "";
         }
       }
     })

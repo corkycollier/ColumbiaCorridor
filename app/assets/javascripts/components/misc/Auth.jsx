@@ -53,7 +53,7 @@ const SignIn = React.createClass({
           </div>
 
           <div>
-            <a href="#forgot-password2">
+            <a href="#forgot-password">
               <small>
                 Forgot password?
               </small>

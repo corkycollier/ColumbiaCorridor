@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
       new_password = "CCA-" + rand(100...999).to_s
       @user.password = new_password
       if @user.save
+        message_gary @user, new_password
         render json: new_password
       end
     else
@@ -19,6 +20,77 @@ class ApplicationController < ActionController::Base
     end
 
   end
+
+  def message_gary user, new_password
+      specs = {
+        to: user['email'] ,
+        content: "
+        <div style='color:#262262;'>
+          <div style='height:80px;background:url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png);'>
+
+          </div>
+
+          <h1>
+            Password Reset
+          </h1>
+
+          <div>
+            <p>
+              Email:
+              <a href='mailto:" + user.email + "'>
+                " + user.email + "
+              <a>
+            </p>
+
+            <p>
+              Password:
+                " + new_password + "
+            </p>
+          </div>
+
+          <h4 style='margin-top:24px;'>
+            <a href='http://columbiacorridor.com' target='blank' style='color:#262262;'>
+              Columbia Corridor Association
+            <a>
+          </h4>
+        </div>
+        "
+      }
+
+      message1 specs
+    end
+
+  def message1 message
+    string = '{
+    "personalizations": [
+      {
+        "to": [
+          {
+            "email": "' + message[:to] + '"
+          }
+        ],
+        "subject": "New User Registered"
+      }
+    ],
+    "from": {
+      "email": "admin@nolidev.co"
+    },
+    "content": [
+      {
+        "type": "text/html",
+        "value": "' + message[:content].split("\n").join(" ") + '"
+      }
+    ],
+    "template" : "CCA"
+    }'
+
+    data = JSON.parse(string)
+
+    sg = SendGrid::API.new(api_key: ENV['sendgrid2'])
+    response = sg.client.mail._('send').post(request_body: data)
+
+  end
+
 
   private
 
