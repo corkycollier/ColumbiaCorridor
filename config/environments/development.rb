@@ -15,14 +15,14 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { :host => "ip" }
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
-    :domain               => "nolidev.co",
+    :domain               => "gmail.com",
     :port                 => 25,
-    :user_name            => "nope",
-    :password             => "nope",
+    :user_name            => "samullman",
+    :password             => "xrwGkyV15JCc",
     :authentication       => "plain",
     :enable_starttls_auto => true
   }

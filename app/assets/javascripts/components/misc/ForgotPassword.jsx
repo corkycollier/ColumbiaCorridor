@@ -6,8 +6,17 @@ const ForgotPassword = React.createClass({
       type: 'POST' ,
       data: this.state ,
       success (a, b, c) {
-        alert('Thanks!')
-        location.href = ""
+        if (a.responseText == "User not found.") {
+          alert('User not found.')
+        } else {
+          alert('New password:' + a.responseText)
+        }
+      }, error: function (a, b, c) {
+        if (a.responseText == "User not found.") {
+          alert('User not found.')
+        } else {
+          alert('New password: ' + a.responseText)
+        }
       }
     })
   },

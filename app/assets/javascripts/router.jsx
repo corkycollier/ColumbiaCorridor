@@ -190,8 +190,12 @@ const router = Backbone.Router.extend({
   },
 
   makeNews () {
-    var page = <MakeNews parent={ this.parent } key="makeNews" /> ;
-    this.go( page )
+    if ( !this.parent.state.user ) {
+      this.home();
+    } else {
+      var page = <MakeNews parent={ this.parent } key="makeNews" /> ;
+      this.go( page )
+    }
   },
 
   makeEvent () {
@@ -222,13 +226,8 @@ const router = Backbone.Router.extend({
   },
 
   members () {
-
-    if ( !this.parent.state.user ) {
-      this.home();
-    } else {
-      var page = <MemberOnlyDirectory parent={ this.parent } key="members" /> ;
-      this.go( page )
-    }
+    var page = <MemberOnlyDirectory parent={ this.parent } key="members" /> ;
+    this.go( page )
   },
 
   directory () {

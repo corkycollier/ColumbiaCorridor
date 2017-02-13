@@ -7,14 +7,17 @@ class ApplicationController < ActionController::Base
 
   def forgot_password
     @user = User.find_by_email(params[:email])
+
     if @user
       new_password = "CCA-" + rand(100...999).to_s
       @user.password = new_password
       if @user.save
-        message = ColumbiaMailer.forgotten_email @user
-        message.deliver_now!
+        render json: new_password
       end
+    else
+      render json: "User not found."
     end
+
   end
 
   private
