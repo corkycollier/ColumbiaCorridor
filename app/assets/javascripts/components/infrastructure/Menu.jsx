@@ -148,6 +148,10 @@ const RegularMenu = React.createClass({
                 MEMBER DIRECTORY
               </div>
 
+              <div className="item member-area" data-path="member-news" onClick={ this.go } >
+                MEMBER NEWS
+              </div>
+
               <div className="item" data-path="groundwater" onClick={ this.go } >
                 GROUNDWATER
               </div>
@@ -155,8 +159,6 @@ const RegularMenu = React.createClass({
               <div className="item" data-path="resourcesfull-use" onClick={ this.go } >
                 RESOURCEFULL USE
               </div>
-
-
             </div>
           </a>
 
@@ -190,9 +192,6 @@ const RegularMenu = React.createClass({
                 ARCHIVES
               </div>
 
-              <div className="item member-area" data-path="member-news" onClick={ this.go } >
-                MEMBER NEWS
-              </div>
 
               <div className="item member-area" data-path="make-news" onClick={ this.go } >
                 MAKE NEWS

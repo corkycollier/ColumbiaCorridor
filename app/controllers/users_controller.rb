@@ -1,13 +1,15 @@
 require 'sendgrid-ruby'
-require 'mail'
 include SendGrid
+
+require 'mail'
 
 
 class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    send_simple_message @user
+
+    # send_simple_message @user
 
     if @user.save
       sign_in!(@user)

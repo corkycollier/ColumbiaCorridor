@@ -241,12 +241,8 @@ const router = Backbone.Router.extend({
   },
 
   memberNews () {
-    if (!this.parent.state.user) {
-      this.home();
-    } else {
-      var page = <MemberNews parent={ this.parent } key="member-news" /> ;
-      this.go( page );
-    }
+    var page = <MemberNews parent={ this.parent } key="member-news" /> ;
+    this.go( page );
   },
 
   admin () {

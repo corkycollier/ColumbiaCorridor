@@ -13,31 +13,42 @@ const MemberNews = React.createClass({
         <h1>
           Member News
         </h1>
+        <div className="ui grid">
+          
+          <div className="eight wide column">
+            {
+              this.props.parent.state.news.map(function(el) {
+                return(
+                  <div key={"manews" + el.id } data-id={ el.id } >
+                    <div style={{"marginBottom" : "2px"}}>
+                      <b>
+                        { el.title }
+                      </b>
 
-          {
-            this.props.parent.state.news.map(function(el) {
-              return(
-                <div key={"manews" + el.id } data-id={ el.id } >
-                  <div style={{"marginBottom" : "2px"}}>
-                    <b>
-                      { el.title }
-                    </b>
+                      <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
+                        by { el.author } | { el.created_at.toString().slice(0, 10) }
+                      </span>
+                    </div>
 
-                    <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
-                      by { el.author } | { el.created_at.toString().slice(0, 10) }
-                    </span>
+                    <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
+                      <a data-id={ el.id } onClick={ this.goToNews } >
+                        read more
+                      </a>
+                    </div>
+
                   </div>
+                )
+              }.bind(this))
+            }
+          </div>
 
-                  <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
-                    <a data-id={ el.id } onClick={ this.goToNews } >
-                      read more
-                    </a>
-                  </div>
+          <div className="eight wide column">
+            <img className="ui image fluid" src="http://res.cloudinary.com/djjldnjz7/image/upload/w_1400/v1486979985/ibi2c15vjxPDXUIZIigGTZSMHrEwylqOdyMCh3uD7q4_2Cbwtoaojbr44fI-I7EI1fQImjTGEbeXlDQxS6g0_IPeo_fkqhxv.jpg"></img>
+          </div>
+        </div>
 
-                </div>
-              )
-            }.bind(this))
-          }
+
+
       </div>
     )
   }

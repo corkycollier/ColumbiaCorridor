@@ -11,30 +11,37 @@ const MemberOnlyDirectory = React.createClass({
           Member Directory
         </h1>
 
-        <div className="member-mods" >
-          {
-            this.props.parent.state.members.map(function(el) {
-              if (el.private) {
-                return
-              } else {
-                return(
-                  <div style={{
-                      "fontSize" : "20px" ,
-                      "margin" : "12px 0px" ,
-                      "letterSpacing" : "1.1px" ,
-                    }} key={ "mod" + el.id }>
-                    <a href={ el.company_website } target="blank" style={{ "color" : "#262262" , }}>
-                      <i>
-                      { el.company_name }
-                      </i>
-                    </a>
-                  </div>
-                )
-              }
+        <div className="ui grid">
+          <div className="eight wide column">
+            <div className="member-mods" >
+              {
+                this.props.parent.state.members.map(function(el) {
 
-            })
-          }
+                  return(
+                    <div style={{
+                        "fontSize" : "20px" ,
+                        "margin" : "12px 0px" ,
+                        "letterSpacing" : "1.1px" ,
+                      }} key={ "mod" + el.id }>
+                      <a href={ el.company_website } target="blank" style={{ "color" : "#262262" , }}>
+                        <i>
+                          { el.company_name }
+                        </i>
+                      </a>
+                    </div>
+                  )
+
+                })
+              }
+            </div>
+          </div>
+
+          <div className="eight wide column">
+          </div>
+
+
         </div>
+
       </div>
     )
   }
