@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    # send_simple_message @user
 
     if @user.save
+      message_gary @user
       sign_in!(@user)
       redirect_to root_url
     else
@@ -19,41 +19,73 @@ class UsersController < ApplicationController
     end
   end
 
+  def message_gary user
+      specs = {
+        to: "mking@columbiacorridor.org" ,
+        content: "
+        <div style='color:#262262;'>
+          <div style='height:80px;background:url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png);'>
 
-  def send_simple_message user
+          </div>
+
+          <h1>
+            New User Sign Up
+          </h1>
+
+          <div>
+            <p>
+              Name: " + user.first_name + " " + user.last_name + "
+            </p>
+            <p>
+              Email:
+              <a href='mailto:" + user.email + "'>
+                " + user.email + "
+              <a>
+            </p>
+          </div>
+
+          <h4 style='margin-top:24px;'>
+            <a href='http://columbiacorridor.com' target='blank' style='color:#262262;'>
+              Columbia Corridor Association
+            <a>
+          </h4>
+        </div>
+        "
+      }
+
+      message1 specs
+    end
+
+  def message1 message
     string = '{
     "personalizations": [
       {
         "to": [
           {
-            "email": "mking@columbiacorridor.org"
+            "email": "' + message[:to] + '"
           }
         ],
-        "cc": [
-          {
-            "email": "samullman@gmail.com"
-          }
-        ],
-        "subject": "New Member Sign Up!"
+        "subject": "New User Registered"
       }
     ],
     "from": {
-      "email": "samullman@gmail.com"
+      "email": "admin@nolidev.co"
     },
     "content": [
       {
-        "type": "text/plain",
-        "value": "New user: ' + user.email + '"
+        "type": "text/html",
+        "value": "' + message[:content].split("\n").join(" ") + '"
       }
     ],
     "template" : "CCA"
     }'
 
     data = JSON.parse(string)
-    sg = SendGrid::API.new(api_key: ENV['sendgrid'])
-    response = sg.client.mail._('send').post(request_body: data)
-  end
 
+    sg = SendGrid::API.new(api_key: ENV['sendgrid2'])
+    response = sg.client.mail._('send').post(request_body: data)
+
+  end
 
   private
 
