@@ -122,7 +122,9 @@ const Groundwater = React.createClass({
 
         <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
           <h1 className="ui header" style={{ "color" : "#262262"}}>
-            ResourceFULL Use
+            <a href="https://www.facebook.com/groups/ResourceFullUse/" target="_blank" style={{ "color" : "#262262" , }}>
+              ResourceFULL Use
+            </a>
           </h1>
 
           <div className="ui grid doubling stackable">
@@ -132,7 +134,7 @@ const Groundwater = React.createClass({
                 We never imagined it would be going strong a decade later. Each exchange is money saved, resources utilized, and greenhouse gasses reduced. Our quarterly workshops are a great place to brainstorm and Dzspeed datedz with potential partners.
               </p>
 
-              <h3>One company’s waste is another’s raw material</h3>
+              <h2>One company’s waste is another’s raw material</h2>
 
               <p>
                 Industries and manufactures commonly produce wastes that other businesses could use. ResourceFull Use was started to help turn one business’ trash into another’s treasure.
@@ -150,8 +152,11 @@ const Groundwater = React.createClass({
                 Benefits are improved economic viability through reduced waste, improved resource efficiences, and decreased emissions (CO2 and other greenhouse gases).
               </p>
 
-              <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg" style={{ "float" : "left" , "margin" : "12px" }} / >
-              <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg" style={{ "float" : "left" , "margin" : "12px" }} />
+              <a href="https://www.facebook.com/groups/ResourceFullUse/" target="_blank" style={{ "color" : "#262262" , }}>
+
+                <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg" style={{ "float" : "left" , "margin" : "12px" }} / >
+                  <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg" style={{ "float" : "left" , "margin" : "12px" }} />
+                </a>
               </div>
 
             </div>
@@ -197,14 +202,37 @@ const Groundwater = React.createClass({
                 </p>
 
                 <p>
-                  Special Thanks:
+                  <b>
+                    Special Thanks:
+                  </b>
+
+                  <ul>
+                    <li>
+                      <a href="http://www.oregonmetro.gov/" target="_blank" >
+                        Metro
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.oregon.gov/DEQ/Pages/index.aspx" target="_blank" >
+                        DEQ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.boeing.com/" target="_blank" >
+                        The Boeing Company
+                      </a>
+                    </li>
+                  </ul>
+
+                  <div style={{ "display" : "none" , }}>
+                    <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/boeing_logo_iz9hcc.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
+
+                    <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/metro_logo_ukb86i.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
+
+                    <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/deq_logo_dewlj1.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
+                  </div>
                 </p>
 
-                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/boeing_logo_iz9hcc.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
-
-                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/metro_logo_ukb86i.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
-
-                <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/deq_logo_dewlj1.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
 
               </div>
             </div>
