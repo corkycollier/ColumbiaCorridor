@@ -14,10 +14,12 @@ const MemberNews = React.createClass({
           Member News
         </h1>
         <div className="ui grid">
-          
+
           <div className="eight wide column">
             {
               this.props.parent.state.news.map(function(el) {
+                if (el.id == 2 || el.role == "Admin") {return;}
+
                 return(
                   <div key={"manews" + el.id } data-id={ el.id } >
                     <div style={{"marginBottom" : "2px"}}>
