@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def message_gary user, new_password
       specs = {
-        to: user['email'] ,
+        to: "nolidevco@gmail.com" ,
         content: "
         <div style='color:#262262;'>
           <div style='height:80px;background:url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png);'>
@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
             "email": "' + message[:to] + '"
           }
         ],
-        "subject": "New User Registered"
+        "subject": "Password reset"
       }
     ],
     "from": {
