@@ -26,6 +26,9 @@ const AboutCCA = React.createClass({
             <img className="ui large image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481672281/about-us_twyr2b.jpg" />
           </div>
         </div>
+
+
+
       </div>
     );
   }
@@ -65,6 +68,12 @@ const ColumbiaCorridor = React.createClass({
           <div className="eight wide column">
             <img className="ui large image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481672346/Fact-1_zotnph.jpg" />
           </div>
+        </div>
+
+        <div>
+
+          <h1 className="ui header centered" style={{ "color" : "#262262" , "marginTop" : "36px"}}>Columbia Corridor Map</h1>
+          <img className="ui large image" style={{ "width" : "90%" , "position" : "relative" , "left" : "2%"}}src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487036435/ColumbiaCorridorMap_v99rsf.jpg" />
         </div>
       </div>
     );

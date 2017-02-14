@@ -3,6 +3,7 @@ const MakeEvent = React.createClass({
   componentDidMount () {
     $('#text-area').froalaEditor();
     $('.checkbox').checkbox();
+    $('.dropdown').dropdown();
   },
 
   updateState(e) {
@@ -78,7 +79,19 @@ const MakeEvent = React.createClass({
 
           <div className="field">
             <label>Location</label>
-            <input type="text" data-field="location" onChange={ this.updateState } />
+            <select className="ui search dropdown" data-field="location" onChange={ this.updateState }>
+              <option></option>
+              {
+                this.props.parent.state.event_locations.map(function(el) {
+                  return(
+                    <option value={el} key={el}>
+                      { el }
+                    </option>
+                  )
+                })
+              }
+            </select>
+
           </div>
 
           <div className="field">
@@ -122,6 +135,7 @@ const EditEvent = React.createClass({
   componentDidMount () {
     $('#text-area').froalaEditor();
     $('.checkbox').checkbox();
+    $('.dropdown').dropdown();
   },
 
   updateState(e) {
@@ -203,7 +217,18 @@ const EditEvent = React.createClass({
 
           <div className="field">
             <label>Location</label>
-            <input type="text" data-field="location" onChange={ this.updateState } defaultValue={this.props.event.location} />
+            <select className="ui search dropdown" data-field="location" onChange={ this.updateState } defaultValue={this.props.event.location} >
+              <option></option>
+              {
+                this.props.parent.state.event_locations.map(function(el) {
+                  return(
+                    <option value={el} key={el}>
+                      { el }
+                    </option>
+                  )
+                })
+              }
+            </select>
           </div>
 
           <div className="field">
