@@ -125,33 +125,35 @@ const Event = React.createClass({
               </div>
 
               <div className="ui grid stackable">
-                <div className="eight wide column">
-                  <div>
-                    <b>Location: </b>
-                      <a href={"http://maps.google.com/?q=1200 " + this.state.event.location } target="_blank">
-                        { this.state.event.location }
-                      </a>
-                    </div>
+                <div className="sixteen wide column">
+                  <h4 className="ui header centered">
+                    <a href={"http://maps.google.com/?q=1200 " + this.state.event.location } target="_blank">
+                      { this.state.event.location }
+                    </a>
+                  </h4>
 
-                    <div>
-                      <b>Date:</b> { dateString }
-                      </div>
+                  <iframe src={"//www.google.com/maps/embed/v1/place?q=" + this.state.event.location + "&zoom=17&key=AIzaSyAqEzqdKVDzEaqos77B7sUHePqbt1kjWEE"} style={{ "border" : "none" , "width" : "100%" , "height" : "32vw"}}>
+                  </iframe>
 
-                      <div>
-                        <b>Time:</b> { startString } to { endString }
-                        </div>
-                      </div>
-                    </div>
+                  <h2 className="ui header centered" style={{ "margin" : "8px" , }}>
+                    { dateString }
+                  </h2>
 
-
-                    {
-                      this.paypal()
-                    }
-
-                  </div>
+                  <h3 className="ui header centered" style={{ "margin" : "8px" , }}>
+                    { startString } to { endString }
+                  </h3>
                 </div>
               </div>
+
+
+              {
+                this.paypal()
+              }
+
             </div>
-          )
-        }
-      });
+          </div>
+        </div>
+      </div>
+    )
+  }
+});
