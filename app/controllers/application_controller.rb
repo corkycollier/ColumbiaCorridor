@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def message_gary user, new_password
       specs = {
-        to: "nolidevco@gmail.com" ,
+        to: user['email'] ,
         content: "
         <div style='color:#262262;'>
           <div style='height:80px;background:url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png);'>
@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
           </div>
 
           <h4 style='margin-top:24px;'>
-            <a href='http://columbiacorridor.com' target='blank' style='color:#262262;'>
+            <a href='http://www.cca.works' target='blank' style='color:#262262;'>
               Columbia Corridor Association
             <a>
           </h4>
