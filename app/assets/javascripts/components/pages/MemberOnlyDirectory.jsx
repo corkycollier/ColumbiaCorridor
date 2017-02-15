@@ -1,5 +1,22 @@
 const MemberOnlyDirectory = React.createClass({
+  getInitialState () {
+    var list = {}
+    this.props.parent.state.members.forEach(function(el) {
+      if (!el['list']) {
+        el['list'] = {
+          id: el.id ,
+          company_name: el.company_name ,
+          company_website: el.company_website ,
+        }
+      }
+    })
 
+
+    return ({
+      list : list
+    })
+  },
+  
   render () {
     return (
       <div className="ui container" style={{
@@ -15,7 +32,7 @@ const MemberOnlyDirectory = React.createClass({
           <div className="eight wide column">
             <div className="member-mods" >
               {
-                this.props.parent.state.members.map(function(el) {
+                this.state.list.map(function(el) {
 
                   return(
                     <div style={{

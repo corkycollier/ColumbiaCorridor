@@ -16,8 +16,11 @@ const Events = React.createClass({
 
   fullCalendar () {
     $('#calendar').fullCalendar({
-      eventClick: this.clickEvent
+      eventClick: this.clickEvent,
+      eventMouseover: this.mouseOver
     });
+
+    setTimeout(this.addLayovers , 0);
 
     $('.fc-button').click(function(){
       this.setState({
@@ -28,13 +31,28 @@ const Events = React.createClass({
       setTimeout(function() {
         this.filter()
       }.bind(this), 0)
-
     }.bind(this))
+  },
+
+  popups() {
+    this.state.currentEvents.forEach(function(el) {
+      $('.fc-event-container').each(function(idx, el2) {
+        if ($(el2).find('.fc-title').html() == el.title) {
+          $(el2).data('content', el.title);
+          $(el2).addClass('popups');
+        }
+      })
+    }.bind(this))
+
+    $('.popups').popup();
   },
 
   clickEvent( calEvent , jsEvent , view ) {
     jsEvent.preventDefault() ;
     Backbone.history.navigate('/event/' + calEvent.id , { trigger : true } ) ;
+  },
+
+  mouseOver ( event, jsEvent, view ) {
   },
 
   filter () {
@@ -96,6 +114,13 @@ const Events = React.createClass({
 
     $('#calendar').fullCalendar('renderEvents' , events ) ;
 
+    this.setState({
+      currentEvents: events
+    });
+
+    setTimeout(this.popups , 0);
+
+
     if ( !this.state.first ) {
       this.setState({
         helper_events: events
@@ -115,6 +140,7 @@ const Events = React.createClass({
     this.setState({
       filter : e.currentTarget.dataset.filter ,
     })
+
 
     setTimeout(this.filter, 0)
   },
@@ -193,7 +219,7 @@ const Events = React.createClass({
             })
           }
 
-          <div className="ui clearing divider">
+          <div className="ui clearing divider" style={{ "marginBottom" : "-64px" , }}>
           </div>
         </div>
       )
@@ -244,7 +270,7 @@ const Events = React.createClass({
           this.helper_events()
         }
 
-        <div id="calendar" >
+        <div id="calendar" style={{ "marginTop" : "98px" , }} >
         </div>
       </div>
     )

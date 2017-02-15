@@ -2,7 +2,7 @@ const MailingList = React.createClass({
 
   save () {
     $.ajax({
-      url: '/mail/',
+      url: '/api/mail/',
       type: 'POST' ,
       data: this.state ,
       success (a, b, c) {
@@ -22,10 +22,11 @@ const MailingList = React.createClass({
     return (
       <div className="ui container" style={{
           "color" : "#262262" ,
-          "padding" : "60px" ,
+          "padding" : "25px" ,
         }}>
 
         <h1>Join our Mailing List!</h1>
+
         <form className="ui form" onSubmit={ this.save }>
           <div className="field">
             <label>Email</label>

@@ -24,6 +24,8 @@ gem "cloudinary"
 gem 'jquery-ui-rails'
 gem 'sendgrid-ruby'
 gem 'mail'
+gem 'constantcontact'
+
 
 group :development, :test do
   gem 'byebug'
