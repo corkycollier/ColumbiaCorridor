@@ -73,7 +73,7 @@ const Groundwater = React.createClass({
         </h1>
 
         <div className="ui grid doubling stackable ">
-          <div className="sixteen wide column">
+          <div className="fourteen wide column">
             <h3>Why it exists:</h3>
             <p>
               The Groundwater Protection Program is designed to prevent hazardous chemicals from contaminating Portland’s well water. A series of wells are situated along the south shore of the Columbia River in NE Portland and Gresham (see the Well Field Area Map). These wells provide the back-up drinking water supply for Portland. When Bull Run water runs short (commonly in late summer), the Well Field supplies an increasing amount of drinking water. Obviously, contamination of these wells with solvents, oils, etc. would lead to an expensive and difficult clean-up.
@@ -85,25 +85,25 @@ const Groundwater = React.createClass({
               CCA is very proud of our work on the Groundwater Protection Program. It’s a great example of how business interests can collaborate with the government agencies to protect our environment with reasonable, effective regulations.
             </p>
 
-            <div style={{ "margin" : "20px 0px" , }}>
-              <a href="http://www.portlandoregon.gov/water/29890" target="_blank" style={{ "fontWeight" : "bold" , "color" : "#262262"}}>
-                <div className="ui button">
-                  Water Bureau
-                </div>
-              </a>
-            </div>
-
-            <img className="ui image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1485665437/map_lgzbv5.jpg" style={{
-                "position" : "relative" ,
-                "left" : "12.5%" ,
-                "width" : "75%" ,
-              }}/>
-
-
-            </div>
-
+            <img className="ui image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1485665437/map_lgzbv5.jpg" />
 
           </div>
+
+          <div className="two wide column">
+            <img src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487140042/groundwater_logo_fx3ycc.jpg"></img>
+              <a href="http://www.portlandoregon.gov/water/29890" target="_blank" >
+                <div className="ui fluid button" style={{ "fontWeight" : "bold" , "color" : "#262262" , "marginTop" : "12px" , "width" : "146px" }} >
+                  Water Bureau Site
+                </div>
+              </a>
+          </div>
+        </div>
+
+
+
+
+
+
         </div>
       )
     }

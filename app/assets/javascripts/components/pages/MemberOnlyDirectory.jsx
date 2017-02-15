@@ -25,7 +25,6 @@ const MemberOnlyDirectory = React.createClass({
   },
 
   render () {
-    debugger
     return (
       <div className="ui container" style={{
           "color" : "#262262" ,
