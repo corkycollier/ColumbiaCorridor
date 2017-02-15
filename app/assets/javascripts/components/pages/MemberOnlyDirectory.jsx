@@ -2,22 +2,30 @@ const MemberOnlyDirectory = React.createClass({
   getInitialState () {
     var list = {}
     this.props.parent.state.members.forEach(function(el) {
-      if (!el['list']) {
-        el['list'] = {
-          id: el.id ,
-          company_name: el.company_name ,
-          company_website: el.company_website ,
+      if (el.company_name) {
+        if (!list[el.company_name]) {
+          list[el.company_name]  = {
+            id: el.id ,
+            company_name: el.company_name ,
+            company_website: el.company_website ,
+          }
         }
       }
     })
 
+    var final = []
+
+    for (key in list) {
+      final.push( list[key] )
+    }
 
     return ({
-      list : list
+      list : final
     })
   },
-  
+
   render () {
+    debugger
     return (
       <div className="ui container" style={{
           "color" : "#262262" ,
@@ -47,7 +55,6 @@ const MemberOnlyDirectory = React.createClass({
                       </a>
                     </div>
                   )
-
                 })
               }
             </div>

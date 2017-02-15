@@ -4,10 +4,8 @@ module Api
 
     def update
       @user = User.find_by_id( params[:id] )
-
       @user.update_attributes( user_params )
-      fail
-      
+
       render json: current_user
     end
 
