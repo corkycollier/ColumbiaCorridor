@@ -18,7 +18,7 @@ module Api
         response = @oauth.get_access_token(@code)
         if response.present?
           token = response['access_token']
-          cc = ConstantContact::Api.new(ENV['constant_api_key'],, token)
+          cc = ConstantContact::Api.new(ENV['constant_api_key'], token)
           @contacts = cc.get_contacts()
         end
       else
