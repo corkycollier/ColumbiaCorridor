@@ -135,6 +135,7 @@ const Home = React.createClass({
             style={{
               "borderLeft" : "3px solid #262262" ,
               "borderRight" : "3px solid #262262" ,
+              "padding" : "14px 18px" ,
             }}>
             <Advertisements parent={ this.props.parent } />
           </div>

@@ -32,7 +32,7 @@ const Advertisements = React.createClass({
       <div className="" style = {{ "background" : "green" , "background" : "url(" + this.state.currentSlide.image_url + ")" , "backgroundSize" : "cover" }} >
         <img className="ui image add centered"
           src = { this.state.currentSlide.image_url }
-          style = {{ "width" : "100%" , "height" : "23vh" }}
+          style = {{ "width" : "100%" , "height" : "12vw" }}
           onClick = { this.navigate }
           />
       </div>
