@@ -95,6 +95,11 @@ const AdminArchives = React.createClass({
             </tbody>
           </table>
         </div>
+
+        <a href="#admin" className="ui button left labeled icon small" style={{ "marginTop" : "18px" , }}>
+          <i className="left caret icon"></i>
+          Back
+        </a>
       </div>
     )
   }
