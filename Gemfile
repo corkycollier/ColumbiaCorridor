@@ -24,6 +24,7 @@ gem "cloudinary"
 gem 'jquery-ui-rails'
 gem 'sendgrid-ruby'
 gem 'mail'
+gem 'rest-client'
 
 
 group :development, :test do

@@ -1,33 +1,103 @@
+require 'rest-client'
+
 module Api
   class ApiController < ApplicationController
     before_action :require_admin!, except: :mail
 
     def mail
+      message
+      render json: {message: "message complete"}
+    end
 
-      @oauth = ConstantContact::Auth::OAuth2.new(
-      :api_key => ENV['constant_api_key'],
-      :api_secret => ENV['constant_api_secret'],
-      :redirect_url => 'https://www.cca.works/' # the URL given when registering your app with Mashery.
-      )
+    private
 
-      @error = params[:error]
-      @user = params[:username]
-      @code = params[:code]
+    def message
 
-      if @code.present?
-        response = @oauth.get_access_token(@code)
-        if response.present?
-          token = response['access_token']
-          cc = ConstantContact::Api.new(ENV['constant_api_key'], token)
-          @contacts = cc.get_contacts()
-        end
-      else
-        # if not code param is provided redirect into the OAuth flow
-        redirect_to @oauth.get_authorization_url and return
+        specs = {
+          to: "mking@columbiacorridor.org" ,
+          content: "
+          <div style='color:#262262;'>
+            <div style='height:80px;background:url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png);'>
+            </div>
+
+            <h1>
+              Add to: Mailing List
+            </h1>
+
+            <div>
+              <p>
+                First:
+                  " + params[:message][:first] + "
+              </p>
+
+              <p>
+                Last:
+                  " + params[:message][:last] + "
+              </p>
+
+              <p>
+                Email:
+                <a href='mailto:" + params[:message][:email] + "'>
+                  " + params[:message][:email] + "
+                <a>
+              </p>
+
+              <p>
+                Company:
+                  " + params[:message][:company] + "
+              </p>
+
+              <p>
+                Zip:
+                  " + params[:message][:zip] + "
+              </p>
+            </div>
+
+            <h4 style='margin-top:24px;'>
+              <a href='http://www.cca.works' target='blank' style='color:#262262;'>
+                Columbia Corridor Association
+              <a>
+            </h4>
+          </div>
+          "
+        }
+
+        message1 specs
       end
 
+    def message1 message
+      string = '{
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": "' + message[:to] + '"
+            }
+          ],
+          "subject": "Add to: Mailing List"
+        }
+      ],
+      "from": {
+        "email": "admin@nolidev.co"
+      },
+      "content": [
+        {
+          "type": "text/html",
+          "value": "' + message[:content].split("\n").join(" ") + '"
+        }
+      ],
+      "template" : "CCA"
+      }'
 
-      fail
+      data = JSON.parse(string)
+
+      sg = SendGrid::API.new(api_key: ENV['sendgrid2'])
+      response = sg.client.mail._('send').post(request_body: data)
+    end
+
+
+    def message_params
+      params.require(:message).permit(:first, :last, :email, :company, :zip)
     end
   end
 end
