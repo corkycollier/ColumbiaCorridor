@@ -183,12 +183,15 @@ const YearInReview = React.createClass({
               CCA created a series of focus groups with TriMet to improve bus service connecting residential communities to industrial areas, and relieve congestion in key corridors. New routes and expanded service to the Corridor are in the final stages of planning. CCA is helping to create a new Local Improvement District on NE 47th Avenue in Portland and continues to advocate for freight network improvements on Burgard and Rivergate. At the state level, CCA worked to support the state gas tax effort in the 2015 Legislature and will renew its efforts in 2017 in order to better fund road maintenance.
             </p>
 
-            <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487106975/yir2_xyzqtv.png"></img>
+            
 
           </div>
 
-
         </div>
+
+        <img className="ui image centered large" style={{"width" : "44vw" , "marginTop" : "3vw" , "minWidth" : "560px", "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/w_0.98,c_crop/v1487106975/yir2_xyzqtv.png"></img>
+          
+        
 
         <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
 
@@ -212,11 +215,13 @@ const YearInReview = React.createClass({
               As part of the Comprehensive Plan, the City has identified brownfields as critical to accommodating forecasted population and job growth over the next 20 years, but new tools are needed to make this vision a reality. CCA participated in a diverse statewide coalition to provide brownfield redevelopment tools. In 2015, the Legislature approved a $7 million recapitalization of the state Brownfield Revolving Loan program, and legislation to support land banking of brownfields by local jurisdictions. CCA and the coalition will push for brownfield tax abatements and tax credits to incent clean-up in 2016. CCA is committed to working with local jurisdictions to provide support for brownfield redevelopment on the ground in Portland.
             </p>
 
-            <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487106975/yir1_iyjthk.png" alt="" />
 
           </div>
         </div>
 
+
+        <img className="ui image large centered" style={{"width" : "44vw" , "marginTop" : "3vw" , "minWidth" : "560px", "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487106975/yir1_iyjthk.png" alt="" />
+        
         <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
 
         <div className="ui grid">
@@ -239,10 +244,11 @@ const YearInReview = React.createClass({
             <p>
               CCA and other business interests weighed in on the proposed Pembina propane terminal adjacent to the Port of Portland’s Terminal 6, on a strategically located but constrained 40-acre industrial site. The $500 million facility would have generated over $12 million in tax revenues to the City, Multnomah County and school district annually, and employed 600 to 800 construction workers and 30 to 40 permanent facility jobs with wages averaging $95,000/year. Propane is considered to be a cleaner alternative to more carbon intensive fuels. While stakeholder efforts were successful in achieving an affirmative vote from the Planning and Sustainability Commission for the project, the City Council declined to discuss the project.
             </p>
-
-            <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487106974/yir3_d4zyva.png" alt="" />
           </div>
         </div>
+
+        <img className="ui image large centered" style={{"width" : "44vw" , "marginTop" : "3vw" , "minWidth" : "560px", "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/v1487106974/yir3_d4zyva.png" alt="" />
+        
 
         <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
 
