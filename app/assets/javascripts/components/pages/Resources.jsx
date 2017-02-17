@@ -98,7 +98,7 @@ const Groundwater = React.createClass({
             </a>
           </div>
         </div>
-        
+
 
 
 
@@ -120,12 +120,15 @@ const ResourceFullUse = React.createClass({
   render () {
     return (
 
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" , "position" : "relative" , "fontSize" : "15px"}}>
         <h1 className="ui header" style={{ "color" : "#262262"}}>
-          <a href="https://www.facebook.com/groups/ResourceFullUse/" target="_blank" style={{ "color" : "#262262" , }}>
-            ResourceFULL Use
-          </a>
+          ResourceFULL Use
         </h1>
+
+        <a href="https://www.facebook.com/groups/ResourceFullUse/" target="_blank" className="ui facebook large button left labeled icon" style={{ "position" : "absolute" , "right" : "34px" , "top" : "24px" }}>
+          <i className="facebook icon"></i>
+          Facebook
+        </a>
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column" >
@@ -152,12 +155,19 @@ const ResourceFullUse = React.createClass({
               Benefits are improved economic viability through reduced waste, improved resource efficiences, and decreased emissions (CO2 and other greenhouse gases).
             </p>
 
-            <a href="https://www.facebook.com/groups/ResourceFullUse/" target="_blank" style={{ "color" : "#262262" , }}>
 
-              <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg" style={{ "float" : "left" , "margin" : "12px" }} / >
-                <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg" style={{ "float" : "left" , "margin" : "12px" }} />
-              </a>
             </div>
+
+            <div className="eight wide column">
+              <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg" style={{ "float" : "left" , "margin" : "12px" }} / >
+            </div>
+
+            <div className="eight wide column">
+              <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg" style={{ "float" : "left" , "margin" : "12px" }} />
+            </div>
+
+
+
 
           </div>
 
@@ -201,38 +211,29 @@ const ResourceFullUse = React.createClass({
                 The program is designed to benefit the manufacturing and industrial sector in the greater Portland, Oregon metro area. This program fills the needs of under-served manufacturing and industrial sectors.
               </p>
 
-              <p>
-                <b>
-                  Special Thanks:
-                </b>
-
-                <ul>
-                  <li>
-                    <a href="http://www.oregonmetro.gov/" target="_blank" >
-                      Metro
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.oregon.gov/DEQ/Pages/index.aspx" target="_blank" >
-                      DEQ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.boeing.com/" target="_blank" >
-                      The Boeing Company
-                    </a>
-                  </li>
-                </ul>
-
-                <div style={{ "display" : "none" , }}>
-                  <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/boeing_logo_iz9hcc.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
-
-                  <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/metro_logo_ukb86i.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
-
-                  <img className="ui image small" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/deq_logo_dewlj1.jpg" style={{ "float" : "left" , "margin" : "12px" }}></img>
+              <b>
+                Special Thanks:
+              </b>
+              <div className="ui grid">
+                <div className="five wide column">
+                  <a href="http://www.oregonmetro.gov/" target="_blank" >
+                    <img className="ui centered image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/metro_logo_ukb86i.jpg"></img>
+                  </a>
                 </div>
-              </p>
 
+
+                <div className="five wide column">
+                  <a href="http://www.oregon.gov/DEQ/Pages/index.aspx" target="_blank" >
+                    <img className="ui centered image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/deq_logo_dewlj1.jpg"></img>
+                  </a>
+                </div>
+
+                <div className="five wide column">
+                  <a href="http://www.boeing.com/" target="_blank" >
+                    <img className="ui centered image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/boeing_logo_iz9hcc.jpg"></img>
+                  </a>
+                </div>
+              </div>
 
             </div>
           </div>

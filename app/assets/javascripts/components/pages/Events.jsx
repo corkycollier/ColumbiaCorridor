@@ -109,7 +109,7 @@ const Events = React.createClass({
       if (this.state.filter == "" || el.event_type == this.state.filter) {
         events.push(el)
       }
-
+      
     }.bind(this))
 
     $('#calendar').fullCalendar('renderEvents' , events ) ;
