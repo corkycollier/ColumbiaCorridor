@@ -6,10 +6,11 @@ const MailingList = React.createClass({
       type: 'POST' ,
       data: {message: this.state} ,
       success (a, b, c) {
-        alert('Thanks!')
+        alert('Your query was saved.')
         location.href = ""
       }, error (a, b, c) {
-        debugger
+        alert('Oops, please email mking@columbiacorridor.org to be placed on the list.')
+        location.href = ""
       }
     })
   },
