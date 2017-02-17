@@ -93,11 +93,11 @@ const Home = React.createClass({
             "height" : "41vw" ,
           }}>
 
-          <div className="ui button icon" style={{ "position" : "absolute" , "bottom" : "52%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
+          <div className="ui button circular icon" style={{ "position" : "absolute" , "bottom" : "52%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
             <i className="left caret icon"></i>
           </div>
 
-          <div className="ui button icon" style={{ "position" : "absolute" , "bottom" : "52%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipRight }>
+          <div className="ui button circular icon" style={{ "position" : "absolute" , "bottom" : "52%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipRight }>
             <i className="right caret icon"></i>
           </div>
 

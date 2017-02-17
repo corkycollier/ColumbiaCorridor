@@ -3,19 +3,6 @@ const MemberOnlyDirectory = React.createClass({
     var list = {};
 
 
-    $.ajax({
-      url: "/api/company_names" ,
-      type: "GET" ,
-      data: "yo momma" ,
-      success: function (un, deux, trois) {
-        this.setState({
-          members: un
-        })
-
-      }.bind(this)
-    })
-
-
     this.props.parent.state.members.forEach(function(el) {
       if (el.company_name) {
         if (!list[el.company_name]) {

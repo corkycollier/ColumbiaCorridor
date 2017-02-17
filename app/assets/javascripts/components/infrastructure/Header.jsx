@@ -44,24 +44,25 @@ const Header = React.createClass({
               "letterSpacing" : "1.2px" ,
             }}>
             <i className="phone icon"></i>(503) 287-8686
+            </div>
+
           </div>
 
-        </div>
 
 
-        <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "16px" , "right" : "24px" }}>
-          <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank"  style={{ "fontSize" : "18px" , "padding" : "0px"}} >
-            <i className="facebook icon"></i>
-          </a>
+          <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "16px" , "right" : "24px" }}>
+            <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank"  style={{ "fontSize" : "18px" , "padding" : "0px"}} >
+              <i className="facebook icon"></i>
+            </a>
 
-          <a className="icon item" href="https://www.linkedin.com/company/columbia-corridor-association" target="_blank" style={{ "fontSize" : "18px" , "padding" : "0px"}}>
-            <i className="linkedin icon"></i>
-          </a>
+            <a className="icon item" href="https://www.linkedin.com/company/columbia-corridor-association" target="_blank" style={{ "fontSize" : "18px" , "padding" : "0px"}}>
+              <i className="linkedin icon"></i>
+            </a>
 
-          {
-            this.state.buttons
-          }
-        </div>
+            {
+              this.state.buttons
+            }
+          </div>
 
       </div>
     )
@@ -130,11 +131,11 @@ const LoggedOutButtons = React.createClass({
   },
 
   signUp () {
-      window.location = "?#register"
+    window.location = "?#register"
   },
 
   signIn () {
-      window.location = "?#sign-in"
+    window.location = "?#sign-in"
   },
 
   render () {
