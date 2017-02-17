@@ -25,7 +25,7 @@ const MemberOnlyDirectory = React.createClass({
     var final = [
       {
         company_name: "3J Consulting Inc" ,
-        company_website: "https://www.3jconsulting.com/" ,
+        company_website: "http://www.3jconsulting.com/" ,
       } , 
 
       {
@@ -35,27 +35,27 @@ const MemberOnlyDirectory = React.createClass({
 
       {
         company_name: "Albina Community Bajnk" ,
-        company_website: "https://www.albinabank.com/index.cfm" ,
+        company_website: "http://www.albinabank.com/index.cfm" ,
       } , 
 
       {
         company_name: "AMEC Earth & Environmental" ,
-        company_website: "https://www.amecfw.com/" ,
+        company_website: "http://www.amecfw.com/" ,
       } , 
 
       {
         company_name: "Arclin Surfaces Inc." ,
-        company_website: "https://www.arclin.com/contact-us" ,
+        company_website: "http://www.arclin.com/contact-us" ,
       } , 
 
       {
         company_name: "Apex Companies" ,
-        company_website: "https://www.apexcos.com" ,
+        company_website: "http://www.apexcos.com" ,
       } , 
 
       {
         company_name: "Black Helterline" ,
-        company_website: "https://bhlaw.com/" ,
+        company_website: "http://bhlaw.com/" ,
       } , 
 
       {
@@ -65,7 +65,7 @@ const MemberOnlyDirectory = React.createClass({
 
       {
         company_name: "Boeing Portland" ,
-        company_website: "https://boeing.com/" ,
+        company_website: "http://boeing.com/" ,
       } , 
 
       {
@@ -90,7 +90,7 @@ const MemberOnlyDirectory = React.createClass({
 
       {
         company_name: "Pacific Continental Bank" ,
-        company_website: "https://www.therightbank.com/" ,
+        company_website: "http://www.therightbank.com/" ,
       } , 
 
       {
@@ -110,7 +110,7 @@ const MemberOnlyDirectory = React.createClass({
 
       {
         company_name: "City of Portland BES" ,
-        company_website: "https://www.portlandoregon.gov/bes/" ,
+        company_website: "http://www.portlandoregon.gov/bes/" ,
       } , 
 
       {
