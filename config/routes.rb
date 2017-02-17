@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "forgot_password" , to: "application#forgot_password"
 
   namespace :api, defaults: { format: :json } do
+    get "company_names", to: 'api#company_names'
     post "mail", to: 'api#mail'
     patch "save" , to: "api#save"
     resources :news

@@ -4,6 +4,11 @@ module Api
   class ApiController < ApplicationController
     before_action :require_admin!, except: :mail
 
+    def company_names
+      @companies = CompanyName.all.collect {|company| company.safe_show}
+      render json: @companies
+    end
+
     def mail
       message
       render json: {message: "message complete"}
