@@ -99,11 +99,14 @@ const Staff = React.createClass({
             </p>
           </div>
 
-          <div className="four wide column" data-url="staff/1" onClick={ this.go }>
-            <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
+          <div className="four wide column" >
+            <a href={"#staff/1"}>
+              <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
             <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
               <b>Executive Director</b> - Corky Collier
               </p>
+            </a>
+
 
               <div>
                 <i className="linkify icon" style={{
@@ -114,11 +117,16 @@ const Staff = React.createClass({
                   }}></i>
                 </div>
               </div>
-              <div className="four wide column" data-url="staff/2" onClick={ this.go }>
+              <div className="four wide column" >
+                <a href={"#staff/2"}>
+
                 <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
+
                 <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
                   <b>Office Manager</b> - Marissa King
                   </p>
+                </a>
+
 
                   <div>
                     <i className="linkify icon" style={{

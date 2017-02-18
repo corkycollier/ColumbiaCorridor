@@ -25,16 +25,22 @@ const Board = React.createClass({
               this.props.parent.state.board.map( ( el ) => {
                 return (
                   <div className="four wide column"
-                       data-url={ "/board/" + el.id }
-                       onClick={ this.go }
                        key={ "boardId" + el.id }
                        style={{ "zIndex" : "10" }}
                        >
-                    <div style={{ "width" : "100%" }} >
-                      <img className="ui image board-image" src={ el.img } />
-                    </div>
+                      <a href={"#board/" + el.id} style={{ "color" : "#262262" , }}>
+                        <img className="ui image board-image" src={ el.img } />
 
-                    <div>
+                      <div style={{ "textAlign" : "center" , "marginTop" : "4px" , "fontWeight" : "bold" }}>
+                        { el.name }
+                      </div>
+
+                      <p style={{ "textAlign" : "center" }}>
+                        <i>{ el.title }</i>
+                      </p>
+                    </a>
+
+
                       <i className="linkify icon" style={{
                           "position" : "absolute" ,
                           "top" : "8%" ,
@@ -42,15 +48,7 @@ const Board = React.createClass({
                           "fontSize": "41px" ,
 
                         }}></i>
-                    </div>
 
-                    <div style={{ "textAlign" : "center" , "marginTop" : "4px" , "fontWeight" : "bold" }}>
-                      { el.name }
-                    </div>
-
-                    <p style={{ "textAlign" : "center" }}>
-                      <i>{ el.title }</i>
-                    </p>
                   </div>
                 )
               }.bind(this))
