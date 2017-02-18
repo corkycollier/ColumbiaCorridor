@@ -22,8 +22,6 @@ const MemberNews = React.createClass({
                   return;
                 }
 
-                
-
                 return(
                   <div key={"manews" + el.id } data-id={ el.id } >
                     <div style={{"marginBottom" : "2px"}}>

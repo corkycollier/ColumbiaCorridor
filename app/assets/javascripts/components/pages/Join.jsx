@@ -172,6 +172,9 @@ const YearInReview = React.createClass({
             <p>
               Because flood management and federal flood insurance are vital to businesses and residents in the Corridor, CCA has been actively participating in a two-year process designed to address cost-sharing on levee improvements in Peninsula Drainage Districts 1 and 2 led by the Governor’s Oregon Solutions. In 2015, this effort expanded to include two other drainage districts in the Corridor – Multnomah County Drainage District and Sandy Drainage Improvement Company. A Declaration of Cooperation with all the drainage districts and cities in the corridor, Multnomah County, Metro and the state was approved in the fall. CCA, along with other stakeholders, secured a $1.4 million loan from Business Oregon and $300,000 in grant funds from the Metro Regional Solutions Team to support the technical analysis required for re-accreditation of the drainage districts, and $7 million in state funding for levee re-accreditation statewide.
             </p>
+
+            <img className="ui image centered large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487378383/1_fp1qkn.jpg"></img>
+
           </div>
 
           <div className="eight wide column">
@@ -183,15 +186,12 @@ const YearInReview = React.createClass({
               CCA created a series of focus groups with TriMet to improve bus service connecting residential communities to industrial areas, and relieve congestion in key corridors. New routes and expanded service to the Corridor are in the final stages of planning. CCA is helping to create a new Local Improvement District on NE 47th Avenue in Portland and continues to advocate for freight network improvements on Burgard and Rivergate. At the state level, CCA worked to support the state gas tax effort in the 2015 Legislature and will renew its efforts in 2017 in order to better fund road maintenance.
             </p>
 
-            
-
+            <img className="ui image centered large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/w_0.98,c_crop/v1487106975/yir2_xyzqtv.png"></img>
           </div>
-
         </div>
 
-        <img className="ui image centered large" style={{"width" : "44vw" , "marginTop" : "3vw" , "minWidth" : "560px", "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/w_0.98,c_crop/v1487106975/yir2_xyzqtv.png"></img>
-          
-        
+
+
 
         <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
 
@@ -221,7 +221,7 @@ const YearInReview = React.createClass({
 
 
         <img className="ui image large centered" style={{"width" : "44vw" , "marginTop" : "3vw" , "minWidth" : "560px", "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487106975/yir1_iyjthk.png" alt="" />
-        
+
         <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
 
         <div className="ui grid">
@@ -248,7 +248,7 @@ const YearInReview = React.createClass({
         </div>
 
         <img className="ui image large centered" style={{"width" : "44vw" , "marginTop" : "3vw" , "minWidth" : "560px", "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/v1487106974/yir3_d4zyva.png" alt="" />
-        
+
 
         <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
 
