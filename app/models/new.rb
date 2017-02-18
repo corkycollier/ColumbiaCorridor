@@ -16,7 +16,13 @@ class New < ActiveRecord::Base
 
   def safe_show
     attributes = self.attributes
-    attributes['author'] = self.user.first_name + " " + self.user.last_name || "CCA Member" if self.user
+
+    if self.user
+      attributes['author'] = self.user.first_name + " " + self.user.last_name
+    else
+      attributes['author'] =  "CCA Member"
+    end
+
     attributes
   end
 end

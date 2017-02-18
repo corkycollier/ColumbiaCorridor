@@ -173,7 +173,7 @@ const YearInReview = React.createClass({
               Because flood management and federal flood insurance are vital to businesses and residents in the Corridor, CCA has been actively participating in a two-year process designed to address cost-sharing on levee improvements in Peninsula Drainage Districts 1 and 2 led by the Governor’s Oregon Solutions. In 2015, this effort expanded to include two other drainage districts in the Corridor – Multnomah County Drainage District and Sandy Drainage Improvement Company. A Declaration of Cooperation with all the drainage districts and cities in the corridor, Multnomah County, Metro and the state was approved in the fall. CCA, along with other stakeholders, secured a $1.4 million loan from Business Oregon and $300,000 in grant funds from the Metro Regional Solutions Team to support the technical analysis required for re-accreditation of the drainage districts, and $7 million in state funding for levee re-accreditation statewide.
             </p>
 
-            <img className="ui image centered large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487378383/1_fp1qkn.jpg"></img>
+            <img className="ui image large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487378383/1_fp1qkn.jpg"></img>
 
           </div>
 
@@ -186,7 +186,7 @@ const YearInReview = React.createClass({
               CCA created a series of focus groups with TriMet to improve bus service connecting residential communities to industrial areas, and relieve congestion in key corridors. New routes and expanded service to the Corridor are in the final stages of planning. CCA is helping to create a new Local Improvement District on NE 47th Avenue in Portland and continues to advocate for freight network improvements on Burgard and Rivergate. At the state level, CCA worked to support the state gas tax effort in the 2015 Legislature and will renew its efforts in 2017 in order to better fund road maintenance.
             </p>
 
-            <img className="ui image centered large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/w_0.98,c_crop/v1487106975/yir2_xyzqtv.png"></img>
+            <img className="ui image large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/w_0.98,c_crop/v1487106975/yir2_xyzqtv.png"></img>
           </div>
         </div>
 
@@ -204,6 +204,8 @@ const YearInReview = React.createClass({
             <p>
               For the past two years, CCA has been actively involved in the City’s 20-year visioning process to ensure that there is a balance of economic and environmental goals in the Comprehensive Plan update. To this end, CCA has advocated for policy language to support industrial development within the City (including Portland Harbor cleanup and brownfield redevelopment). In the City’s Economic Opportunity Analysis discussions, CCA continues to underscore the value the Corridor and Portland Harbor play in the City’s economy today and in the future. This includes encouraging the City to identify freight improvement projects in the Portland Transportation System Plan to support the industrial sector.City Council is scheduled to approve the Comprehensive Plan, Economic Opportunity Analysis and Transportation System Plan updates in 2016. As a companion to this work, CCA also lobbied the City to adopt a new industrial zoning overlay in key areas. All of these efforts will guide industrial development and middle income jobs for the coming decades.
             </p>
+
+            <img className="ui image large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487106975/yir1_iyjthk.png"></img>
           </div>
 
           <div className="eight wide column">
@@ -216,11 +218,12 @@ const YearInReview = React.createClass({
             </p>
 
 
+            <img className="ui image large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487378384/2_vaap2b.jpg"></img>
+
           </div>
         </div>
 
 
-        <img className="ui image large centered" style={{"width" : "44vw" , "marginTop" : "3vw" , "minWidth" : "560px", "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487106975/yir1_iyjthk.png" alt="" />
 
         <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
 
@@ -233,6 +236,7 @@ const YearInReview = React.createClass({
             <p>
               The Portland metro region continues to face an increase in the number of households with incomes below $35,000/year and a decrease in household incomes of $35,000-$75,0000/year. Middle wage jobs are key to a prosperous region and the norm for Columbia Corridor businesses. The average wage in the Columbia Corridor is just shy of $50,000 and the percentage of middle wage jobs is higher than any other sector in the region. Traded-sector businesses such as those located in the Corridor build middle wage jobs, and provide opportunities for low income residents and communities of color. CCA is working with stakeholders in the corridor (and CCA members) to educate our elected officials and others on this issue. This includes the Portland Bureau of Planning and Sustainability, East Portland Action Plan, The Rosewood Initiative, Verde, Human Solutions, and Community Works.
             </p>
+            <img className="ui image large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487378383/3_mlzoet.jpg"></img>
 
           </div>
 
@@ -244,10 +248,11 @@ const YearInReview = React.createClass({
             <p>
               CCA and other business interests weighed in on the proposed Pembina propane terminal adjacent to the Port of Portland’s Terminal 6, on a strategically located but constrained 40-acre industrial site. The $500 million facility would have generated over $12 million in tax revenues to the City, Multnomah County and school district annually, and employed 600 to 800 construction workers and 30 to 40 permanent facility jobs with wages averaging $95,000/year. Propane is considered to be a cleaner alternative to more carbon intensive fuels. While stakeholder efforts were successful in achieving an affirmative vote from the Planning and Sustainability Commission for the project, the City Council declined to discuss the project.
             </p>
+
+            <img className="ui image large" style={{ "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/v1487106974/yir3_d4zyva.png"></img>
           </div>
         </div>
 
-        <img className="ui image large centered" style={{"width" : "44vw" , "marginTop" : "3vw" , "minWidth" : "560px", "border" : "1px solid #554545" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/v1487106974/yir3_d4zyva.png" alt="" />
 
 
         <div className="ui clearing divider" style={{"margin" : "48px"}}></div>
