@@ -22,19 +22,16 @@ const Advertisements = React.createClass({
     }.bind(this), 4400)
   },
 
-  navigate () {
-    var win = window.open( this.state.currentSlide.link , '_blank' );
-  },
-
   render () {
     return (
 
-      <div className="" style = {{ "background" : "green" , "background" : "url(" + this.state.currentSlide.image_url + ")" , "backgroundSize" : "cover" }} >
+      <div className="" >
+        <a href={this.state.currentSlide.link} target="_blank" >
         <img className="ui image add centered"
           src = { this.state.currentSlide.image_url }
           style = {{ "width" : "100%" , "height" : "12vw" }}
-          onClick = { this.navigate }
           />
+        </a>
       </div>
     )
   }

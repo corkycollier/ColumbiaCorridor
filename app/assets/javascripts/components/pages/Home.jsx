@@ -114,10 +114,12 @@ const Home = React.createClass({
 
                 this.props.parent.state.events.slice(0, 3).map(function(el) {
                   return (
-                    <div key={"fni" + el.id} data-id={ el.id } onClick={ this.goToEvent } style={{ "marginTop" : "12px" ,}}>
-                      {
-                        el.title
-                      }
+                    <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
+                      <a href={"#event/" + el.id} style={{ "color" : "#262262" , }}>
+                        {
+                          el.title
+                        }
+                      </a>
 
                       <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
                       </div>
@@ -146,10 +148,12 @@ const Home = React.createClass({
                   if (el.author != "Corky Collier") { return ;}
 
                   return(
-                    <div key={"fni" + el.id} data-id={ el.id } onClick={ this.goToNews } style={{ "marginTop" : "12px" ,}}>
+                    <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
+                      <a href={"#news/" + el.id} style={{ "color" : "#262262" , }}>
                       {
                         el.title
                       }
+                      </a>
 
                       <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
                       </div>
