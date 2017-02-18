@@ -21,7 +21,7 @@ const CCANews = React.createClass({
                   if (el.author != "Corky Collier") { return; }
                   return (
                     <div key={ el.id } >
-                      <div style={{"marginBottom" : "8px"}}>
+                      <div style={{"marginBottom" : "2px"}}>
                         <b >
                           { el.title }
                         </b>
@@ -32,14 +32,15 @@ const CCANews = React.createClass({
                       </div>
 
 
-                      <div style={{"marginTop" : "13px"}}>
+                      <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
                         <a href={"#news/" + el.id } >
                           read more
                         </a>
                       </div>
 
-                      <div className="ui divider" style={{ "marginTop" : "40px" ,}}/>
                     </div>
+
+
                   )
                 }.bind(this))
               }

@@ -13,8 +13,8 @@ const MemberNews = React.createClass({
         <h1>
           Member News
         </h1>
-        <div className="ui grid">
 
+        <div className="ui grid">
           <div className="eight wide column">
             {
               this.props.parent.state.news.map(function(el) {

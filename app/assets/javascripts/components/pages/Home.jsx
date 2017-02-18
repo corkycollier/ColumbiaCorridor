@@ -97,10 +97,12 @@ const Home = React.createClass({
         </div>
 
         <div>
+          <a href={"#" + this.state.currentPage.link}>
           <img className="ui image centered "src={this.state.currentPage.img} onClick = { this.navigate } style={{
               "width" : "100vw" ,
               "maxWidth" : "1344px" ,
             }}></img>
+          </a>
         </div>
 
 
