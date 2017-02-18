@@ -128,10 +128,20 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui item header" data-path="events" onClick={ this.go } style={{
+          <a className="ui item dropdown header"  style={{
               "color" : "#262262"
             }}>
             Events
+
+            <div className="menu">
+              <div className="item" data-path="event-list" onClick={ this.go } >
+                EVENT LIST
+              </div>
+
+              <div className="item" data-path="calendar" onClick={ this.go } >
+                CALENDAR
+              </div>
+            </div>
           </a>
 
           <a className="ui dropdown item header"style={{

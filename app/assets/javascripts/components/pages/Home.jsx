@@ -86,30 +86,28 @@ const Home = React.createClass({
 
   render () {
     return (
-      <div className="">
+      <div className="" style={{ "background" : "grey" , }}>
+
+        <div className="ui button circular icon" style={{ "position" : "absolute" , "bottom" : "52%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
+          <i className="left caret icon"></i>
+        </div>
+
+        <div className="ui button circular icon" style={{ "position" : "absolute" , "bottom" : "52%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipRight }>
+          <i className="right caret icon"></i>
+        </div>
+
         <div style={{
-            "color" : "#262262" ,
-            "position" : "relative" ,
-            "height" : "59vh" ,
-          }}>
-
-          <div className="ui button circular icon" style={{ "position" : "absolute" , "bottom" : "52%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
-            <i className="left caret icon"></i>
-          </div>
-
-          <div className="ui button circular icon" style={{ "position" : "absolute" , "bottom" : "52%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipRight }>
-            <i className="right caret icon"></i>
-          </div>
-
-          <img className="ui image home"
-            src={ this.state.currentPage.img }
-            style={{ "width" : "100%" , "height" : "100%" }}
-            onClick = { this.navigate }
-            />
+            "background" : "url(" + this.state.currentPage.img + ")" ,
+            "backgroundSize" : "cover" ,
+            "width" : "100vw" ,
+            "height" : "57vh"
+          }}
+          onClick = { this.navigate }
+          >
         </div>
 
 
-        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "height" : "24vh" , "textAlign" : "center" , "padding" : "14px 10px" , "position" : "relative" , "top" : "14px"}}>
+        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "44px 10px" , "position" : "relative" , "top" : "14px"}}>
           <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
             <h2><a href="#events" style={{ "color" : "#262262" , }}>Upcoming Events</a></h2>
             <div>

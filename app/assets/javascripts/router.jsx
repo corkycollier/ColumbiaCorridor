@@ -18,7 +18,8 @@ const router = Backbone.Router.extend({
     "new-board" : "newBoard" ,
     "staff/:id" : "staffId" ,
     "staff" : "staff" ,
-    "events" : "events" ,
+    "event-list" : "eventList" ,
+    "calendar" : "calendar" ,
     "members" : "members" ,
     "resourcesfull-use" : "resourceFullUse" ,
     "groundwater" : "groundwater" ,
@@ -140,10 +141,16 @@ const router = Backbone.Router.extend({
     this.go( page )
   },
 
-  events () {
-    var page = <Events parent={ this.parent } key="events" /> ;
+  calendar () {
+    var page = <Calendar parent={ this.parent } key="calendar" /> ;
     this.go( page )
   },
+
+  eventList () {
+    var page = <EventList parent={ this.parent } key="eventList" /> ;
+    this.go( page )
+  },
+
 
   resources () {
     var page = <Resources parent={ this.parent } key="resources" /> ;

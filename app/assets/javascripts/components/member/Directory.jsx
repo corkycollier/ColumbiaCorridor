@@ -28,11 +28,11 @@ const Directory = React.createClass({
         <table className="ui single striped line table" style={{"color":"#262262"}}>
           <thead>
             <tr>
-              <th>Contact</th>
-              <th>Email</th>
-              <th style={{ "minWidth" : "168px" , }}>Phone</th>
-              <th>Company</th>
-              <th>NAICS</th>
+              <th>Contact <i className="sort icon"></i></th>
+              <th>Email <i className="sort icon"></i></th>
+              <th style={{ "minWidth" : "168px" , }}>Phone <i className="sort icon"></i></th>
+              <th>Company <i className="sort icon"></i></th>
+              <th style={{ "minWidth" : "90px" , }}>NAICS <i className="sort icon"></i></th>
             </tr>
           </thead>
 
