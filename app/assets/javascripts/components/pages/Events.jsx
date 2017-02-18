@@ -258,11 +258,10 @@ const EventList = React.createClass({
         </div>
 
 
-
         <div>
-        {
-          this.helper_events()
-        }
+          {
+            this.helper_events()
+          }
         </div>
 
       </div>
