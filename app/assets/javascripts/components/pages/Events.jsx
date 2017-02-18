@@ -233,7 +233,7 @@ const EventList = React.createClass({
           Events
         </h1>
 
-        <div className="ui button orange" data-filter="Breakfast Forums" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px" }}>
+        <div className="ui button orange" data-filter="Breakfast Forums" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px" , "marginLeft" : "2px" }}>
           <b>Breakfast Forums</b>
         </div>
 
