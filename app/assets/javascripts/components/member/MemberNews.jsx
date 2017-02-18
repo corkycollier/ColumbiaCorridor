@@ -19,9 +19,10 @@ const MemberNews = React.createClass({
             {
               this.props.parent.state.news.map(function(el) {
                 if (el.id == 2 || el.role == "Admin" || el.author == "Corky Collier") {
-
                   return;
                 }
+
+                
 
                 return(
                   <div key={"manews" + el.id } data-id={ el.id } >
