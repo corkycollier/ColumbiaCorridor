@@ -22,7 +22,7 @@ const MemberOnlyDirectory = React.createClass({
     }
 
 
-    var final = [
+    var final2 = [
       {
         company_name: "3J Consulting Inc" ,
         company_website: "http://www.3jconsulting.com/" ,
@@ -525,7 +525,7 @@ const MemberOnlyDirectory = React.createClass({
     ]
 
     return ({
-      members: final
+      members: final.concat(final2)
     })
   },
   componentDidMount() {
