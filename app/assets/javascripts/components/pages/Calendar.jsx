@@ -1,10 +1,9 @@
-const EventList = React.createClass({
+const Calendar = React.createClass({
   getInitialState () {
     return ({
-      first : false,
+      first : true,
       filter : "",
-      events : [].concat(this.props.parent.state.events),
-      helper_events: []
+      events : this.props.parent.state.events || [],
     })
   },
 
@@ -16,42 +15,24 @@ const EventList = React.createClass({
   fullCalendar () {
     $('#calendar').fullCalendar({
       eventClick: this.clickEvent,
-      eventMouseover: this.mouseOver
     });
 
-    setTimeout(this.addLayovers , 0);
+    this.attachFcButtonListeners();
+  },
 
+  attachFcButtonListeners () {
     $('.fc-button').click(function(){
       this.setState({
         filter: "" ,
-        first : true,
       })
 
-      setTimeout(function() {
-        this.filter()
-      }.bind(this), 0)
+      setTimeout(this.filter, 0)
     }.bind(this))
-  },
-
-  popups() {
-    this.state.currentEvents.forEach(function(el) {
-      $('.fc-event-container').each(function(idx, el2) {
-        if ($(el2).find('.fc-title').html() == el.title) {
-          $(el2).data('content', el.title);
-          $(el2).addClass('popups');
-        }
-      })
-    }.bind(this))
-
-    $('.popups').popup();
   },
 
   clickEvent( calEvent , jsEvent , view ) {
     jsEvent.preventDefault() ;
     Backbone.history.navigate('/event/' + calEvent.id , { trigger : true } ) ;
-  },
-
-  mouseOver ( event, jsEvent, view ) {
   },
 
   filter () {
@@ -113,24 +94,6 @@ const EventList = React.createClass({
 
     $('#calendar').fullCalendar('renderEvents' , events ) ;
 
-    this.setState({
-      currentEvents: events
-    });
-
-    setTimeout(this.popups , 0);
-
-
-    if ( !this.state.first ) {
-      this.setState({
-        helper_events: events
-      })
-    }
-
-    setTimeout(function() {
-      this.setState({
-        first: false
-      })
-    }.bind(this), 0)
   },
 
   updateFilter (e) {
@@ -140,85 +103,7 @@ const EventList = React.createClass({
       filter : e.currentTarget.dataset.filter ,
     })
 
-
     setTimeout(this.filter, 0)
-  },
-
-  helper_events () {
-    if (this.state.helper_events.length < 1 ) {
-      return
-    } else {
-      return (
-        <div>
-          {
-            this.state.helper_events.map(function(el) {
-
-              var dateString = el.date.slice(5, 7) + "/" + el.date.slice(8) + "/" + el.date.slice(0, 4);
-              if (dateString[0] == "0") {
-                dateString = dateString.slice(1);
-              }
-
-              var startString = el.start;
-
-              if (startString[0] == "0") {
-                startString = startString.slice(1);
-              }
-              if ( parseInt(startString[0]) < 12 ) {
-                startString += " AM"
-              } else {
-                startString += " PM"
-              }
-
-              startString[0] = parseInt(startString[0]) % 12
-
-
-              var endString = el.end;
-
-              if (endString[0] == "0") {
-                endString = endString.slice(1);
-              }
-              if ( parseInt(endString[0]) < 12 ) {
-                endString += " AM"
-              } else {
-                endString += " PM"
-              }
-
-              endString[0] = parseInt(endString[0]) % 12
-
-              return(
-                <div className={"ui segment ui grid " + el.color } key={"event" + el.id}>
-                  <div className="eight wide column">
-                    <h3><a href={"#event/" + el.id} style={{ "color" : "#262262" , "letterSpacing" : "1px" }}>
-                      { el.title }
-                    </a></h3>
-                  </div>
-
-                  <div className="eight wide column" style={{ "textAlign" : "right" , }}>
-                    <b>
-                      {dateString}
-                    </b> - {el.location}
-                  </div>
-
-
-                  <div className="ui clearing divider" style={{
-                      "display" : "none" ,
-                      "width" : "98%" ,
-                      "left" : "1%" ,
-                      "position" : "relative" ,
-                      "margin": "-11px 0px" ,
-                    }}>
-                  </div>
-
-
-                </div>
-              )
-            })
-          }
-
-        </div>
-      )
-    }
-
   },
 
   render () {
@@ -226,9 +111,9 @@ const EventList = React.createClass({
       <div className="ui container" style={{
           "color" : "#262262" ,
           "padding" : "30px 20px" ,
-        }}
-        >
-        <h1>
+        }}>
+
+                <h1>
           Events
         </h1>
 
@@ -257,10 +142,7 @@ const EventList = React.createClass({
         </div>
 
 
-        <div>
-          {
-            this.helper_events()
-          }
+        <div id="calendar">
         </div>
 
       </div>

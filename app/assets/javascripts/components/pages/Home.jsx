@@ -1,7 +1,5 @@
 const Home = React.createClass({
   getInitialState () {
-
-
     var pages = {
       "0" : {
         id : 0 ,
@@ -39,13 +37,6 @@ const Home = React.createClass({
     this.initiateFlip();
   },
 
-  goToEvent (e) {
-    Backbone.history.navigate('event/' + e.currentTarget.dataset.id , { trigger : true });
-  },
-
-  goToNews (e) {
-    Backbone.history.navigate('news/' + e.currentTarget.dataset.id , { trigger : true });
-  },
 
 
   initiateFlip() {
