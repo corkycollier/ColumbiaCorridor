@@ -1,16 +1,15 @@
 
 const ColumbiaCorridor = React.createClass({
   componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('.fluid.image')
-      .transition({
-        animation  : 'slide left' ,
-        duration   : '0.2s'    ,
+    $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
       });
   },
 
   render() {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" , "marginBottom" : "40px"}}>
         <h1 style={{ "marginBottom" : "24px" , }}>
           Columbia Corridor Facts
         </h1>
@@ -31,7 +30,7 @@ const ColumbiaCorridor = React.createClass({
           </div>
 
           <div className="eleven wide column">
-            <img className="ui image fluid transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487036435/ColumbiaCorridorMap_v99rsf.jpg" />
+            <img className="ui image fluid" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487036435/ColumbiaCorridorMap_v99rsf.jpg" />
             <div>
               <h2 style={{ "textAlign" : "center" , "marginTop" : "12px"}}>
               <i><u>Columbia Corridor Map</u></i>

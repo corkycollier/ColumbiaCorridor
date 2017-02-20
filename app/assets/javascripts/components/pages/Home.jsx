@@ -35,9 +35,12 @@ const Home = React.createClass({
 
   componentDidMount () {
     this.initiateFlip();
+    $('.blue-footer')
+      .transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
+      });
   },
-
-
 
   initiateFlip() {
     var interval = setInterval(function () {
@@ -77,7 +80,7 @@ const Home = React.createClass({
 
   render () {
     return (
-      <div className="" style={{"position" : "relative" , "background" : "grey" , }}>
+      <div className="blue-footer" style={{"position" : "relative" , "background" : "grey" , }}>
 
         <div className="ui button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
           <i className="left caret icon"></i>
@@ -90,6 +93,7 @@ const Home = React.createClass({
         <div>
           <a href={"#" + this.state.currentPage.link}>
           <img className="ui image centered "src={this.state.currentPage.img} onClick = { this.navigate } style={{
+              "minHeight" : "282px" ,
               "width" : "100vw" ,
               "maxWidth" : "1344px" ,
             }}></img>
@@ -97,7 +101,7 @@ const Home = React.createClass({
         </div>
 
 
-        <div className="ui grid centered stackable" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "30px 10px" , "position" : "relative" , "top" : "14px"}}>
+        <div className="ui grid centered stackable blue-footer" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "30px 10px" , "position" : "relative" , "top" : "14px"}}>
           <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
             <h2><a href="#event-list" style={{ "color" : "#262262" , }}>Upcoming Events</a></h2>
             <div>

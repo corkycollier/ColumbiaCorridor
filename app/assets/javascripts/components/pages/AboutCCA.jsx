@@ -1,9 +1,8 @@
 const AboutCCA = React.createClass({
   componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('.fluid.image')
-      .transition({
-        animation  : 'slide left' ,
-        duration   : '0.2s'    ,
+    $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
       });
   },
   render() {
@@ -30,11 +29,11 @@ const AboutCCA = React.createClass({
           </div>
 
           <div className="eight wide column">
-            <img className="ui fluid transition hidden image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481672281/about-us_twyr2b.jpg" />
+            <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481672281/about-us_twyr2b.jpg" />
           </div>
         </div>
 
-        
+
       </div>
     );
   }
