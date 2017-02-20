@@ -58,6 +58,7 @@ const EditProfile = React.createClass({
       <div className="ui container" style={{
           "color" : "#262262" ,
           "padding" : "30px 20px" ,
+          "marginBottom" : "20px" ,
         }}>
         <h1 >
           Edit Profile

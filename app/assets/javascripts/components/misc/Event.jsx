@@ -27,10 +27,10 @@ const Event = React.createClass({
         $('#paypal-target').html( this.state.event.paypal );
       }.bind(this), 0)
       return (
-        <div>
-          <div className="ui clearing divider">
+        <div className="ui violet message">
+          <div className="header">
+            Tickets
           </div>
-
           <div id="paypal-target">
           </div>
         </div>
@@ -102,7 +102,7 @@ const Event = React.createClass({
 
     return (
       <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
-        <h1 className="ui header centered" style={{ "marginBottom" : "36px" , "marginTop" : "18px"}} >
+        <h1 className="ui header centered" >
           <a href="#events">
             Event
           </a>
@@ -110,49 +110,69 @@ const Event = React.createClass({
 
         <div className="ui grid centered">
           <div className="twelve wide column">
-            <div className={"ui padded segment " + color}>
-              <h2 className="ui header left floated">
+            <div className="ui message">
+              <div className="header">
                 { this.state.event.title }
-              </h2>
-
-              <div className="ui clearing divider">
               </div>
 
               <div id="body">
               </div>
+            </div>
+          </div>
 
-              <div className="ui clearing divider">
+          <div className="four wide column">
+            <div className="ui info message">
+              <div className="header">
+                Event information:
               </div>
 
-              <div className="ui grid stackable">
-                <div className="sixteen wide column">
-                  <h4 className="ui header centered">
-                    <a href={"http://maps.google.com/?q=1200 " + this.state.event.location } target="_blank">
-                      { this.state.event.location }
-                    </a>
-                  </h4>
+                <ul className="list">
+                  <li>
 
-                  <iframe src={"//www.google.com/maps/embed/v1/place?q=" + this.state.event.location + "&zoom=17&key=AIzaSyAqEzqdKVDzEaqos77B7sUHePqbt1kjWEE"} style={{ "border" : "none" , "width" : "100%" , "height" : "32vw"}}>
-                  </iframe>
 
-                  <h2 className="ui header centered" style={{ "margin" : "8px" , }}>
+                  </li>
+
+                  <li>
                     { dateString }
-                  </h2>
+                  </li>
 
-                  <h3 className="ui header centered" style={{ "margin" : "8px" , }}>
+                  <li>
                     { startString } to { endString }
-                  </h3>
-                </div>
-              </div>
-
+                  </li>
+                </ul>
+            </div>
 
               {
                 this.paypal()
               }
 
+
+          </div>
+
+          <div className="sixteen wide column">
+            <div className="ui warning message">
+              <div className="header" style={{ "marginBottom" : "11px" , }}>
+                <a href={"http://maps.google.com/?q=1200 " + this.state.event.location || "CCA" } target="_blank" style={{ "color" : "#794B02" , }}>
+                Location
+                </a>
+              </div>
+
+              <iframe src={"//www.google.com/maps/embed/v1/place?q=" + this.state.event.location + "&zoom=17&key=AIzaSyAqEzqdKVDzEaqos77B7sUHePqbt1kjWEE"} style={{ "border" : "none" , "width" : "100%" , "height" : "32vw"}}>
+              </iframe>
             </div>
           </div>
+
+
+
+
+
+
         </div>
+
+
+
+
+
       </div>
     )
   }

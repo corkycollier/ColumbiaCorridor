@@ -77,7 +77,6 @@ const Home = React.createClass({
     });
   },
 
-
   render () {
     return (
       <div className="blue-footer" style={{"position" : "relative" , "background" : "grey" , }}>
