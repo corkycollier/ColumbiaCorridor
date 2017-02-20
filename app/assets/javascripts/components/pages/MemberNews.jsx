@@ -55,7 +55,7 @@ const MemberNews = React.createClass({
           </div>
 
           <div className="eight wide column">
-            <img className="ui image fluid transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/w_1400/v1486979985/ibi2c15vjxPDXUIZIigGTZSMHrEwylqOdyMCh3uD7q4_2Cbwtoaojbr44fI-I7EI1fQImjTGEbeXlDQxS6g0_IPeo_fkqhxv.jpg"></img>
+            <img className="ui image fluid" src="http://res.cloudinary.com/djjldnjz7/image/upload/w_1400/v1486979985/ibi2c15vjxPDXUIZIigGTZSMHrEwylqOdyMCh3uD7q4_2Cbwtoaojbr44fI-I7EI1fQImjTGEbeXlDQxS6g0_IPeo_fkqhxv.jpg"></img>
           </div>
         </div>
       </div>
