@@ -57,6 +57,10 @@ const CCANews = React.createClass({
 
         </div>
 
+        <a href="#" className="ui button left labeled icon mini" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
+          <i className="left caret icon"></i>
+          Home
+        </a>
       </div>
     )
   }
