@@ -115,6 +115,7 @@ const Calendar = React.createClass({
     return (
       <div className="ui container" style={{
           "color" : "#262262" ,
+          "minHeight" : "74vh" ,
           "padding" : "30px 20px" ,
         }}>
 

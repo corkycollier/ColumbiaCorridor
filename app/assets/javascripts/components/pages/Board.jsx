@@ -28,7 +28,11 @@ const Board = React.createClass({
 
     return (
       <div>
-        <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" }}>
+        <div className="ui container" style={{
+            "color" : "#262262" ,
+            "padding" : "30px 20px",
+            "minHeight" : "74vh" ,
+          }}>
           <h1>
             Board
           </h1>

@@ -22,7 +22,11 @@ const Staff = React.createClass({
 
   render() {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+      <div className="ui container" style={{
+          "color" : "#262262" ,
+          "padding" : "30px 20px" ,
+          "minHeight" : "54vh" ,
+        }}>
         <h1>
           Staff
         </h1>

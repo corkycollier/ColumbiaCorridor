@@ -16,7 +16,11 @@ const Membership = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" , "fontSize" : "16px" }}>
+      <div className="ui container" style={{
+          "color" : "#262262" ,
+          "minHeight" : "74vh" ,
+          "padding" : "30px 20px" ,
+          "fontSize" : "16px" }}>
         <h1 >
           Membership
         </h1>

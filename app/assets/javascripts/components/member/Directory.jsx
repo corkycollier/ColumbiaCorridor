@@ -5,6 +5,7 @@ const Directory = React.createClass({
       "color" : "#262262" ,
       "padding" : "30px 20px" ,
       "minHeight" : "50vh" ,
+      "minHeight" : "74vh" ,
       "marginBottom" : "60px" ,
     }
 
