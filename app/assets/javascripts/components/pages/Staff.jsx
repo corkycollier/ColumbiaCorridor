@@ -2,11 +2,11 @@
 const Staff = React.createClass({
 
   componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('.fluid.image')
-      .transition({
-        animation  : 'slide left' ,
-        duration   : '0.2s'    ,
-    });
+
+    $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
+      });
 
     $(ReactDOM.findDOMNode(this)).find('.linkify.icon')
       .transition({
@@ -40,7 +40,7 @@ const Staff = React.createClass({
 
           <div className="four wide column" >
             <a href={"#staff/1"}>
-              <img className="ui fluid image transition hidden staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
+              <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
               <p style={{ "textAlign" : "center" , "marginTop" : "12px" , "color" : "#262262" }}>
                 <b>Executive Director</b> - Corky Collier
                 </p>
@@ -48,7 +48,7 @@ const Staff = React.createClass({
 
 
               <div>
-                <i className="linkify icon transition hidden" style={{
+                <i className="linkify icon" style={{
                     "position" : "absolute" ,
                     "top" : "10%" ,
                     "left" : "7%" ,
@@ -59,7 +59,7 @@ const Staff = React.createClass({
               <div className="four wide column" >
                 <a href={"#staff/2"}>
 
-                  <img className="ui fluid image transition hidden staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
+                  <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
 
                   <p style={{ "textAlign" : "center" , "marginTop" : "12px" , "color" : "#262262" }}>
                     <b>Office Manager</b> - Marissa King
@@ -68,7 +68,7 @@ const Staff = React.createClass({
 
 
                   <div>
-                    <i className="linkify icon transition hidden" style={{
+                    <i className="linkify icon" style={{
                         "position" : "absolute" ,
                         "top" : "10%" ,
                         "left" : "7%" ,
