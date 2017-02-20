@@ -2,10 +2,16 @@
 const Staff = React.createClass({
 
   componentDidMount() {
-    $('.fluid.image')
-    .transition({
-      animation  : 'slide left' ,
-      duration   : '0.2s'    ,
+    $(ReactDOM.findDOMNode(this)).find('.fluid.image')
+      .transition({
+        animation  : 'slide left' ,
+        duration   : '0.2s'    ,
+    });
+
+    $(ReactDOM.findDOMNode(this)).find('.linkify.icon')
+      .transition({
+        animation  : 'fade in' ,
+        duration   : '1s'    ,
     });
   },
 
@@ -35,14 +41,14 @@ const Staff = React.createClass({
           <div className="four wide column" >
             <a href={"#staff/1"}>
               <img className="ui fluid image transition hidden staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
-              <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
+              <p style={{ "textAlign" : "center" , "marginTop" : "12px" , "color" : "#262262" }}>
                 <b>Executive Director</b> - Corky Collier
                 </p>
               </a>
 
 
               <div>
-                <i className="linkify icon" style={{
+                <i className="linkify icon transition hidden" style={{
                     "position" : "absolute" ,
                     "top" : "10%" ,
                     "left" : "7%" ,
@@ -55,14 +61,14 @@ const Staff = React.createClass({
 
                   <img className="ui fluid image transition hidden staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
 
-                  <p style={{ "textAlign" : "center" , "marginTop" : "12px" }}>
+                  <p style={{ "textAlign" : "center" , "marginTop" : "12px" , "color" : "#262262" }}>
                     <b>Office Manager</b> - Marissa King
                     </p>
                   </a>
 
 
                   <div>
-                    <i className="linkify icon" style={{
+                    <i className="linkify icon transition hidden" style={{
                         "position" : "absolute" ,
                         "top" : "10%" ,
                         "left" : "7%" ,

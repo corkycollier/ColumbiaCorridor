@@ -1,7 +1,7 @@
 
 const ColumbiaCorridor = React.createClass({
   componentDidMount() {
-    $('.fluid.image')
+    $(ReactDOM.findDOMNode(this)).find('.fluid.image')
       .transition({
         animation  : 'slide left' ,
         duration   : '0.2s'    ,

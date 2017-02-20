@@ -1,31 +1,14 @@
 
-const Join = React.createClass({
-  getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "60px 20px" ,
-    }
-
-    return({
-      style: style,
-    })
-  },
-
-  componentDidMount () {
-
-  },
-
-  render () {
-    return (
-      <div className="ui container" style={this.state.style}>
-      </div>
-    )
-  }
-});
-
 
 const Membership = React.createClass({
 
+  componentDidMount() {
+    $(ReactDOM.findDOMNode(this)).find('.transition.hidden')
+      .transition({
+        animation  : 'slide left' ,
+        duration   : '0.2s'    ,
+      });
+  },
   updateState(e) {
     var state = this.state;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
@@ -34,13 +17,13 @@ const Membership = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" , "fontSize" : "16px" }}>
         <h1 >
           Membership
         </h1>
 
         <div className="ui grid doubling stackable">
-          <div className="eight wide column" >
+          <div className="six wide column" >
             <h4>Discount Members – $475</h4>
 
 
@@ -140,8 +123,8 @@ const Membership = React.createClass({
             </div>
           </div>
 
-          <div className="eight wide column">
-            <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481693642/JOIN-Membership_03_hfenov.jpg"/>
+          <div className="ten wide column">
+            <img className="ui image fluid transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481693642/JOIN-Membership_03_hfenov.jpg" style={{ "maxHeight" : "600px" , }}/>
           </div>
         </div>
 

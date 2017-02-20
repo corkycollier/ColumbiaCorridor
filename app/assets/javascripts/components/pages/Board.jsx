@@ -1,4 +1,20 @@
 const Board = React.createClass({
+
+  componentDidMount() {
+    $(ReactDOM.findDOMNode(this)).find('.fluid.image')
+      .transition({
+        animation  : 'slide left' ,
+        duration   : '0.2s'    ,
+      });
+
+
+          $(ReactDOM.findDOMNode(this)).find('.linkify.icon')
+            .transition({
+              animation  : 'fade in' ,
+              duration   : '1s'    ,
+          });
+  },
+
   updateState(e) {
     var state = this.state;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
@@ -29,7 +45,7 @@ const Board = React.createClass({
                        style={{ "zIndex" : "10" }}
                        >
                       <a href={"#board/" + el.id} style={{ "color" : "#262262" , }}>
-                        <img className="ui image board-image" src={ el.img } />
+                        <img className="ui image fluid transition hidden board-image" src={ el.img } />
 
                       <div style={{ "textAlign" : "center" , "marginTop" : "4px" , "fontWeight" : "bold" }}>
                         { el.name }
@@ -41,7 +57,7 @@ const Board = React.createClass({
                     </a>
 
 
-                      <i className="linkify icon" style={{
+                      <i className="linkify icon transition hidden" style={{
                           "position" : "absolute" ,
                           "top" : "8%" ,
                           "left" : "7%" ,
