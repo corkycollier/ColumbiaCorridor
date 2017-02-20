@@ -33,6 +33,8 @@ const AboutCCA = React.createClass({
             <img className="ui fluid transition hidden image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481672281/about-us_twyr2b.jpg" />
           </div>
         </div>
+
+        
       </div>
     );
   }

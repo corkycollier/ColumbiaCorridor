@@ -145,6 +145,10 @@ const Calendar = React.createClass({
         <div id="calendar">
         </div>
 
+        <a href="#event-list" className="ui button left labeled icon small" style={{ "marginTop" : "18px" , }}>
+          <i className="left caret icon"></i>
+          Event List
+        </a>
       </div>
     )
   }

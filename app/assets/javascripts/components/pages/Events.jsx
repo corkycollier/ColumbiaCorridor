@@ -263,6 +263,11 @@ const EventList = React.createClass({
           }
         </div>
 
+
+        <a href="#calendar" className="ui button right labeled icon small" style={{ "marginTop" : "18px" , }}>
+          <i className="right caret icon"></i>
+          Calendar
+        </a>
       </div>
     )
   }
