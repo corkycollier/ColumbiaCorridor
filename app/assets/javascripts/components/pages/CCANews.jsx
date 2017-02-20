@@ -1,11 +1,11 @@
 const CCANews = React.createClass({
 
   componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('.fluid.image')
-      .transition({
-        animation  : 'slide left' ,
-        duration   : '0.2s'    ,
+        $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
       });
+
   },
   updateState(e) {
     var state = this.state;
@@ -51,7 +51,7 @@ const CCANews = React.createClass({
             </div>
 
             <div className="eight wide column">
-              <img className="ui image fluid transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1482225183/RESOURCES_NEWS_1_03_k64ssu.jpg" />
+              <img className="ui image fluid " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1482225183/RESOURCES_NEWS_1_03_k64ssu.jpg" />
             </div>
           </div>
 

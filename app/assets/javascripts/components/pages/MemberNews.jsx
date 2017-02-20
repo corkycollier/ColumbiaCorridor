@@ -1,10 +1,9 @@
 const MemberNews = React.createClass({
 
   componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('.fluid.image')
-      .transition({
-        animation  : 'slide left' ,
-        duration   : '0.2s'    ,
+      $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
       });
   },
 

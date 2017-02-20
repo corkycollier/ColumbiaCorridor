@@ -11,6 +11,11 @@ const EventList = React.createClass({
   componentDidMount () {
     setTimeout(this.fullCalendar , 0);
     setTimeout(this.filter , 0);
+
+    $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
+      });
   },
 
   fullCalendar () {

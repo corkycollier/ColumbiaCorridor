@@ -2,12 +2,12 @@
 const ResourceFullUse = React.createClass({
 
   componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('.transition.hidden')
-      .transition({
-        animation  : 'slide left' ,
-        duration   : '0.2s'    ,
+    $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
       });
   },
+
   updateState(e) {
     var state = this.state;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
