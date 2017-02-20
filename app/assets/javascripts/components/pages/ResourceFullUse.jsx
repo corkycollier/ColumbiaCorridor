@@ -56,11 +56,11 @@ const ResourceFullUse = React.createClass({
           </div>
 
           <div className="eight wide column">
-            <img className="ui image fluid transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg" style={{ "float" : "left" , "margin" : "12px" }} / >
+            <img className="ui image fluid " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg" style={{ "float" : "left" , "margin" : "12px" }} / >
             </div>
 
             <div className="eight wide column">
-              <img className="ui image fluid transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg" style={{ "float" : "left" , "margin" : "12px" }} />
+              <img className="ui image fluid " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg" style={{ "float" : "left" , "margin" : "12px" }} />
             </div>
 
 
@@ -114,20 +114,20 @@ const ResourceFullUse = React.createClass({
               <div className="ui grid">
                 <div className="five wide column">
                   <a href="http://www.oregonmetro.gov/" target="_blank" >
-                    <img className="ui centered image transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/metro_logo_ukb86i.jpg"></img>
+                    <img className="ui centered image " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/metro_logo_ukb86i.jpg"></img>
                   </a>
                 </div>
 
 
                 <div className="five wide column">
                   <a href="http://www.oregon.gov/DEQ/Pages/index.aspx" target="_blank" >
-                    <img className="ui centered image transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/deq_logo_dewlj1.jpg"></img>
+                    <img className="ui centered image " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/deq_logo_dewlj1.jpg"></img>
                   </a>
                 </div>
 
                 <div className="five wide column">
                   <a href="http://www.boeing.com/" target="_blank" >
-                    <img className="ui centered image transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/boeing_logo_iz9hcc.jpg"></img>
+                    <img className="ui centered image " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/boeing_logo_iz9hcc.jpg"></img>
                   </a>
                 </div>
               </div>

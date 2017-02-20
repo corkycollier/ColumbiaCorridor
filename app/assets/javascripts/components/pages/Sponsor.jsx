@@ -13,10 +13,9 @@ const Sponsor = React.createClass({
 
 
   componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('.transition.hidden')
-      .transition({
-        animation  : 'slide left' ,
-        duration   : '0.2s'    ,
+    $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
       });
   },
   render () {
@@ -90,7 +89,7 @@ const Sponsor = React.createClass({
               Every September, CCA hosts an annual golf tournament at the Riverside Golf & Country Club to support CCA activities and facilitate corridor business networking. Consider joining us for a beautiful day on the course or sponsoring the tournament at levels from $400 to $1,500.
             </p>
 
-            <img className="ui fluid image transition hidden" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481700569/JOIN-Sponsors_03_sodj8w.png" />
+            <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481700569/JOIN-Sponsors_03_sodj8w.png" />
 
           </div>
 

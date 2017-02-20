@@ -14,6 +14,10 @@ const Contact = React.createClass({
 
   componentDidMount () {
 
+    $('.ui.container').transition({
+        animation  : 'fade in' ,
+        duration   : '0.8s'    ,
+      });
   },
 
   render () {
