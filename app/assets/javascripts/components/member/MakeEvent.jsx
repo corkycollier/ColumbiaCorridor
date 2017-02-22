@@ -242,7 +242,7 @@ const EditEvent = React.createClass({
 
           <div className="field">
             <label>Special</label>
-            <input type="text" data-field="special" onChange={ this.updateState } defaultValue={this.props.event.location}  />
+            <input type="text" data-field="special" onChange={ this.updateState } defaultValue={this.props.event.special}  />
           </div>
 
           <div className="field">
