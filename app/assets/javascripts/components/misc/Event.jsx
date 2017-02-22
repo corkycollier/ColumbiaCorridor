@@ -38,6 +38,16 @@ const Event = React.createClass({
     }
   },
 
+  custom () {
+    if (this.state.event.custom) {
+      return (
+        <li>
+          { this.state.event.custom }
+        </li>
+      )
+    }
+  },
+
   render () {
     var color;
     switch( this.state.event.event_type ) {
@@ -78,7 +88,7 @@ const Event = React.createClass({
     if (startString[0] == "0") {
       startString = startString.slice(1);
     }
-    if ( parseInt(startString[0]) < 12 ) {
+    if ( parseInt(startString.split(":")[0]) < 12 ) {
       startString += " AM"
     } else {
       startString += " PM"
@@ -92,7 +102,7 @@ const Event = React.createClass({
     if (endString[0] == "0") {
       endString = endString.slice(1);
     }
-    if ( parseInt(endString[0]) < 12 ) {
+    if ( parseInt(endString.split(":")[0]) < 12) {
       endString += " AM"
     } else {
       endString += " PM"
@@ -125,13 +135,7 @@ const Event = React.createClass({
               <div className="header">
                 Event information:
               </div>
-
                 <ul className="list">
-                  <li>
-
-
-                  </li>
-
                   <li>
                     { dateString }
                   </li>
@@ -139,13 +143,14 @@ const Event = React.createClass({
                   <li>
                     { startString } to { endString }
                   </li>
+
+                  { this.custom() }
                 </ul>
             </div>
 
               {
                 this.paypal()
               }
-
 
           </div>
 
@@ -162,16 +167,7 @@ const Event = React.createClass({
             </div>
           </div>
 
-
-
-
-
-
         </div>
-
-
-
-
 
       </div>
     )

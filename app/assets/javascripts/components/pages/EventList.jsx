@@ -168,7 +168,7 @@ const EventList = React.createClass({
               if (startString[0] == "0") {
                 startString = startString.slice(1);
               }
-              if ( parseInt(startString[0]) < 12 ) {
+              if ( parseInt(startString.split(":")[0]) < 12 ) {
                 startString += " AM"
               } else {
                 startString += " PM"
@@ -182,7 +182,7 @@ const EventList = React.createClass({
               if (endString[0] == "0") {
                 endString = endString.slice(1);
               }
-              if ( parseInt(endString[0]) < 12 ) {
+              if ( parseInt(endString.split(":")[0]) < 12) {
                 endString += " AM"
               } else {
                 endString += " PM"

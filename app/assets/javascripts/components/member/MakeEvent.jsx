@@ -80,7 +80,7 @@ const MakeEvent = React.createClass({
 
           <div className="field">
             <label>Location</label>
-            <input type="text" data-field="location"  onChange={this.update} value={this.state.location}></input>
+            <input type="text" data-field="location"  onChange={this.update} value={this.state.location || "" || ""}></input>
             <label style={{ "marginTop" : "12px" , }}>Past locations</label>
             <select className="ui search dropdown" data-field="location" onChange={this.update} >
               <option></option>
@@ -214,7 +214,7 @@ const EditEvent = React.createClass({
 
           <div className="field">
             <label>Location</label>
-            <input type="text" data-field="location" onChange={ this.update } value={this.state.location}></input>
+            <input type="text" data-field="location" onChange={ this.update } value={this.state.location || ""}></input>
             <label style={{ "marginTop" : "12px" , }}>Past locations</label>
             <select className="ui search dropdown" data-field="location" onChange={ this.update } >
               <option></option>
