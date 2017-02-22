@@ -39,6 +39,9 @@ const AdminBoard = React.createClass({
           "marginBottom" : "40px" ,
           "padding" : "25px 0px" ,
         }}>
+
+        <Admin />
+        
         <h2>
           Board
         </h2>

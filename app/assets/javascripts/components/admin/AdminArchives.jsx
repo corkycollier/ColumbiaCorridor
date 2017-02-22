@@ -33,8 +33,9 @@ const AdminArchives = React.createClass({
     return (
       <div className="ui container" style={{
           "color" : "#262262" ,
-          "padding" : "30px 20px" ,
+          "padding" : "25px 0px" ,
         }}>
+        <Admin />
 
         <h2>
           Archives

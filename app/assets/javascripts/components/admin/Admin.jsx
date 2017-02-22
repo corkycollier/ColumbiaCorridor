@@ -4,9 +4,9 @@ const Admin = React.createClass({
       <div className="ui container" style={{
         "color" : "#262262" ,
         "padding" : "25px 0px" ,
-        "height" : "45vh" ,
+        "paddingLeft" : "0px" ,
       }}>
-        <a href="#admin/users" className="ui button large" style={{ "margin" : "8px" , }}>
+        <a href="#admin/users" className="ui button large" style={{ "margin" : "8px" , "marginLeft" : "0px" }}>
           Users
         </a>
 

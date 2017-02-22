@@ -22,7 +22,7 @@ const AdminNews = React.createClass({
           "marginBottom" : "40px" ,
           "padding" : "25px 0px" ,
         }}>
-
+        <Admin />
         <h2 className="ui header" >
           News
         </h2>

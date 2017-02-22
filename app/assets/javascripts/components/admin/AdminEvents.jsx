@@ -18,6 +18,8 @@ const AdminEvents = React.createClass({
           "padding" : "25px 0px" ,
           "position" : "relative" ,
         }}>
+        
+        <Admin />
 
         <h2>
           Admin: Events

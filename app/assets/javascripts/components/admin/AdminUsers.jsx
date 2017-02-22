@@ -50,6 +50,8 @@ const AdminUsers = React.createClass({
           "padding" : "30px 0px" ,
         }}>
 
+        <Admin />
+
         <h2>
           Admin: Users
         </h2>
