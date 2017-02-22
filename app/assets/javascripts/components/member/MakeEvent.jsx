@@ -1,12 +1,17 @@
 const MakeEvent = React.createClass({
+  getInitialState () {
 
+
+    return ({})
+  },
   componentDidMount () {
     $('#text-area').froalaEditor();
     $('.checkbox').checkbox();
     $('.dropdown').dropdown();
   },
 
-  updateState(e) {
+  update(e) {
+
     var state = this.state || {};
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
     this.setState( state );
@@ -19,22 +24,19 @@ const MakeEvent = React.createClass({
   },
 
   handleSave () {
-    var confirmation = confirm("Are you sure?")
-    if ( confirmation ) {
-      $.ajax({
-        url: '/api/events',
-        type: 'POST',
-        data: { event: this.state },
-        success: function (app_data, resp, obj) {
-          this.props.parent.setState( app_data )
-          alert("An event was created.")
-          Backbone.history.navigate( "admin/events" , { trigger : true } );
-        }.bind(this), error: function (a, b, c) {
-          alert("There was an error.")
-          Backbone.history.navigate( "admin/events" , { trigger : true } );
-        }
-      })
-    }
+    $.ajax({
+      url: '/api/events',
+      type: 'POST',
+      data: { event: this.state },
+      success: function (app_data, resp, obj) {
+        this.props.parent.setState( app_data )
+        alert("An event was created.")
+        Backbone.history.navigate( "admin/events" , { trigger : true } );
+      }.bind(this), error: function (a, b, c) {
+        alert("There was an error.")
+        Backbone.history.navigate( "admin/events" , { trigger : true } );
+      }
+    })
   },
 
   render () {
@@ -52,7 +54,7 @@ const MakeEvent = React.createClass({
         <form className="ui form" onSubmit={ this.handleSave }>
           <div className="field">
             <label>Title</label>
-            <input type="text" data-field="title" onChange={ this.updateState } />
+            <input type="text" data-field="title" onChange={ this.update } required/>
           </div>
 
           <div className="field" onBlur={ this.updateBody } >
@@ -62,26 +64,26 @@ const MakeEvent = React.createClass({
 
           <div className="field">
             <label>Date</label>
-            <input type="date" data-field="date" onChange={ this.updateState } />
+            <input type="date" data-field="date" onChange={ this.update } required/>
           </div>
 
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="time" data-field="start" onChange={ this.updateState } />
+              <input type="time" data-field="start" onChange={ this.update } required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="time" data-field="end" onChange={ this.updateState }  />
+              <input type="time" data-field="end" onChange={ this.update } required />
             </div>
           </div>
 
           <div className="field">
             <label>Location</label>
-            <input type="text" data-field="location" onChange={ this.updateState }></input>
+            <input type="text" data-field="location"  onChange={this.update} value={this.state.location}></input>
             <label style={{ "marginTop" : "12px" , }}>Past locations</label>
-            <select className="ui search dropdown" data-field="location" onChange={ this.updateState }>
+            <select className="ui search dropdown" data-field="location" onChange={this.update} >
               <option></option>
               {
                 this.props.parent.state.event_locations.map(function(el) {
@@ -96,18 +98,18 @@ const MakeEvent = React.createClass({
           </div>
 
           <div className="field">
-            <label>Special</label>
-            <input type="text" data-field="special" onChange={ this.updateState }  />
+            <label>Special instructions</label>
+            <input type="text" data-field="custom" onChange={ this.update }  />
           </div>
 
           <div className="field">
             <label>Event Url</label>
-            <input type="text" data-field="url" onChange={ this.updateState } />
+            <input type="text" data-field="url" onChange={ this.update } />
           </div>
 
           <div className="field" >
             <label>Event type</label>
-            <select className="ui select dropdown" data-field="event_type" onChange={ this.updateState } >
+            <select className="ui select dropdown" data-field="event_type" onChange={ this.update } >
               <option value=""></option>
               <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>
@@ -119,7 +121,7 @@ const MakeEvent = React.createClass({
 
           <div className="field">
             <label>Paypal Form</label>
-            <textarea type="text" data-field="paypal" onChange={ this.updateState }></textarea>
+            <textarea type="text" data-field="paypal" onChange={ this.update }></textarea>
           </div>
 
           <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>
@@ -144,7 +146,7 @@ const EditEvent = React.createClass({
     $('.dropdown').dropdown();
   },
 
-  updateState(e) {
+  update(e) {
     var state = this.state || {};
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
     this.setState( state );
@@ -157,21 +159,18 @@ const EditEvent = React.createClass({
   },
 
   handleSave () {
-    var confirmation = confirm("Are you sure?")
-    if ( confirmation ) {
-      $.ajax({
-        url: '/api/events/' + this.state.id ,
-        type: 'PATCH',
-        data: { event: this.state },
-        success: function (app_data, resp, obj) {
-          this.props.parent.setState( app_data )
-          Backbone.history.navigate( 'admin/events' , { trigger : true } );
-        }.bind(this), error: function (a, b, c) {
-          alert("There was an error. Try again later.")
-          Backbone.history.navigate( 'admin/events' , { trigger : true } );
-        }
-      })
-    }
+    $.ajax({
+      url: '/api/events/' + this.state.id ,
+      type: 'PATCH',
+      data: { event: this.state },
+      success: function (app_data, resp, obj) {
+        this.props.parent.setState( app_data )
+        Backbone.history.navigate( 'admin/events' , { trigger : true } );
+      }.bind(this), error: function (a, b, c) {
+        alert("There was an error. Try again later.")
+        Backbone.history.navigate( 'admin/events' , { trigger : true } );
+      }
+    })
   },
 
   render () {
@@ -189,7 +188,7 @@ const EditEvent = React.createClass({
         <form className="ui form" onSubmit={ this.handleSave }>
           <div className="field">
             <label>Title</label>
-            <input type="text" data-field="title" onChange={ this.updateState } defaultValue={this.props.event.title} />
+            <input type="text" data-field="title" onChange={ this.update } defaultValue={this.props.event.title} required />
           </div>
 
           <div className="field" onBlur={ this.updateBody } >
@@ -199,33 +198,26 @@ const EditEvent = React.createClass({
 
           <div className="field">
             <label>Date</label>
-            <input type="date" data-field="date" onChange={ this.updateState } defaultValue={this.props.event.date} />
-          </div>
-
-          <div className="field" style={{ "display" : "none" ,}}>
-            <div className="ui checkbox" data-field="allDay" onChange={ this.updateState }>
-              <input type="checkbox" tabIndex="0" className="hidden" />
-              <label>All day</label>
-            </div>
+            <input type="date" data-field="date" onChange={ this.update } defaultValue={this.props.event.date} required/>
           </div>
 
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="time" data-field="start" onChange={ this.updateState }  defaultValue={this.props.event.start}/>
+              <input type="time" data-field="start" onChange={ this.update }  defaultValue={this.props.event.start} required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="time" data-field="end" onChange={ this.updateState } defaultValue={this.props.event.end}  />
+              <input type="time" data-field="end" onChange={ this.update } defaultValue={this.props.event.end} required />
             </div>
           </div>
 
           <div className="field">
             <label>Location</label>
-            <input type="text" data-field="location" onChange={ this.updateState } defaultValue={this.props.event.location} ></input>
+            <input type="text" data-field="location" onChange={ this.update } defaultValue={this.props.event.location} ></input>
             <label style={{ "marginTop" : "12px" , }}>Past locations</label>
-            <select className="ui search dropdown" data-field="location" onChange={ this.updateState } defaultValue={this.props.event.location} >
+            <select className="ui search dropdown" data-field="location" onChange={ this.update } defaultValue={this.props.event.location} >
               <option></option>
               {
                 this.props.parent.state.event_locations.map(function(el) {
@@ -241,18 +233,18 @@ const EditEvent = React.createClass({
 
 
           <div className="field">
-            <label>Special</label>
-            <input type="text" data-field="special" onChange={ this.updateState } defaultValue={this.props.event.special}  />
+            <label>Special instructions</label>
+            <input type="text" data-field="custom" onChange={ this.update } defaultValue={this.props.event.custom}  />
           </div>
 
           <div className="field">
             <label>Event Url</label>
-            <input type="text" data-field="url" onChange={ this.updateState } defaultValue={this.props.event.url}/>
+            <input type="text" data-field="url" onChange={ this.update } defaultValue={this.props.event.url}/>
           </div>
 
           <div className="field" >
             <label>Event type</label>
-            <select className="ui select dropdown" data-field="event_type" onChange={ this.updateState } defaultValue={this.props.event.event_type}>
+            <select className="ui select dropdown" data-field="event_type" onChange={ this.update } defaultValue={this.props.event.event_type}>
               <option value=""></option>
               <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>
@@ -264,7 +256,7 @@ const EditEvent = React.createClass({
 
           <div className="field">
             <label>Paypal Form</label>
-            <textarea type="text" data-field="paypal" onChange={ this.updateState } defaultValue={this.props.event.paypal}></textarea>
+            <textarea type="text" data-field="paypal" onChange={ this.update } defaultValue={this.props.event.paypal}></textarea>
           </div>
 
           <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>

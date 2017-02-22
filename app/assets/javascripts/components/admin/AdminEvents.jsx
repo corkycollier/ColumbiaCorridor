@@ -88,6 +88,7 @@ const AdminEventsRow = React.createClass({
 
 
   render() {
+
     var dateString = this.props.event.date.slice(5, 7) + "/" + this.props.event.date.slice(8) + "/" + this.props.event.date.slice(0, 4);
     if (dateString[0] == "0") {
       dateString = dateString.slice(1);
