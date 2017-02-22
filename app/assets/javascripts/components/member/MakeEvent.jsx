@@ -96,6 +96,11 @@ const MakeEvent = React.createClass({
           </div>
 
           <div className="field">
+            <label>Special</label>
+            <input type="text" data-field="special" onChange={ this.updateState }  />
+          </div>
+
+          <div className="field">
             <label>Event Url</label>
             <input type="text" data-field="url" onChange={ this.updateState } />
           </div>
@@ -232,6 +237,12 @@ const EditEvent = React.createClass({
                 })
               }
             </select>
+          </div>
+
+
+          <div className="field">
+            <label>Special</label>
+            <input type="text" data-field="special" onChange={ this.updateState } defaultValue={this.props.event.location}  />
           </div>
 
           <div className="field">
