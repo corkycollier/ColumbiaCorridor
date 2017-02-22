@@ -35,11 +35,11 @@ const Home = React.createClass({
 
   componentDidMount () {
     this.initiateFlip();
-    $('.blue-footer')
-      .transition({
-        animation  : 'fade in' ,
-        duration   : '0.8s'    ,
-      });
+    $('.ui-container-sam')
+    .transition({
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
   },
 
   initiateFlip() {
@@ -52,9 +52,22 @@ const Home = React.createClass({
     if (!this.state.active) { return; }
     var pageNumber = this.state.currentPage.id + 1
     if ( pageNumber > 3 ) pageNumber = 0;
+
+
+
+    $('.home-image').transition({
+      animation  : 'fade left',
+      duration   : '1s',
+    })
+
     this.setState({
       currentPage : this.state.pages[ pageNumber ] ,
     });
+
+    $('.home-image').transition({
+      animation  : 'fade left',
+      duration   : '1s',
+    })
   },
 
   navigate () {
@@ -79,86 +92,88 @@ const Home = React.createClass({
 
   render () {
     return (
-      <div className="blue-footer" style={{"position" : "relative" , "background" : "grey" , }}>
+      <div className="" style={{"position" : "relative" , "background" : "rgba(63, 63, 63, 0.57)" , }}>
+        <div className="ui-container-sam">
 
-        <div className="ui button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
-          <i className="left caret icon"></i>
-        </div>
+          <div className="ui button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
+            <i className="left caret icon"></i>
+          </div>
 
-        <div className="ui button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipRight }>
-          <i className="right caret icon"></i>
-        </div>
+          <div className="ui button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipRight }>
+            <i className="right caret icon"></i>
+          </div>
 
-        <div>
-          <a href={"#" + this.state.currentPage.link}>
-          <img className="ui image centered "src={this.state.currentPage.img} onClick = { this.navigate } style={{
-              "minHeight" : "282px" ,
-              "width" : "100vw" ,
-              "maxWidth" : "1344px" ,
-            }}></img>
-          </a>
-        </div>
+          <div>
+            <a href={"#" + this.state.currentPage.link}>
+              <img className="ui image centered home-image"src={this.state.currentPage.img} onClick = { this.navigate } style={{
+                  "minHeight" : "282px" ,
+                  "width" : "100vw" ,
+                  "maxWidth" : "1344px" ,
+                }}></img>
+              </a>
+            </div>
 
+          </div>
 
-        <div className="ui grid centered stackable blue-footer" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "15px 0px" ,  "paddingTop" : "19px" , "position" : "relative" , "top" : "14px"}}>
-          <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
-            <h2><a href="#event-list" style={{ "color" : "#262262" , }}>Upcoming Events</a></h2>
-            <div>
-              {
+          <div className="ui grid centered stackable " style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "15px 0px" ,  "paddingTop" : "19px" , "position" : "relative" , "top" : "14px"}}>
+            <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
+              <h2><a href="#event-list" style={{ "color" : "#262262" , }}>Upcoming Events</a></h2>
+              <div>
+                {
 
-                this.props.parent.state.events.slice(0, 3).map(function(el) {
-                  return (
-                    <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
-                      <a href={"#event/" + el.id} style={{ "color" : "#262262" , }}>
-                        {
-                          el.title
-                        }
-                      </a>
+                  this.props.parent.state.events.slice(0, 3).map(function(el) {
+                    return (
+                      <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
+                        <a href={"#event/" + el.id} style={{ "color" : "#262262" , }}>
+                          {
+                            el.title
+                          }
+                        </a>
 
-                      <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
+                        <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
+                        </div>
                       </div>
-                    </div>
-                  )
-                }.bind(this))
-              }
+                    )
+                  }.bind(this))
+                }
+              </div>
+            </div>
+
+            <div className="five wide column"
+              style={{
+                "borderLeft" : "3px solid #262262" ,
+                "borderRight" : "3px solid #262262" ,
+                "padding" : "14px 18px" ,
+              }}>
+              <Advertisements parent={ this.props.parent } />
+            </div>
+
+            <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
+              <h2><a href="#cca-news" style={{ "color" : "#262262" , }}>News Flash</a></h2>
+              <div >
+                {
+                  this.props.parent.state.news.slice(0, 3).map(function(el) {
+
+                    if (el.author != "Corky Collier") { return ;}
+
+                    return(
+                      <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
+                        <a href={"#news/" + el.id} style={{ "color" : "#262262" , }}>
+                          {
+                            el.title
+                          }
+                        </a>
+
+                        <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
+                        </div>
+                      </div>
+                    )
+                  }.bind(this))
+                }
+              </div>
             </div>
           </div>
-
-          <div className="five wide column"
-            style={{
-              "borderLeft" : "3px solid #262262" ,
-              "borderRight" : "3px solid #262262" ,
-              "padding" : "14px 18px" ,
-            }}>
-            <Advertisements parent={ this.props.parent } />
-          </div>
-
-          <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
-            <h2><a href="#cca-news" style={{ "color" : "#262262" , }}>News Flash</a></h2>
-            <div >
-              {
-                this.props.parent.state.news.slice(0, 3).map(function(el) {
-
-                  if (el.author != "Corky Collier") { return ;}
-
-                  return(
-                    <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
-                      <a href={"#news/" + el.id} style={{ "color" : "#262262" , }}>
-                      {
-                        el.title
-                      }
-                      </a>
-
-                      <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
-                      </div>
-                    </div>
-                  )
-                }.bind(this))
-              }
-            </div>
-          </div>
         </div>
-      </div>
-    )
-  }
-});
+      )
+    }
+  });
