@@ -100,7 +100,7 @@ const Home = React.createClass({
         </div>
 
 
-        <div className="ui grid centered stackable blue-footer" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "30px 10px" , "position" : "relative" , "top" : "14px"}}>
+        <div className="ui grid centered stackable blue-footer" style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "15px 0px" ,  "paddingTop" : "19px" , "position" : "relative" , "top" : "14px"}}>
           <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
             <h2><a href="#event-list" style={{ "color" : "#262262" , }}>Upcoming Events</a></h2>
             <div>

@@ -93,7 +93,6 @@ const MakeEvent = React.createClass({
                 })
               }
             </select>
-
           </div>
 
           <div className="field">
