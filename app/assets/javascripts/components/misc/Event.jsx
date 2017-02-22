@@ -152,12 +152,12 @@ const Event = React.createClass({
           <div className="sixteen wide column">
             <div className="ui warning message">
               <div className="header" style={{ "marginBottom" : "11px" , }}>
-                <a href={"http://maps.google.com/?q=1200 " + this.state.event.location || "CCA" } target="_blank" style={{ "color" : "#794B02" , }}>
+                <a href={"http://maps.google.com/?q=" + this.state.event.location || "CCA" } target="_blank" style={{ "color" : "#794B02" , }}>
                 Location
                 </a>
               </div>
 
-              <iframe src={"//www.google.com/maps/embed/v1/place?q=" + this.state.event.location + "&zoom=17&key=AIzaSyAqEzqdKVDzEaqos77B7sUHePqbt1kjWEE"} style={{ "border" : "none" , "width" : "100%" , "height" : "32vw"}}>
+              <iframe src={"//www.google.com/maps/embed/v1/place?q=" + this.state.event.location + "&zoom=15&key=AIzaSyAqEzqdKVDzEaqos77B7sUHePqbt1kjWEE"} style={{ "border" : "none" , "width" : "100%" , "height" : "32vw"}}>
               </iframe>
             </div>
           </div>
