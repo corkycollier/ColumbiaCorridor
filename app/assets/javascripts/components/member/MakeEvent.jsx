@@ -30,7 +30,6 @@ const MakeEvent = React.createClass({
       data: { event: this.state },
       success: function (app_data, resp, obj) {
         this.props.parent.setState( app_data )
-        alert("An event was created.")
         Backbone.history.navigate( "admin/events" , { trigger : true } );
       }.bind(this), error: function (a, b, c) {
         alert("There was an error.")
@@ -188,36 +187,36 @@ const EditEvent = React.createClass({
         <form className="ui form" onSubmit={ this.handleSave }>
           <div className="field">
             <label>Title</label>
-            <input type="text" data-field="title" onChange={ this.update } defaultValue={this.props.event.title} required />
+            <input type="text" data-field="title" onChange={ this.update } defaultValue={this.state.title} required />
           </div>
 
           <div className="field" onBlur={ this.updateBody } >
             <label>Body</label>
-            <textarea id="text-area" defaultValue={this.props.event.body}></textarea>
+            <textarea id="text-area" defaultValue={this.state.body}></textarea>
           </div>
 
           <div className="field">
             <label>Date</label>
-            <input type="date" data-field="date" onChange={ this.update } defaultValue={this.props.event.date} required/>
+            <input type="date" data-field="date" onChange={ this.update } defaultValue={this.state.date} required/>
           </div>
 
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="time" data-field="start" onChange={ this.update }  defaultValue={this.props.event.start} required />
+              <input type="time" data-field="start" onChange={ this.update }  defaultValue={this.state.start} required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="time" data-field="end" onChange={ this.update } defaultValue={this.props.event.end} required />
+              <input type="time" data-field="end" onChange={ this.update } defaultValue={this.state.end} required />
             </div>
           </div>
 
           <div className="field">
             <label>Location</label>
-            <input type="text" data-field="location" onChange={ this.update } defaultValue={this.props.event.location} ></input>
+            <input type="text" data-field="location" onChange={ this.update } value={this.state.location}></input>
             <label style={{ "marginTop" : "12px" , }}>Past locations</label>
-            <select className="ui search dropdown" data-field="location" onChange={ this.update } defaultValue={this.props.event.location} >
+            <select className="ui search dropdown" data-field="location" onChange={ this.update } >
               <option></option>
               {
                 this.props.parent.state.event_locations.map(function(el) {
@@ -234,17 +233,17 @@ const EditEvent = React.createClass({
 
           <div className="field">
             <label>Special instructions</label>
-            <input type="text" data-field="custom" onChange={ this.update } defaultValue={this.props.event.custom}  />
+            <input type="text" data-field="custom" onChange={ this.update } defaultValue={this.state.custom}  />
           </div>
 
           <div className="field">
             <label>Event Url</label>
-            <input type="text" data-field="url" onChange={ this.update } defaultValue={this.props.event.url}/>
+            <input type="text" data-field="url" onChange={ this.update } defaultValue={this.state.url}/>
           </div>
 
           <div className="field" >
             <label>Event type</label>
-            <select className="ui select dropdown" data-field="event_type" onChange={ this.update } defaultValue={this.props.event.event_type}>
+            <select className="ui select dropdown" data-field="event_type" onChange={ this.update } defaultValue={this.state.event_type}>
               <option value=""></option>
               <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>
@@ -256,7 +255,7 @@ const EditEvent = React.createClass({
 
           <div className="field">
             <label>Paypal Form</label>
-            <textarea type="text" data-field="paypal" onChange={ this.update } defaultValue={this.props.event.paypal}></textarea>
+            <textarea type="text" data-field="paypal" onChange={ this.update } defaultValue={this.state.paypal}></textarea>
           </div>
 
           <button type="submit" className="ui button" style={{ "background" : "#262262" , "color" : "white" }}>
