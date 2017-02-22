@@ -549,7 +549,8 @@ const MemberOnlyDirectory = React.createClass({
 
         {
           this.state.members.map(function(el, idx) {
-
+            if (el.company_name == "Admin" ) {return;}
+            
             return(
               <div style={{
                   "fontSize" : "20px" ,
