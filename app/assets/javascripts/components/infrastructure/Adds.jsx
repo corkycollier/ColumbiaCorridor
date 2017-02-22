@@ -9,17 +9,23 @@ const Advertisements = React.createClass({
   },
 
   componentDidMount () {
-    this.flip();
+    var interval = setInterval(function () {
+      this.flip();
+    }.bind(this), 4400)
+
   },
 
   flip () {
-    var interval = setInterval(function () {
-      var slideNumber = this.state.slides.indexOf ( this.state.currentSlide ) + 1;
-      if ( slideNumber > this.state.slides.length - 1 ) slideNumber = 0;
-      this.setState({
-        currentSlide : this.state.slides[ slideNumber ] ,
-      });
-    }.bind(this), 4400)
+    $('.ad-image').transition({
+      animation  : 'fade in',
+      duration   : '1s',
+    });
+
+    var slideNumber = this.state.slides.indexOf ( this.state.currentSlide ) + 1;
+    if ( slideNumber > this.state.slides.length - 1 ) slideNumber = 0;
+    this.setState({
+      currentSlide : this.state.slides[ slideNumber ] ,
+    });
   },
 
   render () {
@@ -27,7 +33,7 @@ const Advertisements = React.createClass({
 
       <div className="" >
         <a href={this.state.currentSlide.link} target="_blank" >
-        <img className="ui image add centered"
+        <img className="ui image add centered ad-image"
           src = { this.state.currentSlide.image_url }
           style = {{ "width" : "100%" , "height" : "12vw" }}
           />

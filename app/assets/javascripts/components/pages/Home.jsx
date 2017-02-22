@@ -56,7 +56,7 @@ const Home = React.createClass({
 
 
     $('.home-image').transition({
-      animation  : 'fade left',
+      animation  : 'fade in',
       duration   : '1s',
     })
 
@@ -64,10 +64,7 @@ const Home = React.createClass({
       currentPage : this.state.pages[ pageNumber ] ,
     });
 
-    $('.home-image').transition({
-      animation  : 'fade left',
-      duration   : '1s',
-    })
+
   },
 
   navigate () {
