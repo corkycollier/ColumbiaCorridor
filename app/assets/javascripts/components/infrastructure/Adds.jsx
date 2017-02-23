@@ -35,7 +35,7 @@ const Advertisements = React.createClass({
         <a href={this.state.currentSlide.link} target="_blank" >
         <img className="ui image add centered ad-image"
           src = { this.state.currentSlide.image_url }
-          style = {{ "width" : "100%" , "height" : "12vw" }}
+          style = {{ "width" : "100%" , "height" : "12vw" , "minHeight" : "158px"}}
           />
         </a>
       </div>
