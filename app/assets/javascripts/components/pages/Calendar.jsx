@@ -10,8 +10,12 @@ const Calendar = React.createClass({
 
   componentDidMount () {
     setTimeout(this.fullCalendar , 0);
+    setTimeout(this.fcClickHandlers , 0);
     setTimeout(this.filter , 0);
+    this.fadeIn();
+  },
 
+  fadeIn() {
     $('.ui.container').transition({
       animation  : 'fade in' ,
       duration   : '0.8s'    ,
@@ -22,17 +26,19 @@ const Calendar = React.createClass({
     $('#calendar').fullCalendar({
       eventClick: this.clickEvent,
     });
-
-    this.attachFcButtonListeners();
   },
 
-  attachFcButtonListeners () {
+  fcClickHandlers () {
     $('.fc-button').click(function(){
       this.setState({
-        filter: "" ,
+        filter : "" ,
+        helper_events  : [] ,
+        first  : true ,
       })
 
-      setTimeout(this.filter, 0)
+      setTimeout(function() {
+        this.filter()
+      }.bind(this), 0)
     }.bind(this))
   },
 
@@ -100,6 +106,12 @@ const Calendar = React.createClass({
 
     $('#calendar').fullCalendar('renderEvents' , events ) ;
 
+    if (!this.state.first) {
+      this.setState({
+        helper_events: events
+      })
+    }
+
   },
 
   updateFilter (e) {
@@ -107,86 +119,82 @@ const Calendar = React.createClass({
 
     this.setState({
       filter : e.currentTarget.dataset.filter ,
+      first : false ,
     })
 
     setTimeout(this.filter, 0)
   },
 
   helper_events () {
-    if (this.state.helper_events.length < 1 ) {
-      return
-    } else {
-      return (
-        <div>
-          {
-            this.state.helper_events.map(function(el) {
+    return(
+    <div>
+      {
+        this.state.helper_events.map(function(el) {
 
-              var dateString = el.date.slice(5, 7) + "/" + el.date.slice(8) + "/" + el.date.slice(0, 4);
-              if (dateString[0] == "0") {
-                dateString = dateString.slice(1);
-              }
-
-              var startString = el.start;
-
-              if (startString[0] == "0") {
-                startString = startString.slice(1);
-              }
-              if ( parseInt(startString.split(":")[0]) < 12 ) {
-                startString += " AM"
-              } else {
-                startString += " PM"
-              }
-
-              startString[0] = parseInt(startString[0]) % 12
-
-
-              var endString = el.end;
-
-              if (endString[0] == "0") {
-                endString = endString.slice(1);
-              }
-              if ( parseInt(endString.split(":")[0]) < 12) {
-                endString += " AM"
-              } else {
-                endString += " PM"
-              }
-
-              endString[0] = parseInt(endString[0]) % 12
-
-              return(
-                <div className={"ui segment ui grid " + el.color } key={"event" + el.id}>
-                  <div className="eight wide column">
-                    <h3><a href={"#event/" + el.id} style={{ "color" : "#262262" , "letterSpacing" : "1px" }}>
-                      { el.title }
-                    </a></h3>
-                  </div>
-
-                  <div className="eight wide column" style={{ "textAlign" : "right" , }}>
-                    <b>
-                      {dateString}
-                    </b> - {el.location}
-                  </div>
-
-
-                  <div className="ui clearing divider" style={{
-                      "display" : "none" ,
-                      "width" : "98%" ,
-                      "left" : "1%" ,
-                      "position" : "relative" ,
-                      "margin": "-11px 0px" ,
-                    }}>
-                  </div>
-
-
-                </div>
-              )
-            })
+          var dateString = el.date.slice(5, 7) + "/" + el.date.slice(8) + "/" + el.date.slice(0, 4);
+          if (dateString[0] == "0") {
+            dateString = dateString.slice(1);
           }
 
-        </div>
-      )
-    }
+          var startString = el.start;
 
+          if (startString[0] == "0") {
+            startString = startString.slice(1);
+          }
+          if ( parseInt(startString.split(":")[0]) < 12 ) {
+            startString += " AM"
+          } else {
+            startString += " PM"
+          }
+
+          startString[0] = parseInt(startString[0]) % 12
+
+
+          var endString = el.end;
+
+          if (endString[0] == "0") {
+            endString = endString.slice(1);
+          }
+          if ( parseInt(endString.split(":")[0]) < 12) {
+            endString += " AM"
+          } else {
+            endString += " PM"
+          }
+
+          endString[0] = parseInt(endString[0]) % 12
+
+          return(
+            <div className={"ui segment ui grid " + el.color } key={"event" + el.id}>
+              <div className="eight wide column">
+                <h3><a href={"#event/" + el.id} style={{ "color" : "#262262" , "letterSpacing" : "1px" }}>
+                  { el.title }
+                </a></h3>
+              </div>
+
+              <div className="eight wide column" style={{ "textAlign" : "right" , }}>
+                <b>
+                  {dateString}
+                </b> - {el.location}
+              </div>
+
+
+              <div className="ui clearing divider" style={{
+                  "display" : "none" ,
+                  "width" : "98%" ,
+                  "left" : "1%" ,
+                  "position" : "relative" ,
+                  "margin": "-11px 0px" ,
+                }}>
+              </div>
+
+
+            </div>
+          )
+        })
+      }
+
+    </div>
+    )
   },
 
   render () {
@@ -197,7 +205,7 @@ const Calendar = React.createClass({
           "padding" : "30px 20px" ,
         }}>
 
-                <h1>
+        <h1>
           Events
         </h1>
 

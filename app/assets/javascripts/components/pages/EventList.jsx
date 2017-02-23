@@ -11,52 +11,59 @@ const EventList = React.createClass({
   componentDidMount () {
     setTimeout(this.fullCalendar , 0);
     setTimeout(this.filter , 0);
-
-    $('.ui.container').transition({
-        animation  : 'fade in' ,
-        duration   : '0.8s'    ,
-      });
+    this.fadeIn();
   },
+
+
+  fadeIn() {
+    $('.ui.container').transition({
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
+  },
+
 
   fullCalendar () {
     $('#calendar').fullCalendar({
       eventClick: this.clickEvent,
       eventMouseover: this.mouseOver
     });
-
-    setTimeout(this.addLayovers , 0);
-
-    $('.fc-button').click(function(){
-      this.setState({
-        filter: "" ,
-        first : true,
-      })
-
-      setTimeout(function() {
-        this.filter()
-      }.bind(this), 0)
-    }.bind(this))
   },
 
-  popups() {
-    this.state.currentEvents.forEach(function(el) {
-      $('.fc-event-container').each(function(idx, el2) {
-        if ($(el2).find('.fc-title').html() == el.title) {
-          $(el2).data('content', el.title);
-          $(el2).addClass('popups');
-        }
-      })
-    }.bind(this))
 
-    $('.popups').popup();
-  },
 
   clickEvent( calEvent , jsEvent , view ) {
     jsEvent.preventDefault() ;
     Backbone.history.navigate('/event/' + calEvent.id , { trigger : true } ) ;
   },
 
-  mouseOver ( event, jsEvent, view ) {
+  updateEventType ( e ) {
+    var el = this.state ;
+    switch(e.currentTarget.value) {
+      case "Breakfast Forums":
+
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      case "Special Events":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      case "Lunch w/ Leaders":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      case "ResourceFULL Use Workshops":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      case "Tours & Member Exchanges":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      default:
+      <option value=""></option>
+    }
   },
 
   filter () {
@@ -144,7 +151,6 @@ const EventList = React.createClass({
     this.setState({
       filter : e.currentTarget.dataset.filter ,
     })
-
 
     setTimeout(this.filter, 0)
   },
@@ -272,6 +278,11 @@ const EventList = React.createClass({
         <a href="#" className="ui button left labeled icon small" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
           <i className="left caret icon"></i>
           Home
+        </a>
+
+        <a href="#calendar" className="ui button right labeled icon small" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
+          <i className="right caret icon"></i>
+          Calendar
         </a>
       </div>
     )

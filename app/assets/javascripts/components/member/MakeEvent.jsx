@@ -21,32 +21,7 @@ const MakeEvent = React.createClass({
     this.setState( state );
   },
 
-  updateEventType ( e ) {
-    switch(e.currentTarget.value) {
-      case "Breakfast Forums":
-      <option value="Breakfast Forums">Breakfast Forums</option>
-      break;
 
-      case "Special Events":
-      <option value="Breakfast Forums">Breakfast Forums</option>
-      break;
-
-      case "Lunch w/ Leaders":
-      <option value="Breakfast Forums">Breakfast Forums</option>
-      break;
-
-      case "ResourceFULL Use Workshops":
-      <option value="Breakfast Forums">Breakfast Forums</option>
-      break;
-
-      case "Tours & Member Exchanges":
-      <option value="Breakfast Forums">Breakfast Forums</option>
-      break;
-
-      default:
-      <option value=""></option>
-    }
-  },
 
   handleSave () {
     $.ajax({
@@ -133,7 +108,7 @@ const MakeEvent = React.createClass({
 
           <div className="field" >
             <label>Event type</label>
-            <select className="ui select dropdown" data-field="event_type" onChange={ this.updateEventType } >
+            <select className="ui select dropdown" data-field="event_type" onChange={ this.update } >
               <option value=""></option>
               <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>
