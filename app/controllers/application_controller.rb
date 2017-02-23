@@ -123,13 +123,14 @@ class ApplicationController < ActionController::Base
   end
 
   def app_data
-    event_locations = Event.all.collect{ |event| event.location }.uniq
+
     {
       user: current_user ,
-      members: User.all.collect{ |user| user.safe_show } ,
-      news: New.all.order(created_at: :desc).collect{ |thing| thing.safe_show } ,
-      events: Event.all.order(date: :desc).collect{ |event| event.safe_show } ,
-      event_locations:  event_locations,
+      members: User.collect_all,
+      news: New.collect_all,
+      events: Event.collect_all,
+      event_locations:  Event.collect_locations,
+      upcoming_events:  Event.upcoming,
       ads: Ad.all.collect{ |ad| ad.safe_show } ,
       staff: Staff.all.collect{ |staff| staff.safe_show } ,
       board:  Board.safe_order ,

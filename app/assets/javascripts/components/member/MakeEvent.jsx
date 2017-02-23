@@ -21,8 +21,6 @@ const MakeEvent = React.createClass({
     this.setState( state );
   },
 
-
-
   handleSave () {
     $.ajax({
       url: '/api/events',
@@ -33,7 +31,6 @@ const MakeEvent = React.createClass({
         Backbone.history.navigate( "admin/events" , { trigger : true } );
       }.bind(this), error: function (a, b, c) {
         alert("There was an error.")
-        Backbone.history.navigate( "admin/events" , { trigger : true } );
       }
     })
   },

@@ -25,4 +25,9 @@ class New < ActiveRecord::Base
 
     attributes
   end
+
+
+  def self.collect_all
+    New.all.order(created_at: :desc).collect{ |thing| thing.safe_show } 
+  end
 end

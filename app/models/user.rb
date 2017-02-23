@@ -68,4 +68,9 @@ class User < ActiveRecord::Base
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
+
+
+  def self.collect_all
+    User.all.collect{ |user| user.safe_show }
+  end
 end

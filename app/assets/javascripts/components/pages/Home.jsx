@@ -118,7 +118,7 @@ const Home = React.createClass({
               <div>
                 {
 
-                  this.props.parent.state.events.slice(0, 3).map(function(el) {
+                  this.props.parent.state.upcoming_events.slice(0, 3).map(function(el) {
                     return (
                       <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
                         <a href={"#event/" + el.id} style={{ "color" : "#262262" , }}>
