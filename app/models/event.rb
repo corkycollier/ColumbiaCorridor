@@ -32,7 +32,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.collect_all
-    Event.all.order(date: :asc).collect do |event|
+    Event.all.order(date: :desc).collect do |event|
       event.safe_show
     end
   end

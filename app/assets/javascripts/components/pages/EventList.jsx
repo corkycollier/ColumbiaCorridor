@@ -30,8 +30,6 @@ const EventList = React.createClass({
     });
   },
 
-
-
   clickEvent( calEvent , jsEvent , view ) {
     jsEvent.preventDefault() ;
     Backbone.history.navigate('/event/' + calEvent.id , { trigger : true } ) ;
@@ -130,7 +128,6 @@ const EventList = React.createClass({
     });
 
     setTimeout(this.popups , 0);
-
 
     if ( !this.state.first ) {
       this.setState({
