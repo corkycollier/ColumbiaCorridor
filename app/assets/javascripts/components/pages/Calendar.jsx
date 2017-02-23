@@ -4,6 +4,7 @@ const Calendar = React.createClass({
       first : true,
       filter : "",
       events : this.props.parent.state.events || [],
+      helper_events : [] ,
     })
   },
 
@@ -12,9 +13,9 @@ const Calendar = React.createClass({
     setTimeout(this.filter , 0);
 
     $('.ui.container').transition({
-        animation  : 'fade in' ,
-        duration   : '0.8s'    ,
-      });
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
   },
 
   fullCalendar () {

@@ -112,19 +112,15 @@ const Event = React.createClass({
 
     return (
       <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
-        <h1 className="ui header centered" >
-          <a href="#events">
-            Event
-          </a>
-        </h1>
 
         <div className="ui grid centered">
           <div className="twelve wide column">
             <div className="ui message">
-              <div className="header">
+              <h2 className="ui header">
                 { this.state.event.title }
-              </div>
+              </h2>
 
+              <div className="ui divider"></div>
               <div id="body">
               </div>
             </div>

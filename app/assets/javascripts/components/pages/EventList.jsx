@@ -3,7 +3,7 @@ const EventList = React.createClass({
     return ({
       first : false,
       filter : "",
-      events : [].concat(this.props.parent.state.events),
+      events : this.props.parent.state.events,
       helper_events: []
     })
   },
@@ -269,14 +269,9 @@ const EventList = React.createClass({
           }
         </div>
 
-        <a href="#" className="ui button left labeled icon mini" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
+        <a href="#" className="ui button left labeled icon small" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
           <i className="left caret icon"></i>
           Home
-        </a>
-
-        <a href="#calendar" className="ui button right labeled icon mini" style={{ "marginTop" : "18px" , }}>
-          <i className="right caret icon"></i>
-          Calendar
         </a>
       </div>
     )

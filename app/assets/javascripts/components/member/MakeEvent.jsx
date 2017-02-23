@@ -10,7 +10,6 @@ const MakeEvent = React.createClass({
   },
 
   update(e) {
-
     var state = this.state || {};
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
     this.setState( state );
@@ -20,6 +19,10 @@ const MakeEvent = React.createClass({
     var state = this.state;
     state['body'] = $('.fr-view').html() ;
     this.setState( state );
+  },
+
+  updateEventType ( e ) {
+    
   },
 
   handleSave () {
@@ -107,7 +110,7 @@ const MakeEvent = React.createClass({
 
           <div className="field" >
             <label>Event type</label>
-            <select className="ui select dropdown" data-field="event_type" onChange={ this.update } >
+            <select className="ui select dropdown" data-field="event_type" onChange={ this.updateEventType } >
               <option value=""></option>
               <option value="Breakfast Forums">Breakfast Forums</option>
               <option value="Special Events">Special Events</option>

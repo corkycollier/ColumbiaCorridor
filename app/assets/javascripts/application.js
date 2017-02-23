@@ -45,3 +45,12 @@
 //= require plugins/table.min.js
 //= require plugins/url.min.js
 //= require_tree .
+
+
+
+
+
+
+
+
+window._ = {}
