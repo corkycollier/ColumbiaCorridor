@@ -111,6 +111,82 @@ const Calendar = React.createClass({
     setTimeout(this.filter, 0)
   },
 
+  helper_events () {
+    if (this.state.helper_events.length < 1 ) {
+      return
+    } else {
+      return (
+        <div>
+          {
+            this.state.helper_events.map(function(el) {
+
+              var dateString = el.date.slice(5, 7) + "/" + el.date.slice(8) + "/" + el.date.slice(0, 4);
+              if (dateString[0] == "0") {
+                dateString = dateString.slice(1);
+              }
+
+              var startString = el.start;
+
+              if (startString[0] == "0") {
+                startString = startString.slice(1);
+              }
+              if ( parseInt(startString.split(":")[0]) < 12 ) {
+                startString += " AM"
+              } else {
+                startString += " PM"
+              }
+
+              startString[0] = parseInt(startString[0]) % 12
+
+
+              var endString = el.end;
+
+              if (endString[0] == "0") {
+                endString = endString.slice(1);
+              }
+              if ( parseInt(endString.split(":")[0]) < 12) {
+                endString += " AM"
+              } else {
+                endString += " PM"
+              }
+
+              endString[0] = parseInt(endString[0]) % 12
+
+              return(
+                <div className={"ui segment ui grid " + el.color } key={"event" + el.id}>
+                  <div className="eight wide column">
+                    <h3><a href={"#event/" + el.id} style={{ "color" : "#262262" , "letterSpacing" : "1px" }}>
+                      { el.title }
+                    </a></h3>
+                  </div>
+
+                  <div className="eight wide column" style={{ "textAlign" : "right" , }}>
+                    <b>
+                      {dateString}
+                    </b> - {el.location}
+                  </div>
+
+
+                  <div className="ui clearing divider" style={{
+                      "display" : "none" ,
+                      "width" : "98%" ,
+                      "left" : "1%" ,
+                      "position" : "relative" ,
+                      "margin": "-11px 0px" ,
+                    }}>
+                  </div>
+
+
+                </div>
+              )
+            })
+          }
+
+        </div>
+      )
+    }
+
+  },
   render () {
     return (
       <div className="ui container" style={{

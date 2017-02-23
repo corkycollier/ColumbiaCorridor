@@ -47,7 +47,7 @@ const AdminUsers = React.createClass({
       <div className="ui container" style={{
           "color" : "#262262" ,
           "marginBottom" : "40px" ,
-          "padding" : "30px 0px" ,
+          "padding" : "25px 0px" ,
         }}>
 
         <Admin />

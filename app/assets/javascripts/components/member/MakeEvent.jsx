@@ -1,12 +1,11 @@
 const MakeEvent = React.createClass({
   getInitialState () {
-
-
     return ({})
   },
+
   componentDidMount () {
-    $('#text-area').froalaEditor();
-    $('.checkbox').checkbox();
+    $('#event-title').froalaEditor();
+    $('#event-body').froalaEditor();
     $('.dropdown').dropdown();
   },
 
@@ -58,7 +57,7 @@ const MakeEvent = React.createClass({
 
           <div className="field" onBlur={ this.updateBody } >
             <label>Body</label>
-            <textarea id="text-area"></textarea>
+            <textarea id="event-body"></textarea>
           </div>
 
           <div className="field">
@@ -80,7 +79,7 @@ const MakeEvent = React.createClass({
 
           <div className="field">
             <label>Location</label>
-            <input type="text" data-field="location"  onChange={this.update} value={this.state.location || "" || ""}></input>
+            <input type="text" data-field="location"  onChange={this.update} value={this.state.location || ""} required></input>
             <label style={{ "marginTop" : "12px" , }}>Past locations</label>
             <select className="ui search dropdown" data-field="location" onChange={this.update} >
               <option></option>
@@ -141,7 +140,6 @@ const EditEvent = React.createClass({
 
   componentDidMount () {
     $('#text-area').froalaEditor();
-    $('.checkbox').checkbox();
     $('.dropdown').dropdown();
   },
 
