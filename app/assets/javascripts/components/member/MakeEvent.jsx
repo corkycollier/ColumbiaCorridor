@@ -22,7 +22,30 @@ const MakeEvent = React.createClass({
   },
 
   updateEventType ( e ) {
-    
+    switch(e.currentTarget.value) {
+      case "Breakfast Forums":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      case "Special Events":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      case "Lunch w/ Leaders":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      case "ResourceFULL Use Workshops":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      case "Tours & Member Exchanges":
+      <option value="Breakfast Forums">Breakfast Forums</option>
+      break;
+
+      default:
+      <option value=""></option>
+    }
   },
 
   handleSave () {

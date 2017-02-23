@@ -188,6 +188,7 @@ const Calendar = React.createClass({
     }
 
   },
+
   render () {
     return (
       <div className="ui container" style={{
