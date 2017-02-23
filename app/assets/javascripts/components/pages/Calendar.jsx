@@ -226,6 +226,12 @@ const Calendar = React.createClass({
         </div>
 
 
+        <div>
+          {
+            this.helper_events()
+          }
+        </div>
+
         <div id="calendar">
         </div>
 

@@ -18,6 +18,13 @@ const Bios = React.createClass({
     Backbone.history.navigate( fragment , { trigger : true });
   },
 
+  componentDidMount() {
+    $('.ui.container').transition({
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
+  },
+
   render () {
     return (
       <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
@@ -81,6 +88,14 @@ const StaffBio = React.createClass({
     })
   },
 
+  componentDidMount() {
+    $('.ui.container').transition({
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
+  },
+
+
   go (e) {
     var fragment = e.currentTarget.dataset.url;
     Backbone.history.navigate( fragment , { trigger : true });
@@ -113,7 +128,7 @@ const StaffBio = React.createClass({
           </div>
         </div>
 
-        <div className="ui button mini left icon labeled" data-url="staff" onClick={this.go} style={{ "margin" : "12px 0px" , }}>
+        <div className="ui button small left icon labeled" data-url="staff" onClick={this.go} style={{ "margin" : "12px 0px" , }}>
           <i className="left caret icon"></i>
           Back
         </div>
