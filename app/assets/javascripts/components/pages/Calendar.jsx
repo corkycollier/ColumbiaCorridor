@@ -99,6 +99,15 @@ const Calendar = React.createClass({
       }
 
       if (this.state.filter == "" || el.event_type == this.state.filter) {
+
+        if (el.title.slice(0, 3) == "<p>" ) {
+          el['title'] = el.title.slice(3)
+        }
+
+        if (el.title.slice(-4) == "</p>" ) {
+          el['title'] = el.title.slice(0, -4)
+        }
+
         events.push(el)
       }
 
@@ -162,6 +171,7 @@ const Calendar = React.createClass({
           }
 
           endString[0] = parseInt(endString[0]) % 12
+
 
           return(
             <div className={"ui segment ui grid " + el.color } key={"event" + el.id}>
