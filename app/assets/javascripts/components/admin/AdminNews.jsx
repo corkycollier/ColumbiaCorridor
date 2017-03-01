@@ -109,13 +109,17 @@ const AdminNewsRow = React.createClass({
     }
   },
 
+  componentDidMount() {
+    $(ReactDOM.findDOMNode(this)).find('#title').html(this.props.news.title);
+  },
   render() {
     return (
       <tr>
 
         <td>
           <a href={"#news/" + this.props.news.id} >
-          { this.props.news.title }
+            <div id="title">
+            </div>
           </a>
         </td>
 

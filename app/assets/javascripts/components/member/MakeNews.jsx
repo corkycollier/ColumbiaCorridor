@@ -26,7 +26,6 @@ const MakeNews = React.createClass({
         }.bind(this), error: function (a, b, c) {
           alert('There was an error. News was not created.')
           Backbone.history.navigate('member-news' , { trigger : true })
-
         }
       })
     }
@@ -175,7 +174,6 @@ const EditNewsAdmin = React.createClass({
           </div>
 
         </div>
-
 
       </div>
     )
