@@ -41,9 +41,9 @@ const AdminBoard = React.createClass({
         }}>
 
         <Admin />
-        
+
         <h2>
-          Board
+          Admin: Board
         </h2>
 
         <a href="#new-board" className="ui button small blue" >

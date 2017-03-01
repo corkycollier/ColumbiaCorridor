@@ -38,7 +38,7 @@ const AdminArchives = React.createClass({
         <Admin />
 
         <h2>
-          Archives
+          Admin: Archives
         </h2>
 
         <a href="#make-archive" className="ui button small blue" style={{ "marginBottom" : "12px" , }}>

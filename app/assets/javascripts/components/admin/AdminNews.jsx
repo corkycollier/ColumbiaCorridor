@@ -24,7 +24,7 @@ const AdminNews = React.createClass({
         }}>
         <Admin />
         <h2 className="ui header" >
-          News
+          Admin: News
         </h2>
 
         <a href="#make-news" className="ui button small blue" >
@@ -112,7 +112,7 @@ const AdminNewsRow = React.createClass({
   componentDidMount() {
     $(ReactDOM.findDOMNode(this)).find('#title').html(this.props.news.title);
   },
-  
+
   render() {
     return (
       <tr>

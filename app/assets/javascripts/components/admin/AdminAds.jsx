@@ -41,7 +41,7 @@ const AdminAds = React.createClass({
         }}>
         <Admin />
         <h2 className="ui header">
-          Sponsors
+          Admin: Sponsors
         </h2>
 
         <a href="#new-sponsor" className="ui button small blue">
