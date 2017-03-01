@@ -5,7 +5,9 @@ const MakeNews = React.createClass({
   },
 
   componentDidMount () {
-    $('#text-area').froalaEditor();
+    $('#news-title').froalaEditor();
+    $('#news-body').froalaEditor();
+
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative")
     }.bind(this), 0)
@@ -32,10 +34,15 @@ const MakeNews = React.createClass({
 
   updateBody(e) {
     var state = this.state;
-    state['body'] = $('.fr-view').html() ;
+    state['body'] = $('.body-field').find('.fr-view').html() ;
     this.setState( state );
   },
 
+  updateTitle(e) {
+    var state = this.state;
+    state['title'] = $('.title-field').find('.fr-view').html() ;
+    this.setState( state );
+  },
 
   updateState (e) {
     var newData = {};
@@ -63,9 +70,9 @@ const MakeNews = React.createClass({
           "minHeight" : "74vh" ,
           "marginBottom" : "100px" ,
           "padding" : "30px 20px" ,
-        }}
-        >
-        <h1 >
+        }}>
+
+        <h1>
           News
         </h1>
 
@@ -73,15 +80,14 @@ const MakeNews = React.createClass({
           <div className="sixteen wide column">
 
             <form className="ui form" onSubmit={this.submitNews }>
-              <div className="field">
+              <div className="field title-field" onBlur={ this.updateTitle }>
                 <label>Title</label>
-                <input type="text" data-field="title" onChange={ this.updateState } required/>
+                <textarea id="news-title" />
               </div>
 
-
-              <div className="field" onBlur={ this.updateBody }>
+              <div className="field body-field" onBlur={ this.updateBody }>
                 <label>Body</label>
-                <textarea id="text-area" type="text" data-field="body" required />
+                <textarea id="news-body" />
               </div>
 
               <button className="ui button" type="submit">
@@ -89,10 +95,7 @@ const MakeNews = React.createClass({
               </button>
             </form>
           </div>
-
         </div>
-
-
       </div>
     )
   }
@@ -105,7 +108,8 @@ const EditNewsAdmin = React.createClass({
   },
 
   componentDidMount () {
-    $('#text-area').froalaEditor();
+    $('#news-title').froalaEditor();
+    $('#news-body').froalaEditor();
 
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative");
@@ -154,15 +158,14 @@ const EditNewsAdmin = React.createClass({
           <div className="sixteen wide column">
 
             <form className="ui form" onSubmit={this.submitNews }>
-              <div className="field">
+              <div className="field title-field" onBlur={ this.updateTitle }>
                 <label>Title</label>
-                <input type="text" data-field="title" onChange={ this.updateState } defaultValue={ this.props.news.title } required/>
+                <textarea id="news-title" defaultValue={ this.props.news.title } />
               </div>
 
-
-              <div className="field" onBlur={ this.updateBody }>
+              <div className="field body-field" onBlur={ this.updateBody }>
                 <label>Body</label>
-                <textarea id="text-area" type="text" data-field="body" defaultValue={ this.props.news.body } required />
+                <textarea id="news-body" defaultValue={ this.props.news.body } />
               </div>
 
               <button className="ui button small" type="submit" style={{ "background" : "#262262" , "color" : "white" }}>
