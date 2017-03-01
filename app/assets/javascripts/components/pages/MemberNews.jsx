@@ -1,14 +1,10 @@
 const MemberNews = React.createClass({
 
   componentDidMount() {
-      $('.ui.container').transition({
-        animation  : 'fade in' ,
-        duration   : '0.8s'    ,
-      });
-  },
-
-  goToNews(e) {
-    Backbone.history.navigate("#/news/" + e.currentTarget.dataset.id , {trigger: true})
+    $('.ui.container').transition({
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
   },
 
   render () {
@@ -32,24 +28,7 @@ const MemberNews = React.createClass({
                 }
 
                 return(
-                  <div key={"manews" + el.id } data-id={ el.id } >
-                    <div style={{"marginBottom" : "2px"}}>
-                      <b>
-                        { el.title }
-                      </b>
-
-                      <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
-                        by { el.author } | { el.created_at.toString().slice(0, 10) }
-                      </span>
-                    </div>
-
-                    <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
-                      <a data-id={ el.id } onClick={ this.goToNews } >
-                        read more
-                      </a>
-                    </div>
-
-                  </div>
+                  <MemberNewsRow  key={"manews" + el.id }  news={el} />
                 )
               }.bind(this))
             }
@@ -58,6 +37,40 @@ const MemberNews = React.createClass({
           <div className="eight wide column">
             <img className="ui image fluid" src="http://res.cloudinary.com/djjldnjz7/image/upload/w_1400/v1486979985/ibi2c15vjxPDXUIZIigGTZSMHrEwylqOdyMCh3uD7q4_2Cbwtoaojbr44fI-I7EI1fQImjTGEbeXlDQxS6g0_IPeo_fkqhxv.jpg"></img>
           </div>
+        </div>
+      </div>
+    )
+  }
+});
+
+const MemberNewsRow = React.createClass({
+
+  componentDidMount() {
+    $(ReactDOM.findDOMNode(this)).find('#title').html(this.props.news.title)
+  },
+
+  goToNews(e) {
+    Backbone.history.navigate("#news/" + e.currentTarget.dataset.id , {trigger: true})
+  },
+
+  render () {
+    return (
+      <div>
+        <div style={{"marginBottom" : "2px"}}>
+          <b data-id={ this.props.news.id } onClick={this.goToNews}>
+            <div id="title">
+            </div>
+          </b>
+
+          <span style={{ "fontSize" : "12px"}}>
+            by { this.props.news.author } | { this.props.news.created_at.toString().slice(0, 10) }
+          </span>
+        </div>
+
+        <div style={{"marginTop" : "3px", "marginBottom" : "22px"}}>
+          <a href={"#news/" + this.props.news.id } >
+            read more...
+          </a>
         </div>
       </div>
     )

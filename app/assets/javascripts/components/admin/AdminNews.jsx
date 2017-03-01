@@ -112,6 +112,7 @@ const AdminNewsRow = React.createClass({
   componentDidMount() {
     $(ReactDOM.findDOMNode(this)).find('#title').html(this.props.news.title);
   },
+  
   render() {
     return (
       <tr>

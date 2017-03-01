@@ -8,6 +8,11 @@ const MakeNews = React.createClass({
     $('#news-title').froalaEditor();
     $('#news-body').froalaEditor();
 
+    $('.ui.container').transition({
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
+
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative")
     }.bind(this), 0)
