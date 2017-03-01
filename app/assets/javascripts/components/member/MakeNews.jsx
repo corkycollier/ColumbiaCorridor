@@ -9,9 +9,6 @@ const MakeNews = React.createClass({
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative")
     }.bind(this), 0)
-    setTimeout(function() {
-      $('.fr-toolbar').css('position', "relative")
-    }.bind(this), 0)
   },
 
   submitNews () {
@@ -109,9 +106,10 @@ const EditNewsAdmin = React.createClass({
 
   componentDidMount () {
     $('#text-area').froalaEditor();
+
     setTimeout(function() {
-      $('.fr-toolbar').css('position', "relative")
-    }.bind(this), 0)
+      $('.fr-toolbar').css('position', "relative");
+    }.bind(this), 0);
   },
 
   submitNews () {

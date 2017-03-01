@@ -6,6 +6,7 @@ const MakeEvent = React.createClass({
   componentDidMount () {
     $('#event-title').froalaEditor();
     $('#event-body').froalaEditor();
+
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative")
     }.bind(this), 0)
@@ -20,13 +21,13 @@ const MakeEvent = React.createClass({
 
   updateTitle(e) {
     var state = this.state;
-    state['title'] = $('title-field').find('.fr-view').html() ;
+    state['title'] = $('.title-field').find('.fr-view').html() ;
     this.setState( state );
   },
 
   updateBody(e) {
     var state = this.state;
-    state['body'] = $('title-body').find('.fr-view').html() ;
+    state['body'] = $('.body-field').find('.fr-view').html() ;
     this.setState( state );
   },
 
@@ -163,13 +164,13 @@ const EditEvent = React.createClass({
 
   updateTitle(e) {
     var state = this.state;
-    state['title'] = $('title-field').find('.fr-view').html() ;
+    state['title'] = $('.title-field').find('.fr-view').html() ;
     this.setState( state );
   },
 
   updateBody(e) {
     var state = this.state;
-    state['body'] = $('title-body').find('.fr-view').html() ;
+    state['body'] = $('.body-field').find('.fr-view').html() ;
     this.setState( state );
   },
 
@@ -201,12 +202,12 @@ const EditEvent = React.createClass({
         </h1>
 
         <form className="ui form" onSubmit={ this.handleSave }>
-          <div className="field" onBlur={ this.updateTitle } >
+          <div className="field title-field" onBlur={ this.updateTitle } >
             <label>Title</label>
             <textarea id="event-title" defaultValue={this.state.title}></textarea>
           </div>
 
-          <div className="field" onBlur={ this.updateBody } >
+          <div className="field body-field" onBlur={ this.updateBody } >
             <label>Body</label>
             <textarea id="event-body" defaultValue={this.state.body}></textarea>
           </div>

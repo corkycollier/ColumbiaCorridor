@@ -19,6 +19,7 @@ const Event = React.createClass({
 
   componentDidMount () {
     $('#body').html(this.state.event.body)
+    $('#title').html(this.state.event.title)
   },
 
   paypal () {
@@ -117,7 +118,8 @@ const Event = React.createClass({
           <div className="twelve wide column">
             <div className="ui message">
               <h2 className="ui header">
-                { this.state.event.title }
+                <div id="title">
+                </div>
               </h2>
 
               <div className="ui divider"></div>

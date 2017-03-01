@@ -18,7 +18,7 @@ const AdminEvents = React.createClass({
           "padding" : "25px 0px" ,
           "position" : "relative" ,
         }}>
-        
+
         <Admin />
 
         <h2>
@@ -88,6 +88,9 @@ const AdminEventsRow = React.createClass({
     }
   },
 
+  componentDidMount() {
+    $(ReactDOM.findDOMNode(this)).find('#title').html(this.props.event.title);
+  },
 
   render() {
 
@@ -128,7 +131,8 @@ const AdminEventsRow = React.createClass({
       <tr>
         <td >
           <a href={"#event/" +  this.props.event.id}>
-          { this.props.event.title }
+            <div id="title">
+            </div>
           </a>
         </td>
 
