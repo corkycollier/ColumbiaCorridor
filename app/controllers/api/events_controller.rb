@@ -4,7 +4,7 @@ module Api
 
     def create
       @event = Event.new( event_params )
-      @event.formatDateTime
+      # @event.formatDateTime
       @event.save
       render json: app_data
     end
