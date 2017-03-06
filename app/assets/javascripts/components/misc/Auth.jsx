@@ -158,7 +158,7 @@ const SignUp = React.createClass({
           </div>
 
           <div className="field">
-            <label>Password <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/></label>
+            <label>Password <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/> <small>min length 6</small></label>
             <input type="password" required data-field="password" onChange={ this.updateState } required />
           </div>
 
