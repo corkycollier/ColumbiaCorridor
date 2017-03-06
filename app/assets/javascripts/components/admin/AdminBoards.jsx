@@ -235,7 +235,7 @@ const EditBoard = React.createClass({
 
           <div className="field">
             <label>Bio</label>
-            <textarea data-field="bio" onChange={ this.update } value={ this.state.website} ></textarea>
+            <textarea data-field="bio" onChange={ this.update } value={ this.state.bio} ></textarea>
           </div>
 
           <div className="field">
