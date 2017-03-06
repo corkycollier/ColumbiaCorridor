@@ -89,7 +89,7 @@ const LoggedInButtons = React.createClass({
   },
 
   checkForAdmin () {
-    if (this.props.parent.state.user.id < 4) {
+    if (this.props.parent.state.user.role == "Admin") {
       return (
         <a className="item"  data-url="admin" onClick={ this.go } style={{ "float" : "left" ,}}>
           Admin

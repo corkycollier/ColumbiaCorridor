@@ -156,7 +156,7 @@ const Event = React.createClass({
             <div className="ui warning message">
               <div className="header" style={{ "marginBottom" : "11px" , }}>
                 <a href={"http://maps.google.com/?q=" + this.state.event.location || "CCA" } target="_blank" style={{ "color" : "#794B02" , }}>
-                Location
+                  Location
                 </a>
               </div>
 
