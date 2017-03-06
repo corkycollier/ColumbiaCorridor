@@ -12,7 +12,7 @@ const AdminUsers = React.createClass({
   },
 
   delete (e) {
-    if ( e.currentTarget.dataset.id < 4 ) {
+    if ( e.currentTarget.dataset.id == "Admin" ) {
       alert('You cannot remove that user.')
       return;
     } else {
