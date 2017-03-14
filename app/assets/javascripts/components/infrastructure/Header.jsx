@@ -45,10 +45,7 @@ const Header = React.createClass({
             }}>
             <i className="phone icon"></i>(503) 287-8686
             </div>
-
           </div>
-
-
 
           <div className="ui right floated pagination menu" style={{ "position" : "absolute" , "top" : "16px" , "right" : "24px" }}>
             <a className="icon item" href="https://www.facebook.com/ColumbiaCorridor/" target="_blank"  style={{ "fontSize" : "18px" , "padding" : "0px"}} >

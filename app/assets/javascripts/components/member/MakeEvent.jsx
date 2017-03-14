@@ -175,6 +175,8 @@ const EditEvent = React.createClass({
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative")
     }.bind(this), 0)
+
+    
     $('.dropdown').dropdown();
   },
 

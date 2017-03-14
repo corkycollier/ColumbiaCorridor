@@ -19,21 +19,18 @@ const MakeNews = React.createClass({
   },
 
   submitNews () {
-    var confirmation = confirm("Are you sure?")
-    if ( confirmation ) {
-      $.ajax({
-        url: '/api/news',
-        type: 'POST',
-        data: { news: this.state },
-        success: function (app_data, resp, obj) {
-          this.props.parent.setState(app_data)
-          Backbone.history.navigate('member-news' , { trigger : true })
-        }.bind(this), error: function (a, b, c) {
-          alert('There was an error. News was not created.')
-          Backbone.history.navigate('member-news' , { trigger : true })
-        }
-      })
-    }
+    $.ajax({
+      url: '/api/news',
+      type: 'POST',
+      data: { news: this.state },
+      success: function (app_data, resp, obj) {
+        this.props.parent.setState(app_data)
+        Backbone.history.navigate('member-news' , { trigger : true })
+      }.bind(this), error: function (a, b, c) {
+        alert('There was an error.')
+        Backbone.history.navigate('member-news' , { trigger : true })
+      }
+    })
   },
 
   updateBody(e) {
@@ -48,23 +45,12 @@ const MakeNews = React.createClass({
     this.setState( state );
   },
 
-  updateState (e) {
+  update (e) {
     var newData = {};
     newData[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( newData );
   },
 
-  setCheckbox () {
-    if ( this.state.cca_only ) {
-      this.setState({
-        cca_only: false
-      })
-    } else {
-      this.setState({
-        cca_only: true
-      })
-    }
-  },
 
   render () {
     return (
@@ -84,6 +70,11 @@ const MakeNews = React.createClass({
           <div className="sixteen wide column">
 
             <form className="ui form" onSubmit={this.submitNews }>
+              <div className="field">
+                <label>Basic Title</label>
+                <input type="text"  data-field="basic_title" onChange={ this.update } />
+              </div>
+
               <div className="field title-field" onBlur={ this.updateTitle }>
                 <label>Title</label>
                 <textarea id="news-title" />
@@ -121,22 +112,24 @@ const EditNewsAdmin = React.createClass({
   },
 
   submitNews () {
-    var sure = confirm("Are you sure?");
+    $.ajax({
+      url: '/api/news/' + this.props.news.id ,
+      type: 'PATCH',
+      data: { news: this.state },
+      success: function (app_data, resp, obj) {
+        this.props.parent.setState(app_data)
+        Backbone.history.navigate('admin/news' , { trigger : true })
+      }.bind(this), error: function (app_data, resp, obj) {
+        alert('There was an error.')
+        Backbone.history.navigate('admin/news' , { trigger : true })
+      }
+    })
+  },
 
-    if ( sure ) {
-      $.ajax({
-        url: '/api/news/' + this.props.news.id ,
-        type: 'PATCH',
-        data: { news: this.state },
-        success: function (app_data, resp, obj) {
-          this.props.parent.setState(app_data)
-          Backbone.history.navigate('admin/news' , { trigger : true })
-        }.bind(this), error: function (app_data, resp, obj) {
-          alert('There was an error. News was not editted properly.')
-          Backbone.history.navigate('admin/news' , { trigger : true })
-        }
-      })
-    }
+  updateTitle(e) {
+    var state = this.state;
+    state['title'] = $('.title-field').find('.fr-view').html() ;
+    this.setState( state );
   },
 
   updateBody(e) {
@@ -145,7 +138,7 @@ const EditNewsAdmin = React.createClass({
     this.setState( state );
   },
 
-  updateState (e) {
+  update (e) {
     var state = this.state;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
@@ -160,8 +153,12 @@ const EditNewsAdmin = React.createClass({
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
-
             <form className="ui form" onSubmit={this.submitNews }>
+              <div className="field">
+                <label>Basic Title</label>
+                <input type="text"  data-field="basic_title" onChange={ this.update } defaultValue={ this.props.news.basic_title }/>
+              </div>
+
               <div className="field title-field" onBlur={ this.updateTitle }>
                 <label>Title</label>
                 <textarea id="news-title" defaultValue={ this.props.news.title } />
