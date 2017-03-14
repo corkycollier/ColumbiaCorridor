@@ -5,7 +5,7 @@ const MakeEvent = React.createClass({
 
   componentDidMount () {
     $('#event-title').froalaEditor();
-    $('#event-body').froalaEditor();
+    $('#event-body').froalaEditor()
 
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative")
@@ -59,8 +59,13 @@ const MakeEvent = React.createClass({
         </h1>
 
         <form className="ui form" onSubmit={ this.handleSave }>
+          <div className="field" data-field="basic-title" onChange={ this.update }>
+            <label>Basic Title</label>
+            <input type="text" />
+          </div>
+
           <div className="field title-field" onBlur={ this.updateTitle }>
-            <label>Title</label>
+            <label>Event Page Title</label>
             <textarea id="event-title"></textarea>
           </div>
 
@@ -202,10 +207,17 @@ const EditEvent = React.createClass({
         </h1>
 
         <form className="ui form" onSubmit={ this.handleSave }>
-          <div className="field title-field" onBlur={ this.updateTitle } >
-            <label>Title</label>
+          <div className="field" data-field="basic-title" onChange={ this.update }>
+            <label>Basic Title</label>
+            <input type="text" defaultValue={this.state.basic_title}/>
+          </div>
+
+          <div className="field title-field" onBlur={ this.updateTitle }>
+            <label>Event Page Title</label>
             <textarea id="event-title" defaultValue={this.state.title}></textarea>
           </div>
+
+     
 
           <div className="field body-field" onBlur={ this.updateBody } >
             <label>Body</label>

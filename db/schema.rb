@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222011126) do
+ActiveRecord::Schema.define(version: 20170314184025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,20 +54,21 @@ ActiveRecord::Schema.define(version: 20170222011126) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "title"
     t.string   "date"
     t.string   "time"
     t.string   "location"
     t.text     "body"
     t.string   "event_type"
-    t.boolean  "allDay",     default: false
+    t.boolean  "allDay",      default: false
     t.string   "start"
     t.string   "end"
     t.string   "url"
     t.text     "paypal"
     t.text     "custom"
+    t.string   "basic_title"
   end
 
   create_table "mailings", force: :cascade do |t|

@@ -122,7 +122,6 @@ const Home = React.createClass({
                     return (
                       <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
                         <a href={"#event/" + el.id} style={{ "color" : "#262262" , }} dangerouslySetInnerHTML={ {__html: el.title} }>
-
                         </a>
 
                         <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
@@ -153,10 +152,7 @@ const Home = React.createClass({
 
                     return(
                       <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
-                        <a href={"#news/" + el.id} style={{ "color" : "#262262" , }}>
-                          {
-                            el.title
-                          }
+                        <a href={"#news/" + el.id} style={{ "color" : "#262262" , }} dangerouslySetInnerHTML={ {__html: el.title} }>
                         </a>
 
                         <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
