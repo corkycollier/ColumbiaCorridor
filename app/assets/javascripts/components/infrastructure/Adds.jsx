@@ -33,13 +33,11 @@ const Advertisements = React.createClass({
     }
   },
 
-
   componentWillUnmount () {
     this.setState({
       active : false
     })
   },
-
 
   render () {
     return (

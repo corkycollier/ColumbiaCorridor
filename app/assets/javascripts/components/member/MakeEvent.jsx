@@ -76,7 +76,7 @@ const MakeEvent = React.createClass({
         </h1>
 
         <form className="ui form" onSubmit={ this.handleSave }>
-          <div className="field" data-field="basic-title" onChange={ this.update }>
+          <div className="field">
             <label>Basic Title</label>
             <input type="text"  data-field="basic_title" onChange={ this.update } />
           </div>
@@ -233,8 +233,6 @@ const EditEvent = React.createClass({
             <label>Event Page Title</label>
             <textarea id="event-title" defaultValue={this.state.title}></textarea>
           </div>
-
-     
 
           <div className="field body-field" onBlur={ this.updateBody } >
             <label>Body</label>
