@@ -88,10 +88,6 @@ const AdminEventsRow = React.createClass({
     }
   },
 
-  componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('#title').html(this.props.event.title);
-  },
-
   render() {
 
     var dateString = this.props.event.date.slice(5, 7) + "/" + this.props.event.date.slice(8) + "/" + this.props.event.date.slice(0, 4);
@@ -130,9 +126,7 @@ const AdminEventsRow = React.createClass({
     return (
       <tr>
         <td >
-          <a href={"#event/" +  this.props.event.id}>
-            <div id="title">
-            </div>
+          <a href={"#event/" +  this.props.event.id} dangerouslySetInnerHTML={{ __html: this.props.event.basic_title }}>
           </a>
         </td>
 
