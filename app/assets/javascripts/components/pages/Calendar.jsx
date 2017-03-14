@@ -51,64 +51,58 @@ const Calendar = React.createClass({
     var events = []
     this.state.events.forEach(function(el) {
 
-      if (el['start'].length < 8) {
-        var start = new moment(el.date + " " + el.start );
-        el['start'] = start.format() ;
+      var newEvent = $.extend({}, el) ;
+
+      if (newEvent['start'].length < 8) {
+        var start = new moment(newEvent.date + " " + newEvent.start );
+        newEvent['start'] = start.format() ;
       }
 
-      if (el['end'].length < 8) {
-        var end = new moment(el.date + " " + el.end );
-        el['end'] = end.format() ;
+      if (newEvent['end'].length < 8) {
+        var end = new moment(newEvent.date + " " + newEvent.end );
+        newEvent['end'] = end.format() ;
       }
 
-      switch( el.event_type ) {
+      switch( newEvent.event_type ) {
         case "Breakfast Forums":
-        el['backgroundColor'] = "#F2711C" ;
-        el['borderColor'] = "#F2711C" ;
-        el['color'] = "orange" ;
+        newEvent['backgroundColor'] = "#F2711C" ;
+        newEvent['borderColor'] = "#F2711C" ;
+        newEvent['color'] = "orange" ;
         break;
 
         case "Special Events":
-        el['backgroundColor'] = "#FBBD08" ;
-        el['borderColor'] = "#FBBD08" ;
-        el['color'] = "yellow" ;
+        newEvent['backgroundColor'] = "#FBBD08" ;
+        newEvent['borderColor'] = "#FBBD08" ;
+        newEvent['color'] = "ynewEventlow" ;
 
         break;
 
         case "Lunch w/ Leaders":
-        el['backgroundColor'] = "#6435C9" ;
-        el['borderColor'] = "#6435C9" ;
-        el['color'] = "violet" ;
+        newEvent['backgroundColor'] = "#6435C9" ;
+        newEvent['borderColor'] = "#6435C9" ;
+        newEvent['color'] = "violet" ;
 
         break;
 
         case "ResourceFULL Use Workshops":
-        el['backgroundColor'] = "#db2b2b" ;
-        el['borderColor'] = "#db2b2b" ;
-        el['color'] = "red" ;
+        newEvent['backgroundColor'] = "#db2b2b" ;
+        newEvent['borderColor'] = "#db2b2b" ;
+        newEvent['color'] = "red" ;
 
         break;
 
         case "Tours & Member Exchanges":
-        el['backgroundColor'] = "#a66941" ;
-        el['borderColor'] = "#a66941" ;
-        el['color'] = "brown" ;
+        newEvent['backgroundColor'] = "#a66941" ;
+        newEvent['borderColor'] = "#a66941" ;
+        newEvent['color'] = "brown" ;
 
         break;
         default:
       }
 
-      if (this.state.filter == "" || el.event_type == this.state.filter) {
-
-        if (el.title.slice(0, 3) == "<p>" ) {
-          el['title'] = el.title.slice(3)
-        }
-
-        if (el.title.slice(-4) == "</p>" ) {
-          el['title'] = el.title.slice(0, -4)
-        }
-
-        events.push(el)
+      if (this.state.filter == "" || newEvent.event_type == this.state.filter) {
+        newEvent.title = newEvent.basic_title;
+        events.push(newEvent);
       }
 
     }.bind(this))

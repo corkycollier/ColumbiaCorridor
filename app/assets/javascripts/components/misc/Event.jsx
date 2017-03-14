@@ -19,6 +19,8 @@ const Event = React.createClass({
 
   componentDidMount () {
     $('#body').html(this.state.event.body)
+
+    debugger
     $('#title').html(this.state.event.title)
   },
 
