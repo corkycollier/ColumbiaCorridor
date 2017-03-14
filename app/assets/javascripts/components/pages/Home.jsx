@@ -116,12 +116,12 @@ const Home = React.createClass({
             <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
               <h2><a href="#event-list" style={{ "color" : "#262262" , }}>Upcoming Events</a></h2>
               <div>
-                {
 
+                {
                   this.props.parent.state.upcoming_events.slice(0, 3).map(function(el) {
                     return (
                       <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
-                        <a href={"#event/" + el.id} style={{ "color" : "#262262" , }} dangerouslySetInnerHTML={ {__html: el.title} }>
+                        <a href={"#event/" + el.id} style={{ "color" : "#262262" , }} dangerouslySetInnerHTML={ {__html: el.basic_title} }>
                         </a>
 
                         <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
@@ -130,6 +130,7 @@ const Home = React.createClass({
                     )
                   }.bind(this))
                 }
+
               </div>
             </div>
 

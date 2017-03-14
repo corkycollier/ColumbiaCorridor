@@ -5,7 +5,24 @@ const MakeEvent = React.createClass({
 
   componentDidMount () {
     $('#event-title').froalaEditor();
-    $('#event-body').froalaEditor()
+    $('#event-body').froalaEditor().on('froalaEditor.image.uploaded', function (e, editor, img) {
+      var url = JSON.parse(img).link;
+
+
+      cloudinary.createUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+      function(error, result) {
+        debugger
+
+        if (result) {
+          debugger
+          var state = this.state
+          state['image_url'] = result[0].secure_url
+          this.setState( state)
+        }
+      }.bind(this));
+      debugger
+
+    });
 
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative")
@@ -61,7 +78,7 @@ const MakeEvent = React.createClass({
         <form className="ui form" onSubmit={ this.handleSave }>
           <div className="field" data-field="basic-title" onChange={ this.update }>
             <label>Basic Title</label>
-            <input type="text" />
+            <input type="text"  data-field="basic_title" onChange={ this.update } />
           </div>
 
           <div className="field title-field" onBlur={ this.updateTitle }>
@@ -207,9 +224,9 @@ const EditEvent = React.createClass({
         </h1>
 
         <form className="ui form" onSubmit={ this.handleSave }>
-          <div className="field" data-field="basic-title" onChange={ this.update }>
+          <div className="field">
             <label>Basic Title</label>
-            <input type="text" defaultValue={this.state.basic_title}/>
+            <input type="text" defaultValue={this.state.basic_title} data-field="basic_title" onChange={ this.update } />
           </div>
 
           <div className="field title-field" onBlur={ this.updateTitle }>
