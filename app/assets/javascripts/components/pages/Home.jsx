@@ -29,42 +29,33 @@ const Home = React.createClass({
 
       pages : pages ,
       currentPage : pages["0"] ,
-      active : true ,
     })
   },
 
   componentDidMount () {
-    this.initiateFlip();
-    $('.ui-container-sam')
-    .transition({
+    $(ReactDOM.findDOMNode(this)).find('.ui-container-sam').transition({
       animation  : 'fade in' ,
       duration   : '0.8s'    ,
     });
-  },
 
-  initiateFlip() {
-    var interval = setInterval(function () {
-      this.flip();
-    }.bind(this), 7400)
+
+    setTimeout(this.flip, 7400)
   },
 
   flip () {
-    if (!this.state.active) { return; }
     var pageNumber = this.state.currentPage.id + 1
     if ( pageNumber > 3 ) pageNumber = 0;
-
-
 
     $('.home-image').transition({
       animation  : 'fade in',
       duration   : '1s',
-    })
+    });
 
     this.setState({
       currentPage : this.state.pages[ pageNumber ] ,
     });
 
-
+    setTimeout(this.flip, 7400)
   },
 
   navigate () {
@@ -89,8 +80,7 @@ const Home = React.createClass({
 
   render () {
     return (
-      <div className="" style={{"position" : "relative" , "background" : "rgba(63, 63, 63, 0.57)" , }}>
-        <div className="ui-container-sam">
+      <div className="ui-container-sam" style={{"position" : "relative" , "background" : "rgba(63, 63, 63, 0.57)" , }}>
 
           <div className="ui button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
             <i className="left caret icon"></i>
@@ -109,8 +99,6 @@ const Home = React.createClass({
                 }}></img>
               </a>
             </div>
-
-          </div>
 
           <div className="ui grid centered stackable " style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "15px 0px" ,  "paddingTop" : "19px" , "position" : "relative" , "top" : "14px"}}>
             <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
