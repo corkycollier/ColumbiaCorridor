@@ -26,7 +26,6 @@ const EventList = React.createClass({
   fullCalendar () {
     $('#calendar').fullCalendar({
       eventClick: this.clickEvent,
-      eventMouseover: this.mouseOver
     });
   },
 
@@ -196,7 +195,7 @@ const EventList = React.createClass({
               return(
                 <div className={"ui segment ui grid " + el.color } key={"event" + el.id}>
                   <div className="eight wide column">
-                    <h3><a href={"#event/" + el.id} style={{ "color" : "#262262" , "letterSpacing" : "1px" }} dangerouslySetInnerHTML={ {__html: el.title} }>
+                    <h3><a href={"#event/" + el.id} style={{ "color" : "#262262" , "letterSpacing" : "1px" }} dangerouslySetInnerHTML={ {__html: el.basic_title} }>
 
                     </a></h3>
                   </div>
@@ -216,8 +215,6 @@ const EventList = React.createClass({
                       "margin": "-11px 0px" ,
                     }}>
                   </div>
-
-
                 </div>
               )
             })

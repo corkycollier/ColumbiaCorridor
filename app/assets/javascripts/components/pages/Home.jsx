@@ -26,7 +26,6 @@ const Home = React.createClass({
     }
 
     return({
-
       pages : pages ,
       currentPage : pages["0"] ,
     })
@@ -38,7 +37,6 @@ const Home = React.createClass({
       duration   : '0.8s'    ,
     });
 
-
     setTimeout(this.flip, 7400)
   },
 
@@ -46,16 +44,25 @@ const Home = React.createClass({
     var pageNumber = this.state.currentPage.id + 1
     if ( pageNumber > 3 ) pageNumber = 0;
 
-    $('.home-image').transition({
-      animation  : 'fade in',
-      duration   : '1s',
-    });
+    if (this.state.active) {
+      $('.home-image').transition({
+        animation  : 'fade in',
+        duration   : '1s',
+      });
 
+      this.setState({
+        currentPage : this.state.pages[ pageNumber ] ,
+      });
+
+      setTimeout(this.flip, 7400)
+    }
+  },
+
+
+  componentWillUnmount () {
     this.setState({
-      currentPage : this.state.pages[ pageNumber ] ,
-    });
-
-    setTimeout(this.flip, 7400)
+      active : false
+    })
   },
 
   navigate () {

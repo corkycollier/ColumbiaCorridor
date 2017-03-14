@@ -4,15 +4,13 @@ const Advertisements = React.createClass({
   getInitialState () {
     return({
       slides: this.props.parent.state.ads || {} ,
-      currentSlide: this.props.parent.state.ads[0] || {}
+      currentSlide: this.props.parent.state.ads[0] || {} ,
+      active : true ,
     });
   },
 
   componentDidMount () {
-    var interval = setInterval(function () {
-      this.flip();
-    }.bind(this), 4400)
-
+    setTimeout( this.flip , 4400 );
   },
 
   flip () {
@@ -22,11 +20,26 @@ const Advertisements = React.createClass({
     });
 
     var slideNumber = this.state.slides.indexOf ( this.state.currentSlide ) + 1;
+    
     if ( slideNumber > this.state.slides.length - 1 ) slideNumber = 0;
-    this.setState({
-      currentSlide : this.state.slides[ slideNumber ] ,
-    });
+
+
+    if (this.state.active) {
+      this.setState({
+        currentSlide : this.state.slides[ slideNumber ] ,
+      });
+
+      setTimeout( this.flip , 4400 );
+    }
   },
+
+
+  componentWillUnmount () {
+    this.setState({
+      active : false
+    })
+  },
+
 
   render () {
     return (
