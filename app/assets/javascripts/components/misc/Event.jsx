@@ -20,7 +20,6 @@ const Event = React.createClass({
   componentDidMount () {
     $('#body').html(this.state.event.body)
 
-    debugger
     $('#title').html(this.state.event.title)
   },
 
@@ -125,6 +124,7 @@ const Event = React.createClass({
               </h2>
 
               <div className="ui divider"></div>
+              
               <div id="body">
               </div>
             </div>
