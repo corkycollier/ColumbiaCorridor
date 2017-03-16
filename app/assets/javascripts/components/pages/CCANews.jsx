@@ -30,8 +30,8 @@ const CCANews = React.createClass({
                   return (
                     <div key={ el.id } >
                       <div style={{"marginBottom" : "2px"}}>
-                        <b>
-                          { el.title }
+                        <b dangerouslySetInnerHTML={{__html: el.title }}>
+                          
                         </b>
 
                         <span style={{ "marginLeft" : "3px" , "fontSize" : "12px"}}>
