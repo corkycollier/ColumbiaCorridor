@@ -46,7 +46,7 @@ const MemberNews = React.createClass({
 const MemberNewsRow = React.createClass({
 
   componentDidMount() {
-    $(ReactDOM.findDOMNode(this)).find('#title').html(this.props.news.title)
+    $(ReactDOM.findDOMNode(this)).find('#title').html(this.props.news.basic_title)
   },
 
   goToNews(e) {
