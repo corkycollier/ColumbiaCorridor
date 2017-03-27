@@ -7,6 +7,22 @@ const Main = React.createClass({
     this.initRouter();
     this.customMethods();
     this.setStaff();
+    this.firebase();
+  },
+
+  firebase () {
+    var config = {
+      apiKey: "AIzaSyAnYe272_CVJB-i1pbWpXuNliKyC71f630",
+      authDomain: "columbia-corridor.firebaseapp.com",
+      databaseURL: "https://columbia-corridor.firebaseio.com",
+      storageBucket: "columbia-corridor.appspot.com",
+      messagingSenderId: "1082141111045"
+    };
+    
+    firebase.initializeApp(config);
+
+    // Get a reference to the storage service, which is used to create references in your storage bucket
+    var storage = firebase.storage();
   },
 
   save () {

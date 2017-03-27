@@ -14,6 +14,8 @@ module Api
       render json: {message: "message complete"}
     end
 
+    
+
     private
 
     def message
@@ -97,9 +99,22 @@ module Api
       data = JSON.parse(string)
 
       sg = SendGrid::API.new(api_key: ENV['sendgrid2'])
-      response = sg.client.mail._('send').post(request_body: data)
-    end
+      # response = sg.client.mail._('send').post(request_body: data)
 
+      base_url = "https://api.constantcontact.com/v2"
+
+      
+      @cc = ConstantContact::Api.new(ENV['constant_api_key'], "936ed46e-7474-4f50-9bec-945c6044545d" )
+
+      fail
+
+      
+      email = {
+        email_addresses: [ message_params[:email] ]
+      }
+
+      @cc.add_contact email
+    end
 
     def message_params
       params.require(:message).permit(:first, :last, :email, :company, :zip)
