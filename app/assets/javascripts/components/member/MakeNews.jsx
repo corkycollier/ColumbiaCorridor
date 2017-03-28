@@ -175,7 +175,7 @@ const EditNewsAdmin = React.createClass({
 
   updateBody(e) {
     var state = this.state;
-    state['body'] = $('.fr-view').html() ;
+    state['body'] = $('.body-field').find('.fr-view').html() ;
     this.setState( state );
   },
 
