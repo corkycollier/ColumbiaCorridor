@@ -23,6 +23,18 @@ const MakeNews = React.createClass({
   componentDidMount () {
     this.froala();
     this.fadeIn();
+    tinymce.init({
+      selector:'foobar' ,
+      menubar: false,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table contextmenu paste code'
+      ],
+      toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+      content_css: '//www.tinymce.com/css/codepen.min.css'
+    });
+
   },
 
   uploadWidget () {
@@ -82,10 +94,8 @@ const MakeNews = React.createClass({
         <h1>
           News
         </h1>
-
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column">
-
             <form className="ui form" onSubmit={this.submitNews }>
               <div className="field">
                 <label>Basic Title</label>
