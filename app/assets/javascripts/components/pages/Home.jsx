@@ -138,7 +138,7 @@ const Home = React.createClass({
                 {
                   this.props.parent.state.upcoming_events.slice(0, 3).map(function(el) {
                     return (
-                      <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
+                      <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
                         <a href={"#event/" + el.id} style={{
                             "color" : "#fff" ,
                             "fontSize" : "18px" ,
@@ -177,7 +177,7 @@ const Home = React.createClass({
                     if (el.author != "Corky Collier") { return ;}
 
                     return(
-                      <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
+                      <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
                         <a href={"#news/" + el.id} style={{
                             "color" : "#fff" ,
                             "fontSize" : "18px" ,
@@ -185,7 +185,7 @@ const Home = React.createClass({
                           { el.basic_title}
                         </a>
 
-                        
+
                       </div>
                     )
                   }.bind(this))
