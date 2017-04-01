@@ -20,6 +20,8 @@ const Menu = React.createClass({
     $window.resize(function(){
       this.triggerMenu();
     }.bind(this));
+
+
   },
 
   triggerMenu() {
@@ -88,6 +90,11 @@ const RegularMenu = React.createClass({
         on: 'hover'
       });
     }.bind(this), 0)
+
+
+    $('.regularMenu').visibility({
+     type: 'fixed',
+    });
   },
 
   go (e) {
@@ -97,7 +104,13 @@ const RegularMenu = React.createClass({
   render () {
     return (
       <div className="">
-        <div className="ui eight item menu" style={{ "borderLeft" : "none" , "borderRight" : "none" , "height" : "46px", "zIndex" : "2000" }}>
+        <div className="ui eight item menu regularMenu" style={{
+            "borderLeft" : "none"  ,
+            "borderRight" : "none" ,
+            "height" : "46px"      ,
+            "zIndex" : "2000"      ,
+            "marginBottom" : "0px"      ,
+          }}>
           <a className="ui dropdown item header" data-path="" onClick={ this.go } style={{
               "color" : "#262262"
             }}>

@@ -94,22 +94,20 @@ const Home = React.createClass({
     return (
       <div className="ui-container-sam" style={{"position" : "relative" , "background" : "rgba(63, 63, 63, 0.57)" , }}>
 
-        <div className="ui button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipLeft }>
-          <i className="left caret icon"></i>
+        <div className="ui large button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.8" }} onClick={ this.flipLeft }>
+          <i className="left chevron icon"></i>
         </div>
 
-        <div className="ui button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.6" }} onClick={ this.flipRight }>
-          <i className="right caret icon"></i>
+        <div className="ui large button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.8" }} onClick={ this.flipRight }>
+          <i className="right chevron icon"></i>
         </div>
 
         <div>
           <a href={"#" + this.state.currentPage.link}>
-
             <img className="ui image centered home-image" src={this.state.currentPage.img} onClick = { this.navigate } style={{
-                "height" : "505px" ,
+                "height" : "39vw" ,
                 "minHeight" : "282px" ,
                 "width" : "100vw" ,
-                "maxWidth" : "1344px" ,
               }}></img>
             </a>
           </div>
