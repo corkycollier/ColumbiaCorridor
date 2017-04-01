@@ -10,7 +10,7 @@ const Advertisements = React.createClass({
   },
 
   componentDidMount () {
-    setTimeout( this.flip , 4400 );
+    setTimeout( this.flip , 8400 );
   },
 
   flip () {
@@ -20,7 +20,7 @@ const Advertisements = React.createClass({
     });
 
     var slideNumber = this.state.slides.indexOf ( this.state.currentSlide ) + 1;
-    
+
     if ( slideNumber > this.state.slides.length - 1 ) slideNumber = 0;
 
 
@@ -29,7 +29,7 @@ const Advertisements = React.createClass({
         currentSlide : this.state.slides[ slideNumber ] ,
       });
 
-      setTimeout( this.flip , 4400 );
+      setTimeout( this.flip , 8400 );
     }
   },
 
