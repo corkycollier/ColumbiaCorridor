@@ -115,7 +115,7 @@ const Home = React.createClass({
           </div>
 
           <div className="ui grid centered stackable " style={{
-              "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/e_brightness:-15/v1481844877/footer_tgdoad.jpg)" ,
+              "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/e_brightness:-20/v1481844877/footer_tgdoad.jpg)" ,
               "color" : "#0a0a7a" ,
               "minHeight" : "24vh" ,
               "textAlign" : "center" ,
@@ -124,12 +124,17 @@ const Home = React.createClass({
               "position" : "relative" ,
               "top" : "14px"
             }}>
+
             <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
-              <h1><a href="#event-list" style={{
-                  "fontWeight" : "bold" ,
-                  "color" : "#fff" ,
-                  "letterSpacing" : "1px" ,
-                }}>Upcoming Events</a></h1>
+              <h1>
+                  <a href="#event-list" style={{
+                    "fontWeight" : "bold" ,
+                    "color" : "#fff" ,
+                    "letterSpacing" : "1px" ,
+                    }}>
+                    Upcoming Events
+                  </a>
+                </h1>
               <div>
 
                 {
@@ -138,8 +143,8 @@ const Home = React.createClass({
                       <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
                         <a href={"#event/" + el.id} style={{
                             "color" : "#fff" ,
-                            "fontSize" : "16px" ,
-                          }} >
+                            "fontSize" : "21px" ,
+                          }}>
                           { el.basic_title }
                         </a>
 
@@ -178,7 +183,7 @@ const Home = React.createClass({
                       <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
                         <a href={"#news/" + el.id} style={{
                             "color" : "#fff" ,
-                            "fontSize" : "16px" ,
+                            "fontSize" : "21px" ,
                           }} >
                           { el.basic_title}
                         </a>
