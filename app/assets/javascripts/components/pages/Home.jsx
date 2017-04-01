@@ -143,7 +143,7 @@ const Home = React.createClass({
                       <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
                         <a href={"#event/" + el.id} style={{
                             "color" : "#fff" ,
-                            "fontSize" : "21px" ,
+                            "fontSize" : "18px" ,
                           }}>
                           { el.basic_title }
                         </a>
@@ -183,7 +183,7 @@ const Home = React.createClass({
                       <div key={"fni" + el.id} style={{ "marginTop" : "12px" ,}}>
                         <a href={"#news/" + el.id} style={{
                             "color" : "#fff" ,
-                            "fontSize" : "21px" ,
+                            "fontSize" : "18px" ,
                           }} >
                           { el.basic_title}
                         </a>
