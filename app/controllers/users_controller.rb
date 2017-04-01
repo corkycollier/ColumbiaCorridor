@@ -81,7 +81,7 @@ class UsersController < ApplicationController
     data = JSON.parse(string)
 
     sg = SendGrid::API.new(api_key: ENV['sendgrid2'])
-    # response = sg.client.mail._('send').post(request_body: data)
+    response = sg.client.mail._('send').post(request_body: data)
 
     constant_contact
   end
