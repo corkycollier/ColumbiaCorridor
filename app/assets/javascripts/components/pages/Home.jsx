@@ -146,8 +146,7 @@ const Home = React.createClass({
                           { el.basic_title }
                         </a>
 
-                        <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
-                        </div>
+
                       </div>
                     )
                   }.bind(this))
@@ -186,8 +185,7 @@ const Home = React.createClass({
                           { el.basic_title}
                         </a>
 
-                        <div className="ui divider" style={{ "borderBottom" : "1px solid #262262" , "borderTop" : "1px solid #262262" , "width" : "90%", "position" :"relative" , "left" : "5%"}} >
-                        </div>
+                        
                       </div>
                     )
                   }.bind(this))
