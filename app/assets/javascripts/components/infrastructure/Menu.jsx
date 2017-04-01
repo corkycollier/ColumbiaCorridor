@@ -111,19 +111,19 @@ const RegularMenu = React.createClass({
 
             <div className="menu">
               <div className="item" data-path="about-cca" onClick={ this.go } >
-                ABOUT CCA
+                About CCA
               </div>
 
               <div className="item" data-path="columbia-corridor" onClick={ this.go } >
-                COLUMBIA CORRIDOR
+                Columbia Corridor
               </div>
 
               <div className="item" data-path="staff" onClick={ this.go } >
-                STAFF
+                Staff
               </div>
 
               <div className="item" data-path="board" onClick={ this.go } >
-                BOARD
+                Board
               </div>
             </div>
           </a>
@@ -135,11 +135,11 @@ const RegularMenu = React.createClass({
 
             <div className="menu">
               <div className="item" data-path="event-list" onClick={ this.go } >
-                EVENT LIST
+                Event List
               </div>
 
               <div className="item" data-path="calendar" onClick={ this.go } >
-                CALENDAR
+                Calendar
               </div>
             </div>
           </a>
@@ -151,23 +151,23 @@ const RegularMenu = React.createClass({
 
             <div className="menu">
               <div className="item" data-path="cca-news" onClick={ this.go } >
-                CCA NEWS
+                CCA News
               </div>
 
               <div className="item" data-path="members" onClick={ this.go } >
-                MEMBER DIRECTORY
+                Member directory
               </div>
 
               <div className="item" data-path="member-news" onClick={ this.go } >
-                MEMBER NEWS
+                Member News
               </div>
 
               <div className="item" data-path="groundwater" onClick={ this.go } >
-                GROUNDWATER
+                Groundwater
               </div>
 
               <div className="item" data-path="resourcesfull-use" onClick={ this.go } >
-                RESOURCEFULL USE
+                Resourcefull Use
               </div>
             </div>
           </a>
@@ -179,11 +179,11 @@ const RegularMenu = React.createClass({
 
             <div className="menu">
               <div className="item" data-path="membership" onClick={ this.go } >
-                MEMBERSHIP
+                Membership
               </div>
 
               <div className="item" data-path="year-in-review" onClick={ this.go } >
-                YEAR IN REVIEW
+                Year In Review
               </div>
             </div>
           </a>
@@ -195,20 +195,20 @@ const RegularMenu = React.createClass({
 
             <div className="menu">
               <div className="item member-area" data-path="directory" onClick={ this.go } >
-                DIRECTORY
+                Directory
               </div>
 
               <div className="item member-area" data-path="archives" onClick={ this.go } >
-                ARCHIVES
+                Archives
               </div>
 
 
               <div className="item member-area" data-path="make-news" onClick={ this.go } >
-                MAKE NEWS
+                Make News
               </div>
 
               <div className="item member-area" data-path="edit-profile" onClick={ this.go } >
-                EDIT PROFILE
+                Edit Profile
               </div>
             </div>
           </a>
@@ -275,22 +275,21 @@ const SidebarMenu = React.createClass({
               About Us
             </div>
 
-
             <div className="menu">
               <div className="item" data-path="about-cca" onClick={ this.go } >
-                ABOUT CCA
+                About CCA
               </div>
 
               <div className="item" data-path="columbia-corridor" onClick={ this.go } >
-                COLUMBIA CORRIDOR
+                Columbia Corridor
               </div>
 
               <div className="item" data-path="staff" onClick={ this.go } >
-                STAFF
+                Staff
               </div>
 
               <div className="item" data-path="board" onClick={ this.go } >
-                BOARD
+                Board
               </div>
             </div>
           </a>
@@ -302,6 +301,15 @@ const SidebarMenu = React.createClass({
             <div className="header">
               Events
             </div>
+
+            <div className="item" data-path="event-list" onClick={ this.go } >
+              Event List
+            </div>
+
+            <div className="item" data-path="calendar" onClick={ this.go } >
+              Calendar
+            </div>
+
           </a>
 
           <a className="ui item"style={{
@@ -313,23 +321,23 @@ const SidebarMenu = React.createClass({
 
             <div className="menu">
               <div className="item" data-path="cca-news" onClick={ this.go } >
-                CCA NEWS
+                CCA News
               </div>
 
               <div className="item" data-path="members" onClick={ this.go } >
-                MEMBER DIRECTORY
+                Member directory
               </div>
 
-              <div className="item member-area" data-path="member-news" onClick={ this.go } >
-                MEMBER NEWS
+              <div className="item" data-path="member-news" onClick={ this.go } >
+                Member News
               </div>
 
               <div className="item" data-path="groundwater" onClick={ this.go } >
-                GROUNDWATER
+                Groundwater
               </div>
 
               <div className="item" data-path="resourcesfull-use" onClick={ this.go } >
-                RESOURCEFULL USE
+                Resourcefull Use
               </div>
             </div>
           </a>
@@ -341,13 +349,14 @@ const SidebarMenu = React.createClass({
             <div className="header">
               Join
             </div>
+
             <div className="menu">
               <div className="item" data-path="membership" onClick={ this.go } >
-                MEMBERSHIP
+                Membership
               </div>
 
               <div className="item" data-path="year-in-review" onClick={ this.go } >
-                YEAR IN REVIEW
+                Year In Review
               </div>
             </div>
           </a>
@@ -358,22 +367,23 @@ const SidebarMenu = React.createClass({
             <div className="header">
               Member Area
             </div>
+
             <div className="menu">
               <div className="item member-area" data-path="directory" onClick={ this.go } >
-                DIRECTORY
+                Directory
               </div>
 
               <div className="item member-area" data-path="archives" onClick={ this.go } >
-                ARCHIVES
+                Archives
               </div>
 
 
               <div className="item member-area" data-path="make-news" onClick={ this.go } >
-                MAKE NEWS
+                Make News
               </div>
 
               <div className="item member-area" data-path="edit-profile" onClick={ this.go } >
-                EDIT PROFILE
+                Edit Profile
               </div>
             </div>
           </a>
