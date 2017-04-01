@@ -114,7 +114,16 @@ const Home = React.createClass({
             </a>
           </div>
 
-          <div className="ui grid centered stackable " style={{ "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/v1481844877/footer_tgdoad.jpg)" , "color" : "#0a0a7a" , "minHeight" : "24vh" , "textAlign" : "center" , "padding" : "15px 0px" ,  "paddingTop" : "19px" , "position" : "relative" , "top" : "14px"}}>
+          <div className="ui grid centered stackable " style={{
+              "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/e_brightness:-15/v1481844877/footer_tgdoad.jpg)" ,
+              "color" : "#0a0a7a" ,
+              "minHeight" : "24vh" ,
+              "textAlign" : "center" ,
+              "padding" : "15px 0px" ,
+              "paddingTop" : "19px" ,
+              "position" : "relative" ,
+              "top" : "14px"
+            }}>
             <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
               <h1><a href="#event-list" style={{
                   "fontWeight" : "bold" ,
@@ -130,7 +139,6 @@ const Home = React.createClass({
                         <a href={"#event/" + el.id} style={{
                             "color" : "#fff" ,
                             "fontSize" : "16px" ,
-                            
                           }} >
                           { el.basic_title }
                         </a>
