@@ -145,8 +145,6 @@ const Home = React.createClass({
                           }}>
                           { el.basic_title }
                         </a>
-
-
                       </div>
                     )
                   }.bind(this))
@@ -174,7 +172,7 @@ const Home = React.createClass({
                 {
                   this.props.parent.state.news.slice(0, 3).map(function(el) {
 
-                    if (el.author != "Corky Collier") { return ;}
+                    if (el.author != "Corky Collier" && el.author != "Samuel Ullman") { return ;}
 
                     return(
                       <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>

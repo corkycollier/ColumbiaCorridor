@@ -114,29 +114,30 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown item header" data-path="" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
-            Home
+            HOME
           </a>
 
           <a className="ui dropdown item header" data-path="about-us" style={{
               "color" : "#262262"
             }}>
-            About Us
+            ABOUT US
 
-            <div className="menu">
-              <div className="item" data-path="about-cca" onClick={ this.go } >
-                About CCA
+            <div className="menu" >
+              <div className="item" data-path="about-cca" onClick={ this.go } style={{ "textAlign" : "center" ,}}>
+
+                ABOUT CCA
               </div>
 
-              <div className="item" data-path="columbia-corridor" onClick={ this.go } >
-                Columbia Corridor
+              <div className="item" data-path="columbia-corridor" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                COLUMBIA CORRIDOR
               </div>
 
-              <div className="item" data-path="staff" onClick={ this.go } >
-                Staff
+              <div className="item" data-path="staff" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                STAFF
               </div>
 
-              <div className="item" data-path="board" onClick={ this.go } >
-                Board
+              <div className="item" data-path="board" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                BOARD
               </div>
             </div>
           </a>
@@ -144,15 +145,15 @@ const RegularMenu = React.createClass({
           <a className="ui item dropdown header"  style={{
               "color" : "#262262"
             }}>
-            Events
+            EVENTS
 
             <div className="menu">
-              <div className="item" data-path="event-list" onClick={ this.go } >
-                Event List
+              <div className="item" data-path="event-list" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                EVENT LIST
               </div>
 
-              <div className="item" data-path="calendar" onClick={ this.go } >
-                Calendar
+              <div className="item" data-path="calendar" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                CALENDAR
               </div>
             </div>
           </a>
@@ -160,27 +161,27 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown item header"style={{
               "color" : "#262262"
             }}>
-            Resources
+            RESOURCES
 
             <div className="menu">
-              <div className="item" data-path="cca-news" onClick={ this.go } >
-                CCA News
+              <div className="item" data-path="cca-news" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                CCA NEWS
               </div>
 
-              <div className="item" data-path="members" onClick={ this.go } >
-                Member directory
+              <div className="item" data-path="member-news" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                MEMBER NEWS
               </div>
 
-              <div className="item" data-path="member-news" onClick={ this.go } >
-                Member News
+              <div className="item" data-path="members" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                MEMBER DIRECTORY
               </div>
 
-              <div className="item" data-path="groundwater" onClick={ this.go } >
-                Groundwater
+              <div className="item" data-path="groundwater" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                GROUNDWATER
               </div>
 
-              <div className="item" data-path="resourcesfull-use" onClick={ this.go } >
-                Resourcefull Use
+              <div className="item" data-path="resourcesfull-use" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                RESOURCEFULL USE
               </div>
             </div>
           </a>
@@ -188,15 +189,15 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown item header" style={{
               "color" : "#262262"
             }}>
-            Join
+            JOIN
 
             <div className="menu">
-              <div className="item" data-path="membership" onClick={ this.go } >
-                Membership
+              <div className="item" data-path="membership" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                MEMBERSHIP
               </div>
 
-              <div className="item" data-path="year-in-review" onClick={ this.go } >
-                Year In Review
+              <div className="item" data-path="year-in-review" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                YEAR IN REVIEW 2015
               </div>
             </div>
           </a>
@@ -204,24 +205,24 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown item header " style={{
               "color" : "#262262"
             }}>
-            Member Area
+            MEMBER AREA
 
             <div className="menu">
-              <div className="item member-area" data-path="directory" onClick={ this.go } >
-                Directory
+              <div className="item member-area" data-path="directory" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                DIRECTORY
               </div>
 
-              <div className="item member-area" data-path="archives" onClick={ this.go } >
-                Archives
+              <div className="item member-area" data-path="archives" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                ARCHIVES
               </div>
 
 
-              <div className="item member-area" data-path="make-news" onClick={ this.go } >
-                Make News
+              <div className="item member-area" data-path="make-news" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                MAKE NEWS
               </div>
 
-              <div className="item member-area" data-path="edit-profile" onClick={ this.go } >
-                Edit Profile
+              <div className="item member-area" data-path="edit-profile" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                EDIT PROFILE
               </div>
             </div>
           </a>
@@ -229,13 +230,13 @@ const RegularMenu = React.createClass({
           <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
-            Sponsor
+            SPONSOR
           </a>
 
           <a className="ui dropdown header item" data-path="contact" onClick={ this.go } style={{
               "color" : "#262262"
             }}>
-            Contact
+            CONTACT
           </a>
 
         </div>
