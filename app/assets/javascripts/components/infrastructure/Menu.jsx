@@ -110,15 +110,19 @@ const RegularMenu = React.createClass({
             "height" : "46px"      ,
             "zIndex" : "2000"      ,
             "marginBottom" : "0px"      ,
+            "border" : "2px solid #262262" ,
+            "borderRadius" : "0px"
+
           }}>
           <a className="ui dropdown item header" data-path="" onClick={ this.go } style={{
-              "color" : "#262262"
+              "color" : "#262262" ,
+              "borderRadius" : "0px"
             }}>
             HOME
           </a>
 
           <a className="ui dropdown item header" data-path="about-us" style={{
-              "color" : "#262262"
+              "color" : "#262262" ,
             }}>
             ABOUT US
 
@@ -143,7 +147,7 @@ const RegularMenu = React.createClass({
           </a>
 
           <a className="ui item dropdown header"  style={{
-              "color" : "#262262"
+              "color" : "#262262" ,
             }}>
             EVENTS
 
@@ -159,7 +163,7 @@ const RegularMenu = React.createClass({
           </a>
 
           <a className="ui dropdown item header"style={{
-              "color" : "#262262"
+              "color" : "#262262" ,
             }}>
             RESOURCES
 
@@ -187,7 +191,7 @@ const RegularMenu = React.createClass({
           </a>
 
           <a className="ui dropdown item header" style={{
-              "color" : "#262262"
+              "color" : "#262262" ,
             }}>
             JOIN
 
@@ -203,9 +207,10 @@ const RegularMenu = React.createClass({
           </a>
 
           <a className="ui dropdown item header " style={{
-              "color" : "#262262"
+              "color" : "#262262" ,
             }}>
             MEMBER AREA
+
 
             <div className="menu">
               <div className="item member-area" data-path="directory" onClick={ this.go } style={{ "textAlign" : "center" , }}>
@@ -228,13 +233,14 @@ const RegularMenu = React.createClass({
           </a>
 
           <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } style={{
-              "color" : "#262262"
+              "color" : "#262262" ,
             }}>
             SPONSOR
           </a>
 
           <a className="ui dropdown header item" data-path="contact" onClick={ this.go } style={{
-              "color" : "#262262"
+              "color" : "#262262" ,
+              "borderRadius" : "0px"
             }}>
             CONTACT
           </a>

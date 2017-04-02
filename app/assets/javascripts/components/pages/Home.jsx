@@ -155,8 +155,6 @@ const Home = React.createClass({
 
             <div className="five wide column"
               style={{
-                "borderLeft" : "3px solid #262262" ,
-                "borderRight" : "3px solid #262262" ,
                 "padding" : "14px 18px" ,
               }}>
               <Advertisements parent={ this.props.parent } />
