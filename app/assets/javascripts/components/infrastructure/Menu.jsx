@@ -308,7 +308,7 @@ const SidebarMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui item " data-path="events" onClick={ this.go } style={{
+          <a className="ui item " style={{
               "color" : "#262262"
             }}>
 
@@ -316,14 +316,15 @@ const SidebarMenu = React.createClass({
               Events
             </div>
 
-            <div className="item" data-path="event-list" onClick={ this.go } >
-              Event List
-            </div>
+            <div className="menu">
+              <div className="item" data-path="event-list" onClick={ this.go } >
+                Event List
+              </div>
 
-            <div className="item" data-path="calendar" onClick={ this.go } >
-              Calendar
+              <div className="item" data-path="calendar" onClick={ this.go } >
+                Calendar
+              </div>
             </div>
-
           </a>
 
           <a className="ui item"style={{
