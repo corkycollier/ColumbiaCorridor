@@ -108,7 +108,8 @@ const RegularMenu = React.createClass({
             "height" : "46px"      ,
             "zIndex" : "2000"      ,
             "marginBottom" : "0px"      ,
-            "border" : "2px solid #262262" ,
+            "borderTop" : "1px solid #262262" ,
+            "borderBottom" : "3px solid #262262" ,
             "borderRadius" : "0px" ,
           }}>
           <a className="ui dropdown item header" data-path="" onClick={ this.go } style={{
