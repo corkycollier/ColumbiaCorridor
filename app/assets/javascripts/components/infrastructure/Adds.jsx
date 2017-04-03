@@ -10,7 +10,8 @@ const Advertisements = React.createClass({
   },
 
   componentDidMount () {
-    setTimeout( this.flip , 8400 );
+    var interval = setInterval(this.flip, 8000);
+    this.setState({interval: interval});
   },
 
   flip () {
@@ -23,20 +24,13 @@ const Advertisements = React.createClass({
 
     if ( slideNumber > this.state.slides.length - 1 ) slideNumber = 0;
 
-
-    if (this.state.active) {
-      this.setState({
-        currentSlide : this.state.slides[ slideNumber ] ,
-      });
-
-      setTimeout( this.flip , 8400 );
-    }
+    this.setState({
+      currentSlide : this.state.slides[ slideNumber ] ,
+    });
   },
 
   componentWillUnmount () {
-    this.setState({
-      active : false
-    })
+    clearInterval(this.state.interval);
   },
 
   render () {

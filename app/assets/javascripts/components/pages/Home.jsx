@@ -40,32 +40,28 @@ const Home = React.createClass({
 
     $('.shape').shape();
 
-    setTimeout(this.flip, 7400)
+
+    var interval = setInterval(this.flip, 4000);
+    this.setState({interval: interval});
   },
 
   flip () {
     var pageNumber = this.state.currentPage.id + 1
     if ( pageNumber > 3 ) pageNumber = 0;
 
-    if (this.state.active) {
-      $('.home-image').transition({
-        animation  : 'fade in',
-        duration   : '1s',
-      });
+    $('.home-image').transition({
+      animation  : 'fade in',
+      duration   : '1s',
+    });
 
-      this.setState({
-        currentPage : this.state.pages[ pageNumber ] ,
-      });
-
-      setTimeout(this.flip, 7400)
-    }
+    this.setState({
+      currentPage : this.state.pages[ pageNumber ] ,
+    });
   },
 
 
   componentWillUnmount () {
-    this.setState({
-      active : false
-    })
+    clearInterval(this.state.interval);
   },
 
   navigate () {
