@@ -1,4 +1,26 @@
 const Home = React.createClass({
+  componentDidMount () {
+    this.fadeIn();
+  },
+
+  fadeIn () {
+    $(ReactDOM.findDOMNode(this)).find('.ui-container-home').transition({
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
+  },
+
+  render () {
+    return (
+      <div className="ui-container-home">
+        <HomeWheel parent={ this.props.parent }/>
+        <BlueFooter parent={ this.props.parent }/>
+      </div>
+    )
+  }
+});
+
+const HomeWheel = React.createClass({
   getInitialState () {
     var pages = {
       "0" : {
@@ -31,19 +53,12 @@ const Home = React.createClass({
     })
   },
 
-  componentDidMount () {
-    this.fadeIn();
-
+  componentDidMount() {
     var interval = setInterval(this.flip, 4000);
     this.setState({interval: interval});
   },
 
-  fadeIn () {
-    $(ReactDOM.findDOMNode(this)).find('.ui-container-sam').transition({
-      animation  : 'fade in' ,
-      duration   : '0.8s'    ,
-    });
-  },
+
 
   flip () {
     var pageNumber = this.state.currentPage.id + 1
@@ -67,7 +82,6 @@ const Home = React.createClass({
     Backbone.history.navigate(this.state.currentPage.link, { trigger: true })
   },
 
-
   flipLeft () {
     var pageNumber = this.state.currentPage.id - 1
     if ( pageNumber < 0 ) pageNumber = 3;
@@ -86,13 +100,12 @@ const Home = React.createClass({
 
   render () {
     return (
-      <div className="ui-container-sam" style={{"position" : "relative" , "background" : "rgba(63, 63, 63, 0.57)" , }}>
-
-        <div className="ui large button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.8" }} onClick={ this.flipLeft }>
+      <div style={{"position" : "relative"}}>
+        <div className="ui large button circular icon" style={{ "position" : "absolute" , "top" : "42%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.8" }} onClick={ this.flipLeft }>
           <i className="left chevron icon"></i>
         </div>
 
-        <div className="ui large button circular icon" style={{ "position" : "absolute" , "top" : "30%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.8" }} onClick={ this.flipRight }>
+        <div className="ui large button circular icon" style={{ "position" : "absolute" , "top" : "42%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.8" }} onClick={ this.flipRight }>
           <i className="right chevron icon"></i>
         </div>
 
@@ -104,83 +117,98 @@ const Home = React.createClass({
                 "width" : "100vw" ,
               }}></img>
             </a>
+          </div>
         </div>
+      )
+    }
+  });
 
-          <div className="ui grid centered stackable " style={{
-              "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/e_brightness:-20/v1481844877/footer_tgdoad.jpg)" ,
-              "color" : "#0a0a7a" ,
-              "minHeight" : "24vh" ,
-              "textAlign" : "center" ,
-              "padding" : "15px 0px" ,
-              "paddingTop" : "19px" ,
-              "position" : "relative" ,
-              "top" : "14px"
+  const BlueFooter = React.createClass({
+
+
+    updateState(e) {
+      var state = this.state;
+      state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+      this.setState( state );
+    },
+
+    render () {
+      return (
+
+        <div className="ui grid centered stackable " style={{
+            "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/e_brightness:-20/v1481844877/footer_tgdoad.jpg)" ,
+            "color" : "#0a0a7a" ,
+            "minHeight" : "24vh" ,
+            "textAlign" : "center" ,
+            "padding" : "15px 0px" ,
+            "paddingTop" : "19px" ,
+            "position" : "relative" ,
+            "top" : "14px"
+          }}>
+
+          <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
+            <h1>
+              <a href="#event-list" style={{
+                  "fontWeight" : "bold" ,
+                  "color" : "#fff" ,
+                  "letterSpacing" : "1px" ,
+                }}>
+                Upcoming Events
+              </a>
+            </h1>
+            <div>
+
+              {
+                this.props.parent.state.upcoming_events.slice(0, 3).map(function(el) {
+                  return (
+                    <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
+                      <a href={"#event/" + el.id} style={{
+                          "color" : "#fff" ,
+                          "fontSize" : "18px" ,
+                        }}>
+                        { el.basic_title }
+                      </a>
+                    </div>
+                  )
+                }.bind(this))
+              }
+
+            </div>
+          </div>
+
+          <div className="five wide column"
+            style={{
+              "padding" : "14px 18px" ,
             }}>
+            <Advertisements parent={ this.props.parent } />
+          </div>
 
-            <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
-              <h1>
-                <a href="#event-list" style={{
-                    "fontWeight" : "bold" ,
-                    "color" : "#fff" ,
-                    "letterSpacing" : "1px" ,
-                  }}>
-                  Upcoming Events
-                </a>
-              </h1>
-              <div>
-
+          <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
+            <h1><a href="#cca-news" style={{
+                "fontWeight" : "bold" ,
+                "color" : "#fff" ,
+                "letterSpacing" : "1px" ,
+              }}>News Flash</a></h1>
+              <div >
                 {
-                  this.props.parent.state.upcoming_events.slice(0, 3).map(function(el) {
-                    return (
+                  this.props.parent.state.news.slice(0, 3).map(function(el) {
+
+                    if (el.author != "Corky Collier" && el.author != "Samuel Ullman") { return ;}
+
+                    return(
                       <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
-                        <a href={"#event/" + el.id} style={{
+                        <a href={"#news/" + el.id} style={{
                             "color" : "#fff" ,
                             "fontSize" : "18px" ,
-                          }}>
-                          { el.basic_title }
+                          }} >
+                          { el.basic_title}
                         </a>
+
+
                       </div>
                     )
                   }.bind(this))
                 }
-
-              </div>
-            </div>
-
-            <div className="five wide column"
-              style={{
-                "padding" : "14px 18px" ,
-              }}>
-              <Advertisements parent={ this.props.parent } />
-            </div>
-
-            <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
-              <h1><a href="#cca-news" style={{
-                  "fontWeight" : "bold" ,
-                  "color" : "#fff" ,
-                  "letterSpacing" : "1px" ,
-                }}>News Flash</a></h1>
-                <div >
-                  {
-                    this.props.parent.state.news.slice(0, 3).map(function(el) {
-
-                      if (el.author != "Corky Collier" && el.author != "Samuel Ullman") { return ;}
-
-                      return(
-                        <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
-                          <a href={"#news/" + el.id} style={{
-                              "color" : "#fff" ,
-                              "fontSize" : "18px" ,
-                            }} >
-                            { el.basic_title}
-                          </a>
-
-
-                        </div>
-                      )
-                    }.bind(this))
-                  }
-                </div>
               </div>
             </div>
           </div>
