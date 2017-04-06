@@ -3,6 +3,12 @@ class PagesController < ApplicationController
     @data = app_data
   end
 
+  def sign_in
+  end
+
+  def sign_up
+  end
+
   def page
     @page = params[:page]
     @data = app_data
@@ -22,5 +28,5 @@ class PagesController < ApplicationController
     end
   end
 
-  
+
 end

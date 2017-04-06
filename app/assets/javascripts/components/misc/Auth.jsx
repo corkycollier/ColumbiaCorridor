@@ -1,34 +1,21 @@
 const SignIn = React.createClass({
-  getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "30px 20px" ,
-      "paddingBottom" : "40px" ,
-    }
 
-    return({
-      style: style,
-    })
-  },
+  signIn ( e ) {
+    e.preventDefault()
 
-  componentDidMount () {
-
-  },
-
-  signIn () {
     $.ajax({
       url: 'session' ,
       type: 'POST' ,
       data: { user: this.state } ,
-      success (a, b, c) {
+      success (model, resp, obj) {
         location.href = "" ;
-      } , error (a, b, c) {
-        alert("Email/password combination not found.")
+      } , error (model, resp, obj) {
+        alert("User not found.")
       }
     })
   },
 
-  updateState (e) {
+  update (e) {
     var newData = {};
     newData[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( newData );
@@ -36,7 +23,12 @@ const SignIn = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container" style={{
+        "color" : "#262262" ,
+        "padding" : "30px 20px" ,
+        "paddingBottom" : "40px" ,
+      }}>
+
         <h1>
           Sign In
         </h1>
@@ -44,12 +36,12 @@ const SignIn = React.createClass({
         <form className="ui form" onSubmit={ this.signIn }>
           <div className="field">
             <label>Email</label>
-            <input type="email" required data-field="email" onChange={ this.updateState } />
+            <input type="email" required data-field="email" onChange={ this.update } />
           </div>
 
           <div className="field">
             <label>Password</label>
-            <input type="password" required data-field="password" onChange={ this.updateState } />
+            <input type="password" required data-field="password" onChange={ this.update } />
           </div>
 
           <div>
@@ -76,10 +68,6 @@ const SignIn = React.createClass({
 
 const SignUp = React.createClass({
   getInitialState () {
-    var style = {
-      "color" : "#262262" ,
-      "padding" : "30px 20px" ,
-    }
 
     var businessCodes = [
       "11: Agriculture, Forestry, Fishing and Hunting" ,
@@ -105,30 +93,29 @@ const SignUp = React.createClass({
     ]
 
     return({
-      style : style ,
       businessCodes : businessCodes ,
       user : {},
     })
   },
 
-  updateState (e) {
-    var user = this.state.user;
-    user[ e.currentTarget.dataset.field ] = e.currentTarget.value;
-    this.setState({
-      user : user
-    });
+  update (e) {
+    var state = this.state;
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+    this.setState( state );
   },
 
   signUp () {
+    e.preventDefault()
+
     $.ajax({
       url: '/users',
       type: 'POST',
-      data: {user: this.state.user},
-      success: function (a, b, c) {
+      data: {user: this.state},
+      success: function (model, resp, obj) {
         location.href = "";
-      }, error: function (a, b, c) {
-        alert("Please try again later.")
-        location.href = window.location
+      }, error: function (model, resp, obj) {
+        alert("There was an error.")
+        location.href = "";
       }
     })
   },
@@ -143,7 +130,10 @@ const SignUp = React.createClass({
 
   render () {
     return (
-      <div className="ui container" style={this.state.style}>
+      <div className="ui container" style={{
+        "color" : "#262262" ,
+        "padding" : "30px 20px" ,
+      }}>
         <h1>
           Register
         </h1>
@@ -154,96 +144,96 @@ const SignUp = React.createClass({
 
           <div className="field">
             <label>Email <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/> </label>
-            <input type="email" required data-field="email" onChange={ this.updateState } required />
+            <input type="email" required data-field="email" onChange={ this.update } required />
           </div>
 
           <div className="field">
             <label>Password <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/> <small>min length 6</small></label>
-            <input type="password" required data-field="password" onChange={ this.updateState } required />
+            <input type="password" required data-field="password" onChange={ this.update } required />
           </div>
 
           <div className="two fields">
             <div className="field">
               <label>First Name <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/></label>
-              <input type="text" required data-field="first_name" onChange={ this.updateState } required />
+              <input type="text" required data-field="first_name" onChange={ this.update } required />
             </div>
 
             <div className="field">
               <label>Last Name <i className="asterisk icon" style={{"color":"red" , "fontSize" : "8px" ,"position" : "relative" , "bottom":"1px"}}/></label>
-              <input type="text" required data-field="last_name" onChange={ this.updateState } required />
+              <input type="text" required data-field="last_name" onChange={ this.update } required />
             </div>
           </div>
 
           <div className="field">
             <label>Phone</label>
-            <input type="text" data-field="phone" onChange={ this.updateState } />
+            <input type="text" data-field="phone" onChange={ this.update } />
           </div>
 
           <div className="field">
             <label>Physical Address</label>
-            <input type="text" data-field="user_address" onChange={ this.updateState } />
+            <input type="text" data-field="user_address" onChange={ this.update } />
           </div>
 
           <div className="three fields">
             <div className="field">
               <label>City</label>
-              <input type="text" data-field="user_city" onChange={ this.updateState }  />
+              <input type="text" data-field="user_city" onChange={ this.update }  />
             </div>
 
             <div className="field">
               <label>State</label>
-              <input type="text" data-field="user_state" onChange={ this.updateState }   />
+              <input type="text" data-field="user_state" onChange={ this.update }   />
             </div>
 
             <div className="field">
               <label>Zip</label>
-              <input type="text" data-field="user_zip" onChange={ this.updateState }   />
+              <input type="text" data-field="user_zip" onChange={ this.update }   />
             </div>
           </div>
 
           <div className="field">
             <label>Country</label>
-            <input type="text" data-field="user_country" onChange={ this.updateState }  />
+            <input type="text" data-field="user_country" onChange={ this.update }  />
           </div>
 
           <h3>Company</h3>
 
           <div className="field">
             <label>Company Name</label>
-            <input type="text" data-field="company_name" onChange={ this.updateState } />
+            <input type="text" data-field="company_name" onChange={ this.update } />
           </div>
 
           <div className="field">
             <label>Company Website</label>
-            <input type="text" data-field="company_website" onChange={ this.updateState } />
+            <input type="text" data-field="company_website" onChange={ this.update } />
           </div>
 
           <div className="field">
             <label>Mailing Address</label>
-            <input type="text" data-field="company_address" onChange={ this.updateState } />
+            <input type="text" data-field="company_address" onChange={ this.update } />
           </div>
 
           <div className="three fields">
             <div className="field">
               <label>City</label>
-              <input type="text" data-field="company_city" onChange={ this.updateState }  />
+              <input type="text" data-field="company_city" onChange={ this.update }  />
             </div>
 
             <div className="field">
               <label>State</label>
-              <input type="text" data-field="company_state" onChange={ this.updateState } />
+              <input type="text" data-field="company_state" onChange={ this.update } />
             </div>
 
             <div className="field">
               <label>Zip</label>
-              <input type="text" data-field="company_zip" onChange={ this.updateState } />
+              <input type="text" data-field="company_zip" onChange={ this.update } />
             </div>
           </div>
 
 
           <div className="field">
             <label>Business Type (NAICS Code)</label>
-            <select className="ui dropdown" data-field="company_business_type" onChange={ this.updateState }  >
+            <select className="ui dropdown" data-field="company_business_type" onChange={ this.update }  >
               <option></option>
               {
                 this.state.businessCodes.map( function (el) {

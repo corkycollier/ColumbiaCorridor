@@ -32,17 +32,17 @@ const Home = React.createClass({
   },
 
   componentDidMount () {
+    this.fadeIn();
+
+    var interval = setInterval(this.flip, 4000);
+    this.setState({interval: interval});
+  },
+
+  fadeIn () {
     $(ReactDOM.findDOMNode(this)).find('.ui-container-sam').transition({
       animation  : 'fade in' ,
       duration   : '0.8s'    ,
     });
-
-
-    $('.shape').shape();
-
-
-    var interval = setInterval(this.flip, 4000);
-    this.setState({interval: interval});
   },
 
   flip () {
@@ -59,7 +59,6 @@ const Home = React.createClass({
     });
   },
 
-
   componentWillUnmount () {
     clearInterval(this.state.interval);
   },
@@ -67,7 +66,6 @@ const Home = React.createClass({
   navigate () {
     Backbone.history.navigate(this.state.currentPage.link, { trigger: true })
   },
-
 
 
   flipLeft () {
@@ -106,7 +104,7 @@ const Home = React.createClass({
                 "width" : "100vw" ,
               }}></img>
             </a>
-          </div>
+        </div>
 
           <div className="ui grid centered stackable " style={{
               "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/e_brightness:-20/v1481844877/footer_tgdoad.jpg)" ,
@@ -121,14 +119,14 @@ const Home = React.createClass({
 
             <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
               <h1>
-                  <a href="#event-list" style={{
+                <a href="#event-list" style={{
                     "fontWeight" : "bold" ,
                     "color" : "#fff" ,
                     "letterSpacing" : "1px" ,
-                    }}>
-                    Upcoming Events
-                  </a>
-                </h1>
+                  }}>
+                  Upcoming Events
+                </a>
+              </h1>
               <div>
 
                 {
@@ -162,30 +160,30 @@ const Home = React.createClass({
                   "color" : "#fff" ,
                   "letterSpacing" : "1px" ,
                 }}>News Flash</a></h1>
-              <div >
-                {
-                  this.props.parent.state.news.slice(0, 3).map(function(el) {
+                <div >
+                  {
+                    this.props.parent.state.news.slice(0, 3).map(function(el) {
 
-                    if (el.author != "Corky Collier" && el.author != "Samuel Ullman") { return ;}
+                      if (el.author != "Corky Collier" && el.author != "Samuel Ullman") { return ;}
 
-                    return(
-                      <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
-                        <a href={"#news/" + el.id} style={{
-                            "color" : "#fff" ,
-                            "fontSize" : "18px" ,
-                          }} >
-                          { el.basic_title}
-                        </a>
+                      return(
+                        <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
+                          <a href={"#news/" + el.id} style={{
+                              "color" : "#fff" ,
+                              "fontSize" : "18px" ,
+                            }} >
+                            { el.basic_title}
+                          </a>
 
 
-                      </div>
-                    )
-                  }.bind(this))
-                }
+                        </div>
+                      )
+                    }.bind(this))
+                  }
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )
-    }
-  });
+        )
+      }
+    });

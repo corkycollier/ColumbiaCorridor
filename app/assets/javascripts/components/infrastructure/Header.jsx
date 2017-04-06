@@ -6,8 +6,11 @@ const Header = React.createClass({
       "padding" : "20px" ,
     }
     var buttons;
-
-    if (this.props.parent.state.user) {
+    var user;
+    if ( this.props.parent ) {
+      user = this.props.parent.state.user
+    }
+    if ( user ) {
       buttons = <LoggedInButtons parent={ this.props.parent } />
     } else {
       buttons = <LoggedOutButtons parent={ this.props.parent } />
@@ -143,14 +146,14 @@ const LoggedOutButtons = React.createClass({
         </a>
 
         <a className="item"
-          onClick={this.signIn}
+          href="/#sign-in"
           style={{ "float" : "left" ,}}
           >
           Sign In
         </a>
 
         <a className="item"
-          onClick={this.signUp}
+          href="/#register"
           style={{ "float" : "left" ,}}
           >
           Register
