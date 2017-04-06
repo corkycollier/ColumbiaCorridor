@@ -269,7 +269,7 @@ const EventList = React.createClass({
           }
         </div>
 
-        <div className="navigation-buttons" style={{ "position" : "absolute" , "bottom" : "4vh" }}>
+        <div className="navigation-buttons" style={{ "marginTop" : "42px" , }}>
           <a href="#" className="ui button left labeled icon small" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
             <i className="left caret icon"></i>
             Home
