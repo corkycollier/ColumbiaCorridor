@@ -9,14 +9,8 @@ const Board = React.createClass({
     $(ReactDOM.findDOMNode(this)).find('.linkify.icon')
     .transition({
       animation  : 'fade in' ,
-      duration   : '1s'    ,
+      duration   : '2s'    ,
     });
-  },
-
-  updateState(e) {
-    var state = this.state;
-    state[ e.currentTarget.dataset.field ] = e.currentTarget.value
-    this.setState( state );
   },
 
   go (e) {

@@ -1,10 +1,12 @@
 const AboutCCA = React.createClass({
   componentDidMount() {
-    $('.ui.container').transition({
+    $(ReactDOM.findDOMNode(this)).find('.ui.container').transition({
         animation  : 'fade in' ,
         duration   : '0.8s'    ,
       });
   },
+
+
   render() {
     return (
       <div className="ui container" style={{
@@ -12,6 +14,8 @@ const AboutCCA = React.createClass({
           "padding" : "30px 20px" ,
           "minHeight" : "74vh" ,
         }}>
+
+
         <h1 style={{ "marginBottom" : "24px" , }}>
           About CCA
         </h1>
@@ -36,8 +40,6 @@ const AboutCCA = React.createClass({
             <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481672281/about-us_twyr2b.jpg" />
           </div>
         </div>
-
-
       </div>
     );
   }

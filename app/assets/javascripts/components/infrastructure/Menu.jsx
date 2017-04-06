@@ -1,17 +1,9 @@
 const Menu = React.createClass({
   getInitialState(){
-    var style = {
-      "color" : "#262262" ,
-      "zIndex" : "2000" ,
-
-    }
-
     return({
-      style : style ,
       currentMenu : [] ,
     })
   },
-
 
   componentDidMount () {
     this.triggerMenu();
@@ -20,8 +12,6 @@ const Menu = React.createClass({
     $window.resize(function(){
       this.triggerMenu();
     }.bind(this));
-
-
   },
 
   triggerMenu() {
@@ -29,23 +19,26 @@ const Menu = React.createClass({
     if ( $window.width() > 920 ) {
       this.setState({
         currentMenu: <RegularMenu />
-    })
-  } else {
-    this.setState({
-      currentMenu: <SidebarMenuButton />
-  })
-}
-},
+      })
+    } else {
+      this.setState({
+        currentMenu: <SidebarMenuButton />
+      })
+    }
+  },
 
-render () {
-  return (
-    <div className="" style={this.state.style}>
-      {
-        this.state.currentMenu
-      }
-    </div>
-  )
-}
+  render () {
+    return (
+      <div className="" style={{
+          "color" : "#262262" ,
+          "zIndex" : "2000" ,
+        }}>
+        {
+          this.state.currentMenu
+        }
+      </div>
+    )
+  }
 });
 
 const SidebarMenuButton = React.createClass({
@@ -93,7 +86,7 @@ const RegularMenu = React.createClass({
 
 
     $('.regularMenu').visibility({
-     type: 'fixed',
+      type: 'fixed',
     });
   },
 
