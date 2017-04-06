@@ -5,11 +5,24 @@ const MakeNews = React.createClass({
   },
 
   froala () {
-    $('#news-title').froalaEditor();
-    $('#news-body').froalaEditor();
+    var cloud_name = "djjldnjz7";
+    var unsigned_preset = "vyzjbttv";
+    var api_key = "";
 
-    $('#news-body').on('froalaEditor.image.beforeUpload', function (e, editor, images) {
-      debugger
+    $('#news-title').froalaEditor({
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
+
+    $('#news-body').froalaEditor({
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
     });
   },
 
@@ -23,29 +36,18 @@ const MakeNews = React.createClass({
   componentDidMount () {
     this.froala();
     this.fadeIn();
-    tinymce.init({
-      selector:'foobar' ,
-      menubar: false,
-      plugins: [
-        'advlist autolink lists link image charmap print preview anchor',
-        'searchreplace visualblocks code fullscreen',
-        'insertdatetime media table contextmenu paste code'
-      ],
-      toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-      content_css: '//www.tinymce.com/css/codepen.min.css'
-    });
 
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.createUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
     function(error, result) {
       if (result) {
+        debugger
         $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
       }
     }.bind(this));
   },
-
 
   submitNews () {
     $.ajax({
