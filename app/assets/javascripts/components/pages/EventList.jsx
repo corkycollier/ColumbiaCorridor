@@ -232,36 +232,36 @@ const EventList = React.createClass({
           "color" : "#262262" ,
           "minHeight" : "74vh" ,
           "padding" : "30px 20px" ,
+          "position" : "relative" ,
         }}
         >
         <h1>
           Events
         </h1>
 
-        <div className="ui button orange" data-filter="Breakfast Forums" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px" , "marginLeft" : "2px" }}>
+        <div className="ui button orange" data-filter="Breakfast Forums" onClick={this.updateFilter} style={{  "marginRight" : "16px" , "marginBottom" : "22px" }}>
           <b>Breakfast Forums</b>
         </div>
 
-        <div className="ui button violet" data-filter="Lunch w/ Leaders" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
+        <div className="ui button violet" data-filter="Lunch w/ Leaders" onClick={this.updateFilter} style={{  "marginRight" : "16px" , "marginBottom" : "22px"}}>
           <b>Lunch w/ Leaders</b>
         </div>
 
-        <div className="ui button red" data-filter="ResourceFULL Use Workshops" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
+        <div className="ui button red" data-filter="ResourceFULL Use Workshops" onClick={this.updateFilter} style={{  "marginRight" : "16px" , "marginBottom" : "22px"}}>
           <b>ResourceFULL Use Workshops</b>
         </div>
 
-        <div className="ui button yellow" data-filter="Special Events" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
+        <div className="ui button yellow" data-filter="Special Events" onClick={this.updateFilter} style={{  "marginRight" : "16px" , "marginBottom" : "22px"}}>
           <b>Special Events</b>
         </div>
 
-        <div className="ui button brown" data-filter="Tours & Member Exchanges" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
+        <div className="ui button brown" data-filter="Tours & Member Exchanges" onClick={this.updateFilter} style={{  "marginRight" : "16px" , "marginBottom" : "22px"}}>
           <b>Tours & Member Exchanges</b>
         </div>
 
-        <div className="ui button green" data-filter="" onClick={this.updateFilter} style={{ "margin" : "8px" , "marginBottom" : "24px" }}>
+        <div className="ui button green" data-filter="" onClick={this.updateFilter} style={{ "marginRight" : "16px" , "marginBottom" : "22px"}}>
           <b>All</b>
         </div>
-
 
         <div>
           {
@@ -269,15 +269,18 @@ const EventList = React.createClass({
           }
         </div>
 
-        <a href="#" className="ui button left labeled icon small" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
-          <i className="left caret icon"></i>
-          Home
-        </a>
+        <div className="navigation-buttons" style={{ "position" : "absolute" , "bottom" : "4vh" }}>
+          <a href="#" className="ui button left labeled icon small" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
+            <i className="left caret icon"></i>
+            Home
+          </a>
 
-        <a href="#calendar" className="ui button right labeled icon small" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
-          <i className="right caret icon"></i>
-          Calendar
-        </a>
+          <a href="#calendar" className="ui button right labeled icon small" style={{ "marginTop" : "18px" , "marginRight" : "12px" }}>
+            <i className="right caret icon"></i>
+            Calendar
+          </a>
+        </div>
+
       </div>
     )
   }
