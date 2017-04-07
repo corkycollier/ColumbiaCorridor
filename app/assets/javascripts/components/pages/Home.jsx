@@ -109,7 +109,7 @@ const HomeWheel = React.createClass({
           <i className="right chevron icon"></i>
         </div>
 
-        <div>
+        <div style={{ "background" : "grey" , }}>
           <a href={"#" + this.state.currentPage.link}>
             <img className="ui image centered home-image" src={this.state.currentPage.img} onClick = { this.navigate } style={{
                 "height" : "39vw" ,
