@@ -36,14 +36,12 @@ const MakeNews = React.createClass({
   componentDidMount () {
     this.froala();
     this.fadeIn();
-
   },
 
   uploadWidget () {
-    cloudinary.createUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
     function(error, result) {
       if (result) {
-        debugger
         $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
       }
     }.bind(this));
