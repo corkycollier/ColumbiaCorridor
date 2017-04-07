@@ -94,17 +94,17 @@ const SignUp = React.createClass({
 
     return({
       businessCodes : businessCodes ,
-      user : {},
     })
   },
 
   update (e) {
+
     var state = this.state;
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value
     this.setState( state );
   },
 
-  signUp () {
+  signUp ( e ) {
     e.preventDefault()
 
     $.ajax({
