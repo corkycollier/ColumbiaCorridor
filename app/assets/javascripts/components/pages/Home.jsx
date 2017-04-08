@@ -58,8 +58,6 @@ const HomeWheel = React.createClass({
     this.setState({interval: interval});
   },
 
-
-
   flip () {
     var pageNumber = this.state.currentPage.id + 1
     if ( pageNumber > 3 ) pageNumber = 0;
@@ -113,6 +111,7 @@ const HomeWheel = React.createClass({
               "width"    : "3.4vw"    ,
               "height"   : "3.4vw"    ,
               "fontSize" : "1.4vw"    ,
+              "padding"  : "1vw"      ,
              }}>
           <i className="left chevron icon"></i>
         </div>
@@ -128,6 +127,7 @@ const HomeWheel = React.createClass({
               "width"    : "3.4vw"    ,
               "height"   : "3.4vw"    ,
               "fontSize" : "1.4vw"    ,
+              "padding"  : "1vw"      ,
              }}>
           <i className="right chevron icon"></i>
         </div>
@@ -158,14 +158,15 @@ const HomeWheel = React.createClass({
     render () {
       return (
 
-        <div className="ui grid centered " style={{
+        <div className="ui grid centered" style={{
             "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/e_brightness:-20/v1481844877/footer_tgdoad.jpg)" ,
             "color" : "#0a0a7a" ,
             "textAlign" : "center" ,
             "padding" : "15px 0px" ,
             "paddingTop" : "19px" ,
             "position" : "relative" ,
-            "top" : "14px"
+            "top" : "14px" ,
+            "margin" : "-14px 0px" ,
           }}>
 
           <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
