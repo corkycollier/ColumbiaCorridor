@@ -3,9 +3,9 @@ const ResourceFullUse = React.createClass({
 
   componentDidMount() {
     $('.ui.container').transition({
-        animation  : 'fade in' ,
-        duration   : '0.8s'    ,
-      });
+      animation  : 'fade in' ,
+      duration   : '0.8s'    ,
+    });
   },
 
   updateState(e) {
@@ -17,19 +17,25 @@ const ResourceFullUse = React.createClass({
   render () {
     return (
 
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" , "position" : "relative" , "fontSize" : "15px"}}>
+      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" , "position" : "relative" , "fontSize" : "16px"}}>
         <h1 className="ui header" style={{ "color" : "#262262" , "marginBottom" : "24px"}} >
           ResourceFULL Use
         </h1>
 
+        <a href="https://www.facebook.com/groups/ResourceFullUse/"
+          target="_blank"
+          className="ui facebook large button left labeled icon"
+          style={{
+            "position" : "absolute" ,
+            "top"      : "24px"     ,
+            "left"     : "282px"    ,
+          }}>
+          <i className="facebook icon"></i>
+          Facebook
+        </a>
+
         <div className="ui grid doubling stackable">
-          <div className="three wide column" >
-            <a href="https://www.facebook.com/groups/ResourceFullUse/" target="_blank" className="ui facebook large button left labeled icon" >
-              <i className="facebook icon"></i>
-              Facebook
-            </a>
-          </div>
-          <div className="thirteen wide column" >
+          <div className="sixteen wide column" >
             <p>
               At a 2006 CCA breakfast forum, ResourceFULL Use was born.
               We never imagined it would be going strong a decade later. Each exchange is money saved, resources utilized, and greenhouse gasses reduced. Our quarterly workshops are a great place to brainstorm and Dzspeed datedz with potential partners.
@@ -54,20 +60,11 @@ const ResourceFullUse = React.createClass({
               Benefits are improved economic viability through reduced waste, improved resource efficiences, and decreased emissions (CO2 and other greenhouse gases).
             </p>
           </div>
-
-          <div className="eight wide column">
-            <img className="ui image fluid " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg" style={{ "float" : "left" , "margin" : "12px" }} / >
-            </div>
-
-            <div className="eight wide column">
-              <img className="ui image fluid " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg" style={{ "float" : "left" , "margin" : "12px" }} />
-            </div>
-
-
-
-
           </div>
 
+          <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg"  style={{ "marginTop" : "28px" , "marginBottom" : "28px" , "marginRight" : "40px" ,"float" : "left"}}/>
+          <img className="ui image large " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg"  style={{ "marginTop" : "28px" , "marginBottom" : "28px" , }} / >
+            
           <div className="ui grid">
             <div className="sixteen wide column">
               The ResourceFull Use program is different from traditional passive web-based exchanges in these important ways:
@@ -95,6 +92,8 @@ const ResourceFullUse = React.createClass({
                   equipment, energy, and transportation.
                 </li>
               </ul>
+
+
 
               <p>
                 The ResourceFull Use Project started in 2006 as the result of collaboration between Zero WasteAlliance, a Portland nonprofit organization and Columbia Corridor Association. In its first phase the ResourceFull Use program found a home for 250 gallons of paint and reduced 3 tons of greenhouse gasses.
