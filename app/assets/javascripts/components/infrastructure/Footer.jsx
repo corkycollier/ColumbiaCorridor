@@ -4,7 +4,8 @@ const Footer = React.createClass({
   render () {
     return (
       <div className="" style={{
-          "margin" : "0px" ,
+          "marginTop" : "28px" ,
+
         }}>
 
         <div className="footer">
