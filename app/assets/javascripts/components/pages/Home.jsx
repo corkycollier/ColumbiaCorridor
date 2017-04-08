@@ -101,11 +101,34 @@ const HomeWheel = React.createClass({
   render () {
     return (
       <div style={{"position" : "relative"}}>
-        <div className="ui large button circular icon" style={{ "position" : "absolute" , "top" : "42%" , "left" : "16px" , "zIndex" : "200" , "opacity" : "0.8" }} onClick={ this.flipLeft }>
+
+        <div className="ui large button circular icon"
+             onClick={ this.flipLeft }
+             style={{
+              "position" : "absolute" ,
+              "top"      : "42%"      ,
+              "left"     : "16px"     ,
+              "zIndex"   : "200"      ,
+              "opacity"  : "0.8"      ,
+              "width"    : "3.4vw"    ,
+              "height"   : "3.4vw"    ,
+              "fontSize" : "1.4vw"    ,
+             }}>
           <i className="left chevron icon"></i>
         </div>
 
-        <div className="ui large button circular icon" style={{ "position" : "absolute" , "top" : "42%" , "right" : "16px" , "zIndex" : "200" , "opacity" : "0.8" }} onClick={ this.flipRight }>
+        <div className="ui large button circular icon"
+             onClick={ this.flipRight }
+             style={{
+              "position" : "absolute" ,
+              "top"      : "42%"      ,
+              "right"    : "16px"     ,
+              "zIndex"   : "200"      ,
+              "opacity"  : "0.8"      ,
+              "width"    : "3.4vw"    ,
+              "height"   : "3.4vw"    ,
+              "fontSize" : "1.4vw"    ,
+             }}>
           <i className="right chevron icon"></i>
         </div>
 
@@ -135,10 +158,9 @@ const HomeWheel = React.createClass({
     render () {
       return (
 
-        <div className="ui grid centered stackable " style={{
+        <div className="ui grid centered " style={{
             "background" : "url(http://res.cloudinary.com/djjldnjz7/image/upload/e_brightness:-20/v1481844877/footer_tgdoad.jpg)" ,
             "color" : "#0a0a7a" ,
-            "minHeight" : "24vh" ,
             "textAlign" : "center" ,
             "padding" : "15px 0px" ,
             "paddingTop" : "19px" ,
