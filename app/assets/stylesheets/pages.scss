@@ -65,14 +65,14 @@
   opacity: 0.8;
   width: 3.4vw;
   height: 3.4vw;
-  font-size: 1.4vw;
-  padding: 1vw;
-  
-  .left {
-    left: 16px;
-  }
-  
-  .right {
-    right: 16px;
-  }
+  font-size: 1.4vw !important;
+  padding: 1vw !important;
+}
+
+.home-slider-btn.left {
+  left: 16px;
+}
+
+.home-slider-btn.right {
+  right: 16px;
 }
