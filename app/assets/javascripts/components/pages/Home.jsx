@@ -100,12 +100,12 @@ const HomeWheel = React.createClass({
     return (
       <div style={{"position" : "relative"}}>
 
-        <div className="ui large button circular icon home-slider-btn"
+        <div className="ui large button circular icon home-slider-btn left"
              onClick={ this.flipLeft }>
           <i className="left chevron icon"></i>
         </div>
 
-        <div className="ui large button circular icon home-slider-btn"
+        <div className="ui large button circular icon home-slider-btn right"
              onClick={ this.flipRight }>
           <i className="right chevron icon"></i>
         </div>
