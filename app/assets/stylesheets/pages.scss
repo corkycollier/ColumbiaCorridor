@@ -28,6 +28,7 @@
 }
 
 .header-buttons {
+  
   i {
     position: relative;
     left: 40%;
@@ -44,5 +45,34 @@
   &.active {
     z-index: 100000;
     opacity: 0.3;
+  }
+}
+
+.home-hero-slider {
+  height: 50vh;
+  overflow: hidden;
+  
+  .home-image {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.home-slider-btn {
+  position: absolute;
+  top: 42%;
+  z-index: 200;
+  opacity: 0.8;
+  width: 3.4vw;
+  height: 3.4vw;
+  font-size: 1.4vw;
+  padding: 1vw;
+  
+  .left {
+    left: 16px;
+  }
+  
+  .right {
+    right: 16px;
   }
 }

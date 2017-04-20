@@ -16,7 +16,7 @@ const Home = React.createClass({
         <HomeWheel parent={ this.props.parent }/>
         <BlueFooter parent={ this.props.parent }/>
       </div>
-    )
+    );
   }
 });
 
@@ -45,12 +45,12 @@ const HomeWheel = React.createClass({
         img: "https://res.cloudinary.com/djjldnjz7/image/upload/v1481748119/Home_5_pqm5rz.jpg" ,
         link: "membership" ,
       } ,
-    }
+    };
 
     return({
       pages : pages ,
       currentPage : pages["0"] ,
-    })
+    });
   },
 
   componentDidMount() {
@@ -59,7 +59,7 @@ const HomeWheel = React.createClass({
   },
 
   flip () {
-    var pageNumber = this.state.currentPage.id + 1
+    var pageNumber = this.state.currentPage.id + 1;
     if ( pageNumber > 3 ) pageNumber = 0;
 
     $('.home-image').transition({
@@ -81,7 +81,7 @@ const HomeWheel = React.createClass({
   },
 
   flipLeft () {
-    var pageNumber = this.state.currentPage.id - 1
+    var pageNumber = this.state.currentPage.id - 1;
     if ( pageNumber < 0 ) pageNumber = 3;
     this.setState({
       currentPage : this.state.pages[ pageNumber ] ,
@@ -89,7 +89,7 @@ const HomeWheel = React.createClass({
   },
 
   flipRight () {
-    var pageNumber = this.state.currentPage.id + 1
+    var pageNumber = this.state.currentPage.id + 1;
     if ( pageNumber > 3 ) pageNumber = 0;
     this.setState({
       currentPage : this.state.pages[ pageNumber ] ,
@@ -100,49 +100,23 @@ const HomeWheel = React.createClass({
     return (
       <div style={{"position" : "relative"}}>
 
-        <div className="ui large button circular icon"
-             onClick={ this.flipLeft }
-             style={{
-              "position" : "absolute" ,
-              "top"      : "42%"      ,
-              "left"     : "16px"     ,
-              "zIndex"   : "200"      ,
-              "opacity"  : "0.8"      ,
-              "width"    : "3.4vw"    ,
-              "height"   : "3.4vw"    ,
-              "fontSize" : "1.4vw"    ,
-              "padding"  : "1vw"      ,
-             }}>
+        <div className="ui large button circular icon home-slider-btn"
+             onClick={ this.flipLeft }>
           <i className="left chevron icon"></i>
         </div>
 
-        <div className="ui large button circular icon"
-             onClick={ this.flipRight }
-             style={{
-              "position" : "absolute" ,
-              "top"      : "42%"      ,
-              "right"    : "16px"     ,
-              "zIndex"   : "200"      ,
-              "opacity"  : "0.8"      ,
-              "width"    : "3.4vw"    ,
-              "height"   : "3.4vw"    ,
-              "fontSize" : "1.4vw"    ,
-              "padding"  : "1vw"      ,
-             }}>
+        <div className="ui large button circular icon home-slider-btn"
+             onClick={ this.flipRight }>
           <i className="right chevron icon"></i>
         </div>
 
-        <div style={{ "background" : "grey" , }}>
+        <div className="home-hero-slider">
           <a href={"#" + this.state.currentPage.link}>
-            <img className="ui image centered home-image" src={this.state.currentPage.img} onClick = { this.navigate } style={{
-                "height" : "39vw" ,
-                "minHeight" : "282px" ,
-                "width" : "100vw" ,
-              }}></img>
+            <img className="ui image centered home-image" src={this.state.currentPage.img} onClick = { this.navigate } ></img>
             </a>
           </div>
         </div>
-      )
+      );
     }
   });
 
@@ -151,7 +125,7 @@ const HomeWheel = React.createClass({
 
     updateState(e) {
       var state = this.state;
-      state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+      state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
       this.setState( state );
     },
 
@@ -192,7 +166,7 @@ const HomeWheel = React.createClass({
                         { el.basic_title }
                       </a>
                     </div>
-                  )
+                  );
                 }.bind(this))
               }
 
@@ -229,12 +203,12 @@ const HomeWheel = React.createClass({
 
 
                       </div>
-                    )
+                    );
                   }.bind(this))
                 }
               </div>
             </div>
           </div>
-        )
+        );
       }
     });
