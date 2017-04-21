@@ -7,7 +7,7 @@ const YearInReview = React.createClass({
   },
   updateState(e) {
     var state = this.state;
-    state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
   },
 
@@ -15,7 +15,7 @@ const YearInReview = React.createClass({
     return (
       <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1>
-          2015 Year in Review
+          Year in Review
         </h1>
         <div className="ui grid">
           <div className="row">
@@ -167,6 +167,6 @@ const YearInReview = React.createClass({
 
 
       </div>
-    )
+    );
   }
 });

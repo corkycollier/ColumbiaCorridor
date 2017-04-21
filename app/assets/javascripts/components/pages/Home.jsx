@@ -54,7 +54,7 @@ const HomeWheel = React.createClass({
   },
 
   componentDidMount() {
-    var interval = setInterval(this.flip, 4000);
+    var interval = setInterval(this.flip, 6000);
     this.setState({interval: interval});
   },
 
@@ -77,7 +77,7 @@ const HomeWheel = React.createClass({
   },
 
   navigate () {
-    Backbone.history.navigate(this.state.currentPage.link, { trigger: true })
+    Backbone.history.navigate(this.state.currentPage.link, { trigger: true });
   },
 
   flipLeft () {
@@ -186,7 +186,7 @@ const HomeWheel = React.createClass({
                 "color" : "#fff" ,
                 "letterSpacing" : "1px" ,
               }}>News Flash</a></h1>
-              <div >
+              <div>
                 {
                   this.props.parent.state.news.slice(0, 3).map(function(el) {
 
