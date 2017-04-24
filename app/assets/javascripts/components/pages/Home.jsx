@@ -25,24 +25,24 @@ const HomeWheel = React.createClass({
     var pages = {
       "0" : {
         id : 0 ,
-        img : <%= image_tag "/img/Home_2_UPDATED_yt1wgm.jpg" %> ,
+        img : "https://drive.google.com/open?id=0B55-XNR7WXhsVDdONnNmSjdzSkk" ,
         link : "event-list" ,
       } ,
       "1" : {
         id : 1 ,
-        img: "/public/img/Home_3_g2nbm4.jpg" ,
+        img: "https://drive.google.com/open?id=0B55-XNR7WXhsNGRteF81bXlVdmc" ,
         link: "year-in-review" ,
       } ,
 
       "2" : {
         id : 2 ,
-        img: "/public/img/Home_4_UPDATED_ljc6nr.jpg" ,
+        img: "https://drive.google.com/open?id=0B55-XNR7WXhsSkRmeWc3bVZvMTA" ,
         link: "resourcesfull-use" ,
       } ,
 
       "3" : {
         id : 3 ,
-        img: "/public/img/Home_5_pqm5rz.jpg" ,
+        img: "https://drive.google.com/open?id=0B55-XNR7WXhsUGVKTUpQZ2tRU0E" ,
         link: "membership" ,
       } ,
     };
@@ -133,7 +133,7 @@ const HomeWheel = React.createClass({
       return (
 
         <div className="ui grid centered" style={{
-            "background" : "url(/public/img/footer_tgdoad.jpg)" ,
+            "background" : "url(https://drive.google.com/open?id=0B55-XNR7WXhsZzFTNTJEdzVOUDQ)" ,
             "color" : "#0a0a7a" ,
             "textAlign" : "center" ,
             "padding" : "15px 0px" ,
