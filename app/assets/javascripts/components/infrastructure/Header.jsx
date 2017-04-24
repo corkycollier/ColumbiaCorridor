@@ -2,24 +2,24 @@ const Header = React.createClass({
   getInitialState(){
     var style = {
       "color" : "#262262" ,
-      "background" : "url(https://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png)" ,
+      "background" : "url(https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061454/HEADERBKGRND_tspk7u_zisrkk.png)" ,
       "padding" : "20px" ,
-    }
+    };
     var buttons;
     var user;
     if ( this.props.parent ) {
-      user = this.props.parent.state.user
+      user = this.props.parent.state.user;
     }
     if ( user ) {
-      buttons = <LoggedInButtons parent={ this.props.parent } />
+      buttons = <LoggedInButtons parent={ this.props.parent } />;
     } else {
-      buttons = <LoggedOutButtons parent={ this.props.parent } />
+      buttons = <LoggedOutButtons parent={ this.props.parent } />;
     }
 
     return({
       style: style,
       buttons: buttons,
-    })
+    });
   },
 
   goToMailingList () {
@@ -27,7 +27,7 @@ const Header = React.createClass({
   },
 
   go (e) {
-    var fragment = e.currentTarget.dataset.url
+    var fragment = e.currentTarget.dataset.url;
     Backbone.history.navigate(fragment , { trigger : true })
   },
 
@@ -36,7 +36,7 @@ const Header = React.createClass({
       <div className="" style={this.state.style}>
         <div className="ui grid stackable">
           <div className="four wide column">
-            <img src="https://res.cloudinary.com/djjldnjz7/image/upload/v1481667293/CCA_Logo_hi9b9f.png" style={{"height":"80px"}} onClick={ this.go }/>
+            <img src="https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061428/CCA_Logo_hi9b9f_iwd4vq.png" style={{"height":"80px"}} onClick={ this.go }/>
           </div>
           <div className="eight wide column"
             style={{
@@ -65,7 +65,7 @@ const Header = React.createClass({
           </div>
 
       </div>
-    )
+    );
   }
 });
 
@@ -80,7 +80,7 @@ const LoggedInButtons = React.createClass({
       }, error: function (a, b, c) {
         location.href = '';
       }
-    })
+    });
   },
 
   go (e) {
@@ -94,7 +94,7 @@ const LoggedInButtons = React.createClass({
         <a className="item"  data-url="admin" onClick={ this.go } style={{ "float" : "left" ,}}>
           Admin
         </a>
-      )
+      );
     }
   },
 
@@ -116,13 +116,13 @@ const LoggedInButtons = React.createClass({
           Logout
         </a>
       </div>
-    )
+    );
   }
 });
 
 const LoggedOutButtons = React.createClass({
   getInitialState () {
-    return({})
+    return({});
   },
 
   go (e) {
@@ -131,11 +131,11 @@ const LoggedOutButtons = React.createClass({
   },
 
   signUp () {
-    window.location = "?#register"
+    window.location = "?#register";
   },
 
   signIn () {
-    window.location = "?#sign-in"
+    window.location = "?#sign-in";
   },
 
   render () {
@@ -159,6 +159,6 @@ const LoggedOutButtons = React.createClass({
           Register
         </a>
       </div>
-    )
+    );
   }
 });

@@ -1,6 +1,6 @@
 const MakeAd = React.createClass({
   getInitialState () {
-    return( this.props.ad || {})
+    return( this.props.ad || {});
   },
 
   componentDidMount () {
@@ -12,11 +12,11 @@ const MakeAd = React.createClass({
       type : "POST" ,
       data : { ad: this.state },
       success : function ( app_data , resp , obj ) {
-        this.props.parent.setState( app_data )
+        this.props.parent.setState( app_data );
         Backbone.history.navigate( 'admin/sponsors' , { trigger : true } );
       }.bind(this),
       error   : function ( app_data , resp , obj ) {
-        alert('There was an error.')
+        alert('There was an error.');
         Backbone.history.navigate( 'admin/sponsors' , { trigger : true } );
       }.bind(this)
     });
@@ -30,12 +30,12 @@ const MakeAd = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'diamond-eye-digital', upload_preset: 'eujkpkul', theme: 'white'},
     function(error, result) {
       if (result) {
-        var state = this.state
-        state['image_url'] = result[0].secure_url
-        this.setState( state)
+        var state = this.state;
+        state['image_url'] = result[0].secure_url;
+        this.setState( state);
       }
     }.bind(this));
   },
@@ -101,14 +101,14 @@ const MakeAd = React.createClass({
         </div>
 
       </div>
-    )
+    );
   }
 });
 
 
 const EditAd = React.createClass({
   getInitialState () {
-    return( this.props.ad || {})
+    return( this.props.ad || {});
   },
 
   componentDidMount () {
@@ -120,11 +120,11 @@ const EditAd = React.createClass({
       type : "PATCH" ,
       data : { ad: this.state },
       success : function ( app_data , resp , obj ) {
-        this.props.parent.setState( app_data )
+        this.props.parent.setState( app_data );
         Backbone.history.navigate( 'admin/sponsors' , { trigger : true } );
       }.bind(this),
       error   : function ( app_data , resp , obj ) {
-        alert('There was an error.')
+        alert('There was an error.');
         Backbone.history.navigate( 'admin/sponsors' , { trigger : true } );
       }.bind(this)
     });
@@ -138,12 +138,12 @@ const EditAd = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'diamond-eye-digital', upload_preset: 'eujkpkul', theme: 'white'},
     function(error, result) {
       if (result) {
-        var state = this.state
-        state['image_url'] = result[0].secure_url
-        this.setState( state)
+        var state = this.state;
+        state['image_url'] = result[0].secure_url;
+        this.setState( state);
       }
     }.bind(this));
   },
@@ -212,6 +212,6 @@ const EditAd = React.createClass({
         </div>
 
       </div>
-    )
+    );
   }
 });

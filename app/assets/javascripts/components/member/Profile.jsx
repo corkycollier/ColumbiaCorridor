@@ -4,11 +4,11 @@ const Profile = React.createClass({
     var style = {
       "color" : "#262262" ,
       "padding" : "25px" ,
-    }
+    };
 
     return({
       style: style,
-    })
+    });
   },
 
   componentDidMount () {
@@ -138,7 +138,7 @@ const Profile = React.createClass({
                         <option key = { el } value = { el } >
                           { el }
                         </option>
-                      )
+                      );
                     })
                   }
                 </select>
@@ -155,6 +155,6 @@ const Profile = React.createClass({
         </div>
 
       </div>
-    )
+    );
   }
 });

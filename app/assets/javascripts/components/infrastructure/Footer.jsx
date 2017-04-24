@@ -21,7 +21,7 @@ const Footer = React.createClass({
             </div>
 
             <div className="four wide column">
-              © 2016 Columbia Corridor Association
+              © 2017 Columbia Corridor Association
             </div>
           </div>
         </div>
