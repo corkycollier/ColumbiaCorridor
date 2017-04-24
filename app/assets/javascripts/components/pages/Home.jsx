@@ -25,24 +25,24 @@ const HomeWheel = React.createClass({
     var pages = {
       "0" : {
         id : 0 ,
-        img : "/app/assets/images/img/Home_2_UPDATED_yt1wgm.jpg" ,
+        img : "/public/img/Home_2_UPDATED_yt1wgm.jpg" ,
         link : "event-list" ,
       } ,
       "1" : {
         id : 1 ,
-        img: "/app/assets/images/img/Home_3_g2nbm4.jpg" ,
+        img: "/public/img/Home_3_g2nbm4.jpg" ,
         link: "year-in-review" ,
       } ,
 
       "2" : {
         id : 2 ,
-        img: "/app/assets/images/img/Home_4_UPDATED_ljc6nr.jpg" ,
+        img: "/public/img/Home_4_UPDATED_ljc6nr.jpg" ,
         link: "resourcesfull-use" ,
       } ,
 
       "3" : {
         id : 3 ,
-        img: "/app/assets/images/img/Home_5_pqm5rz.jpg" ,
+        img: "/public/img/Home_5_pqm5rz.jpg" ,
         link: "membership" ,
       } ,
     };
@@ -133,7 +133,7 @@ const HomeWheel = React.createClass({
       return (
 
         <div className="ui grid centered" style={{
-            "background" : "url(/app/assets/images/img/footer_tgdoad.jpg)" ,
+            "background" : "url(/public/img/footer_tgdoad.jpg)" ,
             "color" : "#0a0a7a" ,
             "textAlign" : "center" ,
             "padding" : "15px 0px" ,
