@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         to: "mking@columbiacorridor.org" ,
         content: "
         <div style='color:#262262;'>
-          <div style='height:80px;background:url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png);'>
+          <div style='height:80px;background:url(https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061454/HEADERBKGRND_tspk7u_zisrkk.png);'>
 
           </div>
 
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
           </div>
 
           <h4 style='margin-top:24px;'>
-            <a href='http://columbiacorridor.com' target='blank' style='color:#262262;'>
+            <a href='http://columbiacorridor.org' target='blank' style='color:#262262;'>
               Columbia Corridor Association
             <a>
           </h4>
@@ -51,8 +51,8 @@ class UsersController < ApplicationController
         "
       }
 
-      message1 specs
-    end
+    message1 specs
+  end
 
   def message1 message
     string = '{

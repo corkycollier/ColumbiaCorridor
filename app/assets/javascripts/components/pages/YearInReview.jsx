@@ -159,13 +159,6 @@ const YearInReview = React.createClass({
 
         </div>
 
-
-
-
-
-
-
-
       </div>
     );
   }
