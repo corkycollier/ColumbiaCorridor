@@ -25,24 +25,24 @@ const HomeWheel = React.createClass({
     var pages = {
       "0" : {
         id : 0 ,
-        img : "https://drive.google.com/open?id=0B55-XNR7WXhsVDdONnNmSjdzSkk" ,
+        img : "https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061457/Home_2_UPDATED_yt1wgm_cr0ryw.jpg" ,
         link : "event-list" ,
       } ,
       "1" : {
         id : 1 ,
-        img: "https://drive.google.com/open?id=0B55-XNR7WXhsNGRteF81bXlVdmc" ,
+        img: "https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061456/Home_3_g2nbm4_thb8nc.jpg" ,
         link: "year-in-review" ,
       } ,
 
       "2" : {
         id : 2 ,
-        img: "https://drive.google.com/open?id=0B55-XNR7WXhsSkRmeWc3bVZvMTA" ,
+        img: "https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061459/Home_4_UPDATED_ljc6nr_hsar0c.jpg" ,
         link: "resourcesfull-use" ,
       } ,
 
       "3" : {
         id : 3 ,
-        img: "https://drive.google.com/open?id=0B55-XNR7WXhsUGVKTUpQZ2tRU0E" ,
+        img: "https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061459/Home_5_pqm5rz_xk7y92.jpg" ,
         link: "membership" ,
       } ,
     };
@@ -133,7 +133,7 @@ const HomeWheel = React.createClass({
       return (
 
         <div className="ui grid centered" style={{
-            "background" : "url(https://drive.google.com/open?id=0B55-XNR7WXhsZzFTNTJEdzVOUDQ)" ,
+            "background" : "url(https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061438/footer_tgdoad_ffmekf.jpg)" ,
             "color" : "#0a0a7a" ,
             "textAlign" : "center" ,
             "padding" : "15px 0px" ,
