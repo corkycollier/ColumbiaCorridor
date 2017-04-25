@@ -1,6 +1,6 @@
 const MakeEvent = React.createClass({
   getInitialState () {
-    return ({})
+    return ({});
   },
 
   componentDidMount () {
@@ -8,8 +8,8 @@ const MakeEvent = React.createClass({
     $('#event-body').froalaEditor();
 
     setTimeout(function() {
-      $('.fr-toolbar').css('position', "relative")
-    }.bind(this), 0)
+      $('.fr-toolbar').css('position', "relative");
+    }.bind(this), 0);
     $('.dropdown').dropdown();
   },
 
@@ -17,7 +17,7 @@ const MakeEvent = React.createClass({
     cloudinary.openUploadWidget({ cloud_name: 'diamond-eye-digital', upload_preset: 'eujkpkul'},
     function(error, result) {
       if (result) {
-        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
+        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url );
       }
     }.bind(this));
   },
@@ -25,7 +25,7 @@ const MakeEvent = React.createClass({
 
   update(e) {
     var state = this.state || {};
-    state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
   },
 
@@ -48,12 +48,12 @@ const MakeEvent = React.createClass({
       type: 'POST',
       data: { event: this.state },
       success: function (app_data, resp, obj) {
-        this.props.parent.setState( app_data )
+        this.props.parent.setState( app_data );
         Backbone.history.navigate( "admin/events" , { trigger : true } );
       }.bind(this), error: function (a, b, c) {
-        alert("There was an error.")
+        alert("There was an error.");
       }
-    })
+    });
   },
 
   render () {
@@ -127,7 +127,7 @@ const MakeEvent = React.createClass({
                     <option value={el} key={el}>
                       { el }
                     </option>
-                  )
+                  );
                 })
               }
             </select>
@@ -165,7 +165,7 @@ const MakeEvent = React.createClass({
           </button>
         </form>
       </div>
-    )
+    );
   }
 });
 
@@ -173,15 +173,15 @@ const MakeEvent = React.createClass({
 const EditEvent = React.createClass({
   getInitialState () {
 
-    return(this.props.event || {})
+    return(this.props.event || {});
   },
 
   componentDidMount () {
     $('#event-title').froalaEditor();
     $('#event-body').froalaEditor();
     setTimeout(function() {
-      $('.fr-toolbar').css('position', "relative")
-    }.bind(this), 0)
+      $('.fr-toolbar').css('position', "relative");
+    }.bind(this), 0);
 
 
     $('.dropdown').dropdown();
@@ -191,7 +191,7 @@ const EditEvent = React.createClass({
     cloudinary.openUploadWidget({ cloud_name: 'diamond-eye-digital', upload_preset: 'eujkpkul'},
     function(error, result) {
       if (result) {
-        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
+        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url );
       }
     }.bind(this));
   },
@@ -199,7 +199,7 @@ const EditEvent = React.createClass({
 
   update(e) {
     var state = this.state || {};
-    state[ e.currentTarget.dataset.field ] = e.currentTarget.value
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
   },
 
@@ -221,13 +221,13 @@ const EditEvent = React.createClass({
       type: 'PATCH',
       data: { event: this.state },
       success: function (app_data, resp, obj) {
-        this.props.parent.setState( app_data )
+        this.props.parent.setState( app_data );
         Backbone.history.navigate( 'admin/events' , { trigger : true } );
       }.bind(this), error: function (a, b, c) {
-        alert("There was an error. Try again later.")
+        alert("There was an error. Try again later.");
         Backbone.history.navigate( 'admin/events' , { trigger : true } );
       }
-    })
+    });
   },
 
   render () {
@@ -301,7 +301,7 @@ const EditEvent = React.createClass({
                     <option value={el} key={el}>
                       { el }
                     </option>
-                  )
+                  );
                 })
               }
             </select>
@@ -340,6 +340,6 @@ const EditEvent = React.createClass({
           </button>
         </form>
       </div>
-    )
+    );
   }
 });

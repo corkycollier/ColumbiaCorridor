@@ -113,102 +113,103 @@ const HomeWheel = React.createClass({
         <div className="home-hero-slider">
           <a href={"#" + this.state.currentPage.link}>
             <img className="ui image centered home-image" src={this.state.currentPage.img} onClick = { this.navigate } ></img>
-            </a>
-          </div>
+          </a>
         </div>
-      );
-    }
-  });
+      </div>
+    );
+  }
+});
 
-  const BlueFooter = React.createClass({
+const BlueFooter = React.createClass({
 
-
-    updateState(e) {
-      var state = this.state;
-      state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
-      this.setState( state );
-    },
-
-    render () {
-      return (
-
-        <div className="ui grid centered" style={{
-            "background" : "url(https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061438/footer_tgdoad_ffmekf.jpg)" ,
-            "color" : "#0a0a7a" ,
-            "textAlign" : "center" ,
-            "padding" : "15px 0px" ,
-            "paddingTop" : "19px" ,
-            "position" : "relative" ,
-            "top" : "14px" ,
-            "margin" : "-14px 0px" ,
-          }}>
-
-          <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
-            <h1>
-              <a href="#event-list" style={{
-                  "fontWeight" : "bold" ,
-                  "color" : "#fff" ,
-                  "letterSpacing" : "1px" ,
-                }}>
-                Upcoming Events
-              </a>
-            </h1>
-            <div>
-
-              {
-                this.props.parent.state.upcoming_events.slice(0, 3).map(function(el) {
-                  return (
-                    <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
-                      <a href={"#event/" + el.id} style={{
-                          "color" : "#fff" ,
-                          "fontSize" : "18px" ,
-                        }}>
-                        { el.basic_title }
-                      </a>
-                    </div>
-                  );
-                }.bind(this))
-              }
-
-            </div>
-          </div>
-
-          <div className="five wide column"
-            style={{
-              "padding" : "14px 18px" ,
-            }}>
-            <Advertisements parent={ this.props.parent } />
-          </div>
-
-          <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
-            <h1><a href="#cca-news" style={{
+  updateState(e) {
+    var state = this.state;
+    state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
+    this.setState( state );
+  },
+  
+  render () {
+    return (
+      <div className="ui grid centered" style={{
+          "background" : "url(https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061438/footer_tgdoad_ffmekf.jpg)" ,
+          "color" : "#0a0a7a" ,
+          "textAlign" : "center" ,
+          "padding" : "15px 0px" ,
+          "paddingTop" : "19px" ,
+          "position" : "relative" ,
+          "top" : "14px" ,
+          "margin" : "-14px 0px" ,
+        }}>
+  
+        <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
+          <h1>
+            <a href="#event-list" style={{
                 "fontWeight" : "bold" ,
                 "color" : "#fff" ,
                 "letterSpacing" : "1px" ,
-              }}>News Flash</a></h1>
-              <div>
-                {
-                  this.props.parent.state.news.slice(0, 3).map(function(el) {
-
-                    if (el.author != "Corky Collier" && el.author != "Samuel Ullman") { return ;}
-
-                    return(
-                      <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
-                        <a href={"#news/" + el.id} style={{
-                            "color" : "#fff" ,
-                            "fontSize" : "18px" ,
-                          }} >
-                          { el.basic_title}
-                        </a>
-
-
-                      </div>
-                    );
-                  }.bind(this))
-                }
-              </div>
-            </div>
+              }}>
+              Upcoming Events
+            </a>
+          </h1>
+          <div>
+  
+            {
+              this.props.parent.state.upcoming_events.slice(0, 3).map(function(el) {
+                return (
+                  <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
+                    <a href={"#event/" + el.id} style={{
+                        "color" : "#fff" ,
+                        "fontSize" : "18px" ,
+                      }}>
+                      { el.basic_title }
+                    </a>
+                  </div>
+                );
+              }.bind(this))
+            }
+  
           </div>
-        );
-      }
-    });
+        </div>
+  
+        <div className="five wide column"
+          style={{
+            "padding" : "14px 18px" ,
+          }}>
+          <Advertisements parent={ this.props.parent } />
+        </div>
+  
+        <div className="five wide column" style = {{ "textAlign" : "center" , "padding" : "0px" }} >
+          <h1>
+            <a href="#cca-news" style={{
+              "fontWeight" : "bold" ,
+              "color" : "#fff" ,
+              "letterSpacing" : "1px" ,
+              }}>
+              News Flash
+            </a>
+          </h1>
+          <div>
+            {
+              this.props.parent.state.news.slice(0, 3).map(function(el) {
+  
+                if (el.author != "Corky Collier" && el.author != "Samuel Ullman") { return ;}
+  
+                return(
+                  <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
+                    <a href={"#news/" + el.id} style={{
+                          "color" : "#fff" ,
+                          "fontSize" : "18px" ,
+                      }}>
+                      { el.basic_title}
+                    </a>
+  
+                  </div>
+                );
+              }.bind(this))
+            }
+          </div>
+        </div>
+      </div>
+    );
+  }
+});

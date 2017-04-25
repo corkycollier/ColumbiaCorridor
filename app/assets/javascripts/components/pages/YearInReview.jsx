@@ -10,7 +10,6 @@ const YearInReview = React.createClass({
     state[ e.currentTarget.dataset.field ] = e.currentTarget.value;
     this.setState( state );
   },
-
   render () {
     return (
       <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
