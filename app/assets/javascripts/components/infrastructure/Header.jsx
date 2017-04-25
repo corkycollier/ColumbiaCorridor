@@ -23,12 +23,12 @@ const Header = React.createClass({
   },
 
   goToMailingList () {
-    Backbone.history.navigate('mailing-list', { trigger : true })
+    Backbone.history.navigate('mailing-list', { trigger : true });
   },
 
   go (e) {
     var fragment = e.currentTarget.dataset.url;
-    Backbone.history.navigate(fragment , { trigger : true })
+    Backbone.history.navigate(fragment , { trigger : true });
   },
 
   render () {
