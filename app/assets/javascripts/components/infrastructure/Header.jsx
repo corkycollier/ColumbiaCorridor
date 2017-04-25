@@ -2,7 +2,7 @@ const Header = React.createClass({
   getInitialState(){
     var style = {
       "color" : "#262262" ,
-      "background" : "url(https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061454/HEADERBKGRND_tspk7u_zisrkk.png)" ,
+      "background" : "url(https://res.cloudinary.com/diamond-eye-digital/image/upload/c_crop,g_south,h_303,w_1920,y_600/v1493061454/HEADERBKGRND_tspk7u_zisrkk.png)" ,
       "padding" : "20px" ,
     };
     var buttons;

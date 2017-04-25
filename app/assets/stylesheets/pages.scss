@@ -87,6 +87,10 @@
   border-radius: 0;
 }
 
+.regularMenu.fixed {
+  z-index: inherit;
+}
+
 .dropdown.item.header {
   color: #fff;
   
