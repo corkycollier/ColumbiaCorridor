@@ -80,15 +80,15 @@
 
 .regularMenu {
   height: 46px;
-  z-index: 999;
-  margin-bottom: 0;
-  border-top: 1px solid #262262;
-  border-bottom: 3px solid #262262;
-  border-radius: 0;
+  z-index: 999 !important;
+  margin-bottom: 0 !important;
+  border-top: 1px solid #262262 !important;
+  border-bottom: 3px solid #262262 !important;
+  border-radius: 0 !important;
 }
 
 .regularMenu.fixed {
-  z-index: inherit;
+  z-index: 999 !important;
 }
 
 .dropdown.item.header {
