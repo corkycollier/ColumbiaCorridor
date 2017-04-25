@@ -77,3 +77,20 @@
 .home-slider-btn.right {
   right: 16px;
 }
+
+.regularMenu {
+  height: 46px;
+  z-index: 999;
+  margin-bottom: 0;
+  border-top: 1px solid #262262;
+  border-bottom: 3px solid #262262;
+  border-radius: 0;
+}
+
+.dropdown.item.header {
+  color: #fff;
+  
+  .menu {
+    color: #fff;
+  }
+}

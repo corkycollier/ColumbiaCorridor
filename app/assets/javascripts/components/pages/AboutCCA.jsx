@@ -37,7 +37,7 @@ const AboutCCA = React.createClass({
           </div>
 
           <div className="eight wide column">
-            <img className="ui fluid image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481672281/about-us_twyr2b.jpg" />
+            <img className="ui fluid image" src="https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061417/about-us_twyr2b_biudz0.jpg" />
           </div>
         </div>
       </div>

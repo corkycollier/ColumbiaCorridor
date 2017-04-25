@@ -2,42 +2,41 @@ const Menu = React.createClass({
   getInitialState(){
     return({
       currentMenu : [] ,
-    })
+    });
   },
 
   componentDidMount () {
     this.triggerMenu();
 
-    var $window = $( window )
+    var $window = $( window );
     $window.resize(function(){
       this.triggerMenu();
     }.bind(this));
   },
 
   triggerMenu() {
-    var $window = $( window )
+    var $window = $( window );
     if ( $window.width() > 920 ) {
       this.setState({
         currentMenu: <RegularMenu />
-      })
+      });
     } else {
       this.setState({
         currentMenu: <SidebarMenuButton />
-      })
+      });
     }
   },
 
   render () {
     return (
       <div className="" style={{
-          "color" : "#262262" ,
           "zIndex" : "2000" ,
         }}>
         {
           this.state.currentMenu
         }
       </div>
-    )
+    );
   }
 });
 
@@ -45,11 +44,11 @@ const SidebarMenuButton = React.createClass({
   getInitialState () {
     var style = {
 
-    }
+    };
 
     return({
       style: style,
-    })
+    });
   },
 
   componentDidMount () {
@@ -58,7 +57,7 @@ const SidebarMenuButton = React.createClass({
 
   openSidebar () {
     $('.sidebar').transition();
-    $('#backdrop').addClass( 'active' )
+    $('#backdrop').addClass( 'active' );
   },
 
   render () {
@@ -70,7 +69,7 @@ const SidebarMenuButton = React.createClass({
           </a>
         </div>
       </div>
-    )
+    );
   }
 });
 
@@ -82,7 +81,7 @@ const RegularMenu = React.createClass({
       $('.dropdown').dropdown({
         on: 'hover'
       });
-    }.bind(this), 0)
+    }.bind(this), 0);
 
 
     $('.regularMenu').visibility({
@@ -91,30 +90,20 @@ const RegularMenu = React.createClass({
   },
 
   go (e) {
-    Backbone.history.navigate( e.currentTarget.dataset.path , { trigger : true })
+    Backbone.history.navigate( e.currentTarget.dataset.path , { trigger : true });
   },
 
   render () {
     return (
       <div className="">
-        <div className="ui eight item menu regularMenu" style={{
-            "height" : "46px"      ,
-            "zIndex" : "2000"      ,
-            "marginBottom" : "0px"      ,
-            "borderTop" : "1px solid #262262" ,
-            "borderBottom" : "3px solid #262262" ,
-            "borderRadius" : "0px" ,
-          }}>
+        <div className="ui eight item menu regularMenu">
           <a className="ui dropdown item header" data-path="" onClick={ this.go } style={{
-              "color" : "#262262" ,
               "borderRadius" : "0px"
             }}>
             HOME
           </a>
 
-          <a className="ui dropdown item header" data-path="about-us" style={{
-              "color" : "#262262" ,
-            }}>
+          <a className="ui dropdown item header" data-path="about-us">
             ABOUT US
 
             <div className="menu" >
@@ -137,9 +126,7 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui item dropdown header"  style={{
-              "color" : "#262262" ,
-            }}>
+          <a className="ui item dropdown header">
             EVENTS
 
             <div className="menu">
@@ -181,9 +168,7 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown item header" style={{
-              "color" : "#262262" ,
-            }}>
+          <a className="ui dropdown item header">
             JOIN
 
             <div className="menu">
@@ -197,9 +182,7 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown item header " style={{
-              "color" : "#262262" ,
-            }}>
+          <a className="ui dropdown item header">
             MEMBER AREA
 
 
@@ -223,14 +206,11 @@ const RegularMenu = React.createClass({
             </div>
           </a>
 
-          <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go } style={{
-              "color" : "#262262" ,
-            }}>
+          <a className="ui dropdown header item" data-path="sponsor" onClick={ this.go }>
             SPONSOR
           </a>
 
           <a className="ui dropdown header item" data-path="contact" onClick={ this.go } style={{
-              "color" : "#262262" ,
               "borderRadius" : "0px"
             }}>
             CONTACT
@@ -238,7 +218,7 @@ const RegularMenu = React.createClass({
 
         </div>
       </div>
-    )
+    );
   }
 });
 
@@ -247,7 +227,7 @@ const SidebarMenu = React.createClass({
     setTimeout(function() {
       $('.dropdown').dropdown() ;
 
-    }.bind(this), 0)
+    }.bind(this), 0);
   },
 
   go (e) {
@@ -417,7 +397,6 @@ const SidebarMenu = React.createClass({
           </a>
         </div>
       </div>
-
-    )
+    );
   }
 });
