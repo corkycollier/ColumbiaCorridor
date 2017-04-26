@@ -8,7 +8,8 @@ const MailingList = React.createClass({
 
   render () {
     return (
-      <div className="ui container" align="center" style={{ "padding" : "5% 1%" }}>
+      <div className="ui container" align="center" style={{ "padding" : "5% 1%", 
+        "textAlign":"center" }}>
         <h1 style={{"marginBottom" : "20px"}}>
         Join our mailing list!
         </h1>
