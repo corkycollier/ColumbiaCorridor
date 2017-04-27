@@ -109,7 +109,7 @@ module Api
     end
 
     def constant_contact
-      @cc = ConstantContact::Api.new(ENV['constant_api_key'], "936ed46e-7474-4f50-9bec-945c6044545d" )
+      @cc = ConstantContact::Api.new(ENV['CONSTANT_CONTACT_API_KEY'], "938264a2-5b02-4d2b-a6e9-add168823b7e" )
       contact = ConstantContact::Components::Contact.new
       
       # The email address itself is a parameter of an EmailAddresses object, so you first make an EmailAddress object by passing your email variable, and pass that EmailAddress object into add_email.
