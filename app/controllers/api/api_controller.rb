@@ -22,7 +22,7 @@ module Api
     def message
 
         specs = {
-          to: "mking@columbiacorridor.org" ,
+          to: "randy@diamondeyedigital.com" ,
           content: "
           <div style='color:#262262;'>
             <div style='height:80px;background:url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png);'>
@@ -101,7 +101,7 @@ module Api
 
 
 
-      sg = SendGrid::API.new(api_key: ENV['sendgrid2'])
+      sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
       # response = sg.client.mail._('send').post(request_body: data)
 
       constant_contact
