@@ -51,7 +51,7 @@ const CCANews = React.createClass({
             </div>
 
             <div className="eight wide column">
-              <img className="ui image fluid " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1482225183/RESOURCES_NEWS_1_03_k64ssu.jpg" />
+              <img className="ui image fluid " src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494387977/RESOURCES_NEWS_crlgyc.jpg" />
             </div>
           </div>
 

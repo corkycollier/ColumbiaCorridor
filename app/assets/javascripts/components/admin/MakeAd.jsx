@@ -30,7 +30,7 @@ const MakeAd = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'diamond-eye-digital', upload_preset: 'eujkpkul', theme: 'white'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2', theme: 'white'},
     function(error, result) {
       if (result) {
         var state = this.state;
@@ -138,7 +138,7 @@ const EditAd = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'diamond-eye-digital', upload_preset: 'eujkpkul', theme: 'white'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2', theme: 'white'},
     function(error, result) {
       if (result) {
         var state = this.state;

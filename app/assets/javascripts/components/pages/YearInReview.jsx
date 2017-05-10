@@ -29,13 +29,13 @@ const YearInReview = React.createClass({
             </div>
 
             <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid centered" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487378383/1_fp1qkn.jpg"></img>
+              <img className="ui image fluid centered" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670261/1_fp1qkn_jmxi5b.jpg"></img>
             </div>
           </div>
 
           <div className="row">
             <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid centered" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/w_0.98,c_crop/v1487106975/yir2_xyzqtv.png"></img>
+              <img className="ui image fluid centered" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/w_0.98,c_crop/w_0.98,c_crop/v1494388889/yir2_cv9fjy.png"></img>
             </div>
 
             <div className="eight wide column">
@@ -61,13 +61,13 @@ const YearInReview = React.createClass({
             </div>
 
             <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487106975/yir1_iyjthk.png"></img>
+              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494389026/yir1_zlik0f.png"></img>
             </div>
           </div>
 
           <div className="row">
             <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487378384/2_vaap2b.jpg"></img>
+              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670261/2_vaap2b_ri60ce.jpg"></img>
             </div>
 
             <div className="eight wide column">
@@ -93,14 +93,14 @@ const YearInReview = React.createClass({
             </div>
 
             <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487378383/3_mlzoet.jpg"></img>
+              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670265/3_mlzoet_sdp1hp.jpg"></img>
             </div>
           </div>
 
 
           <div className="row">
             <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/djjldnjz7/image/upload/w_0.98,c_crop/v1487106974/yir3_d4zyva.png"></img>
+              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494389165/yir3_amcwvz.png"></img>
             </div>
 
             <div className="eight wide column">

@@ -1,19 +1,19 @@
 ---
 development:
-  cloud_name: diamond-eye-digital
-  api_key: '639746954873482'
-  api_secret: KsPtMPCOBt1FodbSLFSwsngiXGw
+  cloud_name: dtizwr3wv
+  api_key: '688459599666266'
+  api_secret: wUgyjpfaHj1yyOhfmzMOdZiBlBA
   enhance_image_tag: true
   static_image_support: false
 production:
-  cloud_name: diamond-eye-digital
-  api_key: '639746954873482'
-  api_secret: KsPtMPCOBt1FodbSLFSwsngiXGw
+  cloud_name: dtizwr3wv
+  api_key: '688459599666266'
+  api_secret: wUgyjpfaHj1yyOhfmzMOdZiBlBA
   enhance_image_tag: true
   static_image_support: true
 test:
-  cloud_name: diamond-eye-digital
-  api_key: '639746954873482'
-  api_secret: KsPtMPCOBt1FodbSLFSwsngiXGw
+  cloud_name: dtizwr3wv
+  api_key: '688459599666266'
+  api_secret: wUgyjpfaHj1yyOhfmzMOdZiBlBA
   enhance_image_tag: true
   static_image_support: false

@@ -44,7 +44,7 @@ const Staff = React.createClass({
 
           <div className="four wide column" >
             <a href={"#staff/1"}>
-              <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673214/Staff_Corky-e1474958983360_h6iyzp.jpg" />
+              <img className="ui fluid image staff-image" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494387384/Staff_Corky_vsfhut.jpg" />
               <p style={{ "textAlign" : "center" , "marginTop" : "12px" , "color" : "#262262" }}>
                 <b>Executive Director</b> - Corky Collier
                 </p>
@@ -63,7 +63,7 @@ const Staff = React.createClass({
               <div className="four wide column" >
                 <a href={"#staff/2"}>
 
-                  <img className="ui fluid image staff-image" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481673230/Staff_Marissa-e1474957970362_mz1vh0.jpg" />
+                  <img className="ui fluid image staff-image" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494387470/Staff_Marissa_hbsbfd.jpg" />
 
                   <p style={{ "textAlign" : "center" , "marginTop" : "12px" , "color" : "#262262" }}>
                     <b>Office Manager</b> - Marissa King

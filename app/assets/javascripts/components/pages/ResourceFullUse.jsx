@@ -62,8 +62,8 @@ const ResourceFullUse = React.createClass({
           </div>
           </div>
 
-          <img className="ui image large" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692472/RESOURCES_RFU_1_07_zlpojo.jpg"  style={{ "marginTop" : "28px" , "marginBottom" : "28px" , "marginRight" : "40px" ,"float" : "left"}}/>
-          <img className="ui image large " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481692448/RESOURCES_RFU_1_03_sgwtw2.jpg"  style={{ "marginTop" : "28px" , "marginBottom" : "28px" , }} / >
+          <img className="ui image large" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494388518/RESOURCES_RFU_1_07_broqkw.jpg"  style={{ "marginTop" : "28px" , "marginBottom" : "28px" , "marginRight" : "40px" ,"float" : "left"}}/>
+          <img className="ui image large" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494388594/RESOURCES_RFU_1_03_ku5wsb.jpg"  style={{ "marginTop" : "28px" , "marginBottom" : "28px" , }} / >
             
           <div className="ui grid">
             <div className="sixteen wide column">
@@ -113,20 +113,20 @@ const ResourceFullUse = React.createClass({
               <div className="ui grid">
                 <div className="five wide column">
                   <a href="http://www.oregonmetro.gov/" target="_blank" >
-                    <img className="ui centered image " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/metro_logo_ukb86i.jpg"></img>
+                    <img className="ui centered image " src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670446/metro_logo_ukb86i_ijnvs7.jpg"></img>
                   </a>
                 </div>
 
 
                 <div className="five wide column">
                   <a href="http://www.oregon.gov/DEQ/Pages/index.aspx" target="_blank" >
-                    <img className="ui centered image " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/deq_logo_dewlj1.jpg"></img>
+                    <img className="ui centered image " src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670291/deq_logo_dewlj1_tt2qhf.jpg"></img>
                   </a>
                 </div>
 
                 <div className="five wide column">
                   <a href="http://www.boeing.com/" target="_blank" >
-                    <img className="ui centered image " src="http://res.cloudinary.com/djjldnjz7/image/upload/v1486637792/boeing_logo_iz9hcc.jpg"></img>
+                    <img className="ui centered image " src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670280/boeing_logo_iz9hcc_vho9zf.jpg"></img>
                   </a>
                 </div>
               </div>

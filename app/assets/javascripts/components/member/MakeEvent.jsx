@@ -14,7 +14,7 @@ const MakeEvent = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'diamond-eye-digital', upload_preset: 'eujkpkul'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
     function(error, result) {
       if (result) {
         $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url );
@@ -188,7 +188,7 @@ const EditEvent = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'diamond-eye-digital', upload_preset: 'eujkpkul'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
     function(error, result) {
       if (result) {
         $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url );

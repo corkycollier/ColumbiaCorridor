@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         to: "mking@columbiacorridor.org" ,
         content: "
         <div style='color:#262262;'>
-          <div style='height:80px;background:url(https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061454/HEADERBKGRND_tspk7u_zisrkk.png);'>
+          <div style='height:80px;background:url(https://res.cloudinary.com/dtizwr3wv/image/upload/v1493670362/HEADERBKGRND_tspk7u_wiatci.png);'>
 
           </div>
 

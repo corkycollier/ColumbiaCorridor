@@ -127,7 +127,7 @@ const Membership = React.createClass({
           </div>
 
           <div className="ten wide column">
-            <img className="ui image fluid" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1481693642/JOIN-Membership_03_hfenov.jpg" style={{ "maxHeight" : "499px" , }}/>
+            <img className="ui image fluid" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670412/JOIN-Membership_03_hfenov_rri33g.jpg" style={{ "maxHeight" : "499px" , }}/>
           </div>
         </div>
 

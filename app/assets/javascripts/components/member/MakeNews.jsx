@@ -5,8 +5,8 @@ const MakeNews = React.createClass({
   },
 
   froala () {
-    var cloud_name = "djjldnjz7";
-    var unsigned_preset = "vyzjbttv";
+    var cloud_name = "dtizwr3wv";
+    var unsigned_preset = "f6zu0cw2";
     var api_key = "";
 
     $('#news-title').froalaEditor({
@@ -39,7 +39,7 @@ const MakeNews = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
     function(error, result) {
       if (result) {
         $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
@@ -153,7 +153,7 @@ const EditNewsAdmin = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
     function(error, result) {
       if (result) {
         $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )

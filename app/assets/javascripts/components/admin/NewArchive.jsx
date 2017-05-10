@@ -25,7 +25,7 @@ const NewArchive = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
     function(error, result) {
       if (result) {
         var state = this.state
@@ -114,7 +114,7 @@ const EditArchive = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
     function(error, result) {
       if (result) {
         var state = this.state

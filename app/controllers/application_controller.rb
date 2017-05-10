@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
         to: user['email'] ,
         content: "
         <div style='color:#262262;'>
-          <div style='height:80px;background:url(http://res.cloudinary.com/djjldnjz7/image/upload/v1482226207/Untitled_alc9hg.png);'>
+          <div style='height:80px;background:url(http://res.cloudinary.com/dtizwr3wv/image/upload/v1494386187/Untitled_alc9hg_xlh98k.png);'>
 
           </div>
 

@@ -173,7 +173,7 @@ const EditBoard = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
     function(error, result) {
       if (result) {
         var pic = result[0].secure_url;
@@ -274,7 +274,7 @@ const NewBoard = React.createClass({
   },
 
   uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'djjldnjz7', upload_preset: 'vyzjbttv'},
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
     function(error, result) {
       if (result) {
         var pic = result[0].secure_url

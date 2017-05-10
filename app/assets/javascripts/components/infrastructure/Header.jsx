@@ -2,7 +2,7 @@ const Header = React.createClass({
   getInitialState(){
     var style = {
       "color" : "#262262" ,
-      "background" : "url(https://res.cloudinary.com/diamond-eye-digital/image/upload/c_crop,g_south,h_303,w_1920,y_600/v1493061454/HEADERBKGRND_tspk7u_zisrkk.png)" ,
+      "background" : "url(https://res.cloudinary.com/dtizwr3wv/image/upload/c_crop,g_south,h_303,w_1920,y_600/v1493670362/HEADERBKGRND_tspk7u_wiatci.png)" ,
       "padding" : "20px" ,
     };
     var buttons;
@@ -36,7 +36,7 @@ const Header = React.createClass({
       <div className="" style={this.state.style}>
         <div className="ui grid stackable">
           <div className="four wide column">
-            <img src="https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061428/CCA_Logo_hi9b9f_iwd4vq.png" style={{"height":"80px"}} onClick={ this.go }/>
+            <img src="https://res.cloudinary.com/dtizwr3wv/image/upload/v1493670288/CCA_Logo_hi9b9f_c4ibpt.png" style={{"height":"80px"}} onClick={ this.go }/>
           </div>
           <div className="eight wide column"
             style={{

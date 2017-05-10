@@ -25,24 +25,24 @@ const HomeWheel = React.createClass({
     var pages = {
       "0" : {
         id : 0 ,
-        img : "https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061457/Home_2_UPDATED_yt1wgm_cr0ryw.jpg" ,
+        img : "https://res.cloudinary.com/dtizwr3wv/image/upload/v1493670369/Home_2_UPDATED_yt1wgm_isg71x.jpg" ,
         link : "event-list" ,
       } ,
       "1" : {
         id : 1 ,
-        img: "https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061456/Home_3_g2nbm4_thb8nc.jpg" ,
+        img: "https://res.cloudinary.com/dtizwr3wv/image/upload/v1493670373/Home_3_g2nbm4_ifscj2.jpg" ,
         link: "year-in-review" ,
       } ,
 
       "2" : {
         id : 2 ,
-        img: "https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061459/Home_4_UPDATED_ljc6nr_hsar0c.jpg" ,
+        img: "https://res.cloudinary.com/dtizwr3wv/image/upload/v1493670382/Home_4_UPDATED_ljc6nr_jfvtwe.jpg" ,
         link: "resourcesfull-use" ,
       } ,
 
       "3" : {
         id : 3 ,
-        img: "https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061459/Home_5_pqm5rz_xk7y92.jpg" ,
+        img: "https://res.cloudinary.com/dtizwr3wv/image/upload/v1493670376/Home_5_pqm5rz_rrbdhx.jpg" ,
         link: "membership" ,
       } ,
     };
@@ -131,7 +131,7 @@ const BlueFooter = React.createClass({
   render () {
     return (
       <div className="ui grid centered" style={{
-          "background" : "url(https://res.cloudinary.com/diamond-eye-digital/image/upload/v1493061438/footer_tgdoad_ffmekf.jpg)" ,
+          "background" : "url(https://res.cloudinary.com/dtizwr3wv/image/upload/v1494386505/footer_tgdoad_ffmekf_e9nc9d.jpg)" ,
           "color" : "#0a0a7a" ,
           "textAlign" : "center" ,
           "padding" : "15px 0px" ,

@@ -30,7 +30,7 @@ const ColumbiaCorridor = React.createClass({
           </div>
 
           <div className="eleven wide column">
-            <img className="ui image fluid" src="http://res.cloudinary.com/djjldnjz7/image/upload/v1487036435/ColumbiaCorridorMap_v99rsf.jpg" />
+            <img className="ui image fluid" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670306/ColumbiaCorridorMap_v99rsf_e1oozr.jpg" />
             <div>
               <h2 style={{ "textAlign" : "center" , "marginTop" : "12px"}}>
               <i><u>Columbia Corridor Map</u></i>
