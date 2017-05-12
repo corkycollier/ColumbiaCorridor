@@ -4,7 +4,6 @@ module Api
 
     def create
       @event = Event.new( event_params )
-      # @event.formatDateTime
       @event.save
       render json: app_data
     end
@@ -24,7 +23,8 @@ module Api
     private
 
     def event_params
-      params.require(:event).permit(Event.new.attributes.map {|key, value| key.to_sym})
+      params.require(:event).permit(:title, :date, :time, :location, :body, :event_type, :allDay, :start, :end, 
+        :url, :paypal, :custom, :basic_title)
     end
   end
 end
