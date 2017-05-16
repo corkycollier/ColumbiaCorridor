@@ -41,6 +41,34 @@ const MakeEvent = React.createClass({
     this.setState( state );
   },
 
+  updateDate(e) {
+    var state = this.state;
+    var timestamp = Date.parse(e.currentTarget.value);
+    if ( isNaN(timestamp) == false ) {
+      state['date'] = moment(timestamp).format('YYYY-MM-DD');
+    } else {
+      state['date'] = null;
+      e.currentTarget.value = null;
+    }
+
+    this.setState(state);
+  },
+
+  updateTime(e) {
+    var state = this.state || {};
+    var key = e.currentTarget.dataset.field;
+    var value = moment().format('YYYY/MM/DD') + ' ' + e.currentTarget.value;
+    var timestamp = Date.parse(value);
+
+    if ( isNaN(timestamp) == false ) {
+      state[key] = moment(timestamp).format('HH:mm');
+    } else {
+      state[key] = null;
+      e.currentTarget.value = null;
+    }
+
+    this.setState(state);
+  },
 
   handleSave () {
     $.ajax({
@@ -100,18 +128,18 @@ const MakeEvent = React.createClass({
 
           <div className="field">
             <label>Date</label>
-            <input type="date" data-field="date" onChange={ this.update } required/>
+            <input type="date" data-field="date" onBlur={ this.updateDate } required/>
           </div>
 
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="time" data-field="start" onChange={ this.update } required />
+              <input type="time" data-field="start" onBlur={ this.updateTime } required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="time" data-field="end" onChange={ this.update } required />
+              <input type="time" data-field="end" onBlur={ this.updateTime } required />
             </div>
           </div>
 
@@ -215,7 +243,37 @@ const EditEvent = React.createClass({
     this.setState( state );
   },
 
+  updateDate(e) {
+    var state = this.state;
+    var timestamp = Date.parse(e.currentTarget.value);
+    if ( isNaN(timestamp) == false ) {
+      state['date'] = moment(timestamp).format('YYYY-MM-DD');
+    } else {
+      state['date'] = null;
+      e.currentTarget.value = null;
+    }
+
+    this.setState(state);
+  },
+
+  updateTime(e) {
+    var state = this.state || {};
+    var key = e.currentTarget.dataset.field;
+    var value = moment().format('YYYY/MM/DD') + ' ' + e.currentTarget.value;
+    var timestamp = Date.parse(value);
+
+    if ( isNaN(timestamp) == false ) {
+      state[key] = moment(timestamp).format('HH:mm');
+    } else {
+      state[key] = null;
+      e.currentTarget.value = null;
+    }
+
+    this.setState(state);
+  },
+
   handleSave () {
+
     $.ajax({
       url: '/api/events/' + this.state.id ,
       type: 'PATCH',
@@ -274,18 +332,18 @@ const EditEvent = React.createClass({
 
           <div className="field">
             <label>Date</label>
-            <input type="date" data-field="date" onChange={ this.update } defaultValue={this.state.date} required/>
+            <input type="date" data-field="date" onBlur={ this.updateDate } defaultValue={this.state.date} required/>
           </div>
 
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="time" data-field="start" onChange={ this.update }  defaultValue={this.state.start} required />
+              <input type="time" data-field="start" onBlur={ this.updateTime }  defaultValue={this.state.start} required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="time" data-field="end" onChange={ this.update } defaultValue={this.state.end} required />
+              <input type="time" data-field="end" onBlur={ this.updateTime } defaultValue={this.state.end} required />
             </div>
           </div>
 

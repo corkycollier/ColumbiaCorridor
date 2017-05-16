@@ -2,19 +2,22 @@
 #
 # Table name: events
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  title      :string
-#  date       :string
-#  time       :string
-#  location   :string
-#  body       :text
-#  event_type :string
-#  allDay     :boolean          default(FALSE)
-#  start      :string
-#  end        :string
-#  url        :string
+#  id          :integer          not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  title       :string
+#  date        :date
+#  time        :string
+#  location    :string
+#  body        :text
+#  event_type  :string
+#  allDay      :boolean          default(FALSE)
+#  start       :string
+#  end         :string
+#  url         :string
+#  paypal      :text
+#  custom      :text
+#  basic_title :string
 #
 
 class Event < ActiveRecord::Base
@@ -38,16 +41,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.upcoming
-    Event.all.order(date: :asc).collect do |event|
-      today = Date.today
-      event_array = event.date.split("-")
-      event_date = Date.new(event_array[0].to_i,event_array[1].to_i, event_array[2].to_i )
-      if today < event_date
-        event
-      else
-        next
-      end
-    end.compact
+    Event.where("date < ?", Date.today).order(date: :asc)
   end
 
 end
