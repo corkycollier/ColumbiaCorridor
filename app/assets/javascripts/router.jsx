@@ -475,4 +475,13 @@ const router = Backbone.Router.extend({
       activePage: [ page ]
     });
   },
-})
+});
+
+var _parseJSON = $.parseJSON;
+$.parseJSON = function(j) {
+    var response = _parseJSON(j);
+    // TODO proper selection of url / secure_url based on the document link
+    response.link = response.url; // Froala expects `link`
+    return response;
+};
+

@@ -1,4 +1,3 @@
-
 const MakeNews = React.createClass({
   getInitialState () {
     return( this.props.news || {} )
@@ -7,9 +6,11 @@ const MakeNews = React.createClass({
   froala () {
     var cloud_name = "dtizwr3wv";
     var unsigned_preset = "f6zu0cw2";
-    var api_key = "";
+    var api_key = "688459599666266";
 
     $('#news-title').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
       imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
       imageUploadParams: {
         upload_preset: unsigned_preset,
@@ -18,6 +19,8 @@ const MakeNews = React.createClass({
     });
 
     $('#news-body').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
       imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
       imageUploadParams: {
         upload_preset: unsigned_preset,
@@ -36,15 +39,6 @@ const MakeNews = React.createClass({
   componentDidMount () {
     this.froala();
     this.fadeIn();
-  },
-
-  uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
-    function(error, result) {
-      if (result) {
-        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
-      }
-    }.bind(this));
   },
 
   submitNews () {
@@ -102,20 +96,6 @@ const MakeNews = React.createClass({
                 <input type="text"  data-field="basic_title" onChange={ this.update } />
               </div>
 
-              <div className="field" style={{ "position" : "relative" , }}>
-                <label>Image Upload</label>
-                <input type="text" className="image-uploader" />
-                <div className="ui button mini blue"
-                     onClick={ this.uploadWidget }
-                     style={{
-                    "position" : "absolute" ,
-                    "right" : "2px" ,
-                    "top" : "28px" ,
-                  }}>
-                  Upload
-                </div>
-              </div>
-
               <div className="field title-field" onBlur={ this.updateTitle }>
                 <label>Title</label>
                 <textarea id="news-title" />
@@ -143,24 +123,39 @@ const EditNewsAdmin = React.createClass({
     return(this.props.news || {})
   },
 
+  froala () {
+    var cloud_name = "dtizwr3wv";
+    var unsigned_preset = "f6zu0cw2";
+    var api_key = "688459599666266";
+
+    $('#news-title').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
+
+    $('#news-body').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
+  },
+
   componentDidMount () {
-    $('#news-title').froalaEditor();
-    $('#news-body').froalaEditor();
+    this.froala();
 
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative");
     }.bind(this), 0);
   },
-
-  uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
-    function(error, result) {
-      if (result) {
-        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
-      }
-    }.bind(this));
-  },
-
 
   submitNews () {
     $.ajax({
@@ -208,20 +203,6 @@ const EditNewsAdmin = React.createClass({
               <div className="field">
                 <label>Basic Title</label>
                 <input type="text"  data-field="basic_title" onChange={ this.update } defaultValue={ this.props.news.basic_title }/>
-              </div>
-
-              <div className="field" style={{ "position" : "relative" , }}>
-                <label>Image Upload</label>
-                <input type="text" className="image-uploader" />
-                <div className="ui button mini blue"
-                     onClick={ this.uploadWidget }
-                     style={{
-                    "position" : "absolute" ,
-                    "right" : "2px" ,
-                    "top" : "28px" ,
-                  }}>
-                  Upload
-                </div>
               </div>
 
               <div className="field title-field" onBlur={ this.updateTitle }>

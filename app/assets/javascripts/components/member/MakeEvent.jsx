@@ -3,25 +3,40 @@ const MakeEvent = React.createClass({
     return ({});
   },
 
+  froala () {
+    var cloud_name = "dtizwr3wv";
+    var unsigned_preset = "f6zu0cw2";
+    var api_key = "688459599666266";
+
+    $('#event-title').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
+
+    $('#event-body').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
+  },
+
   componentDidMount () {
-    $('#event-title').froalaEditor();
-    $('#event-body').froalaEditor();
+    this.froala();
 
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative");
     }.bind(this), 0);
     $('.dropdown').dropdown();
   },
-
-  uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
-    function(error, result) {
-      if (result) {
-        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url );
-      }
-    }.bind(this));
-  },
-
 
   update(e) {
     var state = this.state || {};
@@ -100,20 +115,6 @@ const MakeEvent = React.createClass({
           <div className="field">
             <label>Basic Title</label>
             <input type="text"  data-field="basic_title" onChange={ this.update } />
-          </div>
-
-          <div className="field" style={{ "position" : "relative" , }}>
-            <label>Image Upload</label>
-            <input type="text" className="image-uploader" />
-            <div className="ui button mini blue"
-                 onClick={ this.uploadWidget }
-                 style={{
-                "position" : "absolute" ,
-                "right" : "2px" ,
-                "top" : "28px" ,
-              }}>
-              Upload
-            </div>
           </div>
 
           <div className="field title-field" onBlur={ this.updateTitle }>
@@ -204,9 +205,35 @@ const EditEvent = React.createClass({
     return(this.props.event || {});
   },
 
+  froala () {
+    var cloud_name = "dtizwr3wv";
+    var unsigned_preset = "f6zu0cw2";
+    var api_key = "688459599666266";
+
+    $('#event-title').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
+
+    $('#event-body').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
+  },
+
   componentDidMount () {
-    $('#event-title').froalaEditor();
-    $('#event-body').froalaEditor();
+    this.froala();
+
     setTimeout(function() {
       $('.fr-toolbar').css('position', "relative");
     }.bind(this), 0);
@@ -214,16 +241,6 @@ const EditEvent = React.createClass({
 
     $('.dropdown').dropdown();
   },
-
-  uploadWidget () {
-    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
-    function(error, result) {
-      if (result) {
-        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url );
-      }
-    }.bind(this));
-  },
-
 
   update(e) {
     var state = this.state || {};
@@ -304,20 +321,6 @@ const EditEvent = React.createClass({
           <div className="field">
             <label>Basic Title</label>
             <input type="text" defaultValue={this.state.basic_title} data-field="basic_title" onChange={ this.update } />
-          </div>
-
-          <div className="field" style={{ "position" : "relative" , }}>
-            <label>Image Upload</label>
-            <input type="text" className="image-uploader" />
-            <div className="ui button mini blue"
-                 onClick={ this.uploadWidget }
-                 style={{
-                "position" : "absolute" ,
-                "right" : "2px" ,
-                "top" : "28px" ,
-              }}>
-              Upload
-            </div>
           </div>
 
           <div className="field title-field" onBlur={ this.updateTitle }>
