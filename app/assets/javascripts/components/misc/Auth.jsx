@@ -115,7 +115,7 @@ const SignUp = React.createClass({
         location.href = "";
       }, error: function (model, resp, obj) {
         alert("There was an error.")
-        location.href = "";
+        // location.href = "";
       }
     })
   },
