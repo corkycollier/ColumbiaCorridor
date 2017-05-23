@@ -41,7 +41,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.upcoming
-    Event.where("date < ?", Date.today).order(date: :asc)
+    Event.where("date > ?", Date.today).order(date: :asc)
   end
 
 end
