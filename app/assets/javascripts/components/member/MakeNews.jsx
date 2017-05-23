@@ -41,7 +41,8 @@ const MakeNews = React.createClass({
     this.fadeIn();
   },
 
-  submitNews () {
+  submitNews (e) {
+    e.preventDefault();
     $.ajax({
       url: '/api/news',
       type: 'POST',
@@ -50,10 +51,9 @@ const MakeNews = React.createClass({
         this.props.parent.setState(app_data)
         Backbone.history.navigate('member-news' , { trigger : true })
       }.bind(this), error: function (a, b, c) {
-        alert('There was an error.')
-        Backbone.history.navigate('member-news' , { trigger : true })
+        alert('There was an error on submit.')
       }
-    })
+    });
   },
 
   updateBody(e) {
@@ -167,7 +167,7 @@ const EditNewsAdmin = React.createClass({
         Backbone.history.navigate('admin/news' , { trigger : true })
       }.bind(this), error: function (app_data, resp, obj) {
         alert('There was an error.')
-        Backbone.history.navigate('admin/news' , { trigger : true })
+        // Backbone.history.navigate('admin/news' , { trigger : true })
       }
     })
   },
