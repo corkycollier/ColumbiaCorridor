@@ -113,13 +113,18 @@ class UsersController < ApplicationController
       # @cc.add_contact(contact).to_json
       # Try adding the .to_json operator to your add_contact call if you are still seeing a bad request error.
       # This call should also pass your contact object through in parentheses.
-      @cc.add_contact(contact)
+      begin
+        @cc.add_contact(contact)
+      rescue
+      end
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(User.new.attributes.collect{|key, value| key.to_sym}.concat([:password]))
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :phone, 
+      :user_address, :user_city, :user_state, :user_zip, :user_country,
+      :company_name, :company_website, :company_address, :company_city, :company_state, :company_zip, :company_business_type)
   end
 end

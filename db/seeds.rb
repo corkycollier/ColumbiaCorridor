@@ -8,11 +8,11 @@
 
 
 User.create({
-  username: "webmaster" ,
-  email: "samullman@gmail.com" ,
-  level: "Admin" ,
+  # username: "webmaster" ,
+  email: "admin@mail.com" ,
+  role: "Admin" ,
   phone: "503503053" ,
-  password: ENV["password"] ,
+  password: "password" ,
   first_name: "first" ,
   last_name: "last" ,
   user_address: "1234 NE North" ,
