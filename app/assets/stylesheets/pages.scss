@@ -98,3 +98,13 @@
     color: #fff;
   }
 }
+
+.ui.form {
+  .field {
+    &>label.description {
+      color: #aaa;
+      font-style: italic;
+      font-weight: 400;
+    }
+  }
+}

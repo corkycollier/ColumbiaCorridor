@@ -29,6 +29,15 @@ const MakeEvent = React.createClass({
     });
   },
 
+  uploadWidget () {
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
+    function(error, result) {
+      if (result) {
+        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
+      }
+    }.bind(this));
+  },
+
   componentDidMount () {
     this.froala();
 
@@ -125,6 +134,24 @@ const MakeEvent = React.createClass({
           <div className="field body-field" onBlur={ this.updateBody } >
             <label>Body</label>
             <textarea id="event-body"></textarea>
+          </div>
+
+          <div className="field" style={{ "position" : "relative" , }}>
+            <label>Upload PDF</label>
+            <input type="text" className="image-uploader" />
+            <div className="ui button mini blue"
+                 onClick={ this.uploadWidget }
+                 style={{
+                "position" : "absolute" ,
+                "right" : "2px" ,
+                "top" : "28px" ,
+              }}>
+              Upload
+            </div>
+            <label className="description">
+              1) Click the ‘upload’ button and drag & drop the pdf file.<br/>
+              2) Copy the URL created, and use this URL in the ‘insert link’ feature in the body section.
+            </label>
           </div>
 
           <div className="field">
@@ -231,6 +258,15 @@ const EditEvent = React.createClass({
     });
   },
 
+  uploadWidget () {
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
+    function(error, result) {
+      if (result) {
+        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
+      }
+    }.bind(this));
+  },
+
   componentDidMount () {
     this.froala();
 
@@ -331,6 +367,24 @@ const EditEvent = React.createClass({
           <div className="field body-field" onBlur={ this.updateBody } >
             <label>Body</label>
             <textarea id="event-body" defaultValue={this.state.body}></textarea>
+          </div>
+
+          <div className="field" style={{ "position" : "relative" , }}>
+            <label>Upload PDF</label>
+            <input type="text" className="image-uploader" />
+            <div className="ui button mini blue"
+                 onClick={ this.uploadWidget }
+                 style={{
+                "position" : "absolute" ,
+                "right" : "2px" ,
+                "top" : "28px" ,
+              }}>
+              Upload
+            </div>
+            <label className="description">
+              1) Click the ‘upload’ button and drag & drop the pdf file.<br/>
+              2) Copy the URL created, and use this URL in the ‘insert link’ feature in the body section.
+            </label>
           </div>
 
           <div className="field">

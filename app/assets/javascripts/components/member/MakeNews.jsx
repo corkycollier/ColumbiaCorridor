@@ -29,6 +29,15 @@ const MakeNews = React.createClass({
     });
   },
 
+  uploadWidget () {
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
+    function(error, result) {
+      if (result) {
+        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
+      }
+    }.bind(this));
+  },
+
   fadeIn () {
     $('.ui.container').transition({
       animation  : 'fade in' ,
@@ -106,6 +115,24 @@ const MakeNews = React.createClass({
                 <textarea id="news-body" />
               </div>
 
+              <div className="field" style={{ "position" : "relative" , }}>
+                <label>Upload PDF</label>
+                <input type="text" className="image-uploader" />
+                <div className="ui button mini blue"
+                     onClick={ this.uploadWidget }
+                     style={{
+                    "position" : "absolute" ,
+                    "right" : "2px" ,
+                    "top" : "28px" ,
+                  }}>
+                  Upload
+                </div>
+                <label className="description">
+                  1) Click the ‘upload’ button and drag & drop the pdf file.<br/>
+                  2) Copy the URL created, and use this URL in the ‘insert link’ feature in the body section.
+                </label>
+              </div>
+
               <button className="ui button" type="submit">
                 Submit
               </button>
@@ -147,6 +174,15 @@ const EditNewsAdmin = React.createClass({
         api_key: api_key
       }
     });
+  },
+
+  uploadWidget () {
+    cloudinary.openUploadWidget({ cloud_name: 'dtizwr3wv', upload_preset: 'f6zu0cw2'},
+    function(error, result) {
+      if (result) {
+        $(ReactDOM.findDOMNode(this)).find('.image-uploader').val( result[0].secure_url )
+      }
+    }.bind(this));
   },
 
   componentDidMount () {
@@ -213,6 +249,24 @@ const EditNewsAdmin = React.createClass({
               <div className="field body-field" onBlur={ this.updateBody }>
                 <label>Body</label>
                 <textarea id="news-body" defaultValue={ this.props.news.body } />
+              </div>
+
+              <div className="field" style={{ "position" : "relative" , }}>
+                <label>Upload PDF</label>
+                <input type="text" className="image-uploader" />
+                <div className="ui button mini blue"
+                     onClick={ this.uploadWidget }
+                     style={{
+                    "position" : "absolute" ,
+                    "right" : "2px" ,
+                    "top" : "28px" ,
+                  }}>
+                  Upload
+                </div>
+                <label className="description">
+                  1) Click the ‘upload’ button and drag & drop the pdf file.<br/>
+                  2) Copy the URL created, and use this URL in the ‘insert link’ feature in the body section.
+                </label>
               </div>
 
               <button className="ui button small" type="submit" style={{ "background" : "#262262" , "color" : "white" }}>
