@@ -94,7 +94,8 @@ const MakeEvent = React.createClass({
     this.setState(state);
   },
 
-  handleSave () {
+  handleSave (e) {
+    e.preventDefault();
     $.ajax({
       url: '/api/events',
       type: 'POST',
@@ -325,8 +326,8 @@ const EditEvent = React.createClass({
     this.setState(state);
   },
 
-  handleSave () {
-
+  handleSave (e) {
+    e.preventDefault();
     $.ajax({
       url: '/api/events/' + this.state.id ,
       type: 'PATCH',
@@ -336,7 +337,6 @@ const EditEvent = React.createClass({
         Backbone.history.navigate( 'admin/events' , { trigger : true } );
       }.bind(this), error: function (a, b, c) {
         alert("There was an error. Try again later.");
-        Backbone.history.navigate( 'admin/events' , { trigger : true } );
       }
     });
   },

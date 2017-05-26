@@ -12,95 +12,29 @@ const YearInReview = React.createClass({
   },
   render () {
     return (
-      <div className="ui container" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+      <div className="ui container year-in-reivew" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1>
-          Year in Review
+          2016 Year in Review
         </h1>
         <div className="ui grid">
           <div className="row">
-            <div className="eight wide column">
-              <h2>
-                Drainage District Levee Re-Accreditation
-              </h2>
-
-              <p>
-                Because flood management and federal flood insurance are vital to businesses and residents in the Corridor, CCA has been actively participating in a two-year process designed to address cost-sharing on levee improvements in Peninsula Drainage Districts 1 and 2 led by the Governor’s Oregon Solutions. In 2015, this effort expanded to include two other drainage districts in the Corridor – Multnomah County Drainage District and Sandy Drainage Improvement Company. A Declaration of Cooperation with all the drainage districts and cities in the corridor, Multnomah County, Metro and the state was approved in the fall. CCA, along with other stakeholders, secured a $1.4 million loan from Business Oregon and $300,000 in grant funds from the Metro Regional Solutions Team to support the technical analysis required for re-accreditation of the drainage districts, and $7 million in state funding for levee re-accreditation statewide.
-              </p>
-            </div>
-
-            <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid centered" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670261/1_fp1qkn_jmxi5b.jpg"></img>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid centered" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/w_0.98,c_crop/w_0.98,c_crop/v1494388889/yir2_cv9fjy.png"></img>
-            </div>
-
-            <div className="eight wide column">
+            <div className="sixteen wide column">
               <h2>
                 Transit and Freight Improvements
               </h2>
-
+              <img className="ui image fluid centered" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494459440/2_vaap2b_nfsdlp.jpg" style={{"width":"30%", "float":"left", "paddingRight":"20px"}}/>
+              <p>CCA was a key participant in negotiations over the new City of Portland gas tax.  CCA advocated for better fiscal returns on investments from the new tax.  Recognizing that applying a gas tax to heavy diesel vehicles would put the Jubitz truck stop at a singular disadvantage, CCA worked with the City to create a complimentary weight-mile tax for heavy diesel vehicles and ensured the proceeds will go to freight districts.</p>
+              <img className="ui image fluid centered" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494459407/yir2_xyzqtv_ectykz.png" style={{"width":"30%", "float":"right", "paddingLeft":"20px"}}/>
+              <p>CCA worked to ensure that the improvements planned for a new Local Improvement District (LID) on NE 47th Avenue between Columbia Boulevard and Cornfoot will not impede freight mobility. The innovative design for bike/pedestrian/freight movement is being recognized as a model for future projects.   CCA worked on the creation of a second LID on 112th and Marx Street, which combined freight, development, environmental and homeless concerns.  Work on a third LID on Suttle Road is underway.</p>
               <p>
-                CCA created a series of focus groups with TriMet to improve bus service connecting residential communities to industrial areas, and relieve congestion in key corridors. New routes and expanded service to the Corridor are in the final stages of planning. CCA is helping to create a new Local Improvement District on NE 47th Avenue in Portland and continues to advocate for freight network improvements on Burgard and Rivergate. At the state level, CCA worked to support the state gas tax effort in the 2015 Legislature and will renew its efforts in 2017 in order to better fund road maintenance.
+                CCA helped secure federal Transportation Investment Generating Economic Recovery (TIGER) funding for the Rivergate Overcrossing which will relieve train-car conflicts and provide pedestrian access.  At the state level, CCA is gearing up to support the state gas tax effort in the 2017 Legislature to ensure maintenance, capacity enhancement, and seismic resiliency of Oregon’s transportation network that provides Oregon businesses critical access to global markets.
               </p>
             </div>
           </div>
 
           <div className="row">
-            <div className="eight wide column">
-              <h2>
-                Drainage District Levee Re-Accreditation
-              </h2>
-
-              <p>
-                For the past two years, CCA has been actively involved in the City’s 20-year visioning process to ensure that there is a balance of economic and environmental goals in the Comprehensive Plan update. To this end, CCA has advocated for policy language to support industrial development within the City (including Portland Harbor cleanup and brownfield redevelopment). In the City’s Economic Opportunity Analysis discussions, CCA continues to underscore the value the Corridor and Portland Harbor play in the City’s economy today and in the future. This includes encouraging the City to identify freight improvement projects in the Portland Transportation System Plan to support the industrial sector.City Council is scheduled to approve the Comprehensive Plan, Economic Opportunity Analysis and Transportation System Plan updates in 2016. As a companion to this work, CCA also lobbied the City to adopt a new industrial zoning overlay in key areas. All of these efforts will guide industrial development and middle income jobs for the coming decades.
-              </p>
-            </div>
-
             <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494389026/yir1_zlik0f.png"></img>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670261/2_vaap2b_ri60ce.jpg"></img>
-            </div>
-
-            <div className="eight wide column">
-              <h2>
-                Transit and Freight Improvements
-              </h2>
-
-              <p>
-                As part of the Comprehensive Plan, the City has identified brownfields as critical to accommodating forecasted population and job growth over the next 20 years, but new tools are needed to make this vision a reality. CCA participated in a diverse statewide coalition to provide brownfield redevelopment tools. In 2015, the Legislature approved a $7 million recapitalization of the state Brownfield Revolving Loan program, and legislation to support land banking of brownfields by local jurisdictions. CCA and the coalition will push for brownfield tax abatements and tax credits to incent clean-up in 2016. CCA is committed to working with local jurisdictions to provide support for brownfield redevelopment on the ground in Portland.
-              </p>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="eight wide column">
-              <h2>
-                Middle Wage Jobs and Equity
-              </h2>
-
-              <p>
-                The Portland metro region continues to face an increase in the number of households with incomes below $35,000/year and a decrease in household incomes of $35,000-$75,0000/year. Middle wage jobs are key to a prosperous region and the norm for Columbia Corridor businesses. The average wage in the Columbia Corridor is just shy of $50,000 and the percentage of middle wage jobs is higher than any other sector in the region. Traded-sector businesses such as those located in the Corridor build middle wage jobs, and provide opportunities for low income residents and communities of color. CCA is working with stakeholders in the corridor (and CCA members) to educate our elected officials and others on this issue. This includes the Portland Bureau of Planning and Sustainability, East Portland Action Plan, The Rosewood Initiative, Verde, Human Solutions, and Community Works.
-              </p>
-            </div>
-
-            <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670265/3_mlzoet_sdp1hp.jpg"></img>
-            </div>
-          </div>
-
-
-          <div className="row">
-            <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
-              <img className="ui image fluid" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494389165/yir3_amcwvz.png"></img>
+              <img className="ui image fluid centered" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494459492/yir3_d4zyva_k3k9wm.png" />
             </div>
 
             <div className="eight wide column">
@@ -108,51 +42,62 @@ const YearInReview = React.createClass({
                 Business Advocacy
               </h2>
 
-              <p>
-                CCA and other business interests weighed in on the proposed Pembina propane terminal adjacent to the Port of Portland’s Terminal 6, on a strategically located but constrained 40-acre industrial site. The $500 million facility would have generated over $12 million in tax revenues to the City, Multnomah County and school district annually, and employed 600 to 800 construction workers and 30 to 40 permanent facility jobs with wages averaging $95,000/year. Propane is considered to be a cleaner alternative to more carbon intensive fuels. While stakeholder efforts were successful in achieving an affirmative vote from the Planning and Sustainability Commission for the project, the City Council declined to discuss the project.
-              </p>
+              <p>CCA has been an actively engaged with the Portland Harbor Superfund Record of Decision (ROD) released in January 2017. CCA organized a meeting with EPA Region 10 Director Dennis McLaren and Portland business associations on March 30. Following this meeting, CCA hosted a forum on the Portland Harbor with Corridor businesses, the Governor’s office and the City of Portland. CCA provided comments to EPA on the proposed plan and assisted the City of Portland in creating a comment process.</p>
+              <p>A new CCA committee took on homelessness in the Corridor to address crime, water quality and safety issues.  In the 2016 Legislature, CCA worked with our utility members in supporting the coal to clean utility bill. Recognizing that most industrial businesses pay at least $15/hour starting wages, we supported a phased increase in the minimum wage.</p>
             </div>
           </div>
 
-
           <div className="row">
             <div className="sixteen wide column">
-              <h2>
-                EPA Clean Diesel Grant
-              </h2>
+              <h2>Industrial and Brownfield Redevelopment</h2>
 
-              <p>
-                As part of our business advocacy efforts, CCA continues its work on a U.S. EPA grant to cover a portion of the costs of replacing older diesel trucks with newer clean diesel trucks. Three businesses (McCracken, JNB, and Green Transfer) used this grant funding to replace five older diesel trucks. The current line of diesel engines emit 98.3% less particulate matter and 99.1% less nitrogen oxide than 1984 trucks, and the seats are more comfortable.
-              </p>
-
-              <h2>
-                Business Education and Networking
-              </h2>
-
-              <p>
-                CCA continues its Business, Retention and Expansion efforts this year, welcoming new businesses to the corridor and meeting with existing members to learn about interests and challenges facing the business community. CCA is an active conduit for connecting businesses with the resources they need. If your business would like to meet with a board member, please let us know.
-              </p>
+              <p>To accommodate forecasted population and job growth over the next 20 years, the City of Portland identified industrial land and brownfield redevelopment as a focus of its 2035 Comprehensive Plan.  CCA urged the City to include a more accurate inventory of industrial land within the City and removal of properties not available for industrial development from that inventory.  CCA worked with Riverside Golf Club to petition removal of this golf course from, and inclusion of Broadmoor in, the City’s industrial land inventory.</p>
+              <p>To support redevelopment of brownfields, CCA has joined a statewide brownfield coalition to lobby for new brownfield redevelopment tools to make this vision a reality. In the 2016 Legislative session, CCA and the coalition were successful in securing approval of a brownfield tax abatement program and tax credits to incent clean-up.  CCA’s work with the coalition is an extension of a decade of active promotion of brownfield redevelopment. It’s good for the environment, good for our land use system, and good for business.</p>
             </div>
           </div>
 
+          <div className="row">
+            <div className="sixteen wide column">
+              <h2>EPA Clean Diesel Grant</h2>
+
+              <p>As part of our business advocacy efforts, CCA submitted and received $570,000 in funding for a second U.S. Environmental Protection Agency (EPA) grant to cover a portion of the costs of replacing older diesel trucks with newer clean diesel trucks.  Three businesses will purchase nine clean diesel trucks. In addition, three more businesses, including Meals on Wheels People will install electrified loading bays for refrigerated units, reducing diesel running time. 2016 diesel engines emit 98.3% less particulate matter and 99.1% less nitrogen oxide than 1984 trucks; plus, the seats are more comfortable.</p>
+            </div>
+          </div>
 
           <div className="row">
             <div className="sixteen wide column">
-              <h2>
-                Monthly Information Forums
-              </h2>
+              <h2>Drainage District Levee Re-Accreditation</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="six wide column">
+              <p>Because flood management and federal flood insurance are vital to businesses and residents, CCA continues to be actively engaged in a process designed to address cost-sharing on levee improvements in the Corridor’s four drainage districts. CCA joined Multnomah County Drainage District (MCDD) on a trip to Washington, DC to seek a New Starts grant to study Corridor levee improvements.  A second lobby trip to DC is scheduled for 2017.  CCA is also supporting a request for $10 million in state funding for levee re-accreditation statewide. The success of this effort, due to leadership from Oregon Solutions and MCDD, has led to an excellent working relationship with federal regulators, collaborative funding, grant potential, and a new model for the state.</p>
+            </div>
 
-              <p>
-                CCA hosts monthly information forums for businesses in the Corridor. In 2015, breakfast forums were held on issues including flood levee improvements, Portland’s economic opportunity analysis, commercial real estate trends & forecasts, marijuana testing, and Oregon trade infrastructure. In addition, CCA sponsored twoforums with leaders to ensure Corridor businesses had an opportunity to discuss issues of concern in an informal session. This year, CCA members met with House Speaker Tina Kotek and new Portland Bureau of Environmental Services director Michael Jordan.
-              </p>
+            <div className="five wide column">
+              <img className="ui image fluid centered" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494459391/1_fp1qkn_p6rnze.jpg" />
+            </div>
+            <div className="five wide column">
+              <img className="ui image fluid centered" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494459428/yir1_iyjthk_bwyfwf.png" />
+            </div>
+          </div>
 
-              <h2>
-                Annual Golf Tournament
-              </h2>
+          <div className="row">
+            <div className="sixteen wide column">
+              <h2>Business Education and Networking</h2>
 
-              <p>
-                Every year CCA hosts an annual Golf Tournamentat the Riverside Golf Club to support CCA activities and facilitate Corridor business networking. Plan on attending next year’s golf tournament in September.
-              </p>
+              <p>In 2016, CCA has seen significant business expansion. Vacancy rates in industrial buildings are below 5% and new buildings are being fully leased before construction is finished. CCA continued its Business, Retention and Expansion efforts this year, welcoming new businesses to the Corridor and meeting with existing members to learn about interests and challenges facing the business community.  CCA is an active conduit for connecting businesses with the resources they need. If your business would like to meet with a board member, please let us know.</p>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="eight wide column">
+              <p>CCA hosts monthly <b>information forums</b> on current topics impacting business in the Corridor.  In 2016, breakfast forums were held on issues including the City of Portland gas tax, earthquake preparedness, commercial real estate trends & forecasts, Portland Harbor Superfund cleanup, state transportation funding, gross tax receipt initiative petition, and homelessness challenges.  In addition, CCA sponsored a Portland mayoral candidate debate and discussion with the state’s new Business Oregon director Chris Harder and the City of Portland’s new Portland Development Commission director Kimberly Branam. This year, CCA also hosted a Brewpub Social networking event and Oregon Humane Society open house.</p>
+              <p>Our <b>new website</b> offers increased networking opportunities for members. Member-generated news, coordinated Facebook and LinkedIn feeds, and a more robust member profile will help your company extend its reach and publicize activities. You can find us at <a href="http://www.ColumbiaCorridor.org" target="_blank">www.ColumbiaCorridor.org</a> or <a href="http://www.CCA.works" target="_blank">www.CCA.works</a>.</p>
+              <p>Every year CCA hosts an <b>annual Golf Scramble at the Riverside Golf Club</b> to support CCA activities and facilitate Corridor business networking.  Plan to attend next year’s golf tournament in October.</p>
+            </div>
+            <div className="eight wide column" style={{ "padding" : "12px 60px" , }}>
+              <img className="ui image fluid centered" style={{ "marginLeft" : "12px" , "borderRadius" : "1px" }} src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1494459572/JOIN-Sponsors_03_sodj8w_uyon84.png" />
             </div>
           </div>
 

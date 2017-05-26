@@ -177,7 +177,7 @@ const RegularMenu = React.createClass({
               </div>
 
               <div className="item" data-path="year-in-review" onClick={ this.go } style={{ "textAlign" : "center" , }}>
-                YEAR IN REVIEW 2015
+                YEAR IN REVIEW
               </div>
             </div>
           </a>

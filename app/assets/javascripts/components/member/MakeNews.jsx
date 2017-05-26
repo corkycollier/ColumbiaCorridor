@@ -193,7 +193,8 @@ const EditNewsAdmin = React.createClass({
     }.bind(this), 0);
   },
 
-  submitNews () {
+  submitNews (e) {
+    e.preventDefault();
     $.ajax({
       url: '/api/news/' + this.props.news.id ,
       type: 'PATCH',
@@ -203,7 +204,6 @@ const EditNewsAdmin = React.createClass({
         Backbone.history.navigate('admin/news' , { trigger : true })
       }.bind(this), error: function (app_data, resp, obj) {
         alert('There was an error.')
-        // Backbone.history.navigate('admin/news' , { trigger : true })
       }
     })
   },
