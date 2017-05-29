@@ -69,7 +69,7 @@ const MakeEvent = React.createClass({
     var state = this.state;
     var timestamp = Date.parse(e.currentTarget.value);
     if ( isNaN(timestamp) == false ) {
-      state['date'] = moment(timestamp).format('YYYY-MM-DD');
+      state['date'] = moment.utc(timestamp).format('YYYY-MM-DD');
     } else {
       state['date'] = null;
       e.currentTarget.value = null;
