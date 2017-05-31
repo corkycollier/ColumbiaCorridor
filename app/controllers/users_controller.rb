@@ -8,8 +8,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.valid?
+      @user.save
       message_gary @user
+      constant_contact
       sign_in!(@user)
       redirect_to root_url
     else
@@ -85,22 +87,23 @@ class UsersController < ApplicationController
       response = sg.client.mail._('send').post(request_body: data)
     end
 
-    constant_contact
+    # constant_contact
   end
 
   def constant_contact
-    if ENV['constant_api_key'].present?
+    unless ENV['constant_api_key'].nil?
       @cc = ConstantContact::Api.new(ENV['constant_api_key'], "936ed46e-7474-4f50-9bec-945c6044545d" )
-      contact = ConstantContact::Components::Contact.new
+      # @cc = ConstantContact::Api.new("ucyx8razvbd6gffuwnsenzm6", "936ed46e-7474-4f50-9bec-945c6044545d" )
+      contacts = @cc.get_contact_by_email(user_params[:email])
 
-      # The email address itself is a parameter of an EmailAddresses object, so you first make an EmailAddress object by passing your email variable, and pass that EmailAddress object into add_email.
-      # Also, you should pass them through like this:
-      # contact.add_email(variable)
-      # rather than this:
-      # contact.add_email variable
-      contact.add_email(ConstantContact::Components::EmailAddress.new(user_params[:email]))
+      if contacts.results.count > 0
+        contact = contacts.results[0]
+        contact.status = "ACTIVE";
+      else
+        contact = ConstantContact::Components::Contact.new
+        contact.add_email(ConstantContact::Components::EmailAddress.new(user_params[:email]))
+      end
 
-      # You will need to also include a list with your contact for it to be added to your list. Replace your_list_id_number_here with the ID of the list you want to add them to.
       contact_list = '1053434830'
       list_to_add_to = ConstantContact::Components::ContactList.new
       list_to_add_to.id = contact_list
@@ -109,13 +112,14 @@ class UsersController < ApplicationController
       contact.last_name = user_params[:last_name]
       contact.company_name = user_params[:company_name]
 
-      # If you are still seeing a bad request error, you may need to convert your contact to json when you are submitting it, as shown on the next line.
-      # @cc.add_contact(contact).to_json
-      # Try adding the .to_json operator to your add_contact call if you are still seeing a bad request error.
-      # This call should also pass your contact object through in parentheses.
       begin
-        @cc.add_contact(contact)
-      rescue
+        if contacts.results.count > 0
+          @cc.update_contact(contact)
+        else
+          @cc.add_contact(contact)
+        end
+      rescue => e
+        return e
       end
     end
   end
