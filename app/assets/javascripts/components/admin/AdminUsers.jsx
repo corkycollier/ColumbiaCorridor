@@ -113,14 +113,15 @@ const AdminUsers = React.createClass({
                         >
                         edit
                       </a>
-
-                      <a
-                        data-id={el.id}
-                        onClick={ this.delete }
-                        >
-                        delete
-                      </a>
-
+                      {
+                        (el.role != 'Admin') ?
+                          <a
+                            data-id={el.id}
+                            onClick={this.delete}
+                          >
+                            delete
+                          </a> : ''
+                      }
                     </td>
                   </tr>
                 )
