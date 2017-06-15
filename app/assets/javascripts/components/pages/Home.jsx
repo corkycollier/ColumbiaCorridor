@@ -191,9 +191,6 @@ const BlueFooter = React.createClass({
           <div>
             {
               this.props.parent.state.news.slice(0, 3).map(function(el) {
-  
-                if (el.author != "Corky Collier" && el.author != "Samuel Ullman") { return ;}
-  
                 return(
                   <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
                     <a href={"#news/" + el.id} style={{
