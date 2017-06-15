@@ -86,6 +86,7 @@ const MakeEvent = React.createClass({
 
     if ( isNaN(timestamp) == false ) {
       state[key] = moment(timestamp).format('HH:mm');
+      e.currentTarget.value = moment(timestamp).format('hh:mm A');
     } else {
       state[key] = null;
       e.currentTarget.value = null;
@@ -163,12 +164,12 @@ const MakeEvent = React.createClass({
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="time" data-field="start" onBlur={ this.updateTime } required />
+              <input type="text" data-field="start" onBlur={ this.updateTime } required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="time" data-field="end" onBlur={ this.updateTime } required />
+              <input type="text" data-field="end" onBlur={ this.updateTime } required />
             </div>
           </div>
 
@@ -318,12 +319,23 @@ const EditEvent = React.createClass({
 
     if ( isNaN(timestamp) == false ) {
       state[key] = moment(timestamp).format('HH:mm');
+      e.currentTarget.value = moment(timestamp).format('hh:mm A');
     } else {
       state[key] = null;
       e.currentTarget.value = null;
     }
 
     this.setState(state);
+  },
+
+  showTime(time) {
+    var value = moment().format('YYYY/MM/DD') + ' ' + time;
+    var timestamp = Date.parse(value);
+    if ( isNaN(timestamp) == false ) {
+      return moment(timestamp).format('hh:mm A');
+    } else {
+      return null;
+    }
   },
 
   handleSave (e) {
@@ -395,12 +407,12 @@ const EditEvent = React.createClass({
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="time" data-field="start" onBlur={ this.updateTime }  defaultValue={this.state.start} required />
+              <input type="text" data-field="start" onBlur={ this.updateTime }  defaultValue={this.showTime(this.state.start)} required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="time" data-field="end" onBlur={ this.updateTime } defaultValue={this.state.end} required />
+              <input type="text" data-field="end" onBlur={ this.updateTime } defaultValue={this.showTime(this.state.end)} required />
             </div>
           </div>
 

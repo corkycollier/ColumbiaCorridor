@@ -19,6 +19,7 @@ class New < ActiveRecord::Base
 
     if self.user
       attributes['author'] = self.user.first_name + " " + self.user.last_name
+      attributes['role'] = self.user.role
     else
       attributes['author'] =  "CCA Member"
     end

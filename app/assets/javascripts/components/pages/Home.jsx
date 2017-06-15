@@ -129,6 +129,15 @@ const BlueFooter = React.createClass({
   },
   
   render () {
+    console.log(this.props.parent.state.news);
+    var news_flash = [];
+    for (i = 0; i < this.props.parent.state.news.length && news_flash.length < 3; i++) {
+      var news = this.props.parent.state.news[i];
+      if (news.role == "Admin") {
+        news_flash.push(news);
+      }
+    }
+
     return (
       <div className="ui grid centered" style={{
           "background" : "url(https://res.cloudinary.com/dtizwr3wv/image/upload/v1494386505/footer_tgdoad_ffmekf_e9nc9d.jpg)" ,
@@ -190,7 +199,7 @@ const BlueFooter = React.createClass({
           </h1>
           <div>
             {
-              this.props.parent.state.news.slice(0, 3).map(function(el) {
+              news_flash.map(function(el) {
                 return(
                   <div key={"fni" + el.id} style={{ "margin" : "25px" ,}}>
                     <a href={"#news/" + el.id} style={{
