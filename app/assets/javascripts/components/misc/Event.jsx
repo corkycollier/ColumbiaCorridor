@@ -54,7 +54,7 @@ const Event = React.createClass({
     var value = moment().format('YYYY/MM/DD') + ' ' + time;
     var timestamp = Date.parse(value);
     if ( isNaN(timestamp) == false ) {
-      return moment(timestamp).format('hh:mm A');
+      return moment(timestamp).format('h:mm A');
     } else {
       return null;
     }
