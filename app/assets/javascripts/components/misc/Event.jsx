@@ -50,6 +50,16 @@ const Event = React.createClass({
     }
   },
 
+  showTime(time) {
+    var value = moment().format('YYYY/MM/DD') + ' ' + time;
+    var timestamp = Date.parse(value);
+    if ( isNaN(timestamp) == false ) {
+      return moment(timestamp).format('hh:mm A');
+    } else {
+      return null;
+    }
+  },
+
   render () {
     var color;
     switch( this.state.event.event_type ) {
@@ -85,33 +95,6 @@ const Event = React.createClass({
       dateString = dateString.slice(1);
     }
 
-    var startString = this.state.event.start;
-
-    if (startString[0] == "0") {
-      startString = startString.slice(1);
-    }
-    if ( parseInt(startString.split(":")[0]) < 12 ) {
-      startString += " AM"
-    } else {
-      startString += " PM"
-    }
-
-    startString[0] = parseInt(startString[0]) % 12
-
-
-    var endString = this.state.event.end;
-
-    if (endString[0] == "0") {
-      endString = endString.slice(1);
-    }
-    if ( parseInt(endString.split(":")[0]) < 12) {
-      endString += " AM"
-    } else {
-      endString += " PM"
-    }
-
-    endString[0] = parseInt(endString[0]) % 12
-
     return (
       <div className="ui container" style={{"minHeight" : "50vh" , "margin" : "30px 20px" }} >
 
@@ -141,7 +124,7 @@ const Event = React.createClass({
                   </li>
 
                   <li>
-                    { startString } to { endString }
+                    { this.showTime(this.state.event.start) } to { this.showTime(this.state.event.end) }
                   </li>
 
                   { this.custom() }
