@@ -27,7 +27,7 @@ const AboutCCA = React.createClass({
             </p>
 
             <p>
-              The Columbia Corridor is a dynamic mix of manufacturing, transportation, export facilities and even a few small neighborhoods. Our members include the Oregon Humane Society (located in the Corridor for the past century), the Oregon Food Bank and Multnomah Community College. A full third of the Columbia Corridor is open space. The Columbia Slough runs 18 miles down the middle of the Corridor, from Fairview and Blue Lakes to Kelly Point Park. We’re home to Smith & Bybee Lakes, Vanport Wetlands, west Hayden Island, and Delta Park.
+              The Columbia Corridor is a dynamic mix of manufacturing, transportation, export facilities and even a few small neighborhoods. Our members include the Oregon Humane Society (located in the Corridor for the past century), the Oregon Food Bank and Mt. Hood Community College. A full third of the Columbia Corridor is open space. The Columbia Slough runs 18 miles down the middle of the Corridor, from Fairview and Blue Lakes to Kelly Point Park. We’re home to Smith & Bybee Lakes, Vanport Wetlands, west Hayden Island, and Delta Park.
             </p>
 
             <p>
