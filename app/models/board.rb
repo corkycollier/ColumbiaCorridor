@@ -10,11 +10,11 @@
 #
 
 class Board < ActiveRecord::Base
-  
+
   scope :published, -> { where(published: true) }
-  
+
   before_save :standardize
-  
+
   def standardize
     # nil values cause errors so don't store nil values
     self.title   = "" unless title.present?
@@ -29,7 +29,7 @@ class Board < ActiveRecord::Base
   def safe_show
     self.attributes
   end
-  
+
   def self.find_by_title(title)
     board.find_by()
   end
@@ -41,17 +41,19 @@ class Board < ActiveRecord::Base
       "Treasurer",
       "Secretary",
     ]
-    
-    title_ordered_board_members = ordered_titles.map do |title| 
+
+    title_ordered_board_members = ordered_titles.map do |title|
       Board.find_by(title: title)
     end
-    
+
     other_board_members = Board.where.not(title: ordered_titles)
-    
-    orderd_other_board_members = other_board_members.to_a.sort_by! do |board| 
-      board.name.try(:split, "").try(:second) || "ZZZZZ"
+
+    orderd_other_board_members = other_board_members.to_a.sort_by! do |board|
+      v = board.name.try(:split).try(:last) || "ZZZZZ"
+      puts v
+      board.name.try(:split).try(:last) || "ZZZZZ"
     end
-    
+
     (title_ordered_board_members + orderd_other_board_members).compact
   end
 end
