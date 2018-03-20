@@ -26,10 +26,20 @@
 
 @import "semantic-ui";
 
+.ui.segment.ui.grid.brown,
+.ui.segment.ui.grid.violet,
+.ui.segment.ui.grid.green,
+.ui.segment.ui.grid.orange,
+.ui.segment.ui.grid.yellow,
+.ui.segment.ui.grid.red,
+{
+    border-top-width: 0.75rem;
+}
+
 .ui .message {
     background: #FFF;
 }
 
-.ui.message p {
+.ui .message p {
     opacity: 1;
 }
