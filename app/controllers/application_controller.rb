@@ -59,7 +59,7 @@ class ApplicationController < ActionController::Base
       events: Event.collect_all,
       event_locations:  Event.collect_locations,
       upcoming_events:  Event.upcoming,
-      ads: Ad.all.collect{ |ad| ad.safe_show } ,
+      ads: Ad.all.collect{ |ad| ad.safe_show }.shuffle ,
       staff: Staff.all.collect{ |staff| staff.safe_show } ,
       board:  Board.safe_order ,
       archives: Archive.all.collect{ |archive| archive.safe_show } ,
