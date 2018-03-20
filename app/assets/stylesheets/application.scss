@@ -27,6 +27,9 @@
 @import "semantic-ui";
 
 .ui .message {
-    opacity: 1;
     background: #FFF;
+}
+
+.ui.message p {
+    opacity: 1;
 }
