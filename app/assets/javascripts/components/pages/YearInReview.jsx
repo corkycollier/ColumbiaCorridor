@@ -12,7 +12,7 @@ const YearInReview = React.createClass({
   },
   render () {
     return (
-      <div className="ui container year-in-reivew" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
+      <div className="ui container year-in-review" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1>
           2016 Year in Review
         </h1>
