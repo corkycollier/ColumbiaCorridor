@@ -86,7 +86,6 @@ const MakeEvent = React.createClass({
 
     if ( isNaN(timestamp) == false ) {
       state[key] = moment(timestamp).format('HH:mm');
-      e.currentTarget.value = moment(timestamp).format('hh:mm A');
     } else {
       state[key] = null;
       e.currentTarget.value = null;
@@ -319,7 +318,6 @@ const EditEvent = React.createClass({
 
     if ( isNaN(timestamp) == false ) {
       state[key] = moment(timestamp).format('HH:mm');
-      e.currentTarget.value = moment(timestamp).format('hh:mm A');
     } else {
       state[key] = null;
       e.currentTarget.value = null;
@@ -332,7 +330,7 @@ const EditEvent = React.createClass({
     var value = moment().format('YYYY/MM/DD') + ' ' + time;
     var timestamp = Date.parse(value);
     if ( isNaN(timestamp) == false ) {
-      return moment(timestamp).format('hh:mm A');
+      return moment(timestamp).format('h:mm A');
     } else {
       return null;
     }
