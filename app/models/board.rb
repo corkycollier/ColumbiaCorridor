@@ -49,8 +49,6 @@ class Board < ActiveRecord::Base
     other_board_members = Board.where.not(title: ordered_titles)
 
     orderd_other_board_members = other_board_members.to_a.sort_by! do |board|
-      v = board.name.try(:split).try(:last) || "ZZZZZ"
-      puts v
       board.name.try(:split).try(:last) || "ZZZZZ"
     end
 
