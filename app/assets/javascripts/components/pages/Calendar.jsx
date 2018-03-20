@@ -73,28 +73,28 @@ const Calendar = React.createClass({
         case "Special Events":
         newEvent['backgroundColor'] = "#FBBD08" ;
         newEvent['borderColor'] = "#FBBD08" ;
-        newEvent['color'] = "ynewEventlow" ;
+        newEvent['color'] = "yellow" ;
 
         break;
 
         case "Lunch w/ Leaders":
-        newEvent['backgroundColor'] = "#6435C9" ;
-        newEvent['borderColor'] = "#6435C9" ;
-        newEvent['color'] = "violet" ;
+        newEvent['backgroundColor'] = "#a66941" ;
+        newEvent['borderColor'] = "#a66941" ;
+        newEvent['color'] = "brown" ;
 
         break;
 
         case "ResourceFULL Use Workshops":
-        newEvent['backgroundColor'] = "#db2b2b" ;
-        newEvent['borderColor'] = "#db2b2b" ;
-        newEvent['color'] = "red" ;
+        newEvent['backgroundColor'] = "#21BA45" ;
+        newEvent['borderColor'] = "#21BA45" ;
+        newEvent['color'] = "green" ;
 
         break;
 
         case "Tours & Member Exchanges":
-        newEvent['backgroundColor'] = "#a66941" ;
-        newEvent['borderColor'] = "#a66941" ;
-        newEvent['color'] = "brown" ;
+        newEvent['backgroundColor'] = "#6435C9" ;
+        newEvent['borderColor'] = "#6435C9" ;
+        newEvent['color'] = "violet" ;
 
         break;
         default:
@@ -216,11 +216,11 @@ const Calendar = React.createClass({
           <b>Breakfast Forums</b>
         </div>
 
-        <div className="ui button violet" data-filter="Lunch w/ Leaders" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
+        <div className="ui button brown" data-filter="Lunch w/ Leaders" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
           <b>Lunch w/ Leaders</b>
         </div>
 
-        <div className="ui button red" data-filter="ResourceFULL Use Workshops" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
+        <div className="ui button green" data-filter="ResourceFULL Use Workshops" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
           <b>ResourceFULL Use Workshops</b>
         </div>
 
@@ -228,11 +228,11 @@ const Calendar = React.createClass({
           <b>Special Events</b>
         </div>
 
-        <div className="ui button brown" data-filter="Tours & Member Exchanges" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
+        <div className="ui button violet" data-filter="Tours & Member Exchanges" onClick={this.updateFilter} style={{ "float" : "left" , "margin" : "8px"}}>
           <b>Tours & Member Exchanges</b>
         </div>
 
-        <div className="ui button green" data-filter="" onClick={this.updateFilter} style={{ "margin" : "8px" , "marginBottom" : "24px" }}>
+        <div className="ui button red" data-filter="" onClick={this.updateFilter} style={{ "margin" : "8px" , "marginBottom" : "24px" }}>
           <b>All</b>
         </div>
 
