@@ -68,23 +68,23 @@ const Event = React.createClass({
 
       break;
 
+      case "Lunch w/ leaders":
+      color = "brown" ;
+
+      break;
+
+      case "ResourceFULL Use Workshops":
+      color = "green" ;
+
+      break;
+
       case "Special Events":
       color = "yellow" ;
 
       break;
 
-      case "Lunch w/ leaders":
-      color = "violet" ;
-
-      break;
-
-      case "ResourceFULL Use Workshops":
-      color = "red" ;
-
-      break;
-
       case "Tours & Member Exchanges":
-      color = "brown" ;
+      color = "violets" ;
 
       break;
       default:
@@ -100,14 +100,14 @@ const Event = React.createClass({
 
         <div className="ui grid centered">
           <div className="twelve wide column">
-            <div className="ui message">
+            <div className="ui message event">
               <h2 className="ui header">
                 <div id="title">
                 </div>
               </h2>
 
               <div className="ui divider"></div>
-              
+
               <div id="body">
               </div>
             </div>
