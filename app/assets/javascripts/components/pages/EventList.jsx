@@ -92,23 +92,23 @@ const EventList = React.createClass({
         break;
 
         case "Lunch w/ Leaders":
-        el['backgroundColor'] = "#6435C9" ;
-        el['borderColor'] = "#6435C9" ;
-        el['color'] = "violet" ;
+        el['backgroundColor'] = "#a66941" ;
+        el['borderColor'] = "#a66941" ;
+        el['color'] = "brown" ;
 
         break;
 
         case "ResourceFULL Use Workshops":
-        el['backgroundColor'] = "#db2b2b" ;
-        el['borderColor'] = "#db2b2b" ;
-        el['color'] = "red" ;
+        el['backgroundColor'] = "#21BA45" ;
+        el['borderColor'] = "#21BA45" ;
+        el['color'] = "green" ;
 
         break;
 
         case "Tours & Member Exchanges":
-        el['backgroundColor'] = "#a66941" ;
-        el['borderColor'] = "#a66941" ;
-        el['color'] = "brown" ;
+        el['backgroundColor'] = "#6435C9" ;
+        el['borderColor'] = "#6435C9" ;
+        el['color'] = "violet" ;
 
         break;
         default:
@@ -255,7 +255,7 @@ const EventList = React.createClass({
           <b>Special Events</b>
         </div>
 
-        <div className="ui button purple" data-filter="Tours & Member Exchanges" onClick={this.updateFilter} style={{  "marginRight" : "16px" , "marginBottom" : "22px"}}>
+        <div className="ui button violet" data-filter="Tours & Member Exchanges" onClick={this.updateFilter} style={{  "marginRight" : "16px" , "marginBottom" : "22px"}}>
           <b>Tours & Member Exchanges</b>
         </div>
 
