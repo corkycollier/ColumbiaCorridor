@@ -103,7 +103,7 @@ const AdminAdsRow = React.createClass({
             ads: app_data.ads
           })
         }.bind(this), error: function ( app_data , resp , obj ) {
-          alert('There was an erorr.')
+          alert('There was an error.')
         }.bind(this)
       })
 
