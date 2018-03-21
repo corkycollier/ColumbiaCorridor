@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount PdfjsViewer::Rails::Engine => "/pdfjs", as: 'pdfjs'
 
   root to: 'pages#home'
   get 'mailings', to: "pages#mailings"

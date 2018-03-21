@@ -150,6 +150,9 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pdfjs_viewer-rails (0.0.9)
+      rails (> 4.2.0)
+      sass-rails (~> 5.0)
     pg (0.19.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -293,6 +296,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   mail
+  pdfjs_viewer-rails
   pg
   pry-rails
   rails (= 4.2.5)
@@ -312,4 +316,4 @@ DEPENDENCIES
   wysiwyg-rails
 
 BUNDLED WITH
-   1.13.6
+   1.15.4

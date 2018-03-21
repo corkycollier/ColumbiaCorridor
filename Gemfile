@@ -25,7 +25,7 @@ gem 'jquery-ui-rails'
 gem 'sendgrid-ruby'
 gem 'mail'
 gem 'rest-client'
-
+gem 'pdfjs_viewer-rails'
 
 group :development, :test do
   gem 'byebug'
