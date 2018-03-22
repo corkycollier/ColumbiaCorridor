@@ -71,6 +71,7 @@ class User < ActiveRecord::Base
 
 
   def self.collect_all
-    User.all.collect{ |user| user.safe_show }
+    users = User.all.reorder(company_name: :asc, last_name: :asc, first_name: :asc, email: :asc)
+    users.collect{ |user| user.safe_show }
   end
 end
