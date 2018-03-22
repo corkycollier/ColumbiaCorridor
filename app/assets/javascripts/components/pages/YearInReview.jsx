@@ -17,8 +17,8 @@ const YearInReview = React.createClass({
           Year in Review
         </h1>
 
-        <iframe src='/pdfjs/full?file=%2Fpdf%2Fyear-in-review.pdf'
-                style={{height: '400px', width: '100%'}}></iframe>
+        <iframe src='/pdfjs/minimal?file=%2Fpdf%2Fyear-in-review.pdf'
+                style={{height: '800px', width: '100%'}}></iframe>
 
       </div>
 
