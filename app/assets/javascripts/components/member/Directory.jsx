@@ -41,7 +41,7 @@ const Directory = React.createClass({
             {
               this.props.parent.state.members.map((el) => {
 
-                if (el.private) {
+                if (el.private || !el.company_name) {
                   return;
                 } else {
                   return (
