@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       sign_in!(@user)
       redirect_to root_url
     else
-      render json: @user
+      render json: @user, :status => 422
     end
   end
 
