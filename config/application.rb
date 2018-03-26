@@ -23,6 +23,14 @@ module ReactRails
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    # config/application.rb
+    config.middleware.insert(0, Rack::ReverseProxy) do
+
+      Archive.cloudinary_reverse_proxy_paths.each do |path|
+        reverse_proxy "/#{path}", 'https://res.cloudinary.com'
+      end
+    end
 
   end
 end
+
