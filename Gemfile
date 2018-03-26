@@ -26,6 +26,7 @@ gem 'sendgrid-ruby'
 gem 'mail'
 gem 'rest-client'
 gem 'pdfjs_viewer-rails'
+gem "rack-reverse-proxy", require: "rack/reverse_proxy" # For viewing minimal external PDFs
 
 group :development, :test do
   gem 'byebug'

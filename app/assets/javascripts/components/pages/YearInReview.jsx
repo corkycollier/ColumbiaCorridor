@@ -14,10 +14,10 @@ const YearInReview = React.createClass({
     return (
       <div className="ui container year-in-review" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1>
-          Year in Review
+          Year in Review {this.props.parent.state.year_in_review.year}
         </h1>
 
-        <iframe src='/pdfjs/minimal?file=%2Fpdf%2Fyear-in-review.pdf'
+        <iframe src={this.props.parent.state.year_in_review.url}
                 style={{height: '800px', width: '100%'}}></iframe>
 
       </div>
