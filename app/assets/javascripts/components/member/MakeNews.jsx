@@ -8,16 +8,6 @@ const MakeNews = React.createClass({
     var unsigned_preset = "f6zu0cw2";
     var api_key = "688459599666266";
 
-    $('#news-title').froalaEditor({
-      requestWithCredentials: false,
-      requestWithCORS: false,
-      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
-      imageUploadParams: {
-        upload_preset: unsigned_preset,
-        api_key: api_key
-      }
-    });
-
     $('#news-body').froalaEditor({
       requestWithCredentials: false,
       requestWithCORS: false,
@@ -52,10 +42,12 @@ const MakeNews = React.createClass({
 
   submitNews (e) {
     e.preventDefault();
+    var news = this.state;
+    news['title'] = "<p>" + news['basic_title'] + "</p>";
     $.ajax({
       url: '/api/news',
       type: 'POST',
-      data: { news: this.state },
+      data: { news: news },
       success: function (app_data, resp, obj) {
         this.props.parent.setState(app_data)
         Backbone.history.navigate('member-news' , { trigger : true })
@@ -105,11 +97,6 @@ const MakeNews = React.createClass({
                 <input type="text"  data-field="basic_title" onChange={ this.update } />
               </div>
 
-              <div className="field title-field" onBlur={ this.updateTitle }>
-                <label>Title</label>
-                <textarea id="news-title" />
-              </div>
-
               <div className="field body-field" onBlur={ this.updateBody }>
                 <label>Body</label>
                 <textarea id="news-body" />
@@ -155,16 +142,6 @@ const EditNewsAdmin = React.createClass({
     var unsigned_preset = "f6zu0cw2";
     var api_key = "688459599666266";
 
-    $('#news-title').froalaEditor({
-      requestWithCredentials: false,
-      requestWithCORS: false,
-      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
-      imageUploadParams: {
-        upload_preset: unsigned_preset,
-        api_key: api_key
-      }
-    });
-
     $('#news-body').froalaEditor({
       requestWithCredentials: false,
       requestWithCORS: false,
@@ -195,10 +172,12 @@ const EditNewsAdmin = React.createClass({
 
   submitNews (e) {
     e.preventDefault();
+    var news = this.state;
+    news['title'] = "<p>" + news['basic_title'] + "</p>";
     $.ajax({
       url: '/api/news/' + this.props.news.id ,
       type: 'PATCH',
-      data: { news: this.state },
+      data: { news: news },
       success: function (app_data, resp, obj) {
         this.props.parent.setState(app_data)
         Backbone.history.navigate('admin/news' , { trigger : true })
@@ -239,11 +218,6 @@ const EditNewsAdmin = React.createClass({
               <div className="field">
                 <label>Basic Title</label>
                 <input type="text"  data-field="basic_title" onChange={ this.update } defaultValue={ this.props.news.basic_title }/>
-              </div>
-
-              <div className="field title-field" onBlur={ this.updateTitle }>
-                <label>Title</label>
-                <textarea id="news-title" defaultValue={ this.props.news.title } />
               </div>
 
               <div className="field body-field" onBlur={ this.updateBody }>
