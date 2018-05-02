@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
         render json: new_password
       end
     else
-      render json: "User not found."
+      render json: "Username or password not found."
     end
   end
 
