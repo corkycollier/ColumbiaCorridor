@@ -93,7 +93,7 @@ const MakeNews = React.createClass({
           <div className="sixteen wide column">
             <form className="ui form" onSubmit={this.submitNews }>
               <div className="field">
-                <label>Basic Title</label>
+                <label>Title</label>
                 <input type="text"  data-field="basic_title" onChange={ this.update } />
               </div>
 
@@ -216,7 +216,7 @@ const EditNewsAdmin = React.createClass({
           <div className="sixteen wide column">
             <form className="ui form" onSubmit={this.submitNews }>
               <div className="field">
-                <label>Basic Title</label>
+                <label>Title</label>
                 <input type="text"  data-field="basic_title" onChange={ this.update } defaultValue={ this.props.news.basic_title }/>
               </div>
 
