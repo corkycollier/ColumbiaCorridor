@@ -10,7 +10,7 @@ const SignIn = React.createClass({
       success (model, resp, obj) {
         location.href = "" ;
       } , error (model, resp, obj) {
-        alert("User not found.")
+        alert("Username or password not found.")
       }
     })
   },
