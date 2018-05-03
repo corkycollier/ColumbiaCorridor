@@ -27,6 +27,7 @@ gem 'mail'
 gem 'rest-client'
 gem 'pdfjs_viewer-rails'
 gem "rack-reverse-proxy", require: "rack/reverse_proxy" # For viewing minimal external PDFs
+gem 'phony_rails' # Phone normalization/validation
 
 group :development, :test do
   gem 'byebug'
