@@ -35,6 +35,7 @@ const Board = React.createClass({
 
             {
               this.props.parent.state.board.map( ( el ) => {
+                console.log(el)
                 return (
                   <div className="four wide column"
                     key={ "boardId" + el.id }
@@ -50,8 +51,11 @@ const Board = React.createClass({
                       <p style={{ "textAlign" : "center" }}>
                         <i>{ el.title }</i>
                       </p>
-                    </a>
 
+                      <p style={{ "textAlign" : "center" }}>
+                        { el.company }
+                      </p>
+                    </a>
 
                     <i className="linkify icon" style={{
                         "position" : "absolute" ,
