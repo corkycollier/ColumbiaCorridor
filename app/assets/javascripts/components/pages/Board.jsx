@@ -48,9 +48,9 @@ const Board = React.createClass({
                         { el.name }
                       </div>
 
-                      <p style={{ "textAlign" : "center" }}>
+                      <div style={{ "textAlign" : "center" , "marginTop" : "4px" }}>
                         <i>{ el.title }</i>
-                      </p>
+                      </div>
 
                       <p style={{ "textAlign" : "center" }}>
                         { el.company }
