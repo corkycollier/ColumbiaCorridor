@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
     attributes = self.attributes
     attributes.delete('password_digest')
     attributes.delete('session_token')
-    attributes['phone'] = attributes['phone'].to_s.phony_formatted(normalize: :US, spaces: '-')
+    attributes['phone'] = attributes['phone'].to_s.phony_formatted(normalize: :US)
     attributes
   end
 
