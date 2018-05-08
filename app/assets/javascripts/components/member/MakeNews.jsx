@@ -1,12 +1,25 @@
 const MakeNews = React.createClass({
   getInitialState () {
-    return( this.props.news || {} )
+    var data = this.props.news || {};
+    data["role"] = this.props.parent.state.user.role;
+    console.log("role: " + data.role )
+    return( data )
   },
 
   froala () {
     var cloud_name = "dtizwr3wv";
     var unsigned_preset = "f6zu0cw2";
     var api_key = "688459599666266";
+
+    $('#news-title').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
 
     $('#news-body').froalaEditor({
       requestWithCredentials: false,
@@ -93,9 +106,20 @@ const MakeNews = React.createClass({
           <div className="sixteen wide column">
             <form className="ui form" onSubmit={this.submitNews }>
               <div className="field">
-                <label>Title</label>
+                <label>
+                  {this.state.role == "Admin" ? "Basic Title" : "Title" }
+                </label>
                 <input type="text"  data-field="basic_title" onChange={ this.update } />
               </div>
+
+              {this.state.role == "Admin" ? (
+                <div className="field title-field" onBlur={ this.updateTitle }>
+                  <label>Title</label>
+                  <textarea id="news-title" />
+                </div>
+              ) : (
+                ""
+              )}
 
               <div className="field body-field" onBlur={ this.updateBody }>
                 <label>Body</label>
