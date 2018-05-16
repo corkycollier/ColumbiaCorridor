@@ -22,17 +22,19 @@ const ResourceFullUse = React.createClass({
           ResourceFULL Use
         </h1>
 
-        <a href="https://www.facebook.com/groups/ResourceFullUse/"
-          target="_blank"
-          className="ui facebook large button left labeled icon"
-          style={{
-            "position" : "absolute" ,
-            "top"      : "24px"     ,
-            "left"     : "282px"    ,
-          }}>
-          <i className="facebook icon"></i>
-          Facebook
-        </a>
+        <p>
+          <a href="https://www.facebook.com/groups/ResourceFullUse/"
+            target="_blank"
+            className="ui facebook large button left labeled icon">
+            <i className="facebook icon"></i>
+            Facebook
+          </a>
+          <a href="www.ResourceFULLuse.org"
+            target="_blank"
+            className="ui green large button">
+            Go to www.ResourceFULLuse.org
+          </a>
+        </p>
 
         <div className="ui grid doubling stackable">
           <div className="sixteen wide column" >
