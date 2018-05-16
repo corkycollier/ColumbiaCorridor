@@ -40,7 +40,7 @@ const ResourceFullUse = React.createClass({
               At a 2006 CCA breakfast forum, ResourceFULL Use was born.
               We never imagined it would be going strong a decade later.
               Each exchange is money saved, resources utilized, and greenhouse gasses reduced.
-              Our quarterly workshops are a great place to brainstorm and Dzspeed datedz with potential partners.
+              Our quarterly workshops are a great place to brainstorm and speed-date with potential partners.
             </p>
           </div>
           <div className="sixteen wide column">
@@ -54,18 +54,12 @@ const ResourceFullUse = React.createClass({
             <p>
               ResourceFull Use provides manufacturers
               and industry with workshops to assess resource needs
-              and actively exchange resources (e.g.. use the waste of one organization as an input for another).
-            </p>
-
-            <p>
-              We’ve also teamed with the Materials Exchange Platform to give members expanded capabilities
-              and a broader audience for your by-products.
-              Any materials that you post are now seen by businesses in Oregon and Washington.
+              and actively exchange resources (e.g. use the waste of one organization as an input for another).
             </p>
 
             <p>
               Benefits are improved economic viability through reduced waste,
-              improved resource efficiences, and decreased emissions (CO2 and other greenhouse gases).
+              improved resource efficiencies, and decreased emissions (CO2 and other greenhouse gases).
             </p>
           </div>
           </div>
