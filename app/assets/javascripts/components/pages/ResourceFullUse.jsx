@@ -29,7 +29,7 @@ const ResourceFullUse = React.createClass({
             <i className="facebook icon"></i>
             Facebook
           </a>
-          <a href="www.ResourceFULLuse.org"
+          <a href="https://www.ResourceFULLuse.org"
             target="_blank"
             className="ui green large button">
             Go to www.ResourceFULLuse.org
