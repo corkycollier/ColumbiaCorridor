@@ -43,3 +43,11 @@
 .ui .message p {
     opacity: 1;
 }
+
+// Link Hover fixes
+.fc-day-grid-event {
+    cursor: pointer;
+}
+.table-column-sortable {
+    cursor: pointer !important;
+}
