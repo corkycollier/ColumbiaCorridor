@@ -19,8 +19,8 @@ const Archives = React.createClass({
             <thead>
               <tr>
                 <th className="collapsing">Type</th>
-                <th>Title <i className="sort icon"></i></th>
-                <th>Category <i className="sort icon"></i></th>
+                <th className='table-column-sortable'>Title <i className="sort icon"></i></th>
+                <th className='table-column-sortable'>Category <i className="sort icon"></i></th>
                 <th style={{ "minWidth" : "80px" , }}>Year <i className="sort icon"></i></th>
               </tr>
             </thead>
