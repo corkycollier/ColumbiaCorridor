@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.7.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem "rails-backbone"
@@ -28,6 +28,9 @@ gem 'rest-client'
 gem 'pdfjs_viewer-rails'
 gem "rack-reverse-proxy", require: "rack/reverse_proxy" # For viewing minimal external PDFs
 gem 'phony_rails' # Phone normalization/validation
+
+# Version locks for security vunerabilities
+gem 'ffi', '~> 1.9.24'
 
 group :development, :test do
   gem 'byebug'
