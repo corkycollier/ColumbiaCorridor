@@ -78,6 +78,29 @@ const Sponsor = React.createClass({
                 ($240-$320 value)
               </li>
             </ul>
+
+            <h1 >
+              Website Sponsorship
+            </h1>
+
+            <h4>
+              Homepage Sponsor - $1000
+            </h4>
+
+
+            <ul style={{ "color" : "#767373" }}>
+              <li>
+                One year front page rotating ad for your company on the CCA website
+              </li>
+
+              <li>
+                Over 400 website visitors per month in web traffic
+              </li>
+
+              <li>
+                Maximum of 4 rotating ads
+              </li>
+            </ul>
           </div>
 
           <div className="eight wide column">
