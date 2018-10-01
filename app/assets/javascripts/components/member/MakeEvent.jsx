@@ -45,6 +45,13 @@ const MakeEvent = React.createClass({
       $('.fr-toolbar').css('position', "relative");
     }.bind(this), 0);
     $('.dropdown').dropdown();
+
+    $(".calentim-inline-time").calentim({
+      inline: true,
+      showCalendars: false,
+      format: "HH:mm",
+      singleDate: true,
+    });
   },
 
   update(e) {
@@ -96,6 +103,25 @@ const MakeEvent = React.createClass({
 
   handleSave (e) {
     e.preventDefault();
+
+    keys = ['start', 'end'];
+
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      var state = this.state || {};
+      var value = moment().format('YYYY/MM/DD') + ' ' + $('#event-' + key).val()
+      var timestamp = Date.parse(value);
+
+      if ( isNaN(timestamp) == false ) {
+        state[key] = moment(timestamp).format('HH:mm');
+      } else {
+        state[key] = null;
+        $('#event-' + key).val(null)
+      }
+    }
+
+    this.setState(state);
+
     $.ajax({
       url: '/api/events',
       type: 'POST',
@@ -163,12 +189,12 @@ const MakeEvent = React.createClass({
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="text" data-field="start" onBlur={ this.updateTime } required />
+              <input type="text" id='event-start' className='calentim-inline-time' data-field="start" onBlur={ this.updateTime } required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="text" data-field="end" onBlur={ this.updateTime } required />
+              <input type="text" id='event-end' className='calentim-inline-time' data-field="end" onBlur={ this.updateTime } required />
             </div>
           </div>
 
@@ -275,8 +301,15 @@ const EditEvent = React.createClass({
       $('.fr-toolbar').css('position', "relative");
     }.bind(this), 0);
 
+    $('.dropdown').dropdown();    $('.dropdown').dropdown();
 
-    $('.dropdown').dropdown();
+    $(".calentim-inline-time").calentim({
+      inline: true,
+      showCalendars: false,
+      format: "HH:mm",
+      singleDate: true,
+    });
+
   },
 
   update(e) {
@@ -330,7 +363,7 @@ const EditEvent = React.createClass({
     var value = moment().format('YYYY/MM/DD') + ' ' + time;
     var timestamp = Date.parse(value);
     if ( isNaN(timestamp) == false ) {
-      return moment(timestamp).format('h:mm A');
+      return moment(timestamp).format('HH:mm');
     } else {
       return null;
     }
@@ -338,6 +371,25 @@ const EditEvent = React.createClass({
 
   handleSave (e) {
     e.preventDefault();
+
+    keys = ['start', 'end'];
+
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      var state = this.state || {};
+      var value = moment().format('YYYY/MM/DD') + ' ' + $('#event-' + key).val()
+      var timestamp = Date.parse(value);
+
+      if ( isNaN(timestamp) == false ) {
+        state[key] = moment(timestamp).format('HH:mm');
+      } else {
+        state[key] = null;
+        $('#event-' + key).val(null)
+      }
+    }
+
+    this.setState(state);
+
     $.ajax({
       url: '/api/events/' + this.state.id ,
       type: 'PATCH',
@@ -405,12 +457,12 @@ const EditEvent = React.createClass({
           <div className="two fields">
             <div className="field">
               <label>Start</label>
-              <input type="text" data-field="start" onBlur={ this.updateTime }  defaultValue={this.showTime(this.state.start)} required />
+              <input type="text" id='event-start' className='calentim-inline-time' data-field="start" onBlur={ this.updateTime }  defaultValue={this.showTime(this.state.start)} required />
             </div>
 
             <div className="field">
               <label>End</label>
-              <input type="text" data-field="end" onBlur={ this.updateTime } defaultValue={this.showTime(this.state.end)} required />
+              <input type="text" id='event-end' className='calentim-inline-time' data-field="end" onBlur={ this.updateTime } defaultValue={this.showTime(this.state.end)} required />
             </div>
           </div>
 
