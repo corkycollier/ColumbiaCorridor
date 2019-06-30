@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'semantic-ui-sass'
 gem 'thin'
 gem 'figaro'
 gem 'faker'
@@ -36,6 +36,7 @@ gem 'ffi', '~> 1.9.24'
 
 group :development, :test do
   gem 'byebug'
+  gem 'bundler-audit'
 end
 
 group :development do
