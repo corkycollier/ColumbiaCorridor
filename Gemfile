@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
+ruby '2.3.8'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '4.2.11.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem "rails-backbone"
@@ -13,7 +15,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'semantic-ui-sass', :git => 'https://github.com/doabit/semantic-ui-sass'
 gem 'thin'
 gem 'figaro'
 gem 'faker'
@@ -34,6 +36,9 @@ gem 'ffi', '~> 1.9.24'
 
 group :development, :test do
   gem 'byebug'
+  gem 'bundler-audit'
+  gem 'brakeman'
+  gem 'gemsurance'
 end
 
 group :development do
@@ -46,3 +51,6 @@ group :development do
   gem 'pry-rails'
   gem 'guard-livereload', '~> 2.5', require: false
 end
+
+# Security Patches
+
