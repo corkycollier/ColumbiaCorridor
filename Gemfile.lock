@@ -331,5 +331,8 @@ DEPENDENCIES
   web-console (~> 2.0)
   wysiwyg-rails
 
+RUBY VERSION
+   ruby 2.3.8p459
+
 BUNDLED WITH
-   1.15.4
+   1.16.6
