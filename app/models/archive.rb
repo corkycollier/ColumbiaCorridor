@@ -42,7 +42,7 @@ class Archive < ActiveRecord::Base
     # Determine the required reverse proxy path
     urls = Archive.pluck(:url)
 
-    return nil if urls.empty?
+    return [] if urls.empty?
 
     cloudinary_urls = urls.select { |url| url.starts_with?('https://res.cloudinary.com') }
 
