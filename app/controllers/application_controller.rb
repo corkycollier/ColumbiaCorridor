@@ -63,7 +63,7 @@ class ApplicationController < ActionController::Base
       ads: Ad.all.collect{ |ad| ad.safe_show }.shuffle ,
       staff: Staff.all.collect{ |staff| staff.safe_show } ,
       board:  Board.safe_order ,
-      archives: Archive.all.collect{ |archive| archive.safe_show } ,
+      archives: Archive.all.reorder(created_at: :desc).collect{ |archive| archive.safe_show } ,
     }
   end
 end
