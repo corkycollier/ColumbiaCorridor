@@ -37,6 +37,7 @@ gem 'ffi', '~> 1.9.24'
 group :development, :test do
   gem 'byebug'
   gem 'bundler-audit'
+  gem 'brakeman'
 end
 
 group :development do
