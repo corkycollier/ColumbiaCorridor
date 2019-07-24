@@ -115,7 +115,7 @@ const MakeNews = React.createClass({
               {this.state.role == "Admin" ? (
                 <div className="field title-field" onBlur={ this.updateTitle }>
                   <label>Title</label>
-                  <textarea id="news-title" />
+                  <textarea id="news-title"  data-field="basic_title" />
                 </div>
               ) : (
                 ""
@@ -165,6 +165,16 @@ const EditNewsAdmin = React.createClass({
     var cloud_name = "dtizwr3wv";
     var unsigned_preset = "f6zu0cw2";
     var api_key = "688459599666266";
+
+    $('#news-title').froalaEditor({
+      requestWithCredentials: false,
+      requestWithCORS: false,
+      imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+      imageUploadParams: {
+        upload_preset: unsigned_preset,
+        api_key: api_key
+      }
+    });
 
     $('#news-body').froalaEditor({
       requestWithCredentials: false,
@@ -240,9 +250,20 @@ const EditNewsAdmin = React.createClass({
           <div className="sixteen wide column">
             <form className="ui form" onSubmit={this.submitNews }>
               <div className="field">
-                <label>Title</label>
-                <input type="text"  data-field="basic_title" onChange={ this.update } defaultValue={ this.props.news.basic_title }/>
+                <label>
+                  {this.state.role == "Admin" ? "Basic Title" : "Title" }
+                </label>
+                <input type="text"  data-field="basic_title" onChange={ this.update } defaultValue={ this.props.news.basic_title } />
               </div>
+
+              {this.state.role == "Admin" ? (
+                <div className="field title-field" onBlur={ this.updateTitle }>
+                  <label>Title</label>
+                  <textarea id="news-title"  defaultValue={ this.props.news.title } />
+                </div>
+              ) : (
+                ""
+              )}
 
               <div className="field body-field" onBlur={ this.updateBody }>
                 <label>Body</label>
