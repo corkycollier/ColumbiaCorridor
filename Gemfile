@@ -53,4 +53,4 @@ group :development do
 end
 
 # Security Patches
-
+gem 'nokogiri', '>= 1.10.4'
