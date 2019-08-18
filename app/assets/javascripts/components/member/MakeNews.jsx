@@ -18,7 +18,13 @@ const MakeNews = React.createClass({
       imageUploadParams: {
         upload_preset: unsigned_preset,
         api_key: api_key
-      }
+      },
+      colorsStep: 4,
+      colorsText: [
+        '#15E67F', '#E3DE8C', '#D8A076', '#D83762', '#76B6D8',
+        '#1C7A90', '#249CB8', '#4ABED9', '#FBD75B', '#FBE571', '#FFFFFF', 'REMOVE',
+        '#3366CC', '#000066', '#666600', '#660000',
+      ]
     });
 
     $('#news-body').froalaEditor({
@@ -28,7 +34,13 @@ const MakeNews = React.createClass({
       imageUploadParams: {
         upload_preset: unsigned_preset,
         api_key: api_key
-      }
+      },
+      colorsStep: 4,
+      colorsText: [
+        '#15E67F', '#E3DE8C', '#D8A076', '#D83762', '#76B6D8',
+        '#1C7A90', '#249CB8', '#4ABED9', '#FBD75B', '#FBE571', '#FFFFFF', 'REMOVE',
+        '#3366CC', '#000066', '#666600', '#660000',
+      ]
     });
   },
 
@@ -173,7 +185,13 @@ const EditNewsAdmin = React.createClass({
       imageUploadParams: {
         upload_preset: unsigned_preset,
         api_key: api_key
-      }
+      },
+      colorsStep: 4,
+      colorsText: [
+        '#15E67F', '#E3DE8C', '#D8A076', '#D83762', '#76B6D8',
+        '#1C7A90', '#249CB8', '#4ABED9', '#FBD75B', '#FBE571', '#FFFFFF', 'REMOVE',
+        '#3366CC', '#000066', '#666600', '#660000',
+      ]
     });
 
     $('#news-body').froalaEditor({
@@ -183,7 +201,13 @@ const EditNewsAdmin = React.createClass({
       imageUploadParams: {
         upload_preset: unsigned_preset,
         api_key: api_key
-      }
+      },
+      colorsStep: 4,
+      colorsText: [
+        '#15E67F', '#E3DE8C', '#D8A076', '#D83762', '#76B6D8',
+        '#1C7A90', '#249CB8', '#4ABED9', '#FBD75B', '#FBE571', '#FFFFFF', 'REMOVE',
+        '#3366CC', '#000066', '#666600', '#660000',
+      ]
     });
   },
 
