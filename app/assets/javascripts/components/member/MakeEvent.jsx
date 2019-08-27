@@ -162,7 +162,7 @@ const MakeEvent = React.createClass({
         <form className="ui form" onSubmit={ this.handleSave }>
           <div className="field">
             <label>Basic Title</label>
-            <input type="text"  data-field="basic_title" onChange={ this.update } />
+            <input type="text" data-field="basic_title" onChange={ this.update } />
           </div>
 
           <div className="field title-field" onBlur={ this.updateTitle }>

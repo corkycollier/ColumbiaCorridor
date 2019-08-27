@@ -127,7 +127,7 @@ const MakeNews = React.createClass({
               {this.state.role == "Admin" ? (
                 <div className="field title-field" onBlur={ this.updateTitle }>
                   <label>Title</label>
-                  <textarea id="news-title"  data-field="basic_title" />
+                  <textarea id="news-title"  data-field="title" />
                 </div>
               ) : (
                 ""
@@ -231,7 +231,7 @@ const EditNewsAdmin = React.createClass({
   submitNews (e) {
     e.preventDefault();
     var news = this.state;
-    news['title'] = "<p>" + news['basic_title'] + "</p>";
+    // news['title'] = "<p>" + news['basic_title'] + "</p>";
     $.ajax({
       url: '/api/news/' + this.props.news.id ,
       type: 'PATCH',
