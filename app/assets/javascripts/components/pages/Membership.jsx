@@ -21,12 +21,12 @@ const Membership = React.createClass({
           "minHeight" : "74vh" ,
           "padding" : "30px 20px" ,
           "fontSize" : "16px" }}>
-        <h1 >
-          Membership
-        </h1>
 
         <div className="ui grid doubling stackable">
           <div className="six wide column" >
+            <h1 >
+              Membership
+            </h1>
             <h4>Discount Members – $475</h4>
 
 
@@ -126,7 +126,11 @@ const Membership = React.createClass({
             </div>
           </div>
 
-          <div className="ten wide column">
+          <div className="ten wide column centered">
+            <a href="https://www.guidestar.org/profile/93-0930033" target="_blank">
+              <img className="ui image centered" src="https://widgets.guidestar.org/gximage2?o=8389378&l=v4" />
+            </a>
+            <br/>
             <img className="ui image fluid" src="http://res.cloudinary.com/dtizwr3wv/image/upload/v1493670412/JOIN-Membership_03_hfenov_rri33g.jpg" style={{ "maxHeight" : "499px" , }}/>
           </div>
         </div>
