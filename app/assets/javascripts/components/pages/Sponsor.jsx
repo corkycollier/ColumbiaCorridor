@@ -49,6 +49,16 @@ const Sponsor = React.createClass({
               </li>
             </ul>
 
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style={{paddingLeft: '40px'}}>
+              <input type="hidden" name="cmd" value="_s-xclick"/>
+              <input type="hidden" name="hosted_button_id" value="VJT5DS932BEVL"/>
+              <table>
+                <tr><td><input type="hidden" name="on0" value="Name of Forum"/>Name of Forum</td></tr>
+                <tr><td><input type="text" name="os0" maxlength="200"/></td></tr>
+              </table>
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+            </form>
 
             <h4>
               Presenting Sponsor – $1000
@@ -77,6 +87,17 @@ const Sponsor = React.createClass({
                 ($240-$320 value)
               </li>
             </ul>
+
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style={{paddingLeft: '40px'}}>
+              <input type="hidden" name="cmd" value="_s-xclick"/>
+              <input type="hidden" name="hosted_button_id" value="Z3M69EPCJFN74"/>
+              <table>
+                <tr><td><input type="hidden" name="on0" value="Name of Forum"/>Name of Forum</td></tr>
+                <tr><td><input type="text" name="os0" maxlength="200"/></td></tr>
+              </table>
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+            </form>
 
             <h1 >
               Website Sponsorship
