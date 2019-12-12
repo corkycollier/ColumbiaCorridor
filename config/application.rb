@@ -25,9 +25,12 @@ module ReactRails
 
     # config/application.rb
     config.middleware.insert(0, Rack::ReverseProxy) do
-
-      Archive.cloudinary_reverse_proxy_paths.each do |path|
-        reverse_proxy "/#{path}", 'https://res.cloudinary.com'
+      begin
+        Archive.cloudinary_reverse_proxy_paths.each do |path|
+          reverse_proxy "/#{path}", 'https://res.cloudinary.com'
+        end
+      rescue ActiveRecord::StatementInvalid
+        # This is an expected issue if database hasn't been created yet
       end
     end
 
