@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.3.8'
+ruby '2.4.6'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.11.1'
+gem 'rails', '~> 4.2'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem "rails-backbone"
