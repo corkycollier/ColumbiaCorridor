@@ -34,9 +34,24 @@ class User < ActiveRecord::Base
   validates :email, :session_token, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, uniqueness: true
+  validate :validate_company_website_is_website
   after_initialize :ensure_session_token
   has_many :news
   has_many :events
+
+  before_validation :standardize
+
+  def validate_company_website_is_website
+    if company_website.present? && !(company_website.starts_with?("http://") || company_website.starts_with?("https://"))
+      errors.add(:company_website, "must start with http:// or https://")
+    end
+  end
+
+  def standardize
+    if company_website.present? && !company_website.starts_with?("http")
+      self.company_website = "http://#{company_website}"
+    end
+  end
 
   def safe_show
     attributes = self.attributes

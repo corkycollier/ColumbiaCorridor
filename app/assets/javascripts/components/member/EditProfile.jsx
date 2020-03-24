@@ -132,7 +132,7 @@ const EditProfile = React.createClass({
               </div>
 
               <div className="field">
-                <label>Company Website <small>include http:// </small></label>
+                <label>Company Website</label>
                 <input type="text" data-field="company_website" onChange={ this.updateState } defaultValue={this.state.company_website} />
               </div>
 
@@ -315,7 +315,7 @@ const AdminEditProfile = React.createClass({
               </div>
 
               <div className="field">
-                <label>Company Website <small>include http:// </small></label>
+                <label>Company Website</label>
                 <input type="text" data-field="company_website" onChange={ this.updateState } defaultValue={this.state.company_website} />
               </div>
 
