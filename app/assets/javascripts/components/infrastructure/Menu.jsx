@@ -195,11 +195,6 @@ const RegularMenu = React.createClass({
                 ARCHIVES
               </div>
 
-
-              <div className="item member-area" data-path="make-news" onClick={ this.go } style={{ "textAlign" : "center" , }}>
-                MAKE NEWS
-              </div>
-
               <div className="item member-area" data-path="edit-profile" onClick={ this.go } style={{ "textAlign" : "center" , }}>
                 EDIT PROFILE
               </div>
@@ -367,11 +362,6 @@ const SidebarMenu = React.createClass({
 
               <div className="item member-area" data-path="archives" onClick={ this.go } >
                 Archives
-              </div>
-
-
-              <div className="item member-area" data-path="make-news" onClick={ this.go } >
-                Make News
               </div>
 
               <div className="item member-area" data-path="edit-profile" onClick={ this.go } >
