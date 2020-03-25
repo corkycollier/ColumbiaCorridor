@@ -28,7 +28,6 @@ const router = Backbone.Router.extend({
     "sponsor" : "sponsor" ,
     "membership" : "membership" ,
     "archives" : "archives" ,
-    "member-news" : "memberNews" ,
     "cca-news" : "ccaNews" ,
     "contact" : "contact" ,
     "mailing-list" : "mailingList" ,
@@ -37,8 +36,8 @@ const router = Backbone.Router.extend({
     "sign-in" : "signIn" ,
     "directory" : "directory" ,
     "edit-profile" : "editProfile",
-    "make-news" : "makeNews" ,
     "year-in-review" : "yearInReview" ,
+    "covid-19":"covid19",
     "make-ad" : "makeAd" ,
     "make-event" : "makeEvent" ,
     "event/:id" : "event" ,
@@ -73,9 +72,15 @@ const router = Backbone.Router.extend({
   },
 
   yearInReview () {
-    var page = <YearInReview parent={ this.parent } key="yearInReview" /> ;
+    var page = <Covid19 parent={ this.parent } key="yearInReview" /> ;
     this.go( page )
   },
+
+  covid19 () {
+    var page = <Covid19 parent={ this.parent } key="covid19" /> ;
+    this.go( page )
+  },
+
 
   groundwater () {
     var page = <Groundwater parent={ this.parent } key="groundwater" /> ;
@@ -196,15 +201,6 @@ const router = Backbone.Router.extend({
     }
   },
 
-  makeNews () {
-    if ( !this.parent.state.user ) {
-      this.home();
-    } else {
-      var page = <MakeNews parent={ this.parent } key="makeNews" /> ;
-      this.go( page )
-    }
-  },
-
   makeEvent () {
     if ( this.parent.state.user.role != "Admin" ) {
       this.home();
@@ -244,11 +240,6 @@ const router = Backbone.Router.extend({
       var page = <Directory parent={ this.parent } key="directory" /> ;
       this.go( page )
     }
-  },
-
-  memberNews () {
-    var page = <MemberNews parent={ this.parent } key="member-news" /> ;
-    this.go( page );
   },
 
   admin () {

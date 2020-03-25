@@ -150,12 +150,12 @@ const RegularMenu = React.createClass({
                 CCA NEWS
               </div>
 
-              <div className="item" data-path="member-news" onClick={ this.go } style={{ "textAlign" : "center" , }}>
-                MEMBER NEWS
-              </div>
-
               <div className="item" data-path="members" onClick={ this.go } style={{ "textAlign" : "center" , }}>
                 MEMBER DIRECTORY
+              </div>
+
+              <div className="item" data-path="covid-19" onClick={ this.go } style={{ "textAlign" : "center" , }}>
+                COVID-19
               </div>
 
               <div className="item" data-path="groundwater" onClick={ this.go } style={{ "textAlign" : "center" , }}>
@@ -315,8 +315,8 @@ const SidebarMenu = React.createClass({
                 Member directory
               </div>
 
-              <div className="item" data-path="member-news" onClick={ this.go } >
-                Member News
+              <div className="item" data-path="covid-19" onClick={ this.go } >
+                COVID-19
               </div>
 
               <div className="item" data-path="groundwater" onClick={ this.go } >
@@ -324,7 +324,7 @@ const SidebarMenu = React.createClass({
               </div>
 
               <div className="item" data-path="resourcesfull-use" onClick={ this.go } >
-                Resourcefull Use
+                ResourceFull Use
               </div>
             </div>
           </a>

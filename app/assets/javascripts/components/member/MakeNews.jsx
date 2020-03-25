@@ -1,3 +1,4 @@
+// This page is obsolete as of 3/24/2020
 const MakeNews = React.createClass({
   getInitialState () {
     var data = this.props.news || {};

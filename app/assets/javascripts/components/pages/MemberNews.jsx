@@ -1,3 +1,4 @@
+// @note: This page is obsolete as of 3/24/2020
 const MemberNews = React.createClass({
 
   componentDidMount() {

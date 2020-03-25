@@ -55,6 +55,7 @@ class ApplicationController < ActionController::Base
     {
       user: current_user,
       year_in_review: Archive.year_in_review,
+      covid19: Archive.covid_19,
       members: User.collect_all,
       news: New.collect_all,
       events: Event.collect_all,

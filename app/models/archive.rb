@@ -11,6 +11,25 @@
 
 class Archive < ActiveRecord::Base
 
+  def self.covid_19
+
+    c19_year = '2020'
+    c19_url = '/pdfjs/minimal?file=%2Fpdf%2Fcovid-19.pdf'
+
+    archive = Archive.where(title: "COVID-19", doc_type: "file pdf outline")
+                     .reorder(created_at: :desc)
+                     .first
+    if archive && archive.url.present?
+      c19_year = archive.year
+      c19_url = archive.reverse_proxy_path
+    end
+
+    {
+      year: c19_year,
+      url: c19_url,
+    }
+  end
+
   def self.year_in_review
 
     yir_year = '2017'
