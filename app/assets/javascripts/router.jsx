@@ -72,7 +72,7 @@ const router = Backbone.Router.extend({
   },
 
   yearInReview () {
-    var page = <Covid19 parent={ this.parent } key="yearInReview" /> ;
+    var page = <YearInReview parent={ this.parent } key="yearInReview" /> ;
     this.go( page )
   },
 
