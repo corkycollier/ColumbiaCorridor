@@ -15,7 +15,7 @@ const Covid19 = React.createClass({
     if (this.props.parent.state.covid19.url == '/pdfjs/minimal?file=%2Fpdf%2Fcovid-19.pdf') {
       default_pdf_subheading = <p>
       We are working on this page. For now, below is the PDF version of Executive Order 20-12 below.
-      Please note this is a large (10MB) PDF, so it will take some time to load.
+      Please note this is a large (10MB) PDF, so it will take some time to load, the first time.
     </p>;
     } else {
       default_pdf_subheading = "";
@@ -25,7 +25,7 @@ const Covid19 = React.createClass({
       <div className="ui container year-in-review" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1 style={{"display" : "table"}}>
           <img src={window.cca.images.virus} alt="Virus Image" />
-          <span style={{"vertical-align" : "middle", "display" : "table-cell", "padding-left" : "25px"}}>
+          <span style={{"vertical-align" : "middle", "display" : "table-cell", "padding-left" : "20px"}}>
             Coronavirus (COVID-19)
           </span>
         </h1>
