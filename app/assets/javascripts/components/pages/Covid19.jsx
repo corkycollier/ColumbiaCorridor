@@ -21,9 +21,13 @@ const Covid19 = React.createClass({
       default_pdf_subheading = "";
     }
     return (
+
       <div className="ui container year-in-review" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
-        <h1>
-          Coronavirus (COVID-19)
+        <h1 style={{"display" : "table"}}>
+          <img src={window.cca.images.virus} alt="Virus Image" />
+          <span style={{"vertical-align" : "middle", "display" : "table-cell", "padding-left" : "25px"}}>
+            Coronavirus (COVID-19)
+          </span>
         </h1>
 
         { default_pdf_subheading }
