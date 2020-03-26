@@ -23,8 +23,9 @@ const Covid19 = React.createClass({
     return (
       <div className="ui container year-in-review" style={{ "color" : "#262262" , "padding" : "30px 20px" ,}}>
         <h1>
-          Covid-19
+          Coronavirus (COVID-19)
         </h1>
+
         { default_pdf_subheading }
 
         <iframe src={this.props.parent.state.covid19.url}
