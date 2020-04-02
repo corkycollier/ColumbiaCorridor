@@ -36,6 +36,7 @@ const router = Backbone.Router.extend({
     "sign-in" : "signIn" ,
     "directory" : "directory" ,
     "edit-profile" : "editProfile",
+    "make-news" : "makeNews" ,
     "year-in-review" : "yearInReview" ,
     "covid-19":"covid19",
     "make-ad" : "makeAd" ,
