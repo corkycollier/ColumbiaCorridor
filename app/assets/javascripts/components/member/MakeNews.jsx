@@ -76,7 +76,7 @@ const MakeNews = React.createClass({
       data: { news: news },
       success: function (app_data, resp, obj) {
         this.props.parent.setState(app_data)
-        Backbone.history.navigate('member-news' , { trigger : true })
+        Backbone.history.navigate('admin/news' , { trigger : true })
       }.bind(this), error: function (a, b, c) {
         alert('There was an error on submit.')
       }

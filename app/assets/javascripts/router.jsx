@@ -202,6 +202,15 @@ const router = Backbone.Router.extend({
     }
   },
 
+  makeNews () {
+    if ( !this.parent.state.user ) {
+      this.home();
+    } else {
+      var page = <MakeNews parent={ this.parent } key="makeNews" /> ;
+      this.go( page )
+    }
+  },
+
   makeEvent () {
     if ( this.parent.state.user.role != "Admin" ) {
       this.home();
